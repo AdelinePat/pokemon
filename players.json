@@ -1,0 +1,79 @@
+{
+  "players": [
+    {
+      "name": "Adeline",
+      "level": 5,
+      "experience": 1500,
+      "pokemons": [
+        {
+          "name": "Pikachu",
+          "level": 10,
+          "hp": 35,
+          "attack": 55,
+          "defense": 40,
+          "speed": 90,
+          "type": "Electric"
+        },
+        {
+          "name": "Bulbasaur",
+          "level": 8,
+          "hp": 45,
+          "attack": 49,
+          "defense": 49,
+          "speed": 45,
+          "type": "Grass/Poison"
+        }
+      ]
+    },
+    {
+      "name": "Thibault",
+      "level": 6,
+      "experience": 1800,
+      "pokemons": [
+        {
+          "name": "Charmander",
+          "level": 12,
+          "hp": 39,
+          "attack": 52,
+          "defense": 43,
+          "speed": 65,
+          "type": "Fire"
+        },
+        {
+          "name": "Squirtle",
+          "level": 9,
+          "hp": 44,
+          "attack": 48,
+          "defense": 65,
+          "speed": 43,
+          "type": "Water"
+        }
+      ]
+    },
+    {
+      "name": "Joseph",
+      "level": 7,
+      "experience": 2100,
+      "pokemons": [
+        {
+          "name": "Eevee",
+          "level": 15,
+          "hp": 55,
+          "attack": 40,
+          "defense": 35,
+          "speed": 55,
+          "type": "Normal"
+        },
+        {
+          "name": "Jigglypuff",
+          "level": 11,
+          "hp": 115,
+          "attack": 45,
+          "defense": 20,
+          "speed": 20,
+          "type": "Fairy"
+        }
+      ]
+    }
+  ]
+}
