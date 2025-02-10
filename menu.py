@@ -4,6 +4,7 @@ from screen import Screen
 
 pygame.init()
 
+
 class Menu(Screen):
     def __init__(self):
         super().__init__()
