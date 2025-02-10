@@ -2,7 +2,7 @@ import pygame
 import sys
 from button import Button
 from screen import Screen
-from playerinput import PlayerInput  # Import de l'écran de saisie du nom
+from playerinput import PlayerInput 
 
 pygame.init()
 
@@ -14,23 +14,23 @@ class Menu(Screen):
             (self.screen.get_width(), self.screen.get_height()),
         )
 
-        # Création des boutons du menu
+        # Creating menu buttons
         self.buttons = [
             Button(image=pygame.image.load("assets/Play Rect.png"), pos=(400, 250), text_input="Start", font=self.get_font(75), base_color="#d7fcd4", hovering_color="red"),
             Button(image=pygame.image.load("assets/Options Rect.png"), pos=(400, 400), text_input="Resume Game", font=self.get_font(50), base_color="#d7fcd4", hovering_color="red"),
             Button(image=pygame.image.load("assets/Quit Rect.png"), pos=(400, 550), text_input="QUIT", font=self.get_font(75), base_color="#d7fcd4", hovering_color="red"),
         ]
 
-        self.selected_button = 0  # Index du bouton sélectionné
+        self.selected_button = 0  # Index of the currently selected button
 
     def main_menu(self):
-        """Boucle du menu principal"""
+        """Main menu loop"""
         while True:
             self.render_menu()
             self.handle_events()
 
     def render_menu(self):
-        """Affichage du menu"""
+        """Render the menu"""
         self.screen.blit(self.bg, (0, 0))
         
         menu_text = self.get_font(80).render("MAIN MENU", True, "#b68f40")
@@ -47,7 +47,7 @@ class Menu(Screen):
         self.update_display()
 
     def handle_events(self):
-        """Gestion des événements clavier/souris"""
+        """Handle keyboard and mouse events"""
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
@@ -66,7 +66,7 @@ class Menu(Screen):
                         self.select_button()
 
     def select_button(self):
-        """Exécute l'action du bouton sélectionné"""
+        """Execute the selected button's action"""
         if self.selected_button == 0:
             self.start_game()
         elif self.selected_button == 1:
@@ -76,12 +76,12 @@ class Menu(Screen):
             sys.exit()
 
     def start_game(self):
-        """Affiche l'écran d'entrée du nom"""
+        """Display the name input screen"""
         player_input_screen = PlayerInput()
         player_input_screen.input_name_screen()
 
     def options(self):
-        """Affiche l'écran des options"""
+        """Display the options screen"""
         while True:
             self.screen.fill("white")
             options_text = self.get_font(45).render("This is the OPTIONS screen.", True, "Black")
@@ -106,5 +106,6 @@ class Menu(Screen):
 if __name__ == "__main__":
     menu = Menu()
     menu.main_menu()
-    name_input = PlayerInput()
-    name_input.input_name_screen()
+    # name_input = PlayerInput()
+    # name_input.input_name_screen()
+    PlayerInput().input_name_screen()
