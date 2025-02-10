@@ -2,7 +2,7 @@ import pygame
 
 
 class Screen:
-    def __init__(self, width=800, height=600):
+    def __init__(self, width=1200, height=720):
         self.width = width
         self.height = height
         self.screen = pygame.display.set_mode((self.width, self.height))
