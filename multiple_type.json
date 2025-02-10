@@ -1,0 +1,237 @@
+{
+    "grass": {
+        "alone": {
+            "probability": 1,
+            "names" : ["Toto"]
+        },
+        "poison": {
+            "probability": 9,
+            "names" : ["Toto"]
+        },     
+        "psychic" : {
+            "probability": 2,
+            "names" : ["Toto"]
+        }
+    },
+    "fire": {
+        "alone": {
+            "probability": 10,
+            "names" : ["Toto"]
+        },
+        "flying": {
+            "probability": 2,
+            "names" : ["Toto"]
+        }
+    },
+    "water" : {
+        "alone": {
+            "probability" : 18,
+            "names" : ["Toto"]
+        },
+        "fighting": {
+            "probability": 1,
+            "names" : ["Toto"]
+        },
+        "poison": {
+            "probability": 2,
+            "names" : ["Toto"]
+        },
+        "psychic" : {
+            "probability": 3,
+            "names" : ["Toto"]
+        },
+        "ice": {
+            "probability": 3,
+            "names": ["Toto"]
+        },
+        "flying": {
+            "probability": 1,
+            "names" : ["Toto"]
+        }
+    },
+    "bug" : {
+        "alone": {
+            "probability": 2,
+            "names" : ["Toto"]
+        },
+        "flying": {
+            "probability": 2,
+            "names" : ["Toto"]
+        },
+        "poison" : {
+            "probability": 5,
+            "names" : ["Toto"]
+        },
+        "grass": {
+            "probability": 2,
+            "names" : ["Toto"]
+        }
+    },
+    "normal": {
+        "alone": {
+            "probability": 12,
+            "names" : ["Toto"]
+        },
+        "flying": {
+            "probability": 8,
+            "names" : ["Toto"]
+        },
+        "fairy": {
+            "probability": 2,
+            "names" : ["Toto"]
+        }
+    },
+    "poison": {
+        "alone": {
+            "probability": 10,
+            "names" : ["Toto"]
+        },
+        "ground": {
+            "probability": 2,
+            "names" : ["Toto"]
+        },
+        "fairy": {
+            "probability": 1,
+            "names" : ["Toto"]
+        },
+        "flying": {
+            "probability": 2,
+            "names" : ["Toto"]
+        },
+        "psychic": {
+            "probability": 1,
+            "names" : ["Toto"]
+        }
+    },
+    "electric" : {
+        "alone": {
+            "probability": 6,
+            "names" : ["Toto"]
+        },
+        "psychic": {
+            "probability": 1,
+            "names" : ["Toto"]
+        },
+        "steel": {
+            "probability": 2,
+            "names" : ["Toto"]
+        },
+        "grass": {
+            "probability": 2,
+            "names" : ["Toto"]
+        },
+        "flying": {
+            "probability": 1,
+            "names" : ["Toto"]
+        }
+    }, 
+    "ground": {
+        "alone": {
+            "probability": 6,
+            "names" : ["Toto"]
+        },
+        "steel": {
+            "probability": 2,
+            "names" : ["Toto"]
+        },
+        "rock": {
+            "probability": 2,
+            "names" : ["Toto"]
+        }
+    },
+    "ice" : {
+        "alone" : {
+            "probability": 1,
+            "names" : ["Toto"]
+        },
+        "steel" : {
+            "probability": 2,
+            "names" : ["Toto"]
+        },
+        "fairy" : {
+            "probability": 1,
+            "names" : ["Toto"]
+        },
+        "flying" : {
+            "probability": 1,
+            "names" : ["Toto"]
+        },
+        "psychic" : {
+            "probability": 2,
+            "names" : ["Toto"]
+        }
+    },
+    "fairy" : {
+        "alone": {
+            "probability": 2,
+            "names" : ["Toto"]
+        }
+    },
+    "fighting" : {
+        "alone" : {
+            "probability": 9,
+            "names" : ["Toto"]
+        },
+        "fire" : {
+            "probability": 1,
+            "names" : ["Toto"]
+        },
+        "water": {
+            "probability": 1,
+            "names" : ["Toto"]
+        },
+        "flying": {
+            "probability": 1,
+            "names" : ["Toto"]
+        }
+    },
+    "psychic": {
+        "alone": {
+            "probability": 9,
+            "names" : ["Toto"]
+        },
+        "fairy": {
+            "probability": 2,
+            "names" : ["Toto"]
+        },
+        "flying": {
+            "probability": 1,
+            "names" : ["Toto"]
+        }
+    },
+    "rock" : {
+        "ground": {
+            "probability": 4,
+            "names" : ["Toto"]
+        },
+        "electric": {
+            "probability": 3,
+            "names" : ["Toto"]
+        },
+        "water": {
+            "probability": 4,
+            "names" : ["Toto"]
+        },
+        "flying": {
+            "probability": 1,
+            "names" : ["Toto"]
+        }
+    },
+    "ghost" : {
+        "poison": {
+            "probability": 3,
+            "names" : ["Tota"]
+        }
+    },
+    "dragon" : {
+        "alone" : {
+            "probability": 2,
+            "names" : ["Toto"]
+        },
+        "flying" : {
+            "probability": 1,
+            "names" : ["Toto"]
+        }
+    }
+
+}

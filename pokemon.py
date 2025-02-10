@@ -1,265 +1,6 @@
+import random, json
 class Pokemon():
-    # physical_type = ['normal', 'fighting', 'ground', 'flying', 'bug', 'rock']
-    # element_type = ['fire', 'water', 'electric', 'grass', 'ice', 'poison', 'psychic'] # inefficient against themselves
-    # special_type = ['ghost', 'dragon'] # efficient against themselves
-
-    coeficient = {
-        'normal': {
-            'normal': 1,
-            'fire' : 1,
-            'water': 1,
-            'electric': 1,
-            'grass': 1,
-            'ice': 1,
-            'fighting': 1,
-            'poison': 1,
-            'ground': 1,
-            'flying': 1,
-            'psychic': 1,
-            'bug': 1,
-            'rock': 0.5,
-            'ghost': 0,
-            'dragon' : 1
-        },
-        'fire': {
-            'normal': 1,
-            'fire' : 0.5,
-            'water': 0.5,
-            'electric': 1,
-            'grass': 2,
-            'ice': 2,
-            'fighting': 1,
-            'poison': 1,
-            'ground': 1,
-            'flying': 1,
-            'psychic': 1,
-            'bug': 2,
-            'rock': 0.5,
-            'ghost': 1,
-            'dragon' : 0.5
-        },
-        'water': {
-            'normal': 1,
-            'fire' : 2,
-            'water': 0.5,
-            'electric': 1,
-            'grass': 0.5,
-            'ice': 1,
-            'fighting': 1,
-            'poison': 1,
-            'ground': 2,
-            'flying': 1,
-            'psychic': 1,
-            'bug': 1,
-            'rock': 2,
-            'ghost': 0,
-            'dragon' : 0.5
-        },
-        'electric': {
-            'normal': 1,
-            'fire' : 1,
-            'water': 2,
-            'electric': 1,
-            'grass': 0.5,
-            'ice': 1,
-            'fighting': 1,
-            'poison': 1,
-            'ground': 0,
-            'flying': 2,
-            'psychic': 1,
-            'bug': 1,
-            'rock': 1,
-            'ghost': 1,
-            'dragon' : 0.5
-        },
-        'grass': {
-            'normal': 1,
-            'fire' : 0.5,
-            'water': 2,
-            'electric': 1,
-            'grass': 0.5,
-            'ice': 1,
-            'fighting': 1,
-            'poison': 0.5,
-            'ground': 2,
-            'flying': 0.5,
-            'psychic': 1,
-            'bug': 0.5,
-            'rock': 2,
-            'ghost': 1,
-            'dragon' : 0.5
-        },
-        'ice': {
-            'normal': 1,
-            'fire' : 1,
-            'water': 0.5,
-            'electric': 1,
-            'grass': 2,
-            'ice': 0.5,
-            'fighting': 1,
-            'poison': 1,
-            'ground': 1,
-            'flying': 2,
-            'psychic': 1,
-            'bug': 1,
-            'rock': 1,
-            'ghost': 1,
-            'dragon' : 2
-        },
-        'fighting': {
-            'normal': 2,
-            'fire' : 1,
-            'water': 1,
-            'electric': 1,
-            'grass': 1,
-            'ice': 1,
-            'fighting': 1,
-            'poison': 0.5,
-            'ground': 1,
-            'flying': 0.5,
-            'psychic': 0.5,
-            'bug': 0.5,
-            'rock': 2,
-            'ghost': 0,
-            'dragon' : 1
-        },
-        'poison': {
-            'normal': 1,
-            'fire' : 1,
-            'water': 1,
-            'electric': 1,
-            'grass': 2,
-            'ice': 1,
-            'fighting': 1,
-            'poison': 0.5,
-            'ground': 0.5,
-            'flying': 1,
-            'psychic': 1,
-            'bug': 2,
-            'rock': 0.5,
-            'ghost': 0.5,
-            'dragon' : 1
-        },
-        'ground': {
-            'normal': 1,
-            'fire' : 2,
-            'water': 1,
-            'electric': 2,
-            'grass': 0.5,
-            'ice': 1,
-            'fighting': 1,
-            'poison': 2,
-            'ground': 1,
-            'flying': 0,
-            'psychic': 1,
-            'bug': 0.5,
-            'rock': 2,
-            'ghost': 1,
-            'dragon' : 1
-        },
-        'flying': {
-            'normal': 1,
-            'fire' : 1,
-            'water': 1,
-            'electric': 0.5,
-            'grass': 2,
-            'ice': 1,
-            'fighting': 2,
-            'poison': 1,
-            'ground': 1,
-            'flying': 1,
-            'psychic': 1,
-            'bug': 2,
-            'rock': 0.5,
-            'ghost': 1,
-            'dragon' : 1
-        },
-        'psychic': {
-            'normal': 1,
-            'fire' : 1,
-            'water': 1,
-            'electric': 1,
-            'grass': 1,
-            'ice': 1,
-            'fighting': 2,
-            'poison': 2,
-            'ground': 1,
-            'flying': 1,
-            'psychic': 0.5,
-            'bug': 1,
-            'rock': 1,
-            'ghost': 1,
-            'dragon' : 1
-        },
-        'bug': {
-            'normal': 1,
-            'fire' : 0.5,
-            'water': 1,
-            'electric': 1,
-            'grass': 2,
-            'ice': 1,
-            'fighting': 0.5,
-            'poison': 2,
-            'ground': 1,
-            'flying': 0.5,
-            'psychic': 2,
-            'bug': 1,
-            'rock': 1,
-            'ghost': 0.5,
-            'dragon' : 1
-        },
-        'rock': {
-            'normal': 1,
-            'fire' : 2,
-            'water': 1,
-            'electric': 1,
-            'grass': 1,
-            'ice': 2,
-            'fighting': 0.5,
-            'poison': 1,
-            'ground': 0.5,
-            'flying': 2,
-            'psychic': 1,
-            'bug': 2,
-            'rock': 1,
-            'ghost': 1,
-            'dragon' : 1
-        },
-        'ghost': {
-            'normal': 1,
-            'fire' : 1,
-            'water': 1,
-            'electric': 1,
-            'grass': 1,
-            'ice': 1,
-            'fighting': 1,
-            'poison': 1,
-            'ground': 1,
-            'flying': 1,
-            'psychic': 1,
-            'bug': 1,
-            'rock': 1,
-            'ghost': 2,
-            'dragon' : 1
-        },
-        'dragon': {
-            'normal': 1,
-            'fire' : 1,
-            'water': 1,
-            'electric': 1,
-            'grass': 1,
-            'ice': 1,
-            'fighting': 1,
-            'poison': 1,
-            'ground': 1,
-            'flying': 1,
-            'psychic': 1,
-            'bug': 1,
-            'rock': 1,
-            'ghost': 1,
-            'dragon' : 2
-        }
-    }
+    coefficient = json.load(open('coefficient.json'))
 
     evolving_stage = {
         1 : 50,
@@ -301,16 +42,16 @@ class Pokemon():
             list_coefficient = []
             
             for index in range(len(enemy.type)):
-                a_coefficient = Pokemon.coeficient[chose_attack_type][enemy.type[index]]
+                a_coefficient = Pokemon.coefficient[chose_attack_type][enemy.type[index]]
                 list_coefficient.append(a_coefficient)
         
             # for another_index in range(len(list_coefficient)):
             if list_coefficient[0] == 2 and list_coefficient[1] == 2:
                 coefficient = 4
             else:
-                coefficient = max(list_coefficient)
+                coefficient = list_coefficient[0] * list_coefficient[1]
         else:
-            coefficient = Pokemon.coeficient[chose_attack_type][enemy.type[0]]
+            coefficient = Pokemon.coefficient[chose_attack_type][enemy.type[0]]
 
         return coefficient
     
@@ -322,6 +63,7 @@ class Pokemon():
         if enemy.hp - damage >= 0:
             enemy.hp -= damage
         else:
+            enemy.hp = 0
             print(f"le pokemon {enemy.name} n'a plus de PV !")
 
         print(f"{self.name} a fait une attaque {chose_attack_type}, {efficency}\
@@ -372,18 +114,25 @@ class Pokemon():
                 \nForce : {self.strength}\n"
         return string + "\n"
 
-my_pokemon = Pokemon('Thibault', 50, 20, 0, ['water', 'electric'])
-my_enemy = Pokemon('Joseph', 60, 10, 0, ['fire', 'dragon'] )
 
-print(my_pokemon, my_enemy)
 
-my_pokemon.attack(my_pokemon.type[0], my_enemy)
-my_pokemon.attack(my_pokemon.type[0], my_enemy)
-my_pokemon.attack(my_pokemon.type[0], my_enemy)
-my_pokemon.attack(my_pokemon.type[0], my_enemy)
-my_pokemon.attack(my_pokemon.type[1], my_enemy)
-my_pokemon.attack(my_pokemon.type[1], my_enemy)
-my_pokemon.attack(my_pokemon.type[1], my_enemy)
-print(my_pokemon, my_enemy)
-my_enemy.attack(my_enemy.type[0] ,my_pokemon)
-print(my_pokemon, my_enemy)
+
+# first_pokemon = create_pokemon('Toto')
+# print(first_pokemon)
+# my_enemy = create_pokemon('Hehe')
+
+# my_pokemon = Pokemon('Thibault', 50, 20, 0, ['water', 'electric'])
+# my_enemy = Pokemon('Joseph', 60, 10, 0, ['fire', 'dragon'] )
+
+# print(my_pokemon, my_enemy)
+
+# first_pokemon.attack(first_pokemon.type[0], my_enemy)
+# first_pokemon.attack(first_pokemon.type[0], my_enemy)
+# first_pokemon.attack(first_pokemon.type[0], my_enemy)
+# first_pokemon.attack(first_pokemon.type[0], my_enemy)
+# first_pokemon.attack(first_pokemon.type[0], my_enemy)
+# first_pokemon.attack(first_pokemon.type[0], my_enemy)
+# first_pokemon.attack(first_pokemon.type[0], my_enemy)
+# print(first_pokemon, my_enemy)
+# my_enemy.attack(my_enemy.type[0] ,first_pokemon)
+# print(first_pokemon, my_enemy)
