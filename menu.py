@@ -3,6 +3,8 @@ import sys
 from button import Button
 from screen import Screen
 from playerinput import PlayerInput 
+from playerselection import PlayerSelection
+
 
 pygame.init()
 
@@ -70,7 +72,8 @@ class Menu(Screen):
         if self.selected_button == 0:
             self.start_game()
         elif self.selected_button == 1:
-            self.options()
+            player_selection_screen = PlayerSelection()
+            player_selection_screen.main_menu()  
         elif self.selected_button == 2:
             pygame.quit()
             sys.exit()
@@ -108,3 +111,6 @@ if __name__ == "__main__":
     menu.main_menu()
     name_input = PlayerInput()
     name_input.input_name_screen()
+    player_selection = PlayerSelection()
+
+    player_selection.main_menu()

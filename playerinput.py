@@ -23,6 +23,12 @@ class PlayerInput(Screen):
         # List of available Pokémon names
         self.pokemon_list = ["Pikachu", "Bulbasaur", "Charmander", "Squirtle",
                              "Eevee", "Jigglypuff", "Meowth", "Psyduck"]
+        
+        self.buttons = [
+            Button(image=None, pos=(400, 550), text_input="Start Game", font=self.get_font(50), base_color="#d7fcd4", hovering_color="red"),
+            Button(image=None, pos=(400, 650), text_input="Back", font=self.get_font(50), base_color="#d7fcd4", hovering_color="red"),
+            Button(image=None, pos=(400, 750), text_input="Quit", font=self.get_font(50), base_color="#d7fcd4", hovering_color="blue"),
+        ]
 
     def input_name_screen(self):
         """Displays the name input screen"""
@@ -36,6 +42,11 @@ class PlayerInput(Screen):
             )
             self.confirm_button.update(self.screen)
 
+            # Update and draw other buttons (Start Game, Back, Quit)
+            for button in self.buttons:
+                button.changeColor(button.checkForInput(pygame.mouse.get_pos()))
+                button.update(self.screen)
+
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pygame.quit()
@@ -45,13 +56,40 @@ class PlayerInput(Screen):
                         self.player_name = self.player_name[:-1]
                     elif event.key == pygame.K_RETURN and self.player_name:
                         self.select_pokemon()
+                    elif event.key == pygame.K_q:  # Press Q to quit
+                        pygame.quit()
+                        sys.exit()
+                    elif event.key == pygame.K_ESCAPE:  # Press ESC to exit
+                        pygame.quit()
+                        sys.exit()
                     else:
                         self.player_name += event.unicode
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     if self.confirm_button.checkForInput(pygame.mouse.get_pos()) and self.player_name:
                         self.select_pokemon()
+                    # Handle button clicks for Start Game, Back, and Quit
+                    for i, button in enumerate(self.buttons):
+                        if button.checkForInput(pygame.mouse.get_pos()):
+                            if i == 0:  # Start Game
+                                self.start_game()
+                            elif i == 1:  # Back
+                                self.go_back()
+                            elif i == 2:  # Quit
+                                pygame.quit()
+                                sys.exit()
 
             self.update_display()
+
+    def start_game(self):
+        """Start the game with the selected Pokémon"""
+        print(f"Starting the game!")
+        # Logic to start the game goes here
+
+    def go_back(self):
+        """Go back to the previous screen"""
+        print("Going back to previous screen")
+        # Logic to navigate back to the previous screen goes here
+
 
     def select_pokemon(self):
         """Proceeds to the Pokémon selection screen"""
@@ -63,6 +101,7 @@ class PlayerInput(Screen):
         """Displays text on the screen"""
         img = font.render(text, True, text_color)
         self.screen.blit(img, img.get_rect(center=(x, y)))
+
 
 class PokemonSelection(Screen):
     def __init__(self, player_name, selected_pokemons):
@@ -136,7 +175,14 @@ class PokemonSelection(Screen):
                     elif event.key == pygame.K_UP:
                         self.selected_button = (self.selected_button - 1) % 5
                     elif event.key == pygame.K_RETURN:
-                        self.select_button()
+                        self.main_menu()
+                    elif event.key == pygame.K_q:  # Press Q to quit
+                        pygame.quit()
+                        sys.exit()
+                    elif event.key == pygame.K_ESCAPE:  # Press ESC to exit
+                        pygame.quit()
+                        sys.exit()
+
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     for i, button in enumerate([self.pokemon1_button, self.pokemon2_button, self.return_button, self.quit_button, self.play_button]):
                         if button.checkForInput(pygame.mouse.get_pos()):
@@ -161,12 +207,7 @@ class PokemonSelection(Screen):
 
     def start_game(self):
         """Start the game with the selected Pokémon"""
-        # Implement the game start logic here
         print(f"Starting the game with {self.selected_pokemons[self.selected_button]}!")
-        # Transition to the game screen
-        # game_screen = GameScreen(self.selected_pokemons[self.selected_button])
-        # game_screen.run()
-        # For now, just exit
         pygame.quit()
         sys.exit()
 
