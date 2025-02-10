@@ -2,8 +2,8 @@ import pygame
 import sys
 from button import Button
 from screen import Screen
-from playerinput import PlayerInput 
-from playerselection import PlayerSelection
+from playerinput import PlayerInput
+from playerselection import PlayerSelection 
 
 
 pygame.init()
@@ -11,16 +11,38 @@ pygame.init()
 class Menu(Screen):
     def __init__(self):
         super().__init__()
+        # Load and scale the background image to fit the screen
         self.bg = pygame.transform.scale(
             pygame.image.load("assets/background.jpg"),
             (self.screen.get_width(), self.screen.get_height()),
         )
 
-        # Creating menu buttons
+        # Create menu buttons
         self.buttons = [
-            Button(image=pygame.image.load("assets/Play Rect.png"), pos=(400, 250), text_input="Start", font=self.get_font(75), base_color="#d7fcd4", hovering_color="red"),
-            Button(image=pygame.image.load("assets/Options Rect.png"), pos=(400, 400), text_input="Resume Game", font=self.get_font(50), base_color="#d7fcd4", hovering_color="red"),
-            Button(image=pygame.image.load("assets/Quit Rect.png"), pos=(400, 550), text_input="QUIT", font=self.get_font(75), base_color="#d7fcd4", hovering_color="red"),
+            Button(
+                image=pygame.image.load("assets/Play Rect.png"),
+                pos=(400, 250),
+                text_input="Start",
+                font=self.get_font(75),
+                base_color="#d7fcd4",
+                hovering_color="red"
+            ),
+            Button(
+                image=pygame.image.load("assets/Options Rect.png"),
+                pos=(400, 400),
+                text_input="Resume Game",
+                font=self.get_font(50),
+                base_color="#d7fcd4",
+                hovering_color="red"
+            ),
+            Button(
+                image=pygame.image.load("assets/Quit Rect.png"),
+                pos=(400, 550),
+                text_input="QUIT",
+                font=self.get_font(75),
+                base_color="#d7fcd4",
+                hovering_color="red"
+            ),
         ]
 
         self.selected_button = 0  # Index of the currently selected button
@@ -34,11 +56,13 @@ class Menu(Screen):
     def render_menu(self):
         """Render the menu"""
         self.screen.blit(self.bg, (0, 0))
-        
+
+        # Render the main menu title
         menu_text = self.get_font(80).render("MAIN MENU", True, "#b68f40")
         menu_rect = menu_text.get_rect(center=(400, 100))
         self.screen.blit(menu_text, menu_rect)
 
+        # Render buttons and handle hover effect
         mouse_pos = pygame.mouse.get_pos()
         for i, button in enumerate(self.buttons):
             if button.checkForInput(mouse_pos):
@@ -73,7 +97,7 @@ class Menu(Screen):
             self.start_game()
         elif self.selected_button == 1:
             player_selection_screen = PlayerSelection()
-            player_selection_screen.main_menu()  
+            player_selection_screen.main_menu()
         elif self.selected_button == 2:
             pygame.quit()
             sys.exit()
@@ -91,7 +115,14 @@ class Menu(Screen):
             options_rect = options_text.get_rect(center=(400, 260))
             self.screen.blit(options_text, options_rect)
 
-            options_back = Button(image=None, pos=(400, 460), text_input="BACK", font=self.get_font(75), base_color="Black", hovering_color="Green")
+            options_back = Button(
+                image=None,
+                pos=(400, 460),
+                text_input="BACK",
+                font=self.get_font(75),
+                base_color="Black",
+                hovering_color="Green"
+            )
             options_back.changeColor(options_back.checkForInput(pygame.mouse.get_pos()))
             options_back.update(self.screen)
 
@@ -109,8 +140,4 @@ class Menu(Screen):
 if __name__ == "__main__":
     menu = Menu()
     menu.main_menu()
-    name_input = PlayerInput()
-    name_input.input_name_screen()
-    player_selection = PlayerSelection()
-
-    player_selection.main_menu()
+    player_selection_screen = PlayerSelection()

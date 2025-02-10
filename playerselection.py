@@ -4,6 +4,8 @@ import json
 from screen import Screen
 from button import Button
 
+
+
 class PlayerSelection(Screen):
     def __init__(self):
         super().__init__()
@@ -104,6 +106,4 @@ class PlayerSelection(Screen):
             self.handle_events()
             self.update_display()
 
-if __name__ == "__main__":
-    player_selection = PlayerSelection()
-    player_selection.main_menu()
+

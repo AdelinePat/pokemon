@@ -3,6 +3,7 @@ import sys
 import random
 from screen import Screen
 from button import Button
+# from menu import Menu
 
 class PlayerInput(Screen):
     def __init__(self):
@@ -12,14 +13,32 @@ class PlayerInput(Screen):
             (self.screen.get_width(), self.screen.get_height()),
         )
         self.player_name = ""  # Stores the player's name
+             # Define buttons
         self.confirm_button = Button(
             image=None,
-            pos=(500, 500),
+            pos=(500, 550),
             text_input="CONFIRM",
             font=self.get_font(50),
             base_color="White",
             hovering_color="Green"
         )
+        self.back_button = Button(
+            image=None,
+            pos=(300, 650),
+            text_input="BACK",
+            font=self.get_font(50),
+            base_color="White",
+            hovering_color="Yellow"
+        )
+        self.quit_button = Button(
+            image=None,
+            pos=(900, 650),
+            text_input="QUIT",
+            font=self.get_font(50),
+            base_color="White",
+            hovering_color="Red"
+        )
+
         # List of available Pokémon names
         self.pokemon_list = ["Pikachu", "Bulbasaur", "Charmander", "Squirtle",
                              "Eevee", "Jigglypuff", "Meowth", "Psyduck"]
@@ -73,7 +92,7 @@ class PlayerInput(Screen):
                             if i == 0:  # Start Game
                                 self.start_game()
                             elif i == 1:  # Back
-                                self.go_back()
+                                self.select_button()
                             elif i == 2:  # Quit
                                 pygame.quit()
                                 sys.exit()
@@ -175,7 +194,7 @@ class PokemonSelection(Screen):
                     elif event.key == pygame.K_UP:
                         self.selected_button = (self.selected_button - 1) % 5
                     elif event.key == pygame.K_RETURN:
-                        self.main_menu()
+                        self.go_back()
                     elif event.key == pygame.K_q:  # Press Q to quit
                         pygame.quit()
                         sys.exit()
