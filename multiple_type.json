@@ -2,235 +2,247 @@
     "grass": {
         "alone": {
             "probability": 1,
-            "names" : ["Toto"]
+            "names" : ["Tangela"]
         },
         "poison": {
             "probability": 9,
-            "names" : ["Toto"]
+            "names" : ["Bulbasaur", "Ivysaur", "Venusaur", "Oddish", "Gloom", "Vileplume", "Bellsprout", "Weepinbell", "Victreebel"]
         },     
         "psychic" : {
             "probability": 2,
-            "names" : ["Toto"]
+            "names" : ["Exeggcute", "Exeggutor"]
+        },
+        "dragon" : {
+            "probability": 1,
+            "names" : ["Exeggutor"]
         }
     },
     "fire": {
         "alone": {
             "probability": 10,
-            "names" : ["Toto"]
+            "names" : ["Chalamender", "Charmeleon", "Vulpix", "Ninetales", "Growlithe", "Arcanine", "Ponyta", "Rapidash", "Magmar", "Flareon"]
         },
         "flying": {
             "probability": 2,
-            "names" : ["Toto"]
+            "names" : ["Charizard", "Moltres"]
+        },
+        "rock": {
+            "probability": 2,
+            "names" : ["Growlithe", "Arcanine"]
+        },
+        "ghost": {
+            "probability": 1,
+            "names": ["Marowak"]
         }
     },
     "water" : {
         "alone": {
             "probability" : 18,
-            "names" : ["Toto"]
+            "names" : ["Squirtle", "Wartortle", "Blastoise", "Psyduck", "Golduck", "Poliwag", "Poliwhirl", "Seel", "Shellder", "Krabby", "Kingler", "Horsea", "Seadra", "Goldeen", "Seaking", "Staryu", "Magikarp", "Vaporeon"]
         },
         "fighting": {
             "probability": 1,
-            "names" : ["Toto"]
+            "names" : ["Poliwrath"]
         },
         "poison": {
             "probability": 2,
-            "names" : ["Toto"]
+            "names" : ["Tentacool", "Tentacruel"]
         },
         "psychic" : {
             "probability": 3,
-            "names" : ["Toto"]
+            "names" : ["Slowpoke", "Slowbro", "Starmie"]
         },
         "ice": {
             "probability": 3,
-            "names": ["Toto"]
+            "names": ["Dewgong", "Cloyster", "Lapras"]
         },
         "flying": {
             "probability": 1,
-            "names" : ["Toto"]
+            "names" : ["Gyarados"]
         }
     },
     "bug" : {
         "alone": {
             "probability": 2,
-            "names" : ["Toto"]
+            "names" : ["Caterpie, Metapod"]
         },
         "flying": {
             "probability": 2,
-            "names" : ["Toto"]
+            "names" : ["Butterflee", "Scyther"]
         },
         "poison" : {
             "probability": 5,
-            "names" : ["Toto"]
+            "names" : ["Weedle", "Kakuna", "Beedrill", "Venonat", "Venomoth"]
         },
         "grass": {
             "probability": 2,
-            "names" : ["Toto"]
+            "names" : ["Paras", "Parasect"]
         }
     },
     "normal": {
         "alone": {
             "probability": 12,
-            "names" : ["Toto"]
+            "names" : ["Rattata", "Raticate", "Meowth", "Persian", "Lickitung", "Chansey", "Kangaskhan", "Tauros", "Ditto", "Eevee", "Porygon", "Snorlax"]
         },
         "flying": {
             "probability": 8,
-            "names" : ["Toto"]
+            "names" : ["Pidgey", "Pidgeotto", "Pidgeot", "Spearow", "Fearow", "Farfetch'd", "Doduo", "Dodrio"]
         },
         "fairy": {
             "probability": 2,
-            "names" : ["Toto"]
+            "names" : ["Jigglypuff", "Wigglytuff"]
         }
     },
     "poison": {
         "alone": {
             "probability": 10,
-            "names" : ["Toto"]
+            "names" : ["Ekans", "Arbok", "Nidoran", "Nidorina", "Nidoran", "Nidorino", "Grimer", "Muk", "Koffing", "Weezing"]
         },
         "ground": {
             "probability": 2,
-            "names" : ["Toto"]
+            "names" : ["Nidoqueen", "Nidoking"]
         },
         "fairy": {
             "probability": 1,
-            "names" : ["Toto"]
+            "names" : ["Weezing"]
         },
         "flying": {
             "probability": 2,
-            "names" : ["Toto"]
+            "names" : ["Zubat", "Golbat"]
         },
         "psychic": {
             "probability": 1,
-            "names" : ["Toto"]
+            "names" : ["Slowbro"]
         }
     },
     "electric" : {
         "alone": {
             "probability": 6,
-            "names" : ["Toto"]
+            "names" : ["Pikachu", "Raichu", "Voltorb", "Electrode", "Electabuzz", "Jolteon"]
         },
         "psychic": {
             "probability": 1,
-            "names" : ["Toto"]
+            "names" : ["Raichu"]
         },
         "steel": {
             "probability": 2,
-            "names" : ["Toto"]
+            "names" : ["Magnemite", "Magneton"]
         },
         "grass": {
             "probability": 2,
-            "names" : ["Toto"]
+            "names" : ["Voltorb", "Electrode"]
         },
         "flying": {
             "probability": 1,
-            "names" : ["Toto"]
+            "names" : ["Zapdos"]
         }
     }, 
     "ground": {
         "alone": {
             "probability": 6,
-            "names" : ["Toto"]
+            "names" : ["Sandshrew", "Sandslash", "Diglett", "Dugtrio", "Cubone", "Marowak"]
         },
         "steel": {
             "probability": 2,
-            "names" : ["Toto"]
+            "names" : ["Diglett", "Dugtrio"]
         },
         "rock": {
             "probability": 2,
-            "names" : ["Toto"]
+            "names" : ["Rhyhorn", "Rhydon"]
         }
     },
     "ice" : {
         "alone" : {
             "probability": 1,
-            "names" : ["Toto"]
+            "names" : ["Vulpix"]
         },
         "steel" : {
             "probability": 2,
-            "names" : ["Toto"]
+            "names" : ["Sandshrew", "Sandslash"]
         },
         "fairy" : {
             "probability": 1,
-            "names" : ["Toto"]
+            "names" : ["Ninetales"]
         },
         "flying" : {
             "probability": 1,
-            "names" : ["Toto"]
+            "names" : ["Articuno"]
         },
         "psychic" : {
             "probability": 2,
-            "names" : ["Toto"]
+            "names" : ["Mr. Mime", "Jynx"]
         }
     },
     "fairy" : {
         "alone": {
             "probability": 2,
-            "names" : ["Toto"]
+            "names" : ["Clefairy", "Clefable"]
         }
     },
     "fighting" : {
         "alone" : {
             "probability": 9,
-            "names" : ["Toto"]
+            "names" : ["Mankey", "Primeape", "Machop", "Machoke", "Machamp", "Farfetch'd", "Hitmonlee", "Hitmonchan", "Tauros"]
         },
         "fire" : {
             "probability": 1,
-            "names" : ["Toto"]
+            "names" : ["Tauros"]
         },
         "water": {
             "probability": 1,
-            "names" : ["Toto"]
+            "names" : ["Tauros"]
         },
         "flying": {
             "probability": 1,
-            "names" : ["Toto"]
+            "names" : ["Zapdos"]
         }
     },
     "psychic": {
         "alone": {
             "probability": 9,
-            "names" : ["Toto"]
+            "names" : ["Abra", "Kadabra", "Alakazam", "Ponyta", "Slowpoke", "Drowzee", "Hypno", "Mewtwo", "Mew"]
         },
         "fairy": {
             "probability": 2,
-            "names" : ["Toto"]
+            "names" : ["Rapidash", "Mr. Mime"]
         },
         "flying": {
             "probability": 1,
-            "names" : ["Toto"]
+            "names" : ["Articuno"]
         }
     },
     "rock" : {
         "ground": {
             "probability": 4,
-            "names" : ["Toto"]
+            "names" : ["Geodude", "Graveler", "Golem", "Onix"]
         },
         "electric": {
             "probability": 3,
-            "names" : ["Toto"]
+            "names" : ["Geodude", "Graveler", "Golem"]
         },
         "water": {
             "probability": 4,
-            "names" : ["Toto"]
+            "names" : ["Omanyte", "Omastar", "Kabuto", "Kabutops"]
         },
         "flying": {
             "probability": 1,
-            "names" : ["Toto"]
+            "names" : ["Aerodactyl"]
         }
     },
     "ghost" : {
         "poison": {
             "probability": 3,
-            "names" : ["Tota"]
+            "names" : ["Gastly", "Haunter", "Gengar"]
         }
     },
     "dragon" : {
         "alone" : {
             "probability": 2,
-            "names" : ["Toto"]
+            "names" : ["Dratini", "Dragonair"]
         },
         "flying" : {
             "probability": 1,
-            "names" : ["Toto"]
+            "names" : ["Dragonite"]
         }
     }
 
