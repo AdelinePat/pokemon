@@ -106,6 +106,5 @@ class Menu(Screen):
 if __name__ == "__main__":
     menu = Menu()
     menu.main_menu()
-    # name_input = PlayerInput()
-    # name_input.input_name_screen()
-    PlayerInput().input_name_screen()
+    name_input = PlayerInput()
+    name_input.input_name_screen()
