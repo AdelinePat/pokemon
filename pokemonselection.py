@@ -31,17 +31,19 @@ class PokemonSelection(Screen):
         )
         self.return_button = Button(
             image=None,
-            pos=(110, 650),
+            pos=(screen_width * 0.10, screen_height * 0.95),
             text_input="RETURN",
-            font=self.get_font(35),
+            # font=self.get_font(35),
+            font=self.get_font(int(screen_width * 0.04)),
             base_color="White",
             hovering_color="Blue"
         )
         self.quit_button = Button(
             image=None,
-            pos=(1100, 650),
+            pos=(screen_width * 0.90, screen_height * 0.95),
             text_input="QUIT",
-            font=self.get_font(35),
+            # font=self.get_font(35),
+            font=self.get_font(int(screen_width * 0.04)),
             base_color="White",
             hovering_color="Red"
         )
@@ -98,7 +100,7 @@ class PokemonSelection(Screen):
         elif self.selected_button == 1:
             print(f"{self.player_name} chose {self.selected_pokemons[1]}!")
         elif self.selected_button == 2:
-            PlayerInput().input_name_screen()
+            Player_Input().input_name_screen()
         elif self.selected_button == 3:
             pygame.quit()
             sys.exit()

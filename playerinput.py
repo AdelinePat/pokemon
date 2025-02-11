@@ -6,36 +6,40 @@ from button import Button
 from pokemonselection import PokemonSelection
 
 
-class PlayerInput(Screen):
+class Player_Input(Screen):
     def __init__(self):
         super().__init__()
         self.bg = pygame.transform.scale(
             pygame.image.load("assets/backgroundpika.jpg"),
             (self.screen.get_width(), self.screen.get_height()),
         )
-        self.player_name = ""  # Stores the player's name
-             # Define buttons
+        self.player_name = ""
+
+        # Get screen dimensions
+        screen_width, screen_height = self.screen.get_width(), self.screen.get_height()
+
+        # Define buttons with dynamic positioning
         self.confirm_button = Button(
             image=None,
-            pos=(600, 550),
+            pos=(screen_width * 0.5, screen_height * 0.6),
             text_input="CONFIRM",
-            font=self.get_font(50),
+            font=self.get_font(int(screen_width * 0.04)),
             base_color="White",
             hovering_color="Green"
         )
         self.back_button = Button(
             image=None,
-            pos=(300, 650),
+            pos=(screen_width * 0.10, screen_height * 0.95),
             text_input="BACK",
-            font=self.get_font(50),
+            font=self.get_font(int(screen_width * 0.04)),
             base_color="White",
             hovering_color="Blue"
         )
         self.quit_button = Button(
             image=None,
-            pos=(900, 650),
+            pos=(screen_width * 0.90, screen_height * 0.95),
             text_input="QUIT",
-            font=self.get_font(50),
+            font=self.get_font(int(screen_width * 0.04)),
             base_color="White",
             hovering_color="Red"
         )
@@ -45,23 +49,25 @@ class PlayerInput(Screen):
                              "Eevee", "Jigglypuff", "Meowth", "Psyduck"]
         
         self.buttons = [
-            Button(image=None, pos=(110, 650), text_input="Back", font=self.get_font(50), base_color="#d7fcd4", hovering_color="Blue"),
-            Button(image=None, pos=(1100, 650), text_input="Quit", font=self.get_font(50), base_color="#d7fcd4", hovering_color="Red"),
+            self.back_button,
+            self.quit_button,
         ]
 
     def input_name_screen(self):
         """Displays the name input screen"""
         while True:
             self.screen.blit(self.bg, (0, 0))
-            self.draw_text("Enter your name:", self.get_font(35), "Black", 600, 250)
-            self.draw_text(self.player_name, self.get_font(40), "Yellow", 600, 320)
+            screen_width, screen_height = self.screen.get_width(), self.screen.get_height()
+
+            self.draw_text("Enter your name:", self.get_font(int(screen_width * 0.035)), "Black", screen_width * 0.5, screen_height * 0.3)
+            self.draw_text(self.player_name, self.get_font(int(screen_width * 0.04)), "Yellow", screen_width * 0.5, screen_height * 0.4)
 
             self.confirm_button.changeColor(
                 self.confirm_button.checkForInput(pygame.mouse.get_pos())
             )
             self.confirm_button.update(self.screen)
 
-            # Update and draw other buttons (Start Game, Back, Quit)
+            # Update and draw other buttons (Back, Quit)
             for button in self.buttons:
                 button.changeColor(button.checkForInput(pygame.mouse.get_pos()))
                 button.update(self.screen)
@@ -75,10 +81,7 @@ class PlayerInput(Screen):
                         self.player_name = self.player_name[:-1]
                     elif event.key == pygame.K_RETURN and self.player_name:
                         self.select_pokemon()
-                    elif event.key == pygame.K_q:  # Press Q to quit
-                        pygame.quit()
-                        sys.exit()
-                    elif event.key == pygame.K_ESCAPE:  # Press ESC to exit
+                    elif event.key in [pygame.K_q, pygame.K_ESCAPE]:  # Press Q or ESC to quit
                         pygame.quit()
                         sys.exit()
                     else:
@@ -86,47 +89,27 @@ class PlayerInput(Screen):
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     if self.confirm_button.checkForInput(pygame.mouse.get_pos()) and self.player_name:
                         self.select_pokemon()
-                    # Handle button clicks for Start Game, Back, and Quit
-                    for i, button in enumerate(self.buttons):
+                    for button in self.buttons:
                         if button.checkForInput(pygame.mouse.get_pos()):
-                            if i == 0:  # Select pokemon
-                                self.select_button()
-                            elif i == 1:  # Back
+                            if button == self.back_button:
                                 self.main_menu()
-                            elif i == 2:  # Quit
+                            elif button == self.quit_button:
                                 pygame.quit()
                                 sys.exit()
 
             self.update_display()
 
-    def start_game(self):
-        """Start the game with the selected Pokémon"""
-        print(f"Starting the game!")
-        # Logic to start the game goes here
-
-    def go_back(self):
-        """Go back to the previous screen"""
-        print("Going back to previous screen")
-        # Logic to navigate back to the previous screen goes here
-
-
     def select_pokemon(self):
         """Proceeds to the Pokémon selection screen"""
-        # Randomly select two different Pokémon
         selected_pokemons = random.sample(self.pokemon_list, 2)
         PokemonSelection(self.player_name, selected_pokemons).select_pokemon_screen()
 
     def draw_text(self, text, font, color, x, y):
         text_surface = font.render(text, True, color)
         text_rect = text_surface.get_rect(center=(x, y))
-
-        # Bordure blanche autour du texte (effet contour)
         outline_color = "White"
         offsets = [(-2, 0), (2, 0), (0, -2), (0, 2), (-2, -2), (2, -2), (-2, 2), (2, 2)]
         for dx, dy in offsets:
             outline_surface = font.render(text, True, outline_color)
             self.screen.blit(outline_surface, text_rect.move(dx, dy))
-
-        # Texte principal en noir
         self.screen.blit(text_surface, text_rect)
-

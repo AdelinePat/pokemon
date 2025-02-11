@@ -19,9 +19,9 @@ class PlayerSelection(Screen):
 
         # Create the action buttons (Play, Back, Quit)
         self.buttons = [
-            Button(image=None, pos=(400, 550), text_input="Start Game", font=self.get_font(50), base_color="#d7fcd4", hovering_color="red"),
-            Button(image=None, pos=(400, 650), text_input="Back", font=self.get_font(50), base_color="#d7fcd4", hovering_color="red"),
-            Button(image=None, pos=(400, 850), text_input="Quit", font=self.get_font(50), base_color="#d7fcd4", hovering_color="blue"),
+            # Button(image=None, pos=(400, 550), text_input="Start Game", font=self.get_font(50), base_color="#d7fcd4", hovering_color="red"),
+            Button(image=None, pos=(110, 650), text_input="Back", font=self.get_font(50), base_color="#d7fcd4", hovering_color="Blue"),
+            Button(image=None, pos=(1100, 650), text_input="Quit", font=self.get_font(50), base_color="#d7fcd4", hovering_color="Red"),
         ]
 
     def load_players_data(self):
@@ -39,7 +39,7 @@ class PlayerSelection(Screen):
         y_offset = 200  # Starting y position for the first player
         for i, player in enumerate(self.players_data):
             player_name_text = self.font.render(player["name"], True, "White")
-            player_name_rect = player_name_text.get_rect(center=(400, y_offset + i * 50))
+            player_name_rect = player_name_text.get_rect(center=(600, y_offset + i * 50))
             if i == self.selected_player_index:
                 pygame.draw.rect(self.screen, "Yellow", player_name_rect.inflate(20, 20), 2)  # Highlight selected player
             self.screen.blit(player_name_text, player_name_rect)

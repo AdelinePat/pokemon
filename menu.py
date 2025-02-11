@@ -2,7 +2,7 @@ import pygame
 import sys
 from button import Button
 from screen import Screen
-from playerinput import PlayerInput
+from playerinput import Player_Input
 from playerselection import PlayerSelection 
 
 
@@ -104,7 +104,7 @@ class Menu(Screen):
 
     def start_game(self):
         """Display the name input screen"""
-        player_input_screen = PlayerInput()
+        player_input_screen = Player_Input()
         player_input_screen.input_name_screen()
 
     def options(self):
@@ -121,7 +121,7 @@ class Menu(Screen):
                 text_input="BACK",
                 font=self.get_font(75),
                 base_color="Black",
-                hovering_color="Green"
+                hovering_color="Blue"
             )
             options_back.changeColor(options_back.checkForInput(pygame.mouse.get_pos()))
             options_back.update(self.screen)
