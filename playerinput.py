@@ -54,7 +54,7 @@ class PlayerInput(Screen):
         while True:
             self.screen.blit(self.bg, (0, 0))
             self.draw_text("Enter your name:", self.get_font(35), "Black", 600, 250)
-            self.draw_text(self.player_name, self.get_font(40), "Yellow", 500, 320)
+            self.draw_text(self.player_name, self.get_font(40), "Yellow", 600, 320)
 
             self.confirm_button.changeColor(
                 self.confirm_button.checkForInput(pygame.mouse.get_pos())
@@ -89,10 +89,10 @@ class PlayerInput(Screen):
                     # Handle button clicks for Start Game, Back, and Quit
                     for i, button in enumerate(self.buttons):
                         if button.checkForInput(pygame.mouse.get_pos()):
-                            if i == 0:  # Start Game
-                                self.start_game()
-                            elif i == 1:  # Back
+                            if i == 0:  # Select pokemon
                                 self.select_button()
+                            elif i == 1:  # Back
+                                self.main_menu()
                             elif i == 2:  # Quit
                                 pygame.quit()
                                 sys.exit()

@@ -31,15 +31,15 @@ class PokemonSelection(Screen):
         )
         self.return_button = Button(
             image=None,
-            pos=(400, 500),
+            pos=(110, 650),
             text_input="RETURN",
             font=self.get_font(35),
             base_color="White",
-            hovering_color="Green"
+            hovering_color="Blue"
         )
         self.quit_button = Button(
             image=None,
-            pos=(600, 600),
+            pos=(1100, 650),
             text_input="QUIT",
             font=self.get_font(35),
             base_color="White",
@@ -47,7 +47,7 @@ class PokemonSelection(Screen):
         )
         self.play_button = Button(
             image=None,
-            pos=(900, 500),
+            pos=(560, 550),
             text_input="PLAY",
             font=self.get_font(35),
             base_color="White",
@@ -111,21 +111,18 @@ class PokemonSelection(Screen):
         pygame.quit()
         sys.exit()
 
-    # def draw_text(self, text, font, text_color, x, y):
-    #     """Displays text on the screen"""
-    #     img = font.render(text, True, text_color)
-    #     self.screen.blit(img, img.get_rect(center=(x, y)))
+    def draw_text(self, text, font, color, x, y):
+        text_surface = font.render(text, True, color)
+        text_rect = text_surface.get_rect(center=(x, y))
 
-    # def draw_text(self, text, font, color, x, y):
-    #     text_surface = font.render(text, True, color)
-    #     text_rect = text_surface.get_rect(center=(x, y))
+        # Bordure blanche autour du texte (effet contour)
+        outline_color = "White"
+        offsets = [(-2, 0), (2, 0), (0, -2), (0, 2), (-2, -2), (2, -2), (-2, 2), (2, 2)]
+        for dx, dy in offsets:
+            outline_surface = font.render(text, True, outline_color)
+            self.screen.blit(outline_surface, text_rect.move(dx, dy))
 
-    #     # Bordure blanche autour du texte (effet contour)
-    #     outline_color = "White"
-    #     offsets = [(-2, 0), (2, 0), (0, -2), (0, 2), (-2, -2), (2, -2), (-2, 2), (2, 2)]
-    #     for dx, dy in offsets:
-    #         outline_surface = font.render(text, True, outline_color)
-    #         self.screen.blit(outline_surface, text_rect.move(dx, dy))
+        # Texte principal en noir
+        self.screen.blit(text_surface, text_rect)
 
-    #     # Texte principal en noir
-    #     self.screen.blit(text_surface, text_rect)
+
