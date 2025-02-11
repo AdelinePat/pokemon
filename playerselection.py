@@ -10,7 +10,7 @@ class PlayerSelection(Screen):
     def __init__(self):
         super().__init__()
         self.bg = pygame.transform.scale(
-            pygame.image.load("assets/backgroundprofile.jpg"),
+            pygame.image.load("assets/backgroundpika.jpg"),
             (self.screen.get_width(), self.screen.get_height()),
         )
         self.players_data = self.load_players_data()
