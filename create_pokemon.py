@@ -48,7 +48,7 @@ def save_pokemon():
     for type in type_list:
         a_pokemon = create_pokemon(type)
         all_pokemons.append(a_pokemon)
-        # print(a_pokemon)
+        print(a_pokemon)
     
     return all_pokemons
     # with open('pokemons.json', 'w', encoding="UTF-8") as pokemon_file:

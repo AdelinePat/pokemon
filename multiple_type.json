@@ -244,6 +244,26 @@
             "probability": 1,
             "names" : ["Dragonite"]
         }
+    },
+    "steel" : {
+        "alone" : {
+            "probability" : 1,
+            "names" : ["Meowth"]
+        }
+    },
+    "dark" : {
+        "alone" : {
+            "probability" : 2,
+            "names" : ["Meowth", "Persian"]
+        },
+        "normal" : {
+            "probability" : 2,
+            "names" : ["Rattata", "Raticate"]
+        },
+        "flying" : {
+            "probability" : 1,
+            "names" : ["Moltres"]
+        }
     }
 
 }

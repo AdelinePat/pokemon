@@ -17,25 +17,34 @@ class Pokemon():
 
     def __init__(self, name, hp, strength, defense, type, level=1):
         self.name = name
-        self.hp = hp
-        self.strength = strength
-        self.defense = defense
-        self.xp = 0
-        self.level = level
-        self.type = self.check_type(type)
+        self.__hp = hp
+        self.__strength = strength
+        self.__defense = defense
+        self.__xp = 0
+        self.__level = level
+        self.type = type
+
+    def get_hp(self):
+        return self.__hp
     
-    def check_type(self, type):
-        if len(type) > 2:
-            type = input("Vous n'avez pas entré le bon nombre de type, vous ne pouvez en choisir que 2 maximum\n").split()
-            if len(type) > 2:
-                return self.check_type(type)
-            
-            if type[0] == type[1]:
-                type = input("Vous ne pouvez pas entrer deux fois le même type\n").split()
-                if type[0] == type[1]:
-                    return self.check_type(type)
-            
-        return type
+    def set_damage_hp(self, damage):
+        self.__hp = self.get_hp() - damage
+    
+    def get_strength(self):
+        return self.__strength
+
+    def get_defense(self):
+        return self.__defense
+    
+    def get_xp(self):
+        return self.__xp
+
+    def get_level(self):
+        return self.__level
+    
+    def set_level_up(self, add_level):
+        self.__level = self.get_level + add_level
+    
 
     def check_enemy_type(self, chose_attack_type, enemy):
         if len(enemy.type) > 1:
@@ -45,11 +54,7 @@ class Pokemon():
                 a_coefficient = Pokemon.coefficient[chose_attack_type][enemy.type[index]]
                 list_coefficient.append(a_coefficient)
         
-            # for another_index in range(len(list_coefficient)):
-            if list_coefficient[0] == 2 and list_coefficient[1] == 2:
-                coefficient = 4
-            else:
-                coefficient = list_coefficient[0] * list_coefficient[1]
+            coefficient = list_coefficient[0] * list_coefficient[1]
         else:
             coefficient = Pokemon.coefficient[chose_attack_type][enemy.type[0]]
 
@@ -59,15 +64,16 @@ class Pokemon():
 
         coefficient, efficency = self.update_xp(chose_attack_type, enemy)
         
-        damage = self.strength * coefficient
-        if enemy.hp - damage >= 0:
-            enemy.hp -= damage
+        damage = self.get_strength() * coefficient
+        enemy_hp = enemy.get_hp()
+        if enemy_hp - damage >= 0:
+            enemy.set_damage_hp(damage)
         else:
-            enemy.hp = 0
+            enemy.set_damage_hp(enemy_hp)
             print(f"le pokemon {enemy.name} n'a plus de PV !")
 
         print(f"{self.name} a fait une attaque {chose_attack_type}, {efficency}\
-              \n Le pokemon {enemy.name} de type {enemy.type} en face a reçu {damage}, il lui reste : {enemy.hp}")
+              \n Le pokemon {enemy.name} de type {enemy.type} en face a reçu {damage}, il lui reste : {enemy.get_hp()}")
 
     def update_xp(self, chose_attack_type, enemy):
         coefficient = self.check_enemy_type(chose_attack_type, enemy)
@@ -75,43 +81,44 @@ class Pokemon():
         match coefficient:
             case 4:
                 efficency = "attaque ultra efficace"
-                self.xp += 20
+                self.__xp = self.get_xp() + 20
             case 2:
                 efficency = "attaque très efficace"
-                self.xp += 10
+                self.__xp = self.get_xp() + 10
             case 1:
                 efficency = "attaque efficace"
-                self.xp += 5
+                self.__xp = self.get_xp() + 5
             case 0.5:
                 efficency = "attaque peu efficace"
-                self.xp += 2
+                self.__xp = self.get_xp() + 2
             case 0:
                 efficency = "impossible d'attaquer"
-        self.level = self.evolve()
+
+        self.evolve()
         return coefficient, efficency
     
     def evolve(self):
-        if self.xp >= Pokemon.evolving_stage[self.level]:
-            self.level += 1
+        if self.get_xp() >= Pokemon.evolving_stage[self.get_level()]:
+            self.set_level_up(1)
 
-        return self.level 
+        
 
     def __str__(self):
         if len(self.type) > 1:
             string = f"Pokemon : {self.name}\
-                \nNiveau : {self.level}\
-                \nXP : {self.xp}\
-                \nPV : {self.hp}\
+                \nNiveau : {self.get_level()}\
+                \nXP : {self.get_xp()}\
+                \nPV : {self.get_hp()}\
                 \nType principal : {self.type[0]}\
                 \nType secondaire : {self.type[1]}\
-                \nForce : {self.strength}\n"
+                \nForce : {self.get_strength()}\n"
         else:
             string = f"Pokemon : {self.name}\
-                \nNiveau : {self.level}\
-                \nXP : {self.xp}\
-                \nPV : {self.hp}\
+                \nNiveau : {self.get_level()}\
+                \nXP : {self.get_xp()}\
+                \nPV : {self.get_hp()}\
                 \nType : {self.type[0]}\
-                \nForce : {self.strength}\n"
+                \nForce : {self.get_strength()}\n"
         return string + "\n"
 
 
