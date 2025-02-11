@@ -1,16 +1,15 @@
 import random, json
 from pokemon import Pokemon
+
 def get_name(type_list):
-    
     with open('multiple_type.json', 'r') as file:
-        second_type = json.load(file)
+        type_name_dictionary = json.load(file)
         if len(type_list) == 2:
-            get_second_type_names = second_type[type_list[0]][type_list[1]]["names"]     
+            get_name_list = type_name_dictionary[type_list[0]][type_list[1]]["names"]     
         else:
-            get_second_type_names = second_type[type_list[0]]["alone"]["names"]
+            get_name_list = type_name_dictionary[type_list[0]]["alone"]["names"]
             
-    
-    name = random.choice(get_second_type_names)
+    name = random.choice(get_name_list)
     return name
     
 def create_pokemon(first_type):
@@ -34,7 +33,7 @@ def create_pokemon(first_type):
         final_type_list.append(second_type_random)
 
     name = get_name(final_type_list)
-       
+
     my_pokemon = Pokemon(name, hp, strength, defense_point, final_type_list)
 
     return my_pokemon
@@ -45,8 +44,14 @@ def save_pokemon():
         types = json.load(file)
         type_list = list(types.keys())
 
+    all_pokemons = []
     for type in type_list:
         a_pokemon = create_pokemon(type)
-        print(a_pokemon)
+        all_pokemons.append(a_pokemon)
+        # print(a_pokemon)
+    
+    return all_pokemons
+    # with open('pokemons.json', 'w', encoding="UTF-8") as pokemon_file:
+    #     data = json.dump(all_pokemons, pokemon_file, indent=4)
 
-save_pokemon()
+# save_pokemon()
