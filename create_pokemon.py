@@ -2,21 +2,36 @@ import random, json
 from pokemon import Pokemon
 
 def get_name(type_list):
-    with open('multiple_type.json', 'r') as file:
+    with open('multiple_type_2.json', 'r') as file:
         type_name_dictionary = json.load(file)
         if len(type_list) == 2:
             get_name_list = type_name_dictionary[type_list[0]][type_list[1]]["names"]     
         else:
             get_name_list = type_name_dictionary[type_list[0]]["alone"]["names"]
-            
-    name = random.choice(get_name_list)
-    return name
+    
+    choice_list = list(get_name_list.keys())
+    first_stage_name = random.choice(choice_list)
+    name = random.choice(list(get_name_list[first_stage_name].keys()))
+
+    if get_name_list[first_stage_name][name] == 3:
+        level = random.randrange(25, 36)
+        stage = 3
+
+    elif get_name_list[first_stage_name][name] == 4:
+        level = random.randrange(40, 50)
+        stage = 4
+
+    elif get_name_list[first_stage_name][name] == 2:
+        level = random.randrange(12, 20)
+        stage = 2
+
+    else:
+        level = random.randrange(1, 10)
+        stage = 1
+    return name, level, stage
     
 def create_pokemon(first_type):
     final_type_list = [first_type]
-    hp = random.randrange(30,50)
-    strength = random.randrange(5, 15)
-    defense_point = 0
 
     with open('multiple_type.json', 'r') as file:
         second_type = json.load(file)
@@ -32,15 +47,20 @@ def create_pokemon(first_type):
     if second_type_random != "alone":
         final_type_list.append(second_type_random)
 
-    name = get_name(final_type_list)
+    name, level, stage = get_name(final_type_list)
 
-    my_pokemon = Pokemon(name, hp, strength, defense_point, final_type_list)
+    hp = random.randrange(10, 31) + level*3
+    strength = random.randrange(2,31) + level*3
+    speed = random.randrange(2,31) + level*3
+    defense_point = random.randrange(2,31) + level*3
+
+    my_pokemon = Pokemon(name, hp, strength, defense_point, final_type_list, level, speed, stage)
 
     return my_pokemon
 
 def save_pokemon():
 
-    with open('multiple_type.json', 'r') as file:
+    with open('multiple_type_2.json', 'r') as file:
         types = json.load(file)
         type_list = list(types.keys())
 
