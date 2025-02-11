@@ -9,7 +9,7 @@ from pokemonselection import PokemonSelection
 class Player_Input(Screen):
     def __init__(self):
         super().__init__()
-        self.bg = pygame.transform.scale(
+        self.bg = pygame.transform.smoothscale(
             pygame.image.load("assets/backgroundpika.jpg"),
             (self.screen.get_width(), self.screen.get_height()),
         )

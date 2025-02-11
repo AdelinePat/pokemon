@@ -67,31 +67,29 @@ class PokemonSelection(Screen):
                 button.changeColor(i == self.selected_button)
                 button.update(self.screen)
 
-            for event in pygame.event.get():
-                if event.type == pygame.QUIT:
-                    pygame.quit()
-                    sys.exit()
-                if event.type == pygame.KEYDOWN:
-                    if event.key == pygame.K_DOWN:
-                        self.selected_button = (self.selected_button + 1) % 5
-                    elif event.key == pygame.K_UP:
-                        self.selected_button = (self.selected_button - 1) % 5
-                    elif event.key == pygame.K_RETURN:
-                        self.go_back()
-                    elif event.key == pygame.K_q:  # Press Q to quit
+                for event in pygame.event.get():
+                    if event.type == pygame.QUIT:
                         pygame.quit()
                         sys.exit()
-                    elif event.key == pygame.K_ESCAPE:  # Press ESC to exit
-                        pygame.quit()
-                        sys.exit()
+                    if event.type == pygame.KEYDOWN:
+                        if event.key == pygame.K_DOWN:
+                            self.selected_button = (self.selected_button + 1) % len(self.buttons)
+                        elif event.key == pygame.K_UP:
+                            self.selected_button = (self.selected_button - 1) % len(self.buttons)
+                        elif event.key == pygame.K_RETURN:  
+                            if self.selected_button == 0: 
+                                self.go_back()
+                            elif self.selected_button == 1:
+                                pygame.quit()
+                                sys.exit()
+                        elif event.key == pygame.K_q:  
+                            pygame.quit()
+                            sys.exit()
+                        elif event.key == pygame.K_ESCAPE:  
+                            pygame.quit()
+                            sys.exit()
 
-                if event.type == pygame.MOUSEBUTTONDOWN:
-                    for i, button in enumerate([self.pokemon1_button, self.pokemon2_button, self.return_button, self.quit_button, self.play_button]):
-                        if button.checkForInput(pygame.mouse.get_pos()):
-                            self.selected_button = i
-                            self.select_button()
-
-            self.update_display()
+                            self.update_display()
 
     def select_button(self):
         """Execute the selected button's action"""

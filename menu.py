@@ -3,66 +3,71 @@ import sys
 from button import Button
 from screen import Screen
 from playerinput import Player_Input
-from playerselection import PlayerSelection 
-
+from playerselection import PlayerSelection  
 
 pygame.init()
 
 class Menu(Screen):
     def __init__(self):
         super().__init__()
-        # Load and scale the background image to fit the screen
-        self.bg = pygame.transform.scale(
-            pygame.image.load("assets/background.jpg"),
-            (self.screen.get_width(), self.screen.get_height()),
+
+        # Obtenir les dimensions de l'écran
+        screen_width, screen_height = self.screen.get_size()
+
+        # Charger et ajuster l'image d'arrière-plan
+        self.bg = pygame.transform.smoothscale(
+            pygame.image.load("assets/background.jpg"), (screen_width, screen_height)
         )
 
-        # Create menu buttons
+        # Définir les positions relatives des boutons
+        button_width = screen_width * 0.3  # 30% de la largeur de l'écran
+        button_x = screen_width * 0.5  # Centrer horizontalement
+
         self.buttons = [
             Button(
                 image=pygame.image.load("assets/Play Rect.png"),
-                pos=(400, 250),
+                pos=(button_x, screen_height * 0.3),  # 30% de la hauteur
                 text_input="Start",
-                font=self.get_font(75),
+                font=self.get_font(int(screen_width * 0.05)),  # Taille adaptative
                 base_color="#d7fcd4",
                 hovering_color="red"
             ),
             Button(
                 image=pygame.image.load("assets/Options Rect.png"),
-                pos=(400, 400),
+                pos=(button_x, screen_height * 0.5),  # 50% de la hauteur
                 text_input="Resume Game",
-                font=self.get_font(50),
+                font=self.get_font(int(screen_width * 0.04)),
                 base_color="#d7fcd4",
                 hovering_color="red"
             ),
             Button(
                 image=pygame.image.load("assets/Quit Rect.png"),
-                pos=(400, 550),
+                pos=(button_x, screen_height * 0.7),  # 70% de la hauteur
                 text_input="QUIT",
-                font=self.get_font(75),
+                font=self.get_font(int(screen_width * 0.05)),
                 base_color="#d7fcd4",
                 hovering_color="red"
             ),
         ]
 
-        self.selected_button = 0  # Index of the currently selected button
+        self.selected_button = 0  # Index du bouton sélectionné
 
     def main_menu(self):
-        """Main menu loop"""
+        """Affiche le menu principal"""
         while True:
             self.render_menu()
             self.handle_events()
 
     def render_menu(self):
-        """Render the menu"""
+        """Affiche les éléments du menu"""
         self.screen.blit(self.bg, (0, 0))
 
-        # Render the main menu title
-        menu_text = self.get_font(80).render("MAIN MENU", True, "#b68f40")
-        menu_rect = menu_text.get_rect(center=(400, 100))
+        # Afficher le texte du menu principal
+        menu_text = self.get_font(int(self.screen.get_width() * 0.08)).render("MAIN MENU", True, "#b68f40")
+        menu_rect = menu_text.get_rect(center=(self.screen.get_width() // 2, self.screen.get_height() * 0.15))
         self.screen.blit(menu_text, menu_rect)
 
-        # Render buttons and handle hover effect
+        # Gérer les boutons et la souris
         mouse_pos = pygame.mouse.get_pos()
         for i, button in enumerate(self.buttons):
             if button.checkForInput(mouse_pos):
@@ -73,7 +78,7 @@ class Menu(Screen):
         self.update_display()
 
     def handle_events(self):
-        """Handle keyboard and mouse events"""
+        """Gère les événements du clavier et de la souris"""
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
@@ -92,7 +97,7 @@ class Menu(Screen):
                         self.select_button()
 
     def select_button(self):
-        """Execute the selected button's action"""
+        """Exécute l'action du bouton sélectionné"""
         if self.selected_button == 0:
             self.start_game()
         elif self.selected_button == 1:
@@ -103,41 +108,10 @@ class Menu(Screen):
             sys.exit()
 
     def start_game(self):
-        """Display the name input screen"""
+        """Affiche l'écran de saisie du nom du joueur"""
         player_input_screen = Player_Input()
         player_input_screen.input_name_screen()
-
-    def options(self):
-        """Display the options screen"""
-        while True:
-            self.screen.fill("white")
-            options_text = self.get_font(45).render("This is the OPTIONS screen.", True, "Black")
-            options_rect = options_text.get_rect(center=(400, 260))
-            self.screen.blit(options_text, options_rect)
-
-            options_back = Button(
-                image=None,
-                pos=(400, 460),
-                text_input="BACK",
-                font=self.get_font(75),
-                base_color="Black",
-                hovering_color="Blue"
-            )
-            options_back.changeColor(options_back.checkForInput(pygame.mouse.get_pos()))
-            options_back.update(self.screen)
-
-            for event in pygame.event.get():
-                if event.type == pygame.QUIT:
-                    pygame.quit()
-                    sys.exit()
-                if event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE:
-                    self.main_menu()
-                if event.type == pygame.MOUSEBUTTONDOWN and options_back.checkForInput(pygame.mouse.get_pos()):
-                    self.main_menu()
-
-            self.update_display()
 
 if __name__ == "__main__":
     menu = Menu()
     menu.main_menu()
-    player_selection_screen = PlayerSelection()
