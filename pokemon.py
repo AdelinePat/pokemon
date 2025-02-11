@@ -23,6 +23,8 @@ class Pokemon():
         self.__xp = 0
         self.__level = level
         self.type = type
+        # self.image_path = 'images/pokemons/' + self.name + '.png'
+        self.pet_name = 'Jean-Luc'
 
     def get_hp(self):
         return self.__hp
@@ -45,7 +47,6 @@ class Pokemon():
     def set_level_up(self, add_level):
         self.__level = self.get_level + add_level
     
-
     def check_enemy_type(self, chose_attack_type, enemy):
         if len(enemy.type) > 1:
             list_coefficient = []
@@ -101,7 +102,8 @@ class Pokemon():
         if self.get_xp() >= Pokemon.evolving_stage[self.get_level()]:
             self.set_level_up(1)
 
-        
+        # if self.__level == 4:
+        #     self.name = "bidule"
 
     def __str__(self):
         if len(self.type) > 1:
