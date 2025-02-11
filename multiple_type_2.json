@@ -67,7 +67,7 @@
                 "Magmar" : {
                     "Magmar" : 2
                 },
-                "Flareon" : {
+                "Eevee" : {
                     "Flareon" : 2
                 }
             }
@@ -75,7 +75,7 @@
         "flying": {
             "probability": 2,
             "names" : {
-                "Charizard" :{
+                "Charmander" :{
                     "Charizard" : 3
                 },
                 "Moltres" : {
@@ -95,7 +95,7 @@
         "ghost": {
             "probability": 1,
             "names": {
-                "Marowak" : {
+                "Cubone" : {
                     "Marowak" : 2
                 }
             }
@@ -142,7 +142,7 @@
                 "Magikarp" : {
                     "Magikarp" : 1
                 },
-                "Vaporeon" : {
+                "Eevee" : {
                     "Vaporeon" : 2
                 }
             }
@@ -150,7 +150,7 @@
         "fighting": {
             "probability": 1,
             "names" : {
-                "Poliwrath" : {
+                "Poliwag" : {
                     "Poliwrath" : 3
                 }
             }
@@ -171,7 +171,7 @@
                     "Slowpoke" : 1,
                     "Slowbro" : 2
                 },
-                "Starmie" : {
+                "Staryu" : {
                     "Starmie" : 2
                 }
             }
@@ -179,7 +179,7 @@
         "ice": {
             "probability": 3,
             "names": {
-                "Dewgong" : {
+                "Seel" : {
                     "Dewgong" : 2
                 },
                 "Cloyster" : {
@@ -193,7 +193,9 @@
         "flying": {
             "probability": 1,
             "names" : {
-                "Gyarados" : 2
+                "Magikarp" : {
+                    "Gyarados" : 2
+                }
             }
         }
     },
@@ -213,7 +215,7 @@
         "flying": {
             "probability": 2,
             "names" : {
-                "Buterflee" : {
+                "Caterpie" : {
                     "Buterflee" : 3
                 },
                 "Scyther" : {
@@ -341,10 +343,8 @@
         "ground": {
             "probability": 2,
             "names" : {
-                "Nidoqueen" : {
-                    "Nidoqueen" : 3
-                },
-                "Nidoking" : {
+                "Nidoran" : {
+                    "Nidoqueen" : 3,
                     "Nidoking" : 3
                 }
             }
@@ -369,7 +369,7 @@
         "psychic": {
             "probability": 1,
             "names" : {
-                "Slowbro" : {
+                "Slowpoke" : {
                     "Slowbro" : 2
                 }
             }
@@ -399,7 +399,7 @@
                 "Electabuzz" : {
                     "Electabuzz" : 2
                 },
-                "Jolteon" : {
+                "Eevee" : {
                     "Jolteon" : 2
                 }
             }
@@ -407,7 +407,7 @@
         "psychic": {
             "probability": 1,
             "names" : {
-                "Raichu" : {
+                "Pikachu" : {
                     "Raichu" : 2
                 }
             }
@@ -497,7 +497,7 @@
         "fairy" : {
             "probability": 1,
             "names" : {
-                "Ninetales" : {
+                "Vulpix" : {
                     "Ninetales" : 2
                 }
             }
@@ -550,14 +550,16 @@
                     "Farfetch'd" : 2
                 },
                 "Hitmonlee" : {
-                    "Hitmonlee" : 1,
+                    "Hitmonlee" : 2
+                },
+                "Hitmonchan" : {
                     "Hitmonchan" : 2
+                }
                 },
                 "Tauros" : {
                     "Tauros" : 2
                 }
-            }
-        },
+            },
         "fire" : {
             "probability": 1,
             "names" : {
@@ -701,7 +703,7 @@
         "flying" : {
             "probability": 1,
             "names" : {
-                "Dragonite" : {
+                "Dratini" : {
                     "Dragonite" : 3
                 }
             }
@@ -722,9 +724,7 @@
             "probability" : 2,
             "names" : {
                 "Meowth" : {
-                    "Meowth" : 1
-                },
-                "Persian" : {
+                    "Meowth" : 1,
                     "Persian" : 2
                 }
             }
