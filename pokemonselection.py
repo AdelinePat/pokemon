@@ -60,7 +60,7 @@ class PokemonSelection(Screen):
             base_color="White",
             hovering_color="Green"
         )
-        self.selected_button = 0  # Index of the currently selected button
+        self.buttons = [self.pokemon1_button, self.pokemon2_button, self.return_button, self.quit_button, self.play_button]
 
     def select_pokemon_screen(self):
         """Displays the Pokémon selection screen"""
@@ -72,55 +72,43 @@ class PokemonSelection(Screen):
             self.draw_text(f"{self.player_name}, choose your Pokémon:", self.get_font(40), "White", 600, 250)
 
             # Update and draw the buttons
-            for i, button in enumerate([self.pokemon1_button, self.pokemon2_button, self.return_button, self.quit_button, self.play_button]):
-                button.changeColor(i == self.selected_button)
+            for button in self.buttons:
                 button.update(self.screen)
 
-            # Handle events
+            # Handle mouse events
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pygame.quit()
                     sys.exit()
-                if event.type == pygame.KEYDOWN:
-                    if event.key == pygame.K_DOWN:
-                        self.selected_button = (self.selected_button + 1) % len([self.pokemon1_button, self.pokemon2_button, self.return_button, self.quit_button, self.play_button])
-                    elif event.key == pygame.K_UP:
-                        self.selected_button = (self.selected_button - 1) % len([self.pokemon1_button, self.pokemon2_button, self.return_button, self.quit_button, self.play_button])
-                    elif event.key == pygame.K_RETURN:
-                        if self.selected_button == 2:  # Return button
-                            self.go_back()
-                        elif self.selected_button == 3:  # Quit button
-                            pygame.quit()
-                            sys.exit()
-                        elif self.selected_button in [0, 1]:  # Pokemon selection
-                            self.start_game()
-                    elif event.key == pygame.K_q or event.key == pygame.K_ESCAPE:
+                if event.type == pygame.MOUSEBUTTONDOWN:
+                    mouse_pos = event.pos
+                    if self.pokemon1_button.checkForInput(mouse_pos):
+                        self.start_game(0)
+                    elif self.pokemon2_button.checkForInput(mouse_pos):
+                        self.start_game(1)
+                    elif self.return_button.checkForInput(mouse_pos):
+                        self.go_back()
+                    elif self.quit_button.checkForInput(mouse_pos):
                         pygame.quit()
                         sys.exit()
+                    elif self.play_button.checkForInput(mouse_pos):
+                        self.start_game(self.selected_button)
 
             # Update the display
             self.update_display()
 
-    def select_button(self):
-        """Execute the selected button's action"""
-        if self.selected_button == 0:
-            print(f"{self.player_name} chose {self.selected_pokemons[0]}!")
-        elif self.selected_button == 1:
-            print(f"{self.player_name} chose {self.selected_pokemons[1]}!")
-        elif self.selected_button == 2:
-             player_selection_screen = PlayerSelection()
-             player_selection_screen.select_button()
-        elif self.selected_button == 3:
-            pygame.quit()
-            sys.exit()
-        elif self.selected_button == 4:
-            self.start_game()
-
-    def start_game(self):
+    def start_game(self, selected_pokemon_index):
         """Start the game with the selected Pokémon"""
-        print(f"Starting the game with {self.selected_pokemons[self.selected_button]}!")
+        selected_pokemon = self.selected_pokemons[selected_pokemon_index]
+        print(f"Starting the game with {selected_pokemon}!")
+        # Implement the logic to start the game with the selected Pokémon
         pygame.quit()
         sys.exit()
+
+    def go_back(self):
+        """Navigate back to the previous screen"""
+        player_selection_screen = PlayerSelection()
+        player_selection_screen.select_button()
 
     def draw_text(self, text, font, color, x, y):
         """Draw text with an outline effect"""

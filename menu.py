@@ -4,6 +4,9 @@ from button import Button
 from screen import Screen
 import player_input
 import playerselection
+# from player import Player
+# from map import Map
+# from entity import entity
 
 # from game import Game
 
@@ -107,7 +110,7 @@ class Menu(Screen):
     def select_button(self):
         """Executes the selected button's action"""
         if self.selected_button == 0:
-            self.start_game()
+            self.input_player()
         elif self.selected_button == 1:
             player_selection_screen = playerselection.PlayerSelection()
             player_selection_screen.main_menu()
@@ -115,7 +118,7 @@ class Menu(Screen):
             pygame.quit()
             sys.exit()
 
-    def start_game(self):
+    def input_player(self):
         """Displays the player name input screen"""
         player_input_screen = player_input.Player_Input()
         player_input_screen.input_name_screen()
