@@ -67,9 +67,15 @@ class Pokemon():
         
         damage = self.get_strength() * coefficient
         enemy_hp = enemy.get_hp()
+        critical = random.randint(1, 20)
         if enemy_hp - (damage - enemy.get_defense()) >= 0:
-            damage = damage - enemy.get_defense()
-            enemy.set_damage_hp(damage)
+            if critical == 20:
+                print("Coup critique !")
+                damage = damage * 2
+                enemy.set_damage_hp(damage)
+            else:
+                damage = damage - enemy.get_defense()
+                enemy.set_damage_hp(damage)
         else:
             enemy.set_damage_hp(enemy_hp)
             print(f"le pokemon {enemy.name} n'a plus de PV !")
