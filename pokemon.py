@@ -67,7 +67,8 @@ class Pokemon():
         
         damage = self.get_strength() * coefficient
         enemy_hp = enemy.get_hp()
-        if enemy_hp - damage >= 0:
+        if enemy_hp - (damage - enemy.get_defense()) >= 0:
+            damage = damage - enemy.get_defense()
             enemy.set_damage_hp(damage)
         else:
             enemy.set_damage_hp(enemy_hp)
