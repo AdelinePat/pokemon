@@ -6,7 +6,7 @@ import player_input
 import playerselection
 # from player import Player
 # from map import Map
-# from entity import entity
+# from entity import entit
 
 # from game import Game
 
