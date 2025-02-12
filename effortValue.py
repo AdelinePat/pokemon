@@ -1,4 +1,4 @@
-import math
+import math,random
 
 class EffortValue():
     def __init__(self):
@@ -8,59 +8,30 @@ class EffortValue():
         self.__ev_speed = 0
         self.__ev_xp = 0
 
-    def get_ev_hp(self):
-            return self.__ev_hp
-    
-    def get_ev_strength(self):
-            return self.__ev_strength
-    
-    def get_ev_defense(self):
-            return self.__ev_defense
-    
-    def get_ev_speed(self):
-            return self.__ev_speed
-    
-    def get_ev_xp(self):
-            return self.__ev_xp
-    
-    def set_ev_hp(self, new_value):
-        self.__ev_hp = new_value
-    
-    def set_ev_strength(self, new_value):
-        self.__ev_strength = new_value
-    
-    def set_ev_defense(self, new_value):
-        self.__ev_defense = new_value
-
-    def set_ev_speed(self, new_value):
-        self.__ev_speed = new_value
-    
-    def set_ev_xp(self, new_value):
-        self.__ev_xp = new_value
-    
     def update_ev(self, enemy, pokemon):
-        rand_range_hp = math.ceil(enemy.get_hp_max()/6)
-        rand_range_strength = math.ceil((enemy.get_strength() / 6))
-        rand_range_defense = math.ceil(enemy.get_defense() / 6)
-        rand_range_speed = math.ceil((enemy.get_speed() / 6))
-        rand_range_xp = math.ceil((enemy.get_xp()/6))
-        # print(f"rand hp {rand_range_hp}")
-        # print(f"rand strength {rand_range_strength}")
-        # print(f"rand defense {rand_range_defense}")
-        # print(f"rand speed {rand_range_speed}")
-        # print(f"rand xp {rand_range_xp}")
+        if enemy.get_level() >  pokemon.get_level():
+            rand_range_hp = math.ceil(enemy.get_hp_max()/12)
+            rand_range_strength = math.ceil((enemy.get_strength() / 12))
+            rand_range_defense = math.ceil(enemy.get_defense() / 12)
+            rand_range_speed = math.ceil((enemy.get_speed() / 12))
+            rand_range_xp = math.ceil((enemy.get_xp()/12))
+            # print(f"rand hp {rand_range_hp}")
+            # print(f"rand strength {rand_range_strength}")
+            # print(f"rand defense {rand_range_defense}")
+            # print(f"rand speed {rand_range_speed}")
+            # print(f"rand xp {rand_range_xp}")
 
-        self.set_ev_hp(self.get_ev_hp() + math.floor(random.randrange(rand_range_hp * 2, rand_range_hp * 4)))
-        self.set_ev_strength(self.get_ev_strength() + math.floor(random.randrange(rand_range_strength * 2, rand_range_strength * 4)))
-        self.set_ev_defense(self.get_ev_defense() + math.floor(random.randrange(rand_range_defense * 2, rand_range_defense * 4)))
-        self.set_ev_speed(self.get_ev_speed() + math.floor(random.randrange(rand_range_speed * 2, rand_range_speed * 4)))
-        self.set_ev_xp(self.get_ev_xp() + math.floor(random.randrange(rand_range_xp * 2, rand_range_xp * 4)))
+            self.set_ev_hp(self.get_ev_hp() + math.floor(random.randrange(rand_range_hp * 2, rand_range_hp * 4)))
+            self.set_ev_strength(self.get_ev_strength() + math.floor(random.randrange(rand_range_strength * 2, rand_range_strength * 4)))
+            self.set_ev_defense(self.get_ev_defense() + math.floor(random.randrange(rand_range_defense * 2, rand_range_defense * 4)))
+            self.set_ev_speed(self.get_ev_speed() + math.floor(random.randrange(rand_range_speed * 2, rand_range_speed * 4)))
+            self.set_ev_xp(self.get_ev_xp() + math.floor(random.randrange(rand_range_xp * 2, rand_range_xp * 4)))
 
-        print(f"Nouvelles valeurs EV de {pokemon.name}:\
-              \nHP : {self.get_ev_hp()}\
-              \nDEFENSE : {self.get_ev_defense()}\
-              \nSTRENGTH : {self.get_ev_strength()}\
-              \nSPEED : {self.get_ev_speed()}\n")
+        # print(f"Nouvelles valeurs EV de {pokemon.name}:\
+        #       \nHP : {self.get_ev_hp()}\
+        #       \nDEFENSE : {self.get_ev_defense()}\
+        #       \nSTRENGTH : {self.get_ev_strength()}\
+        #       \nSPEED : {self.get_ev_speed()}\n")
 
 
         self.__update_stats(pokemon)
@@ -91,8 +62,39 @@ class EffortValue():
             self.set_ev_xp(self.get_ev_xp()%4)
             pokemon.set_xp(xp)
 
-        # print(f"Nouvelles valeurs EV de {pokemon.name}:\
-        #       \nHP : {self.get_ev_hp()}\
-        #       \nDEFENSE : {self.get_ev_defense()}\
-        #       \nSTRENGTH : {self.get_ev_strength()}\
-        #       \nSPEED : {self.get_ev_speed()}\n")
+        print(f"Nouvelles valeurs EV de {pokemon.name}:\
+              \nHP : {pokemon.get_hp_max()}\
+              \nDEFENSE : {pokemon.get_defense()}\
+              \nSTRENGTH : {pokemon.get_strength()}\
+              \nSPEED : {pokemon.get_speed()}\n")
+        
+    def get_ev_hp(self):
+            return self.__ev_hp
+    
+    def get_ev_strength(self):
+            return self.__ev_strength
+    
+    def get_ev_defense(self):
+            return self.__ev_defense
+    
+    def get_ev_speed(self):
+            return self.__ev_speed
+    
+    def get_ev_xp(self):
+            return self.__ev_xp
+    
+    def set_ev_hp(self, new_value):
+        self.__ev_hp = new_value
+    
+    def set_ev_strength(self, new_value):
+        self.__ev_strength = new_value
+    
+    def set_ev_defense(self, new_value):
+        self.__ev_defense = new_value
+
+    def set_ev_speed(self, new_value):
+        self.__ev_speed = new_value
+    
+    def set_ev_xp(self, new_value):
+        self.__ev_xp = new_value
+    

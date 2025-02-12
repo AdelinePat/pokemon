@@ -1,8 +1,9 @@
 import random, json
 from pokemon import Pokemon
+from __settings__ import COEFFICIENT_PATH, TYPES_PATH, EVOLUTION_STAGE_PATH
 
 def get_name(type_list):
-    with open('multiple_type_2.json', 'r') as file:
+    with open(TYPES_PATH, 'r') as file:
         type_name_dictionary = json.load(file)
         if len(type_list) == 2:
             get_name_list = type_name_dictionary[type_list[0]][type_list[1]]["names"]     
@@ -34,7 +35,7 @@ def get_name(type_list):
 def create_pokemon(first_type):
     final_type_list = [first_type]
 
-    with open('multiple_type.json', 'r') as file:
+    with open(TYPES_PATH, 'r') as file:
         second_type = json.load(file)
         get_second_type_dict = second_type[first_type]
     
@@ -61,7 +62,7 @@ def create_pokemon(first_type):
 
 def save_pokemon():
 
-    with open('multiple_type_2.json', 'r') as file:
+    with open(TYPES_PATH, 'r') as file:
         types = json.load(file)
         type_list = list(types.keys())
 
