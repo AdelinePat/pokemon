@@ -2,8 +2,11 @@ import pygame
 import sys
 from button import Button
 from screen import Screen
-from playerinput import Player_Input
-from playerselection import PlayerSelection  
+import player_input
+import playerselection
+
+# from game import Game
+
 
 pygame.init()
 
@@ -22,6 +25,7 @@ class Menu(Screen):
         # Define relative button positions
         button_width = screen_width * 0.3  # 30% of the screen width
         button_x = screen_width * 0.5  # Center horizontally
+        
 
         self.buttons = [
             Button(
@@ -51,8 +55,12 @@ class Menu(Screen):
         ]
 
         self.selected_button = 0  # Index of the selected button
+        # self.game = game
+        # self.screen = game.screen
 
-    def main_menu(self):
+        
+
+    def display(self):
         """Displays the main menu"""
         while True:
             self.render_menu()
@@ -101,7 +109,7 @@ class Menu(Screen):
         if self.selected_button == 0:
             self.start_game()
         elif self.selected_button == 1:
-            player_selection_screen = PlayerSelection()
+            player_selection_screen = playerselection.PlayerSelection()
             player_selection_screen.main_menu()
         elif self.selected_button == 2:
             pygame.quit()
@@ -109,9 +117,9 @@ class Menu(Screen):
 
     def start_game(self):
         """Displays the player name input screen"""
-        player_input_screen = Player_Input()
+        player_input_screen = player_input.Player_Input()
         player_input_screen.input_name_screen()
 
 if __name__ == "__main__":
     menu = Menu()
-    menu.main_menu()
+    menu.display()
