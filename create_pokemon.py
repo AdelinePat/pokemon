@@ -1,6 +1,7 @@
-import random, json
-from pokemon import Pokemon
-from __settings__ import COEFFICIENT_PATH, TYPES_PATH, EVOLUTION_STAGE_PATH
+import random, json, os
+from models.pokemon import Pokemon
+from __settings__ import TYPES_PATH, WORLD_POKEMON_PATH
+
 
 def get_name(type_list):
     with open(TYPES_PATH, 'r') as file:
@@ -60,7 +61,7 @@ def create_pokemon(first_type):
 
     return my_pokemon
 
-def save_pokemon():
+def create_world_pokemons():
 
     with open(TYPES_PATH, 'r') as file:
         types = json.load(file)
@@ -73,7 +74,46 @@ def save_pokemon():
         # print(a_pokemon)
     
     return all_pokemons
+
+def save_pokemon():
+
+    all_pokemons = create_world_pokemons()
+    pokemons_dict_list = []
+    for each_pokemon in all_pokemons:
+        a_pokemon = each_pokemon.pokemon_dict()
+        pokemons_dict_list.append(a_pokemon)
+            # "name" : each_pokemon.name,
+            # "original_name" : each_pokemon.get_original_name(),
+            # "hp" : each_pokemon.get_hp(),
+            # "xp" : each_pokemon.get_xp(),
+            # "strength" : each_pokemon.get_strength(),
+            # "defense" : each_pokemon.get_defense(),
+            # "type" : each_pokemon.type,
+            # "level" : each_pokemon.get_level(),
+            # "speed" : each_pokemon.get_speed(),
+            # "stage" : each_pokemon.get_stage(),
+            # "ev" : each_pokemon.get_effort_value().get_ev_dict()
+            # "ev_hp" : each_pokemon.get_ev_hp(),
+            # "ev_strength" : each_pokemon.get_ev_strength(),
+            # "ev_defense" : each_pokemon.get_ev_defense(),
+            # "ev_xp" : each_pokemon.get_ev_xp()
+            # name, first_stage_name, hp, strength, defense_point, final_type_list, level, speed, stage
+        #     self.__ev_hp = 0
+        # self.__ev_strength = 0
+        # self.__ev_defense = 0
+        # self.__ev_speed = 0
+        # self.__ev_xp = 0
+        # }
+        
+    if not os.path.exists(WORLD_POKEMON_PATH):
+        # Create an empty JSON file if it doesn't exist
+        with open(WORLD_POKEMON_PATH, "w", encoding="UTF-8") as file:
+            json.dump({}, file)
+    with open(WORLD_POKEMON_PATH, "w") as file:
+        # pokemons_data = json.load(file)
+        json.dump(pokemons_dict_list, file, indent=4)
+
     # with open('pokemons.json', 'w', encoding="UTF-8") as pokemon_file:
     #     data = json.dump(all_pokemons, pokemon_file, indent=4)
 
-# save_pokemon()
+save_pokemon()

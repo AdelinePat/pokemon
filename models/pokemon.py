@@ -1,118 +1,10 @@
 import random, json, math
-from effortValue import EffortValue
-from __settings__ import COEFFICIENT_PATH, TYPES_PATH, EVOLUTION_STAGE_PATH
-
-
-class Evolution():
-
-    evolution_stage = json.load(open(EVOLUTION_STAGE_PATH))
-
-    def __init__(self, name, stage, original_name, type, level):
-        self.name = name
-        self.__stage = stage
-        self.__original_name = original_name
-        self._level = level
-        self.type = type
-        # self.image_path = self.set_image()
-        self.__names_list, self.__evolution_number = self.get_evolution_name_list()
-        self.image = self.set_image()
-
-    def set_stage(self, new_stage):
-        self.__stage = new_stage
-
-    def set_image(self):
-        image = "./images/pokemons/" + self.name + ".png"
-        return image
-
-    def get_name(self):
-        pass
-   
-    def get_evolution_name_list(self):
-        name_list = list(Evolution.evolution_stage.keys())
-
-        find = False
-        for pokemon in name_list:
-            if self.__original_name == pokemon and not find:
-                my_pokemon_names = list(Evolution.evolution_stage[pokemon].keys())
-                evolution_number = len(my_pokemon_names)
-                find = True
-        
-        return my_pokemon_names, evolution_number
-    
-    def update_name(self, new_name):
-        self.name = new_name
-    
-    def update_evolution_stage(self):
-        evolution_stage_value = list(Evolution.evolution_stage[self.__original_name].values())
-        
-        new_name = list(Evolution.evolution_stage[self.__original_name].keys())[evolution_stage_value.index(self.__stage)]
-        self.update_name(new_name)
-        self.update_type()
-
-    def update_type(self):
-        with open(TYPES_PATH, 'r') as file:
-            data = json.load(file)
-            my_pokemon_data = data[self.type[0]]
-
-        data_list = list(my_pokemon_data.keys())
-        
-        # For all type except normal type and Eevee
-        for type in data_list:
-            first_type_list = list(my_pokemon_data[type].keys())
-            first_type = my_pokemon_data[type]
-            if type != "alone":
-                if self.__original_name in first_type["names"]: 
-                    if self.name in first_type["names"][self.__original_name].keys():
-                        self.type.append(type)
-                    
-                
-                # try:
-                #     # second_type_list = first_type["names"][self.__original_name].keys()
-                #     if bool(first_type["names"][self.__original_name].keys()) == True:
-                #         if self.name in first_type["names"][self.__original_name].keys():
-                #             self.type.append(type)
-                #     else: 
-                #         raise Exception()
-                # except Exception:
-                #     pass
-
-    def level_up(self, pokemon):
-        level =  self.get_level()
-        if pokemon.get_xp() >= level**3 +3:
-            self.set_level_up(1)
-
-    def evolve(self):
-        level = self.get_level()
-        if level in range(15, 40):
-            luck = random.randrange(100)
-            if luck > 60:
-                self.__stage += 1
-
-        self.update_evolution_stage()
-    
-    def set_level_up(self,pokemon, add_level):
-        self._level += add_level
-        pokemon.set_strength(pokemon.get_strength() + add_level*3)
-        pokemon.set_defense(pokemon.get_defense() + add_level*3)
-        pokemon.set_speed(pokemon.get_speed() + add_level*3)
-        pokemon.set_hp_max(pokemon.get_hp_max() + add_level*3)
-        # self.__strength += add_level*3
-        # self.__defense += add_level*3
-        # self.__speed += add_level*3
-        # self.__hp += add_level*3
-
-        print(f"Vous avez gagné {add_level} niveau\
-              \n{self.get_strength()}\
-              \n{self.get_defense()}\
-              \n{self.get_speed()}\
-              \n{self.get_hp()}\n\n")
-        
-    def get_level(self):
-        return self._level
+from models.effortValue import EffortValue
+from __settings__ import COEFFICIENT_PATH
+from models.evolution import Evolution
 
 class Pokemon(Evolution):
     coefficient = json.load(open(COEFFICIENT_PATH))
-
     def __init__(self, name, original_name, hp, strength, defense, type, level, speed, stage):
         super().__init__(name, stage, original_name, type, level)
         # self.__stage = Evolution(stage)
@@ -123,18 +15,27 @@ class Pokemon(Evolution):
         self.__xp = 1
         self.__state = 'wild' # or domesticated
         self.__ev = EffortValue()
-
-        # self.__effort_value = {
-        #     "hp" : 0,
-        #     "defense" : 0,
-        #     "strength" : 0,
-        #     "speed" : 0
-        # }
         self.__speed = speed
-
-        
         # self.image_path = 'images/pokemons/' + self.name + '.png'
         self.pet_name = 'Jean-Luc'
+    
+    def pokemon_dict(self):
+        return {
+            "name" : self.name,
+            "original_name" : self.get_original_name(),
+            "hp" : self.get_hp(),
+            "xp" : self.get_xp(),
+            "strength" : self.get_strength(),
+            "defense" : self.get_defense(),
+            "type" : self.type,
+            "level" : self.get_level(),
+            "speed" : self.get_speed(),
+            "stage" : self.get_stage(),
+            "ev" : self.get_effort_value().get_ev_dict()
+        }
+
+    def get_effort_value(self):
+        return self.__ev
 
     def get_hp(self):
         return self.__hp
@@ -212,6 +113,7 @@ class Pokemon(Evolution):
         if enemy.get_hp() == 0:
             print(f"le pokemon {enemy.name} n'a plus de PV !")
             self.update_xp(enemy)
+            self.check_evolution()
         
         self.level_up(self)
 
@@ -221,22 +123,26 @@ class Pokemon(Evolution):
         match coefficient:
             case 4:
                 efficency = "attaque ultra efficace"
-                # self.__xp = self.get_xp() + 20
             case 2:
                 efficency = "attaque très efficace"
-                # self.__xp = self.get_xp() + 10
             case 1:
                 efficency = "attaque efficace"
-                # self.__xp = self.get_xp() + 5
             case 0.5:
                 efficency = "attaque peu efficace"
-                # self.__xp = self.get_xp() + 2
             case 0:
                 efficency = "impossible d'attaquer"
-
-        self.evolve()
-
+        
         return coefficient, efficency
+
+    def check_evolution(self):
+        is_evolving = self.evolve()
+        if is_evolving:
+            print(f"{self.get_original_name().upper()} évolue en : {self.name.upper()}")
+            self.set_hp_max(self.get_hp_max() + random.randrange(20, 35))
+            self.set_defense(self.get_defense() + random.randrange(20, 35))
+            self.set_strength(self.get_strength() + random.randrange(20, 35))
+            self.set_speed(self.get_speed() + random.randrange(20, 35))
+
     
     def get_xp_gained(self, enemy):
         enemy_level = enemy.get_level()
@@ -316,14 +222,12 @@ class Pokemon(Evolution):
                 \nXP : {self.get_xp()}\
                 \nDéfense : {self.get_defense()}\
                 \nRapidité : {self.get_speed()}\
-                \nPV : {self.get_hp()}\
+                \nPV max : {self.get_hp_max()}\
+                \nPV actuel : {self.get_hp()}\
                 \nType : {self.type[0]}\
                 \nForce : {self.get_strength()}\n"
         return string + "\n"
-
-
-
-
+    
 # first_pokemon = create_pokemon('Toto')
 # print(first_pokemon)
 # my_enemy = create_pokemon('Hehe')
