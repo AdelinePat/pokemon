@@ -13,32 +13,49 @@ class Fight:
     def battle(self):
         pv1 = self.first_pokemon.get_hp()
         pv2 = self.second_pokemon.get_hp()
-        first = True
+        print("================")
+        print(self.first_pokemon)
+        print(self.second_pokemon)
 
         while pv1 >= 0 and pv2 >= 0:
             pv1 = self.first_pokemon.get_hp()
             pv2 = self.second_pokemon.get_hp()
-            if first == True:
-                choice= int(input("1-Attack 2-Fuite"))
-                if choice == 1:
+            choice= int(input("1-Attack 2-Fuite : "))
+            if self.first_pokemon.get_speed() > self.second_pokemon.get_speed():
+                first = True
+            else :
+                first = False 
+
+            if choice == 1:
+                if first == True:
                     self.first_pokemon.attack(self.first_pokemon.type[0], self.second_pokemon)
-                    print(self.second_pokemon)
                     pv2 = self.second_pokemon.get_hp()
-                    first = False
-                elif choice == 2:
-                    print("Vous prenez la fuite...")
-                    break
-                if pv1 <= 0 or pv2 <= 0:
-                    break
-            else : 
-                self.second_pokemon.attack(self.second_pokemon.type[0], self.first_pokemon)
-                print(self.first_pokemon)
-                pv1 = self.first_pokemon.get_hp()
-                if pv1 <= 0 or pv2 <= 0:
-                    break
-                else :
+                    if pv1 <= 0 or pv2 <= 0:
+                        break
+                    self.second_pokemon.attack(self.second_pokemon.type[0], self.first_pokemon)
+                    print(self.first_pokemon)
+                    print(self.second_pokemon)
+                    pv1 = self.first_pokemon.get_hp()
+                    if pv1 <= 0 or pv2 <= 0:
+                        break
                     print("=== Fin du tour ===")
                     first = True
+                else : 
+                    self.second_pokemon.attack(self.second_pokemon.type[0], self.first_pokemon)
+                    pv1 = self.first_pokemon.get_hp()
+                    if pv1 <= 0 or pv2 <= 0:
+                        break
+                    self.first_pokemon.attack(self.first_pokemon.type[0], self.second_pokemon)
+                    print(self.first_pokemon)
+                    print(self.second_pokemon)
+                    pv2 = self.second_pokemon.get_hp()
+                    if pv1 <= 0 or pv2 <= 0:
+                        break
+                    print("=== Fin du tour ===")
+                    first = True
+            elif choice == 2:
+                print("Vous prenez la fuite...")
+                break
 
 test = Fight()
 test.battle()

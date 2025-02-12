@@ -16,6 +16,7 @@ def create_pokemon(first_type):
     final_type_list = [first_type]
     hp = random.randrange(30,50)
     strength = random.randrange(5, 15)
+    speed = random.randrange(2, 31)
     defense_point = 0
 
     with open('multiple_type.json', 'r') as file:
@@ -34,7 +35,7 @@ def create_pokemon(first_type):
 
     name = get_name(final_type_list)
 
-    my_pokemon = Pokemon(name, hp, strength, defense_point, final_type_list)
+    my_pokemon = Pokemon(name, hp, strength, defense_point, final_type_list, speed)
 
     return my_pokemon
 

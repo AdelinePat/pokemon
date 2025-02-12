@@ -15,11 +15,13 @@ class Pokemon():
         10 : 25600
     }
 
-    def __init__(self, name, hp, strength, defense, type, level=1):
+    def __init__(self, name, hp, strength, defense, type, speed, level=1):
         self.name = name
         self.__hp = hp
+        self.__hp_man = hp
         self.__strength = strength
         self.__defense = defense
+        self.__speed = speed
         self.__xp = 0
         self.__level = level
         self.type = type
@@ -34,6 +36,9 @@ class Pokemon():
     
     def get_strength(self):
         return self.__strength
+    
+    def get_speed(self):
+        return self.__speed
 
     def get_defense(self):
         return self.__defense
@@ -67,9 +72,10 @@ class Pokemon():
         
         damage = self.get_strength() * coefficient
         enemy_hp = enemy.get_hp()
-        critical = random.randint(1, 20)
+        T = self.get_speed()
+        critical = random.randint(1, 255)
         if enemy_hp - (damage - enemy.get_defense()) >= 0:
-            if critical == 20:
+            if critical < T:
                 print("Coup critique !")
                 damage = damage * 2
                 enemy.set_damage_hp(damage)
@@ -120,14 +126,16 @@ class Pokemon():
                 \nPV : {self.get_hp()}\
                 \nType principal : {self.type[0]}\
                 \nType secondaire : {self.type[1]}\
-                \nForce : {self.get_strength()}\n"
+                \nForce : {self.get_strength()}\
+                \nVitesse : {self.get_speed()}\n"
         else:
             string = f"Pokemon : {self.name}\
                 \nNiveau : {self.get_level()}\
                 \nXP : {self.get_xp()}\
                 \nPV : {self.get_hp()}\
                 \nType : {self.type[0]}\
-                \nForce : {self.get_strength()}\n"
+                \nForce : {self.get_strength()}\
+                \nVitesse : {self.get_speed()}\n"
         return string + "\n"
 
 
