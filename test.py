@@ -19,13 +19,13 @@ class Fight:
             pv1 = self.first_pokemon.get_hp()
             pv2 = self.second_pokemon.get_hp()
             if first == True:
-                choix = int(input("1-Attack 2-Fuite"))
-                if choix == 1:
+                choice= int(input("1-Attack 2-Fuite"))
+                if choice == 1:
                     self.first_pokemon.attack(self.first_pokemon.type[0], self.second_pokemon)
                     print(self.second_pokemon)
                     pv2 = self.second_pokemon.get_hp()
                     first = False
-                elif choix == 2:
+                elif choice == 2:
                     print("Vous prenez la fuite...")
                     break
                 if pv1 <= 0 or pv2 <= 0:
