@@ -1,4 +1,16 @@
 import random, json
+
+class Sac:
+    def __init__(self):
+        self.potion = 1
+        self.pokeball = 0
+
+    def get_potion(self):
+        return self.potion
+    
+    def get_pokeball(self):
+        return self.pokeball
+
 class Pokemon():
     coefficient = json.load(open('coefficient.json'))
 
@@ -18,7 +30,7 @@ class Pokemon():
     def __init__(self, name, hp, strength, defense, type, speed, level=1):
         self.name = name
         self.__hp = hp
-        self.__hp_man = hp
+        self.__hp_max = hp
         self.__strength = strength
         self.__defense = defense
         self.__speed = speed
@@ -30,6 +42,15 @@ class Pokemon():
 
     def get_hp(self):
         return self.__hp
+    
+    def get_hp_max(self):
+        return self.__hp_max
+    
+    def heal(self, heal):
+        self.__hp = self.__hp + heal
+        if self.__hp > self.__hp_max:
+            cap = self.__hp - self.__hp_max
+            self.__hp = self.__hp - cap
     
     def set_damage_hp(self, damage):
         self.__hp = self.get_hp() - damage
