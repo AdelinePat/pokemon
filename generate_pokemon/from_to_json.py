@@ -27,7 +27,7 @@ def to_json(my_pokemon):
     with open(WORLD_POKEMON_PATH, "r") as file:
         pokemons_dict_list = json.load(file)
 
-    pokemons_dict_list.append(my_pokemon)
+    pokemons_dict_list.append(my_pokemon.pokemon_dict())
 
     with open(WORLD_POKEMON_PATH, "w") as file:
         json.dump(pokemons_dict_list, file, indent=4)
@@ -46,7 +46,7 @@ def from_json_random_pick():
     my_pokemon = Pokemon(a_pokemon['name'], a_pokemon['original_name'], a_pokemon['hp'],\
                         a_pokemon['strength'], a_pokemon['defense'], a_pokemon['type'],\
                         a_pokemon['level'], a_pokemon['speed'], a_pokemon['stage'])
-    
+    my_pokemon.set_xp(a_pokemon['xp'])
     my_pokemon.get_effort_value().set_ev_hp(a_pokemon['ev']['hp'])
     my_pokemon.get_effort_value().set_ev_strength(a_pokemon['ev']['strength'])
     my_pokemon.get_effort_value().set_ev_defense(a_pokemon['ev']['defense'])

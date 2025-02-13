@@ -247,29 +247,6 @@
         }
     },
     {
-        "name": "Gengar",
-        "original_name": "Gastly",
-        "pet_name": "Jean-Luc",
-        "hp": 120,
-        "xp": 37061,
-        "strength": 110,
-        "defense": 103,
-        "type": [
-            "ghost",
-            "poison"
-        ],
-        "level": 33,
-        "speed": 127,
-        "stage": 3,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        }
-    },
-    {
         "name": "Dragonite",
         "original_name": "Dratini",
         "pet_name": "Jean-Luc",
@@ -328,6 +305,29 @@
         "level": 6,
         "speed": 36,
         "stage": 1,
+        "ev": {
+            "hp": 0,
+            "strength": 0,
+            "defense": 0,
+            "speed": 0,
+            "xp": 0
+        }
+    },
+    {
+        "name": "Gengar",
+        "original_name": "Gastly",
+        "pet_name": "Jean-Luc",
+        "hp": 120,
+        "xp": 37161,
+        "strength": 110,
+        "defense": 103,
+        "type": [
+            "ghost",
+            "poison"
+        ],
+        "level": 33,
+        "speed": 127,
+        "stage": 3,
         "ev": {
             "hp": 0,
             "strength": 0,
