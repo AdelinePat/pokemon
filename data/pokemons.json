@@ -1,17 +1,145 @@
 [
     {
-        "name": "Gloom",
-        "original_name": "Oddish",
-        "hp": 59,
+        "name": "Victreebel",
+        "original_name": "Bellsprout",
+        "hp": 91,
         "xp": 1,
-        "strength": 71,
-        "defense": 72,
+        "strength": 81,
+        "defense": 86,
         "type": [
             "grass",
             "poison"
         ],
-        "level": 16,
-        "speed": 60,
+        "level": 26,
+        "speed": 97,
+        "stage": 3,
+        "ev": {
+            "hp": 0,
+            "strength": 0,
+            "defense": 0,
+            "speed": 0,
+            "xp": 0
+        }
+    },
+    {
+        "name": "Ponyta",
+        "original_name": "Ponyta",
+        "hp": 48,
+        "xp": 1,
+        "strength": 37,
+        "defense": 30,
+        "type": [
+            "fire"
+        ],
+        "level": 7,
+        "speed": 27,
+        "stage": 1,
+        "ev": {
+            "hp": 0,
+            "strength": 0,
+            "defense": 0,
+            "speed": 0,
+            "xp": 0
+        }
+    },
+    {
+        "name": "Tentacool",
+        "original_name": "Tentacool",
+        "hp": 27,
+        "xp": 1,
+        "strength": 5,
+        "defense": 27,
+        "type": [
+            "water",
+            "poison"
+        ],
+        "level": 1,
+        "speed": 29,
+        "stage": 1,
+        "ev": {
+            "hp": 0,
+            "strength": 0,
+            "defense": 0,
+            "speed": 0,
+            "xp": 0
+        }
+    },
+    {
+        "name": "Weedle",
+        "original_name": "Weedle",
+        "hp": 46,
+        "xp": 1,
+        "strength": 37,
+        "defense": 42,
+        "type": [
+            "bug",
+            "poison"
+        ],
+        "level": 7,
+        "speed": 30,
+        "stage": 1,
+        "ev": {
+            "hp": 0,
+            "strength": 0,
+            "defense": 0,
+            "speed": 0,
+            "xp": 0
+        }
+    },
+    {
+        "name": "Tauros",
+        "original_name": "Tauros",
+        "hp": 53,
+        "xp": 1,
+        "strength": 59,
+        "defense": 62,
+        "type": [
+            "normal"
+        ],
+        "level": 14,
+        "speed": 51,
+        "stage": 2,
+        "ev": {
+            "hp": 0,
+            "strength": 0,
+            "defense": 0,
+            "speed": 0,
+            "xp": 0
+        }
+    },
+    {
+        "name": "Grimer",
+        "original_name": "Grimer",
+        "hp": 36,
+        "xp": 1,
+        "strength": 36,
+        "defense": 21,
+        "type": [
+            "poison"
+        ],
+        "level": 2,
+        "speed": 29,
+        "stage": 1,
+        "ev": {
+            "hp": 0,
+            "strength": 0,
+            "defense": 0,
+            "speed": 0,
+            "xp": 0
+        }
+    },
+    {
+        "name": "Jolteon",
+        "original_name": "Eevee",
+        "hp": 63,
+        "xp": 1,
+        "strength": 51,
+        "defense": 50,
+        "type": [
+            "electric"
+        ],
+        "level": 15,
+        "speed": 71,
         "stage": 2,
         "ev": {
             "hp": 0,
@@ -24,146 +152,15 @@
     {
         "name": "Marowak",
         "original_name": "Cubone",
-        "hp": 77,
+        "hp": 58,
         "xp": 1,
-        "strength": 72,
-        "defense": 65,
-        "type": [
-            "fire",
-            "ghost"
-        ],
-        "level": 18,
-        "speed": 77,
-        "stage": 2,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        }
-    },
-    {
-        "name": "Shellder",
-        "original_name": "Shellder",
-        "hp": 32,
-        "xp": 1,
-        "strength": 23,
-        "defense": 38,
-        "type": [
-            "water"
-        ],
-        "level": 4,
-        "speed": 22,
-        "stage": 1,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        }
-    },
-    {
-        "name": "Scyther",
-        "original_name": "Scyther",
-        "hp": 54,
-        "xp": 1,
-        "strength": 45,
-        "defense": 72,
-        "type": [
-            "bug",
-            "flying"
-        ],
-        "level": 14,
-        "speed": 71,
-        "stage": 2,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        }
-    },
-    {
-        "name": "Wigglytuff",
-        "original_name": "Jigglypuff",
-        "hp": 64,
-        "xp": 1,
-        "strength": 67,
-        "defense": 41,
-        "type": [
-            "normal",
-            "fairy"
-        ],
-        "level": 13,
-        "speed": 67,
-        "stage": 2,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        }
-    },
-    {
-        "name": "Nidoking",
-        "original_name": "Nidoran",
-        "hp": 91,
-        "xp": 1,
-        "strength": 83,
-        "defense": 78,
-        "type": [
-            "poison",
-            "ground"
-        ],
-        "level": 25,
-        "speed": 98,
-        "stage": 3,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        }
-    },
-    {
-        "name": "Raichu",
-        "original_name": "Pikachu",
-        "hp": 81,
-        "xp": 1,
-        "strength": 77,
-        "defense": 75,
-        "type": [
-            "electric",
-            "psychic"
-        ],
-        "level": 19,
-        "speed": 59,
-        "stage": 2,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        }
-    },
-    {
-        "name": "Dugtrio",
-        "original_name": "Diglett",
-        "hp": 66,
-        "xp": 1,
-        "strength": 49,
-        "defense": 47,
+        "strength": 60,
+        "defense": 52,
         "type": [
             "ground"
         ],
-        "level": 14,
-        "speed": 64,
+        "level": 12,
+        "speed": 49,
         "stage": 2,
         "ev": {
             "hp": 0,
@@ -174,19 +171,19 @@
         }
     },
     {
-        "name": "Articuno",
-        "original_name": "Articuno",
-        "hp": 105,
+        "name": "Jynx",
+        "original_name": "Jynx",
+        "hp": 70,
         "xp": 1,
-        "strength": 119,
-        "defense": 114,
+        "strength": 62,
+        "defense": 58,
         "type": [
             "ice",
-            "flying"
+            "psychic"
         ],
-        "level": 30,
-        "speed": 118,
-        "stage": 3,
+        "level": 16,
+        "speed": 75,
+        "stage": 2,
         "ev": {
             "hp": 0,
             "strength": 0,
@@ -198,15 +195,15 @@
     {
         "name": "Clefable",
         "original_name": "Clefairy",
-        "hp": 77,
+        "hp": 58,
         "xp": 1,
-        "strength": 66,
-        "defense": 67,
+        "strength": 48,
+        "defense": 68,
         "type": [
             "fairy"
         ],
-        "level": 18,
-        "speed": 76,
+        "level": 14,
+        "speed": 49,
         "stage": 2,
         "ev": {
             "hp": 0,
@@ -217,18 +214,38 @@
         }
     },
     {
-        "name": "Zapdos",
-        "original_name": "Zapdos",
-        "hp": 126,
+        "name": "Farfetch'd",
+        "original_name": "Farfetch'd",
+        "hp": 74,
         "xp": 1,
-        "strength": 108,
-        "defense": 126,
+        "strength": 56,
+        "defense": 75,
         "type": [
-            "fighting",
-            "flying"
+            "fighting"
         ],
-        "level": 32,
-        "speed": 118,
+        "level": 15,
+        "speed": 56,
+        "stage": 2,
+        "ev": {
+            "hp": 0,
+            "strength": 0,
+            "defense": 0,
+            "speed": 0,
+            "xp": 0
+        }
+    },
+    {
+        "name": "Mew",
+        "original_name": "Mew",
+        "hp": 97,
+        "xp": 1,
+        "strength": 95,
+        "defense": 80,
+        "type": [
+            "psychic"
+        ],
+        "level": 26,
+        "speed": 86,
         "stage": 3,
         "ev": {
             "hp": 0,
@@ -239,39 +256,18 @@
         }
     },
     {
-        "name": "Drowzee",
-        "original_name": "Drowzee",
-        "hp": 26,
+        "name": "Kabutops",
+        "original_name": "Kabuto",
+        "hp": 49,
         "xp": 1,
-        "strength": 39,
-        "defense": 14,
-        "type": [
-            "psychic"
-        ],
-        "level": 4,
-        "speed": 19,
-        "stage": 1,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        }
-    },
-    {
-        "name": "Aerodactyl",
-        "original_name": "Aerodactyl",
-        "hp": 65,
-        "xp": 1,
-        "strength": 66,
-        "defense": 76,
+        "strength": 48,
+        "defense": 53,
         "type": [
             "rock",
-            "flying"
+            "water"
         ],
-        "level": 17,
-        "speed": 69,
+        "level": 13,
+        "speed": 49,
         "stage": 2,
         "ev": {
             "hp": 0,
@@ -282,19 +278,19 @@
         }
     },
     {
-        "name": "Gastly",
+        "name": "Haunter",
         "original_name": "Gastly",
-        "hp": 30,
+        "hp": 64,
         "xp": 1,
-        "strength": 26,
-        "defense": 22,
+        "strength": 60,
+        "defense": 47,
         "type": [
             "ghost",
             "poison"
         ],
-        "level": 3,
-        "speed": 38,
-        "stage": 1,
+        "level": 12,
+        "speed": 53,
+        "stage": 2,
         "ev": {
             "hp": 0,
             "strength": 0,
@@ -304,19 +300,18 @@
         }
     },
     {
-        "name": "Dragonite",
+        "name": "Dragonair",
         "original_name": "Dratini",
-        "hp": 98,
+        "hp": 74,
         "xp": 1,
-        "strength": 96,
-        "defense": 89,
+        "strength": 65,
+        "defense": 60,
         "type": [
-            "dragon",
-            "flying"
+            "dragon"
         ],
-        "level": 27,
-        "speed": 111,
-        "stage": 3,
+        "level": 15,
+        "speed": 59,
+        "stage": 2,
         "ev": {
             "hp": 0,
             "strength": 0,
@@ -328,15 +323,15 @@
     {
         "name": "Meowth",
         "original_name": "Meowth",
-        "hp": 33,
+        "hp": 28,
         "xp": 1,
-        "strength": 29,
-        "defense": 30,
+        "strength": 31,
+        "defense": 23,
         "type": [
             "steel"
         ],
-        "level": 4,
-        "speed": 17,
+        "level": 1,
+        "speed": 33,
         "stage": 1,
         "ev": {
             "hp": 0,
@@ -347,19 +342,18 @@
         }
     },
     {
-        "name": "Raticate",
-        "original_name": "Rattata",
-        "hp": 49,
+        "name": "Meowth",
+        "original_name": "Meowth",
+        "hp": 40,
         "xp": 1,
-        "strength": 53,
-        "defense": 68,
+        "strength": 32,
+        "defense": 33,
         "type": [
-            "dark",
-            "normal"
+            "dark"
         ],
-        "level": 13,
-        "speed": 47,
-        "stage": 2,
+        "level": 8,
+        "speed": 32,
+        "stage": 1,
         "ev": {
             "hp": 0,
             "strength": 0,

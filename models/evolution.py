@@ -2,9 +2,6 @@ import random, json
 from __settings__ import TYPES_PATH, EVOLUTION_STAGE_PATH
 
 class Evolution():
-
-    # evolution_stage = json.load(open(EVOLUTION_STAGE_PATH))
-
     def __init__(self, name, stage, original_name, type, level):
         self.name = name
         self.__stage = stage
@@ -25,6 +22,7 @@ class Evolution():
         image = "./images/pokemons/" + self.name + ".png"
         return image
 
+
     def get_name(self):
         pass
 
@@ -36,13 +34,17 @@ class Evolution():
    
     def get_evolution_name_list(self):
         name_list, evolution_stage = self.get_evolution_stage_json()
-
+        
         find = False
         for pokemon in name_list:
             if self.__original_name == pokemon and not find:
                 my_pokemon_names = list(evolution_stage[pokemon].keys())
-                evolution_number = len(my_pokemon_names)
+                if self.__original_name != 'Eevee':
+                    evolution_number = len(my_pokemon_names)
+                else:
+                    evolution_number = 2
                 find = True
+        
         
         return my_pokemon_names, evolution_number
     
@@ -55,8 +57,19 @@ class Evolution():
 
     def update_evolution_eevee(self):
         types = ['water', 'electric', 'fire']
-        new_type = random.choice(types)
-        self.__type = [new_type]
+        new_type = random.choice(types) #Doesn't change type
+        self.type.append(new_type)
+        self.type.pop(self.type.index('normal'))
+        # self.__type = [new_type]
+        match new_type:
+            case 'water':
+                new_name = 'Vaporeon'
+            case 'electric':
+                new_name = 'Jolteon'
+            case 'fire':
+                new_name = 'Flareon'
+        self.update_name(new_name)
+        #TODO update name
 
     def update_evolution_slowpoke(self):
         if self.__type[0] == 'psychic':
@@ -67,10 +80,12 @@ class Evolution():
     def update_evolution_stage(self):
         name_list, evolution_stage = self.get_evolution_stage_json()
 
-        evolution_stage_value = list(evolution_stage[self.__original_name].values())
-        new_name = list(evolution_stage[self.__original_name].keys())[evolution_stage_value.index(self.__stage)]
-        self.update_name(new_name)
+        if self.__original_name != 'Eevee':
+            evolution_stage_value = list(evolution_stage[self.__original_name].values())
+            new_name = list(evolution_stage[self.__original_name].keys())[evolution_stage_value.index(self.__stage)]
+            self.update_name(new_name)
         self.update_type()
+        self.set_image()
 
     def update_type(self):
 
@@ -82,13 +97,13 @@ class Evolution():
             data_list = list(my_pokemon_data.keys())
             
             # For all type except normal type and Eevee
-            for type in data_list:
-                first_type_list = list(my_pokemon_data[type].keys())
-                first_type = my_pokemon_data[type]
-                if type != "alone":
-                    if self.__original_name in first_type["names"]: 
-                        if self.name in first_type["names"][self.__original_name].keys():
-                            self.type.append(type)
+            for sub_type in data_list:
+                # first_type_list = list(my_pokemon_data[sub_type].keys())
+                if sub_type != "alone":
+                    sub_type_dict = my_pokemon_data[sub_type]
+                    if self.__original_name in sub_type_dict["names"]: 
+                        if self.name in sub_type_dict["names"][self.__original_name]: # .keys()
+                            self.type.append(sub_type)
         
         if self.__original_name == "Eevee":
             self.update_evolution_eevee()
@@ -106,10 +121,10 @@ class Evolution():
 
     def evolve(self):
         level = self.get_level()
-        if self.__stage < len(self.__names_list):
-            if self.__evolution_number > 2:
+        if self.__stage < self.__evolution_number:
+            if self.__evolution_number == 3:
                 match self.__stage:
-                    case 2:
+                    case 1:
                         if level in range(17, 25):
                             luck = random.randrange(100)
                             if luck > 60:
@@ -120,7 +135,7 @@ class Evolution():
                             self.__stage += 1
                             self.update_evolution_stage()
                             return True
-                    case 3:
+                    case 2:
                         if level in range(30, 36):
                             luck = random.randrange(100)
                             if luck > 60:
@@ -131,9 +146,9 @@ class Evolution():
                             self.__stage += 1
                             self.update_evolution_stage()
                             return True
-            if self.__evolution_number > 1: 
+            if self.__evolution_number == 2: 
                 match self.__stage:
-                    case 2:
+                    case 1:
                         if level in range(17, 25):
                             luck = random.randrange(100)
                             if luck > 60:
@@ -152,7 +167,7 @@ class Evolution():
         #         self.update_evolution_stage()
                 
                 
-    def set_level_up(self,pokemon, add_level):
+    def set_level_up(self, pokemon, add_level):
         self._level += add_level
         pokemon.set_strength(pokemon.get_strength() + random.randrange(add_level*5, add_level*15))
         pokemon.set_defense(pokemon.get_defense() + random.randrange(add_level*5, add_level*15))

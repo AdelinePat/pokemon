@@ -105,8 +105,6 @@ class Pokemon(Evolution):
         else:
             enemy.set_damage_hp(enemy_hp)
             
-            # self.update_xp(enemy)
-
         print(f"{self.name} a fait une attaque {chose_attack_type}, {efficency}\
               \n Le pokemon {enemy.name} de type {enemy.type} en face a reçu {damage}, il lui reste : {enemy.get_hp()}")
         
@@ -181,30 +179,6 @@ class Pokemon(Evolution):
         # self.set_ev(enemy)        
         print(f"\nVous avez gagné {xp_gained}, votre total d'xp est de {self.get_xp()}\n")
 
-
-    # def set_ev(self, enemy):
-    #     ev_dictionary = self.get_ev()
-
-    #     rand_range_defense = int(enemy.get_defense() / 6)
-    #     rand_range_strength = int((enemy.get_strength() / 6))
-    #     rand_range_speed = int((enemy.get_speed() / 6))
-
-    #     ev_dictionary["defense"] += math.floor(random.randrange(rand_range_defense * 2, rand_range_defense * 4))
-    #     ev_dictionary["strength"] += math.floor(random.randrange(rand_range_strength * 2, rand_range_strength * 4))
-    #     ev_dictionary["speed"] += math.floor(random.randrange(rand_range_speed * 2, rand_range_speed * 4))
-
-        
-        # print(f"dictionnaire EV\n{self.get_ev()}\n")
-        # self.update_ev()
-
-        
-
-        # if self.get_xp() >= Pokemon.evolving_stage[self.get_level()]:
-        #     self.set_level_up(1)
-
-        # if self.__level == 4:
-        #     self.name = "bidule"
-
     def __str__(self):
         if len(self.type) > 1:
             string = f"Pokemon : {self.name}\
@@ -227,23 +201,3 @@ class Pokemon(Evolution):
                 \nType : {self.type[0]}\
                 \nForce : {self.get_strength()}\n"
         return string + "\n"
-    
-# first_pokemon = create_pokemon('Toto')
-# print(first_pokemon)
-# my_enemy = create_pokemon('Hehe')
-
-# my_pokemon = Pokemon('Thibault', 50, 20, 0, ['water', 'electric'])
-# my_enemy = Pokemon('Joseph', 60, 10, 0, ['fire', 'dragon'] )
-
-# print(my_pokemon, my_enemy)
-
-# first_pokemon.attack(first_pokemon.type[0], my_enemy)
-# first_pokemon.attack(first_pokemon.type[0], my_enemy)
-# first_pokemon.attack(first_pokemon.type[0], my_enemy)
-# first_pokemon.attack(first_pokemon.type[0], my_enemy)
-# first_pokemon.attack(first_pokemon.type[0], my_enemy)
-# first_pokemon.attack(first_pokemon.type[0], my_enemy)
-# first_pokemon.attack(first_pokemon.type[0], my_enemy)
-# print(first_pokemon, my_enemy)
-# my_enemy.attack(my_enemy.type[0] ,first_pokemon)
-# print(first_pokemon, my_enemy)

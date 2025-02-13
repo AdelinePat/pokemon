@@ -75,7 +75,7 @@
         "flying": {
             "probability": 2,
             "names" : {
-                "Charmander" :{
+                "Charmander" : {
                     "Charizard" : 3
                 },
                 "Moltres" : {

@@ -1,4 +1,4 @@
-from create_pokemon import create_world_pokemons
+from generate_pokemon.create_pokemon import create_world_pokemons
 import random
 from models.pokemon import Pokemon
 
@@ -69,7 +69,32 @@ def fight_loop_test():
         print(first_pokemon, "\n")
         print(second_pokemon, "\n\n")
         i +=1
-fight_loop_test()
+
+# fight_loop_test()
+
+def test_evolution():
+    # geodude = Pokemon('Geodude', 'Geodude', 10, 11, 9, ["rock", 'electric'], 25, 10, 1)
+    # print(geodude)
+    # geodude.pet_name = "geo"
+    # # geodude.set_stage(1)
+    # geodude.evolve()
+    # print(geodude)
+    # geodude.set_xp(50000)
+    # geodude.set_level_up(geodude, 11)
+    # geodude.evolve()
+    # print(geodude)
+
+    eevee = Pokemon('Eevee', 'Eevee', 10, 11, 9, ["normal"], 25, 10, 1)
+    print(eevee)
+    eevee.pet_name = "geo"
+    # eevee.set_stage(1)
+    eevee.evolve()
+    print(eevee)
+
+
+    
+
+test_evolution()
     # if Bulbasaur.get_hp() == 0 or Charmander.get_hp() == 0:
     #     print("fin du combat")
     #     alive = False
