@@ -4,6 +4,7 @@ from button import Button
 from screen import Screen
 import player_input
 import playerselection
+from sounds import Sounds
 # from player import Player
 # from map import Map
 # from entity import entit
@@ -12,6 +13,8 @@ import playerselection
 
 
 pygame.init()
+sounds = Sounds()
+sounds.play_background_music(volume=0.1)
 
 class Menu(Screen):
     def __init__(self):
