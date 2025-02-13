@@ -1,23 +1,22 @@
-
 import pygame
 
 class Sounds:
     def __init__(self):
+        # Initialize the Pygame mixer for sound handling
         pygame.mixer.init()
 
+        # Load the background music file (MP3 format)
+        self.background_music = "./assets/sounds/Opening.mp3"  # Path to your MP3 file
 
-
-        # Chargement de la musique de fond
-        self.background_music = "./assets/sounds/Opening.mp3"  # Chemin vers votre fichier MP3
-
-        # Initialisation des canaux
-        self.music_channel = pygame.mixer.Channel(0)  # Canal dédié à la 
-
+        # Initialize audio channels
+        self.music_channel = pygame.mixer.Channel(0)  # Dedicated channel for music
 
     def play_background_music(self, volume=0.1):
-        pygame.mixer.music.load(self.background_music)
-        pygame.mixer.music.set_volume(volume)  # Ajuste le volume (0.0 à 1.0)
-        pygame.mixer.music.play(-1)  # Joue la musique en boucle
+        """Plays the background music with the specified volume."""
+        pygame.mixer.music.load(self.background_music)  # Load the music file
+        pygame.mixer.music.set_volume(volume)  # Adjust the volume (range: 0.0 to 1.0)
+        pygame.mixer.music.play(-1)  # Play the music in a continuous loop
 
     def stop_background_music(self):
+        """Stops the background music."""
         pygame.mixer.music.stop()
