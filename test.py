@@ -1,7 +1,7 @@
 from models.fight import Fight
 import random
 from generate_pokemon.create_pokemon import create_world_pokemons
-from generate_pokemon.from_to_json import save_pokemon, from_json_random_pick, to_json
+from generate_pokemon.from_to_json import save_pokemon, from_json_random_pick, to_json, to_player_pokedex, from_player_pokedex, get_pokemons_from_pokedex
 from models.pokemon import Pokemon
 #print(first_pokemon.get_hp())
 
@@ -95,10 +95,30 @@ def test_evolution():
 
 # save_pokemon()
 
-poke = from_json_random_pick()
-print(poke)
-print(poke.get_xp())
-poke.set_xp(poke.get_xp() + 100)
-print(poke)
 
-to_json(poke)
+#### TEST JSON POKEDEX AND POKEMON !!!! ####
+
+# poke = from_json_random_pick()
+# print(poke)
+# print(poke.get_xp())
+# poke.set_xp(poke.get_xp() + 100)
+# print(poke)
+
+# to_json(poke)
+
+# to_player_pokedex(poke)
+
+# poke_test = from_player_pokedex('Jean-Luc')
+# to_player_pokedex(poke_test)
+# print(poke_test)
+
+# poke.set_pet_name('Hubert')
+# to_player_pokedex(poke)
+# print(poke)
+
+name_list = get_pokemons_from_pokedex()
+print(name_list)
+
+for name in name_list:
+    my_pokemon = from_player_pokedex(name)
+    print(my_pokemon)

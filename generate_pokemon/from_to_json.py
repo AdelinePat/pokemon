@@ -1,7 +1,7 @@
 import json, os, random
 from models.pokemon import Pokemon
 from generate_pokemon.create_pokemon import create_world_pokemons
-from __settings__ import WORLD_POKEMON_PATH
+from __settings__ import WORLD_POKEMON_PATH, PLAYER_POKEDEX
 
 def save_pokemon():
 
@@ -43,20 +43,56 @@ def from_json_random_pick():
         json.dump(pokemons, file, indent=4)
 
 # name, original_name, hp, strength, defense, type, level, speed, stage
-    my_pokemon = Pokemon(a_pokemon['name'], a_pokemon['original_name'], a_pokemon['hp'],\
-                        a_pokemon['strength'], a_pokemon['defense'], a_pokemon['type'],\
-                        a_pokemon['level'], a_pokemon['speed'], a_pokemon['stage'])
-    my_pokemon.set_xp(a_pokemon['xp'])
-    my_pokemon.get_effort_value().set_ev_hp(a_pokemon['ev']['hp'])
-    my_pokemon.get_effort_value().set_ev_strength(a_pokemon['ev']['strength'])
-    my_pokemon.get_effort_value().set_ev_defense(a_pokemon['ev']['defense'])
-    my_pokemon.get_effort_value().set_ev_speed(a_pokemon['ev']['speed'])
-    my_pokemon.get_effort_value().set_ev_xp(a_pokemon['ev']['xp'])
-    my_pokemon.set_pet_name(a_pokemon['pet_name'])
+    my_pokemon = instanciate_pokemon(a_pokemon)
+
+    return my_pokemon
+
+def instanciate_pokemon(pokemon):
+    my_pokemon = Pokemon(pokemon['name'], pokemon['original_name'], pokemon['hp'],\
+                        pokemon['strength'], pokemon['defense'], pokemon['type'],\
+                        pokemon['level'], pokemon['speed'], pokemon['stage'])
+    my_pokemon.set_xp(pokemon['xp'])
+    my_pokemon.get_effort_value().set_ev_hp(pokemon['ev']['hp'])
+    my_pokemon.get_effort_value().set_ev_strength(pokemon['ev']['strength'])
+    my_pokemon.get_effort_value().set_ev_defense(pokemon['ev']['defense'])
+    my_pokemon.get_effort_value().set_ev_speed(pokemon['ev']['speed'])
+    my_pokemon.get_effort_value().set_ev_xp(pokemon['ev']['xp'])
+    my_pokemon.set_pet_name(pokemon['pet_name'])
 
     return my_pokemon
 
 
+def to_player_pokedex(pokemon):
+    if not os.path.exists(PLAYER_POKEDEX):
+        with open(PLAYER_POKEDEX, "w", encoding="UTF-8") as file:
+            json.dump({}, file)
+    
+    with open(PLAYER_POKEDEX, "r") as file:
+        pokemons_dictionary = json.load(file)
+
+    pokemons_dictionary[pokemon.pet_name] = pokemon.pokemon_dict()
+
+    # pokemons_list.append(pokemon_dictionary)
+
+    with open(PLAYER_POKEDEX, "w") as file:
+        json.dump(pokemons_dictionary, file, indent=4)
+
+def from_player_pokedex(pokemon_pet_name):
+    with open(PLAYER_POKEDEX, "r") as file:
+        pokemons = json.load(file)
+
+    for pokemon in pokemons:
+        if pokemon == pokemon_pet_name:
+            my_pokemon = instanciate_pokemon(pokemons[pokemon])
+            return my_pokemon
+
+def get_pokemons_from_pokedex():
+    with open(PLAYER_POKEDEX, "r") as file:
+        pokemons_dictionary = json.load(file)
+
+    pokemons_names = list(pokemons_dictionary.keys())
+
+    return pokemons_names
 # ev = {
 #             "hp" : self.get_ev_hp(),
 #             "strength" : self.get_ev_strength(),

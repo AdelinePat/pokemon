@@ -1,0 +1,47 @@
+{
+    "Jean-Luc": {
+        "name": "Primeape",
+        "original_name": "Mankey",
+        "pet_name": "Jean-Luc",
+        "hp": 53,
+        "xp": 3290,
+        "strength": 46,
+        "defense": 61,
+        "type": [
+            "fighting"
+        ],
+        "level": 14,
+        "speed": 66,
+        "stage": 2,
+        "ev": {
+            "hp": 0,
+            "strength": 0,
+            "defense": 0,
+            "speed": 0,
+            "xp": 0
+        }
+    },
+    "Hubert": {
+        "name": "Dragonite",
+        "original_name": "Dratini",
+        "pet_name": "Hubert",
+        "hp": 123,
+        "xp": 41066,
+        "strength": 105,
+        "defense": 115,
+        "type": [
+            "dragon",
+            "flying"
+        ],
+        "level": 34,
+        "speed": 130,
+        "stage": 3,
+        "ev": {
+            "hp": 0,
+            "strength": 0,
+            "defense": 0,
+            "speed": 0,
+            "xp": 0
+        }
+    }
+}

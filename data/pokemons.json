@@ -113,28 +113,6 @@
         }
     },
     {
-        "name": "Arbok",
-        "original_name": "Ekans",
-        "pet_name": "Jean-Luc",
-        "hp": 72,
-        "xp": 3166,
-        "strength": 62,
-        "defense": 71,
-        "type": [
-            "poison"
-        ],
-        "level": 14,
-        "speed": 58,
-        "stage": 2,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        }
-    },
-    {
         "name": "Magnemite",
         "original_name": "Magnemite",
         "pet_name": "Jean-Luc",
@@ -180,28 +158,6 @@
         }
     },
     {
-        "name": "Primeape",
-        "original_name": "Mankey",
-        "pet_name": "Jean-Luc",
-        "hp": 53,
-        "xp": 3190,
-        "strength": 46,
-        "defense": 61,
-        "type": [
-            "fighting"
-        ],
-        "level": 14,
-        "speed": 66,
-        "stage": 2,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        }
-    },
-    {
         "name": "Mewtwo",
         "original_name": "Mewtwo",
         "pet_name": "Jean-Luc",
@@ -238,73 +194,6 @@
         "level": 15,
         "speed": 61,
         "stage": 2,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        }
-    },
-    {
-        "name": "Dragonite",
-        "original_name": "Dratini",
-        "pet_name": "Jean-Luc",
-        "hp": 123,
-        "xp": 41066,
-        "strength": 105,
-        "defense": 115,
-        "type": [
-            "dragon",
-            "flying"
-        ],
-        "level": 34,
-        "speed": 130,
-        "stage": 3,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        }
-    },
-    {
-        "name": "Meowth",
-        "original_name": "Meowth",
-        "pet_name": "Jean-Luc",
-        "hp": 44,
-        "xp": 936,
-        "strength": 50,
-        "defense": 48,
-        "type": [
-            "steel"
-        ],
-        "level": 9,
-        "speed": 47,
-        "stage": 1,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        }
-    },
-    {
-        "name": "Meowth",
-        "original_name": "Meowth",
-        "pet_name": "Jean-Luc",
-        "hp": 45,
-        "xp": 280,
-        "strength": 24,
-        "defense": 20,
-        "type": [
-            "dark"
-        ],
-        "level": 6,
-        "speed": 36,
-        "stage": 1,
         "ev": {
             "hp": 0,
             "strength": 0,
