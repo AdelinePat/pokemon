@@ -108,7 +108,7 @@ def test_evolution():
 
 # to_player_pokedex(poke)
 
-# poke_test = from_player_pokedex('Jean-Luc')
+poke_test = from_player_pokedex('Jean-Luc')
 # to_player_pokedex(poke_test)
 # print(poke_test)
 

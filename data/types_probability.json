@@ -40,7 +40,9 @@
         "dragon" : {
             "probability": 1,
             "names" : {
-                "Exeggutor" : 2
+                "Exeggcute" : {
+                    "Exeggutor": 2
+                }
             }
         }
     },
@@ -615,7 +617,7 @@
         "fairy": {
             "probability": 2,
             "names" : {
-                "Rapidash" : {
+                "Ponyta" : {
                     "Rapidash" : 2
                 },
                 "Mr. Mime" : {
@@ -626,7 +628,8 @@
         },
         "flying": {
             "probability": 1,
-                "names" : {"Articuno" : {
+            "names" : {
+                "Articuno" : {
                     "Articuno" : 3
                 }
             }
