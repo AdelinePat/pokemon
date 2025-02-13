@@ -58,6 +58,8 @@ def create_pokemon(first_type):
     defense_point = random.randrange(2,31) + level*3
 
     my_pokemon = Pokemon(name, first_stage_name, hp, strength, defense_point, final_type_list, level, speed, stage)
+    xp = random.randrange(my_pokemon.get_level()**3, (my_pokemon.get_level()+1)**3)
+    my_pokemon.set_xp(xp)
 
     return my_pokemon
 

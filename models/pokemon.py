@@ -23,6 +23,7 @@ class Pokemon(Evolution):
         return {
             "name" : self.name,
             "original_name" : self.get_original_name(),
+            "pet_name" : self.pet_name,
             "hp" : self.get_hp(),
             "xp" : self.get_xp(),
             "strength" : self.get_strength(),
@@ -33,6 +34,9 @@ class Pokemon(Evolution):
             "stage" : self.get_stage(),
             "ev" : self.get_effort_value().get_ev_dict()
         }
+    
+    def set_pet_name(self, new_name):
+        self.pet_name = new_name
 
     def get_effort_value(self):
         return self.__ev
