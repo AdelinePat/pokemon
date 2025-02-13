@@ -131,24 +131,24 @@ class Evolution():
             if self.__evolution_number == 3:
                 match self.__stage:
                     case 1:
-                        if level in range(17, 25):
+                        if level in range(10, 20):
                             luck = random.randrange(100)
                             if luck > 60:
                                 self.__stage += 1
                                 self.update_evolution_stage()
                                 return True
-                        elif level == 25:
+                        elif level == 20:
                             self.__stage += 1
                             self.update_evolution_stage()
                             return True
                     case 2:
-                        if level in range(30, 36):
+                        if level in range(22, 32):
                             luck = random.randrange(100)
                             if luck > 60:
                                 self.__stage += 1
                                 self.update_evolution_stage()
                                 return True
-                        elif level == 36:
+                        elif level == 32:
                             self.__stage += 1
                             self.update_evolution_stage()
                             return True
