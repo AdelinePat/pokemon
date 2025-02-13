@@ -7,8 +7,10 @@ from models.pokemon import Pokemon
 class Fight:
     def __init__(self):
         self.all_pokemons = create_world_pokemons() #TODO edit this function
-        self.first_pokemon = random.choice(self.all_pokemons)
-        self.second_pokemon = random.choice(self.all_pokemons)
+        # self.first_pokemon = random.choice(self.all_pokemons)
+        # self.second_pokemon = random.choice(self.all_pokemons)
+        self.first_pokemon = Pokemon('Clefable', 'Clefairy', 49, 60, 57, ['fairy'], 13, 46, 2)
+        self.second_pokemon = Pokemon('Raichu', 'Pikachu', 80, 59, 75, ['electric'], 17, 57, 2)
         while self.first_pokemon == self.second_pokemon:
             self.second_pokemon = random.choice(self.all_pokemons)
         self.sac = Bag()
@@ -152,7 +154,7 @@ def test_evolution():
     eevee.evolve()
     print(eevee)
 
-test_evolution()
+# test_evolution()
     # if Bulbasaur.get_hp() == 0 or Charmander.get_hp() == 0:
     #     print("fin du combat")
     #     alive = False
@@ -165,3 +167,27 @@ test_evolution()
 # Charmander.set_stage(2)
 # Charmander.evolve()
 # print(Charmander)
+
+
+
+# self, name, original_name, hp, strength, defense, type, level, speed, stage
+# Pokemon : Clefable
+# Niveau : 13
+# XP : 1
+# Défense : 57
+# Rapidité : 46
+# PV max : 49
+# PV actuel : 49
+# Type : fairy
+# Force : 60
+
+
+# Pokemon : Raichu
+# Niveau : 17
+# XP : 1
+# Défense : 75
+# Rapidité : 57
+# PV max : 80
+# PV actuel : 80
+# Type : electric
+# Force : 59
