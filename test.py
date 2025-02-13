@@ -1,7 +1,117 @@
-from generate_pokemon.create_pokemon import create_world_pokemons
+from models.bag import Bag
 import random
+from generate_pokemon.create_pokemon import create_world_pokemons
 from models.pokemon import Pokemon
+#print(first_pokemon.get_hp())
 
+class Fight:
+    def __init__(self):
+        self.all_pokemons = create_world_pokemons() #TODO edit this function
+        self.first_pokemon = random.choice(self.all_pokemons)
+        self.second_pokemon = random.choice(self.all_pokemons)
+        while self.first_pokemon == self.second_pokemon:
+            self.second_pokemon = random.choice(self.all_pokemons)
+        self.sac = Bag()
+
+    def battle(self):
+        pv1 = self.first_pokemon.get_hp()
+        pv2 = self.second_pokemon.get_hp()
+        print("================")
+        print(self.first_pokemon)
+        print(self.second_pokemon)
+
+        while pv1 >= 0 and pv2 >= 0:
+            pv1 = self.first_pokemon.get_hp()
+            pv2 = self.second_pokemon.get_hp()
+            flag = True
+            flag2 = True
+            while flag:
+                try:
+                    choice= int(input("1-Attack 2-Fuite 3-Sac : "))
+                    if choice >= 1 and choice <= 3:
+                        flag = False
+                    else : 
+                        print("Valeur non correct")
+                except ValueError:
+                    print("Choix invalide")
+
+            if self.first_pokemon.get_speed() > self.second_pokemon.get_speed():
+                first = True
+            else :
+                first = False 
+
+            if choice == 1:
+                if first == True:
+                    self.first_pokemon.attack(self.first_pokemon.type[0], self.second_pokemon)
+                    pv2 = self.second_pokemon.get_hp()
+                    if pv1 <= 0 or pv2 <= 0:
+                        break
+                    self.second_pokemon.attack(self.second_pokemon.type[0], self.first_pokemon)
+                    print(self.first_pokemon)
+                    print(self.second_pokemon)
+                    pv1 = self.first_pokemon.get_hp()
+                    if pv1 <= 0 or pv2 <= 0:
+                        break
+                    print("=== Fin du tour ===")
+                    first = True
+                else : 
+                    self.second_pokemon.attack(self.second_pokemon.type[0], self.first_pokemon)
+                    pv1 = self.first_pokemon.get_hp()
+                    if pv1 <= 0 or pv2 <= 0:
+                        break
+                    self.first_pokemon.attack(self.first_pokemon.type[0], self.second_pokemon)
+                    print(self.first_pokemon)
+                    print(self.second_pokemon)
+                    pv2 = self.second_pokemon.get_hp()
+                    if pv1 <= 0 or pv2 <= 0:
+                        break
+                    print("=== Fin du tour ===")
+                    first = True
+            elif choice == 2:
+                print("Vous prenez la fuite...")
+                break
+            elif choice == 3:
+                while flag2:
+                    try :
+                        take = int(input(f"1-potion = {self.sac.get_potion()} 2-pokeball = {self.sac.get_pokeball()} 3-retour : "))
+                        if choice >= 1 and choice <= 3:
+                            flag2 = False
+                        else : 
+                            print("Valeur non correct")
+                    except ValueError:
+                        print("Choix invalide")
+                if take == 1:
+                    if self.sac.get_potion() >= 1:
+                        if first == True:
+                            self.first_pokemon.heal(20)
+                            print("Vous avez soigné votre pokemon")
+                            self.sac.potion -= 1
+                            self.second_pokemon.attack(self.second_pokemon.type[0], self.first_pokemon)
+                            pv1 = self.first_pokemon.get_hp()
+                            print(self.first_pokemon)
+                            print(self.second_pokemon)
+                            if pv1 <= 0 or pv2 <= 0:
+                                break
+                            print("=== Fin du tour ===")
+                            first = True
+                        elif first == False:
+                            self.second_pokemon.attack(self.second_pokemon.type[0], self.first_pokemon)
+                            pv1 = self.first_pokemon.get_hp()
+                            if pv1 <= 0 or pv2 <= 0:
+                                break
+                            self.first_pokemon.heal(20)
+                            print("Vous avez soigné votre pokemon")
+                            self.sac.potion -= 1
+                            print(self.first_pokemon)
+                            print(self.second_pokemon)
+                            print("=== Fin du tour ===")
+                            first = True
+                if take == 2:
+                    print("en cours")
+                    self.sac.pokeball -= 1
+
+test = Fight()
+test.battle()
 
 def check_alive(first_pokemon, second_pokemon):
     if first_pokemon.get_hp() == 0 or second_pokemon.get_hp() == 0:
@@ -23,55 +133,6 @@ def get_pokemons():
 
     return first_pokemon, second_pokemon
 
-# self, name, original_name, hp, strength, defense, type, level, speed, stage
-
-# first_pokemon = Pokemon('Tauros', 'Tauros', 78, 73, 52, ['normal'], 16, 10, 2)
-# second_pokemon = Pokemon('Seaking', 'Goldeen', 73, 62, 62, ['water'], 17, 10, 2)
-
-#  name, original_name, hp, strength, defense, type, level, speed, stage
-
-# Bulbasaur = Pokemon("Bulbasaur", "Bulbasaur", 89, 79, 100, ['grass', 'poison'], 17, 14, 1)
-# Charmander = Pokemon("Charmander", "Charmander", 56, 15, 15, ['fire'], 8, 13, 1)
-# print(Charmander)
-# Bulbasaur.set_xp(1000)
-# Charmander.set_xp(514)
-
-def fight_loop_test():
-    first_pokemon, second_pokemon = get_pokemons()
-    alive = True
-    i = 1
-    while alive:
-        print(f"=== Tour n°{i}")
-        if first_pokemon.get_speed() > second_pokemon.get_speed():
-            first_pokemon.attack(first_pokemon.type[0], second_pokemon)
-            alive = check_alive(first_pokemon, second_pokemon)
-            if alive:
-                second_pokemon.attack(second_pokemon.type[0], first_pokemon)
-                alive = check_alive(first_pokemon, second_pokemon)
-
-        if first_pokemon.get_speed() < second_pokemon.get_speed():
-            second_pokemon.attack(second_pokemon.type[0], first_pokemon)
-            alive = check_alive(first_pokemon, second_pokemon)
-            if alive:
-                first_pokemon.attack(first_pokemon.type[0], second_pokemon)
-                alive = (first_pokemon, second_pokemon)
-
-        if first_pokemon.get_speed() == second_pokemon.get_speed():
-            pokemons = [first_pokemon, second_pokemon]
-            first = random.choice(pokemons)
-            pokemons.pop(pokemons.index(first))
-            first.attack(first.type[0], pokemons[0])
-            alive = (first_pokemon, second_pokemon)
-            if alive:
-                pokemons[0].attack(pokemons[0].type[0], first)
-                alive = (first_pokemon, second_pokemon)
-                
-        print(first_pokemon, "\n")
-        print(second_pokemon, "\n\n")
-        i +=1
-
-# fight_loop_test()
-
 def test_evolution():
     # geodude = Pokemon('Geodude', 'Geodude', 10, 11, 9, ["rock", 'electric'], 25, 10, 1)
     # print(geodude)
@@ -90,9 +151,6 @@ def test_evolution():
     # eevee.set_stage(1)
     eevee.evolve()
     print(eevee)
-
-
-    
 
 test_evolution()
     # if Bulbasaur.get_hp() == 0 or Charmander.get_hp() == 0:
