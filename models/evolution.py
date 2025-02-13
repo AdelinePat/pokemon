@@ -116,7 +116,7 @@ class Evolution():
 
     def level_up(self, pokemon):
         level =  self.get_level()
-        if pokemon.get_xp() >= level**2 + level*2: #TODO REEQUILIBRAGE
+        if pokemon.get_xp() >= (level**3 / 10): #TODO REEQUILIBRAGE
             self.set_level_up(pokemon, 1)
 
     def evolve(self):

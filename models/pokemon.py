@@ -126,7 +126,8 @@ class Pokemon(Evolution):
             else:
                 # enemy.set_damage_hp(enemy_hp)
                 final_damage = enemy.get_hp()
-                print(f"le pokemon {enemy.name} n'a plus de PV !")
+                self.update_xp(enemy)
+                print(f"le pokemon {enemy.name} n'a plus de PV ! Vous avez gagné {self.get_xp()} XP")
         else:
             final_damage = 1
             if enemy.get_hp() - final_damage < 0:
@@ -153,7 +154,7 @@ class Pokemon(Evolution):
         #     self.update_xp(enemy)
         #     self.check_evolution()
         
-        self.level_up(self)
+        # self.level_up(self)
 
     def attack_efficiency(self, chose_attack_type, enemy):
         coefficient = self.get_attack_coefficient(chose_attack_type, enemy)
@@ -191,9 +192,9 @@ class Pokemon(Evolution):
             else:
                 xp_gained = int(math.floor(100 * enemy.get_level() / 5))
         elif enemy_level < self._level:
-            xp_gained = 100 * enemy.get_level() / 9
+            xp_gained = int(math.floor(100 * enemy.get_level() / 9))
         else:
-            xp_gained = 100 * enemy.get_level() / 7
+            xp_gained = int(math.floor(100 * enemy.get_level() / 7))
         return xp_gained
 
     
@@ -201,6 +202,8 @@ class Pokemon(Evolution):
         xp_gained = self.get_xp_gained(enemy)
         self.set_xp(self.get_xp() + xp_gained)
         self.__ev.update_ev(enemy, self)
+        self.level_up(self)
+        self.evolve()
         # self.set_ev(enemy)        
         print(f"\nVous avez gagné {xp_gained}, votre total d'xp est de {self.get_xp()}\n")
 
