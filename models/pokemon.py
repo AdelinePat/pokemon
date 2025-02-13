@@ -100,28 +100,41 @@ class Pokemon(Evolution):
 
         return coefficient
     
-    def attack(self, chose_attack_type, enemy):
+    def attack(self, attack_type, enemy):
+        coefficient, efficency = self.attack_efficiency(attack_type, enemy)
+        # coefficient, efficency = self.update_xp(enemy)
         
-        coefficient, efficency = self.update_xp(chose_attack_type, enemy)
-        
-        damage = self.get_strength() * coefficient
+        damage = (self.get_strength() * coefficient) - enemy.get_defense()
         enemy_hp = enemy.get_hp()
-        T = self.get_speed()
+        T = self.get_speed() / 2
         critical = random.randint(1, 255)
-        if enemy_hp - (damage - enemy.get_defense()) >= 0:
-            if critical < T:
-                print("Coup critique !")
-                damage = damage * 2
-                enemy.set_damage_hp(damage)
-            else:
-                damage = damage - enemy.get_defense()
-                enemy.set_damage_hp(damage)
-        else:
-            enemy.set_damage_hp(enemy_hp)
-            print(f"le pokemon {enemy.name} n'a plus de PV !")
 
-        print(f"{self.name} a fait une attaque {chose_attack_type}, {efficency}\
-              \n Le pokemon {enemy.name} de type {enemy.type} en face a reçu {damage}, il lui reste : {enemy.get_hp()}")
+        # damage_defense = damage - enemy.get_defense()
+        if damage > 0:
+            if enemy.get_hp() - damage >= 0:
+                if critical < T:
+                    print("Coup critique !")
+                    final_damage = damage * 2
+
+                    # if enemy.get_hp() - final_damage >= 0:
+                    #     enemy.set_damage_hp(final_damage)
+                    # else:
+                    #     enemy.set_damage_hp(enemy.get_hp())
+                else:
+                    final_damage = damage
+                # enemy.set_damage_hp(final_damage)
+            else:
+                # enemy.set_damage_hp(enemy_hp)
+                final_damage = enemy.get_hp()
+                print(f"le pokemon {enemy.name} n'a plus de PV !")
+        else:
+            final_damage = 1
+            if enemy.get_hp() - final_damage < 0:
+                final_damage = 0
+        enemy.set_damage_hp(final_damage)
+
+        print(f"{self.name} a fait une attaque {attack_type}, {efficency}\
+              \n Le pokemon {enemy.name} de type {enemy.type} en face a reçu {final_damage}, il lui reste : {enemy.get_hp()}")
 
         # coefficient, efficency = self.attack_efficiency(chose_attack_type, enemy)
         
