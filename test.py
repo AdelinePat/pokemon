@@ -1,5 +1,5 @@
 from create_pokemon import save_pokemon
-from pokemon import Sac
+from pokemon import Bag
 import random
 #print(first_pokemon.get_hp())
 
@@ -10,7 +10,7 @@ class Fight:
         self.second_pokemon = random.choice(self.all_pokemons)
         while self.first_pokemon == self.second_pokemon:
             self.second_pokemon = random.choice(self.all_pokemons)
-        self.sac = Sac()
+        self.sac = Bag()
 
     def battle(self):
         pv1 = self.first_pokemon.get_hp()
@@ -22,7 +22,18 @@ class Fight:
         while pv1 >= 0 and pv2 >= 0:
             pv1 = self.first_pokemon.get_hp()
             pv2 = self.second_pokemon.get_hp()
-            choice= int(input("1-Attack 2-Fuite 3-Sac : "))
+            flag = True
+            flag2 = True
+            while flag:
+                try:
+                    choice= int(input("1-Attack 2-Fuite 3-Sac : "))
+                    if choice >= 1 and choice <= 3:
+                        flag = False
+                    else : 
+                        print("Valeur non correct")
+                except ValueError:
+                    print("Choix invalide")
+
             if self.first_pokemon.get_speed() > self.second_pokemon.get_speed():
                 first = True
             else :
@@ -59,7 +70,15 @@ class Fight:
                 print("Vous prenez la fuite...")
                 break
             elif choice == 3:
-                take = int(input(f"1-potion = {self.sac.get_potion()} 2-pokeball = {self.sac.get_pokeball()} 3-retour : "))
+                while flag2:
+                    try :
+                        take = int(input(f"1-potion = {self.sac.get_potion()} 2-pokeball = {self.sac.get_pokeball()} 3-retour : "))
+                        if choice >= 1 and choice <= 3:
+                            flag2 = False
+                        else : 
+                            print("Valeur non correct")
+                    except ValueError:
+                        print("Choix invalide")
                 if take == 1:
                     if self.sac.get_potion() >= 1:
                         if first == True:

@@ -1,6 +1,6 @@
 import random, json
 
-class Sac:
+class Bag:
     def __init__(self):
         self.potion = 1
         self.pokeball = 0
