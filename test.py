@@ -1,11 +1,12 @@
-from create_pokemon import save_pokemon
-from pokemon import Bag
+from models.bag import Bag
 import random
+from generate_pokemon.create_pokemon import create_world_pokemons
+from models.pokemon import Pokemon
 #print(first_pokemon.get_hp())
 
 class Fight:
     def __init__(self):
-        self.all_pokemons = save_pokemon()
+        self.all_pokemons = create_world_pokemons() #TODO edit this function
         self.first_pokemon = random.choice(self.all_pokemons)
         self.second_pokemon = random.choice(self.all_pokemons)
         while self.first_pokemon == self.second_pokemon:
@@ -111,13 +112,56 @@ class Fight:
 
 test = Fight()
 test.battle()
-'''
-first_pokemon.attack(first_pokemon.type[0], second_pokemon)
-print(second_pokemon)
-second_pokemon.attack(second_pokemon.type[0], first_pokemon)
-print(first_pokemon)
-print("=== Fin du tour ===")
-first_pokemon.attack(first_pokemon.type[0], second_pokemon)
-print(second_pokemon)
-second_pokemon.attack(second_pokemon.type[0], first_pokemon)
-print(first_pokemon)'''
+
+def check_alive(first_pokemon, second_pokemon):
+    if first_pokemon.get_hp() == 0 or second_pokemon.get_hp() == 0:
+        print("fin du combat")
+        alive = False
+    else:
+        alive = True
+    return alive
+
+def get_pokemons():
+    all_pokemons = create_world_pokemons()
+    # print(all_pokemons)
+
+    first_pokemon = random.choice(all_pokemons)
+    second_pokemon = random.choice(all_pokemons)
+
+    while first_pokemon == second_pokemon:
+        second_pokemon = random.choice(all_pokemons)
+
+    return first_pokemon, second_pokemon
+
+def test_evolution():
+    # geodude = Pokemon('Geodude', 'Geodude', 10, 11, 9, ["rock", 'electric'], 25, 10, 1)
+    # print(geodude)
+    # geodude.pet_name = "geo"
+    # # geodude.set_stage(1)
+    # geodude.evolve()
+    # print(geodude)
+    # geodude.set_xp(50000)
+    # geodude.set_level_up(geodude, 11)
+    # geodude.evolve()
+    # print(geodude)
+
+    eevee = Pokemon('Eevee', 'Eevee', 10, 11, 9, ["normal"], 25, 10, 1)
+    print(eevee)
+    eevee.pet_name = "geo"
+    # eevee.set_stage(1)
+    eevee.evolve()
+    print(eevee)
+
+test_evolution()
+    # if Bulbasaur.get_hp() == 0 or Charmander.get_hp() == 0:
+    #     print("fin du combat")
+    #     alive = False
+
+# Charmander.attack(Charmander.type[0], Bulbasaur)
+# print(Bulbasaur)
+# print(Charmander)
+
+# print("\n")
+# Charmander.set_stage(2)
+# Charmander.evolve()
+# print(Charmander)
