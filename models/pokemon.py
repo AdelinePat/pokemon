@@ -184,31 +184,16 @@ class Pokemon(Evolution):
     
     def get_xp_gained(self, enemy):
         enemy_level = enemy.get_level()
+
         if enemy_level > self._level:
             if enemy.get_state() == 'wild':
-                    if enemy_level in range(5):
-                        xp_gained = enemy.get_level() * 2
-                    elif enemy_level in range(5, 20):
-                        xp_gained = enemy.get_level() * 1
-                    elif enemy_level in range(20, 60):
-                        xp_gained = math.floor(enemy.get_level() * 0.5)
-                    else:
-                        xp_gained = math.floor(enemy.get_level() * 0.4)
+                xp_gained = int(math.floor(100 * enemy.get_level() / 6))
             else:
-                if enemy_level in range(5):
-                    xp_gained = enemy.get_level() * 3
-                elif enemy_level in range(5, 20):
-                    xp_gained = math.floor(enemy.get_level() * 1.5)
-                elif enemy_level in range(20, 60):
-                    xp_gained = math.floor(enemy.get_level() * 0.7)
-                else:
-                    xp_gained = math.floor(enemy.get_level() * 0.5)
-
+                xp_gained = int(math.floor(100 * enemy.get_level() / 5))
         elif enemy_level < self._level:
-            xp_gained = math.ceil(enemy.get_level() * 0.2)
+            xp_gained = 100 * enemy.get_level() / 9
         else:
-            xp_gained = math.ceil(enemy.get_level() *  0.5)
-            
+            xp_gained = 100 * enemy.get_level() / 7
         return xp_gained
 
     

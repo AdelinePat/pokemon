@@ -7,10 +7,11 @@ from models.pokemon import Pokemon
 class Fight:
     def __init__(self):
         self.all_pokemons = create_world_pokemons() #TODO edit this function
-        # self.first_pokemon = random.choice(self.all_pokemons)
-        # self.second_pokemon = random.choice(self.all_pokemons)
-        self.first_pokemon = Pokemon('Clefable', 'Clefairy', 49, 60, 57, ['fairy'], 13, 46, 2)
-        self.second_pokemon = Pokemon('Raichu', 'Pikachu', 80, 59, 75, ['electric'], 17, 57, 2)
+        self.first_pokemon = random.choice(self.all_pokemons)
+        self.second_pokemon = random.choice(self.all_pokemons)
+        # ONE SHOT TEST
+        # self.first_pokemon = Pokemon('Clefable', 'Clefairy', 49, 60, 57, ['fairy'], 13, 46, 2)
+        # self.second_pokemon = Pokemon('Raichu', 'Pikachu', 80, 59, 75, ['electric'], 17, 57, 2)
         while self.first_pokemon == self.second_pokemon:
             self.second_pokemon = random.choice(self.all_pokemons)
         self.sac = Bag()

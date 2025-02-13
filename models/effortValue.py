@@ -19,16 +19,16 @@ class EffortValue():
         return ev
     
     def declare_range_ev(self, enemy, value):
-        rand_range_hp = math.ceil(enemy.get_hp_max()/value)
+        rand_range_hp = math.ceil(enemy.get_hp_max() / value)
         rand_range_strength = math.ceil((enemy.get_strength() / value))
         rand_range_defense = math.ceil(enemy.get_defense() / value)
         rand_range_speed = math.ceil((enemy.get_speed() / value))
-        rand_range_xp = math.ceil((enemy.get_xp()/value))
+        rand_range_xp = math.ceil((enemy.get_xp() / value))
 
         return rand_range_hp, rand_range_strength, rand_range_defense, rand_range_speed, rand_range_xp
     
     def update_ev(self, enemy, pokemon):
-        if enemy.get_level() >  pokemon.get_level():
+        if enemy.get_level() > pokemon.get_level():
             rand_range_hp, rand_range_strength, rand_range_defense,\
                 rand_range_speed, rand_range_xp = self.declare_range_ev(enemy, 6)
 
