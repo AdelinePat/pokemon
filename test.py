@@ -29,6 +29,7 @@ class Fight:
         while pv1 >= 0 and pv2 >= 0:
             pv1 = self.first_pokemon.get_hp()
             pv2 = self.second_pokemon.get_hp()
+            miss = 0
             flag = True
             flag2 = True
             while flag:
@@ -74,8 +75,18 @@ class Fight:
                     print("=== Fin du tour ===")
                     first = True
             elif choice == 2:
-                print("Vous prenez la fuite...")
-                break
+                miss = random.randint(1, 7)
+                if miss == 1:
+                    print("L'ennemis vous à suivi, vous n'avez pas réussi à prendre la fuite")
+                    self.second_pokemon.attack(self.second_pokemon.type[0], self.first_pokemon)
+                    pv1 = self.first_pokemon.get_hp()
+                    if pv1 <= 0 or pv2 <= 0:
+                        break
+                    print(self.first_pokemon)
+                    print(self.second_pokemon)
+                else:
+                    print("Vous avez réussi à prendre la fuite...")
+                    break
             elif choice == 3:
                 while flag2:
                     try :
@@ -115,8 +126,8 @@ class Fight:
                 if take == 2:
                     print("en cours")
                     self.sac.pokeball -= 1
-        print(self.first_pokemon,"\n")
-        print(self.second_pokemon,"\n")
+        #print(self.first_pokemon,"\n")
+        #print(self.second_pokemon,"\n")
 
 test = Fight()
 test.battle()
