@@ -1,4 +1,6 @@
 from models.bag import Bag
+import random
+
 class Fight:
     def __init__(self, pokemon1, pokemon2):
         self.first_pokemon = pokemon1
@@ -18,18 +20,47 @@ class Fight:
 
         # while self.first_pokemon == self.second_pokemon:
         #     self.second_pokemon = random.choice(self.all_pokemons)
-        # self.sac = Bag()
+        # self.bag = Bag()
+
+    def attack(self, pokemon, enemy, attack_type):
+        coefficient, efficency = pokemon.attack_efficiency(attack_type, enemy)
+        
+        damage = (pokemon.get_strength() * coefficient) - enemy.get_defense()
+        T = pokemon.get_speed() / 2
+        critical = random.randint(1, 255)
+
+        if damage > 0:
+            if enemy.get_hp() - damage >= 0:
+                if critical < T:
+                    print("Coup critique !")
+                    final_damage = damage * 2
+                else:
+                    final_damage = damage
+            else:
+                final_damage = enemy.get_hp()
+                pokemon.update_xp(enemy)
+                print(f"le pokemon {enemy.name} n'a plus de PV ! Vous avez gagné {pokemon.get_xp()} XP")
+        else:
+            final_damage = 1
+            if enemy.get_hp() - final_damage < 0:
+                final_damage = 0
+
+        enemy.set_damage_hp(final_damage)
+
+        print(f"{pokemon.name} a fait une attaque {attack_type}, {efficency}\
+              \n Le pokemon {enemy.name} de type {enemy.type} en face a reçu {final_damage}, il lui reste : {enemy.get_hp()}")
+
 
     def battle(self):
-        pv1 = self.first_pokemon.get_hp()
-        pv2 = self.second_pokemon.get_hp()
+        hp1 = self.first_pokemon.get_hp()
+        hp2 = self.second_pokemon.get_hp()
         print("================")
         print(self.first_pokemon)
         print(self.second_pokemon)
 
-        while pv1 >= 0 and pv2 >= 0:
-            pv1 = self.first_pokemon.get_hp()
-            pv2 = self.second_pokemon.get_hp()
+        while hp1 >= 0 and hp2 >= 0:
+            hp1 = self.first_pokemon.get_hp()
+            hp2 = self.second_pokemon.get_hp()
             flag = True
             flag2 = True
             while flag:
@@ -49,28 +80,33 @@ class Fight:
 
             if choice == 1:
                 if first == True:
-                    self.first_pokemon.attack(self.first_pokemon.type[0], self.second_pokemon)
-                    pv2 = self.second_pokemon.get_hp()
-                    if pv1 <= 0 or pv2 <= 0:
+                    #pokemon, enemy, attack_type
+                    self.attack(self.first_pokemon, self.second_pokemon, self.first_pokemon.type[0])
+                    # self.first_pokemon.attack(self.first_pokemon.type[0], self.second_pokemon)
+                    hp2 = self.second_pokemon.get_hp()
+                    if hp1 <= 0 or hp2 <= 0:
                         break
-                    self.second_pokemon.attack(self.second_pokemon.type[0], self.first_pokemon)
+                    # self.second_pokemon.attack(self.second_pokemon.type[0], self.first_pokemon)
+                    self.attack(self.second_pokemon, self.first_pokemon, self.second_pokemon.type[0])
                     print(self.first_pokemon)
                     print(self.second_pokemon)
-                    pv1 = self.first_pokemon.get_hp()
-                    if pv1 <= 0 or pv2 <= 0:
+                    hp1 = self.first_pokemon.get_hp()
+                    if hp1 <= 0 or hp2 <= 0:
                         break
                     print("=== Fin du tour ===")
                     first = True
-                else : 
-                    self.second_pokemon.attack(self.second_pokemon.type[0], self.first_pokemon)
-                    pv1 = self.first_pokemon.get_hp()
-                    if pv1 <= 0 or pv2 <= 0:
+                else :
+                    self.attack(self.second_pokemon, self.first_pokemon, self.second_pokemon.type[0])
+                    # self.second_pokemon.attack(self.second_pokemon.type[0], self.first_pokemon)
+                    hp1 = self.first_pokemon.get_hp()
+                    if hp1 <= 0 or hp2 <= 0:
                         break
-                    self.first_pokemon.attack(self.first_pokemon.type[0], self.second_pokemon)
+                    # self.first_pokemon.attack(self.first_pokemon.type[0], self.second_pokemon)
+                    self.attack(self.first_pokemon, self.second_pokemon, self.first_pokemon.type[0])
                     print(self.first_pokemon)
                     print(self.second_pokemon)
-                    pv2 = self.second_pokemon.get_hp()
-                    if pv1 <= 0 or pv2 <= 0:
+                    hp2 = self.second_pokemon.get_hp()
+                    if hp1 <= 0 or hp2 <= 0:
                         break
                     print("=== Fin du tour ===")
                     first = True
@@ -80,7 +116,7 @@ class Fight:
             elif choice == 3:
                 while flag2:
                     try :
-                        take = int(input(f"1-potion = {self.sac.get_potion()} 2-pokeball = {self.sac.get_pokeball()} 3-retour : "))
+                        take = int(input(f"1-potion = {self.bag.get_potion()} 2-pokeball = {self.bag.get_pokeball()} 3-retour : "))
                         if choice >= 1 and choice <= 3:
                             flag2 = False
                         else : 
@@ -88,33 +124,33 @@ class Fight:
                     except ValueError:
                         print("Choix invalide")
                 if take == 1:
-                    if self.sac.get_potion() >= 1:
+                    if self.bag.get_potion() >= 1:
                         if first == True:
                             self.first_pokemon.heal(20)
                             print("Vous avez soigné votre pokemon")
-                            self.sac.potion -= 1
+                            self.bag.potion -= 1
                             self.second_pokemon.attack(self.second_pokemon.type[0], self.first_pokemon)
-                            pv1 = self.first_pokemon.get_hp()
+                            hp1 = self.first_pokemon.get_hp()
                             print(self.first_pokemon)
                             print(self.second_pokemon)
-                            if pv1 <= 0 or pv2 <= 0:
+                            if hp1 <= 0 or hp2 <= 0:
                                 break
                             print("=== Fin du tour ===")
                             first = True
                         elif first == False:
                             self.second_pokemon.attack(self.second_pokemon.type[0], self.first_pokemon)
-                            pv1 = self.first_pokemon.get_hp()
-                            if pv1 <= 0 or pv2 <= 0:
+                            hp1 = self.first_pokemon.get_hp()
+                            if hp1 <= 0 or hp2 <= 0:
                                 break
                             self.first_pokemon.heal(20)
                             print("Vous avez soigné votre pokemon")
-                            self.sac.potion -= 1
+                            self.bag.potion -= 1
                             print(self.first_pokemon)
                             print(self.second_pokemon)
                             print("=== Fin du tour ===")
                             first = True
                 if take == 2:
                     print("en cours")
-                    self.sac.pokeball -= 1
+                    self.bag.pokeball -= 1
         print(self.first_pokemon,"\n")
         print(self.second_pokemon,"\n")

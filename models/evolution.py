@@ -122,8 +122,9 @@ class Evolution():
             add_level += 1
             xp_value -= level**3
             level += 1
-
-        self.set_level_up(pokemon, add_level)
+            
+        if add_level != 0:
+            self.set_level_up(pokemon, add_level)
 
     def evolve(self):
         level = self.get_level()

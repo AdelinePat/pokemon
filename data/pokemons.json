@@ -1,40 +1,17 @@
 [
     {
-        "name": "Exeggutor",
-        "original_name": "Exeggcute",
+        "name": "Arcanine",
+        "original_name": "Growlithe",
         "pet_name": "Jean-Luc",
-        "hp": 60,
-        "xp": 1825,
-        "strength": 47,
-        "defense": 48,
-        "type": [
-            "grass",
-            "psychic"
-        ],
-        "level": 12,
-        "speed": 61,
-        "stage": 2,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        }
-    },
-    {
-        "name": "Flareon",
-        "original_name": "Eevee",
-        "pet_name": "Jean-Luc",
-        "hp": 50,
-        "xp": 2512,
-        "strength": 48,
-        "defense": 59,
+        "hp": 78,
+        "xp": 7981,
+        "strength": 70,
+        "defense": 82,
         "type": [
             "fire"
         ],
-        "level": 13,
-        "speed": 52,
+        "level": 19,
+        "speed": 78,
         "stage": 2,
         "ev": {
             "hp": 0,
@@ -42,112 +19,139 @@
             "defense": 0,
             "speed": 0,
             "xp": 0
-        }
+        },
+        "state": "wild"
     },
     {
-        "name": "Staryu",
-        "original_name": "Staryu",
+        "name": "Pidgeot",
+        "original_name": "Pidgey",
         "pet_name": "Jean-Luc",
-        "hp": 31,
-        "xp": 6,
-        "strength": 11,
-        "defense": 24,
-        "type": [
-            "water"
-        ],
-        "level": 1,
-        "speed": 15,
-        "stage": 1,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        }
-    },
-    {
-        "name": "Venomoth",
-        "original_name": "Venonat",
-        "pet_name": "Jean-Luc",
-        "hp": 78,
-        "xp": 4452,
-        "strength": 74,
-        "defense": 57,
-        "type": [
-            "bug",
-            "poison"
-        ],
-        "level": 16,
-        "speed": 67,
-        "stage": 2,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        }
-    },
-    {
-        "name": "Spearow",
-        "original_name": "Spearow",
-        "pet_name": "Jean-Luc",
-        "hp": 32,
-        "xp": 109,
-        "strength": 14,
-        "defense": 36,
+        "hp": 107,
+        "xp": 28985,
+        "strength": 109,
+        "defense": 110,
         "type": [
             "normal",
             "flying"
         ],
-        "level": 4,
-        "speed": 21,
-        "stage": 1,
+        "level": 30,
+        "speed": 99,
+        "stage": 3,
         "ev": {
             "hp": 0,
             "strength": 0,
             "defense": 0,
             "speed": 0,
             "xp": 0
-        }
+        },
+        "state": "wild"
     },
     {
-        "name": "Magnemite",
-        "original_name": "Magnemite",
+        "name": "Weezing",
+        "original_name": "Koffing",
         "pet_name": "Jean-Luc",
-        "hp": 57,
-        "xp": 767,
-        "strength": 47,
-        "defense": 39,
+        "hp": 61,
+        "xp": 2907,
+        "strength": 49,
+        "defense": 63,
         "type": [
-            "electric",
-            "steel"
+            "poison"
         ],
-        "level": 9,
-        "speed": 47,
-        "stage": 1,
+        "level": 14,
+        "speed": 49,
+        "stage": 2,
         "ev": {
             "hp": 0,
             "strength": 0,
             "defense": 0,
             "speed": 0,
             "xp": 0
-        }
+        },
+        "state": "wild"
     },
     {
-        "name": "Clefairy",
+        "name": "Marowak",
+        "original_name": "Cubone",
+        "pet_name": "Jean-Luc",
+        "hp": 67,
+        "xp": 4669,
+        "strength": 75,
+        "defense": 58,
+        "type": [
+            "ground"
+        ],
+        "level": 16,
+        "speed": 78,
+        "stage": 2,
+        "ev": {
+            "hp": 0,
+            "strength": 0,
+            "defense": 0,
+            "speed": 0,
+            "xp": 0
+        },
+        "state": "wild"
+    },
+    {
+        "name": "Articuno",
+        "original_name": "Articuno",
+        "pet_name": "Jean-Luc",
+        "hp": 131,
+        "xp": 42764,
+        "strength": 130,
+        "defense": 113,
+        "type": [
+            "ice",
+            "flying"
+        ],
+        "level": 34,
+        "speed": 118,
+        "stage": 3,
+        "ev": {
+            "hp": 0,
+            "strength": 0,
+            "defense": 0,
+            "speed": 0,
+            "xp": 0
+        },
+        "state": "wild"
+    },
+    {
+        "name": "Clefable",
         "original_name": "Clefairy",
         "pet_name": "Jean-Luc",
-        "hp": 24,
-        "xp": 4,
-        "strength": 30,
-        "defense": 26,
+        "hp": 58,
+        "xp": 1996,
+        "strength": 51,
+        "defense": 54,
         "type": [
             "fairy"
         ],
-        "level": 1,
-        "speed": 18,
+        "level": 12,
+        "speed": 42,
+        "stage": 2,
+        "ev": {
+            "hp": 0,
+            "strength": 0,
+            "defense": 0,
+            "speed": 0,
+            "xp": 0
+        },
+        "state": "wild"
+    },
+    {
+        "name": "Ponyta",
+        "original_name": "Ponyta",
+        "pet_name": "Jean-Luc",
+        "hp": 45,
+        "xp": 130,
+        "strength": 22,
+        "defense": 29,
+        "type": [
+            "psychic"
+        ],
+        "level": 5,
+        "speed": 19,
         "stage": 1,
         "ev": {
             "hp": 0,
@@ -155,7 +159,55 @@
             "defense": 0,
             "speed": 0,
             "xp": 0
-        }
+        },
+        "state": "wild"
+    },
+    {
+        "name": "Onix",
+        "original_name": "Onix",
+        "pet_name": "Jean-Luc",
+        "hp": 48,
+        "xp": 1742,
+        "strength": 65,
+        "defense": 58,
+        "type": [
+            "rock",
+            "ground"
+        ],
+        "level": 12,
+        "speed": 64,
+        "stage": 2,
+        "ev": {
+            "hp": 0,
+            "strength": 0,
+            "defense": 0,
+            "speed": 0,
+            "xp": 0
+        },
+        "state": "wild"
+    },
+    {
+        "name": "Meowth",
+        "original_name": "Meowth",
+        "pet_name": "Jean-Luc",
+        "hp": 55,
+        "xp": 774,
+        "strength": 52,
+        "defense": 35,
+        "type": [
+            "dark"
+        ],
+        "level": 9,
+        "speed": 34,
+        "stage": 1,
+        "ev": {
+            "hp": 0,
+            "strength": 0,
+            "defense": 0,
+            "speed": 0,
+            "xp": 0
+        },
+        "state": "wild"
     },
     {
         "name": "Mewtwo",
@@ -177,52 +229,7 @@
             "defense": 0,
             "speed": 0,
             "xp": 0
-        }
-    },
-    {
-        "name": "Onix",
-        "original_name": "Onix",
-        "pet_name": "Jean-Luc",
-        "hp": 68,
-        "xp": 3635,
-        "strength": 60,
-        "defense": 48,
-        "type": [
-            "rock",
-            "ground"
-        ],
-        "level": 15,
-        "speed": 61,
-        "stage": 2,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        }
-    },
-    {
-        "name": "Gengar",
-        "original_name": "Gastly",
-        "pet_name": "Jean-Luc",
-        "hp": 120,
-        "xp": 37161,
-        "strength": 110,
-        "defense": 103,
-        "type": [
-            "ghost",
-            "poison"
-        ],
-        "level": 33,
-        "speed": 127,
-        "stage": 3,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        }
+        },
+        "state": "wild"
     }
 ]

@@ -1,20 +1,21 @@
 from models.fight import Fight
 import random
 from generate_pokemon.create_pokemon import create_world_pokemons
-from generate_pokemon.from_to_json import save_pokemon, from_json_random_pick, to_json, to_player_pokedex, from_player_pokedex, get_pokemons_from_pokedex
+from generate_pokemon.from_to_json import save_world_pokemons, get_random_wild_pokemon, save_wild_pokemon, to_player_pokedex, get_pokemon_from_pokedex, get_petnames_from_pokedex
 from models.pokemon import Pokemon
 #print(first_pokemon.get_hp())
 
 # ONE SHOT TEST
-first_pokemon = Pokemon('Clefable', 'Clefairy', 49, 60, 57, ['fairy'], 13, 46, 2)
+first_pokemon = Pokemon('Clefable', 'Clefairy', 49, 60, 25, ['fairy'], 13, 46, 2)
 second_pokemon = Pokemon('Raichu', 'Pikachu', 80, 59, 75, ['electric'], 17, 57, 2)
+second_pokemon.set_xp(5688)
 # LEVEL UP  TEST
 
 # second_pokemon = Pokemon('Clefable', 'Clefairy', 49, 60, 57, ['fairy'], 1, 46, 2)
 # first_pokemon = Pokemon('Raichu', 'Pikachu', 80, 80, 75, ['electric'], 1, 57, 2)
 
 test = Fight(first_pokemon, second_pokemon)
-# test.battle()
+test.battle()
 
 def check_alive(first_pokemon, second_pokemon):
     if first_pokemon.get_hp() == 0 or second_pokemon.get_hp() == 0:
@@ -98,27 +99,36 @@ def test_evolution():
 
 #### TEST JSON POKEDEX AND POKEMON !!!! ####
 
-# poke = from_json_random_pick()
+# poke = get_random_wild_pokemon()
+# pokeee = get_random_wild_pokemon()
+
 # print(poke)
 # print(poke.get_xp())
 # poke.set_xp(poke.get_xp() + 100)
 # print(poke)
 
-# to_json(poke)
+# to_player_pokedex("test", poke)
 
 # to_player_pokedex(poke)
 
-poke_test = from_player_pokedex('Jean-Luc')
+
+
 # to_player_pokedex(poke_test)
 # print(poke_test)
 
 # poke.set_pet_name('Hubert')
-# to_player_pokedex(poke)
+# to_player_pokedex("test", poke)
+# to_player_pokedex("test", pokeee)
+
 # print(poke)
 
-name_list = get_pokemons_from_pokedex()
-print(name_list)
+# poke_test = get_pokemon_from_pokedex('Jean-Luc')
+# name_list = get_petnames_from_pokedex()
+# print(name_list)
 
-for name in name_list:
-    my_pokemon = from_player_pokedex(name)
-    print(my_pokemon)
+# for name in name_list:
+#     my_pokemon = get_pokemon_from_pokedex(name)
+#     print(my_pokemon)
+#     to_player_pokedex(my_pokemon)
+
+
