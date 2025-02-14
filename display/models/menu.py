@@ -111,7 +111,7 @@ class Menu(Screen):
             self.input_player()
         elif self.selected_button == 1:
             player_selection_screen = PlayerSelection()
-            player_selection_screen.main_menu()
+            selected_player = player_selection_screen.main_menu()
         elif self.selected_button == 2:
             pygame.quit()
             sys.exit()

@@ -9,3 +9,4 @@ sounds.play_background_music(volume=0.1)
 if __name__ == "__main__":
     menu = Menu()
     menu.display()
+

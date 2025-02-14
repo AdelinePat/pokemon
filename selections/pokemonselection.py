@@ -103,20 +103,40 @@ class PokemonSelection(Screen):
 
     def select_button(self):
         """Execute the selected button's action"""
-        if self.selected_button == 0:
-            print(f"{self.player_name} chose {self.selected_pokemons[0]}!")
-            self.play_game()
-        elif self.selected_button == 1:
-            print(f"{self.player_name} chose {self.selected_pokemons[1]}!")
-            self.play_game()
-        elif self.selected_button == 2:
-             player_selection_screen = PlayerSelection()
-             player_selection_screen.select_button()
-        elif self.selected_button == 3:
-            pygame.quit()
-            sys.exit()
-        elif self.selected_button == 4:
-            self.start_game()
+        match self.selected_button:
+            case 0:
+                selected_pokemon = self.selected_pokemons[0]
+                print(f"{self.player_name} chose {selected_pokemon}!")
+                self.play_game(selected_pokemon) #TODO needs player name too, change to menu class or elsewhere
+            case 1:
+                selected_pokemon = self.selected_pokemons[0]
+                print(f"{self.player_name} chose {selected_pokemon}!")
+                self.play_game(selected_pokemon) #TODO needs player name too, change to menu class or elsewhere
+            case 2: 
+                player_selection_screen = PlayerSelection()
+                player_selection_screen.select_button()
+            case 3:
+                pygame.quit()
+                sys.exit()
+            case 4:
+                self.start_game()
+
+
+
+        #  if self.selected_button == 0:
+
+        # elif self.selected_button == 1:
+            # selected_pokemon = self.selected_pokemons[0]
+            # print(f"{self.player_name} chose {selected_pokemon}!")
+            # self.play_game()
+        # elif self.selected_button == 2:
+        #      player_selection_screen = PlayerSelection()
+        #      player_selection_screen.select_button()
+        # elif self.selected_button == 3:
+        #     pygame.quit()
+        #     sys.exit()
+        # elif self.selected_button == 4:
+        #     self.start_game()
 
     def start_game(self):
         """Start the game with the selected Pokémon"""

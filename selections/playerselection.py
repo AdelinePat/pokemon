@@ -87,12 +87,14 @@ class PlayerSelection(Screen):
                 elif event.key == pygame.K_UP:
                     self.selected_player_index = (self.selected_player_index - 1) % len(self.players_data)
                 elif event.key == pygame.K_RETURN:
-                    self.start_game_with_selected_player()
+                    selected_player = self.start_game_with_selected_player()
+                    return selected_player
 
     def start_game_with_selected_player(self):
         """Start the game with the selected player"""
         selected_player = self.players_data[self.selected_player_index]
         print(f"Starting the game with {selected_player['name']}!")
+        return selected_player
         # Add your game start logic here
 
     def return_to_main_menu(self):
@@ -105,5 +107,6 @@ class PlayerSelection(Screen):
             self.screen.blit(self.bg, (0, 0))
             self.render_player_list()
             self.render_buttons()
-            self.handle_events()
+            selected_player = self.handle_events()
             self.update_display()
+        return selected_player
