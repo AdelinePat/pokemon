@@ -24,31 +24,35 @@ class Fight:
 
     def attack(self, pokemon, enemy, attack_type):
         coefficient, efficency = pokemon.attack_efficiency(attack_type, enemy)
+        miss = random.randint(1, 8)
         
         damage = (pokemon.get_strength() * coefficient) - enemy.get_defense()
         T = pokemon.get_speed() / 2
         critical = random.randint(1, 255)
 
-        if damage > 0:
-            if enemy.get_hp() - damage >= 0:
-                if critical < T:
-                    print("Coup critique !")
-                    final_damage = damage * 2
-                else:
-                    final_damage = damage
-            else:
-                final_damage = enemy.get_hp()
-                pokemon.update_xp(enemy)
-                print(f"le pokemon {enemy.name} n'a plus de PV ! Vous avez gagné {pokemon.get_xp()} XP")
+        if miss == 1:
+            print("l'attaque à était raté...")
         else:
-            final_damage = 1
-            if enemy.get_hp() - final_damage < 0:
-                final_damage = 0
+            if damage > 0:
+                if enemy.get_hp() - damage >= 0:
+                    if critical < T:
+                        print("Coup critique !")
+                        final_damage = damage * 2
+                    else:
+                        final_damage = damage
+                else:
+                    final_damage = enemy.get_hp()
+                    pokemon.update_xp(enemy)
+                    print(f"le pokemon {enemy.name} n'a plus de PV ! Vous avez gagné {pokemon.get_xp()} XP")
+            else:
+                final_damage = 1
+                if enemy.get_hp() - final_damage < 0:
+                    final_damage = 0
 
-        enemy.set_damage_hp(final_damage)
+            enemy.set_damage_hp(final_damage)
 
-        print(f"{pokemon.name} a fait une attaque {attack_type}, {efficency}\
-              \n Le pokemon {enemy.name} de type {enemy.type} en face a reçu {final_damage}, il lui reste : {enemy.get_hp()}")
+            print(f"{pokemon.name} a fait une attaque {attack_type}, {efficency}\
+                \n Le pokemon {enemy.name} de type {enemy.type} en face a reçu {final_damage}, il lui reste : {enemy.get_hp()}")
 
 
     def battle(self):
@@ -61,6 +65,7 @@ class Fight:
         while hp1 >= 0 and hp2 >= 0:
             hp1 = self.first_pokemon.get_hp()
             hp2 = self.second_pokemon.get_hp()
+            miss = 0
             flag = True
             flag2 = True
             while flag:
@@ -111,8 +116,22 @@ class Fight:
                     print("=== Fin du tour ===")
                     first = True
             elif choice == 2:
-                print("Vous prenez la fuite...")
-                break
+                miss = random.randint(1, 7)
+                if self.second_pokemon.get_state() == "domesticated":
+                    print("Impossible de fuire dans un combat de dresseur")
+                if miss == 1:
+                    print("Vous n'avez pas reussi à prendre la fuite...")
+                    self.second_pokemon.attack(self.second_pokemon.type[0], self.first_pokemon)
+                    hp1 = self.first_pokemon.get_hp()
+                    if hp1 <= 0 or hp2 <= 0:
+                        break
+                    print(self.first_pokemon)
+                    print(self.second_pokemon)
+                    print("=== Fin du tour ===")
+                    first = True
+                else :
+                    print("Vous prenez la fuite...")
+                    break
             elif choice == 3:
                 while flag2:
                     try :
