@@ -1,9 +1,10 @@
 import pygame
 import sys
 import random
-from screen import Screen
-from button import Button
-from pokemonselection import PokemonSelection
+from display.models.screen import Screen
+from display.models.button import Button
+from selections.pokemonselection import PokemonSelection
+import display.models.menu as menu
 
 
 class Player_Input(Screen):
@@ -92,12 +93,18 @@ class Player_Input(Screen):
                     for button in self.buttons:
                         if button.checkForInput(pygame.mouse.get_pos()):
                             if button == self.back_button:
-                                self.main_menu()
+                                self.return_main_menu()
                             elif button == self.quit_button:
                                 pygame.quit()
                                 sys.exit()
 
             self.update_display()
+
+    # def afficher(self):
+    #     self.menu.mainloop(self.screen)
+
+    def return_main_menu(self):
+        menu.Menu().display()
 
     def select_pokemon(self):
         """Proceeds to the Pokémon selection screen"""

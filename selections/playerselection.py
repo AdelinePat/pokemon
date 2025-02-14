@@ -1,9 +1,9 @@
 import pygame
 import sys
 import json
-from screen import Screen
-from button import Button
-import menu
+from display.models.screen import Screen
+from display.models.button import Button
+import display.models.menu as menu
 
 class PlayerSelection(Screen):
     def __init__(self):

@@ -1,20 +1,15 @@
 import pygame
 import sys
-from button import Button
-from screen import Screen
-import player_input
-import playerselection
-from sounds import Sounds
+from display.models.button import Button
+from display.models.screen import Screen
+from input.player_input import Player_Input
+from selections.playerselection import PlayerSelection
+
 # from player import Player
 # from map import Map
 # from entity import entit
 
 # from game import Game
-
-
-pygame.init()
-sounds = Sounds()
-sounds.play_background_music(volume=0.1)
 
 class Menu(Screen):
     def __init__(self):
@@ -115,7 +110,7 @@ class Menu(Screen):
         if self.selected_button == 0:
             self.input_player()
         elif self.selected_button == 1:
-            player_selection_screen = playerselection.PlayerSelection()
+            player_selection_screen = PlayerSelection()
             player_selection_screen.main_menu()
         elif self.selected_button == 2:
             pygame.quit()
@@ -123,9 +118,7 @@ class Menu(Screen):
 
     def input_player(self):
         """Displays the player name input screen"""
-        player_input_screen = player_input.Player_Input()
+        player_input_screen = Player_Input()
         player_input_screen.input_name_screen()
 
-if __name__ == "__main__":
-    menu = Menu()
-    menu.display()
+

@@ -1,8 +1,8 @@
 import pygame
-from button import Button
-from screen import Screen
+from display.models.button import Button
+from display.models.screen import Screen
 import sys
-from playerselection import PlayerSelection
+from selections.playerselection import PlayerSelection
 
 class PokemonSelection(Screen):
     def __init__(self, player_name, selected_pokemons):
