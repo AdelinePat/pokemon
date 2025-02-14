@@ -6,13 +6,13 @@ from models.pokemon import Pokemon
 #print(first_pokemon.get_hp())
 
 # ONE SHOT TEST
-first_pokemon = Pokemon('Clefable', 'Clefairy', 49, 60, 25, ['fairy'], 13, 46, 2)
-second_pokemon = Pokemon('Raichu', 'Pikachu', 80, 59, 75, ['electric'], 17, 57, 2)
-second_pokemon.set_xp(5688)
+#first_pokemon = Pokemon('Clefable', 'Clefairy', 49, 60, 25, ['fairy'], 13, 46, 2)
+#second_pokemon = Pokemon('Raichu', 'Pikachu', 80, 59, 75, ['electric'], 17, 57, 2)
+#second_pokemon.set_xp(5688)
 # LEVEL UP  TEST
 
-# second_pokemon = Pokemon('Clefable', 'Clefairy', 49, 60, 57, ['fairy'], 1, 46, 2)
-# first_pokemon = Pokemon('Raichu', 'Pikachu', 80, 80, 75, ['electric'], 1, 57, 2)
+second_pokemon = Pokemon('Clefable', 'Clefairy', 49, 60, 57, ['fairy'], 1, 46, 2)
+first_pokemon = Pokemon('Raichu', 'Pikachu', 80, 80, 75, ['electric'], 1, 57, 2)
 
 test = Fight(first_pokemon, second_pokemon)
 test.battle()

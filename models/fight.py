@@ -1,4 +1,5 @@
 from models.bag import Bag
+from generate_pokemon.from_to_json import to_player_pokedex
 import random
 
 class Fight:
@@ -121,7 +122,7 @@ class Fight:
                     print("Impossible de fuire dans un combat de dresseur")
                 if miss == 1:
                     print("Vous n'avez pas reussi à prendre la fuite...")
-                    self.second_pokemon.attack(self.second_pokemon.type[0], self.first_pokemon)
+                    self.attack(self.second_pokemon, self.first_pokemon, self.second_pokemon.type[0])
                     hp1 = self.first_pokemon.get_hp()
                     if hp1 <= 0 or hp2 <= 0:
                         break
@@ -148,7 +149,7 @@ class Fight:
                             self.first_pokemon.heal(20)
                             print("Vous avez soigné votre pokemon")
                             self.bag.potion -= 1
-                            self.second_pokemon.attack(self.second_pokemon.type[0], self.first_pokemon)
+                            self.attack(self.second_pokemon, self.first_pokemon, self.second_pokemon.type[0])
                             hp1 = self.first_pokemon.get_hp()
                             print(self.first_pokemon)
                             print(self.second_pokemon)
@@ -157,7 +158,7 @@ class Fight:
                             print("=== Fin du tour ===")
                             first = True
                         elif first == False:
-                            self.second_pokemon.attack(self.second_pokemon.type[0], self.first_pokemon)
+                            self.attack(self.second_pokemon, self.first_pokemon, self.second_pokemon.type[0])
                             hp1 = self.first_pokemon.get_hp()
                             if hp1 <= 0 or hp2 <= 0:
                                 break
@@ -169,7 +170,24 @@ class Fight:
                             print("=== Fin du tour ===")
                             first = True
                 if take == 2:
-                    print("en cours")
-                    self.bag.pokeball -= 1
+                    if self.second_pokemon.get_state() == "domesticated":
+                        print("Vous pouvez pas captuter le pokemon d'un autres dresseur")
+                    else:
+                        capture = random.randint(1, hp2)
+                        if capture <= 5:
+                            print("1... 2... 3... Hop ! Le pokemon a était capturé !")
+                            to_player_pokedex("test", self.second_pokemon)
+                            break
+                        else :
+                            print("Le pokemon à reussi à s'échapper")
+                            self.attack(self.second_pokemon, self.first_pokemon, self.second_pokemon.type[0])
+                            hp1 = self.first_pokemon.get_hp()
+                            if hp1 <= 0 or hp2 <= 0:
+                                break
+                            print(self.first_pokemon)
+                            print(self.second_pokemon)
+                            print("=== Fin du tour ===")
+                            first = True
+                        self.bag.pokeball -= 1
         print(self.first_pokemon,"\n")
         print(self.second_pokemon,"\n")

@@ -1,18 +1,18 @@
 {
     "test": {
         "Jean-Luc": {
-            "name": "Jolteon",
-            "original_name": "Eevee",
+            "name": "Clefable",
+            "original_name": "Clefairy",
             "pet_name": "Jean-Luc",
-            "hp": 60,
-            "xp": 2010,
-            "strength": 63,
-            "defense": 47,
+            "hp": 3,
+            "xp": 1,
+            "strength": 60,
+            "defense": 57,
             "type": [
-                "electric"
+                "fairy"
             ],
-            "level": 12,
-            "speed": 41,
+            "level": 1,
+            "speed": 46,
             "stage": 2,
             "ev": {
                 "hp": 0,
