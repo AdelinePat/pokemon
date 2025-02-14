@@ -1,0 +1,26 @@
+
+      # Define buttons
+        self.confirm_button = Button(
+            image=None,
+            pos=(500, 550),
+            text_input="CONFIRM",
+            font=self.get_font(50),
+            base_color="White",
+            hovering_color="Green"
+        )
+        self.back_button = Button(
+            image=None,
+            pos=(300, 650),
+            text_input="BACK",
+            font=self.get_font(50),
+            base_color="White",
+            hovering_color="Yellow"
+        )
+        self.quit_button = Button(
+            image=None,
+            pos=(900, 650),
+            text_input="QUIT",
+            font=self.get_font(50),
+            base_color="White",
+            hovering_color="Red"
+        )
