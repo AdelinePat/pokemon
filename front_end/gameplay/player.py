@@ -4,6 +4,7 @@ from .keylistener import KeyListener
 from front_end.screen import Screen
 from .switch import Switch
 from front_end.menu.name_input import NameInput
+from front_end.gameplay.battlescreen import BattleScreen
 
 
 class Player(Entity):
@@ -15,6 +16,9 @@ class Player(Entity):
         self.collisions = None
         self.spritesheet_bike = pygame.image.load("assets/sprite/hero_01_red_m_cycle_roll.png")
         self.player_name = player_name
+        self.name = player_name
+        self.is_fleeing = False
+        
 
     def update(self) -> None:
         self.check_input()
@@ -24,28 +28,28 @@ class Player(Entity):
     def check_move(self) -> None:
         if self.animation_walk is False:
             temp_hitbox = self.hitbox.copy()
-            if self.keyListener.key_pressed(pygame.K_q) or self.keyListener.key_pressed(pygame.K_LEFT):
+            if self.keyListener.key_pressed(pygame.K_q):
                 temp_hitbox.x -= 16
                 if not self.check_collisions(temp_hitbox):
                     self.check_collisions_switchs(temp_hitbox)
                     self.move_left()
                 else:
                     self.direction = "left"
-            elif self.keyListener.key_pressed(pygame.K_d) or self.keyListener.key_pressed(pygame.K_RIGHT):
+            elif self.keyListener.key_pressed(pygame.K_d):
                 temp_hitbox.x += 16
                 if not self.check_collisions(temp_hitbox):
                     self.check_collisions_switchs(temp_hitbox)
                     self.move_right()
                 else:
                     self.direction = "right"
-            elif self.keyListener.key_pressed(pygame.K_z) or self.keyListener.key_pressed(pygame.K_UP):
+            elif self.keyListener.key_pressed(pygame.K_z):
                 temp_hitbox.y -= 16
                 if not self.check_collisions(temp_hitbox):
                     self.check_collisions_switchs(temp_hitbox)
                     self.move_up()
                 else:
                     self.direction = "up"
-            elif self.keyListener.key_pressed(pygame.K_s) or self.keyListener.key_pressed(pygame.K_DOWN):
+            elif self.keyListener.key_pressed(pygame.K_s):
                 temp_hitbox.y += 16
                 if not self.check_collisions(temp_hitbox):
                     self.check_collisions_switchs(temp_hitbox)
@@ -94,6 +98,39 @@ class Player(Entity):
             self.speed = 1
             self.all_images = self.get_all_images(self.spritesheet)
         self.keyListener.remove_key(pygame.K_b)
+
+
+    def start_battle(self, battle_zones):
+        for battle_zone in battle_zones:
+            if self.rect.colliderect(battle_zone):
+                
+                print("Début du combat Pokémon !")
+                battle_screen = BattleScreen(self.screen, self)
+                battle_screen.run()
+                break
+    
+    def battle(self):
+        print("Début du combat Pokémon !")
+        battle_screen = BattleScreen(self.screen, self)
+        battle_screen.run()
+        self.in_battle = False
+
+
+    def check_input(self):
+        if self.keyListener.key_pressed(pygame.K_b):
+            self.switch_bike()
+
+        # Ajouter la condition pour activer/désactiver le mode fuite
+        if self.keyListener.key_pressed(pygame.K_f):  # Touche F pour fuir
+            self.is_fleeing = True
+        else:
+            self.is_fleeing = False
+
+
+
+
+        
+
 
 
 

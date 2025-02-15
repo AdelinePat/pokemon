@@ -4,6 +4,7 @@ import pyscroll
 from .player import Player
 from front_end.screen import Screen
 from .switch import Switch
+from front_end.gameplay.battlescreen import BattleScreen
 
 
 class Map:
@@ -11,14 +12,12 @@ class Map:
         self.screen = screen
         self.tmx_data = None #data de la map
         self.map_layer = None
-        
         self.group = None
         self.player = None
-        
-
         self.switchs = None # type, name of map,et int pour le port
         # self.switch_map("map_0")
         self.collisions = None
+        self.battlepokemon = None
         self.current_map: Switch = Switch("switch", "map0", pygame.Rect(0, 0, 0, 0), 0)
         self.switch_map(self.current_map)
 
@@ -36,10 +35,16 @@ class Map:
 
         self.switchs = []
         self.collisions = []
+        self.battlepokemon = []
+        self.in_battle = False
+
 
         for obj in self.tmx_data.objects:
             if obj.name == "collision":
                 self.collisions.append(pygame.Rect(obj.x, obj.y, obj.width, obj.height))
+            elif obj.name == "collisionpokemon":
+                self.battlepokemon.append(pygame.Rect(obj.x, obj.y, obj.width, obj.height))
+
             elif obj.name is not None:
                 type = obj.name.split(" ")[0]
                 if type == "switch":
@@ -71,15 +76,27 @@ class Map:
         self.player.align_hitbox()
         self.player.add_switchs(self.switchs)
         self.player.add_collisions(self.collisions)
+        self.player.start_battle(self.battlepokemon)
 
     def update(self) -> None:
         if self.player:
             if self.player.change_map and self.player.step >= 8:
                 self.switch_map(self.player.change_map)
                 self.player.change_map = None
+
+            for battle_zone in self.battlepokemon:
+                if self.player.rect.colliderect(battle_zone) and not self.in_battle:
+                    self.in_battle = True
+                    self.player.battle()
+
         self.group.update()
         self.group.center(self.player.rect.center)
         self.group.draw(self.screen.get_display())
+
+    def start_battle(self):
+        print("Début du combat Pokémon !")
+        battle_screen = BattleScreen(self.screen, self.player) 
+        battle_screen.run()
 
     def pose_player(self, switch: Switch):
         position = self.tmx_data.get_object_by_name("spawn " + self.current_map.name + " " + str(switch.port))
