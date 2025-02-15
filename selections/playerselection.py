@@ -4,14 +4,15 @@ import json
 from display.models.screen import Screen
 from display.models.button import Button
 import display.models.menu as menu
+from __settings__ import MAIN_MENU_BG
 
 class PlayerSelection(Screen):
     def __init__(self):
-        super().__init__()
-        self.bg = pygame.transform.smoothscale(
-            pygame.image.load("assets/backgroundpika.jpg"),
-            (self.screen.get_width(), self.screen.get_height()),
-        )
+        super().__init__(MAIN_MENU_BG, "Pokemon - Choisissez votre sauvegarde")
+        # self.bg = pygame.transform.smoothscale(
+        #     pygame.image.load("assets/backgroundpika.jpg"),
+        #     (self.screen.get_width(), self.screen.get_height()),
+        # )
         self.players_data = self.load_players_data()
         self.selected_player_index = 0  # Index of the currently selected player
         self.font = self.get_font(40)
@@ -99,12 +100,12 @@ class PlayerSelection(Screen):
 
     def return_to_main_menu(self):
         """Return to the main menu"""
-        menu.Menu().display()
+        menu.Menu(MAIN_MENU_BG, "Pokemon - Menu principal").display()
 
     def main_menu(self):
         """Main menu loop"""
         while True:
-            self.screen.blit(self.bg, (0, 0))
+            self.screen.blit(self.background, (0, 0))
             self.render_player_list()
             self.render_buttons()
             selected_player = self.handle_events()

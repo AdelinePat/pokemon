@@ -16,7 +16,7 @@ def load_background(path):
 
 def generate_random_pokemon(pokemon):
     
-    pokemon_path = f"image-pokemon/{pokemon}.png"
+    pokemon_path = f"./assets/image-pokemon/{pokemon}.png"
     img = pygame.image.load(pokemon_path)
     scale_factor = 2  
     img = pygame.transform.scale(img, (img.get_width() * scale_factor, img.get_height() * scale_factor))
@@ -65,10 +65,10 @@ def draw_pokemon_with_hover(pokemon, mouse_x, mouse_y, fenetre):
         fenetre.blit(pokemon['img'], pokemon['rect'].topleft)
 
 
-background = load_background('./spritesheet-pokemon/centre-pokemon.png')
+background = load_background('./assets/spritesheet-pokemon/centre-pokemon.png')
 
 
-pokemon_files = [f.split('.')[0] for f in os.listdir("image-pokemon") if f.endswith(".png")]
+pokemon_files = [f.split('.')[0] for f in os.listdir("./assets/image-pokemon") if f.endswith(".png")]
 random_pokemons = random.sample(pokemon_files, 3)
 data = [generate_random_pokemon(pokemon) for pokemon in random_pokemons]
 

@@ -1,6 +1,6 @@
 import pygame
 import math
-
+from __settings__ import FIGHT_BACKGROUND
 pygame.init()
 
 # Configuration de la fenêtre
@@ -8,17 +8,17 @@ fenetre = pygame.display.set_mode((1220, 720))
 pygame.display.set_caption('Pokemon Battle')
 
 # Chargement des images
-background = pygame.image.load('./spritesheet-pokemon/fondCombat.png').convert()
+background = pygame.image.load(FIGHT_BACKGROUND).convert()
 background = pygame.transform.scale(background, (1220, 720))
 
-perso1 = pygame.image.load('./spritesheet-pokemon/pika.png')
+perso1 = pygame.image.load('./assets/spritesheet-pokemon/pika.png')
 perso1 = pygame.transform.scale(perso1, (200, 200))
 
-perso2 = pygame.image.load('./spritesheet-pokemon/draco.png')
+perso2 = pygame.image.load('./assets/spritesheet-pokemon/draco.png')
 perso2 = pygame.transform.scale(perso2, (200, 200))
 
-cercle1 = pygame.image.load('./spritesheet-pokemon/cerclecombat.png')
-cercle2 = pygame.image.load('./spritesheet-pokemon/cerclecombat.png')
+cercle1 = pygame.image.load('./assets/spritesheet-pokemon/cerclecombat.png')
+cercle2 = pygame.image.load('./assets/spritesheet-pokemon/cerclecombat.png')
 
 # Supprimer le fond blanc des cercles
 cercle1.set_colorkey((255, 255, 255))

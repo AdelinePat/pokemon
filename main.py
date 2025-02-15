@@ -1,12 +1,13 @@
 import pygame
 from display.models.sounds import Sounds
 from display.models.menu import Menu
+from __settings__ import MAIN_MENU_BG
 
 pygame.init()
 sounds = Sounds()
 sounds.play_background_music(volume=0.1)
 
 if __name__ == "__main__":
-    menu = Menu()
+    menu = Menu(MAIN_MENU_BG)
     menu.display()
 

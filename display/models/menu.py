@@ -4,58 +4,41 @@ from display.models.button import Button
 from display.models.screen import Screen
 from input.player_input import Player_Input
 from selections.playerselection import PlayerSelection
-
-# from player import Player
-# from map import Map
-# from entity import entit
-
-# from game import Game
+from __settings__ import MAIN_MENU_BG
 
 class Menu(Screen):
-    def __init__(self):
-        super().__init__()
-
-        # Get screen dimensions
-        screen_width, screen_height = self.screen.get_size()
-
-        # Load and scale the background image
-        self.bg = pygame.transform.smoothscale(
-            pygame.image.load("assets/background.jpg"), (screen_width, screen_height)
-        )
-
-        # Define relative button positions
-        button_width = screen_width * 0.3  # 30% of the screen width
-        button_x = screen_width * 0.5  # Center horizontally
-        
+    def __init__(self, background, caption="Pokemon"):
+        super().__init__(background, caption)
+        button_x = self.width * 0.5
 
         self.buttons = [
             Button(
                 image=pygame.image.load("assets/Play Rect.png"),
-                pos=(button_x, screen_height * 0.3),  # 30% of the screen height
+                pos=(button_x, self.height * 0.3),  # 30% of the screen height
                 text_input="Start",
-                font=self.get_font(int(screen_width * 0.05)),  # Adaptive font size
+                font=self.get_font(int(self.width * 0.05)),  # Adaptive font size
                 base_color="#d7fcd4",
                 hovering_color="red"
             ),
             Button(
                 image=pygame.image.load("assets/Options Rect.png"),
-                pos=(button_x, screen_height * 0.5),  # 50% of the screen height
+                pos=(button_x, self.height * 0.5),  # 50% of the screen height
                 text_input="Resume Game",
-                font=self.get_font(int(screen_width * 0.04)),
+                font=self.get_font(int(self.width * 0.04)),
                 base_color="#d7fcd4",
                 hovering_color="red"
             ),
             Button(
                 image=pygame.image.load("assets/Quit Rect.png"),
-                pos=(button_x, screen_height * 0.7),  # 70% of the screen height
+                pos=(button_x, self.height * 0.7),  # 70% of the screen height
                 text_input="QUIT",
-                font=self.get_font(int(screen_width * 0.05)),
+                font=self.get_font(int(self.width * 0.05)),
                 base_color="#d7fcd4",
                 hovering_color="red"
             ),
         ]
 
-        self.selected_button = 0  # Index of the selected button
+        self.selected_button = 0   # Index of the selected button
         # self.game = game
         # self.screen = game.screen
 
@@ -69,7 +52,7 @@ class Menu(Screen):
 
     def render_menu(self):
         """Renders the menu elements"""
-        self.screen.blit(self.bg, (0, 0))
+        self.screen.blit(self.background, (0, 0))
 
         # Display the main menu title
         menu_text = self.get_font(int(self.screen.get_width() * 0.08)).render("MAIN MENU", True, "#b68f40")

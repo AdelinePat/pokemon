@@ -3,21 +3,22 @@ from display.models.button import Button
 from display.models.screen import Screen
 import sys
 from selections.playerselection import PlayerSelection
+from __settings__ import MAIN_MENU_BG
 
 class PokemonSelection(Screen):
     def __init__(self, player_name, selected_pokemons):
         # Initialize the parent class
-        super().__init__()
+        super().__init__(MAIN_MENU_BG)
 
         # Store the player's name and selected Pokémon list
         self.player_name = player_name
         self.selected_pokemons = selected_pokemons
 
         # Load and scale the background image
-        self.bg = pygame.transform.scale(
-            pygame.image.load("assets/backgroundpika.jpg"),
-            (self.screen.get_width(), self.screen.get_height()),
-        )
+        # self.bg = pygame.transform.scale(
+        #     pygame.image.load("assets/backgroundpika.jpg"),
+        #     (self.screen.get_width(), self.screen.get_height()),
+        # )
 
         # Create buttons for Pokémon selection and navigation
         self.pokemon1_button = Button(
@@ -66,7 +67,7 @@ class PokemonSelection(Screen):
         """Displays the Pokémon selection screen"""
         while True:
             # Draw the background
-            self.screen.blit(self.bg, (0, 0))
+            self.screen.blit(self.background, (0, 0))
 
             # Draw the text prompt
             self.draw_text(f"{self.player_name}, choose your Pokémon:", self.get_font(40), "White", 600, 250)

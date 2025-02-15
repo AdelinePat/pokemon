@@ -4,15 +4,13 @@ import random
 from display.models.screen import Screen
 from display.models.button import Button
 from selections.pokemonselection import PokemonSelection
+from __settings__ import MAIN_MENU_BG
 
 
 class Player_Input(Screen):
     def __init__(self):
-        super().__init__()
-        self.bg = pygame.transform.smoothscale(
-            pygame.image.load("assets/backgroundpika.jpg"),
-            (self.screen.get_width(), self.screen.get_height()),
-        )
+        super().__init__(MAIN_MENU_BG)
+        # self.bg = self.set_background(MAIN_MENU_BG)
         self.player_name = ""
 
         # Get screen dimensions
@@ -56,7 +54,7 @@ class Player_Input(Screen):
     def input_name_screen(self):
         """Displays the name input screen"""
         while True:
-            self.screen.blit(self.bg, (0, 0))
+            self.screen.blit(self.background, (0, 0))
             screen_width, screen_height = self.screen.get_width(), self.screen.get_height()
 
             self.draw_text("Enter your name:", self.get_font(int(screen_width * 0.035)), "Black", screen_width * 0.5, screen_height * 0.3)
