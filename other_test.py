@@ -1,6 +1,9 @@
 from __settings__ import WORLD_POKEMON_PATH, PLAYER_POKEDEX, NAME_LIST_PATH
 import json
 
+#TODO POKEMON NOT FOUND
+# MOLTRES
+
 # with open(WORLD_POKEMON_PATH, "r", encoding="UTF-8") as file:
 #     my_list = json.load(file)
 

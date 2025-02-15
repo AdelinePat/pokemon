@@ -39,7 +39,11 @@ class PokemonStat():
 
             text= f"{self.pokemon}"
 
-            y_position = self.screen.heigth // 2
+            y_position = self.screen.height // 2
+
+            image = pygame.transform.smoothscale(pygame.image.load(self.pokemon.get_image()), (self.screen.height//2, self.screen.height//2) )
+            image_rect = image.get_rect(center = (self.screen.width //4, self.screen.height //2))
+            self.screen.display.blit(image, image_rect)
 
             self.draw_text(self.pokemon.name, self.screen.width//2, y_position -175, (255, 255, 0))
             self.draw_text(f"Level : {str(self.pokemon.get_level())}", self.screen.width//2, y_position - 125, (255, 255, 0))

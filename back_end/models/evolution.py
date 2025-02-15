@@ -1,5 +1,5 @@
 import random, json
-from __settings__ import TYPES_PATH, EVOLUTION_STAGE_PATH
+from __settings__ import TYPES_PATH, EVOLUTION_STAGE_PATH, ABSOLUTE_IMAGE_PATH
 
 class Evolution():
     def __init__(self, name, stage, original_name, type, level):
@@ -10,7 +10,7 @@ class Evolution():
         self.type = type
         # self.image_path = self.set_image()
         self.__evolution_number = self.get_evolution_name_list()
-        self.image = self.set_image()
+        self.image = self.get_image()
 
     def set_stage(self, new_stage):
         self.__stage = new_stage
@@ -18,10 +18,9 @@ class Evolution():
     def get_stage(self):
         return self.__stage
 
-    def set_image(self):
-        image = "./images/pokemons/" + self.name + ".png"
+    def get_image(self):
+        image = ABSOLUTE_IMAGE_PATH + self.name + ".png"
         return image
-
 
     def get_name(self):
         pass

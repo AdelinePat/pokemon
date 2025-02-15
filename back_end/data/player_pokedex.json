@@ -406,5 +406,31 @@
             },
             "state": "wild"
         }
+    },
+    "testencoreunefois": {
+        "Jean-Charles": {
+            "name": "Mr. Mime",
+            "original_name": "Mr. Mime",
+            "pet_name": "Jean-Charles",
+            "hp": 75,
+            "xp": 3600,
+            "strength": 60,
+            "defense": 70,
+            "type": [
+                "ice",
+                "psychic"
+            ],
+            "level": 15,
+            "speed": 49,
+            "stage": 2,
+            "ev": {
+                "hp": 0,
+                "strength": 0,
+                "defense": 0,
+                "speed": 0,
+                "xp": 0
+            },
+            "state": "wild"
+        }
     }
 }
