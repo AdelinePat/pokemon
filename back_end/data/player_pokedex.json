@@ -380,5 +380,31 @@
             },
             "state": "wild"
         }
+    },
+    "H\u00e9h\u00e9h\u00e9": {
+        "Jean-Robert": {
+            "name": "Dragonite",
+            "original_name": "Dratini",
+            "pet_name": "Jean-Robert",
+            "hp": 121,
+            "xp": 40875,
+            "strength": 112,
+            "defense": 119,
+            "type": [
+                "dragon",
+                "flying"
+            ],
+            "level": 34,
+            "speed": 104,
+            "stage": 3,
+            "ev": {
+                "hp": 0,
+                "strength": 0,
+                "defense": 0,
+                "speed": 0,
+                "xp": 0
+            },
+            "state": "wild"
+        }
     }
 }
