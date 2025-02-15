@@ -1,4 +1,4 @@
-#MMap for pokemon
+# Map for pokemon
 
 ## link for map
 
