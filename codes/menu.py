@@ -47,13 +47,17 @@ class Menu:
                             case 0:
                                 name_input = NameInput(self.screen)
                                 player_name, pokemon = name_input.get_name()
+                                print(player_name, pokemon)
                                 game = Game(self.screen, player_name)
                                 game.run()
                             case 1:
-                                select_player = SelectPlayer(self.screen)
+                                select_player = SelectPlayer(self.screen).display()
+                                game = Game(self.screen, select_player)
+                                print(select_player)
+                                game.run()
                                 # game = Game(self.screen, "test")
                                 # game.run()
-                                print("Reprendre la partie (à faire)")
+                                # print("Reprendre la partie (à faire)")
                             case 2:
                                 pygame.quit()
                                 sys.exit()

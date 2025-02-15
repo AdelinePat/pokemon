@@ -24,28 +24,28 @@ class Player(Entity):
     def check_move(self) -> None:
         if self.animation_walk is False:
             temp_hitbox = self.hitbox.copy()
-            if self.keyListener.key_pressed(pygame.K_q):
+            if self.keyListener.key_pressed(pygame.K_q) or self.keyListener.key_pressed(pygame.K_LEFT):
                 temp_hitbox.x -= 16
                 if not self.check_collisions(temp_hitbox):
                     self.check_collisions_switchs(temp_hitbox)
                     self.move_left()
                 else:
                     self.direction = "left"
-            elif self.keyListener.key_pressed(pygame.K_d):
+            elif self.keyListener.key_pressed(pygame.K_d) or self.keyListener.key_pressed(pygame.K_RIGHT):
                 temp_hitbox.x += 16
                 if not self.check_collisions(temp_hitbox):
                     self.check_collisions_switchs(temp_hitbox)
                     self.move_right()
                 else:
                     self.direction = "right"
-            elif self.keyListener.key_pressed(pygame.K_z):
+            elif self.keyListener.key_pressed(pygame.K_z) or self.keyListener.key_pressed(pygame.K_UP):
                 temp_hitbox.y -= 16
                 if not self.check_collisions(temp_hitbox):
                     self.check_collisions_switchs(temp_hitbox)
                     self.move_up()
                 else:
                     self.direction = "up"
-            elif self.keyListener.key_pressed(pygame.K_s):
+            elif self.keyListener.key_pressed(pygame.K_s) or self.keyListener.key_pressed(pygame.K_DOWN):
                 temp_hitbox.y += 16
                 if not self.check_collisions(temp_hitbox):
                     self.check_collisions_switchs(temp_hitbox)

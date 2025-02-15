@@ -3,14 +3,18 @@ from models.pokemon import Pokemon
 from generate_pokemon.create_pokemon import create_world_pokemons
 from __settings__ import WORLD_POKEMON_PATH, PLAYER_POKEDEX
 
-def save_world_pokemons():
-
+def generate_pokemons_dict():
+    name_list = ["Baptiste", "Michel", "Pierre", "Paul", "Louis", "François", "Claude", "Christophe", "Charles", "Luc", "Marie", "Sébastien", "Daniel", "Eric", "Robert", "Joseph", "Thibault", "Adeline", "Florence", "Eltigani", "Jolyne", "Mehdi", "Vanessa", "Noa", "Armelle", "Morgan", "Alicia", "Ryan", "Ryhad", "Emilie", "Hubert", "Vincent", "Roger", "David", "Thierry", "Sarah", "Hélène"]
     all_pokemons = create_world_pokemons()
     pokemons_dict_list = []
-    for each_pokemon in all_pokemons:
+    for index, each_pokemon in enumerate(all_pokemons):
+        each_pokemon.set_pet_name("Jean-" + name_list[index])
         a_pokemon = each_pokemon.pokemon_dict()
         pokemons_dict_list.append(a_pokemon)
-        
+    
+    return pokemons_dict_list
+
+def save_world_pokemons(pokemons_dict_list):
     if not os.path.exists(WORLD_POKEMON_PATH):
         with open(WORLD_POKEMON_PATH, "w", encoding="UTF-8") as file:
             json.dump({}, file)
@@ -30,12 +34,17 @@ def save_wild_pokemon(my_pokemon):
 def get_random_wild_pokemon():
     with open(WORLD_POKEMON_PATH, "r") as file:
         pokemons = json.load(file)
-    
+
+    if not pokemons:
+        pokemons = generate_pokemons_dict()
+
     a_pokemon = random.choice(pokemons)
     pokemons.pop(pokemons.index(a_pokemon))
 
-    with open(WORLD_POKEMON_PATH, "w") as file:
-        json.dump(pokemons, file, indent=4)
+    save_world_pokemons(pokemons)
+
+    # with open(WORLD_POKEMON_PATH, "w") as file:
+    #     json.dump(pokemons, file, indent=4)
 
 # name, original_name, hp, strength, defense, type, level, speed, stage
     my_pokemon = instanciate_pokemon(a_pokemon)

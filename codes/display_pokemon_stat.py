@@ -51,7 +51,6 @@ class PokemonStat():
             self.draw_text(f"XP : {str(self.pokemon.get_xp())}", self.screen.width//2, y_position + 175, (255, 255, 0))
             
 
-
             # for i, option in enumerate(self.options):
             #     color = (255, 255, 0) if i == self.selected_index else (255, 255, 255)
             #     self.draw_text(option, 600, 300 + i * 60, color)

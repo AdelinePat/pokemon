@@ -122,5 +122,30 @@
             },
             "state": "wild"
         }
+    },
+    "testiiing": {
+        "Jean-Louis": {
+            "name": "Kangaskhan",
+            "original_name": "Kangaskhan",
+            "pet_name": "Jean-Louis",
+            "hp": 82,
+            "xp": 6151,
+            "strength": 77,
+            "defense": 63,
+            "type": [
+                "normal"
+            ],
+            "level": 18,
+            "speed": 77,
+            "stage": 2,
+            "ev": {
+                "hp": 0,
+                "strength": 0,
+                "defense": 0,
+                "speed": 0,
+                "xp": 0
+            },
+            "state": "wild"
+        }
     }
 }
