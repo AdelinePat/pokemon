@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="100" height="100" tilewidth="16" tileheight="16" infinite="0" nextlayerid="7" nextobjectid="42">
- <tileset firstgid="1" source="../../../../../Python/Pokemon/assets/tileset/tileset_pokemon_sdk.tsx"/>
+ <tileset firstgid="1" source="./tileset/tileset_pokemon_sdk.tsx"/>
  <group id="4" name="layer" offsetx="-362" offsety="793.333">
   <layer id="1" name="ground" width="100" height="100">
    <data encoding="csv">

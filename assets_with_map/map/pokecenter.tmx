@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="16" height="20" tilewidth="16" tileheight="16" infinite="0" nextlayerid="15" nextobjectid="63">
- <tileset firstgid="1" source="../../../../../Python/Pokemon/assets/tileset/pokemon-center.tsx"/>
+ <tileset firstgid="1" source="./tileset/pokemon-center.tsx"/>
  <group id="11" name="layer">
   <layer id="1" name="Calque de Tuiles 1" width="16" height="20">
    <data encoding="csv">
