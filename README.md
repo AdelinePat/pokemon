@@ -1,19 +1,19 @@
-#Carte pour pokemon
+# Map for pokemon
 
-## lien pour map
+## link for map
 
 ```
 
 https://www.mapeditor.org/
 ```
 
-**installer pygame**
+**install pygame**
 
 ```
 pip install pygame
 ```
 
-**installer pandas**
+**install pandas**
 
 ```
 pip install pandas
@@ -25,12 +25,12 @@ pip install pandas
 pip install pytmx
 ```
 
-**installer pyscroll**
+**install pyscroll**
 
 ```
 pip install pyscroll
 ```
 
-la touche b sert à utilier le velo et b est pour une deuxième fois pour descendre du velo
-
-Si les map ne lisent pas penser à mettre les chemins relatifs sur chaque map sinon ça crash
+The B key is used to ride the bike, and pressing B again dismounts the bike.  
+  
+If the maps are not loading, make sure to set the relative paths for each map, otherwise it will crash.  
