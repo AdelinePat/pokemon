@@ -1,8 +1,8 @@
 import pygame
-from codes.game import Game
-from codes.menu import Menu
-from codes.screen import Screen
-from codes.sounds import Sounds
+from front_end.gameplay.game import Game
+from front_end.menu.menu import Menu
+from front_end.screen import Screen
+from front_end.sounds import Sounds
 
 pygame.init()
 sounds = Sounds()

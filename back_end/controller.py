@@ -1,5 +1,5 @@
 
-import back_end.player_pokedex_service as player_pokedex_service
+import back_end.data_access.player_pokedex_service as player_pokedex_service
 
 def get_player_names():
     player_names = list(player_pokedex_service.get_player_names())
