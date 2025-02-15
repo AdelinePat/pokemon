@@ -1,9 +1,9 @@
 import pygame
 import pytmx
 import pyscroll
-from player import Player
-from screen import Screen
-from switch import Switch
+from codes.player import Player
+from codes.screen import Screen
+from codes.switch import Switch
 
 
 class Map:

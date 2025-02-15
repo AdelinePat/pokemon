@@ -1,5 +1,6 @@
 import pygame
 
+from codes.select_pokemons import SelectPokemons
 
 
 class NameInput:
@@ -12,6 +13,7 @@ class NameInput:
         surface = self.font.render(text, True, color)
         rect = surface.get_rect(center=(x, y))
         self.screen.get_display().blit(surface, rect)
+        
 
     def get_name(self):
         while True:
@@ -30,7 +32,8 @@ class NameInput:
                     sys.exit()
                 if event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_RETURN and self.player_name:
-                        return self.player_name,
+                        my_pokemon = SelectPokemons(self.player_name, self.screen).display()
+                        return self.player_name, my_pokemon
                     elif event.key == pygame.K_BACKSPACE:
                         self.player_name = self.player_name[:-1]
                     elif event.unicode.isalnum():

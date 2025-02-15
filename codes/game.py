@@ -1,7 +1,7 @@
 import pygame
-from keylistener import KeyListener
-from map import Map
-from player import Player
+from codes.keylistener import KeyListener
+from codes.map import Map
+from codes.player import Player
 
 
 class Game:

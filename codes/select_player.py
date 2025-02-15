@@ -1,17 +1,17 @@
 import pygame
 import sys
 
-from codes.name_input import NameInput  
-from codes.game import Game
-from codes.select_player import SelectPlayer
+# from codes.name_input import NameInput  
+# from codes.game import Game
+# from codes.select_player import SelectPlayer
+from back_end.controller import get_player_names
 
 
-
-class Menu:
+class SelectPlayer:
     def __init__(self, screen):
         self.screen = screen
         self.font = pygame.font.Font(None, 50)
-        self.options = ["Start Game", "Resume Game", "Exit"]
+        self.options = get_player_names()
         self.selected_index = 0
         self.running = True
 
@@ -38,22 +38,17 @@ class Menu:
                     pygame.quit()
                     sys.exit()
                 if event.type == pygame.KEYDOWN:
+                    
                     if event.key == pygame.K_DOWN:
                         self.selected_index = (self.selected_index + 1) % len(self.options)
                     elif event.key == pygame.K_UP:
                         self.selected_index = (self.selected_index - 1) % len(self.options)
+
                     elif event.key == pygame.K_RETURN:
-                        match self.selected_index:
-                            case 0:
-                                name_input = NameInput(self.screen)
-                                player_name, pokemon = name_input.get_name()
-                                game = Game(self.screen, player_name)
-                                game.run()
-                            case 1:
-                                select_player = SelectPlayer(self.screen)
-                                # game = Game(self.screen, "test")
-                                # game.run()
-                                print("Reprendre la partie (à faire)")
-                            case 2:
-                                pygame.quit()
-                                sys.exit()
+                        for index in range(len(self.options)):
+                            if self.selected_index == index:
+                                return self.options[index]
+
+                    elif event.key == pygame.K_ESCAPE:
+                        pass
+                        # return

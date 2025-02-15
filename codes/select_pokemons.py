@@ -1,17 +1,29 @@
 import pygame
 import sys
+from back_end.controller import create_player
+from codes.display_pokemon_stat import PokemonStat
 
-from codes.name_input import NameInput  
-from codes.game import Game
-from codes.select_player import SelectPlayer
+# from codes.name_input import NameInput  
+# from codes.game import Game
+# from codes.select_player import SelectPlayer
+from back_end.controller import get_starter_pokemons
 
 
-
-class Menu:
-    def __init__(self, screen):
+class SelectPokemons():
+    def __init__(self, player_name, screen, pokemon_list=[]):
+        self.player_name = player_name
         self.screen = screen
         self.font = pygame.font.Font(None, 50)
-        self.options = ["Start Game", "Resume Game", "Exit"]
+        if not pokemon_list:
+            self.pokemons = get_starter_pokemons()
+        else:
+            self.pokemons = pokemon_list
+
+        self.options = []
+        for pokemon in self.pokemons:
+            option = pokemon.name
+            self.options.append(option)
+
         self.selected_index = 0
         self.running = True
 
@@ -38,22 +50,19 @@ class Menu:
                     pygame.quit()
                     sys.exit()
                 if event.type == pygame.KEYDOWN:
+
                     if event.key == pygame.K_DOWN:
                         self.selected_index = (self.selected_index + 1) % len(self.options)
                     elif event.key == pygame.K_UP:
                         self.selected_index = (self.selected_index - 1) % len(self.options)
+
                     elif event.key == pygame.K_RETURN:
-                        match self.selected_index:
-                            case 0:
-                                name_input = NameInput(self.screen)
-                                player_name, pokemon = name_input.get_name()
-                                game = Game(self.screen, player_name)
-                                game.run()
-                            case 1:
-                                select_player = SelectPlayer(self.screen)
-                                # game = Game(self.screen, "test")
-                                # game.run()
-                                print("Reprendre la partie (à faire)")
-                            case 2:
-                                pygame.quit()
-                                sys.exit()
+                        for index in range(len(self.options)):
+                            if self.selected_index == index:
+                                pokemon = PokemonStat(self.player_name, self.pokemons, self.pokemons[index], self.screen).display()
+                                return pokemon
+
+                    elif event.key == pygame.K_ESCAPE:
+
+                        pass
+                        # return
