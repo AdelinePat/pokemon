@@ -1,4 +1,4 @@
-# Map for pokemon
+#MMap for pokemon
 
 ## link for map
 
@@ -19,7 +19,7 @@ pip install pygame
 pip install pandas
 ```
 
-**installer pytmx**
+**install pytmx**
 
 ```
 pip install pytmx
