@@ -1,0 +1,51 @@
+{
+    "test": {
+        "Jean-Luc": {
+            "name": "Clefable",
+            "original_name": "Clefairy",
+            "pet_name": "Jean-Luc",
+            "hp": 3,
+            "xp": 1,
+            "strength": 60,
+            "defense": 57,
+            "type": [
+                "fairy"
+            ],
+            "level": 1,
+            "speed": 46,
+            "stage": 2,
+            "ev": {
+                "hp": 0,
+                "strength": 0,
+                "defense": 0,
+                "speed": 0,
+                "xp": 0
+            },
+            "state": "domesticated"
+        },
+        "Hubert": {
+            "name": "Gengar",
+            "original_name": "Gastly",
+            "pet_name": "Hubert",
+            "hp": 121,
+            "xp": 30626,
+            "strength": 108,
+            "defense": 115,
+            "type": [
+                "ghost",
+                "poison"
+            ],
+            "level": 31,
+            "speed": 113,
+            "stage": 3,
+            "ev": {
+                "hp": 0,
+                "strength": 0,
+                "defense": 0,
+                "speed": 0,
+                "xp": 0
+            },
+            "state": "domesticated"
+        }
+    }
+}
