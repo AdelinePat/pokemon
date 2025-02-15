@@ -9,26 +9,28 @@ class BattleScreen:
         self.font = pygame.font.Font(None, 50)
 
     def draw_text(self, text, x, y, color=(255, 255, 255)):
+        """Render text on the screen at a specific position."""
         surface = self.font.render(text, True, color)
         rect = surface.get_rect(center=(x, y))
         self.screen.get_display().blit(surface, rect)
 
     def run(self):
+        """Main loop for the battle screen."""
         while self.running:
-            # Remplir l'écran avec un fond noir
+            # Fill the screen with a black background
             self.screen.get_display().fill((0, 0, 0))
 
-            # Afficher les textes
-            self.draw_text("Combat Pokémon !", 600, 150, (255, 255, 0))
-            self.draw_text("Appuie sur Échap pour fuir", 600, 300)
+            # Display text messages
+            self.draw_text("Pokémon Battle!", 600, 150, (255, 255, 0))
+            self.draw_text("Press Escape to flee", 600, 300)
 
-            # Mettre à jour l'affichage
+            # Update the display
             pygame.display.flip()
 
-            # Mettre à jour l'écran avec la méthode de l'objet 'screen'
+            # Update the screen using the 'screen' object method
             self.screen.update()
 
-            # Gérer les événements
+            # Handle events
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pygame.quit()
