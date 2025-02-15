@@ -147,5 +147,31 @@
             },
             "state": "wild"
         }
+    },
+    "olol": {
+        "Jean-Louis": {
+            "name": "Pidgeot",
+            "original_name": "Pidgey",
+            "pet_name": "Jean-Louis",
+            "hp": 105,
+            "xp": 22469,
+            "strength": 91,
+            "defense": 111,
+            "type": [
+                "normal",
+                "flying"
+            ],
+            "level": 28,
+            "speed": 92,
+            "stage": 3,
+            "ev": {
+                "hp": 0,
+                "strength": 0,
+                "defense": 0,
+                "speed": 0,
+                "xp": 0
+            },
+            "state": "wild"
+        }
     }
 }

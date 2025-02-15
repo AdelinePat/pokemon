@@ -1,12 +1,15 @@
 import json, os, random
 from models.pokemon import Pokemon
 from generate_pokemon.create_pokemon import create_world_pokemons
-from __settings__ import WORLD_POKEMON_PATH, PLAYER_POKEDEX
+from __settings__ import WORLD_POKEMON_PATH, PLAYER_POKEDEX, NAME_LIST_PATH
 
 def generate_pokemons_dict():
-    name_list = ["Baptiste", "Michel", "Pierre", "Paul", "Louis", "François", "Claude", "Christophe", "Charles", "Luc", "Marie", "Sébastien", "Daniel", "Eric", "Robert", "Joseph", "Thibault", "Adeline", "Florence", "Eltigani", "Jolyne", "Mehdi", "Vanessa", "Noa", "Armelle", "Morgan", "Alicia", "Ryan", "Ryhad", "Emilie", "Hubert", "Vincent", "Roger", "David", "Thierry", "Sarah", "Hélène"]
+    with open(NAME_LIST_PATH, 'r') as file:
+        name_list = json.load(file)
+
     all_pokemons = create_world_pokemons()
     pokemons_dict_list = []
+    
     for index, each_pokemon in enumerate(all_pokemons):
         each_pokemon.set_pet_name("Jean-" + name_list[index])
         a_pokemon = each_pokemon.pokemon_dict()
