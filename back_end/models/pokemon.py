@@ -151,7 +151,7 @@ class Pokemon(Evolution):
                 efficency = "attaque très efficace"
             case 1:
                 efficency = "attaque efficace"
-            case 0.5:
+            case 0.25 | 0.5:
                 efficency = "attaque peu efficace"
             case 0:
                 efficency = "impossible d'attaquer"

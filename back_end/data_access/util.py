@@ -22,7 +22,7 @@ def instanciate_pokemon(pokemon):
 def instanciate_bag(player):
     # player is the dictionary of player name in player_pokedex.json
     player_bag = Bag()
-    player_bag.set_potion(player["bag"]["potion"])
-    player_bag.set_pokeball(player["bag"]["pokeball"])
+    player_bag.set_potion(player["potions"])
+    player_bag.set_pokeball(player["pokeball"])
 
     return player_bag

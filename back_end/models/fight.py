@@ -6,7 +6,8 @@ class Fight:
     def __init__(self, pokemon1, pokemon2):
         self.first_pokemon = pokemon1
         self.second_pokemon = pokemon2
-        self.bag = Bag()
+        # self.bag = Bag()
+
         # self.all_pokemons = create_world_pokemons() #TODO edit this function
         # self.first_pokemon = random.choice(self.all_pokemons)
         # self.second_pokemon = random.choice(self.all_pokemons)
@@ -55,6 +56,24 @@ class Fight:
             print(f"{pokemon.name} a fait une attaque {attack_type}, {efficency}\
                 \n Le pokemon {enemy.name} de type {enemy.type} en face a reçu {final_damage}, il lui reste : {enemy.get_hp()}")
 
+    def is_player_first(self):
+        if self.first_pokemon.get_speed() > self.second_pokemon.get_speed():
+            return True
+        else:
+            return False
+        
+    def player_attack(self, attack_type):
+        self.attack(self.first_pokemon, self.second_pokemon, attack_type)
+
+
+    def bot_attack(self):
+        if len(self.second_pokemon.type) == 2:
+            attack_type = random.choice(self.second_pokemon.type)
+        else:
+            attack_type = self.second_pokemon.type[0]
+
+        self.attack(self.second_pokemon, self.first_pokemon, attack_type)
+
 
     def battle(self):
         hp1 = self.first_pokemon.get_hp()
@@ -82,7 +101,7 @@ class Fight:
             if self.first_pokemon.get_speed() > self.second_pokemon.get_speed():
                 first = True
             else :
-                first = False 
+                first = False
 
             if choice == 1:
                 if first == True:
