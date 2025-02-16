@@ -1,29 +1,46 @@
-import json
-from __settings__ import WORLD_POKEMON_PATH, PLAYER_POKEDEX
+import json, os
+from __settings__ import PLAYER_POKEDEX
 from .wild_pokemons import get_random_wild_pokemon
+from ..models.bag import Bag
+from .pokemon_pokedex_service import save_pokemon_to_pokedex
+from .bag_pokedex_service import save_bag_to_pokedex
 
 # back to front
 def get_player_names():
     with open(PLAYER_POKEDEX, "r", encoding="UTF-8") as file:
-        pokemons_dictionary = json.load(file)
-    return pokemons_dictionary.keys()
+        player_keys_dictionary = json.load(file)
+    return player_keys_dictionary.keys()
 
-def get_player_pokemons(player):
+def does_player_exist(player):
     with open(PLAYER_POKEDEX, "r", encoding="UTF-8") as file:
-        pokemons_dictionary = json.load(file)
-        player_pokemons = pokemons_dictionary[player].keys()
-    return player_pokemons
+        player_keys_dictionary = list(json.load(file).keys())
+
+    return player in player_keys_dictionary
+
 
 # front to back
 def create_player(player, pokemon):
-    with open(PLAYER_POKEDEX, "r", encoding="UTF-8") as file:
-        pokemons_dictionary = json.load(file)
+    if not os.path.exists(PLAYER_POKEDEX):
+        with open(PLAYER_POKEDEX, "w", encoding="UTF-8") as file:
+            json.dump({}, file)
 
-    if player not in pokemons_dictionary.keys():
-        pokemons_dictionary[player] = {pokemon.pet_name : pokemon.pokemon_dict()}
-    
+    with open(PLAYER_POKEDEX, "r", encoding="UTF-8") as file:
+        players_dictionary = json.load(file)
+
+    if player not in players_dictionary.keys():
+        player_bag = Bag()
+        players_dictionary[player] = {
+            "bag" : {},
+            "pokemons" : {}
+            }
+    else:
+        return
+            
     with open(PLAYER_POKEDEX, "w", encoding="UTF-8") as file:
-        json.dump(pokemons_dictionary, file, indent=4)
+        json.dump(players_dictionary, file, indent=4)
+    
+    save_pokemon_to_pokedex(player, pokemon)
+    save_bag_to_pokedex(player, player_bag)
     # return player_pokemons
 
 def get_starter_pokemon():

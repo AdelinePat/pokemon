@@ -1,5 +1,5 @@
 from .bag import Bag
-from ..data_access.pokedex import to_player_pokedex
+from ..data_access.pokemon_pokedex_service import save_pokemon_to_pokedex
 import random
 
 class Fight:
@@ -176,7 +176,7 @@ class Fight:
                         capture = random.randint(1, hp2)
                         if capture <= 5:
                             print("1... 2... 3... Hop ! Le pokemon a était capturé !")
-                            to_player_pokedex("test", self.second_pokemon)
+                            save_pokemon_to_pokedex("test", self.second_pokemon)
                             break
                         else :
                             print("Le pokemon à reussi à s'échapper")

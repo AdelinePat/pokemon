@@ -149,7 +149,7 @@
     "Farfetch'd" : {
         "Farfetch'd" : 2
     },
-    "Doduo" : {
+    "Duduo" : {
         "Duduo" : 1,
         "Dodrio" : 2
     },
@@ -300,5 +300,9 @@
     },
     "Mewtwo" : {
         "Mewtwo" : 4
+    },
+    "Seel" : {
+        "Seel" : 1,
+        "Dewgong" : 2
     }
 }

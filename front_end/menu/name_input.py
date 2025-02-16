@@ -1,5 +1,6 @@
 import pygame
-
+from back_end.data_access.player_pokedex_service import does_player_exist
+from back_end.data_access.pokemon_pokedex_service import get_first_pokemon
 from .select_pokemons import SelectPokemons
 
 class NameInput:
@@ -31,8 +32,12 @@ class NameInput:
                     # sys.exit()
                 if event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_RETURN and self.player_name:
-                        my_pokemon = SelectPokemons(self.player_name, self.screen).display()
-                        return self.player_name, my_pokemon
+                        if does_player_exist(self.player_name):
+                            pokemon = get_first_pokemon(self.player_name)
+                            return self.player_name, pokemon
+                        else:
+                            my_pokemon = SelectPokemons(self.player_name, self.screen).display()
+                            return self.player_name, my_pokemon
                     elif event.key == pygame.K_BACKSPACE:
                         self.player_name = self.player_name[:-1]
                     elif event.unicode.isalnum():

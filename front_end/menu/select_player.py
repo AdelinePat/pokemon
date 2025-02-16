@@ -25,7 +25,7 @@ class SelectPlayer:
             self.screen.update()
             self.screen.get_display().fill((0, 0, 0))
 
-            self.draw_text("Menu Principal", 600, 150, (255, 255, 0))
+            self.draw_text("Choisissez votre joueur", 600, 150, (255, 255, 0))
 
             for i, option in enumerate(self.options):
                 color = (255, 255, 0) if i == self.selected_index else (255, 255, 255)

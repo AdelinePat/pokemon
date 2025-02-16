@@ -1,5 +1,6 @@
 
 from back_end.models.pokemon import Pokemon
+from ..models.bag import Bag
 
 def instanciate_pokemon(pokemon):
     my_pokemon = Pokemon(pokemon['name'], pokemon['original_name'], pokemon['hp'],\
@@ -17,3 +18,11 @@ def instanciate_pokemon(pokemon):
     my_pokemon.set_pet_name(pokemon['pet_name'])
 
     return my_pokemon
+
+def instanciate_bag(player):
+    # player is the dictionary of player name in player_pokedex.json
+    player_bag = Bag()
+    player_bag.set_potion(player["bag"]["potion"])
+    player_bag.set_pokeball(player["bag"]["pokeball"])
+
+    return player_bag

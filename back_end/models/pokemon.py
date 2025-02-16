@@ -25,6 +25,7 @@ class Pokemon(Evolution):
             "name" : self.name,
             "original_name" : self.get_original_name(),
             "pet_name" : self.pet_name,
+            "hp_max" : self.get_hp_max(),
             "hp" : self.get_hp(),
             "xp" : self.get_xp(),
             "strength" : self.get_strength(),

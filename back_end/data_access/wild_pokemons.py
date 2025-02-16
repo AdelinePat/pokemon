@@ -35,7 +35,6 @@ def save_wild_pokemon(my_pokemon):
         json.dump(pokemons_dict_list, file, indent=4)
 
 def get_random_wild_pokemon():
-    # BLABLA
     if not os.path.exists(WORLD_POKEMON_PATH):
         with open(WORLD_POKEMON_PATH, "w", encoding="UTF-8") as file:
             json.dump([], file)

@@ -1,17 +1,43 @@
 [
     {
-        "name": "Snorlax",
-        "original_name": "Snorlax",
-        "pet_name": "Jean-Louis",
-        "hp": 71,
-        "xp": 7502,
-        "strength": 84,
-        "defense": 74,
+        "name": "Meowth",
+        "original_name": "Meowth",
+        "pet_name": "Jean-Joseph",
+        "hp_max": 49,
+        "hp": 49,
+        "xp": 805,
+        "strength": 43,
+        "defense": 42,
         "type": [
+            "steel"
+        ],
+        "level": 9,
+        "speed": 36,
+        "stage": 1,
+        "ev": {
+            "hp": 0,
+            "strength": 0,
+            "defense": 0,
+            "speed": 0,
+            "xp": 0
+        },
+        "state": "wild"
+    },
+    {
+        "name": "Raticate",
+        "original_name": "Rattata",
+        "pet_name": "Jean-Thibault",
+        "hp_max": 66,
+        "hp": 66,
+        "xp": 2343,
+        "strength": 58,
+        "defense": 60,
+        "type": [
+            "dark",
             "normal"
         ],
-        "level": 19,
-        "speed": 86,
+        "level": 13,
+        "speed": 44,
         "stage": 2,
         "ev": {
             "hp": 0,
