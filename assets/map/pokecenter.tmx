@@ -209,8 +209,5 @@
     <point/>
    </object>
   </objectgroup>
-  <objectgroup id="15" name="battlepokemon">
-   <object id="63" name="collisionpokemon" x="106" y="220.75" width="27.25" height="16"/>
-  </objectgroup>
  </group>
 </map>
