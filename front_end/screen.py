@@ -29,3 +29,14 @@ class Screen:
 
     def get_display(self):
         return self.display
+    
+    def set_background_display(self, background_image):
+        background = pygame.transform.smoothscale(pygame.image.load(background_image), (self.width, self.height))
+        background_rect = background.get_rect()
+        self.display.blit(background, background_rect)
+
+        background_screen = pygame.Surface((self.width, self.height))
+        background_rect = background_screen.get_rect(center = (self.width //2, self.height // 2))
+        background_screen.set_alpha(155)
+        pygame.draw.rect(background_screen, (0,0,0), background_rect)
+        self.display.blit(background_screen, background_rect)

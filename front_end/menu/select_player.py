@@ -5,6 +5,7 @@ import sys
 # from codes.game import Game
 # from codes.select_player import SelectPlayer
 from back_end.controller import get_player_names
+from __settings__ import MAIN_MENU_BACKGROUND2
 
 
 class SelectPlayer:
@@ -24,6 +25,8 @@ class SelectPlayer:
         while self.running:
             self.screen.update()
             self.screen.get_display().fill((0, 0, 0))
+
+            self.screen.set_background_display(MAIN_MENU_BACKGROUND2)
 
             self.draw_text("Choisissez votre joueur", 600, 150, (255, 255, 0))
 

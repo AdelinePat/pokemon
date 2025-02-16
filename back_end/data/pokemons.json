@@ -170,31 +170,6 @@
         "state": "wild"
     },
     {
-        "name": "Sandslash",
-        "original_name": "Sandshrew",
-        "pet_name": "Jean-Charles",
-        "hp_max": 60,
-        "hp": 60,
-        "xp": 2081,
-        "strength": 66,
-        "defense": 44,
-        "type": [
-            "ice",
-            "steel"
-        ],
-        "level": 12,
-        "speed": 65,
-        "stage": 2,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
         "name": "Clefairy",
         "original_name": "Clefairy",
         "pet_name": "Jean-Luc",
@@ -209,30 +184,6 @@
         "level": 2,
         "speed": 11,
         "stage": 1,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
-        "name": "Farfetch'd",
-        "original_name": "Farfetch'd",
-        "pet_name": "Jean-Marie",
-        "hp_max": 48,
-        "hp": 48,
-        "xp": 1800,
-        "strength": 57,
-        "defense": 42,
-        "type": [
-            "fighting"
-        ],
-        "level": 12,
-        "speed": 39,
-        "stage": 2,
         "ev": {
             "hp": 0,
             "strength": 0,
@@ -333,30 +284,6 @@
         "level": 25,
         "speed": 91,
         "stage": 3,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
-        "name": "Meowth",
-        "original_name": "Meowth",
-        "pet_name": "Jean-Joseph",
-        "hp_max": 33,
-        "hp": 33,
-        "xp": 422,
-        "strength": 47,
-        "defense": 47,
-        "type": [
-            "steel"
-        ],
-        "level": 7,
-        "speed": 47,
-        "stage": 1,
         "ev": {
             "hp": 0,
             "strength": 0,

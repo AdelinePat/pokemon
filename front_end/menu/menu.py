@@ -4,7 +4,7 @@ import sys
 from .name_input import NameInput  
 from front_end.gameplay.game import Game
 from .select_player import SelectPlayer
-
+from __settings__ import MAIN_MENU_BACKGROUND1
 
 
 class Menu:
@@ -20,10 +20,14 @@ class Menu:
         rect = surface.get_rect(center=(x, y))
         self.screen.get_display().blit(surface, rect)
 
+    
+
     def display(self):
         while self.running:
             self.screen.update()
             self.screen.get_display().fill((0, 0, 0))
+
+            self.screen.set_background_display(MAIN_MENU_BACKGROUND1)
 
             self.draw_text("Menu Principal", 600, 150, (255, 255, 0))
 

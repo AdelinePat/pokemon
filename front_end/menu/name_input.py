@@ -2,6 +2,7 @@ import pygame
 from back_end.data_access.player_pokedex_service import does_player_exist
 from back_end.data_access.pokemon_pokedex_service import get_first_pokemon
 from .select_pokemons import SelectPokemons
+from __settings__ import MAIN_MENU_BACKGROUND4
 
 class NameInput:
     def __init__(self, screen):
@@ -19,6 +20,7 @@ class NameInput:
         while True:
             self.screen.update()
             self.screen.get_display().fill((0, 0, 0))
+            self.screen.set_background_display(MAIN_MENU_BACKGROUND4)
 
             self.draw_text("Entrez votre nom:", 600, 200, (255, 255, 0))
             self.draw_text(self.player_name, 600, 300, (255, 255, 255))
