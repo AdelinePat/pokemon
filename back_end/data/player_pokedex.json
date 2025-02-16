@@ -120,5 +120,37 @@
                 "state": "domesticated"
             }
         }
+    },
+    "flo": {
+        "bag": {
+            "potions": 10,
+            "pokeball": 15
+        },
+        "pokemons": {
+            "Jean-Fran\u00e7ois": {
+                "name": "Ekans",
+                "original_name": "Ekans",
+                "pet_name": "Jean-Fran\u00e7ois",
+                "hp_max": 40,
+                "hp": 40,
+                "xp": 582,
+                "strength": 53,
+                "defense": 35,
+                "type": [
+                    "poison"
+                ],
+                "level": 8,
+                "speed": 29,
+                "stage": 1,
+                "ev": {
+                    "hp": 0,
+                    "strength": 0,
+                    "defense": 0,
+                    "speed": 0,
+                    "xp": 0
+                },
+                "state": "domesticated"
+            }
+        }
     }
 }

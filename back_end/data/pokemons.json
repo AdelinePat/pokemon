@@ -73,55 +73,6 @@
         "state": "wild"
     },
     {
-        "name": "Wigglytuff",
-        "original_name": "Jigglypuff",
-        "pet_name": "Jean-Louis",
-        "hp_max": 76,
-        "hp": 76,
-        "xp": 5844,
-        "strength": 57,
-        "defense": 77,
-        "type": [
-            "normal",
-            "fairy"
-        ],
-        "level": 18,
-        "speed": 75,
-        "stage": 2,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
-        "name": "Ekans",
-        "original_name": "Ekans",
-        "pet_name": "Jean-Fran\u00e7ois",
-        "hp_max": 40,
-        "hp": 40,
-        "xp": 582,
-        "strength": 53,
-        "defense": 35,
-        "type": [
-            "poison"
-        ],
-        "level": 8,
-        "speed": 29,
-        "stage": 1,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
         "name": "Pikachu",
         "original_name": "Pikachu",
         "pet_name": "Jean-Claude",
@@ -135,30 +86,6 @@
         ],
         "level": 6,
         "speed": 30,
-        "stage": 1,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
-        "name": "Sandshrew",
-        "original_name": "Sandshrew",
-        "pet_name": "Jean-Christophe",
-        "hp_max": 18,
-        "hp": 18,
-        "xp": 11,
-        "strength": 11,
-        "defense": 26,
-        "type": [
-            "ground"
-        ],
-        "level": 2,
-        "speed": 32,
         "stage": 1,
         "ev": {
             "hp": 0,
