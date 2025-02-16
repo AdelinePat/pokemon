@@ -4,7 +4,8 @@ import pyscroll
 from .player import Player
 from front_end.screen import Screen
 from .switch import Switch
-from front_end.gameplay.battlescreen import BattleScreen
+# from front_end.gameplay.battlescreen import BattleScreen
+from front_end.in_fight.in_fight import InFight
 
 
 class Map:
@@ -95,6 +96,7 @@ class Map:
                 if self.player.rect.colliderect(battle_zone) and not self.in_battle:
                     self.in_battle = True
                     self.player.battle()
+                    # BLABLA
 
         # Update the group of all sprites
         self.group.update()
@@ -103,8 +105,9 @@ class Map:
 
     def start_battle(self):
         # Start a battle when the player enters a battle zone
-        print("Starting Pokémon battle!")
+        print("Starting Pokémon battle! dans start_battle")
         battle_screen = BattleScreen(self.screen, self.player)
+        # battle_screen = InFight(self.screen, self.player).display()
         battle_screen.run()
 
     def pose_player(self, switch: Switch):

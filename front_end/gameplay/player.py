@@ -5,6 +5,7 @@ from front_end.screen import Screen
 from .switch import Switch
 from front_end.menu.name_input import NameInput
 from front_end.gameplay.battlescreen import BattleScreen
+from front_end.in_fight.in_fight import InFight
 
 
 class Player(Entity):
@@ -29,28 +30,28 @@ class Player(Entity):
         """Check player movement based on key input and handle collisions."""
         if self.animation_walk is False:
             temp_hitbox = self.hitbox.copy()
-            if self.keyListener.key_pressed(pygame.K_q):
+            if self.keyListener.key_pressed(pygame.K_q) or self.keyListener.key_pressed(pygame.K_LEFT):
                 temp_hitbox.x -= 16
                 if not self.check_collisions(temp_hitbox):
                     self.check_collisions_switchs(temp_hitbox)
                     self.move_left()
                 else:
                     self.direction = "left"
-            elif self.keyListener.key_pressed(pygame.K_d):
+            elif self.keyListener.key_pressed(pygame.K_d) or self.keyListener.key_pressed(pygame.K_RIGHT):
                 temp_hitbox.x += 16
                 if not self.check_collisions(temp_hitbox):
                     self.check_collisions_switchs(temp_hitbox)
                     self.move_right()
                 else:
                     self.direction = "right"
-            elif self.keyListener.key_pressed(pygame.K_z):
+            elif self.keyListener.key_pressed(pygame.K_z) or self.keyListener.key_pressed(pygame.K_UP):
                 temp_hitbox.y -= 16
                 if not self.check_collisions(temp_hitbox):
                     self.check_collisions_switchs(temp_hitbox)
                     self.move_up()
                 else:
                     self.direction = "up"
-            elif self.keyListener.key_pressed(pygame.K_s):
+            elif self.keyListener.key_pressed(pygame.K_s) or self.keyListener.key_pressed(pygame.K_DOWN):
                 temp_hitbox.y += 16
                 if not self.check_collisions(temp_hitbox):
                     self.check_collisions_switchs(temp_hitbox)
@@ -107,14 +108,16 @@ class Player(Entity):
         """Checks if the player enters a battle zone and starts a battle."""
         for battle_zone in battle_zones:
             if self.rect.colliderect(battle_zone):
-                print("Pokémon battle starts!")
+                print("Pokémon battle starts! dans start battle de player")
                 battle_screen = BattleScreen(self.screen, self)
+                # battle_screen = InFight(self.screen, self.player_name).display()
                 battle_screen.run()
                 break
 
     def battle(self):
         """Starts a battle manually."""
-        print("Pokémon battle starts!")
-        battle_screen = BattleScreen(self.screen, self)
-        battle_screen.run()
+        print("Pokémon battle starts! dans battle de player")
+        # battle_screen = BattleScreen(self.screen, self)
+        # battle_screen.run()
+        battle_screen = InFight(self.screen, self.player_name).display()
         self.in_battle = False

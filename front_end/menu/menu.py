@@ -1,7 +1,7 @@
 import pygame
 import sys
 
-from .name_input import NameInput  
+from front_end.menu.name_input import NameInput  
 from front_end.gameplay.game import Game
 from .select_player import SelectPlayer
 from __settings__ import MAIN_MENU_BACKGROUND1
