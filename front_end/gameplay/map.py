@@ -4,7 +4,7 @@ import pyscroll
 from .player import Player
 from front_end.screen import Screen
 from .switch import Switch
-# from front_end.gameplay.battlescreen import BattleScreen
+from front_end.gameplay.battlescreen import BattleScreen
 from front_end.in_fight.in_fight import InFight
 
 

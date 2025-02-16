@@ -15,10 +15,19 @@ class UtilTool():
         screen.display.blit(background_screen, background_rect)
 
     def draw_window_with_background(self, screen, color=(255,255,255)):
-        window_surface = pygame.Surface((screen.width //2, screen.height // 2))
-        window_surface.fill(color)
+        window_surface = pygame.Surface((screen.width //2, screen.height // 2), pygame.SRCALPHA)
+        # window_surface.fill(color)
         window_rect = window_surface.get_rect(center = (screen.width //2, screen.height // 2))
+        my_window_rect = pygame.rect.Rect(0,0, screen.width //2, screen.height //2)
 
+        my_border_rect = pygame.rect.Rect(0,0, screen.width //2, screen.height //2)
+        # my_border_rect.center = (screen.width //2, screen.height //2)
+
+        
+        final_background_rect = pygame.draw.rect(window_surface, "white", my_window_rect, border_radius=10)
+        final_rect = pygame.draw.rect(window_surface, "black", my_border_rect, 3, border_radius=10)
+        
         screen.display.blit(window_surface, window_rect)
+        
 
 
