@@ -41,7 +41,7 @@ class PokemonStat():
 
             y_position = self.screen.height // 2
 
-            image = pygame.transform.smoothscale(pygame.image.load(self.pokemon.get_image()), (self.screen.height//2, self.screen.height//2) )
+            image = pygame.transform.smoothscale(pygame.image.load(self.pokemon.get_image()), (self.screen.height//3, self.screen.height//3) )
             image_rect = image.get_rect(center = (self.screen.width //4, self.screen.height //2))
             self.screen.display.blit(image, image_rect)
 

@@ -1,6 +1,8 @@
 import pygame
 import math
 
+from __settings__ import POKE_FONT, REGULAR_FONT
+
 pygame.init()
 
 # Configuration de la fenêtre
@@ -42,7 +44,7 @@ HIGHLIGHT_COLOR = (255, 255, 255)
 NORMAL_COLOR = (100, 100, 100)
 
 
-font = pygame.font.Font(None, 40)
+font = pygame.font.Font(REGULAR_FONT, 40)
 
 # menu contextuelle
 menu_width, menu_height = 500, 80

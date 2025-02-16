@@ -31,10 +31,17 @@ class NameInput:
                     pygame.quit()
                     # sys.exit()
                 if event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_ESCAPE:
+                        pass
                     if event.key == pygame.K_RETURN and self.player_name:
                         if does_player_exist(self.player_name):
+
+
+                            self.draw_text(f"Le joueur {self.player_name} existe déjà ! Vous allez commencer votre partie", self.screen.width//2, self.screen.height//8*7)
+                            pygame.time.wait(1000)
                             pokemon = get_first_pokemon(self.player_name)
                             return self.player_name, pokemon
+                        
                         else:
                             my_pokemon = SelectPokemons(self.player_name, self.screen).display()
                             return self.player_name, my_pokemon
