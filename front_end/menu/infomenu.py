@@ -19,8 +19,6 @@ class InfoMenu:
         self.running = True  # Controls the menu loop
         self.util = UtilTool()
         
-
-
     def draw_text(self, text, x, y, color=(255, 255, 255)):
         """
         Renders text and displays it at the given (x, y) position.
@@ -122,7 +120,7 @@ class InfoMenu:
 
     def draw_info_screen(self, actual_pokemon):
         # self.util.draw_color_filter(self.screen)
-        self.util.draw_window_with_background(self.screen)
+        self.util.draw_window_with_background(self.screen, self.screen.width //2.5, self.screen.height //2.5)
         font_size = self.screen.height // 20
         x  = self.screen.width //2
         y = self.screen.height // 2

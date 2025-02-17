@@ -5,6 +5,30 @@
             "pokeball": 15
         },
         "pokemons": {
+            "Jean-Baptiste": {
+                "name": "Tangela",
+                "original_name": "Tangela",
+                "pet_name": "Jean-Baptiste",
+                "hp_max": 42,
+                "hp": 30,
+                "xp": 226,
+                "strength": 25,
+                "defense": 22,
+                "type": [
+                    "grass"
+                ],
+                "level": 6,
+                "speed": 47,
+                "stage": 1,
+                "ev": {
+                    "hp": 0,
+                    "strength": 0,
+                    "defense": 0,
+                    "speed": 0,
+                    "xp": 0
+                },
+                "state": "domesticated"
+            },
             "Jean-Eric": {
                 "name": "Gengar",
                 "original_name": "Gastly",

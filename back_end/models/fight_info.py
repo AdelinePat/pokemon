@@ -4,14 +4,15 @@ class FightInfo():
         self.attack_type = ""
         self.total_damage = 0
         self.actual_hp = 0
+        self.attack_type = ""
 
     def set_all_values(self, efficiency, attack_type, damage):
         self.efficiency = efficiency
         self.attack_type = attack_type
         self.total_damage = damage
 
-    def set_who_attack_message(self, pokemon, attack_type):
-        return f"{pokemon.name} a fait une attaque {attack_type}"
+    def set_who_attack_message(self, pokemon):
+        return f"{pokemon.name} a fait une attaque {self.attack_type}"
     
     def set_damage_message(self):
         if self.total_damage > 1:

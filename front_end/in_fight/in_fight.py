@@ -87,6 +87,7 @@ class InFight():
             player_turn = True
 
         while self.running: 
+            
             #DISPLAY
             self.screen.update()
             # self.screen.get_display().fill((0, 0, 0))
@@ -109,10 +110,18 @@ class InFight():
                 self.draw_win_screen()
 
             if message_attack and message_damage:
-                self.util.draw_info_screen(self.screen, message_attack, message_damage)
+                now_time = pygame.time.get_ticks()
+                message_time = 0
+                while message_time - now_time < 1000:
+                    message_time = pygame.time.get_ticks()
+                    self.util.draw_info_attack_screen(self.screen, message_attack, message_damage)
+                    pygame.display.update()
+
+                message_attack = None
+                message_damage = None
                 
             pygame.display.flip()  # Refresh the screen
-            
+
             # Handle user input
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:  # If user closes the window
@@ -133,29 +142,18 @@ class InFight():
                             match self.selected_index:
                                 case 0:  # Start a new game
                                     attack_type = AttackMenu(self.screen, self.pokemon, self.pokemon_enemy).display()
-                                    # attack_type = self.pokemon.type[0]
-                                    #TODO create menu returning attack_type
                                     if attack_type == "Retour":
                                         player_turn = True
                                     else:
                                         print("attaque")
                                         self.fight.player_attack(attack_type)
                                         if self.pokemon_enemy.get_hp() > 0:
-                                            message_attack = self.fight.fightinfo.set_who_attack_message(self.pokemon, attack_type)
+                                            message_attack = self.fight.fightinfo.set_who_attack_message(self.pokemon)
                                             message_damage = self.fight.fightinfo.set_damage_message()
-
                                             player_turn = False
                                         else:
                                             win = True
                                         #TODO menu end fight , xp gained...etc
-
-                                    
-                                    
-                                    # name_input = NameInput(self.screen)
-                                    # player_name, pokemon = name_input.get_name()
-                                    # print(player_name, pokemon)
-                                    # # game = Game(self.screen, player_name)
-                                    # game.run()
                                     
                                 case 1:
                                     print(f"HP max : {self.pokemon.get_hp_max()}")
@@ -167,7 +165,6 @@ class InFight():
                                             case "Potions":
                                                 another_option = self.fight.use_potion(self.pokemon, self.bag)
                                                 if another_option:
-                                                    print("plus de potion")
                                                     player_turn == True
                                                 else:
                                                     player_turn = False
@@ -175,7 +172,6 @@ class InFight():
                                                 another_option = self.fight.use_pokeball(self.player, self.bag, self.pokemon, self.pokemon_enemy)
                                                 if another_option:
                                                     player_turn == True
-                                                    print("plus de pokeball")
                                                 else:
                                                     player_turn = False
                                             case "Retour":
@@ -193,17 +189,22 @@ class InFight():
                                     # pygame.quit()
                                 # sys.exit()
                 else:
+                    pygame.time.wait(1000)
                     self.fight.bot_attack()
                     if self.pokemon.get_hp() > 0 :
+                        message_attack = self.fight.fightinfo.set_who_attack_message(self.pokemon_enemy)
+                        message_damage = self.fight.fightinfo.set_damage_message()
+                        # pygame.time.wait(1000)
                         player_turn = True
                     else:
+                        player_turn = True
                         #TODO game_over screen/new menu and allows events for player
                         pass
             
 
     def draw_win_screen(self):
         # self.util.draw_color_filter(self.screen)
-        self.util.draw_window_with_background(self.screen)
+        self.util.draw_window_with_background(self.screen, self.screen.width //2.5, self.screen.height //2.5)
         font_size = self.screen.height // 18
         x  = self.screen.width //2
         y = self.screen.height // 2

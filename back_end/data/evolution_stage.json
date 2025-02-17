@@ -17,7 +17,7 @@
     "Caterpie" : {
         "Caterpie" : 1,
         "Metapod" : 2,
-        "Butterflee" : 3
+        "Butterfree" : 3
     },
     "Weedle" : {
         "Weedle" : 1,
@@ -149,8 +149,8 @@
     "Farfetch'd" : {
         "Farfetch'd" : 2
     },
-    "Duduo" : {
-        "Duduo" : 1,
+    "Doduo" : {
+        "Doduo" : 1,
         "Dodrio" : 2
     },
     "Grimer" : {

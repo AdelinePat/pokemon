@@ -218,7 +218,7 @@
             "probability": 2,
             "names" : {
                 "Caterpie" : {
-                    "Butterflee" : 3
+                    "Butterfree" : 3
                 },
                 "Scyther" : {
                     "Scyther" : 2
@@ -303,9 +303,9 @@
                 "Farfetch'd" : {
                     "Farfetch'd" : 2
                 },
-                "Duduo" : {
-                    "Duduo" : 1,
-                    "Dudrio" : 2
+                "Doduo" : {
+                    "Doduo" : 1,
+                    "Dodrio" : 2
                 }
             }
         },
