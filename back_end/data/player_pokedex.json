@@ -120,5 +120,168 @@
                 "state": "domesticated"
             }
         }
+    },
+    "Thibault": {
+        "bag": {
+            "potions": 10,
+            "pokeball": 15
+        },
+        "pokemons": {
+            "Jean-Claude": {
+                "name": "Jolteon",
+                "original_name": "Eevee",
+                "pet_name": "Jean-Claude",
+                "hp_max": 68,
+                "hp": 68,
+                "xp": 4191,
+                "strength": 59,
+                "defense": 63,
+                "type": [
+                    "electric"
+                ],
+                "level": 16,
+                "speed": 73,
+                "stage": 2,
+                "ev": {
+                    "hp": 0,
+                    "strength": 0,
+                    "defense": 0,
+                    "speed": 0,
+                    "xp": 0
+                },
+                "state": "domesticated"
+            }
+        }
+    },
+    "Baba": {
+        "bag": {
+            "potions": 10,
+            "pokeball": 15
+        },
+        "pokemons": {
+            "Jean-Baptiste": {
+                "name": "Vileplume",
+                "original_name": "Oddish",
+                "pet_name": "Jean-Baptiste",
+                "hp_max": 107,
+                "hp": 107,
+                "xp": 22202,
+                "strength": 92,
+                "defense": 98,
+                "type": [
+                    "grass",
+                    "poison"
+                ],
+                "level": 28,
+                "speed": 100,
+                "stage": 3,
+                "ev": {
+                    "hp": 0,
+                    "strength": 0,
+                    "defense": 0,
+                    "speed": 0,
+                    "xp": 0
+                },
+                "state": "domesticated"
+            }
+        }
+    },
+    "adeline": {
+        "bag": {
+            "potions": 10,
+            "pokeball": 15
+        },
+        "pokemons": {
+            "Jean-Claude": {
+                "name": "Magneton",
+                "original_name": "Magnemite",
+                "pet_name": "Jean-Claude",
+                "hp_max": 74,
+                "hp": 74,
+                "xp": 3466,
+                "strength": 63,
+                "defense": 74,
+                "type": [
+                    "electric",
+                    "steel"
+                ],
+                "level": 15,
+                "speed": 55,
+                "stage": 2,
+                "ev": {
+                    "hp": 0,
+                    "strength": 0,
+                    "defense": 0,
+                    "speed": 0,
+                    "xp": 0
+                },
+                "state": "domesticated"
+            }
+        }
+    },
+    "Blabla": {
+        "bag": {
+            "potions": 10,
+            "pokeball": 15
+        },
+        "pokemons": {
+            "Jean-Marie": {
+                "name": "Farfetch'd",
+                "original_name": "Farfetch'd",
+                "pet_name": "Jean-Marie",
+                "hp_max": 61,
+                "hp": 61,
+                "xp": 4398,
+                "strength": 74,
+                "defense": 51,
+                "type": [
+                    "fighting"
+                ],
+                "level": 16,
+                "speed": 59,
+                "stage": 2,
+                "ev": {
+                    "hp": 0,
+                    "strength": 0,
+                    "defense": 0,
+                    "speed": 0,
+                    "xp": 0
+                },
+                "state": "domesticated"
+            }
+        }
+    },
+    "ololo": {
+        "bag": {
+            "potions": 10,
+            "pokeball": 15
+        },
+        "pokemons": {
+            "Jean-Robert": {
+                "name": "Dragonite",
+                "original_name": "Dratini",
+                "pet_name": "Jean-Robert",
+                "hp_max": 112,
+                "hp": 112,
+                "xp": 34389,
+                "strength": 110,
+                "defense": 123,
+                "type": [
+                    "dragon",
+                    "flying"
+                ],
+                "level": 32,
+                "speed": 121,
+                "stage": 3,
+                "ev": {
+                    "hp": 0,
+                    "strength": 0,
+                    "defense": 0,
+                    "speed": 0,
+                    "xp": 0
+                },
+                "state": "domesticated"
+            }
+        }
     }
 }

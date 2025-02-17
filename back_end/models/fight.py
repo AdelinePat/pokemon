@@ -29,7 +29,7 @@ class Fight:
         miss = random.randint(1, 8)
         
         damage = (pokemon.get_strength() * coefficient) - enemy.get_defense()
-        T = pokemon.get_speed() / 2
+        critical_rate = pokemon.get_speed() / 2
         critical = random.randint(1, 255)
 
         if miss == 1:
@@ -37,7 +37,7 @@ class Fight:
         else:
             if damage > 0:
                 if enemy.get_hp() - damage >= 0:
-                    if critical < T:
+                    if critical < critical_rate:
                         print("Coup critique !")
                         final_damage = damage * 2
                     else:
@@ -74,139 +74,231 @@ class Fight:
 
         self.attack(self.second_pokemon, self.first_pokemon, attack_type)
 
+    def run_away(self):
+        miss = random.randint(1, 7)
+        if self.second_pokemon.get_state() == "domesticated":
+            print("Impossible de fuire dans un combat de dresseur")
+        if miss == 1:
+            print("Vous n'avez pas reussi à prendre la fuite...")
+            self.bot_attack()
+            self.first_pokemon.get_hp()
 
-    def battle(self):
-        hp1 = self.first_pokemon.get_hp()
-        hp2 = self.second_pokemon.get_hp()
-        print("================")
-        print(self.first_pokemon)
-        print(self.second_pokemon)
+            print(self.first_pokemon)
+            print(self.second_pokemon)
+            print("=== Fin du tour ===")
+            first = True
+        else :
+            print("Vous prenez la fuite...")
 
-        while hp1 >= 0 and hp2 >= 0:
-            hp1 = self.first_pokemon.get_hp()
-            hp2 = self.second_pokemon.get_hp()
-            miss = 0
-            flag = True
-            flag2 = True
-            while flag:
-                try:
-                    choice= int(input("1-Attack 2-Fuite 3-Sac : "))
-                    if choice >= 1 and choice <= 3:
-                        flag = False
-                    else : 
-                        print("Valeur non correct")
-                except ValueError:
-                    print("Choix invalide")
+    def use(self, player, bag, bag_option, pokemon, pokemon_enemy):
+        if bag_option == "potions":
+            pokemon.heal(20)
+        else:
 
-            if self.first_pokemon.get_speed() > self.second_pokemon.get_speed():
-                first = True
-            else :
-                first = False
+            if bag.get_pokeball() < 0:
+                bag_option == "pokeball"
+                capture = random.randint(1, pokemon_enemy.get_hp())
+                bag.set_pokeball(bag.get_pokeball() - 1)
+                print("On utilise une pokeball")
 
-            if choice == 1:
-                if first == True:
-                    #pokemon, enemy, attack_type
-                    self.attack(self.first_pokemon, self.second_pokemon, self.first_pokemon.type[0])
-                    # self.first_pokemon.attack(self.first_pokemon.type[0], self.second_pokemon)
-                    hp2 = self.second_pokemon.get_hp()
-                    if hp1 <= 0 or hp2 <= 0:
-                        break
-                    # self.second_pokemon.attack(self.second_pokemon.type[0], self.first_pokemon)
-                    self.attack(self.second_pokemon, self.first_pokemon, self.second_pokemon.type[0])
-                    print(self.first_pokemon)
-                    print(self.second_pokemon)
-                    hp1 = self.first_pokemon.get_hp()
-                    if hp1 <= 0 or hp2 <= 0:
-                        break
-                    print("=== Fin du tour ===")
-                    first = True
+                if capture <= pokemon_enemy.get_hp():
+                    print("1... 2... 3... Hop ! Le pokemon a était capturé !")
+                    save_pokemon_to_pokedex(player, pokemon)
                 else :
-                    self.attack(self.second_pokemon, self.first_pokemon, self.second_pokemon.type[0])
-                    # self.second_pokemon.attack(self.second_pokemon.type[0], self.first_pokemon)
-                    hp1 = self.first_pokemon.get_hp()
-                    if hp1 <= 0 or hp2 <= 0:
-                        break
-                    # self.first_pokemon.attack(self.first_pokemon.type[0], self.second_pokemon)
-                    self.attack(self.first_pokemon, self.second_pokemon, self.first_pokemon.type[0])
-                    print(self.first_pokemon)
-                    print(self.second_pokemon)
-                    hp2 = self.second_pokemon.get_hp()
-                    if hp1 <= 0 or hp2 <= 0:
-                        break
+                    print("Le pokemon à reussi à s'échapper")
+                    self.bot_attack()
+                    # hp1 = self.first_pokemon.get_hp()
                     print("=== Fin du tour ===")
                     first = True
-            elif choice == 2:
-                miss = random.randint(1, 7)
-                if self.second_pokemon.get_state() == "domesticated":
-                    print("Impossible de fuire dans un combat de dresseur")
-                if miss == 1:
-                    print("Vous n'avez pas reussi à prendre la fuite...")
-                    self.attack(self.second_pokemon, self.first_pokemon, self.second_pokemon.type[0])
-                    hp1 = self.first_pokemon.get_hp()
-                    if hp1 <= 0 or hp2 <= 0:
-                        break
-                    print(self.first_pokemon)
-                    print(self.second_pokemon)
-                    print("=== Fin du tour ===")
-                    first = True
-                else :
-                    print("Vous prenez la fuite...")
-                    break
-            elif choice == 3:
-                while flag2:
-                    try :
-                        take = int(input(f"1-potion = {self.bag.get_potion()} 2-pokeball = {self.bag.get_pokeball()} 3-retour : "))
-                        if choice >= 1 and choice <= 3:
-                            flag2 = False
-                        else : 
-                            print("Valeur non correct")
-                    except ValueError:
-                        print("Choix invalide")
-                if take == 1:
-                    if self.bag.get_potion() >= 1:
-                        if first == True:
-                            self.first_pokemon.heal(20)
-                            print("Vous avez soigné votre pokemon")
-                            self.bag.potion -= 1
-                            self.attack(self.second_pokemon, self.first_pokemon, self.second_pokemon.type[0])
-                            hp1 = self.first_pokemon.get_hp()
-                            print(self.first_pokemon)
-                            print(self.second_pokemon)
-                            if hp1 <= 0 or hp2 <= 0:
-                                break
-                            print("=== Fin du tour ===")
-                            first = True
-                        elif first == False:
-                            self.attack(self.second_pokemon, self.first_pokemon, self.second_pokemon.type[0])
-                            hp1 = self.first_pokemon.get_hp()
-                            if hp1 <= 0 or hp2 <= 0:
-                                break
-                            self.first_pokemon.heal(20)
-                            print("Vous avez soigné votre pokemon")
-                            self.bag.potion -= 1
-                            print(self.first_pokemon)
-                            print(self.second_pokemon)
-                            print("=== Fin du tour ===")
-                            first = True
-                if take == 2:
-                    if self.second_pokemon.get_state() == "domesticated":
-                        print("Vous pouvez pas captuter le pokemon d'un autres dresseur")
-                    else:
-                        capture = random.randint(1, hp2)
-                        if capture <= 5:
-                            print("1... 2... 3... Hop ! Le pokemon a était capturé !")
-                            save_pokemon_to_pokedex("test", self.second_pokemon)
-                            break
-                        else :
-                            print("Le pokemon à reussi à s'échapper")
-                            self.attack(self.second_pokemon, self.first_pokemon, self.second_pokemon.type[0])
-                            hp1 = self.first_pokemon.get_hp()
-                            if hp1 <= 0 or hp2 <= 0:
-                                break
-                            print(self.first_pokemon)
-                            print(self.second_pokemon)
-                            print("=== Fin du tour ===")
-                            first = True
-                        self.bag.pokeball -= 1
-        print(self.first_pokemon,"\n")
-        print(self.second_pokemon,"\n")
+
+        # while flag2:
+        #         try :
+        #             take = int(input(f"1-potion = {self.bag.get_potion()} 2-pokeball = {self.bag.get_pokeball()} 3-retour : "))
+        #             if choice >= 1 and choice <= 3:
+        #                 flag2 = False
+        #             else : 
+        #                 print("Valeur non correct")
+        #         except ValueError:
+        #             print("Choix invalide")
+        #     if take == 1:
+        #         if self.bag.get_potion() >= 1:
+        #             if first == True:
+        #                 self.first_pokemon.heal(20)
+        #                 print("Vous avez soigné votre pokemon")
+        #                 self.bag.potion -= 1
+        #                 self.attack(self.second_pokemon, self.first_pokemon, self.second_pokemon.type[0])
+        #                 hp1 = self.first_pokemon.get_hp()
+        #                 print(self.first_pokemon)
+        #                 print(self.second_pokemon)
+        #                 if hp1 <= 0 or hp2 <= 0:
+        #                     break
+        #                 print("=== Fin du tour ===")
+        #                 first = True
+        #             elif first == False:
+        #                 self.attack(self.second_pokemon, self.first_pokemon, self.second_pokemon.type[0])
+        #                 hp1 = self.first_pokemon.get_hp()
+        #                 if hp1 <= 0 or hp2 <= 0:
+        #                     break
+        #                 self.first_pokemon.heal(20)
+        #                 print("Vous avez soigné votre pokemon")
+        #                 self.bag.potion -= 1
+        #                 print(self.first_pokemon)
+        #                 print(self.second_pokemon)
+        #                 print("=== Fin du tour ===")
+        #                 first = True
+        #     if take == 2:
+        #         if self.second_pokemon.get_state() == "domesticated":
+        #             print("Vous pouvez pas captuter le pokemon d'un autres dresseur")
+        #         else:
+        #             capture = random.randint(1, hp2)
+        #             if capture <= 5:
+        #                 print("1... 2... 3... Hop ! Le pokemon a était capturé !")
+        #                 save_pokemon_to_pokedex("test", self.second_pokemon)
+        #                 break
+        #             else :
+        #                 print("Le pokemon à reussi à s'échapper")
+        #                 self.attack(self.second_pokemon, self.first_pokemon, self.second_pokemon.type[0])
+        #                 hp1 = self.first_pokemon.get_hp()
+        #                 if hp1 <= 0 or hp2 <= 0:
+        #                     break
+        #                 print(self.first_pokemon)
+        #                 print(self.second_pokemon)
+        #                 print("=== Fin du tour ===")
+        #                 first = True
+        #             self.bag.pokeball -= 1
+
+    # def battle(self):
+    #     hp1 = self.first_pokemon.get_hp()
+    #     hp2 = self.second_pokemon.get_hp()
+    #     print("================")
+    #     print(self.first_pokemon)
+    #     print(self.second_pokemon)
+
+    #     while hp1 >= 0 and hp2 >= 0:
+    #         hp1 = self.first_pokemon.get_hp()
+    #         hp2 = self.second_pokemon.get_hp()
+    #         miss = 0
+    #         flag = True
+    #         flag2 = True
+    #         while flag:
+    #             try:
+    #                 choice= int(input("1-Attack 2-Fuite 3-Sac : "))
+    #                 if choice >= 1 and choice <= 3:
+    #                     flag = False
+    #                 else : 
+    #                     print("Valeur non correct")
+    #             except ValueError:
+    #                 print("Choix invalide")
+
+    #         if self.first_pokemon.get_speed() > self.second_pokemon.get_speed():
+    #             first = True
+    #         else :
+    #             first = False
+
+    #         if choice == 1:
+    #             if first == True:
+    #                 #pokemon, enemy, attack_type
+    #                 self.attack(self.first_pokemon, self.second_pokemon, self.first_pokemon.type[0])
+    #                 # self.first_pokemon.attack(self.first_pokemon.type[0], self.second_pokemon)
+    #                 hp2 = self.second_pokemon.get_hp()
+    #                 if hp1 <= 0 or hp2 <= 0:
+    #                     break
+    #                 # self.second_pokemon.attack(self.second_pokemon.type[0], self.first_pokemon)
+    #                 self.attack(self.second_pokemon, self.first_pokemon, self.second_pokemon.type[0])
+    #                 print(self.first_pokemon)
+    #                 print(self.second_pokemon)
+    #                 hp1 = self.first_pokemon.get_hp()
+    #                 if hp1 <= 0 or hp2 <= 0:
+    #                     break
+    #                 print("=== Fin du tour ===")
+    #                 first = True
+    #             else :
+    #                 self.attack(self.second_pokemon, self.first_pokemon, self.second_pokemon.type[0])
+    #                 # self.second_pokemon.attack(self.second_pokemon.type[0], self.first_pokemon)
+    #                 hp1 = self.first_pokemon.get_hp()
+    #                 if hp1 <= 0 or hp2 <= 0:
+    #                     break
+    #                 # self.first_pokemon.attack(self.first_pokemon.type[0], self.second_pokemon)
+    #                 self.attack(self.first_pokemon, self.second_pokemon, self.first_pokemon.type[0])
+    #                 print(self.first_pokemon)
+    #                 print(self.second_pokemon)
+    #                 hp2 = self.second_pokemon.get_hp()
+    #                 if hp1 <= 0 or hp2 <= 0:
+    #                     break
+    #                 print("=== Fin du tour ===")
+    #                 first = True
+    #         elif choice == 2:
+                # miss = random.randint(1, 7)
+                # if self.second_pokemon.get_state() == "domesticated":
+                #     print("Impossible de fuire dans un combat de dresseur")
+                # if miss == 1:
+                #     print("Vous n'avez pas reussi à prendre la fuite...")
+                #     self.attack(self.second_pokemon, self.first_pokemon, self.second_pokemon.type[0])
+                #     hp1 = self.first_pokemon.get_hp()
+                #     if hp1 <= 0 or hp2 <= 0:
+                #         break
+                #     print(self.first_pokemon)
+                #     print(self.second_pokemon)
+                #     print("=== Fin du tour ===")
+                #     first = True
+                # else :
+                #     print("Vous prenez la fuite...")
+            #         break
+            # elif choice == 3:
+                # while flag2:
+                #     try :
+                #         take = int(input(f"1-potion = {self.bag.get_potion()} 2-pokeball = {self.bag.get_pokeball()} 3-retour : "))
+                #         if choice >= 1 and choice <= 3:
+                #             flag2 = False
+                #         else : 
+                #             print("Valeur non correct")
+                #     except ValueError:
+                #         print("Choix invalide")
+                # if take == 1:
+                #     if self.bag.get_potion() >= 1:
+                #         if first == True:
+                #             self.first_pokemon.heal(20)
+                #             print("Vous avez soigné votre pokemon")
+                #             self.bag.potion -= 1
+                #             self.attack(self.second_pokemon, self.first_pokemon, self.second_pokemon.type[0])
+                #             hp1 = self.first_pokemon.get_hp()
+                #             print(self.first_pokemon)
+                #             print(self.second_pokemon)
+                #             if hp1 <= 0 or hp2 <= 0:
+                #                 break
+                #             print("=== Fin du tour ===")
+                #             first = True
+                #         elif first == False:
+                #             self.attack(self.second_pokemon, self.first_pokemon, self.second_pokemon.type[0])
+                #             hp1 = self.first_pokemon.get_hp()
+                #             if hp1 <= 0 or hp2 <= 0:
+                #                 break
+                #             self.first_pokemon.heal(20)
+                #             print("Vous avez soigné votre pokemon")
+                #             self.bag.potion -= 1
+                #             print(self.first_pokemon)
+                #             print(self.second_pokemon)
+                #             print("=== Fin du tour ===")
+                #             first = True
+                # if take == 2:
+                #     if self.second_pokemon.get_state() == "domesticated":
+                #         print("Vous pouvez pas captuter le pokemon d'un autres dresseur")
+                #     else:
+                #         capture = random.randint(1, hp2)
+                #         if capture <= 5:
+                #             print("1... 2... 3... Hop ! Le pokemon a était capturé !")
+                #             save_pokemon_to_pokedex("test", self.second_pokemon)
+                #             break
+                #         else :
+                #             print("Le pokemon à reussi à s'échapper")
+                #             self.attack(self.second_pokemon, self.first_pokemon, self.second_pokemon.type[0])
+                #             hp1 = self.first_pokemon.get_hp()
+                #             if hp1 <= 0 or hp2 <= 0:
+                #                 break
+                #             print(self.first_pokemon)
+                #             print(self.second_pokemon)
+                #             print("=== Fin du tour ===")
+                #             first = True
+                #         self.bag.pokeball -= 1
+        # print(self.first_pokemon,"\n")
+        # print(self.second_pokemon,"\n")

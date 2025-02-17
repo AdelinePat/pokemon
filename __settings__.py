@@ -14,7 +14,8 @@ ABSOLUTE_IMAGE_PATH = "./assets/image-pokemon/"
 FONTS
 """
 # REGULAR_FONT = "./assets/fonts/Roboto-Regular.ttf"
-REGULAR_FONT = "./assets/fonts/CreatoDisplay-Medium.otf"
+# REGULAR_FONT = "./assets/fonts/CreatoDisplay-Medium.otf"
+REGULAR_FONT = "./assets/fonts/Pixellari.ttf"
 POKE_FONT = "./assets/fonts/Pokemon_Solid.ttf"
 
 
