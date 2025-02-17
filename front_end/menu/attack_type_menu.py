@@ -13,7 +13,7 @@ class AttackMenu:
         self.screen = screen
         self.pokemon = pokemon
         self.font = pygame.font.Font(None, 50)  # Set the font for menu text
-        self.options = self.pokemon.type + ["Retour"] # Menu options
+        self.options = self.pokemon.type + ["Back"] # Menu options
         self.selected_index = 0  # Index of the currently selected option
         self.running = True  # Controls the menu loop
         self.util = UtilTool()
@@ -100,13 +100,5 @@ class AttackMenu:
                         self.selected_index = (self.selected_index - 1) % len(self.options)
                     elif event.key == pygame.K_RETURN:  # Select an option
                         return self.options[self.selected_index]
-                        # match self.selected_index:
-                        #     case 0:  # Start a new game
-                        #         return self.options[self.selected_index]
-                        #     case 1:
-                        #         return self.options[self.selected_index]
-                        #     case 2:
-                        #         return self.options[self.selected_index]
-
 
    

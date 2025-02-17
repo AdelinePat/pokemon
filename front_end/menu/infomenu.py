@@ -14,7 +14,7 @@ class InfoMenu:
         self.pokemon = pokemon
         self.pokemon_enemy = pokemon_enemy
         self.font = pygame.font.Font(None, 50)  # Set the font for menu text
-        self.options = [f"{self.pokemon.name}", f"{self.pokemon_enemy.name}", "Retour"]  # Menu options
+        self.options = [f"{self.pokemon.name}", f"{self.pokemon_enemy.name}", "Back"]  # Menu options
         self.selected_index = 0  # Index of the currently selected option
         self.running = True  # Controls the menu loop
         self.util = UtilTool()
@@ -86,7 +86,7 @@ class InfoMenu:
                 what_to_display = 1
                 self.draw_info_screen(self.pokemon_enemy)
 
-            # self.options = [f"{self.bag.get_potion()} Potions", f"{self.bag.get_pokeball()} Pokeball", "Retour"] 
+            # self.options = [f"{self.bag.get_potion()} Potions", f"{self.bag.get_pokeball()} Pokeball", "Back"] 
             # Draw menu options
             for i, option in enumerate(self.options):
                 color = LIGHT_GREEN if i == self.selected_index else DARK_GREEN  # Highlight selected option

@@ -38,7 +38,7 @@ class Menu:
 
             self.screen.set_background_display(MAIN_MENU_BACKGROUND1)
 
-            self.draw_text("Menu Principal", 600, 150, LIGHT_GREEN)  # Draw the title
+            self.draw_text("Main Menu", 600, 150, LIGHT_GREEN)  # Draw the title
 
             # Draw menu options
             for i, option in enumerate(self.options):

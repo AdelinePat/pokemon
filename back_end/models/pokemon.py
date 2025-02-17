@@ -146,22 +146,25 @@ class Pokemon(Evolution):
 
         match coefficient:
             case 4:
-                efficency = "attaque ultra efficace"
+                efficiency = "Super effective attack"
+
             case 2:
-                efficency = "attaque très efficace"
+                efficiency = "Very effective attack"
+
             case 1:
-                efficency = "attaque efficace"
+                efficiency = "Effective attack"
             case 0.25 | 0.5:
-                efficency = "attaque peu efficace"
+                efficiency = "Not so effective attack"
+
             case 0:
-                efficency = "impossible d'attaquer"
-        
-        return coefficient, efficency
+                efficiency = "Impossible to attack"
+
+        return coefficient, efficiency
 
     def check_evolution(self):
         is_evolving = self.evolve()
         if is_evolving:
-            print(f"{self.get_original_name().upper()} évolue en : {self.name.upper()}")
+            print(f"{self.get_original_name().upper()} evolve into : {self.name.upper()}")
             self.set_hp_max(self.get_hp_max() + random.randrange(20, 35))
             self.set_defense(self.get_defense() + random.randrange(20, 35))
             self.set_strength(self.get_strength() + random.randrange(20, 35))
@@ -190,27 +193,28 @@ class Pokemon(Evolution):
         self.level_up(self)
         self.evolve()
         # self.set_ev(enemy)        
-        print(f"\nVous avez gagné {xp_gained}, votre total d'xp est de {self.get_xp()}\n")
+        print(f"\nYou gained {xp_gained}, total XP : {self.get_xp()}\n")
 
     def __str__(self):
         if len(self.type) > 1:
             string = f"Pokemon : {self.name}\
-                \nNiveau : {self.get_level()}\
+                \Level : {self.get_level()}\
                 \nXP : {self.get_xp()}\
-                \nDéfense : {self.get_defense()}\
-                \nRapidité : {self.get_speed()}\
-                \nPV : {self.get_hp()}\
-                \nType principal : {self.type[0]}\
-                \nType secondaire : {self.type[1]}\
-                \nForce : {self.get_strength()}\n"
+                \nDefense : {self.get_defense()}\
+                \nSpeed : {self.get_speed()}\
+                \nHP max : {self.get_hp_max()}\
+                \nHP: {self.get_hp()}\
+                \nFirst type: {self.type[0]}\
+                \nSecond type : {self.type[1]}\
+                \nStrength : {self.get_strength()}\n"
         else:
             string = f"Pokemon : {self.name}\
-                \nNiveau : {self.get_level()}\
+                \nLevel : {self.get_level()}\
                 \nXP : {self.get_xp()}\
-                \nDéfense : {self.get_defense()}\
-                \nRapidité : {self.get_speed()}\
-                \nPV max : {self.get_hp_max()}\
-                \nPV actuel : {self.get_hp()}\
+                \nDefense : {self.get_defense()}\
+                \nSpeed : {self.get_speed()}\
+                \nHP max : {self.get_hp_max()}\
+                \nHP: {self.get_hp()}\
                 \nType : {self.type[0]}\
-                \nForce : {self.get_strength()}\n"
+                \nStrength : {self.get_strength()}\n"
         return string + "\n"

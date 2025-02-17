@@ -2,30 +2,55 @@
     "Billy": {
         "bag": {
             "potions": 10,
-            "pokeball": 14
+            "pokeball": 13
         },
         "pokemons": {
+            "Jean-Baptiste": {
+                "name": "Bulbasaur",
+                "original_name": "Bulbasaur",
+                "pet_name": "Jean-Baptiste",
+                "hp_max": 1110,
+                "hp": 936,
+                "xp": 2174,
+                "strength": 220,
+                "defense": 174,
+                "type": [
+                    "grass",
+                    "poison"
+                ],
+                "level": 11,
+                "speed": 149,
+                "stage": 1,
+                "ev": {
+                    "hp": 2,
+                    "strength": 0,
+                    "defense": 3,
+                    "speed": 0,
+                    "xp": 2
+                },
+                "state": "domesticated"
+            },
             "Jean-Robert": {
                 "name": "Dragonite",
                 "original_name": "Dratini",
                 "pet_name": "Jean-Robert",
-                "hp_max": 169,
-                "hp": 144,
-                "xp": 39816,
-                "strength": 160,
-                "defense": 166,
+                "hp_max": 188,
+                "hp": 184,
+                "xp": 42375,
+                "strength": 174,
+                "defense": 181,
                 "type": [
                     "dragon",
                     "flying"
                 ],
                 "level": 35,
-                "speed": 160,
+                "speed": 181,
                 "stage": 3,
                 "ev": {
-                    "hp": 3,
-                    "strength": 2,
+                    "hp": 1,
+                    "strength": 1,
                     "defense": 1,
-                    "speed": 2,
+                    "speed": 0,
                     "xp": 0
                 },
                 "state": "domesticated"
@@ -45,6 +70,31 @@
                 "level": 34,
                 "speed": 132,
                 "stage": 3,
+                "ev": {
+                    "hp": 0,
+                    "strength": 0,
+                    "defense": 0,
+                    "speed": 0,
+                    "xp": 0
+                },
+                "state": "domesticated"
+            },
+            "Jean-Eric": {
+                "name": "Gastly",
+                "original_name": "Gastly",
+                "pet_name": "Jean-Eric",
+                "hp_max": 24,
+                "hp": 24,
+                "xp": 1,
+                "strength": 5,
+                "defense": 8,
+                "type": [
+                    "ghost",
+                    "poison"
+                ],
+                "level": 1,
+                "speed": 13,
+                "stage": 1,
                 "ev": {
                     "hp": 0,
                     "strength": 0,

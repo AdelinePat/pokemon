@@ -34,7 +34,7 @@ class SelectPokemons():
             self.screen.update()
             self.screen.get_display().fill((0, 0, 0))
 
-            self.draw_text("Choisissez votre premier pokemon", 600, 150, LIGHT_GREEN)
+            self.draw_text("Choose your first pokemon", 600, 150, LIGHT_GREEN)
 
             for i, option in enumerate(self.options):
                 color = LIGHT_GREEN if i == self.selected_index else (255, 255, 255)

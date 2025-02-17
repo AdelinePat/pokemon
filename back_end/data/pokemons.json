@@ -1,20 +1,20 @@
 [
     {
-        "name": "Mr. Mime",
-        "original_name": "Mr. Mime",
-        "pet_name": "Jean-Charles",
-        "hp_max": 50,
-        "hp": 50,
-        "xp": 1943,
-        "strength": 62,
-        "defense": 38,
+        "name": "Paras",
+        "original_name": "Paras",
+        "pet_name": "Jean-Paul",
+        "hp_max": 41,
+        "hp": 41,
+        "xp": 199,
+        "strength": 26,
+        "defense": 24,
         "type": [
-            "ice",
-            "psychic"
+            "bug",
+            "grass"
         ],
-        "level": 12,
-        "speed": 62,
-        "stage": 2,
+        "level": 5,
+        "speed": 19,
+        "stage": 1,
         "ev": {
             "hp": 0,
             "strength": 0,
@@ -25,20 +25,20 @@
         "state": "wild"
     },
     {
-        "name": "Articuno",
-        "original_name": "Articuno",
-        "pet_name": "Jean-S\u00e9bastien",
-        "hp_max": 111,
-        "hp": 111,
-        "xp": 23547,
-        "strength": 99,
-        "defense": 101,
+        "name": "Nidoqueen",
+        "original_name": "Nidoran",
+        "pet_name": "Jean-Fran\u00e7ois",
+        "hp_max": 125,
+        "hp": 125,
+        "xp": 42482,
+        "strength": 113,
+        "defense": 107,
         "type": [
-            "psychic",
-            "flying"
+            "poison",
+            "ground"
         ],
-        "level": 28,
-        "speed": 92,
+        "level": 34,
+        "speed": 121,
         "stage": 3,
         "ev": {
             "hp": 0,
@@ -50,20 +50,69 @@
         "state": "wild"
     },
     {
-        "name": "Gastly",
-        "original_name": "Gastly",
-        "pet_name": "Jean-Eric",
-        "hp_max": 24,
-        "hp": 24,
-        "xp": 1,
-        "strength": 5,
-        "defense": 8,
+        "name": "Mr. Mime",
+        "original_name": "Mr. Mime",
+        "pet_name": "Jean-Charles",
+        "hp_max": 72,
+        "hp": 72,
+        "xp": 6116,
+        "strength": 62,
+        "defense": 65,
         "type": [
-            "ghost",
-            "poison"
+            "ice",
+            "psychic"
         ],
-        "level": 1,
-        "speed": 13,
+        "level": 18,
+        "speed": 57,
+        "stage": 2,
+        "ev": {
+            "hp": 0,
+            "strength": 0,
+            "defense": 0,
+            "speed": 0,
+            "xp": 0
+        },
+        "state": "wild"
+    },
+    {
+        "name": "Omastar",
+        "original_name": "Omanyte",
+        "pet_name": "Jean-Daniel",
+        "hp_max": 58,
+        "hp": 58,
+        "xp": 2068,
+        "strength": 38,
+        "defense": 53,
+        "type": [
+            "rock",
+            "water"
+        ],
+        "level": 12,
+        "speed": 54,
+        "stage": 2,
+        "ev": {
+            "hp": 0,
+            "strength": 0,
+            "defense": 0,
+            "speed": 0,
+            "xp": 0
+        },
+        "state": "wild"
+    },
+    {
+        "name": "Dratini",
+        "original_name": "Dratini",
+        "pet_name": "Jean-Robert",
+        "hp_max": 38,
+        "hp": 38,
+        "xp": 311,
+        "strength": 22,
+        "defense": 21,
+        "type": [
+            "dragon"
+        ],
+        "level": 6,
+        "speed": 46,
         "stage": 1,
         "ev": {
             "hp": 0,
@@ -75,20 +124,145 @@
         "state": "wild"
     },
     {
-        "name": "Diglett",
-        "original_name": "Diglett",
-        "pet_name": "Jean-Christophe",
-        "hp_max": 38,
-        "hp": 38,
-        "xp": 366,
-        "strength": 29,
-        "defense": 33,
+        "name": "Bulbasaur",
+        "original_name": "Bulbasaur",
+        "pet_name": "Jean-Baptiste",
+        "hp_max": 31,
+        "hp": 31,
+        "xp": 20,
+        "strength": 23,
+        "defense": 21,
         "type": [
-            "ground"
+            "grass",
+            "poison"
         ],
-        "level": 7,
-        "speed": 51,
+        "level": 2,
+        "speed": 18,
         "stage": 1,
+        "ev": {
+            "hp": 0,
+            "strength": 0,
+            "defense": 0,
+            "speed": 0,
+            "xp": 0
+        },
+        "state": "wild"
+    },
+    {
+        "name": "Wigglytuff",
+        "original_name": "Jigglypuff",
+        "pet_name": "Jean-Louis",
+        "hp_max": 62,
+        "hp": 62,
+        "xp": 4905,
+        "strength": 67,
+        "defense": 53,
+        "type": [
+            "normal",
+            "fairy"
+        ],
+        "level": 16,
+        "speed": 61,
+        "stage": 2,
+        "ev": {
+            "hp": 0,
+            "strength": 0,
+            "defense": 0,
+            "speed": 0,
+            "xp": 0
+        },
+        "state": "wild"
+    },
+    {
+        "name": "Rattata",
+        "original_name": "Rattata",
+        "pet_name": "Jean-Thibault",
+        "hp_max": 54,
+        "hp": 54,
+        "xp": 696,
+        "strength": 44,
+        "defense": 37,
+        "type": [
+            "dark",
+            "normal"
+        ],
+        "level": 8,
+        "speed": 46,
+        "stage": 1,
+        "ev": {
+            "hp": 0,
+            "strength": 0,
+            "defense": 0,
+            "speed": 0,
+            "xp": 0
+        },
+        "state": "wild"
+    },
+    {
+        "name": "Slowpoke",
+        "original_name": "Slowpoke",
+        "pet_name": "Jean-S\u00e9bastien",
+        "hp_max": 25,
+        "hp": 25,
+        "xp": 112,
+        "strength": 35,
+        "defense": 19,
+        "type": [
+            "psychic"
+        ],
+        "level": 4,
+        "speed": 27,
+        "stage": 1,
+        "ev": {
+            "hp": 0,
+            "strength": 0,
+            "defense": 0,
+            "speed": 0,
+            "xp": 0
+        },
+        "state": "wild"
+    },
+    {
+        "name": "Rhydon",
+        "original_name": "Rhyhorn",
+        "pet_name": "Jean-Christophe",
+        "hp_max": 87,
+        "hp": 87,
+        "xp": 7232,
+        "strength": 79,
+        "defense": 73,
+        "type": [
+            "ground",
+            "rock"
+        ],
+        "level": 20,
+        "speed": 83,
+        "stage": 2,
+        "ev": {
+            "hp": 2,
+            "strength": 3,
+            "defense": 3,
+            "speed": 4,
+            "xp": 4
+        },
+        "state": "wild"
+    },
+    {
+        "name": "Electrode",
+        "original_name": "Voltorb",
+        "pet_name": "Jean-Claude",
+        "hp_max": 80,
+        "hp": 80,
+        "xp": 7459,
+        "strength": 63,
+        "defense": 75,
+        "type": [
+            "electric",
+            "grass"
+        ],
+        "level": 19,
+        "speed": 67,
+        "stage": 2,
         "ev": {
             "hp": 0,
             "strength": 0,

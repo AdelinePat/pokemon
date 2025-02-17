@@ -22,9 +22,9 @@ class NameInput:
             self.screen.get_display().fill((0, 0, 0))
             self.screen.set_background_display(MAIN_MENU_BACKGROUND4)
 
-            self.draw_text("Entrez votre nom:", 600, 200, LIGHT_GREEN)
+            self.draw_text("Enter your name", 600, 200, LIGHT_GREEN)
             self.draw_text(self.player_name, 600, 300, (255, 255, 255))
-            self.draw_text("(Appuyez sur Entrée pour valider)", 600, 400)
+            self.draw_text("(Press enter key to continue)", 600, 400)
 
             pygame.display.flip()
 
@@ -39,7 +39,7 @@ class NameInput:
                         if does_player_exist(self.player_name):
 
 
-                            self.draw_text(f"Le joueur {self.player_name} existe déjà ! Vous allez commencer votre partie", self.screen.width//2, self.screen.height//8*7)
+                            self.draw_text(f"The player named {self.player_name} already exist !", self.screen.width//2, self.screen.height//8*7)
                             pygame.time.wait(1000)
                             pokemon = get_first_pokemon(self.player_name)
                             return self.player_name, pokemon

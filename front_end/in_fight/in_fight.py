@@ -27,7 +27,7 @@ class InFight():
         # option_name = f"{self.pokemon_enemy.name} info"
         self.font = pygame.font.Font(None, 50)  # Set the font for menu text
         self.options = ["Attack", "Bag","Info", "Run away"]  # Menu options
-        self.bag_option = ["potions", "pokeball", "retour"]
+        self.bag_option = ["Potions", "Pokeball", "Back"]
         self.selected_index = 0  # Index of the currently selected option
         self.running = True  # Controls the menu loop
         self.player = player
@@ -151,7 +151,7 @@ class InFight():
                                         self.selected_index = 3
                                     elif self.pokemon.get_hp() > 0:
                                         attack_type = AttackMenu(self.screen, self.pokemon, self.pokemon_enemy).display()
-                                        if attack_type == "Retour":
+                                        if attack_type == "Back":
                                             player_turn = True
                                         else:
                                             print("attaque")
@@ -195,7 +195,7 @@ class InFight():
                                                             success_time = 0
                                                             while success_time - now_time < 1000:
                                                                 success_time = pygame.time.get_ticks()
-                                                                self.capture_message("1... 2... 3... Hop ! Le pokemon a était capturé !")
+                                                                self.capture_message("1... 2... 3... Go ! The pokemon has been captured successfully !")
                                                                 pygame.display.update()
                                                             player_turn = False
                                                             win = True
@@ -205,16 +205,16 @@ class InFight():
                                                             failed_capture_time = 0
                                                             while failed_capture_time - now_time < 1000:
                                                                 failed_capture_time = pygame.time.get_ticks()
-                                                                self.capture_message("Le pokemon a reussi à s'échapper")
+                                                                self.capture_message(f"You failed to capture {self.pokemon_enemy.name}...")
                                                                 pygame.display.update()
                                                             player_turn = False
-                                                        case "Retour":
+                                                        case "Back":
                                                             player_turn = True
                                                     # if another_option:
                                                     #     player_turn == True
                                                     # else:
                                                     #     player_turn = False
-                                                case "Retour":
+                                                case "Back":
                                                     player_turn = True
                                 case 2:
                                     print("Info")

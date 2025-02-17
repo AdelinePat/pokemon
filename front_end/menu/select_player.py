@@ -28,7 +28,7 @@ class SelectPlayer:
 
             self.screen.set_background_display(MAIN_MENU_BACKGROUND2)
 
-            self.draw_text("Choisissez votre joueur", 600, 150, LIGHT_GREEN)
+            self.draw_text("Select your player", 600, 150, LIGHT_GREEN)
 
             for i, option in enumerate(self.options):
                 color = LIGHT_GREEN if i == self.selected_index else (255, 255, 255)

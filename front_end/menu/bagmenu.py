@@ -13,7 +13,7 @@ class BagMenu:
         self.screen = screen
         self.bag = bag
         self.font = pygame.font.Font(None, 50)  # Set the font for menu text
-        self.options = [f"Potion [{self.bag.get_potion()}]", f"Pokeball [{self.bag.get_pokeball()}]", "Retour"]  # Menu options
+        self.options = [f"Potion [{self.bag.get_potion()}]", f"Pokeball [{self.bag.get_pokeball()}]", "Back"]  # Menu options
         self.selected_index = 0  # Index of the currently selected option
         self.running = True  # Controls the menu loop
         self.util = UtilTool()
@@ -80,7 +80,7 @@ class BagMenu:
             self.display_assets_and_background(x_movement, y_movement, battle_floor, battle_floor2, pokemon_enemy, pokemon)
 
             self.util.draw_option_screen(self.screen)
-            # self.options = [f"{self.bag.get_potion()} Potions", f"{self.bag.get_pokeball()} Pokeball", "Retour"] 
+            # self.options = [f"{self.bag.get_potion()} Potions", f"{self.bag.get_pokeball()} Pokeball", "Back"] 
             # Draw menu options
             for i, option in enumerate(self.options):
                 color = LIGHT_GREEN if i == self.selected_index else DARK_GREEN  # Highlight selected option
@@ -105,7 +105,7 @@ class BagMenu:
                             case 1:
                                 return "Pokeball"
                             case 2:
-                                return "Retour"
+                                return "Back"
 
 
    
