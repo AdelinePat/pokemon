@@ -161,6 +161,9 @@ class InFight():
                                                 message_damage = self.fight.fightinfo.set_damage_message()
                                                 player_turn = False
                                             else:
+                                                self.pokemon.update_xp(self.pokemon_enemy)
+                                                #TODO IS LEVEL UP??
+                                                pokemon = pygame.transform.flip(self.load_image(self.pokemon.image), True, False)
                                                 win = True
                                             #TODO menu end fight , xp gained...etc
                                     else:
@@ -188,9 +191,10 @@ class InFight():
                                                     match another_option:
                                                         case "Success":
                                                             self.pokemon.update_xp(self.pokemon_enemy)
-                                                            save_pokemon_to_pokedex(self.player,self.pokemon)
+                                                            pokemon = pygame.transform.flip(self.load_image(self.pokemon.image), True, False)
+                                                            # save_pokemon_to_pokedex(self.player,self.pokemon)
                                                             save_pokemon_to_pokedex(self.player, self.pokemon_enemy)
-                                                            save_bag_to_pokedex(self.player, self.bag)
+                                                            # save_bag_to_pokedex(self.player, self.bag)
                                                             now_time = pygame.time.get_ticks()
                                                             success_time = 0
                                                             while success_time - now_time < 1000:
@@ -222,6 +226,7 @@ class InFight():
                                     player_turn = True  
                                 case 3:
                                     if win:
+                                        # self.pokemon.update_xp(self.pokemon_enemy)
                                         save_pokemon_to_pokedex(self.player,self.pokemon)
                                         save_bag_to_pokedex(self.player, self.bag)
                                         self.pokemon_enemy.set_hp(self.pokemon_enemy.get_hp_max())

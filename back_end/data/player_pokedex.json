@@ -9,24 +9,24 @@
                 "name": "Bulbasaur",
                 "original_name": "Bulbasaur",
                 "pet_name": "Jean-Baptiste",
-                "hp_max": 1110,
+                "hp_max": 1130,
                 "hp": 936,
-                "xp": 2174,
-                "strength": 220,
-                "defense": 174,
+                "xp": 7950,
+                "strength": 229,
+                "defense": 194,
                 "type": [
                     "grass",
                     "poison"
                 ],
-                "level": 11,
-                "speed": 149,
+                "level": 12,
+                "speed": 170,
                 "stage": 1,
                 "ev": {
-                    "hp": 2,
-                    "strength": 0,
-                    "defense": 3,
-                    "speed": 0,
-                    "xp": 2
+                    "hp": 0,
+                    "strength": 3,
+                    "defense": 2,
+                    "speed": 1,
+                    "xp": 3
                 },
                 "state": "domesticated"
             },

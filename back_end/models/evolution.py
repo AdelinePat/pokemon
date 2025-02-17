@@ -71,11 +71,11 @@ class Evolution():
         evolution_stage = self.get_evolution_stage_json()
 
         if self.__original_name != 'Eevee':
-            evolution_stage_value = list(evolution_stage[self.__original_name].values())
-            new_name = list(evolution_stage[self.__original_name].keys())[evolution_stage_value.index(self.__stage)]
+            evolution_stage_value = list(evolution_stage.values())
+            new_name = list(evolution_stage.keys())[evolution_stage_value.index(self.__stage)]
             self.update_name(new_name)
         self.update_type()
-        self.set_image()
+        self.get_image()
 
     def update_type(self):
 

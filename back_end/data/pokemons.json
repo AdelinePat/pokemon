@@ -1,55 +1,5 @@
 [
     {
-        "name": "Paras",
-        "original_name": "Paras",
-        "pet_name": "Jean-Paul",
-        "hp_max": 41,
-        "hp": 41,
-        "xp": 199,
-        "strength": 26,
-        "defense": 24,
-        "type": [
-            "bug",
-            "grass"
-        ],
-        "level": 5,
-        "speed": 19,
-        "stage": 1,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
-        "name": "Nidoqueen",
-        "original_name": "Nidoran",
-        "pet_name": "Jean-Fran\u00e7ois",
-        "hp_max": 125,
-        "hp": 125,
-        "xp": 42482,
-        "strength": 113,
-        "defense": 107,
-        "type": [
-            "poison",
-            "ground"
-        ],
-        "level": 34,
-        "speed": 121,
-        "stage": 3,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
         "name": "Mr. Mime",
         "original_name": "Mr. Mime",
         "pet_name": "Jean-Charles",
@@ -64,31 +14,6 @@
         ],
         "level": 18,
         "speed": 57,
-        "stage": 2,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
-        "name": "Omastar",
-        "original_name": "Omanyte",
-        "pet_name": "Jean-Daniel",
-        "hp_max": 58,
-        "hp": 58,
-        "xp": 2068,
-        "strength": 38,
-        "defense": 53,
-        "type": [
-            "rock",
-            "water"
-        ],
-        "level": 12,
-        "speed": 54,
         "stage": 2,
         "ev": {
             "hp": 0,
@@ -149,46 +74,21 @@
         "state": "wild"
     },
     {
-        "name": "Wigglytuff",
-        "original_name": "Jigglypuff",
-        "pet_name": "Jean-Louis",
-        "hp_max": 62,
-        "hp": 62,
-        "xp": 4905,
-        "strength": 67,
-        "defense": 53,
+        "name": "Electrode",
+        "original_name": "Voltorb",
+        "pet_name": "Jean-Claude",
+        "hp_max": 80,
+        "hp": 80,
+        "xp": 7459,
+        "strength": 63,
+        "defense": 75,
         "type": [
-            "normal",
-            "fairy"
+            "electric",
+            "grass"
         ],
-        "level": 16,
-        "speed": 61,
+        "level": 19,
+        "speed": 67,
         "stage": 2,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
-        "name": "Rattata",
-        "original_name": "Rattata",
-        "pet_name": "Jean-Thibault",
-        "hp_max": 54,
-        "hp": 54,
-        "xp": 696,
-        "strength": 44,
-        "defense": 37,
-        "type": [
-            "dark",
-            "normal"
-        ],
-        "level": 8,
-        "speed": 46,
-        "stage": 1,
         "ev": {
             "hp": 0,
             "strength": 0,
@@ -213,6 +113,31 @@
         "level": 4,
         "speed": 27,
         "stage": 1,
+        "ev": {
+            "hp": 0,
+            "strength": 0,
+            "defense": 0,
+            "speed": 0,
+            "xp": 0
+        },
+        "state": "wild"
+    },
+    {
+        "name": "Omastar",
+        "original_name": "Omanyte",
+        "pet_name": "Jean-Daniel",
+        "hp_max": 58,
+        "hp": 58,
+        "xp": 2068,
+        "strength": 38,
+        "defense": 53,
+        "type": [
+            "rock",
+            "water"
+        ],
+        "level": 12,
+        "speed": 54,
+        "stage": 2,
         "ev": {
             "hp": 0,
             "strength": 0,
@@ -248,21 +173,21 @@
         "state": "wild"
     },
     {
-        "name": "Electrode",
-        "original_name": "Voltorb",
-        "pet_name": "Jean-Claude",
-        "hp_max": 80,
-        "hp": 80,
-        "xp": 7459,
-        "strength": 63,
-        "defense": 75,
+        "name": "Paras",
+        "original_name": "Paras",
+        "pet_name": "Jean-Paul",
+        "hp_max": 41,
+        "hp": 41,
+        "xp": 199,
+        "strength": 26,
+        "defense": 24,
         "type": [
-            "electric",
+            "bug",
             "grass"
         ],
-        "level": 19,
-        "speed": 67,
-        "stage": 2,
+        "level": 5,
+        "speed": 19,
+        "stage": 1,
         "ev": {
             "hp": 0,
             "strength": 0,
