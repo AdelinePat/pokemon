@@ -1,6 +1,7 @@
 
 import pygame
 import sys
+from __settings__ import LIGHT_GREEN
 
 class BattleScreen:
     def __init__(self, screen, player):
@@ -22,7 +23,7 @@ class BattleScreen:
             self.screen.get_display().fill((0, 0, 0))
 
             # Display text messages
-            self.draw_text("Pokémon Battle!", 600, 150, (255, 255, 0))
+            self.draw_text("Pokémon Battle!", 600, 150, LIGHT_GREEN)
             self.draw_text("Press Escape to flee", 600, 300)
 
             # Update the display

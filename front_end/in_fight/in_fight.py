@@ -3,7 +3,7 @@ import math
 
 import pygame
 import sys
-from __settings__ import BATTLE_BACKGROUND, BATTLE_FLOOR, REGULAR_FONT
+from __settings__ import BATTLE_BACKGROUND, BATTLE_FLOOR, REGULAR_FONT, DARK_GREEN, LIGHT_GREEN
 from back_end.data_access.pokemon_pokedex_service import get_first_pokemon
 from back_end.data_access.wild_pokemons import get_random_wild_pokemon
 from back_end.data_access.bag_pokedex_service import get_bag_from_pokedex
@@ -95,7 +95,6 @@ class InFight():
             
             #DISPLAY
             self.screen.update()
-            # self.screen.get_display().fill((0, 0, 0))
             if not win:
                 time_count += speed
                 x_movement = int(var_y * math.sin(time_count * 0.1))
@@ -105,7 +104,7 @@ class InFight():
             self.util.draw_option_screen(self.screen)
             # Draw menu options
             for i, option in enumerate(self.options):
-                color = (255, 255, 0) if i == self.selected_index else (0,0,0)  # Highlight selected option
+                color = LIGHT_GREEN if i == self.selected_index else DARK_GREEN  # Highlight selected option
                 self.draw_text(option, self.screen.width//2 + i * 150, self.screen.height//8*7  , color)
 
             if win:

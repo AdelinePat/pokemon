@@ -9,23 +9,23 @@
                 "name": "Dragonite",
                 "original_name": "Dratini",
                 "pet_name": "Jean-Robert",
-                "hp_max": 145,
-                "hp": 117,
-                "xp": 38160,
-                "strength": 132,
-                "defense": 136,
+                "hp_max": 169,
+                "hp": 144,
+                "xp": 39816,
+                "strength": 160,
+                "defense": 166,
                 "type": [
                     "dragon",
                     "flying"
                 ],
-                "level": 33,
-                "speed": 124,
+                "level": 35,
+                "speed": 160,
                 "stage": 3,
                 "ev": {
-                    "hp": 1,
-                    "strength": 3,
-                    "defense": 0,
-                    "speed": 1,
+                    "hp": 3,
+                    "strength": 2,
+                    "defense": 1,
+                    "speed": 2,
                     "xp": 0
                 },
                 "state": "domesticated"
@@ -51,6 +51,39 @@
                     "defense": 0,
                     "speed": 0,
                     "xp": 0
+                },
+                "state": "domesticated"
+            }
+        }
+    },
+    "Hola": {
+        "bag": {
+            "potions": 10,
+            "pokeball": 15
+        },
+        "pokemons": {
+            "Jean-Claude": {
+                "name": "Zapdos",
+                "original_name": "Zapdos",
+                "pet_name": "Jean-Claude",
+                "hp_max": 124,
+                "hp": 113,
+                "xp": 22150,
+                "strength": 109,
+                "defense": 94,
+                "type": [
+                    "electric",
+                    "flying"
+                ],
+                "level": 29,
+                "speed": 111,
+                "stage": 3,
+                "ev": {
+                    "hp": 2,
+                    "strength": 3,
+                    "defense": 3,
+                    "speed": 4,
+                    "xp": 2
                 },
                 "state": "domesticated"
             }

@@ -2,11 +2,8 @@ import pygame
 import sys
 from back_end.controller import create_player
 from .display_pokemon_stat import PokemonStat
-
-# from codes.name_input import NameInput  
-# from codes.game import Game
-# from codes.select_player import SelectPlayer
 from back_end.controller import get_starter_pokemons
+from __settings__ import LIGHT_GREEN
 
 
 class SelectPokemons():
@@ -37,10 +34,10 @@ class SelectPokemons():
             self.screen.update()
             self.screen.get_display().fill((0, 0, 0))
 
-            self.draw_text("Choisissez votre premier pokemon", 600, 150, (255, 255, 0))
+            self.draw_text("Choisissez votre premier pokemon", 600, 150, LIGHT_GREEN)
 
             for i, option in enumerate(self.options):
-                color = (255, 255, 0) if i == self.selected_index else (255, 255, 255)
+                color = LIGHT_GREEN if i == self.selected_index else (255, 255, 255)
                 self.draw_text(option, 600, 300 + i * 60, color)
 
             pygame.display.flip()

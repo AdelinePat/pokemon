@@ -4,7 +4,7 @@ import sys
 from front_end.menu.name_input import NameInput  
 from front_end.gameplay.game import Game
 from .select_player import SelectPlayer
-from __settings__ import MAIN_MENU_BACKGROUND1
+from __settings__ import MAIN_MENU_BACKGROUND1, LIGHT_GREEN
 
 
 class Menu:
@@ -38,11 +38,11 @@ class Menu:
 
             self.screen.set_background_display(MAIN_MENU_BACKGROUND1)
 
-            self.draw_text("Menu Principal", 600, 150, (255, 255, 0))  # Draw the title
+            self.draw_text("Menu Principal", 600, 150, LIGHT_GREEN)  # Draw the title
 
             # Draw menu options
             for i, option in enumerate(self.options):
-                color = (255, 255, 0) if i == self.selected_index else (255, 255, 255)  # Highlight selected option
+                color = LIGHT_GREEN if i == self.selected_index else (255, 255, 255)  # Highlight selected option
                 self.draw_text(option, 600, 300 + i * 60, color)
 
             pygame.display.flip()  # Refresh the screen

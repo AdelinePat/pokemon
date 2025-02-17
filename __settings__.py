@@ -31,3 +31,11 @@ BATTLE_BACKGROUND = "./assets/backgrounds/battle_background.jpg"
 BATTLE_FLOOR = "./assets/backgrounds/battle_floor.png"
 GAME_OVER_BACKGROUND = "./assets/backgrounds/game_over_background.png"
 MENU_BACKGROUND = "./assets/backgrounds/menu_background.png"
+
+"""
+COLORS
+"""
+BACKGROUND = (255,255,255)
+DARK_GREEN = (27,82,70)
+LIGHT_GREEN = (122,186,99)
+GREY_BLUE = (68,82,95)

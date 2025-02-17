@@ -1,78 +1,5 @@
 [
     {
-        "name": "Ponyta",
-        "original_name": "Ponyta",
-        "pet_name": "Jean-Michel",
-        "hp_max": 26,
-        "hp": 26,
-        "xp": 18,
-        "strength": 13,
-        "defense": 9,
-        "type": [
-            "fire"
-        ],
-        "level": 2,
-        "speed": 34,
-        "stage": 1,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
-        "name": "Paras",
-        "original_name": "Paras",
-        "pet_name": "Jean-Paul",
-        "hp_max": 31,
-        "hp": 31,
-        "xp": 186,
-        "strength": 26,
-        "defense": 27,
-        "type": [
-            "bug",
-            "grass"
-        ],
-        "level": 5,
-        "speed": 43,
-        "stage": 1,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
-        "name": "Diglett",
-        "original_name": "Diglett",
-        "pet_name": "Jean-Christophe",
-        "hp_max": 38,
-        "hp": 38,
-        "xp": 366,
-        "strength": 29,
-        "defense": 33,
-        "type": [
-            "ground"
-        ],
-        "level": 7,
-        "speed": 51,
-        "stage": 1,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
         "name": "Mr. Mime",
         "original_name": "Mr. Mime",
         "pet_name": "Jean-Charles",
@@ -87,30 +14,6 @@
         ],
         "level": 12,
         "speed": 62,
-        "stage": 2,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
-        "name": "Clefable",
-        "original_name": "Clefairy",
-        "pet_name": "Jean-Luc",
-        "hp_max": 63,
-        "hp": 63,
-        "xp": 4441,
-        "strength": 60,
-        "defense": 52,
-        "type": [
-            "fairy"
-        ],
-        "level": 16,
-        "speed": 57,
         "stage": 2,
         "ev": {
             "hp": 0,
@@ -172,21 +75,20 @@
         "state": "wild"
     },
     {
-        "name": "Zapdos",
-        "original_name": "Zapdos",
-        "pet_name": "Jean-Claude",
-        "hp_max": 113,
-        "hp": 113,
-        "xp": 22139,
-        "strength": 100,
-        "defense": 86,
+        "name": "Diglett",
+        "original_name": "Diglett",
+        "pet_name": "Jean-Christophe",
+        "hp_max": 38,
+        "hp": 38,
+        "xp": 366,
+        "strength": 29,
+        "defense": 33,
         "type": [
-            "electric",
-            "flying"
+            "ground"
         ],
-        "level": 28,
-        "speed": 99,
-        "stage": 3,
+        "level": 7,
+        "speed": 51,
+        "stage": 1,
         "ev": {
             "hp": 0,
             "strength": 0,

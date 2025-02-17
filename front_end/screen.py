@@ -1,4 +1,5 @@
 import pygame
+from __settings__ import DARK_GREEN
 
 class Screen:
     def __init__(self, width=1200, height=720):
@@ -38,7 +39,7 @@ class Screen:
         background_screen = pygame.Surface((self.width, self.height))
         background_rect = background_screen.get_rect(center = (self.width //2, self.height // 2))
         background_screen.set_alpha(155)
-        pygame.draw.rect(background_screen, (0,0,0), background_rect)
+        pygame.draw.rect(background_screen, "black", background_rect)
         self.display.blit(background_screen, background_rect)
 
     def set_background_without_black(self, background_image):

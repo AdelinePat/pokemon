@@ -1,7 +1,7 @@
 import pygame
 import sys
 from front_end.menu.util_tool import UtilTool
-from __settings__ import BATTLE_BACKGROUND, BATTLE_FLOOR, REGULAR_FONT
+from __settings__ import BATTLE_BACKGROUND, BATTLE_FLOOR, REGULAR_FONT, LIGHT_GREEN, DARK_GREEN
 import math
 
 
@@ -72,7 +72,6 @@ class InfoMenu:
 
         while self.running:
             self.screen.update()
-            # self.screen.get_display().fill((0, 0, 0))
             if not win:
                 time_count += speed
                 x_movement = int(var_y * math.sin(time_count * 0.1))
@@ -90,7 +89,7 @@ class InfoMenu:
             # self.options = [f"{self.bag.get_potion()} Potions", f"{self.bag.get_pokeball()} Pokeball", "Retour"] 
             # Draw menu options
             for i, option in enumerate(self.options):
-                color = (255, 255, 0) if i == self.selected_index else (0, 0, 0)  # Highlight selected option
+                color = LIGHT_GREEN if i == self.selected_index else DARK_GREEN  # Highlight selected option
                 self.draw_text(option, self.screen.width//2 + i * 200, self.screen.height//8*7  , color)
 
             pygame.display.flip()  # Refresh the screen
@@ -124,15 +123,6 @@ class InfoMenu:
         font_size = self.screen.height // 20
         x  = self.screen.width //2
         y = self.screen.height // 2
-
-
-        # self.draw_text(f"Level : {str(self.pokemon.get_level())}", self.screen.width//2, y_position - 125, (255, 255, 0))
-        #     self.draw_text(f"Type : {str(", ".join(self.pokemon.type))}", self.screen.width//2, y_position -75, (255, 255, 0))
-        #     self.draw_text(f"HP : {str(self.pokemon.get_hp())}", self.screen.width//2, y_position -25, (255, 255, 0))
-        #     self.draw_text(f"Strength : {str(self.pokemon.get_strength())}", self.screen.width//2, y_position + 25, (255, 255, 0))
-        #     self.draw_text(f"Defense : {str(self.pokemon.get_defense())}", self.screen.width//2, y_position + 75, (255, 255, 0))
-        #     self.draw_text(f"Speed : {str(self.pokemon.get_speed())}", self.screen.width//2, y_position + 125, (255, 255, 0))
-        #     self.draw_text(f"XP : {str(self.pokemon.get_xp())}", self.screen.width//2, y_position + 175, (255, 255, 0))
         
         self.util.draw_text(f"{actual_pokemon.name}",\
                               REGULAR_FONT, font_size , self.screen, (x, y - font_size*2))
