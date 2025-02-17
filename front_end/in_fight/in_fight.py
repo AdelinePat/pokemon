@@ -87,7 +87,7 @@ class InFight():
         message_attack = None
         another_option = ""
         fleeing = False
-        
+
         player_turn = False
         if self.fight.is_player_first():
             player_turn = True
@@ -160,7 +160,7 @@ class InFight():
                                             self.fight.player_attack(attack_type)
                                             if self.pokemon_enemy.get_hp() > 0:
                                                 message_attack = self.fight.fightinfo.set_who_attack_message(self.pokemon)
-                                                message_damage = self.fight.fightinfo.set_damage_message()
+                                                message_damage = self.fight.fightinfo.get_damage_message()
                                                 player_turn = False
                                             else:
                                                 self.pokemon.update_xp(self.pokemon_enemy)
@@ -244,14 +244,24 @@ class InFight():
                                             save_bag_to_pokedex(self.player, self.bag)
                                             self.pokemon_enemy.set_hp(self.pokemon_enemy.get_hp_max())
                                             save_wild_pokemon(self.pokemon_enemy)
+                                            now_time = pygame.time.get_ticks()
+                                            failed_flee_time = 0
+                                            while failed_flee_time - now_time < 1000:
+                                                failed_flee_time = pygame.time.get_ticks()
+                                                # self.failed_fleeing()
+                                                self.message_pop_up(self.fight.fightinfo.flee_message)
+                                                pygame.display.update()
                                             return fleeing
                                         else:
                                             now_time = pygame.time.get_ticks()
-                                            failed_time = 0
-                                            while failed_time - now_time < 1000:
-                                                failed_time = pygame.time.get_ticks()
-                                                self.failed_fleeing()
+                                            failed_flee_time = 0
+                                            while failed_flee_time - now_time < 1000:
+                                                failed_flee_time = pygame.time.get_ticks()
+                                                # self.failed_fleeing()
+                                                self.message_pop_up(self.fight.fightinfo.flee_message)
                                                 pygame.display.update()
+                                        
+                                        
                                     # pygame.quit()
                                 # sys.exit()
                 else:
@@ -260,7 +270,7 @@ class InFight():
                     if self.pokemon.get_hp() > 0 :
                         self.fight.bot_attack()
                         message_attack = self.fight.fightinfo.set_who_attack_message(self.pokemon_enemy)
-                        message_damage = self.fight.fightinfo.set_damage_message()
+                        message_damage = self.fight.fightinfo.get_damage_message()
                         # pygame.time.wait(1000)
                         # player_turn = True
                     else:
@@ -300,8 +310,11 @@ class InFight():
         y = self.screen.height // 2
         self.util.draw_text("You lost the fight!", REGULAR_FONT, font_size , self.screen, (x, y))
 
-    def failed_fleeing(self):
-        self.util.draw_info_attack_screen(self.screen, "Votre fuite a échoué", "Le pokemon adverse va vous attaquer")
+    # def failed_fleeing(self):
+    #     self.util.draw_info_attack_screen(self.screen, "Votre fuite a échoué", "Le pokemon adverse va vous attaquer")
     
     def capture_message(self, message):
+        self.util.draw_info_capture_screen(self.screen, message)
+    
+    def message_pop_up(self, message):
         self.util.draw_info_capture_screen(self.screen, message)

@@ -1,54 +1,5 @@
 [
     {
-        "name": "Mr. Mime",
-        "original_name": "Mr. Mime",
-        "pet_name": "Jean-Charles",
-        "hp_max": 72,
-        "hp": 72,
-        "xp": 6116,
-        "strength": 62,
-        "defense": 65,
-        "type": [
-            "ice",
-            "psychic"
-        ],
-        "level": 18,
-        "speed": 57,
-        "stage": 2,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
-        "name": "Dratini",
-        "original_name": "Dratini",
-        "pet_name": "Jean-Robert",
-        "hp_max": 38,
-        "hp": 38,
-        "xp": 311,
-        "strength": 22,
-        "defense": 21,
-        "type": [
-            "dragon"
-        ],
-        "level": 6,
-        "speed": 46,
-        "stage": 1,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
         "name": "Electrode",
         "original_name": "Voltorb",
         "pet_name": "Jean-Claude",
@@ -64,56 +15,6 @@
         "level": 19,
         "speed": 67,
         "stage": 2,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
-        "name": "Omastar",
-        "original_name": "Omanyte",
-        "pet_name": "Jean-Daniel",
-        "hp_max": 58,
-        "hp": 58,
-        "xp": 2068,
-        "strength": 38,
-        "defense": 53,
-        "type": [
-            "rock",
-            "water"
-        ],
-        "level": 12,
-        "speed": 54,
-        "stage": 2,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
-        "name": "Paras",
-        "original_name": "Paras",
-        "pet_name": "Jean-Paul",
-        "hp_max": 41,
-        "hp": 41,
-        "xp": 199,
-        "strength": 26,
-        "defense": 24,
-        "type": [
-            "bug",
-            "grass"
-        ],
-        "level": 5,
-        "speed": 19,
-        "stage": 1,
         "ev": {
             "hp": 0,
             "strength": 0,
@@ -173,6 +74,55 @@
         "state": "wild"
     },
     {
+        "name": "Dratini",
+        "original_name": "Dratini",
+        "pet_name": "Jean-Robert",
+        "hp_max": 38,
+        "hp": 38,
+        "xp": 311,
+        "strength": 22,
+        "defense": 21,
+        "type": [
+            "dragon"
+        ],
+        "level": 6,
+        "speed": 46,
+        "stage": 1,
+        "ev": {
+            "hp": 0,
+            "strength": 0,
+            "defense": 0,
+            "speed": 0,
+            "xp": 0
+        },
+        "state": "wild"
+    },
+    {
+        "name": "Paras",
+        "original_name": "Paras",
+        "pet_name": "Jean-Paul",
+        "hp_max": 41,
+        "hp": 41,
+        "xp": 199,
+        "strength": 26,
+        "defense": 24,
+        "type": [
+            "bug",
+            "grass"
+        ],
+        "level": 5,
+        "speed": 19,
+        "stage": 1,
+        "ev": {
+            "hp": 0,
+            "strength": 0,
+            "defense": 0,
+            "speed": 0,
+            "xp": 0
+        },
+        "state": "wild"
+    },
+    {
         "name": "Rhydon",
         "original_name": "Rhyhorn",
         "pet_name": "Jean-Christophe",
@@ -194,6 +144,31 @@
             "defense": 3,
             "speed": 4,
             "xp": 4
+        },
+        "state": "wild"
+    },
+    {
+        "name": "Mr. Mime",
+        "original_name": "Mr. Mime",
+        "pet_name": "Jean-Charles",
+        "hp_max": 72,
+        "hp": 72,
+        "xp": 6116,
+        "strength": 62,
+        "defense": 65,
+        "type": [
+            "ice",
+            "psychic"
+        ],
+        "level": 18,
+        "speed": 57,
+        "stage": 2,
+        "ev": {
+            "hp": 0,
+            "strength": 0,
+            "defense": 0,
+            "speed": 0,
+            "xp": 0
         },
         "state": "wild"
     }

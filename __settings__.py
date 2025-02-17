@@ -36,6 +36,8 @@ MENU_BACKGROUND = "./assets/backgrounds/menu_background.png"
 COLORS
 """
 BACKGROUND = (255,255,255)
-DARK_GREEN = (27,82,70)
+DARK_GREEN = (68,82,95)
+# DARK_GREEN = (27,82,70)
 LIGHT_GREEN = (122,186,99)
-GREY_BLUE = (68,82,95)
+# GREY_BLUE = (68,82,95)
+

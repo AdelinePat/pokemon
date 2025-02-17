@@ -40,8 +40,8 @@ class Fight:
         else:
             if damage > 0:
                 if enemy.get_hp() - damage >= 0:
-                    if critical:
-                    # if critical < critical_rate:
+                    # if critical:
+                    if critical < critical_rate:
                         efficency =  "Critical hit !!"
                         print("Coup critique !")
                         final_damage = damage * 2
@@ -52,8 +52,8 @@ class Fight:
                     pokemon.update_xp(enemy)
                     # print(f"le pokemon {enemy.name} n'a plus de PV ! Vous avez gagné {pokemon.get_xp()} XP")
             else:
-                if critical:
-                # if critical < critical_rate:
+                # if critical:
+                if critical < critical_rate:
                     efficency = "Critical hit !!"
                     print("Coup critique !")
                     final_damage = 20
@@ -89,14 +89,17 @@ class Fight:
     def run_away(self):
         miss = random.randint(1, 7)
         if self.second_pokemon.get_state() == "domesticated":
-            print("Impossible de fuire dans un combat de dresseur")
+            # print("Impossible de fuire dans un combat de dresseur")
+            self.fightinfo.set_fail_flee_message()
             return False
         if miss == 1:
-            print("Vous n'avez pas reussi à prendre la fuite...")
+            self.fightinfo.set_fail_flee_message()
+            # print("Vous n'avez pas reussi à prendre la fuite...")
             self.bot_attack()
             self.first_pokemon.get_hp()
             return False
         else :
+            self.fightinfo.set_success_flee_message()
             return True
 
     def use_potion(self, pokemon, bag):
