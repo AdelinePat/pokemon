@@ -26,7 +26,7 @@ class InFight():
         self.pokemon_enemy = get_random_wild_pokemon()
         # option_name = f"{self.pokemon_enemy.name} info"
         self.font = pygame.font.Font(None, 50)  # Set the font for menu text
-        self.options = ["Attack", "Bag","Info", "Run away"]  # Menu options
+        self.options = ["Attack", "Bag","Info", "Flee"]  # Menu options
         self.bag_option = ["Potions", "Pokeball", "Back"]
         self.selected_index = 0  # Index of the currently selected option
         self.running = True  # Controls the menu loop
@@ -86,6 +86,7 @@ class InFight():
         message_damage = None
         message_attack = None
         another_option = ""
+        fleeing = False
         
         player_turn = False
         if self.fight.is_player_first():
@@ -108,6 +109,7 @@ class InFight():
                 self.draw_text(option, self.screen.width//2 + i * 150, self.screen.height//8*7  , color)
 
             if win:
+                self.options[-1] = "Exit"
                 fleeing = False
                 if self.pokemon.get_hp() == 0:
                     self.draw_win_bot_screen()
@@ -195,6 +197,7 @@ class InFight():
                                                             # save_pokemon_to_pokedex(self.player,self.pokemon)
                                                             save_pokemon_to_pokedex(self.player, self.pokemon_enemy)
                                                             # save_bag_to_pokedex(self.player, self.bag)
+                                                            # self.options[-1] = "Exit"
                                                             now_time = pygame.time.get_ticks()
                                                             success_time = 0
                                                             while success_time - now_time < 1000:

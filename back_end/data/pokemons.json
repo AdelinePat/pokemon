@@ -49,31 +49,6 @@
         "state": "wild"
     },
     {
-        "name": "Bulbasaur",
-        "original_name": "Bulbasaur",
-        "pet_name": "Jean-Baptiste",
-        "hp_max": 31,
-        "hp": 31,
-        "xp": 20,
-        "strength": 23,
-        "defense": 21,
-        "type": [
-            "grass",
-            "poison"
-        ],
-        "level": 2,
-        "speed": 18,
-        "stage": 1,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
         "name": "Electrode",
         "original_name": "Voltorb",
         "pet_name": "Jean-Claude",
@@ -89,30 +64,6 @@
         "level": 19,
         "speed": 67,
         "stage": 2,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
-        "name": "Slowpoke",
-        "original_name": "Slowpoke",
-        "pet_name": "Jean-S\u00e9bastien",
-        "hp_max": 25,
-        "hp": 25,
-        "xp": 112,
-        "strength": 35,
-        "defense": 19,
-        "type": [
-            "psychic"
-        ],
-        "level": 4,
-        "speed": 27,
-        "stage": 1,
         "ev": {
             "hp": 0,
             "strength": 0,
@@ -148,31 +99,6 @@
         "state": "wild"
     },
     {
-        "name": "Rhydon",
-        "original_name": "Rhyhorn",
-        "pet_name": "Jean-Christophe",
-        "hp_max": 87,
-        "hp": 87,
-        "xp": 7232,
-        "strength": 79,
-        "defense": 73,
-        "type": [
-            "ground",
-            "rock"
-        ],
-        "level": 20,
-        "speed": 83,
-        "stage": 2,
-        "ev": {
-            "hp": 2,
-            "strength": 3,
-            "defense": 3,
-            "speed": 4,
-            "xp": 4
-        },
-        "state": "wild"
-    },
-    {
         "name": "Paras",
         "original_name": "Paras",
         "pet_name": "Jean-Paul",
@@ -194,6 +120,80 @@
             "defense": 0,
             "speed": 0,
             "xp": 0
+        },
+        "state": "wild"
+    },
+    {
+        "name": "Bulbasaur",
+        "original_name": "Bulbasaur",
+        "pet_name": "Jean-Baptiste",
+        "hp_max": 31,
+        "hp": 31,
+        "xp": 20,
+        "strength": 23,
+        "defense": 21,
+        "type": [
+            "grass",
+            "poison"
+        ],
+        "level": 2,
+        "speed": 18,
+        "stage": 1,
+        "ev": {
+            "hp": 0,
+            "strength": 0,
+            "defense": 0,
+            "speed": 0,
+            "xp": 0
+        },
+        "state": "wild"
+    },
+    {
+        "name": "Slowpoke",
+        "original_name": "Slowpoke",
+        "pet_name": "Jean-S\u00e9bastien",
+        "hp_max": 25,
+        "hp": 25,
+        "xp": 112,
+        "strength": 35,
+        "defense": 19,
+        "type": [
+            "psychic"
+        ],
+        "level": 4,
+        "speed": 27,
+        "stage": 1,
+        "ev": {
+            "hp": 0,
+            "strength": 0,
+            "defense": 0,
+            "speed": 0,
+            "xp": 0
+        },
+        "state": "wild"
+    },
+    {
+        "name": "Rhydon",
+        "original_name": "Rhyhorn",
+        "pet_name": "Jean-Christophe",
+        "hp_max": 87,
+        "hp": 87,
+        "xp": 7232,
+        "strength": 79,
+        "defense": 73,
+        "type": [
+            "ground",
+            "rock"
+        ],
+        "level": 20,
+        "speed": 83,
+        "stage": 2,
+        "ev": {
+            "hp": 2,
+            "strength": 3,
+            "defense": 3,
+            "speed": 4,
+            "xp": 4
         },
         "state": "wild"
     }

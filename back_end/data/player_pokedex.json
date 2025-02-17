@@ -6,27 +6,27 @@
         },
         "pokemons": {
             "Jean-Baptiste": {
-                "name": "Bulbasaur",
+                "name": "Ivysaur",
                 "original_name": "Bulbasaur",
                 "pet_name": "Jean-Baptiste",
-                "hp_max": 1130,
+                "hp_max": 1246,
                 "hp": 936,
-                "xp": 7950,
-                "strength": 229,
-                "defense": 194,
+                "xp": 10934,
+                "strength": 353,
+                "defense": 309,
                 "type": [
                     "grass",
                     "poison"
                 ],
-                "level": 12,
-                "speed": 170,
-                "stage": 1,
+                "level": 20,
+                "speed": 256,
+                "stage": 2,
                 "ev": {
-                    "hp": 0,
-                    "strength": 3,
+                    "hp": 1,
+                    "strength": 2,
                     "defense": 2,
-                    "speed": 1,
-                    "xp": 3
+                    "speed": 2,
+                    "xp": 1
                 },
                 "state": "domesticated"
             },
