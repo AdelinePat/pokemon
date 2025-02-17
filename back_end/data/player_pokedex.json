@@ -2,24 +2,48 @@
     "Billy": {
         "bag": {
             "potions": 10,
-            "pokeball": 15
+            "pokeball": 14
         },
         "pokemons": {
             "Jean-Robert": {
                 "name": "Dragonite",
                 "original_name": "Dratini",
                 "pet_name": "Jean-Robert",
-                "hp_max": 123,
-                "hp": 120,
-                "xp": 33732,
-                "strength": 108,
-                "defense": 113,
+                "hp_max": 145,
+                "hp": 117,
+                "xp": 38160,
+                "strength": 132,
+                "defense": 136,
                 "type": [
                     "dragon",
                     "flying"
                 ],
-                "level": 32,
-                "speed": 102,
+                "level": 33,
+                "speed": 124,
+                "stage": 3,
+                "ev": {
+                    "hp": 1,
+                    "strength": 3,
+                    "defense": 0,
+                    "speed": 1,
+                    "xp": 0
+                },
+                "state": "domesticated"
+            },
+            "Jean-Pierre": {
+                "name": "Blastoise",
+                "original_name": "Squirtle",
+                "pet_name": "Jean-Pierre",
+                "hp_max": 123,
+                "hp": 121,
+                "xp": 40940,
+                "strength": 119,
+                "defense": 118,
+                "type": [
+                    "water"
+                ],
+                "level": 34,
+                "speed": 132,
                 "stage": 3,
                 "ev": {
                     "hp": 0,

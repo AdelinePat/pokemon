@@ -1,30 +1,5 @@
 [
     {
-        "name": "Exeggutor",
-        "original_name": "Exeggcute",
-        "pet_name": "Jean-Baptiste",
-        "hp_max": 82,
-        "hp": 82,
-        "xp": 6452,
-        "strength": 73,
-        "defense": 57,
-        "type": [
-            "grass",
-            "psychic"
-        ],
-        "level": 18,
-        "speed": 77,
-        "stage": 2,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
         "name": "Ponyta",
         "original_name": "Ponyta",
         "pet_name": "Jean-Michel",
@@ -49,30 +24,6 @@
         "state": "wild"
     },
     {
-        "name": "Blastoise",
-        "original_name": "Squirtle",
-        "pet_name": "Jean-Pierre",
-        "hp_max": 123,
-        "hp": 123,
-        "xp": 40940,
-        "strength": 119,
-        "defense": 118,
-        "type": [
-            "water"
-        ],
-        "level": 34,
-        "speed": 132,
-        "stage": 3,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
         "name": "Paras",
         "original_name": "Paras",
         "pet_name": "Jean-Paul",
@@ -87,55 +38,6 @@
         ],
         "level": 5,
         "speed": 43,
-        "stage": 1,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
-        "name": "Doduo",
-        "original_name": "Doduo",
-        "pet_name": "Jean-Louis",
-        "hp_max": 45,
-        "hp": 45,
-        "xp": 510,
-        "strength": 47,
-        "defense": 25,
-        "type": [
-            "normal",
-            "flying"
-        ],
-        "level": 7,
-        "speed": 46,
-        "stage": 1,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
-        "name": "Koffing",
-        "original_name": "Koffing",
-        "pet_name": "Jean-Fran\u00e7ois",
-        "hp_max": 32,
-        "hp": 32,
-        "xp": 185,
-        "strength": 33,
-        "defense": 23,
-        "type": [
-            "poison"
-        ],
-        "level": 5,
-        "speed": 25,
         "stage": 1,
         "ev": {
             "hp": 0,
@@ -245,31 +147,6 @@
         "state": "wild"
     },
     {
-        "name": "Kabuto",
-        "original_name": "Kabuto",
-        "pet_name": "Jean-Daniel",
-        "hp_max": 34,
-        "hp": 34,
-        "xp": 18,
-        "strength": 19,
-        "defense": 23,
-        "type": [
-            "rock",
-            "water"
-        ],
-        "level": 2,
-        "speed": 31,
-        "stage": 1,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
         "name": "Gastly",
         "original_name": "Gastly",
         "pet_name": "Jean-Eric",
@@ -285,30 +162,6 @@
         "level": 1,
         "speed": 13,
         "stage": 1,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
-        "name": "Persian",
-        "original_name": "Meowth",
-        "pet_name": "Jean-Thibault",
-        "hp_max": 78,
-        "hp": 78,
-        "xp": 5615,
-        "strength": 81,
-        "defense": 67,
-        "type": [
-            "dark"
-        ],
-        "level": 17,
-        "speed": 74,
-        "stage": 2,
         "ev": {
             "hp": 0,
             "strength": 0,

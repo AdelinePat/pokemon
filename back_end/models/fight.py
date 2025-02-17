@@ -34,8 +34,9 @@ class Fight:
         critical_rate = pokemon.get_speed() / 2
         critical = random.randint(1, 255)
 
-        if miss == 1:
+        if miss ==1:
             efficency = "l'attaque a raté..."
+            final_damage = 0
         else:
             if damage > 0:
                 if enemy.get_hp() - damage >= 0:
@@ -56,10 +57,12 @@ class Fight:
             enemy.set_damage_hp(final_damage)
             
             # self.fightinfo.set_attack_message(efficency, final_damage)
-            self.fightinfo.set_all_values(efficency, attack_type, final_damage)
+            
 
             print(f"{pokemon.name} a fait une attaque {attack_type}, {efficency}\
                 \n Le pokemon {enemy.name} de type {enemy.type} en face a reçu {final_damage}, il lui reste : {enemy.get_hp()}")
+        
+        self.fightinfo.set_all_values(efficency, attack_type, final_damage)
 
     def is_player_first(self):
         if self.first_pokemon.get_speed() > self.second_pokemon.get_speed():

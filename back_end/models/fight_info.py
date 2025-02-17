@@ -4,7 +4,6 @@ class FightInfo():
         self.attack_type = ""
         self.total_damage = 0
         self.actual_hp = 0
-        self.attack_type = ""
 
     def set_all_values(self, efficiency, attack_type, damage):
         self.efficiency = efficiency
