@@ -30,12 +30,12 @@ class Fight:
         coefficient, efficency = pokemon.attack_efficiency(attack_type, enemy)
         miss = random.randint(1, 8)
         
-        damage = (pokemon.get_strength() * coefficient) - enemy.get_defense()
+        damage = ((pokemon.get_strength() * coefficient) - enemy.get_defense()) * coefficient
         critical_rate = pokemon.get_speed() / 2
         critical = random.randint(1, 255)
 
         if miss == 1:
-            print("l'attaque à était raté...")
+            efficency = "l'attaque a raté..."
         else:
             if damage > 0:
                 if enemy.get_hp() - damage >= 0:
@@ -57,7 +57,7 @@ class Fight:
             
             # self.fightinfo.set_attack_message(efficency, final_damage)
             self.fightinfo.set_all_values(efficency, attack_type, final_damage)
-            
+
             print(f"{pokemon.name} a fait une attaque {attack_type}, {efficency}\
                 \n Le pokemon {enemy.name} de type {enemy.type} en face a reçu {final_damage}, il lui reste : {enemy.get_hp()}")
 
@@ -83,6 +83,7 @@ class Fight:
         miss = random.randint(1, 7)
         if self.second_pokemon.get_state() == "domesticated":
             print("Impossible de fuire dans un combat de dresseur")
+            return False
         if miss == 1:
             print("Vous n'avez pas reussi à prendre la fuite...")
             self.bot_attack()
@@ -91,9 +92,11 @@ class Fight:
             print(self.first_pokemon)
             print(self.second_pokemon)
             print("=== Fin du tour ===")
-            first = True
+            return False
+            # first = True
         else :
             print("Vous prenez la fuite...")
+            return True
 
     def use_potion(self, pokemon, bag):
         if bag.get_potion() > 0:
@@ -109,15 +112,16 @@ class Fight:
             bag.set_pokeball(bag.get_pokeball() - 1)
             print("On utilise une pokeball")
 
-            if capture <= 10:
+            if capture <= pokemon_enemy.get_hp():
                 print("1... 2... 3... Hop ! Le pokemon a était capturé !")
-                save_pokemon_to_pokedex(player, pokemon)
+                # save_pokemon_to_pokedex(player, pokemon)
+                return "Success"
             else :
                 print("Le pokemon à reussi à s'échapper")
                 self.bot_attack()
                 # hp1 = self.first_pokemon.get_hp()
                 print("=== Fin du tour ===")
-            return None
+            return "Fail"
         else:
             return "Retour"
 

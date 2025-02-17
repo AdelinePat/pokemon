@@ -90,7 +90,7 @@ class Player(Entity):
         if self.keyListener.key_pressed(pygame.K_f):  # Press F to flee
             self.is_fleeing = True
             self.speed = self.speed if self.speed == 2 else 1
-        elif not self.keyListener.key_pressed(pygame.K_f):  # Release F key
+        elif self.keyListener.key_pressed(pygame.K_f):  # Release F key
             self.is_fleeing = False
 
     def switch_bike(self, deactive=False):

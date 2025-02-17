@@ -68,7 +68,7 @@ class Evolution():
             self.type = ['poison', 'psychic']
 
     def update_evolution_stage(self):
-        name_list, evolution_stage = self.get_evolution_stage_json()
+        evolution_stage = self.get_evolution_stage_json()
 
         if self.__original_name != 'Eevee':
             evolution_stage_value = list(evolution_stage[self.__original_name].values())

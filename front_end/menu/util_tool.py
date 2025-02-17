@@ -66,3 +66,14 @@ class UtilTool():
                               REGULAR_FONT, font_size , screen, (x, y - font_size * 0.5))
         self.draw_text(message2,\
                                 REGULAR_FONT, font_size , screen, (x, y + font_size * 0.5))
+        
+    def draw_info_capture_screen(self, screen, message1):
+        # self.util.draw_color_filter(self.screen)
+        #BLABLA
+        self.draw_window_with_background(screen, screen.width // 1.5, screen.height // 6.5)
+        font_size = screen.height // 20
+        x  = screen.width //2
+        y = screen.height // 2
+        
+        self.draw_text(message1,\
+                              REGULAR_FONT, font_size , screen, (x, y))

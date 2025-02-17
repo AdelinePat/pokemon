@@ -4,8 +4,8 @@ from ..models.bag import Bag
 
 def instanciate_pokemon(pokemon):
     my_pokemon = Pokemon(pokemon['name'], pokemon['original_name'], pokemon['hp'],\
-                        pokemon['strength'], pokemon['defense'], pokemon['type'],\
-                        pokemon['level'], pokemon['speed'], pokemon['stage'])
+                        pokemon['hp_max'],pokemon['strength'], pokemon['defense'],\
+                        pokemon['type'],pokemon['level'], pokemon['speed'], pokemon['stage'])
     
     my_pokemon.set_xp(pokemon['xp'])
     my_pokemon.set_state(pokemon['state'])

@@ -1,6 +1,6 @@
 class FightInfo():
     def __init__(self,):
-        self.efficiency = 0
+        self.efficiency = ""
         self.attack_type = ""
         self.total_damage = 0
         self.actual_hp = 0

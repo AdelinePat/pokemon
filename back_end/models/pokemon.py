@@ -6,11 +6,11 @@ from .evolution import Evolution
 class Pokemon(Evolution):
     coefficient = json.load(open(COEFFICIENT_PATH))
     
-    def __init__(self, name, original_name, hp, strength, defense, type, level, speed, stage):
+    def __init__(self, name, original_name, hp, hp_max, strength, defense, type, level, speed, stage):
         super().__init__(name, stage, original_name, type, level)
         # self.__stage = Evolution(stage)
         self.__hp = hp
-        self.__hp_max = hp
+        self.__hp_max = hp_max
         self.__strength = strength
         self.__defense = defense
         self.__xp = 1

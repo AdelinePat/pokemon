@@ -13,6 +13,10 @@ from front_end.menu.bagmenu import BagMenu
 from front_end.menu.attack_type_menu import AttackMenu
 from front_end.menu.infomenu import InfoMenu
 
+from back_end.data_access.pokemon_pokedex_service import save_pokemon_to_pokedex
+from back_end.data_access.bag_pokedex_service import save_bag_to_pokedex
+from back_end.data_access.wild_pokemons import save_wild_pokemon
+
 class InFight():
     def __init__(self, screen, player):
         """
@@ -81,6 +85,7 @@ class InFight():
         win = False
         message_damage = None
         message_attack = None
+        another_option = ""
         
         player_turn = False
         if self.fight.is_player_first():
@@ -104,12 +109,12 @@ class InFight():
                 self.draw_text(option, self.screen.width//2 + i * 150, self.screen.height//8*7  , color)
 
             if win:
+                fleeing = False
                 if self.pokemon.get_hp() == 0:
                     self.draw_win_bot_screen()
+                elif another_option == "Success":
+                    self.draw_win_capture_screen(self.pokemon_enemy)
                 else:
-                    # self.screen.update()
-                    # self.running = False
-                    # self.screen.set_background_without_black(BATTLE_BACKGROUND)
                     self.draw_win_player_screen()
 
             if message_attack and message_damage and not win:
@@ -119,7 +124,6 @@ class InFight():
                     message_time = pygame.time.get_ticks()
                     self.util.draw_info_attack_screen(self.screen, message_attack, message_damage)
                     pygame.display.update()
-
                 message_attack = None
                 message_damage = None
                 
@@ -146,7 +150,7 @@ class InFight():
                                 case 0:  # Start a new game
                                     if win:
                                         self.selected_index = 3
-                                    else:
+                                    elif self.pokemon.get_hp() > 0:
                                         attack_type = AttackMenu(self.screen, self.pokemon, self.pokemon_enemy).display()
                                         if attack_type == "Retour":
                                             player_turn = True
@@ -160,14 +164,16 @@ class InFight():
                                             else:
                                                 win = True
                                             #TODO menu end fight , xp gained...etc
+                                    else:
+                                        win = True
                                         
                                 case 1:
                                     if win:
                                         self.selected_index = 3
                                     else:
-                                        print(f"HP max : {self.pokemon.get_hp_max()}")
-                                        self.pokemon.set_damage_hp(self.pokemon.get_hp() - 30)
-                                        print(f"HP actuel : {self.pokemon.get_hp() }")
+                                        # print(f"HP max : {self.pokemon.get_hp_max()}")
+                                        # self.pokemon.set_damage_hp(self.pokemon.get_hp() - 30)
+                                        # print(f"HP actuel : {self.pokemon.get_hp() }")
                                         bag_option = BagMenu(self.screen, self.pokemon, self.pokemon_enemy, self.bag).display()
                                         if bag_option:
                                             match bag_option:
@@ -179,33 +185,71 @@ class InFight():
                                                         player_turn = False
                                                 case "Pokeball":
                                                     another_option = self.fight.use_pokeball(self.player, self.bag, self.pokemon, self.pokemon_enemy)
-                                                    if another_option:
-                                                        player_turn == True
-                                                    else:
-                                                        player_turn = False
+                                                    # blabla
+                                                    match another_option:
+                                                        case "Success":
+                                                            self.pokemon.update_xp(self.pokemon_enemy)
+                                                            save_pokemon_to_pokedex(self.player,self.pokemon)
+                                                            save_pokemon_to_pokedex(self.player, self.pokemon_enemy)
+                                                            save_bag_to_pokedex(self.player, self.bag)
+                                                            now_time = pygame.time.get_ticks()
+                                                            success_time = 0
+                                                            while success_time - now_time < 1000:
+                                                                success_time = pygame.time.get_ticks()
+                                                                self.capture_message("1... 2... 3... Hop ! Le pokemon a était capturé !")
+                                                                pygame.display.update()
+                                                            player_turn = False
+                                                            win = True
+                                                        case "Fail":
+                                                            print("échec")
+                                                            now_time = pygame.time.get_ticks()
+                                                            failed_capture_time = 0
+                                                            while failed_capture_time - now_time < 1000:
+                                                                failed_capture_time = pygame.time.get_ticks()
+                                                                self.capture_message("Le pokemon a reussi à s'échapper")
+                                                                pygame.display.update()
+                                                            player_turn = False
+                                                        case "Retour":
+                                                            player_turn = True
+                                                    # if another_option:
+                                                    #     player_turn == True
+                                                    # else:
+                                                    #     player_turn = False
                                                 case "Retour":
                                                     player_turn = True
-
                                 case 2:
-                                    if win:
-                                        self.selected_index = 3
-                                    else:
-                                        print("Info")
-                                        InfoMenu(self.screen, self.pokemon, self.pokemon_enemy).display()
-                                        player_turn = True
-                                    
+                                    print("Info")
+                                    InfoMenu(self.screen, self.pokemon, self.pokemon_enemy).display()
+                                    player_turn = True  
                                 case 3:
                                     if win:
-                                        return
+                                        save_pokemon_to_pokedex(self.player,self.pokemon)
+                                        save_bag_to_pokedex(self.player, self.bag)
+                                        self.pokemon_enemy.set_hp(self.pokemon_enemy.get_hp_max())
+                                        save_wild_pokemon(self.pokemon_enemy)
+                                        return fleeing
                                     else:
                                         print("fuite")
-                                        self.fight.run_away()
+                                        fleeing = self.fight.run_away()
                                         player_turn = False
+                                        if fleeing:
+                                            save_pokemon_to_pokedex(self.player,self.pokemon)
+                                            save_bag_to_pokedex(self.player, self.bag)
+                                            self.pokemon_enemy.set_hp(self.pokemon_enemy.get_hp_max())
+                                            save_wild_pokemon(self.pokemon_enemy)
+                                            return fleeing
+                                        else:
+                                            now_time = pygame.time.get_ticks()
+                                            failed_time = 0
+                                            while failed_time - now_time < 1000:
+                                                failed_time = pygame.time.get_ticks()
+                                                self.failed_fleeing()
+                                                pygame.display.update()
                                     # pygame.quit()
                                 # sys.exit()
                 else:
                     pygame.time.wait(1000)
-                    player_turn = True
+                    
                     if self.pokemon.get_hp() > 0 :
                         self.fight.bot_attack()
                         message_attack = self.fight.fightinfo.set_who_attack_message(self.pokemon_enemy)
@@ -216,7 +260,8 @@ class InFight():
                         win = True
                         # player_turn = True
                         #TODO game_over screen/new menu and allows events for player
-                        pass
+                        # pass
+                    player_turn = True
             
 
     def draw_win_player_screen(self):
@@ -229,6 +274,17 @@ class InFight():
         self.util.draw_text(f"You gained {self.pokemon.get_xp_gained(self.pokemon_enemy)} XP", REGULAR_FONT, font_size, self.screen, (x, y))
         self.util.draw_text(f"Total XP : {self.pokemon.get_xp()}", REGULAR_FONT, font_size, self.screen, (x, y + font_size*2))
 
+    def draw_win_capture_screen(self, pokemon):
+        # self.util.draw_color_filter(self.screen)
+        self.util.draw_window_with_background(self.screen, self.screen.width //2.5, self.screen.height //2.5)
+        font_size = self.screen.height // 18
+        x  = self.screen.width //2
+        y = self.screen.height // 2
+        self.util.draw_text(f"Succeed to capture", REGULAR_FONT, font_size , self.screen, (x, y - font_size*1.5))
+        self.util.draw_text(f"{pokemon.name}", REGULAR_FONT, font_size , self.screen, (x, y - font_size * 0.5))
+        self.util.draw_text(f"You gained {self.pokemon.get_xp_gained(self.pokemon_enemy)} XP", REGULAR_FONT, font_size, self.screen, (x, y + font_size*0.5))
+        self.util.draw_text(f"Total XP : {self.pokemon.get_xp()}", REGULAR_FONT, font_size, self.screen, (x, y + font_size*1.5))
+
     def draw_win_bot_screen(self):
         # self.util.draw_color_filter(self.screen)
         self.util.draw_window_with_background(self.screen, self.screen.width //2.5, self.screen.height //2.5)
@@ -236,3 +292,9 @@ class InFight():
         x  = self.screen.width //2
         y = self.screen.height // 2
         self.util.draw_text("You lost the fight!", REGULAR_FONT, font_size , self.screen, (x, y))
+
+    def failed_fleeing(self):
+        self.util.draw_info_attack_screen(self.screen, "Votre fuite a échoué", "Le pokemon adverse va vous attaquer")
+    
+    def capture_message(self, message):
+        self.util.draw_info_capture_screen(self.screen, message)

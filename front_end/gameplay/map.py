@@ -95,7 +95,7 @@ class Map:
             for battle_zone in self.battlepokemon:
                 if self.player.rect.colliderect(battle_zone) and not self.in_battle:
                     self.in_battle = True
-                    self.player.battle()
+                    bidule = self.player.battle()
                     # BLABLA
 
         # Update the group of all sprites
