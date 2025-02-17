@@ -1,10 +1,10 @@
 import pygame
-from entity import Entity
-from keylistener import KeyListener
-from screen import Screen
-from switch import Switch
-from name_input import NameInput
-from battlescreen import BattleScreen
+from front_end.gameplay.entity import Entity
+from .keylistener import KeyListener
+from front_end.screen import Screen
+from .switch import Switch
+from front_end.menu.name_input import NameInput
+from front_end.gameplay.battlescreen import BattleScreen
 
 
 class Player(Entity):

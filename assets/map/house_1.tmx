@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="15" height="15" tilewidth="16" tileheight="16" infinite="0" nextlayerid="14" nextobjectid="61">
- <tileset firstgid="1" source="../../../../Projet_Pokemon/assets/map/tileset/tileset4g.tsx"/>
- <tileset firstgid="21001" source="../../../../Projet_Pokemon/assets/map/tileset/interieur1.tsx"/>
- <tileset firstgid="25625" source="../../../../Projet_Pokemon/assets/map/tileset/indoor.tsx"/>
+ <tileset firstgid="1" source="./tileset/tileset4g.tsx"/>
+ <tileset firstgid="21001" source="./tileset/interieur1.tsx"/>
+ <tileset firstgid="25625" source="./tileset/interieur1.tsx"/>
  <group id="10" name="layer">
   <layer id="1" name="Calque de Tuiles 1" width="15" height="15">
    <data encoding="csv">
