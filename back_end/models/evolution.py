@@ -46,7 +46,7 @@ class Evolution():
 
     def update_evolution_meowth(self):
         if self.type[0] != 'normal':
-            self.__type = ['dark']
+            self.type = ['dark']
 
     def update_evolution_eevee(self):
         types = ['water', 'electric', 'fire']
@@ -64,8 +64,8 @@ class Evolution():
         self.update_name(new_name)
 
     def update_evolution_slowpoke(self):
-        if self.__type[0] == 'psychic':
-            self.__type = ['poison', 'psychic']
+        if self.type[0] == 'psychic':
+            self.type = ['poison', 'psychic']
 
     def update_evolution_stage(self):
         name_list, evolution_stage = self.get_evolution_stage_json()

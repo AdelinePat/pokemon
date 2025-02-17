@@ -1,4 +1,5 @@
 import pygame
+from __settings__ import REGULAR_FONT
 
 class UtilTool():
     def draw_text(self, text, font, font_size, screen, center, color="black"):
@@ -53,3 +54,15 @@ class UtilTool():
         
         screen.display.blit(window_surface, window_rect)
 
+
+    def draw_info_screen(self, screen, message1, message2):
+        # self.util.draw_color_filter(self.screen)
+        self.draw_window_with_background(screen)
+        font_size = screen.height // 20
+        x  = screen.width //2
+        y = screen.height // 2
+        
+        self.draw_text(message1,\
+                              REGULAR_FONT, font_size , screen, (x, y - font_size*2))
+        self.draw_text(message2,\
+                                REGULAR_FONT, font_size , screen, (x, y - font_size))

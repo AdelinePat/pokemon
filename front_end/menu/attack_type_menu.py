@@ -5,19 +5,19 @@ from __settings__ import BATTLE_BACKGROUND, BATTLE_FLOOR, REGULAR_FONT
 import math
 
 
-class BagMenu:
-    def __init__(self, screen, pokemon, pokemon_enemy, bag):
+class AttackMenu:
+    def __init__(self, screen, pokemon, pokemon_enemy):
         """
         Initialize the menu with the screen, font, options, and selected index.
         """
         self.screen = screen
-        self.bag = bag
+        self.pokemon = pokemon
         self.font = pygame.font.Font(None, 50)  # Set the font for menu text
-        self.options = [f"Potion [{self.bag.get_potion()}]", f"Pokeball [{self.bag.get_pokeball()}]", "Retour"]  # Menu options
+        self.options = self.pokemon.type + ["Retour"] # Menu options
         self.selected_index = 0  # Index of the currently selected option
         self.running = True  # Controls the menu loop
         self.util = UtilTool()
-        self.pokemon = pokemon
+        
         self.pokemon_enemy = pokemon_enemy
 
 
@@ -81,7 +81,7 @@ class BagMenu:
             self.display_assets_and_background(x_movement, y_movement, battle_floor, battle_floor2, pokemon_enemy, pokemon)
 
             self.util.draw_option_screen(self.screen)
-            # self.options = [f"{self.bag.get_potion()} Potions", f"{self.bag.get_pokeball()} Pokeball", "Retour"] 
+
             # Draw menu options
             for i, option in enumerate(self.options):
                 color = (255, 255, 0) if i == self.selected_index else (0, 0, 0)  # Highlight selected option
@@ -100,13 +100,14 @@ class BagMenu:
                     elif event.key == pygame.K_UP or event.key == pygame.K_LEFT:  # Navigate up
                         self.selected_index = (self.selected_index - 1) % len(self.options)
                     elif event.key == pygame.K_RETURN:  # Select an option
-                        match self.selected_index:
-                            case 0:  # Start a new game
-                                return "Potions"
-                            case 1:
-                                return "Pokeball"
-                            case 2:
-                                return "Retour"
+                        return self.options[self.selected_index]
+                        # match self.selected_index:
+                        #     case 0:  # Start a new game
+                        #         return self.options[self.selected_index]
+                        #     case 1:
+                        #         return self.options[self.selected_index]
+                        #     case 2:
+                        #         return self.options[self.selected_index]
 
 
    

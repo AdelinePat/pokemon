@@ -5,20 +5,20 @@ from __settings__ import BATTLE_BACKGROUND, BATTLE_FLOOR, REGULAR_FONT
 import math
 
 
-class BagMenu:
-    def __init__(self, screen, pokemon, pokemon_enemy, bag):
+class InfoMenu:
+    def __init__(self, screen, pokemon, pokemon_enemy):
         """
         Initialize the menu with the screen, font, options, and selected index.
         """
         self.screen = screen
-        self.bag = bag
+        self.pokemon = pokemon
+        self.pokemon_enemy = pokemon_enemy
         self.font = pygame.font.Font(None, 50)  # Set the font for menu text
-        self.options = [f"Potion [{self.bag.get_potion()}]", f"Pokeball [{self.bag.get_pokeball()}]", "Retour"]  # Menu options
+        self.options = [f"{self.pokemon.name}", f"{self.pokemon_enemy.name}", "Retour"]  # Menu options
         self.selected_index = 0  # Index of the currently selected option
         self.running = True  # Controls the menu loop
         self.util = UtilTool()
-        self.pokemon = pokemon
-        self.pokemon_enemy = pokemon_enemy
+        
 
 
     def draw_text(self, text, x, y, color=(255, 255, 255)):
@@ -70,7 +70,8 @@ class BagMenu:
         var_y = 5
         speed = 1.5
         win = False
-        
+        what_to_display = 3
+
         while self.running:
             self.screen.update()
             # self.screen.get_display().fill((0, 0, 0))
@@ -81,6 +82,13 @@ class BagMenu:
             self.display_assets_and_background(x_movement, y_movement, battle_floor, battle_floor2, pokemon_enemy, pokemon)
 
             self.util.draw_option_screen(self.screen)
+
+            if what_to_display == 0:
+                self.draw_info_screen(self.pokemon)
+            elif what_to_display == 1:
+                what_to_display = 1
+                self.draw_info_screen(self.pokemon_enemy)
+
             # self.options = [f"{self.bag.get_potion()} Potions", f"{self.bag.get_pokeball()} Pokeball", "Retour"] 
             # Draw menu options
             for i, option in enumerate(self.options):
@@ -95,6 +103,7 @@ class BagMenu:
                     pygame.quit()
                     sys.exit()
                 if event.type == pygame.KEYDOWN:
+                    # return
                     if event.key == pygame.K_DOWN or event.key == pygame.K_RIGHT:  # Navigate down
                         self.selected_index = (self.selected_index + 1) % len(self.options)
                     elif event.key == pygame.K_UP or event.key == pygame.K_LEFT:  # Navigate up
@@ -102,11 +111,48 @@ class BagMenu:
                     elif event.key == pygame.K_RETURN:  # Select an option
                         match self.selected_index:
                             case 0:  # Start a new game
-                                return "Potions"
+                                what_to_display = 0
+                                # self.draw_info_screen(self.pokemon)
                             case 1:
-                                return "Pokeball"
+                                what_to_display = 1
+                                # self.draw_info_screen(self.pokemon_enemy)
                             case 2:
-                                return "Retour"
+                                return
 
 
-   
+    def draw_info_screen(self, actual_pokemon):
+        # self.util.draw_color_filter(self.screen)
+        self.util.draw_window_with_background(self.screen)
+        font_size = self.screen.height // 20
+        x  = self.screen.width //2
+        y = self.screen.height // 2
+
+
+        # self.draw_text(f"Level : {str(self.pokemon.get_level())}", self.screen.width//2, y_position - 125, (255, 255, 0))
+        #     self.draw_text(f"Type : {str(", ".join(self.pokemon.type))}", self.screen.width//2, y_position -75, (255, 255, 0))
+        #     self.draw_text(f"HP : {str(self.pokemon.get_hp())}", self.screen.width//2, y_position -25, (255, 255, 0))
+        #     self.draw_text(f"Strength : {str(self.pokemon.get_strength())}", self.screen.width//2, y_position + 25, (255, 255, 0))
+        #     self.draw_text(f"Defense : {str(self.pokemon.get_defense())}", self.screen.width//2, y_position + 75, (255, 255, 0))
+        #     self.draw_text(f"Speed : {str(self.pokemon.get_speed())}", self.screen.width//2, y_position + 125, (255, 255, 0))
+        #     self.draw_text(f"XP : {str(self.pokemon.get_xp())}", self.screen.width//2, y_position + 175, (255, 255, 0))
+        
+        self.util.draw_text(f"{actual_pokemon.name}",\
+                              REGULAR_FONT, font_size , self.screen, (x, y - font_size*2))
+        self.util.draw_text(f"Level : {str(actual_pokemon.get_level())}",\
+                                REGULAR_FONT, font_size , self.screen, (x, y - font_size))
+        self.util.draw_text(f"Strength : {str(actual_pokemon.get_strength())}",\
+                              REGULAR_FONT, font_size , self.screen, (x, y ))
+        self.util.draw_text(f"Defense : {str(actual_pokemon.get_defense())}",\
+                              REGULAR_FONT, font_size , self.screen, (x, y + font_size))
+        self.util.draw_text(f"Type : {str(", ".join(actual_pokemon.type))}",\
+                              REGULAR_FONT, font_size , self.screen, (x, y + font_size*2))
+        
+
+
+        # \
+        #                     \nLevel : {str(actual_pokemon.get_level())}\
+        #                     \nStrength : {str(self.pokemon.get_strength())}\
+        #                     \nDefense : {str(self.pokemon.get_defense())}\
+        #                     \nType : {str(", ".join(self.pokemon.type))}"
+        # self.util.draw_text(f"You gained {self.pokemon.get_xp_gained(self.pokemon_enemy)} XP", REGULAR_FONT, font_size, self.screen, (x, y))
+        # self.util.draw_text(f"Total XP : {self.pokemon.get_xp()}", REGULAR_FONT, font_size, self.screen, (x, y + font_size*2))

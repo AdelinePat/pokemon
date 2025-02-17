@@ -1,11 +1,13 @@
 from .bag import Bag
 from ..data_access.pokemon_pokedex_service import save_pokemon_to_pokedex
 import random
+from .fight_info import FightInfo
 
 class Fight:
     def __init__(self, pokemon1, pokemon2):
         self.first_pokemon = pokemon1
         self.second_pokemon = pokemon2
+        self.fightinfo = FightInfo()
         # self.bag = Bag()
 
         # self.all_pokemons = create_world_pokemons() #TODO edit this function
@@ -52,7 +54,10 @@ class Fight:
                     final_damage = 0
 
             enemy.set_damage_hp(final_damage)
-
+            
+            # self.fightinfo.set_attack_message(efficency, final_damage)
+            self.fightinfo.set_all_values(efficency, attack_type, final_damage)
+            
             print(f"{pokemon.name} a fait une attaque {attack_type}, {efficency}\
                 \n Le pokemon {enemy.name} de type {enemy.type} en face a reçu {final_damage}, il lui reste : {enemy.get_hp()}")
 
@@ -90,18 +95,44 @@ class Fight:
         else :
             print("Vous prenez la fuite...")
 
+    def use_potion(self, pokemon, bag):
+        if bag.get_potion() > 0:
+            pokemon.heal(20)
+            bag.set_potion(bag.get_potion() - 1)
+            return None
+        else:
+            return "Retour"
+
+    def use_pokeball(self, player, bag, pokemon, pokemon_enemy):
+        if bag.get_pokeball() > 0:
+            capture = random.randint(1, pokemon_enemy.get_hp())
+            bag.set_pokeball(bag.get_pokeball() - 1)
+            print("On utilise une pokeball")
+
+            if capture <= 10:
+                print("1... 2... 3... Hop ! Le pokemon a était capturé !")
+                save_pokemon_to_pokedex(player, pokemon)
+            else :
+                print("Le pokemon à reussi à s'échapper")
+                self.bot_attack()
+                # hp1 = self.first_pokemon.get_hp()
+                print("=== Fin du tour ===")
+            return None
+        else:
+            return "Retour"
+
     def use(self, player, bag, bag_option, pokemon, pokemon_enemy):
         if bag_option == "potions":
             pokemon.heal(20)
         else:
 
-            if bag.get_pokeball() < 0:
+            if bag.get_pokeball() > 0:
                 bag_option == "pokeball"
                 capture = random.randint(1, pokemon_enemy.get_hp())
                 bag.set_pokeball(bag.get_pokeball() - 1)
                 print("On utilise une pokeball")
 
-                if capture <= pokemon_enemy.get_hp():
+                if capture <= 10:
                     print("1... 2... 3... Hop ! Le pokemon a était capturé !")
                     save_pokemon_to_pokedex(player, pokemon)
                 else :
