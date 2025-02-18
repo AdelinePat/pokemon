@@ -32,6 +32,8 @@ BATTLE_FLOOR = "./assets/backgrounds/battle_floor.png"
 GAME_OVER_BACKGROUND = "./assets/backgrounds/game_over_background.png"
 MENU_BACKGROUND = "./assets/backgrounds/menu_background.png"
 
+POKEMON_CENTER = "./assets/backgrounds/pokemon_center.png"
+
 """
 COLORS
 """

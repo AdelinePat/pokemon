@@ -2,6 +2,7 @@ import pygame
 from back_end.data_access.player_pokedex_service import does_player_exist
 from back_end.data_access.pokemon_pokedex_service import get_first_pokemon
 from .select_pokemons import SelectPokemons
+from .selectpokemon import SelectPokemon
 from .intro import IntroChoice
 from __settings__ import MAIN_MENU_BACKGROUND4, LIGHT_GREEN
 
@@ -48,7 +49,8 @@ class NameInput:
                         else:
                             # my_pokemon = SelectPokemons(self.player_name, self.screen).display()
                             IntroChoice(self.player_name, self.screen).display()
-                            my_pokemon = None
+                            # my_pokemon = SelectPokemons(self.player_name, self.screen).display()
+                            my_pokemon = SelectPokemon(self.player_name, self.screen).display()
 
                             return self.player_name, my_pokemon
                     elif event.key == pygame.K_BACKSPACE:

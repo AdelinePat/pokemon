@@ -353,5 +353,95 @@
                 "state": "domesticated"
             }
         }
+    },
+    "afezastrhf": {
+        "bag": {
+            "potions": 10,
+            "pokeball": 14
+        },
+        "pokemons": {
+            "Jean-Paul": {
+                "name": "Venomoth",
+                "original_name": "Venonat",
+                "pet_name": "Jean-Paul",
+                "hp_max": 134,
+                "hp": 66,
+                "xp": 6224,
+                "strength": 98,
+                "defense": 108,
+                "type": [
+                    "bug",
+                    "poison"
+                ],
+                "level": 19,
+                "speed": 108,
+                "stage": 2,
+                "ev": {
+                    "hp": 2,
+                    "strength": 4,
+                    "defense": 1,
+                    "speed": 3,
+                    "xp": 1
+                },
+                "state": "domesticated"
+            },
+            "Jean-S\u00e9bastien": {
+                "name": "Ponyta",
+                "original_name": "Ponyta",
+                "pet_name": "Jean-S\u00e9bastien",
+                "hp_max": 39,
+                "hp": 39,
+                "xp": 63,
+                "strength": 12,
+                "defense": 29,
+                "type": [
+                    "psychic"
+                ],
+                "level": 3,
+                "speed": 16,
+                "stage": 1,
+                "ev": {
+                    "hp": 0,
+                    "strength": 0,
+                    "defense": 0,
+                    "speed": 0,
+                    "xp": 0
+                },
+                "state": "domesticated"
+            }
+        }
+    },
+    "zeqgestrh": {
+        "bag": {
+            "potions": 10,
+            "pokeball": 15
+        },
+        "pokemons": {
+            "Jean-Marie": {
+                "name": "Tauros",
+                "original_name": "Tauros",
+                "pet_name": "Jean-Marie",
+                "hp_max": 54,
+                "hp": -42,
+                "xp": 2244,
+                "strength": 44,
+                "defense": 52,
+                "type": [
+                    "fighting",
+                    "water"
+                ],
+                "level": 13,
+                "speed": 60,
+                "stage": 2,
+                "ev": {
+                    "hp": 0,
+                    "strength": 0,
+                    "defense": 0,
+                    "speed": 0,
+                    "xp": 0
+                },
+                "state": "domesticated"
+            }
+        }
     }
 }
