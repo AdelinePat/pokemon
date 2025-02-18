@@ -1,7 +1,7 @@
 {
     "Billy": {
         "bag": {
-            "potions": 8,
+            "potions": 5,
             "pokeball": 8
         },
         "pokemons": {
@@ -10,7 +10,7 @@
                 "original_name": "Bulbasaur",
                 "pet_name": "Jean-Baptiste",
                 "hp_max": 1891,
-                "hp": 0,
+                "hp": 10,
                 "xp": 12121,
                 "strength": 139,
                 "defense": 142,
