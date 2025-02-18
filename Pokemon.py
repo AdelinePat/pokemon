@@ -5,116 +5,185 @@ from __settings__ import POKE_FONT, REGULAR_FONT
 
 pygame.init()
 
-# Configuration de la fenêtre
-fenetre = pygame.display.set_mode((1220, 720))
-pygame.display.set_caption('Pokemon Battle')
+# Class for handling the Pokémon battle and game state
+class PokemonBattle:
+    def __init__(self):
+        # Configuration de la fenêtre
+        self.window_width = 1220
+        self.window_height = 720
+        self.screen = pygame.display.set_mode((self.window_width, self.window_height))
+        pygame.display.set_caption('Pokemon Battle')
 
-# Chargement des images
-background = pygame.image.load('./assets/spritesheet-pokemon/fondCombat.png').convert()
-background = pygame.transform.scale(background, (1220, 720))
+        # Chargement des assets (images)
+        self.background = pygame.image.load('./assets/spritesheet-pokemon/fondCombat.png').convert()
+        self.background = pygame.transform.scale(self.background, (self.window_width, self.window_height))
 
-perso1 = pygame.image.load('./assets/spritesheet-pokemon/pika.png')
-perso1 = pygame.transform.scale(perso1, (200, 200))
+        self.perso1 = pygame.image.load('./assets/spritesheet-pokemon/pika.png')
+        self.perso1 = pygame.transform.scale(self.perso1, (200, 200))
 
-perso2 = pygame.image.load('./assets/spritesheet-pokemon/draco.png')
-perso2 = pygame.transform.scale(perso2, (200, 200))
+        self.perso2 = pygame.image.load('./assets/spritesheet-pokemon/draco.png')
+        self.perso2 = pygame.transform.scale(self.perso2, (200, 200))
 
-cercle1 = pygame.image.load('./assets/spritesheet-pokemon/cerclecombat.png')
-cercle2 = pygame.image.load('./assets/spritesheet-pokemon/cerclecombat.png')
+        self.circle1 = pygame.image.load('./assets/spritesheet-pokemon/cerclecombat.png')
+        self.circle2 = pygame.image.load('./assets/spritesheet-pokemon/cerclecombat.png')
 
-# Supprimer le fond blanc des cercles
-cercle1.set_colorkey((255, 255, 255))
-cercle2.set_colorkey((255, 255, 255))
+        # Supprimer le fond blanc des cercles
+        self.circle1.set_colorkey((255, 255, 255))
+        self.circle2.set_colorkey((255, 255, 255))
 
+        self.circle1 = pygame.transform.scale(self.circle1, (250, 100))
+        self.circle2 = pygame.transform.scale(self.circle2, (400, 150))
 
-cercle1 = pygame.transform.scale(cercle1, (250, 100))
-cercle2 = pygame.transform.scale(cercle2, (400, 150))
+        # Variables de jeu (pour l'animation et la santé)
+        self.time_elapsed = 0
+        self.amplitude_vertical = 5
+        self.amplitude_horizontal = 5
+        self.speed = 2
+        self.health_perso1 = 100
+        self.health_perso2 = 120
+        self.max_health_perso1 = 100
+        self.max_health_perso2 = 120
 
-# Variables d'animation
-clock = pygame.time.Clock()
-time_elapsed = 0
-amplitude_vertical = 5
-amplitude_horizontal = 5
-speed = 2
+        # Couleurs
+        self.WHITE = (255, 255, 255)
+        self.LIGHT_GRAY_TRANSPARENT = (200, 200, 200, 180)
+        self.HIGHLIGHT_COLOR = (255, 255, 255)
+        self.NORMAL_COLOR = (100, 100, 100)
 
-# Définition des couleurs
-WHITE = (255, 255, 255)
-LIGHT_GRAY_TRANSPARENT = (200, 200, 200, 180)  
-HIGHLIGHT_COLOR = (255, 255, 255)
-NORMAL_COLOR = (100, 100, 100)
+        # Polices pour le texte du jeu
+        self.font = pygame.font.Font(REGULAR_FONT, 40)
 
+        # Configuration du menu
+        self.menu_width, self.menu_height = 500, 80
+        self.menu_x = 600
+        self.menu_y = 630
+        self.menu_surface = pygame.Surface((self.menu_width, self.menu_height), pygame.SRCALPHA)
+        self.menu_surface.fill(self.LIGHT_GRAY_TRANSPARENT)
 
-font = pygame.font.Font(REGULAR_FONT, 40)
+        # Positions des boutons
+        self.button_width, self.button_height = 120, 40
+        self.gap = 20
 
-# menu contextuelle
-menu_width, menu_height = 500, 80
-menu_x = 600  
-menu_y = 630  
-menu_surface = pygame.Surface((menu_width, menu_height), pygame.SRCALPHA)
-menu_surface.fill(LIGHT_GRAY_TRANSPARENT)
+        self.button_attack = pygame.Rect(self.menu_x + 30, self.menu_y + 20, self.button_width, self.button_height)
+        self.button_bag = pygame.Rect(self.button_attack.right + self.gap, self.menu_y + 20, self.button_width, self.button_height)
+        self.button_run = pygame.Rect(self.button_bag.right + self.gap, self.menu_y + 20, self.button_width, self.button_height)
 
-# Positions des boutons
-button_width, button_height = 120, 40
-gap = 20  
+        self.selected_button = None
 
-button_attack = pygame.Rect(menu_x + 30, menu_y + 20, button_width, button_height)
-button_bag = pygame.Rect(button_attack.right + gap, menu_y + 20, button_width, button_height)
-button_run = pygame.Rect(button_bag.right + gap, menu_y + 20, button_width, button_height)
+        # Horloge pour le taux de rafraîchissement du jeu
+        self.clock = pygame.time.Clock()
 
-selected_button = None
+    def draw_health_bar(self, x, y, health, max_health):
+        """
+        Draws a health bar above the Pokémon.
+        :param x: X coordinate for the health bar position
+        :param y: Y coordinate for the health bar position
+        :param health: Current health of the Pokémon
+        :param max_health: Maximum health of the Pokémon
+        """
+        health_bar_width = 200
+        health_bar_height = 20
 
-jouer = True
+        # Dessine la barre de santé blanche (complètement blanche)
+        pygame.draw.rect(self.screen, self.WHITE, (x, y, health_bar_width, health_bar_height))
 
-while jouer:
-    mouse_pos = pygame.mouse.get_pos()
+    def handle_button_hover(self, mouse_pos):
+        """
+        Handles the hovering effect of the buttons (changes button color).
+        :param mouse_pos: Current mouse position
+        """
+        if self.button_attack.collidepoint(mouse_pos):
+            self.selected_button = "attack"
+        elif self.button_bag.collidepoint(mouse_pos):
+            self.selected_button = "bag"
+        elif self.button_run.collidepoint(mouse_pos):
+            self.selected_button = "run"
+        else:
+            self.selected_button = None
 
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            jouer = False
-            pygame.quit()
+    def handle_button_click(self, event):
+        """
+        Handles the click events for the buttons.
+        :param event: The event triggered by mouse click
+        """
+        if self.button_attack.collidepoint(event.pos):
+            print("Attack selected!")
+        elif self.button_bag.collidepoint(event.pos):
+            print("Bag opened!")
+        elif self.button_run.collidepoint(event.pos):
+            print("Attempted to run away!")
 
-        if event.type == pygame.MOUSEMOTION:
-            if button_attack.collidepoint(mouse_pos):
-                selected_button = "attack"
-            elif button_bag.collidepoint(mouse_pos):
-                selected_button = "bag"
-            elif button_run.collidepoint(mouse_pos):
-                selected_button = "run"
-            else:
-                selected_button = None
+    def update_pokemon_position(self):
+        """
+        Updates the Pokémon's position based on sinusoidal movement.
+        """
+        self.time_elapsed += self.speed
+        movement_y = int(self.amplitude_vertical * math.sin(self.time_elapsed * 0.1))
+        movement_x = int(self.amplitude_horizontal * math.sin(self.time_elapsed * 0.08))
 
-        if event.type == pygame.MOUSEBUTTONDOWN:
-            if button_attack.collidepoint(event.pos):
-                print("Attaque sélectionnée !")
-            elif button_bag.collidepoint(event.pos):
-                print("Sac ouvert !")
-            elif button_run.collidepoint(event.pos):
-                print("Fuite tentée !")
+        return movement_x, movement_y
 
-    
-    time_elapsed += speed
-    mouvement_y = int(amplitude_vertical * math.sin(time_elapsed * 0.1))
-    mouvement_x = int(amplitude_horizontal * math.sin(time_elapsed * 0.08))
+    def draw(self):
+        """
+        Draws all the elements on the screen: background, Pokémon, health bar, buttons.
+        """
+        # Blit the background image
+        self.screen.blit(self.background, (0, 0))
+        self.screen.blit(self.circle1, (775, 280))
+        self.screen.blit(self.circle2, (200, 600))
 
-    
-    fenetre.blit(background, (0, 0))
-    fenetre.blit(cercle1, (775, 280))
-    fenetre.blit(cercle2, (200, 600))
-    fenetre.blit(perso1, (800, 200 + mouvement_y))
-    fenetre.blit(perso2, (300 + mouvement_x, 525))
+        # Mise à jour et dessin des positions des Pokémon
+        movement_x, movement_y = self.update_pokemon_position()
+        self.screen.blit(self.perso1, (800, 200 + movement_y))
+        self.screen.blit(self.perso2, (300 + movement_x, 525))
 
-    
-    fenetre.blit(menu_surface, (menu_x, menu_y))
+        # Dessiner les barres de santé
+        self.draw_health_bar(800, 200 - 30, self.health_perso1, self.max_health_perso1)
+        self.draw_health_bar(300, 525 - 30, self.health_perso2, self.max_health_perso2)
 
-    # couleur hover
-    color_attack = HIGHLIGHT_COLOR if selected_button == "attack" else NORMAL_COLOR
-    color_bag = HIGHLIGHT_COLOR if selected_button == "bag" else NORMAL_COLOR
-    color_run = HIGHLIGHT_COLOR if selected_button == "run" else NORMAL_COLOR
+        # Dessiner la surface du menu et les boutons
+        self.screen.blit(self.menu_surface, (self.menu_x, self.menu_y))
 
-    
-    fenetre.blit(font.render("- Attaque -", True, color_attack), (button_attack.x + 10, button_attack.y))
-    fenetre.blit(font.render("- Sac -", True, color_bag), (button_bag.x + 30, button_bag.y))
-    fenetre.blit(font.render("- Fuite -", True, color_run), (button_run.x + 20, button_run.y))
+        # Changer la couleur des boutons lorsqu'on passe dessus
+        color_attack = self.HIGHLIGHT_COLOR if self.selected_button == "attack" else self.NORMAL_COLOR
+        color_bag = self.HIGHLIGHT_COLOR if self.selected_button == "bag" else self.NORMAL_COLOR
+        color_run = self.HIGHLIGHT_COLOR if self.selected_button == "run" else self.NORMAL_COLOR
 
-    pygame.display.flip()
-    clock.tick(60)
+        # Étiquettes des boutons
+        self.screen.blit(self.font.render("- Attack -", True, color_attack), (self.button_attack.x + 10, self.button_attack.y))
+        self.screen.blit(self.font.render("- Bag -", True, color_bag), (self.button_bag.x + 30, self.button_bag.y))
+        self.screen.blit(self.font.render("- Run -", True, color_run), (self.button_run.x + 20, self.button_run.y))
+
+        # Mettre à jour l'écran
+        pygame.display.flip()
+
+    def run(self):
+        """
+        Main game loop that runs the game, handles events, updates the display.
+        """
+        running = True
+        while running:
+            mouse_pos = pygame.mouse.get_pos()
+
+            # Gestion des événements
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    running = False
+                    pygame.quit()
+
+                if event.type == pygame.MOUSEMOTION:
+                    self.handle_button_hover(mouse_pos)
+
+                if event.type == pygame.MOUSEBUTTONDOWN:
+                    self.handle_button_click(event)
+
+            # Dessiner tous les éléments à l'écran
+            self.draw()
+
+            # Limiter le taux de rafraîchissement
+            self.clock.tick(60)
+
+# Run the game
+# if __name__ == "__main__":
+#     game = PokemonBattle()
+#     game.run()

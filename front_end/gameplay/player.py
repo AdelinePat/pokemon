@@ -30,29 +30,31 @@ class Player(Entity):
         """Check player movement based on key input and handle collisions."""
         if self.animation_walk is False:
             temp_hitbox = self.hitbox.copy()
-            if self.keyListener.key_pressed(pygame.K_q) or self.keyListener.key_pressed(pygame.K_LEFT):
-                temp_hitbox.x -= 16
+            move_speed = 8 if self.is_fleeing else 10  # Reduced speed if fleeing
+
+            if self.keyListener.key_pressed(pygame.K_q):  # Move left
+                temp_hitbox.x -= move_speed
                 if not self.check_collisions(temp_hitbox):
                     self.check_collisions_switchs(temp_hitbox)
                     self.move_left()
                 else:
                     self.direction = "left"
             elif self.keyListener.key_pressed(pygame.K_d) or self.keyListener.key_pressed(pygame.K_RIGHT):
-                temp_hitbox.x += 16
+                temp_hitbox.x += move_speed
                 if not self.check_collisions(temp_hitbox):
                     self.check_collisions_switchs(temp_hitbox)
                     self.move_right()
                 else:
                     self.direction = "right"
             elif self.keyListener.key_pressed(pygame.K_z) or self.keyListener.key_pressed(pygame.K_UP):
-                temp_hitbox.y -= 16
+                temp_hitbox.y -= move_speed
                 if not self.check_collisions(temp_hitbox):
                     self.check_collisions_switchs(temp_hitbox)
                     self.move_up()
                 else:
                     self.direction = "up"
             elif self.keyListener.key_pressed(pygame.K_s) or self.keyListener.key_pressed(pygame.K_DOWN):
-                temp_hitbox.y += 16
+                temp_hitbox.y += move_speed
                 if not self.check_collisions(temp_hitbox):
                     self.check_collisions_switchs(temp_hitbox)
                     self.move_down()
@@ -88,10 +90,19 @@ class Player(Entity):
 
         # Enable/disable fleeing mode
         if self.keyListener.key_pressed(pygame.K_f):  # Press F to flee
-            self.is_fleeing = True
-            self.speed = self.speed if self.speed == 2 else 1
-        elif self.keyListener.key_pressed(pygame.K_f):  # Release F key
             self.is_fleeing = False
+            self.speed = 2
+            # self.speed = self.speed if self.speed == 2 else 1
+        elif self.keyListener.key_pressed(pygame.K_SPACE):  # Release  space to stop fleeing
+            self.is_fleeing = True
+            self.speed = 1
+        elif self.keyListener.key_pressed(pygame.K_p):
+            self.is_fleeing = False
+            self.speed = 0
+        elif self.keyListener.key_pressed(pygame.K_w):
+            self.is_fleeing = False
+            self.speed = 1 
+           
 
     def switch_bike(self, deactive=False):
         """Toggles bike mode on/off."""

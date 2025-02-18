@@ -34,11 +34,34 @@
         "strength": 23,
         "defense": 21,
         "type": [
-            "grass",
-            "poison"
+            "fire"
         ],
-        "level": 2,
-        "speed": 18,
+        "level": 15,
+        "speed": 64,
+        "stage": 2,
+        "ev": {
+            "hp": 0,
+            "strength": 0,
+            "defense": 0,
+            "speed": 0,
+            "xp": 0
+        },
+        "state": "wild"
+    },
+    {
+        "name": "Shellder",
+        "original_name": "Shellder",
+        "pet_name": "Jean-Pierre",
+        "hp_max": 51,
+        "hp": 51,
+        "xp": 682,
+        "strength": 47,
+        "defense": 40,
+        "type": [
+            "water"
+        ],
+        "level": 8,
+        "speed": 38,
         "stage": 1,
         "ev": {
             "hp": 0,
@@ -63,30 +86,6 @@
         ],
         "level": 4,
         "speed": 27,
-        "stage": 1,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
-        "name": "Dratini",
-        "original_name": "Dratini",
-        "pet_name": "Jean-Robert",
-        "hp_max": 38,
-        "hp": 38,
-        "xp": 311,
-        "strength": 22,
-        "defense": 21,
-        "type": [
-            "dragon"
-        ],
-        "level": 6,
-        "speed": 46,
         "stage": 1,
         "ev": {
             "hp": 0,

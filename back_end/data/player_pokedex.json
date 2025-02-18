@@ -96,11 +96,11 @@
                 "speed": 13,
                 "stage": 1,
                 "ev": {
-                    "hp": 0,
-                    "strength": 0,
-                    "defense": 0,
-                    "speed": 0,
-                    "xp": 0
+                    "hp": 2,
+                    "strength": 3,
+                    "defense": 3,
+                    "speed": 4,
+                    "xp": 2
                 },
                 "state": "domesticated"
             }
