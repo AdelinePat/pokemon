@@ -9,6 +9,10 @@ fenetre = pygame.display.set_mode((largeur, hauteur))
 pygame.display.set_caption('Pokemon Battle')
 
 
+pokeball_img = pygame.image.load("./spritesheet-pokemon/pokeball.png").convert()
+pokeball_img.set_colorkey((255, 255, 255))  
+pokeball_img = pygame.transform.scale(pokeball_img, (50, 50))
+
 def load_background(path):
     background = pygame.image.load(path).convert()
     return pygame.transform.scale(background, (largeur, hauteur))
@@ -48,13 +52,52 @@ def draw_pokemon_with_hover(pokemon, mouse_x, mouse_y, fenetre):
     else:
         fenetre.blit(pokemon['img'], pokemon['rect'].topleft)
 
+def capturePokemon(pokemon, data):
+    pokeball_rect = pokeball_img.get_rect(center=(largeur // 2, hauteur - 100))
+    target_pos = pokemon['rect'].center
+    vitesse = 15
+    captured = False
+
+    while not captured:
+        fenetre.fill((173, 216, 230))
+        fenetre.blit(background, (0, 0))
+
+        # Affiche tous les Pokémon 
+        for p in data:
+            fenetre.blit(p['img'], p['rect'].topleft)
+
+        #  collision
+        if pokeball_rect.colliderect(pokemon['rect']):
+            captured = True
+
+        # Lance la Pokéball
+        else:
+            dx = target_pos[0] - pokeball_rect.centerx
+            dy = target_pos[1] - pokeball_rect.centery
+            dist = max(1, (dx ** 2 + dy ** 2) ** 0.5)
+            pokeball_rect.x += int(vitesse * dx / dist)
+            pokeball_rect.y += int(vitesse * dy / dist)
+
+        # Affiche la Pokéball
+        fenetre.blit(pokeball_img, pokeball_rect.topleft)
+
+        pygame.display.flip()
+        pygame.time.delay(30)
+
+    
+    pygame.time.delay(200)
+
+    
+    data.remove(pokemon)
+
+
 def professeur_chen(fenetre, dialogues, image, dialogue_index, show_intro):
     if show_intro:
         chen_rect = image.get_rect(midbottom=(largeur // 2, hauteur))
         fenetre.blit(image, chen_rect.topleft)
 
         font = pygame.font.Font(None, 36)
-        max_width = 900  
+        max_width = 900
         bubble_rect = pygame.Rect(chen_rect.centerx - max_width // 2, chen_rect.top - 140, max_width, 140)
 
         pygame.draw.rect(fenetre, (255, 255, 255), bubble_rect, border_radius=10)
@@ -79,7 +122,6 @@ def professeur_chen(fenetre, dialogues, image, dialogue_index, show_intro):
 
     return dialogue_index, show_intro
 
-
 dialogues = [
     "Bonjour jeune dresseur, bienvenue au centre Pokémon.\nJe suis le Professeur Chen.",
     "L'univers de Pokémon est un monde riche et fascinant, où les humains, appelés Dresseurs, et des créatures fantastiques appelées Pokémon coexistent.\nChaque Pokémon possède des caractéristiques uniques et la capacité d'évoluer en formes plus puissantes.",
@@ -101,7 +143,7 @@ show_intro = True
 
 # Boucle principale
 while True:
-    fenetre.fill((173, 216, 230))  
+    fenetre.fill((173, 216, 230))
     pygame.draw.circle(fenetre, (255, 255, 255), (300, 150), 80)
     pygame.draw.circle(fenetre, (255, 255, 255), (350, 130), 90)
     pygame.draw.circle(fenetre, (255, 255, 255), (400, 150), 80)
@@ -114,11 +156,16 @@ while True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             pygame.quit()
-            exit()
+
         if event.type == pygame.MOUSEBUTTONDOWN and show_intro:
             dialogue_index += 1
             if dialogue_index >= len(dialogues):
                 show_intro = False
+        elif event.type == pygame.MOUSEBUTTONDOWN and not show_intro:
+            for pokemon in data:
+                if pokemon['rect'].collidepoint(mouse_x, mouse_y):
+                    capturePokemon(pokemon, data)
+                    break
 
     dialogue_index, show_intro = professeur_chen(fenetre, dialogues, chen_img, dialogue_index, show_intro)
 
