@@ -24,31 +24,6 @@
         "state": "wild"
     },
     {
-        "name": "Tauros",
-        "original_name": "Tauros",
-        "pet_name": "Jean-Marie",
-        "hp_max": 65,
-        "hp": 65,
-        "xp": 2161,
-        "strength": 63,
-        "defense": 56,
-        "type": [
-            "fighting",
-            "water"
-        ],
-        "level": 12,
-        "speed": 46,
-        "stage": 2,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
         "name": "Nidorino",
         "original_name": "Nidoran",
         "pet_name": "Jean-Fran\u00e7ois",
@@ -62,56 +37,6 @@
         ],
         "level": 18,
         "speed": 79,
-        "stage": 2,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
-        "name": "Dragonite",
-        "original_name": "Dratini",
-        "pet_name": "Jean-Robert",
-        "hp_max": 99,
-        "hp": 99,
-        "xp": 22741,
-        "strength": 99,
-        "defense": 89,
-        "type": [
-            "dragon",
-            "flying"
-        ],
-        "level": 28,
-        "speed": 98,
-        "stage": 3,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
-        "name": "Haunter",
-        "original_name": "Gastly",
-        "pet_name": "Jean-Eric",
-        "hp_max": 57,
-        "hp": 57,
-        "xp": 2473,
-        "strength": 61,
-        "defense": 49,
-        "type": [
-            "ghost",
-            "poison"
-        ],
-        "level": 13,
-        "speed": 59,
         "stage": 2,
         "ev": {
             "hp": 0,
@@ -147,31 +72,6 @@
         "state": "wild"
     },
     {
-        "name": "Articuno",
-        "original_name": "Articuno",
-        "pet_name": "Jean-Charles",
-        "hp_max": 101,
-        "hp": 101,
-        "xp": 27708,
-        "strength": 118,
-        "defense": 109,
-        "type": [
-            "ice",
-            "flying"
-        ],
-        "level": 30,
-        "speed": 94,
-        "stage": 3,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
         "name": "Meowth",
         "original_name": "Meowth",
         "pet_name": "Jean-Joseph",
@@ -191,6 +91,31 @@
             "strength": 0,
             "defense": 0,
             "speed": 0,
+            "xp": 0
+        },
+        "state": "wild"
+    },
+    {
+        "name": "Tauros",
+        "original_name": "Tauros",
+        "pet_name": "Jean-Marie",
+        "hp_max": 112,
+        "hp": 112,
+        "xp": 4707,
+        "strength": 106,
+        "defense": 92,
+        "type": [
+            "fighting",
+            "water"
+        ],
+        "level": 14,
+        "speed": 81,
+        "stage": 2,
+        "ev": {
+            "hp": 3,
+            "strength": 2,
+            "defense": 2,
+            "speed": 3,
             "xp": 0
         },
         "state": "wild"

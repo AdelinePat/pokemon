@@ -191,32 +191,32 @@
     },
     "blabla": {
         "bag": {
-            "potions": 10,
-            "pokeball": 14
+            "potions": 9,
+            "pokeball": 13
         },
         "pokemons": {
             "Jean-Christophe": {
                 "name": "Rhydon",
                 "original_name": "Rhyhorn",
                 "pet_name": "Jean-Christophe",
-                "hp_max": 90,
-                "hp": 86,
-                "xp": 7566,
-                "strength": 82,
-                "defense": 76,
+                "hp_max": 114,
+                "hp": 0,
+                "xp": 8506,
+                "strength": 111,
+                "defense": 99,
                 "type": [
                     "ground",
                     "rock"
                 ],
-                "level": 20,
-                "speed": 87,
+                "level": 21,
+                "speed": 106,
                 "stage": 2,
                 "ev": {
-                    "hp": 2,
-                    "strength": 3,
-                    "defense": 1,
-                    "speed": 1,
-                    "xp": 3
+                    "hp": 1,
+                    "strength": 2,
+                    "defense": 2,
+                    "speed": 3,
+                    "xp": 2
                 },
                 "state": "domesticated"
             },
@@ -241,6 +241,89 @@
                     "strength": 0,
                     "defense": 0,
                     "speed": 0,
+                    "xp": 0
+                },
+                "state": "domesticated"
+            },
+            "Jean-Marie": {
+                "name": "Tauros",
+                "original_name": "Tauros",
+                "pet_name": "Jean-Marie",
+                "hp_max": 87,
+                "hp": 65,
+                "xp": 3466,
+                "strength": 83,
+                "defense": 71,
+                "type": [
+                    "fighting",
+                    "water"
+                ],
+                "level": 13,
+                "speed": 63,
+                "stage": 2,
+                "ev": {
+                    "hp": 3,
+                    "strength": 0,
+                    "defense": 1,
+                    "speed": 1,
+                    "xp": 0
+                },
+                "state": "domesticated"
+            }
+        }
+    },
+    "Armelle": {
+        "bag": {
+            "potions": 10,
+            "pokeball": 14
+        },
+        "pokemons": {
+            "Jean-Charles": {
+                "name": "Articuno",
+                "original_name": "Articuno",
+                "pet_name": "Jean-Charles",
+                "hp_max": 130,
+                "hp": 75,
+                "xp": 29102,
+                "strength": 143,
+                "defense": 142,
+                "type": [
+                    "ice",
+                    "flying"
+                ],
+                "level": 31,
+                "speed": 120,
+                "stage": 3,
+                "ev": {
+                    "hp": 1,
+                    "strength": 3,
+                    "defense": 0,
+                    "speed": 3,
+                    "xp": 2
+                },
+                "state": "domesticated"
+            },
+            "Jean-Marie": {
+                "name": "Tauros",
+                "original_name": "Tauros",
+                "pet_name": "Jean-Marie",
+                "hp_max": 112,
+                "hp": 110,
+                "xp": 4707,
+                "strength": 106,
+                "defense": 92,
+                "type": [
+                    "fighting",
+                    "water"
+                ],
+                "level": 14,
+                "speed": 81,
+                "stage": 2,
+                "ev": {
+                    "hp": 3,
+                    "strength": 2,
+                    "defense": 2,
+                    "speed": 3,
                     "xp": 0
                 },
                 "state": "domesticated"
