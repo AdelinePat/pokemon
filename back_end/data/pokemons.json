@@ -1,90 +1,18 @@
 [
     {
-        "name": "Jolteon",
-        "original_name": "Eevee",
-        "pet_name": "Jean-Claude",
-        "hp_max": 63,
-        "hp": 63,
-        "xp": 1832,
-        "strength": 48,
-        "defense": 55,
+        "name": "Dratini",
+        "original_name": "Dratini",
+        "pet_name": "Jean-Robert",
+        "hp_max": 31,
+        "hp": 31,
+        "xp": 492,
+        "strength": 39,
+        "defense": 41,
         "type": [
-            "electric"
+            "dragon"
         ],
-        "level": 12,
-        "speed": 61,
-        "stage": 2,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
-        "name": "Nidorino",
-        "original_name": "Nidoran",
-        "pet_name": "Jean-Fran\u00e7ois",
-        "hp_max": 76,
-        "hp": 76,
-        "xp": 6858,
-        "strength": 56,
-        "defense": 63,
-        "type": [
-            "poison"
-        ],
-        "level": 18,
-        "speed": 79,
-        "stage": 2,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
-        "name": "Mewtwo",
-        "original_name": "Mewtwo",
-        "pet_name": "Jean-S\u00e9bastien",
-        "hp_max": 145,
-        "hp": 145,
-        "xp": 68102,
-        "strength": 133,
-        "defense": 127,
-        "type": [
-            "psychic"
-        ],
-        "level": 40,
-        "speed": 139,
-        "stage": 4,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
-        "name": "Meowth",
-        "original_name": "Meowth",
-        "pet_name": "Jean-Joseph",
-        "hp_max": 21,
-        "hp": 21,
-        "xp": 15,
-        "strength": 23,
-        "defense": 26,
-        "type": [
-            "steel"
-        ],
-        "level": 2,
-        "speed": 31,
+        "level": 7,
+        "speed": 51,
         "stage": 1,
         "ev": {
             "hp": 0,
@@ -96,26 +24,75 @@
         "state": "wild"
     },
     {
-        "name": "Tauros",
-        "original_name": "Tauros",
-        "pet_name": "Jean-Marie",
-        "hp_max": 112,
-        "hp": 112,
-        "xp": 4707,
-        "strength": 106,
-        "defense": 92,
+        "name": "Electrode",
+        "original_name": "Voltorb",
+        "pet_name": "Jean-Claude",
+        "hp_max": 72,
+        "hp": 72,
+        "xp": 5664,
+        "strength": 81,
+        "defense": 68,
         "type": [
-            "fighting",
-            "water"
+            "electric",
+            "grass"
         ],
-        "level": 14,
-        "speed": 81,
+        "level": 17,
+        "speed": 73,
         "stage": 2,
         "ev": {
-            "hp": 3,
-            "strength": 2,
-            "defense": 2,
-            "speed": 3,
+            "hp": 0,
+            "strength": 0,
+            "defense": 0,
+            "speed": 0,
+            "xp": 0
+        },
+        "state": "wild"
+    },
+    {
+        "name": "Ponyta",
+        "original_name": "Ponyta",
+        "pet_name": "Jean-S\u00e9bastien",
+        "hp_max": 39,
+        "hp": 39,
+        "xp": 63,
+        "strength": 12,
+        "defense": 29,
+        "type": [
+            "psychic"
+        ],
+        "level": 3,
+        "speed": 16,
+        "stage": 1,
+        "ev": {
+            "hp": 0,
+            "strength": 0,
+            "defense": 0,
+            "speed": 0,
+            "xp": 0
+        },
+        "state": "wild"
+    },
+    {
+        "name": "Venomoth",
+        "original_name": "Venonat",
+        "pet_name": "Jean-Paul",
+        "hp_max": 67,
+        "hp": 67,
+        "xp": 5661,
+        "strength": 67,
+        "defense": 59,
+        "type": [
+            "bug",
+            "poison"
+        ],
+        "level": 17,
+        "speed": 70,
+        "stage": 2,
+        "ev": {
+            "hp": 0,
+            "strength": 0,
+            "defense": 0,
+            "speed": 0,
             "xp": 0
         },
         "state": "wild"

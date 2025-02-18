@@ -4,9 +4,9 @@ import pyscroll
 from .player import Player
 from front_end.screen import Screen
 from .switch import Switch
-from front_end.gameplay.battlescreen import BattleScreen
+# from front_end.gameplay.battlescreen import BattleScreen
 from front_end.in_fight.in_fight import InFight
-from Pokemon import PokemonBattle  # Import the PokemonBattle class
+# from Pokemon import PokemonBattle  # Import the PokemonBattle class
 
 class Map:
     def __init__(self, screen: Screen):
@@ -62,6 +62,7 @@ class Map:
             self.player.step = 16
             self.player.add_switchs(self.switchs)
             self.player.add_collisions(self.collisions)
+            self.player.start_battle(self.battlepokemon)
             self.group.add(self.player)
 
         # Update the current map after switching
@@ -94,7 +95,7 @@ class Map:
 
                 if self.player.rect.colliderect(battle_zone) and self.in_battle:
                     this_battle_zone = battle_zone
-                break
+                # break
             
             if not self.player.rect.colliderect(this_battle_zone) and self.in_battle:
                 self.in_battle = False

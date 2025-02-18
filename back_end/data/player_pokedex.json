@@ -1,32 +1,32 @@
 {
     "Billy": {
         "bag": {
-            "potions": 9,
-            "pokeball": 9
+            "potions": 8,
+            "pokeball": 8
         },
         "pokemons": {
             "Jean-Baptiste": {
                 "name": "Venusaur",
                 "original_name": "Bulbasaur",
                 "pet_name": "Jean-Baptiste",
-                "hp_max": 1711,
-                "hp": 539,
-                "xp": 65114,
-                "strength": 762,
-                "defense": 729,
+                "hp_max": 1884,
+                "hp": 243,
+                "xp": 12050,
+                "strength": 136,
+                "defense": 139,
                 "type": [
                     "grass",
                     "poison"
                 ],
-                "level": 41,
-                "speed": 690,
+                "level": 23,
+                "speed": 842,
                 "stage": 3,
                 "ev": {
-                    "hp": 3,
-                    "strength": 2,
+                    "hp": 2,
+                    "strength": 3,
                     "defense": 3,
-                    "speed": 3,
-                    "xp": 2
+                    "speed": 0,
+                    "xp": 3
                 },
                 "state": "domesticated"
             },
@@ -153,6 +153,30 @@
                     "xp": 0
                 },
                 "state": "domesticated"
+            },
+            "Jean-S\u00e9bastien": {
+                "name": "Hypno",
+                "original_name": "Drowzee",
+                "pet_name": "Jean-S\u00e9bastien",
+                "hp_max": 74,
+                "hp": 74,
+                "xp": 3401,
+                "strength": 55,
+                "defense": 60,
+                "type": [
+                    "psychic"
+                ],
+                "level": 15,
+                "speed": 47,
+                "stage": 2,
+                "ev": {
+                    "hp": 0,
+                    "strength": 0,
+                    "defense": 0,
+                    "speed": 0,
+                    "xp": 0
+                },
+                "state": "domesticated"
             }
         }
     },
@@ -191,7 +215,7 @@
     },
     "blabla": {
         "bag": {
-            "potions": 9,
+            "potions": 2,
             "pokeball": 13
         },
         "pokemons": {
@@ -199,24 +223,24 @@
                 "name": "Rhydon",
                 "original_name": "Rhyhorn",
                 "pet_name": "Jean-Christophe",
-                "hp_max": 114,
-                "hp": 0,
-                "xp": 8506,
-                "strength": 111,
-                "defense": 99,
+                "hp_max": 146,
+                "hp": 117,
+                "xp": 10507,
+                "strength": 137,
+                "defense": 129,
                 "type": [
                     "ground",
                     "rock"
                 ],
-                "level": 21,
-                "speed": 106,
+                "level": 22,
+                "speed": 145,
                 "stage": 2,
                 "ev": {
-                    "hp": 1,
-                    "strength": 2,
-                    "defense": 2,
-                    "speed": 3,
-                    "xp": 2
+                    "hp": 0,
+                    "strength": 0,
+                    "defense": 3,
+                    "speed": 1,
+                    "xp": 3
                 },
                 "state": "domesticated"
             },

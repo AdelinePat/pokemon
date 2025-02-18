@@ -17,6 +17,8 @@ from back_end.data_access.pokemon_pokedex_service import save_pokemon_to_pokedex
 from back_end.data_access.bag_pokedex_service import save_bag_to_pokedex
 from back_end.data_access.wild_pokemons import save_wild_pokemon
 
+from front_end.gameplay.healthdisplay import HealthDisplay
+
 class InFight():
     def __init__(self, screen, player):
         """
@@ -37,6 +39,7 @@ class InFight():
         self.fight = Fight(self.pokemon, self.pokemon_enemy)
         self.util = UtilTool()
         self.fleeing = False
+        self.healthbar = HealthDisplay()
 
     def draw_text(self, text, x, y, color=(255, 255, 255)):
         """
@@ -87,7 +90,16 @@ class InFight():
         message_damage = None
         message_attack = None
         another_option = ""
-        # fleeing = False
+        # # fleeing = False
+        # my_pokemon_x = int(self.screen.width // 10 * 2.5)
+        # my_pokemon_y = int(self.screen.height // 7 * 5.4)
+        my_pokemon_x = int(self.screen.width // 10 * 0.5)
+        my_pokemon_y = int(self.screen.height // 10 )
+
+        # pokemon_enemy_x = int(self.screen.width // 10 * 7.5 )               
+        # pokemon_enemy_y = int(self.screen.height // 7 * 2)
+        pokemon_enemy_x = int(self.screen.width // 10 * 9.5 )               
+        pokemon_enemy_y = int(self.screen.height // 10)
 
         player_turn = False
         if self.fight.is_player_first():
@@ -102,6 +114,17 @@ class InFight():
                 x_movement = int(var_y * math.sin(time_count * 0.1))
                 y_movement = int(var_x * math.sin(time_count * 0.08))
             self.display_assets_and_background(x_movement, y_movement, battle_floor, battle_floor2, pokemon_enemy, pokemon)
+            # draw_health_bar(x, y, max_hp, current_health, name, screen):
+
+            # pokemon health
+            # ,  + y_movement
+            # self.healthbar.draw_health_bar(my_pokemon_x, my_pokemon_y, self.pokemon, self.screen)
+            self.healthbar.draw_health_bar(my_pokemon_x, my_pokemon_y, self.pokemon, self.screen)
+            # enemy health
+            #  + x_movement, 
+            self.healthbar.draw_health_bar(pokemon_enemy_x, pokemon_enemy_y,
+                                            self.pokemon_enemy,\
+                                            self.screen)
             
             self.util.draw_option_screen(self.screen)
             # Draw menu options

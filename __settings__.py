@@ -41,3 +41,7 @@ DARK_GREEN = (68,82,95)
 LIGHT_GREEN = (122,186,99)
 # GREY_BLUE = (68,82,95)
 
+"""
+IMAGES
+"""
+CHEN = "./assets/chen.png"
