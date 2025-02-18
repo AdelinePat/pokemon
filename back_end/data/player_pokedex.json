@@ -1,0 +1,156 @@
+{
+    "Adeline": {
+        "bag": {
+            "potions": 10,
+            "pokeball": 15
+        },
+        "pokemons": {
+            "Jean-Eric": {
+                "name": "Gengar",
+                "original_name": "Gastly",
+                "pet_name": "Jean-Eric",
+                "hp_max": 127,
+                "hp": 127,
+                "xp": 36257,
+                "strength": 129,
+                "defense": 122,
+                "type": [
+                    "ghost",
+                    "poison"
+                ],
+                "level": 33,
+                "speed": 102,
+                "stage": 3,
+                "ev": {
+                    "hp": 0,
+                    "strength": 0,
+                    "defense": 0,
+                    "speed": 0,
+                    "xp": 0
+                },
+                "state": "domesticated"
+            },
+            "Jean-Robert": {
+                "name": "Dragonair",
+                "original_name": "Dratini",
+                "pet_name": "Jean-Robert",
+                "hp_max": 83,
+                "hp": 83,
+                "xp": 6992,
+                "strength": 60,
+                "defense": 67,
+                "type": [
+                    "dragon"
+                ],
+                "level": 19,
+                "speed": 61,
+                "stage": 2,
+                "ev": {
+                    "hp": 0,
+                    "strength": 0,
+                    "defense": 0,
+                    "speed": 0,
+                    "xp": 0
+                },
+                "state": "domesticated"
+            }
+        }
+    },
+    "Joseph": {
+        "bag": {
+            "potions": 10,
+            "pokeball": 15
+        },
+        "pokemons": {
+            "Jean-Luc": {
+                "name": "Clefable",
+                "original_name": "Clefairy",
+                "pet_name": "Jean-Luc",
+                "hp_max": 76,
+                "hp": 76,
+                "xp": 7968,
+                "strength": 68,
+                "defense": 76,
+                "type": [
+                    "fairy"
+                ],
+                "level": 19,
+                "speed": 84,
+                "stage": 2,
+                "ev": {
+                    "hp": 0,
+                    "strength": 0,
+                    "defense": 0,
+                    "speed": 0,
+                    "xp": 0
+                },
+                "state": "domesticated"
+            }
+        }
+    },
+    "Thomas": {
+        "bag": {
+            "potions": 10,
+            "pokeball": 15
+        },
+        "pokemons": {
+            "Jean-Eric": {
+                "name": "Haunter",
+                "original_name": "Gastly",
+                "pet_name": "Jean-Eric",
+                "hp_max": 83,
+                "hp": 83,
+                "xp": 6063,
+                "strength": 70,
+                "defense": 62,
+                "type": [
+                    "ghost",
+                    "poison"
+                ],
+                "level": 18,
+                "speed": 77,
+                "stage": 2,
+                "ev": {
+                    "hp": 0,
+                    "strength": 0,
+                    "defense": 0,
+                    "speed": 0,
+                    "xp": 0
+                },
+                "state": "domesticated"
+            }
+        }
+    },
+    "flo": {
+        "bag": {
+            "potions": 10,
+            "pokeball": 15
+        },
+        "pokemons": {
+            "Jean-Fran\u00e7ois": {
+                "name": "Ekans",
+                "original_name": "Ekans",
+                "pet_name": "Jean-Fran\u00e7ois",
+                "hp_max": 40,
+                "hp": 40,
+                "xp": 582,
+                "strength": 53,
+                "defense": 35,
+                "type": [
+                    "poison"
+                ],
+                "level": 8,
+                "speed": 29,
+                "stage": 1,
+                "ev": {
+                    "hp": 0,
+                    "strength": 0,
+                    "defense": 0,
+                    "speed": 0,
+                    "xp": 0
+                },
+                "state": "domesticated"
+            }
+        }
+    }
+}

@@ -1,0 +1,308 @@
+{
+    "Bulbasaur" : {
+        "Bulbasaur" : 1,
+        "Ivysaur" : 2,
+        "Venusaur" : 3
+    },
+    "Charmander" : {
+        "Charmander" : 1,
+        "Charmeleon" : 2,
+        "Charizard" : 3
+    },
+    "Squirtle" : {
+        "Squirtle" : 1,
+        "Wartortle" : 2,
+        "Blastoise" : 3
+    },
+    "Caterpie" : {
+        "Caterpie" : 1,
+        "Metapod" : 2,
+        "Butterflee" : 3
+    },
+    "Weedle" : {
+        "Weedle" : 1,
+        "Kakuna" : 2,
+        "Beedrill" : 3
+    },
+    "Pidgey" : {
+        "Pidgey" : 1,
+        "Pidgeotto" : 2,
+        "Pidgeot" : 3
+    },
+    "Rattata" : {
+        "Rattata" : 1,
+        "Raticate" : 2
+    },
+    "Spearow" : {
+        "Spearow" : 1,
+        "Fearow" : 2
+    },
+    "Ekans" : {
+        "Ekans" : 1,
+        "Arbok" : 2
+    },
+    "Pikachu" : {
+        "Pikachu" : 1,
+        "Raichu" : 2
+    },
+    "Sandshrew" : {
+        "Sandshrew" : 1,
+        "Sandslash" : 2
+    },
+    "Nidoran" : {
+        "Nidoran" : 1,
+        "Nidorina" : 2,
+        "Nidorino" : 2,
+        "Nidoqueen" : 3,
+        "Nidoking" : 3
+    },
+    "Clefairy" : {
+        "Clefairy" : 1,
+        "Clefable" : 2
+    },
+    "Vulpix" : {
+        "Vulpix" : 1,
+        "Ninetales" : 2
+    },
+    "Jigglypuff" : {
+        "Jigglypuff" : 1,
+        "Wigglytuff" : 2
+    },
+    "Zubat" : {
+        "Zubat" : 1,
+        "Golbat" : 2
+    },
+    "Oddish" : {
+        "Oddish" : 1,
+        "Gloom" : 2,
+        "Vileplume" : 3
+    },
+    "Paras" : {
+        "Paras" : 1,
+        "Parasect" : 2
+    },
+    "Venonat" : {
+        "Venonat": 1,
+        "Venomoth" : 2
+    },
+    "Diglett" : {
+        "Diglett" : 1,
+        "Dugtrio" : 2
+    },
+    "Meowth" : {
+        "Meowth" : 1,
+        "Persian" : 2
+    },
+    "Psyduck" : {
+        "Psyduck" : 1,
+        "Golduck" : 2
+    },
+    "Mankey" : {
+        "Mankey" : 1,
+        "Primeape" : 2
+    },
+    "Growlithe" : {
+        "Growlithe" : 1,
+        "Arcanine" : 2
+    },
+    "Poliwag" : {
+        "Poliwag" : 1,
+        "Poliwhirl" : 2,
+        "Poliwrath" : 3
+    },
+    "Abra" : {
+        "Abra" : 1,
+        "Kadabra" : 2,
+        "Alakazam" : 3
+    },
+    "Machop" : {
+        "Machop" : 1,
+        "Machoke" : 2,
+        "Machamp" : 3
+    },
+    "Bellsprout" : {
+        "Bellsprout" : 1,
+        "Weepinbell" : 2,
+        "Victreebel" : 3
+    },
+    "Tentacool" : {
+        "Tentacool" : 1,
+        "Tentacruel" : 2
+    },
+    "Geodude" : {
+        "Geodude" : 1,
+        "Graveler" : 2,
+        "Golem" : 3
+    },
+    "Ponyta" : {
+        "Ponyta" : 1,
+        "Rapidash" : 2
+    },
+    "Slowpoke" : {
+        "Slowpoke" : 1,
+        "Slowbro" : 2
+    },
+    "Magnemite" : {
+        "Magnemite" : 1,
+        "Magneton" : 2
+    },
+    "Farfetch'd" : {
+        "Farfetch'd" : 2
+    },
+    "Duduo" : {
+        "Duduo" : 1,
+        "Dodrio" : 2
+    },
+    "Grimer" : {
+        "Grimer" : 1,
+        "Muk" : 2
+    },
+    "Shellder" : {
+        "Shellder" : 1,
+        "Cloyster" : 2
+    },
+    "Gastly" : {
+        "Gastly": 1,
+        "Haunter" : 2,
+        "Gengar" : 3
+    },
+    "Onix" : {
+        "Onix" : 2 
+    },
+    "Drowzee" : {
+        "Drowzee" : 1,
+        "Hypno" : 2
+    },
+    "Krabby" : {
+        "Krabby" : 1,
+        "Kingler" : 2
+    },
+    "Voltorb" : {
+        "Voltorb" : 1,
+        "Electrode" : 2
+    },
+    "Exeggcute" : {
+        "Exeggcute" : 1,
+        "Exeggutor" : 2
+    },
+    "Cubone" : {
+        "Cubone" : 1,
+        "Marowak" : 2
+    },
+    "Hitmonlee" : {
+        "Hitmonlee" : 2
+    },
+    "Hitmonchan" : {
+        "Hitmonchan" : 2
+    },
+    "Lickitung" : {
+        "Lickitung" : 2
+    },
+    "Koffing" : {
+        "Koffing" : 1,
+        "Weezing" : 2
+    },
+    "Rhyhorn" : {
+        "Rhyhorn" : 1,
+        "Rhydon" : 2
+    },
+    "Chansey" : {
+        "Chansey" : 2
+    },
+    "Kangaskhan" : {
+        "Kangaskhan" : 2
+    },
+    "Tangela" : {
+        "Tangela" : 1
+    },
+    "Horsea" : {
+        "Horsea" : 1,
+        "Seadra" : 2
+    },
+    "Goldeen" : {
+        "Goldeen" : 1,
+        "Seaking" : 2
+    },
+    "Staryu" : {
+        "Staryu" : 1,
+        "Starmie" : 2
+    },
+    "Mr. Mime" : {
+        "Mr. Mime" : 2
+    },
+    "Scyther" : {
+        "Scyther" : 2
+    },
+    "Jynx" : {
+        "Jynx" : 2
+    },
+    "Electabuzz" : {
+        "Electabuzz" : 2
+    },
+    "Magmar" : {
+        "Magmar" : 2
+    },
+    "Pinsir" : {
+        "Pinsir" : 2
+    },
+    "Tauros" : {
+        "Tauros" : 2
+    },
+    "Magikarp" : {
+        "Magikarp" : 1,
+        "Gyarados" : 2
+    },
+    "Lapras" : {
+        "Lapras" : 2
+    },
+    "Ditto" : {
+        "Ditto" : 1
+    },
+    "Eevee" : {
+        "Eevee" : 1,
+        "Vaporeon" : 2,
+        "Jolteon" : 2,
+        "Flareon" : 2
+    },
+    "Porygon" : {
+        "Porygon" : 2
+    },
+    "Omanyte" : {
+        "Omanyte" : 1,
+        "Omastar" : 2
+    },
+    "Kabuto" : {
+        "Kabuto" : 1,
+        "Kabutops" : 2
+    },
+    "Aerodactyl" : {
+        "Aerodactyl" : 2
+    },
+    "Snorlax" : {
+        "Snorlax" : 2
+    },
+    "Articuno" : {
+        "Articuno" : 3
+    },
+    "Zapdos" : {
+        "Zapdos" : 3
+    },
+    "Moltres" : {
+        "Moltres" : 3
+    },
+    "Dratini" : {
+        "Dratini" : 1,
+        "Dragonair" : 2,
+        "Dragonite" : 3
+    },
+    "Mew" : {
+        "Mew": 3
+    },
+    "Mewtwo" : {
+        "Mewtwo" : 4
+    },
+    "Seel" : {
+        "Seel" : 1,
+        "Dewgong" : 2
+    }
+}
