@@ -32,7 +32,7 @@ class Player(Entity):
             temp_hitbox = self.hitbox.copy()
             move_speed = 8 if self.is_fleeing else 10  # Reduced speed if fleeing
 
-            if self.keyListener.key_pressed(pygame.K_q):  # Move left
+            if self.keyListener.key_pressed(pygame.K_q) or self.keyListener.key_pressed(pygame.K_LEFT):  # Move left
                 temp_hitbox.x -= move_speed
                 if not self.check_collisions(temp_hitbox):
                     self.check_collisions_switchs(temp_hitbox)

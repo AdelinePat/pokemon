@@ -13,7 +13,7 @@ class Game:
         self.map: Map = Map(self.screen)  # Create the game map
         self.keylistener = KeyListener()  # Initialize the key listener to track player input
         self.player: Player = Player(self.keylistener, self.screen, 100, 300, player_name)  # Create the player character
-        self.map.add_player(self.player)  # Add the player to the map
+        self.map.add_player(self.player)  # Add the player to the map 
 
     def run(self):
         """

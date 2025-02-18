@@ -30,12 +30,13 @@ class InFight():
         self.bag_option = ["Potions", "Pokeball", "Back"]
         self.selected_index = 0  # Index of the currently selected option
         self.running = True  # Controls the menu loop
-        self.player = player
+        self.player = player.player_name
         self.pokemon = get_first_pokemon(self.player)
         
         self.bag = get_bag_from_pokedex(self.player)
         self.fight = Fight(self.pokemon, self.pokemon_enemy)
         self.util = UtilTool()
+        self.fleeing = False
 
     def draw_text(self, text, x, y, color=(255, 255, 255)):
         """
@@ -86,7 +87,7 @@ class InFight():
         message_damage = None
         message_attack = None
         another_option = ""
-        fleeing = False
+        # fleeing = False
 
         player_turn = False
         if self.fight.is_player_first():
@@ -110,7 +111,7 @@ class InFight():
 
             if win:
                 self.options[-1] = "Exit"
-                fleeing = False
+                self.fleeing = False
                 if self.pokemon.get_hp() == 0:
                     self.draw_win_bot_screen()
                 elif another_option == "Success":
@@ -234,12 +235,13 @@ class InFight():
                                         save_bag_to_pokedex(self.player, self.bag)
                                         self.pokemon_enemy.set_hp(self.pokemon_enemy.get_hp_max())
                                         save_wild_pokemon(self.pokemon_enemy)
-                                        return fleeing
+                                        return self.fleeing
+                                        # return
                                     else:
                                         print("fuite")
-                                        fleeing = self.fight.run_away()
+                                        self.fleeing = self.fight.run_away()
                                         player_turn = False
-                                        if fleeing:
+                                        if self.fleeing:
                                             save_pokemon_to_pokedex(self.player,self.pokemon)
                                             save_bag_to_pokedex(self.player, self.bag)
                                             self.pokemon_enemy.set_hp(self.pokemon_enemy.get_hp_max())
@@ -251,7 +253,8 @@ class InFight():
                                                 # self.failed_fleeing()
                                                 self.message_pop_up(self.fight.fightinfo.flee_message)
                                                 pygame.display.update()
-                                            return fleeing
+                                            return self.fleeing
+                                            # return
                                         else:
                                             now_time = pygame.time.get_ticks()
                                             failed_flee_time = 0

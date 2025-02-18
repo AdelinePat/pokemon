@@ -12,13 +12,13 @@ class FightInfo():
         self.total_damage = damage
 
     def set_who_attack_message(self, pokemon):
-        return f"{pokemon.name} a fait une attaque {self.attack_type}"
+        return f"Attak type {self.attack_type} from {pokemon.name} "
     
     def get_damage_message(self):
         if self.total_damage > 1:
-            return f"{self.efficiency} : {self.total_damage} dégâts"
+            return f"{self.efficiency} : {self.total_damage} damages"
         else:
-            return f"{self.efficiency} : {self.total_damage} dégât"
+            return f"{self.efficiency} : {self.total_damage} damage"
 
     def set_flee_trainer_message(self):
         self.flee_message = "You can't escape a fight against another pokemon trainer"

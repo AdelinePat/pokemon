@@ -2,30 +2,30 @@
     "Billy": {
         "bag": {
             "potions": 10,
-            "pokeball": 13
+            "pokeball": 12
         },
         "pokemons": {
             "Jean-Baptiste": {
                 "name": "Venusaur",
                 "original_name": "Bulbasaur",
                 "pet_name": "Jean-Baptiste",
-                "hp_max": 1313,
-                "hp": 554,
-                "xp": 12869,
-                "strength": 406,
-                "defense": 364,
+                "hp_max": 1362,
+                "hp": 549,
+                "xp": 16553,
+                "strength": 459,
+                "defense": 415,
                 "type": [
                     "grass",
                     "poison"
                 ],
-                "level": 24,
-                "speed": 319,
+                "level": 26,
+                "speed": 365,
                 "stage": 3,
                 "ev": {
-                    "hp": 1,
-                    "strength": 3,
+                    "hp": 2,
+                    "strength": 1,
                     "defense": 1,
-                    "speed": 3,
+                    "speed": 1,
                     "xp": 3
                 },
                 "state": "domesticated"
@@ -101,6 +101,31 @@
                     "defense": 3,
                     "speed": 4,
                     "xp": 2
+                },
+                "state": "domesticated"
+            },
+            "Jean-Charles": {
+                "name": "Mr. Mime",
+                "original_name": "Mr. Mime",
+                "pet_name": "Jean-Charles",
+                "hp_max": 72,
+                "hp": 72,
+                "xp": 6116,
+                "strength": 62,
+                "defense": 65,
+                "type": [
+                    "ice",
+                    "psychic"
+                ],
+                "level": 18,
+                "speed": 57,
+                "stage": 2,
+                "ev": {
+                    "hp": 0,
+                    "strength": 0,
+                    "defense": 0,
+                    "speed": 0,
+                    "xp": 0
                 },
                 "state": "domesticated"
             }

@@ -21,6 +21,7 @@ class Map:
         self.in_battle = False  # Track if battle is in progress
         self.current_map: Switch = Switch("switch", "map0", pygame.Rect(0, 0, 0, 0), 0)
         self.switch_map(self.current_map)
+       
 
     def switch_map(self, switch: Switch):
         self.tmx_data = pytmx.load_pygame(f"assets/map/{switch.name}.tmx")
@@ -84,7 +85,10 @@ class Map:
             for battle_zone in self.battlepokemon:
                 if self.player.rect.colliderect(battle_zone) and not self.in_battle:
                     self.in_battle = True  # Set the flag for battle
-                    self.start_battle()  # Start the Pokémon battle
+                    self.player.is_fleeing = self.start_battle()  # Start the Pokémon battle
+                    # battle_screen = InFight(self.screen, self.player).display()
+                    # battle_screen.run()
+                    # is_fleeing = battle_screen.fleeing
 
         # Update all sprites and center the map
         self.group.update()
@@ -98,13 +102,16 @@ class Map:
         # battle_screen.run()
          # Start a battle when the player enters a battle zone
         print("Starting Pokémon battle! dans start_battle")
-        battle_screen = BattleScreen(self.screen, self.player)
-        # battle_screen = InFight(self.screen, self.player).display()
-        battle_screen.run()
+        battle_screen = InFight(self.screen, self.player).display()
+        return battle_screen
+        
+        # battle_screen.run()
+        # InFight(self.screen, self.player).display().run()
+        # battle_screen.run()
         # JOSEPH??
         print("Starting Pokémon battle!")
-        battle_screen = PokemonBattle()  # Create instance of PokemonBattle
-        battle_screen.run()  # Run the battle
+        # battle_screen = PokemonBattle()  # Create instance of PokemonBattle
+        # battle_screen.run()  # Run the battle
 
     def pose_player(self, switch: Switch):
         # Set player's spawn position based on map

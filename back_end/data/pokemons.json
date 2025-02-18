@@ -1,30 +1,5 @@
 [
     {
-        "name": "Electrode",
-        "original_name": "Voltorb",
-        "pet_name": "Jean-Claude",
-        "hp_max": 80,
-        "hp": 80,
-        "xp": 7459,
-        "strength": 63,
-        "defense": 75,
-        "type": [
-            "electric",
-            "grass"
-        ],
-        "level": 19,
-        "speed": 67,
-        "stage": 2,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
         "name": "Bulbasaur",
         "original_name": "Bulbasaur",
         "pet_name": "Jean-Baptiste",
@@ -62,30 +37,6 @@
         ],
         "level": 8,
         "speed": 38,
-        "stage": 1,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
-        "name": "Slowpoke",
-        "original_name": "Slowpoke",
-        "pet_name": "Jean-S\u00e9bastien",
-        "hp_max": 25,
-        "hp": 25,
-        "xp": 112,
-        "strength": 35,
-        "defense": 19,
-        "type": [
-            "psychic"
-        ],
-        "level": 4,
-        "speed": 27,
         "stage": 1,
         "ev": {
             "hp": 0,
@@ -143,6 +94,30 @@
             "defense": 3,
             "speed": 4,
             "xp": 4
+        },
+        "state": "wild"
+    },
+    {
+        "name": "Shellder",
+        "original_name": "Shellder",
+        "pet_name": "Jean-Pierre",
+        "hp_max": 51,
+        "hp": 51,
+        "xp": 682,
+        "strength": 47,
+        "defense": 40,
+        "type": [
+            "water"
+        ],
+        "level": 8,
+        "speed": 38,
+        "stage": 1,
+        "ev": {
+            "hp": 0,
+            "strength": 0,
+            "defense": 0,
+            "speed": 0,
+            "xp": 0
         },
         "state": "wild"
     },
