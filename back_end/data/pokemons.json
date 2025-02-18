@@ -1,18 +1,18 @@
 [
     {
-        "name": "Bulbasaur",
-        "original_name": "Bulbasaur",
-        "pet_name": "Jean-Baptiste",
-        "hp_max": 31,
-        "hp": 31,
-        "xp": 20,
-        "strength": 23,
-        "defense": 21,
+        "name": "Jolteon",
+        "original_name": "Eevee",
+        "pet_name": "Jean-Claude",
+        "hp_max": 63,
+        "hp": 63,
+        "xp": 1832,
+        "strength": 48,
+        "defense": 55,
         "type": [
-            "fire"
+            "electric"
         ],
-        "level": 15,
-        "speed": 64,
+        "level": 12,
+        "speed": 61,
         "stage": 2,
         "ev": {
             "hp": 0,
@@ -24,95 +24,22 @@
         "state": "wild"
     },
     {
-        "name": "Shellder",
-        "original_name": "Shellder",
-        "pet_name": "Jean-Pierre",
-        "hp_max": 51,
-        "hp": 51,
-        "xp": 682,
-        "strength": 47,
-        "defense": 40,
+        "name": "Tauros",
+        "original_name": "Tauros",
+        "pet_name": "Jean-Marie",
+        "hp_max": 65,
+        "hp": 65,
+        "xp": 2161,
+        "strength": 63,
+        "defense": 56,
         "type": [
+            "fighting",
             "water"
         ],
-        "level": 8,
-        "speed": 38,
-        "stage": 1,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
-        "name": "Paras",
-        "original_name": "Paras",
-        "pet_name": "Jean-Paul",
-        "hp_max": 41,
-        "hp": 41,
-        "xp": 199,
-        "strength": 26,
-        "defense": 24,
-        "type": [
-            "bug",
-            "grass"
-        ],
-        "level": 5,
-        "speed": 19,
-        "stage": 1,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
-        "name": "Rhydon",
-        "original_name": "Rhyhorn",
-        "pet_name": "Jean-Christophe",
-        "hp_max": 87,
-        "hp": 87,
-        "xp": 7232,
-        "strength": 79,
-        "defense": 73,
-        "type": [
-            "ground",
-            "rock"
-        ],
-        "level": 20,
-        "speed": 83,
+        "level": 12,
+        "speed": 46,
         "stage": 2,
         "ev": {
-            "hp": 2,
-            "strength": 3,
-            "defense": 3,
-            "speed": 4,
-            "xp": 4
-        },
-        "state": "wild"
-    },
-    {
-        "name": "Shellder",
-        "original_name": "Shellder",
-        "pet_name": "Jean-Pierre",
-        "hp_max": 51,
-        "hp": 51,
-        "xp": 682,
-        "strength": 47,
-        "defense": 40,
-        "type": [
-            "water"
-        ],
-        "level": 8,
-        "speed": 38,
-        "stage": 1,
-        "ev": {
             "hp": 0,
             "strength": 0,
             "defense": 0,
@@ -122,21 +49,143 @@
         "state": "wild"
     },
     {
-        "name": "Mr. Mime",
-        "original_name": "Mr. Mime",
-        "pet_name": "Jean-Charles",
-        "hp_max": 72,
-        "hp": 72,
-        "xp": 6116,
-        "strength": 62,
-        "defense": 65,
+        "name": "Nidorino",
+        "original_name": "Nidoran",
+        "pet_name": "Jean-Fran\u00e7ois",
+        "hp_max": 76,
+        "hp": 76,
+        "xp": 6858,
+        "strength": 56,
+        "defense": 63,
         "type": [
-            "ice",
-            "psychic"
+            "poison"
         ],
         "level": 18,
-        "speed": 57,
+        "speed": 79,
         "stage": 2,
+        "ev": {
+            "hp": 0,
+            "strength": 0,
+            "defense": 0,
+            "speed": 0,
+            "xp": 0
+        },
+        "state": "wild"
+    },
+    {
+        "name": "Dragonite",
+        "original_name": "Dratini",
+        "pet_name": "Jean-Robert",
+        "hp_max": 99,
+        "hp": 99,
+        "xp": 22741,
+        "strength": 99,
+        "defense": 89,
+        "type": [
+            "dragon",
+            "flying"
+        ],
+        "level": 28,
+        "speed": 98,
+        "stage": 3,
+        "ev": {
+            "hp": 0,
+            "strength": 0,
+            "defense": 0,
+            "speed": 0,
+            "xp": 0
+        },
+        "state": "wild"
+    },
+    {
+        "name": "Haunter",
+        "original_name": "Gastly",
+        "pet_name": "Jean-Eric",
+        "hp_max": 57,
+        "hp": 57,
+        "xp": 2473,
+        "strength": 61,
+        "defense": 49,
+        "type": [
+            "ghost",
+            "poison"
+        ],
+        "level": 13,
+        "speed": 59,
+        "stage": 2,
+        "ev": {
+            "hp": 0,
+            "strength": 0,
+            "defense": 0,
+            "speed": 0,
+            "xp": 0
+        },
+        "state": "wild"
+    },
+    {
+        "name": "Mewtwo",
+        "original_name": "Mewtwo",
+        "pet_name": "Jean-S\u00e9bastien",
+        "hp_max": 145,
+        "hp": 145,
+        "xp": 68102,
+        "strength": 133,
+        "defense": 127,
+        "type": [
+            "psychic"
+        ],
+        "level": 40,
+        "speed": 139,
+        "stage": 4,
+        "ev": {
+            "hp": 0,
+            "strength": 0,
+            "defense": 0,
+            "speed": 0,
+            "xp": 0
+        },
+        "state": "wild"
+    },
+    {
+        "name": "Articuno",
+        "original_name": "Articuno",
+        "pet_name": "Jean-Charles",
+        "hp_max": 101,
+        "hp": 101,
+        "xp": 27708,
+        "strength": 118,
+        "defense": 109,
+        "type": [
+            "ice",
+            "flying"
+        ],
+        "level": 30,
+        "speed": 94,
+        "stage": 3,
+        "ev": {
+            "hp": 0,
+            "strength": 0,
+            "defense": 0,
+            "speed": 0,
+            "xp": 0
+        },
+        "state": "wild"
+    },
+    {
+        "name": "Meowth",
+        "original_name": "Meowth",
+        "pet_name": "Jean-Joseph",
+        "hp_max": 21,
+        "hp": 21,
+        "xp": 15,
+        "strength": 23,
+        "defense": 26,
+        "type": [
+            "steel"
+        ],
+        "level": 2,
+        "speed": 31,
+        "stage": 1,
         "ev": {
             "hp": 0,
             "strength": 0,

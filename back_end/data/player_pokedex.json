@@ -1,32 +1,32 @@
 {
     "Billy": {
         "bag": {
-            "potions": 10,
-            "pokeball": 12
+            "potions": 9,
+            "pokeball": 9
         },
         "pokemons": {
             "Jean-Baptiste": {
                 "name": "Venusaur",
                 "original_name": "Bulbasaur",
                 "pet_name": "Jean-Baptiste",
-                "hp_max": 1362,
-                "hp": 549,
-                "xp": 16553,
-                "strength": 459,
-                "defense": 415,
+                "hp_max": 1711,
+                "hp": 539,
+                "xp": 65114,
+                "strength": 762,
+                "defense": 729,
                 "type": [
                     "grass",
                     "poison"
                 ],
-                "level": 26,
-                "speed": 365,
+                "level": 41,
+                "speed": 690,
                 "stage": 3,
                 "ev": {
-                    "hp": 2,
-                    "strength": 1,
-                    "defense": 1,
-                    "speed": 1,
-                    "xp": 3
+                    "hp": 3,
+                    "strength": 2,
+                    "defense": 3,
+                    "speed": 3,
+                    "xp": 2
                 },
                 "state": "domesticated"
             },
@@ -56,20 +56,21 @@
                 "state": "domesticated"
             },
             "Jean-Pierre": {
-                "name": "Blastoise",
-                "original_name": "Squirtle",
+                "name": "Gyarados",
+                "original_name": "Magikarp",
                 "pet_name": "Jean-Pierre",
-                "hp_max": 123,
-                "hp": 121,
-                "xp": 40940,
-                "strength": 119,
-                "defense": 118,
+                "hp_max": 71,
+                "hp": 71,
+                "xp": 6686,
+                "strength": 73,
+                "defense": 58,
                 "type": [
-                    "water"
+                    "water",
+                    "flying"
                 ],
-                "level": 34,
-                "speed": 132,
-                "stage": 3,
+                "level": 18,
+                "speed": 56,
+                "stage": 2,
                 "ev": {
                     "hp": 0,
                     "strength": 0,
@@ -128,6 +129,30 @@
                     "xp": 0
                 },
                 "state": "domesticated"
+            },
+            "Jean-Claude": {
+                "name": "Jolteon",
+                "original_name": "Eevee",
+                "pet_name": "Jean-Claude",
+                "hp_max": 63,
+                "hp": 63,
+                "xp": 1832,
+                "strength": 48,
+                "defense": 55,
+                "type": [
+                    "electric"
+                ],
+                "level": 12,
+                "speed": 61,
+                "stage": 2,
+                "ev": {
+                    "hp": 0,
+                    "strength": 0,
+                    "defense": 0,
+                    "speed": 0,
+                    "xp": 0
+                },
+                "state": "domesticated"
             }
         }
     },
@@ -159,6 +184,64 @@
                     "defense": 3,
                     "speed": 4,
                     "xp": 2
+                },
+                "state": "domesticated"
+            }
+        }
+    },
+    "blabla": {
+        "bag": {
+            "potions": 10,
+            "pokeball": 14
+        },
+        "pokemons": {
+            "Jean-Christophe": {
+                "name": "Rhydon",
+                "original_name": "Rhyhorn",
+                "pet_name": "Jean-Christophe",
+                "hp_max": 90,
+                "hp": 86,
+                "xp": 7566,
+                "strength": 82,
+                "defense": 76,
+                "type": [
+                    "ground",
+                    "rock"
+                ],
+                "level": 20,
+                "speed": 87,
+                "stage": 2,
+                "ev": {
+                    "hp": 2,
+                    "strength": 3,
+                    "defense": 1,
+                    "speed": 1,
+                    "xp": 3
+                },
+                "state": "domesticated"
+            },
+            "Jean-Eric": {
+                "name": "Haunter",
+                "original_name": "Gastly",
+                "pet_name": "Jean-Eric",
+                "hp_max": 57,
+                "hp": 57,
+                "xp": 2473,
+                "strength": 61,
+                "defense": 49,
+                "type": [
+                    "ghost",
+                    "poison"
+                ],
+                "level": 13,
+                "speed": 59,
+                "stage": 2,
+                "ev": {
+                    "hp": 0,
+                    "strength": 0,
+                    "defense": 0,
+                    "speed": 0,
+                    "xp": 0
                 },
                 "state": "domesticated"
             }

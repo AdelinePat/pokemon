@@ -81,14 +81,23 @@ class Map:
                 self.switch_map(self.player.change_map)
                 self.player.change_map = None
 
+            this_battle_zone = (0,0,0,0)
             # Check for collision with battle zones
             for battle_zone in self.battlepokemon:
                 if self.player.rect.colliderect(battle_zone) and not self.in_battle:
                     self.in_battle = True  # Set the flag for battle
                     self.player.is_fleeing = self.start_battle()  # Start the Pokémon battle
+                    this_battle_zone = battle_zone
                     # battle_screen = InFight(self.screen, self.player).display()
                     # battle_screen.run()
                     # is_fleeing = battle_screen.fleeing
+
+                if self.player.rect.colliderect(battle_zone) and self.in_battle:
+                    this_battle_zone = battle_zone
+                break
+            
+            if not self.player.rect.colliderect(this_battle_zone) and self.in_battle:
+                self.in_battle = False
 
         # Update all sprites and center the map
         self.group.update()
@@ -109,7 +118,7 @@ class Map:
         # InFight(self.screen, self.player).display().run()
         # battle_screen.run()
         # JOSEPH??
-        print("Starting Pokémon battle!")
+        # print("Starting Pokémon battle!")
         # battle_screen = PokemonBattle()  # Create instance of PokemonBattle
         # battle_screen.run()  # Run the battle
 

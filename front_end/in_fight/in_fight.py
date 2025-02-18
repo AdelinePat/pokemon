@@ -203,7 +203,7 @@ class InFight():
                                                             success_time = 0
                                                             while success_time - now_time < 1000:
                                                                 success_time = pygame.time.get_ticks()
-                                                                self.capture_message("1... 2... 3... Go ! The pokemon has been captured successfully !")
+                                                                self.capture_message("The pokemon has been captured successfully !")
                                                                 pygame.display.update()
                                                             player_turn = False
                                                             win = True
