@@ -1,11 +1,13 @@
 import pygame
 import sys
 
-from .name_input import NameInput  
+from front_end.menu.name_input import NameInput  
 from front_end.gameplay.game import Game
 from .select_player import SelectPlayer
-from __settings__ import MAIN_MENU_BACKGROUND1
+from __settings__ import MAIN_MENU_BACKGROUND1, LIGHT_GREEN
+from front_end.sounds import Sounds
 
+sounds = Sounds()
 
 class Menu:
     def __init__(self, screen):
@@ -26,8 +28,6 @@ class Menu:
         rect = surface.get_rect(center=(x, y))
         self.screen.get_display().blit(surface, rect)
 
-    
-
     def display(self):
         """
         Main menu loop that displays options and handles user input.
@@ -38,11 +38,11 @@ class Menu:
 
             self.screen.set_background_display(MAIN_MENU_BACKGROUND1)
 
-            self.draw_text("Menu Principal", 600, 150, (255, 255, 0))  # Draw the title
+            self.draw_text("Main Menu", 600, 150, LIGHT_GREEN)  # Draw the title
 
             # Draw menu options
             for i, option in enumerate(self.options):
-                color = (255, 255, 0) if i == self.selected_index else (255, 255, 255)  # Highlight selected option
+                color = LIGHT_GREEN if i == self.selected_index else (255, 255, 255)  # Highlight selected option
                 self.draw_text(option, 600, 300 + i * 60, color)
 
             pygame.display.flip()  # Refresh the screen
@@ -64,15 +64,21 @@ class Menu:
                                 player_name, pokemon = name_input.get_name()
                                 print(player_name, pokemon)
                                 game = Game(self.screen, player_name)
+                                
+                                # Stop the opening music and start the map music
+                                sounds.stop_background_music()  # Correct the method name here
+                                sounds.play_map_music()  # Play map music
+
                                 game.run()
                             case 1:
                                 select_player = SelectPlayer(self.screen).display()
                                 game = Game(self.screen, select_player)
                                 print(select_player)
+
+                                # Stop the opening music and start the map music
+                                sounds.stop_background_music()  # Correct the method name here
+                                sounds.play_map_music()  # Play map music
                                 game.run()
-                                # game = Game(self.screen, "test")
-                                # game.run()
-                                # print("Reprendre la partie (à faire)")
                             case 2:
                                 pygame.quit()
                                 sys.exit()

@@ -4,8 +4,8 @@ from ..models.bag import Bag
 
 def instanciate_pokemon(pokemon):
     my_pokemon = Pokemon(pokemon['name'], pokemon['original_name'], pokemon['hp'],\
-                        pokemon['strength'], pokemon['defense'], pokemon['type'],\
-                        pokemon['level'], pokemon['speed'], pokemon['stage'])
+                        pokemon['hp_max'],pokemon['strength'], pokemon['defense'],\
+                        pokemon['type'],pokemon['level'], pokemon['speed'], pokemon['stage'])
     
     my_pokemon.set_xp(pokemon['xp'])
     my_pokemon.set_state(pokemon['state'])
@@ -22,7 +22,7 @@ def instanciate_pokemon(pokemon):
 def instanciate_bag(player):
     # player is the dictionary of player name in player_pokedex.json
     player_bag = Bag()
-    player_bag.set_potion(player["bag"]["potion"])
-    player_bag.set_pokeball(player["bag"]["pokeball"])
+    player_bag.set_potion(player["potions"])
+    player_bag.set_pokeball(player["pokeball"])
 
     return player_bag

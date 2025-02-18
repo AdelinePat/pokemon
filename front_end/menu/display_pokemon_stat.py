@@ -1,5 +1,6 @@
 import pygame
 from back_end.controller import create_player
+from __settings__ import LIGHT_GREEN
 # from select_pokemons import SelectPokemons
 
 class PokemonStat():
@@ -45,20 +46,15 @@ class PokemonStat():
             image_rect = image.get_rect(center = (self.screen.width //4, self.screen.height //2))
             self.screen.display.blit(image, image_rect)
 
-            self.draw_text(self.pokemon.name, self.screen.width//2, y_position -175, (255, 255, 0))
-            self.draw_text(f"Level : {str(self.pokemon.get_level())}", self.screen.width//2, y_position - 125, (255, 255, 0))
-            self.draw_text(f"Type : {str(", ".join(self.pokemon.type))}", self.screen.width//2, y_position -75, (255, 255, 0))
-            self.draw_text(f"HP : {str(self.pokemon.get_hp())}", self.screen.width//2, y_position -25, (255, 255, 0))
-            self.draw_text(f"Strength : {str(self.pokemon.get_strength())}", self.screen.width//2, y_position + 25, (255, 255, 0))
-            self.draw_text(f"Defense : {str(self.pokemon.get_defense())}", self.screen.width//2, y_position + 75, (255, 255, 0))
-            self.draw_text(f"Speed : {str(self.pokemon.get_speed())}", self.screen.width//2, y_position + 125, (255, 255, 0))
-            self.draw_text(f"XP : {str(self.pokemon.get_xp())}", self.screen.width//2, y_position + 175, (255, 255, 0))
+            self.draw_text(self.pokemon.name, self.screen.width//2, y_position -175, LIGHT_GREEN)
+            self.draw_text(f"Level : {str(self.pokemon.get_level())}", self.screen.width//2, y_position - 125, LIGHT_GREEN)
+            self.draw_text(f"Type : {str(", ".join(self.pokemon.type))}", self.screen.width//2, y_position -75, LIGHT_GREEN)
+            self.draw_text(f"HP : {str(self.pokemon.get_hp())}", self.screen.width//2, y_position -25, LIGHT_GREEN)
+            self.draw_text(f"Strength : {str(self.pokemon.get_strength())}", self.screen.width//2, y_position + 25, LIGHT_GREEN)
+            self.draw_text(f"Defense : {str(self.pokemon.get_defense())}", self.screen.width//2, y_position + 75, LIGHT_GREEN)
+            self.draw_text(f"Speed : {str(self.pokemon.get_speed())}", self.screen.width//2, y_position + 125, LIGHT_GREEN)
+            self.draw_text(f"XP : {str(self.pokemon.get_xp())}", self.screen.width//2, y_position + 175, LIGHT_GREEN)
             
-
-            # for i, option in enumerate(self.options):
-            #     color = (255, 255, 0) if i == self.selected_index else (255, 255, 255)
-            #     self.draw_text(option, 600, 300 + i * 60, color)
-
             pygame.display.flip()
 
             for event in pygame.event.get():

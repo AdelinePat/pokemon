@@ -14,7 +14,8 @@ ABSOLUTE_IMAGE_PATH = "./assets/image-pokemon/"
 FONTS
 """
 # REGULAR_FONT = "./assets/fonts/Roboto-Regular.ttf"
-REGULAR_FONT = "./assets/fonts/CreatoDisplay-Medium.otf"
+# REGULAR_FONT = "./assets/fonts/CreatoDisplay-Medium.otf"
+REGULAR_FONT = "./assets/fonts/Pixellari.ttf"
 POKE_FONT = "./assets/fonts/Pokemon_Solid.ttf"
 
 
@@ -30,3 +31,19 @@ BATTLE_BACKGROUND = "./assets/backgrounds/battle_background.jpg"
 BATTLE_FLOOR = "./assets/backgrounds/battle_floor.png"
 GAME_OVER_BACKGROUND = "./assets/backgrounds/game_over_background.png"
 MENU_BACKGROUND = "./assets/backgrounds/menu_background.png"
+
+POKEMON_CENTER = "./assets/backgrounds/pokemon_center.png"
+
+"""
+COLORS
+"""
+BACKGROUND = (255,255,255)
+DARK_GREEN = (68,82,95)
+# DARK_GREEN = (27,82,70)
+LIGHT_GREEN = (122,186,99)
+# GREY_BLUE = (68,82,95)
+
+"""
+IMAGES
+"""
+CHEN = "./assets/chen.png"

@@ -1,12 +1,10 @@
 import pygame
 import sys
-from back_end.controller import create_player
 from .display_pokemon_stat import PokemonStat
 from back_end.controller import get_starter_pokemons
-from __settings__ import LIGHT_GREEN
+from __settings__ import LIGHT_GREEN, POKEMON_CENTER
 
-
-class SelectPokemons():
+class SelectPokemon():
     def __init__(self, player_name, screen, pokemon_list=[]):
         self.player_name = player_name
         self.screen = screen
@@ -30,9 +28,13 @@ class SelectPokemons():
         self.screen.get_display().blit(surface, rect)
 
     def display(self):
+        image = pygame.image.load(POKEMON_CENTER)
+        image_rect = image.get_rect(center = (self.screen.width // 2, self.screen.height //2))
+
         while self.running:
             self.screen.update()
-            self.screen.get_display().fill((0, 0, 0))
+            # self.screen.get_display().fill((0, 0, 0))
+            self.screen.display.blit(image, image_rect)
 
             self.draw_text("Choose your first pokemon", 600, 150, LIGHT_GREEN)
 

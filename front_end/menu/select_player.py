@@ -5,7 +5,7 @@ import sys
 # from codes.game import Game
 # from codes.select_player import SelectPlayer
 from back_end.controller import get_player_names
-from __settings__ import MAIN_MENU_BACKGROUND2
+from __settings__ import MAIN_MENU_BACKGROUND2, LIGHT_GREEN
 
 
 class SelectPlayer:
@@ -28,10 +28,10 @@ class SelectPlayer:
 
             self.screen.set_background_display(MAIN_MENU_BACKGROUND2)
 
-            self.draw_text("Choisissez votre joueur", 600, 150, (255, 255, 0))
+            self.draw_text("Select your player", 600, 150, LIGHT_GREEN)
 
             for i, option in enumerate(self.options):
-                color = (255, 255, 0) if i == self.selected_index else (255, 255, 255)
+                color = LIGHT_GREEN if i == self.selected_index else (255, 255, 255)
                 self.draw_text(option, 600, 300 + i * 60, color)
 
             pygame.display.flip()

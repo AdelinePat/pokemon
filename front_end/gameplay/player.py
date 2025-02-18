@@ -5,6 +5,7 @@ from front_end.screen import Screen
 from .switch import Switch
 from front_end.menu.name_input import NameInput
 from front_end.gameplay.battlescreen import BattleScreen
+from front_end.in_fight.in_fight import InFight
 
 
 class Player(Entity):
@@ -18,6 +19,8 @@ class Player(Entity):
         self.name = player_name
         self.is_fleeing = False  # Indicates if the player is fleeing
         self.speed = 1  # Default walking speed
+        self.flee_steps = 0  # Number of steps taken while fleeing
+        self.max_flee_steps = 10  # Maximum number of fleeing steps
 
     def update(self) -> None:
         """Update player state, checking inputs and movement."""
@@ -29,39 +32,55 @@ class Player(Entity):
         """Check player movement based on key input and handle collisions."""
         if self.animation_walk is False:
             temp_hitbox = self.hitbox.copy()
-            move_speed = 8 if self.is_fleeing else 10  # Reduced speed if fleeing
+            move_speed = 8 if self.is_fleeing else 10  # Adjusted speed
+            
+            # Map size (to be adjusted according to your game)
+            map_width = self.screen.width  # Map width
+            map_height = self.screen.height  # Map height
 
-            if self.keyListener.key_pressed(pygame.K_q):  # Move left
-                temp_hitbox.x -= move_speed
-                if not self.check_collisions(temp_hitbox):
-                    self.check_collisions_switchs(temp_hitbox)
-                    self.move_left()
-                else:
-                    self.direction = "left"
+            if self.keyListener.key_pressed(pygame.K_q) or self.keyListener.key_pressed(pygame.K_LEFT):  # Left
+                if temp_hitbox.x - move_speed >= 0:  # Prevents going out of bounds on the left
+                    temp_hitbox.x -= move_speed
+                    if not self.check_collisions(temp_hitbox):
+                        self.check_collisions_switchs(temp_hitbox)
+                        self.move_left()
+                        if self.is_fleeing:
+                            self.flee_steps += 1
+                    else:
+                        self.direction = "left"
 
-            elif self.keyListener.key_pressed(pygame.K_d):  # Move right
-                temp_hitbox.x += move_speed
-                if not self.check_collisions(temp_hitbox):
-                    self.check_collisions_switchs(temp_hitbox)
-                    self.move_right()
-                else:
-                    self.direction = "right"
+            elif self.keyListener.key_pressed(pygame.K_d) or self.keyListener.key_pressed(pygame.K_RIGHT):  # Right
+                if temp_hitbox.x + temp_hitbox.width + move_speed <= map_width:  # Prevents going out of bounds on the right
+                    temp_hitbox.x += move_speed
+                    if not self.check_collisions(temp_hitbox):
+                        self.check_collisions_switchs(temp_hitbox)
+                        self.move_right()
+                        if self.is_fleeing:
+                            self.flee_steps += 1
+                    else:
+                        self.direction = "right"
 
-            elif self.keyListener.key_pressed(pygame.K_z):  # Move up
-                temp_hitbox.y -= move_speed
-                if not self.check_collisions(temp_hitbox):
-                    self.check_collisions_switchs(temp_hitbox)
-                    self.move_up()
-                else:
-                    self.direction = "up"
+            elif self.keyListener.key_pressed(pygame.K_z) or self.keyListener.key_pressed(pygame.K_UP):  # Up
+                if temp_hitbox.y - move_speed >= 0:  # Prevents going out of bounds at the top
+                    temp_hitbox.y -= move_speed
+                    if not self.check_collisions(temp_hitbox):
+                        self.check_collisions_switchs(temp_hitbox)
+                        self.move_up()
+                        if self.is_fleeing:
+                            self.flee_steps += 1
+                    else:
+                        self.direction = "up"
 
-            elif self.keyListener.key_pressed(pygame.K_s):  # Move down
-                temp_hitbox.y += move_speed
-                if not self.check_collisions(temp_hitbox):
-                    self.check_collisions_switchs(temp_hitbox)
-                    self.move_down()
-                else:
-                    self.direction = "down"
+            elif self.keyListener.key_pressed(pygame.K_s) or self.keyListener.key_pressed(pygame.K_DOWN):  # Down
+                if temp_hitbox.y + temp_hitbox.height + move_speed <= map_height:  # Prevents going out of bounds at the bottom
+                    temp_hitbox.y += move_speed
+                    if not self.check_collisions(temp_hitbox):
+                        self.check_collisions_switchs(temp_hitbox)
+                        self.move_down()
+                        if self.is_fleeing:
+                            self.flee_steps += 1
+                    else:
+                        self.direction = "down"
 
     def add_switchs(self, switchs: list[Switch]):
         """Assigns a list of switches to the player."""
@@ -92,19 +111,14 @@ class Player(Entity):
 
         # Enable/disable fleeing mode
         if self.keyListener.key_pressed(pygame.K_f):  # Press F to flee
-            self.is_fleeing = False
-            self.speed = 2
-            # self.speed = self.speed if self.speed == 2 else 1
-        elif self.keyListener.key_pressed(pygame.K_SPACE):  # Release  space to stop fleeing
+            self.flee_steps = 0
             self.is_fleeing = True
+            self.speed = 2
+        
+        elif self.keyListener.key_pressed(pygame.K_SPACE):  # Release space to stop fleeing
+            self.is_fleeing = False
+            self.flee_steps = 0
             self.speed = 1
-        elif self.keyListener.key_pressed(pygame.K_p):
-            self.is_fleeing = False
-            self.speed = 0
-        elif self.keyListener.key_pressed(pygame.K_w):
-            self.is_fleeing = False
-            self.speed = 1 
-           
 
     def switch_bike(self, deactive=False):
         """Toggles bike mode on/off."""
@@ -121,14 +135,13 @@ class Player(Entity):
         """Checks if the player enters a battle zone and starts a battle."""
         for battle_zone in battle_zones:
             if self.rect.colliderect(battle_zone):
-                print("Pokémon battle starts!")
+                print("Pokémon battle starts! in start_battle of player")
                 battle_screen = BattleScreen(self.screen, self)
                 battle_screen.run()
                 break
 
     def battle(self):
         """Starts a battle manually."""
-        print("Pokémon battle starts!")
-        battle_screen = BattleScreen(self.screen, self)
-        battle_screen.run()
+        print("Pokémon battle starts! in battle of player")
+        battle_screen = InFight(self.screen, self.player_name).display()
         self.in_battle = False

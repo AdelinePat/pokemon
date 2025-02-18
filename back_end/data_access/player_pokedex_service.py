@@ -12,6 +12,10 @@ def get_player_names():
     return player_keys_dictionary.keys()
 
 def does_player_exist(player):
+    if not os.path.exists(PLAYER_POKEDEX):
+        with open(PLAYER_POKEDEX, "w", encoding="UTF-8") as file:
+            json.dump({}, file)
+
     with open(PLAYER_POKEDEX, "r", encoding="UTF-8") as file:
         player_keys_dictionary = list(json.load(file).keys())
 
@@ -20,9 +24,9 @@ def does_player_exist(player):
 
 # front to back
 def create_player(player, pokemon):
-    if not os.path.exists(PLAYER_POKEDEX):
-        with open(PLAYER_POKEDEX, "w", encoding="UTF-8") as file:
-            json.dump({}, file)
+    # if not os.path.exists(PLAYER_POKEDEX):
+    #     with open(PLAYER_POKEDEX, "w", encoding="UTF-8") as file:
+    #         json.dump({}, file)
 
     with open(PLAYER_POKEDEX, "r", encoding="UTF-8") as file:
         players_dictionary = json.load(file)
