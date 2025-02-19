@@ -364,24 +364,24 @@
                 "name": "Venomoth",
                 "original_name": "Venonat",
                 "pet_name": "Jean-Paul",
-                "hp_max": 134,
-                "hp": 66,
-                "xp": 6224,
-                "strength": 98,
-                "defense": 108,
+                "hp_max": 157,
+                "hp": 40,
+                "xp": 7896,
+                "strength": 123,
+                "defense": 129,
                 "type": [
                     "bug",
                     "poison"
                 ],
-                "level": 19,
-                "speed": 108,
+                "level": 20,
+                "speed": 128,
                 "stage": 2,
                 "ev": {
-                    "hp": 2,
-                    "strength": 4,
-                    "defense": 1,
-                    "speed": 3,
-                    "xp": 1
+                    "hp": 1,
+                    "strength": 1,
+                    "defense": 3,
+                    "speed": 2,
+                    "xp": 0
                 },
                 "state": "domesticated"
             },
@@ -569,6 +569,70 @@
                     "defense": 3,
                     "speed": 3,
                     "xp": 1
+                },
+                "state": "domesticated"
+            }
+        }
+    },
+    "ezrt": {
+        "bag": {
+            "potions": 10,
+            "pokeball": 15
+        },
+        "pokemons": {
+            "Jean-Fran\u00e7ois": {
+                "name": "Ekans",
+                "original_name": "Ekans",
+                "pet_name": "Jean-Fran\u00e7ois",
+                "hp_max": 44,
+                "hp": 0,
+                "xp": 464,
+                "strength": 39,
+                "defense": 27,
+                "type": [
+                    "poison"
+                ],
+                "level": 7,
+                "speed": 34,
+                "stage": 1,
+                "ev": {
+                    "hp": 0,
+                    "strength": 0,
+                    "defense": 0,
+                    "speed": 0,
+                    "xp": 0
+                },
+                "state": "domesticated"
+            }
+        }
+    },
+    "zaeZQESTRDT": {
+        "bag": {
+            "potions": 10,
+            "pokeball": 15
+        },
+        "pokemons": {
+            "Jean-Marie": {
+                "name": "Hitmonchan",
+                "original_name": "Hitmonchan",
+                "pet_name": "Jean-Marie",
+                "hp_max": 68,
+                "hp": 0,
+                "xp": 4742,
+                "strength": 57,
+                "defense": 67,
+                "type": [
+                    "fighting"
+                ],
+                "level": 16,
+                "speed": 53,
+                "stage": 2,
+                "ev": {
+                    "hp": 0,
+                    "strength": 0,
+                    "defense": 0,
+                    "speed": 0,
+                    "xp": 0
                 },
                 "state": "domesticated"
             }

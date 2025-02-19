@@ -74,5 +74,5 @@ class PokemonStat():
                             create_player(self.player_name, self.pokemon)
                             return self.pokemon
                     elif event.key == pygame.K_ESCAPE:
-                        from .select_pokemons import SelectPokemons
-                        return SelectPokemons(self.player_name, self.screen, self.pokemon_list).display()
+                        from .selectpokemon import SelectPokemon
+                        return SelectPokemon(self.player_name, self.screen, self.pokemon_list).display()

@@ -49,7 +49,7 @@ class SelectPokemon():
 
             self.draw_text("Choose your first pokemon", 600, 150, LIGHT_GREEN)
 
-            for i, option in enumerate(self.options):
+            for i, in enumerate(self.options):
                 if i == self.selected_index:
                     # color = LIGHT_GREEN
                     option = pygame.transform.smoothscale(pygame.image.load(self.pokemons[i].get_image()), (self.screen.width // 4, self.screen.width //  4))
@@ -60,6 +60,7 @@ class SelectPokemon():
                 else:
                     # color = (bidule)
                     option = pygame.transform.smoothscale(pygame.image.load(self.pokemons[i].get_image()), (self.screen.width // 6, self.screen.width //  6))
+                    option.get_rect(center= (self.screen.width // 3 * 0.5+i, self.screen.height // 5*2.5))
                     self.screen.display.blit(option, self.options_rect[i])
                 # color = LIGHT_GREEN if i == self.selected_index else (255, 255, 255)
                 # self.draw_text(option, 600, 300 + i * 60, color)
