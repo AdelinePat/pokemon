@@ -28,7 +28,7 @@ class AttackMenu:
         surface = self.font.render(text, True, color)
         rect = surface.get_rect(center=(x, y))
         self.screen.get_display().blit(surface, rect)
-        
+
     def display(self):
         """
         Main menu loop that displays options and handles user input.
@@ -56,7 +56,9 @@ class AttackMenu:
             # Draw menu options
             for i, option in enumerate(self.options):
                 color = LIGHT_GREEN if i == self.selected_index else DARK_GREEN  # Highlight selected option
-                self.draw_text(option, self.screen.width//2 + i * 200, self.screen.height//8*7  , color)
+                # self.draw_text(option, self.screen.width//2 + i * 200, self.screen.height//8*7  , color)
+                self.util.draw_text(option, REGULAR_FONT, self.screen.width //30, self.screen,\
+                                    (self.screen.width//2 + i * 200, self.screen.height//8*7), color)
 
             pygame.display.flip()  # Refresh the screen
 

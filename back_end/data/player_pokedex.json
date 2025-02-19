@@ -34,23 +34,23 @@
                 "name": "Dragonite",
                 "original_name": "Dratini",
                 "pet_name": "Jean-Robert",
-                "hp_max": 188,
+                "hp_max": 191,
                 "hp": 184,
-                "xp": 42375,
-                "strength": 174,
-                "defense": 181,
+                "xp": 42713,
+                "strength": 177,
+                "defense": 184,
                 "type": [
                     "dragon",
                     "flying"
                 ],
                 "level": 35,
-                "speed": 181,
+                "speed": 183,
                 "stage": 3,
                 "ev": {
                     "hp": 1,
-                    "strength": 1,
-                    "defense": 1,
-                    "speed": 0,
+                    "strength": 3,
+                    "defense": 2,
+                    "speed": 3,
                     "xp": 0
                 },
                 "state": "domesticated"
@@ -108,24 +108,24 @@
                 "name": "Ninetales",
                 "original_name": "Vulpix",
                 "pet_name": "Jean-Charles",
-                "hp_max": 71,
+                "hp_max": 78,
                 "hp": 71,
-                "xp": 5569,
-                "strength": 72,
-                "defense": 54,
+                "xp": 5922,
+                "strength": 79,
+                "defense": 64,
                 "type": [
                     "ice",
                     "fairy"
                 ],
-                "level": 17,
-                "speed": 80,
+                "level": 18,
+                "speed": 95,
                 "stage": 2,
                 "ev": {
-                    "hp": 0,
-                    "strength": 0,
-                    "defense": 0,
-                    "speed": 0,
-                    "xp": 0
+                    "hp": 2,
+                    "strength": 3,
+                    "defense": 2,
+                    "speed": 2,
+                    "xp": 2
                 },
                 "state": "domesticated"
             },

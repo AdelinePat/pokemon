@@ -137,9 +137,10 @@ class ChangePokemonInFight():
                     sys.exit()
                 if event.type == pygame.KEYDOWN:
 
-                    if event.key == pygame.K_DOWN:
+                    if event.key == pygame.K_DOWN or  event.key == pygame.K_RIGHT:
                         self.selected_index = (self.selected_index + 1) % len(self.options)
-                    elif event.key == pygame.K_UP:
+                        
+                    elif event.key == pygame.K_UP  or event.key == pygame.K_LEFT:
                         self.selected_index = (self.selected_index - 1) % len(self.options)
 
                     elif event.key == pygame.K_RETURN:

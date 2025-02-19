@@ -56,7 +56,9 @@ class BagMenu:
             # Draw menu options
             for i, option in enumerate(self.options):
                 color = LIGHT_GREEN if i == self.selected_index else DARK_GREEN  # Highlight selected option
-                self.draw_text(option, self.screen.width//2 + i * 200, self.screen.height//8*7  , color)
+                # self.draw_text(option, self.screen.width//2 + i * 200, self.screen.height//8*7  , color)
+                self.util.draw_text(option, REGULAR_FONT, self.screen.width //30, self.screen,\
+                                    (self.screen.width//2 + i * 200, self.screen.height//8*7), color)
 
             pygame.display.flip()  # Refresh the screen
 
