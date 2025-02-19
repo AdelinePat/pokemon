@@ -128,10 +128,11 @@ class Evolution():
                                 self.__stage += 1
                                 self.update_evolution_stage()
                                 return True
-                        elif level == 20:
-                            self.__stage += 1
-                            self.update_evolution_stage()
-                            return True
+                        elif level >= 20:
+                            if self.__stage == 1:
+                                self.__stage += 1
+                                self.update_evolution_stage()
+                                return True
                     case 2:
                         if level in range(22, 32):
                             luck = random.randrange(100)
@@ -139,10 +140,11 @@ class Evolution():
                                 self.__stage += 1
                                 self.update_evolution_stage()
                                 return True
-                        elif level == 32:
-                            self.__stage += 1
-                            self.update_evolution_stage()
-                            return True
+                        elif level >= 32:
+                            if self.__stage == 2:
+                                self.__stage += 1
+                                self.update_evolution_stage()
+                                return True
             if self.__evolution_number == 2: 
                 match self.__stage:
                     case 1:
@@ -152,10 +154,11 @@ class Evolution():
                                 self.__stage += 1
                                 self.update_evolution_stage()
                                 return True
-                        elif level == 25:
-                            self.__stage += 1
-                            self.update_evolution_stage()
-                            return True
+                        elif level >= 25:
+                            if self.__stage == 1:
+                                self.__stage += 1
+                                self.update_evolution_stage()
+                                return True
             
         # if level in range(5,10):
         #     luck = random.randrange(100)

@@ -20,7 +20,7 @@ from back_end.data_access.wild_pokemons import save_wild_pokemon
 from front_end.gameplay.healthdisplay import HealthDisplay
 
 class InFight():
-    def __init__(self, screen, player):
+    def __init__(self, screen, player, pokemon):
         """
         Initialize the menu with the screen, font, options, and selected index.
         """
@@ -33,7 +33,8 @@ class InFight():
         self.selected_index = 0  # Index of the currently selected option
         self.running = True  # Controls the menu loop
         self.player = player.player_name
-        self.pokemon = get_first_pokemon(self.player)
+        # self.pokemon = get_first_pokemon(self.player)
+        self.pokemon = pokemon
         
         self.bag = get_bag_from_pokedex(self.player)
         self.fight = Fight(self.pokemon, self.pokemon_enemy)
@@ -80,7 +81,7 @@ class InFight():
         """
         battle_floor = self.load_image(BATTLE_FLOOR)
         battle_floor2 = pygame.transform.flip(battle_floor, True, False)
-        pokemon = pygame.transform.flip(self.load_image(self.pokemon.image), True, False)
+        
         pokemon_enemy = self.load_image(self.pokemon_enemy.image)
         time_count = 0
         var_x = 5
@@ -90,6 +91,9 @@ class InFight():
         message_damage = None
         message_attack = None
         another_option = ""
+        level = self.pokemon.get_level()
+        # stage = self.pokemon.get_stage()
+        name = self.pokemon.name
         # # fleeing = False
         # my_pokemon_x = int(self.screen.width // 10 * 2.5)
         # my_pokemon_y = int(self.screen.height // 7 * 5.4)
@@ -106,6 +110,7 @@ class InFight():
             player_turn = True
 
         while self.running: 
+            pokemon = pygame.transform.flip(self.load_image(self.pokemon.get_image()), True, False)
             
             #DISPLAY
             self.screen.update()
@@ -140,7 +145,12 @@ class InFight():
                 elif another_option == "Success":
                     self.draw_win_capture_screen(self.pokemon_enemy)
                 else:
-                    self.draw_win_player_screen()
+                    if self.pokemon.name != name:
+                        self.draw_evolution(name)
+                    elif self.pokemon.get_level() != level:
+                        self.draw_level_up(level)
+                    else:
+                        self.draw_win_player_screen()
 
             if message_attack and message_damage and not win:
                 now_time = pygame.time.get_ticks()
@@ -315,6 +325,27 @@ class InFight():
         y = self.screen.height // 2
         self.util.draw_text("You won the fight!", REGULAR_FONT, font_size , self.screen, (x, y - font_size*2))
         self.util.draw_text(f"You gained {self.pokemon.get_xp_gained(self.pokemon_enemy)} XP", REGULAR_FONT, font_size, self.screen, (x, y))
+        self.util.draw_text(f"Total XP : {self.pokemon.get_xp()}", REGULAR_FONT, font_size, self.screen, (x, y + font_size*2))
+
+    def draw_level_up(self, level):
+        self.util.draw_window_with_background(self.screen, self.screen.width //2.5, self.screen.height //2.5)
+        font_size = self.screen.height // 22
+        x  = self.screen.width //2
+        y = self.screen.height // 2
+        self.util.draw_text("You won the fight!", REGULAR_FONT, font_size , self.screen, (x, y - font_size*1.5))
+        self.util.draw_text(f"You level up : {level} > {self.pokemon.get_level()}", REGULAR_FONT, font_size , self.screen, (x, y - font_size*0.5))
+        self.util.draw_text(f"You gained {self.pokemon.get_xp_gained(self.pokemon_enemy)} XP", REGULAR_FONT, font_size, self.screen, (x, y + font_size*0.5))
+        self.util.draw_text(f"Total XP : {self.pokemon.get_xp()}", REGULAR_FONT, font_size, self.screen, (x, y + font_size*1.5))
+
+    def draw_evolution(self, name):
+        self.util.draw_window_with_background(self.screen, self.screen.width //2.5, self.screen.height //2.5)
+        font_size = self.screen.height // 22
+        x  = self.screen.width //2
+        y = self.screen.height // 2
+        self.util.draw_text("You won the fight!", REGULAR_FONT, font_size , self.screen, (x, y - font_size*2))
+        self.util.draw_text(f"Your pokemon evolved", REGULAR_FONT, font_size , self.screen, (x, y - font_size))
+        self.util.draw_text(f"from {name} to {self.pokemon.name}",REGULAR_FONT, font_size , self.screen, (x, y))
+        self.util.draw_text(f"You gained {self.pokemon.get_xp_gained(self.pokemon_enemy)} XP", REGULAR_FONT, font_size, self.screen, (x, y + font_size))
         self.util.draw_text(f"Total XP : {self.pokemon.get_xp()}", REGULAR_FONT, font_size, self.screen, (x, y + font_size*2))
 
     def draw_win_capture_screen(self, pokemon):

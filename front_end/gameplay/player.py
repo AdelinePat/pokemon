@@ -7,10 +7,10 @@ from .switch import Switch
 # from front_end.gameplay.battlescreen import BattleScreen
 from front_end.in_fight.in_fight import InFight
 # from front_end.menu.menu import Menu
-import front_end.menu.menu as menu
+from front_end.menu.pause_menu import PauseMenu
 
 class Player(Entity):
-    def __init__(self, keylistener: KeyListener, screen: Screen, x: int, y: int, player_name: str):
+    def __init__(self, keylistener: KeyListener, screen: Screen, x: int, y: int, player_name: str, pokemon: object):
         super().__init__(keylistener, screen, x, y)
         self.switchs: list[Switch] | None = None  # List of switches the player can activate
         self.change_map = None  # Stores the switch that changes the map
@@ -22,10 +22,20 @@ class Player(Entity):
         # self.speed = 1  # Default walking speed
         self.flee_steps = 0  # Number of steps taken while fleeing
         self.max_flee_steps = 100  # Maximum number of fleeing steps
+        self.active_pokemon = pokemon
+        self.pause_menu = False
 
     def update(self) -> None:
         """Update player state, checking inputs and movement."""
         self.check_input()  # Calls check_input() only once per update
+        
+        # for event in pygame.event.get():
+        #         if event.type == pygame.QUIT:  # If user closes the window
+        #             pygame.quit()
+        #             sys.exit()
+        #         if event.type == pygame.KEYDOWN:
+        
+            # if self.active_pokemon
         if self.is_fleeing:
             move_speed = 10
             self.flee_steps += 1
@@ -57,6 +67,56 @@ class Player(Entity):
             map_width = self.screen.width  # Map width
             map_height = self.screen.height  # Map height
 
+            
+            # for event in pygame.event.get():
+            #     if event.type == pygame.QUIT:  # If user closes the window
+            #         pygame.quit()
+            #         # sys.exit()
+            #     if event.type == pygame.KEYDOWN:
+            #         if event.key == pygame.K_ESCAPE:
+            #             self.player_name, self.active_pokemon = PauseMenu(self.player_name, self.active_pokemon, self.screen).display() 
+            #         elif event.key == pygame.K_q or event.key == pygame.K_LEFT:
+            #             self.flee_steps += 1
+            #             if temp_hitbox.x - move_speed >= 0:  # Prevents going out of bounds on the left
+            #                 temp_hitbox.x -= move_speed
+            #                 # self.flee_steps += 1
+            #                 if not self.check_collisions(temp_hitbox):
+            #                     self.check_collisions_switchs(temp_hitbox)
+            #                     self.move_left()
+            #         elif event.key == pygame.K_d or event.key == pygame.K_RIGHT:
+            #             self.flee_steps += 1
+            #             if temp_hitbox.x + temp_hitbox.width + move_speed <= map_width:  # Prevents going out of bounds on the right
+            #                 temp_hitbox.x += move_speed
+                            
+            #                 if not self.check_collisions(temp_hitbox):
+            #                     self.check_collisions_switchs(temp_hitbox)
+            #                     self.move_right()
+            #                     self.pause_menu = False
+
+            #         elif event.key == pygame.K_z or event.key == pygame.K_UP:
+            #             self.flee_steps += 1
+            #             if temp_hitbox.y - move_speed >= 0:  # Prevents going out of bounds at the top
+            #                 temp_hitbox.y -= move_speed
+            #                 if not self.check_collisions(temp_hitbox):
+            #                     self.check_collisions_switchs(temp_hitbox)
+            #                     self.move_up()
+                    
+            #         elif event.key == pygame.K_s or event.key == pygame.K_DOWN:
+            #             self.flee_steps += 1
+            #             if temp_hitbox.y + temp_hitbox.height + move_speed <= map_height:  # Prevents going out of bounds at the bottom
+            #                 temp_hitbox.y += move_speed
+            #                 if not self.check_collisions(temp_hitbox):
+            #                     self.check_collisions_switchs(temp_hitbox)
+            #                     self.move_down()
+
+
+            if self.keyListener.key_pressed(pygame.K_ESCAPE):
+                self.player_name, self.active_pokemon = PauseMenu(self.player_name, self.active_pokemon, self.screen).display()
+                # self.pause_menu = True
+            
+            # if self.keyListener.key_pressed(pygame.K_a):
+            #     self.pause_menu = False
+### A REMETTRE ?
             if self.keyListener.key_pressed(pygame.K_q) or self.keyListener.key_pressed(pygame.K_LEFT):  # Left
                 self.flee_steps += 1
                 if temp_hitbox.x - move_speed >= 0:  # Prevents going out of bounds on the left
@@ -65,12 +125,13 @@ class Player(Entity):
                     if not self.check_collisions(temp_hitbox):
                         self.check_collisions_switchs(temp_hitbox)
                         self.move_left()
+                        self.pause_menu = False
                     #     if self.is_fleeing:
                     #         self.flee_steps += 1
                     # else:
                     #     self.direction = "left"
 
-            elif self.keyListener.key_pressed(pygame.K_d) or self.keyListener.key_pressed(pygame.K_RIGHT):  # Right
+            if self.keyListener.key_pressed(pygame.K_d) or self.keyListener.key_pressed(pygame.K_RIGHT):  # Right
                 self.flee_steps += 1
                 if temp_hitbox.x + temp_hitbox.width + move_speed <= map_width:  # Prevents going out of bounds on the right
                     temp_hitbox.x += move_speed
@@ -78,30 +139,33 @@ class Player(Entity):
                     if not self.check_collisions(temp_hitbox):
                         self.check_collisions_switchs(temp_hitbox)
                         self.move_right()
+                        self.pause_menu = False
                     #     if self.is_fleeing:
                     #         self.flee_steps += 1
                     # else:
                     #     self.direction = "right"
 
-            elif self.keyListener.key_pressed(pygame.K_z) or self.keyListener.key_pressed(pygame.K_UP):  # Up
+            if self.keyListener.key_pressed(pygame.K_z) or self.keyListener.key_pressed(pygame.K_UP):  # Up
                 self.flee_steps += 1
                 if temp_hitbox.y - move_speed >= 0:  # Prevents going out of bounds at the top
                     temp_hitbox.y -= move_speed
                     if not self.check_collisions(temp_hitbox):
                         self.check_collisions_switchs(temp_hitbox)
                         self.move_up()
+                        self.pause_menu = False
                     #     if self.is_fleeing:
                     #         self.flee_steps += 1
                     # else:
                     #     self.direction = "up"
 
-            elif self.keyListener.key_pressed(pygame.K_s) or self.keyListener.key_pressed(pygame.K_DOWN):  # Down
+            if self.keyListener.key_pressed(pygame.K_s) or self.keyListener.key_pressed(pygame.K_DOWN):  # Down
                 self.flee_steps += 1
                 if temp_hitbox.y + temp_hitbox.height + move_speed <= map_height:  # Prevents going out of bounds at the bottom
                     temp_hitbox.y += move_speed
                     if not self.check_collisions(temp_hitbox):
                         self.check_collisions_switchs(temp_hitbox)
                         self.move_down()
+                        self.pause_menu = False
                     #     if self.is_fleeing:
                     #         self.flee_steps += 1
                     # else:
@@ -144,11 +208,6 @@ class Player(Entity):
             self.is_fleeing = False
             # self.flee_steps = 0
             self.speed = 1
-
-        if self.keyListener.key_pressed(pygame.K_ESCAPE):  # Release space to stop fleeing
-            blabla = menu.Menu(self.screen).display()
-        
-        
 
     def switch_bike(self, deactive=False):
         """Toggles bike mode on/off."""

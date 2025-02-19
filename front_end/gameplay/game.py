@@ -4,7 +4,7 @@ from .map import Map
 from .player import Player
 
 class Game:
-    def __init__(self, screen, player_name):
+    def __init__(self, screen, player_name, pokemon):
         """
         Initializes the game, setting up the main components such as the map, player, and key listener.
         """
@@ -12,8 +12,9 @@ class Game:
         self.screen = screen  # Reference to the game screen
         self.map: Map = Map(self.screen)  # Create the game map
         self.keylistener = KeyListener()  # Initialize the key listener to track player input
-        self.player: Player = Player(self.keylistener, self.screen, 100, 300, player_name)  # Create the player character
+        self.player: Player = Player(self.keylistener, self.screen, 100, 300, player_name, pokemon)  # Create the player character
         self.map.add_player(self.player)  # Add the player to the map 
+        self.pokemon = pokemon
 
     def run(self):
         """

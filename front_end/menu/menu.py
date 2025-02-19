@@ -6,6 +6,7 @@ from front_end.gameplay.game import Game
 from .select_player import SelectPlayer
 from __settings__ import MAIN_MENU_BACKGROUND1, LIGHT_GREEN
 from front_end.sounds import Sounds
+from back_end.data_access.pokemon_pokedex_service import get_first_pokemon
 
 sounds = Sounds()
 
@@ -63,7 +64,7 @@ class Menu:
                                 name_input = NameInput(self.screen)
                                 player_name, pokemon = name_input.get_name()
                                 print(player_name, pokemon)
-                                game = Game(self.screen, player_name)
+                                game = Game(self.screen, player_name, pokemon)
                                 
                                 # Stop the opening music and start the map music
                                 sounds.stop_background_music()  # Correct the method name here
@@ -72,7 +73,8 @@ class Menu:
                                 game.run()
                             case 1:
                                 select_player = SelectPlayer(self.screen).display()
-                                game = Game(self.screen, select_player)
+                                pokemon = get_first_pokemon(select_player)
+                                game = Game(self.screen, select_player, pokemon)
                                 print(select_player)
 
                                 # Stop the opening music and start the map music

@@ -2,10 +2,10 @@ import pygame
 from __settings__ import REGULAR_FONT, BACKGROUND, DARK_GREEN, LIGHT_GREEN
 
 class UtilTool():
-    def draw_text(self, text, font, font_size, screen, center, color=DARK_GREEN):
+    def draw_text(self, text, font, font_size, screen, my_center, color=DARK_GREEN):
         font_load = pygame.font.Font(font, font_size)
         dialog = font_load.render(text, True, color)
-        dialog_rect = dialog.get_rect(center = center)
+        dialog_rect = dialog.get_rect(center = my_center)
         screen.display.blit(dialog, dialog_rect)
 
     def draw_color_filter(self, screen, color=DARK_GREEN):

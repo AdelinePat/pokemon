@@ -8,6 +8,7 @@ from .switch import Switch
 from front_end.in_fight.in_fight import InFight
 # from Pokemon import PokemonBattle  # Import the PokemonBattle class
 from front_end.sounds import Sounds
+from front_end.menu.pause_menu import PauseMenu
 
 sounds = Sounds()
 
@@ -81,6 +82,7 @@ class Map:
         self.player.start_battle(self.battlepokemon)
 
     def update(self) -> None:
+       
         if self.player:
             if self.player.change_map and self.player.step >= 8:
                 self.switch_map(self.player.change_map)
@@ -108,6 +110,8 @@ class Map:
             if not self.player.rect.colliderect(this_battle_zone) and self.in_battle:
                 self.in_battle = False
 
+           
+
         # Update all sprites and center the map
         self.group.update()
         self.group.center(self.player.rect.center)
@@ -120,7 +124,7 @@ class Map:
         # battle_screen.run()
          # Start a battle when the player enters a battle zone
         print("Starting Pokémon battle! dans start_battle")
-        battle_screen = InFight(self.screen, self.player).display()
+        battle_screen = InFight(self.screen, self.player, self.player.active_pokemon).display()
         self.player.flee_steps = 0
         return battle_screen
         

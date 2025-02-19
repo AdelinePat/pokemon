@@ -23,6 +23,17 @@ def get_pokemon_from_pokedex(player_name, pokemon_pet_name):
         if pokemon == pokemon_pet_name:
             my_pokemon = instanciate_pokemon(pokemons[pokemon])
             return my_pokemon
+        
+def get_all_pokemons_from_pokedex(player_name):
+    with open(PLAYER_POKEDEX, "r") as file:
+        pokemons = json.load(file)[player_name]["pokemons"]
+
+    pokemon_list = []
+    for pokemon in pokemons:
+        my_pokemon = instanciate_pokemon(pokemons[pokemon])
+        pokemon_list.append(my_pokemon)
+
+    return pokemon_list
 
 def get_first_pokemon(player_name):
     with open(PLAYER_POKEDEX, "r") as file:

@@ -6,26 +6,26 @@
         },
         "pokemons": {
             "Jean-Baptiste": {
-                "name": "Venusaur",
+                "name": "Ivysaur",
                 "original_name": "Bulbasaur",
                 "pet_name": "Jean-Baptiste",
-                "hp_max": 1891,
-                "hp": -20,
-                "xp": 12121,
-                "strength": 139,
-                "defense": 142,
+                "hp_max": 2135,
+                "hp": 1861,
+                "xp": 13681,
+                "strength": 357,
+                "defense": 319,
                 "type": [
                     "grass",
                     "poison"
                 ],
-                "level": 23,
-                "speed": 846,
-                "stage": 3,
+                "level": 20,
+                "speed": 1054,
+                "stage": 2,
                 "ev": {
-                    "hp": 2,
+                    "hp": 1,
                     "strength": 1,
                     "defense": 3,
-                    "speed": 3,
+                    "speed": 0,
                     "xp": 1
                 },
                 "state": "domesticated"
@@ -59,24 +59,24 @@
                 "name": "Gyarados",
                 "original_name": "Magikarp",
                 "pet_name": "Jean-Pierre",
-                "hp_max": 71,
-                "hp": 71,
-                "xp": 6686,
-                "strength": 73,
-                "defense": 58,
+                "hp_max": 116,
+                "hp": 48,
+                "xp": 7869,
+                "strength": 108,
+                "defense": 100,
                 "type": [
                     "water",
                     "flying"
                 ],
-                "level": 18,
-                "speed": 56,
+                "level": 20,
+                "speed": 96,
                 "stage": 2,
                 "ev": {
-                    "hp": 0,
-                    "strength": 0,
+                    "hp": 1,
+                    "strength": 1,
                     "defense": 0,
-                    "speed": 0,
-                    "xp": 0
+                    "speed": 3,
+                    "xp": 1
                 },
                 "state": "domesticated"
             },
