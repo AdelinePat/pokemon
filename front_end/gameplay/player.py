@@ -113,7 +113,7 @@ class Player(Entity):
             if self.keyListener.key_pressed(pygame.K_ESCAPE):
                 self.player_name, self.active_pokemon = PauseMenu(self.player_name, self.active_pokemon, self.screen).display()
                 # self.pause_menu = True
-            
+                self.keyListener.remove_key(pygame.K_ESCAPE)            
             # if self.keyListener.key_pressed(pygame.K_a):
             #     self.pause_menu = False
 ### A REMETTRE ?

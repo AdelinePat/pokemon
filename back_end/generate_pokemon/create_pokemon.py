@@ -1,6 +1,6 @@
 import random, json
 from back_end.models.pokemon import Pokemon
-from __settings__ import TYPES_PATH
+from __settings__ import TYPES_PATH, EVOLUTION_STAGE_PATH
 
 def get_first_type_dict(first_type):
      with open(TYPES_PATH, 'r') as file:
@@ -77,3 +77,55 @@ def create_world_pokemons():
         # print(a_pokemon)
     
     return all_pokemons
+
+def create_low_level_world_pokemons():
+    with open(EVOLUTION_STAGE_PATH, 'r') as file:
+        pokemons_original_name = json.load(file)
+        pokemons_original_name_list = list(pokemons_original_name.keys()) 
+
+    all_pokemons = []
+    for name in pokemons_original_name_list:
+        if pokemons_original_name[name][name] == 1:
+
+            type_list = []
+            first_type, second_type, stage = get_type_low_level_pokemon(name)
+            type_list.append(first_type)
+            if second_type != "alone":
+                type_list.append(second_type)
+
+            level = level_from_stage(stage)
+
+            hp = random.randrange(10, 31) + level*3
+            strength = random.randrange(2,31) + level*3
+            speed = random.randrange(2,31) + level*3
+            defense_point = random.randrange(2,21) + level*3
+
+            my_pokemon = Pokemon(name, name, hp, hp, strength, defense_point, type_list, level, speed, stage)
+            
+            xp = random.randrange(my_pokemon.get_level()**3, (my_pokemon.get_level()+1)**3)
+            my_pokemon.set_xp(xp)
+            all_pokemons.append(my_pokemon)
+            # print(my_pokemon)
+    return all_pokemons
+
+def get_type_low_level_pokemon(original_name):
+    with open(TYPES_PATH, 'r') as file:
+        types = json.load(file)
+        type_list = list(types.keys())
+
+    for first_type in type_list:
+        second_type_list = list(types[first_type].keys())
+
+        for second_type in second_type_list:
+            names_list = list(types[first_type][second_type]["names"].keys())
+
+            for name in names_list:
+                final_name_list = list(types[first_type][second_type]["names"][name].keys())
+                final_name_dict = types[first_type][second_type]["names"][name]
+                if 1 in list(final_name_dict.values()):
+                    final_name = final_name_list[list(final_name_dict.values()).index(1)]
+
+                    if final_name == original_name:
+                        return first_type, second_type, 1
+                                         
+create_low_level_world_pokemons()

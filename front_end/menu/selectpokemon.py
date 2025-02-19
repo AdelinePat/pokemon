@@ -9,7 +9,7 @@ class SelectPokemon():
     def __init__(self, player_name, screen, pokemon_list=[]):
         self.player_name = player_name
         self.screen = screen
-        self.background = POKEMON_CENTER
+        self.background = pygame.image.load(POKEMON_CENTER)
         self.util = UtilTool()
         self.font = pygame.font.Font(None, 50)
         if not pokemon_list:
@@ -52,7 +52,7 @@ class SelectPokemon():
 
             self.draw_text("Choose your first pokemon", 600, 150, LIGHT_GREEN)
 
-            for i, in enumerate(self.options):
+            for i, option in enumerate(self.options):
                 if i == self.selected_index:
                     # color = LIGHT_GREEN
                     option = pygame.transform.smoothscale(pygame.image.load(self.pokemons[i].get_image()), (self.screen.width // 4, self.screen.width //  4))
@@ -86,7 +86,9 @@ class SelectPokemon():
                     elif event.key == pygame.K_RETURN:
                         for index in range(len(self.options)):
                             if self.selected_index == index:
-                                pokemon = PokemonStat(self.player_name, self.pokemons, self.pokemons[index], self.screen, self.background).display()
+                                pokemon_enemy = None
+                                #  player_name, pokemon_list, pokemon, pokemon_enemy, screen, background
+                                pokemon = PokemonStat(self.player_name, self.pokemons, self.pokemons[index], pokemon_enemy, self.screen, self.background).display()
                                 return pokemon
 
                     elif event.key == pygame.K_ESCAPE:
