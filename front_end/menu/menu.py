@@ -5,7 +5,9 @@ from front_end.menu.name_input import NameInput
 from front_end.gameplay.game import Game
 from .select_player import SelectPlayer
 from __settings__ import MAIN_MENU_BACKGROUND1, LIGHT_GREEN
+from front_end.sounds import Sounds
 
+sounds = Sounds()
 
 class Menu:
     def __init__(self, screen):
@@ -25,8 +27,6 @@ class Menu:
         surface = self.font.render(text, True, color)
         rect = surface.get_rect(center=(x, y))
         self.screen.get_display().blit(surface, rect)
-
-    
 
     def display(self):
         """
@@ -64,15 +64,21 @@ class Menu:
                                 player_name, pokemon = name_input.get_name()
                                 print(player_name, pokemon)
                                 game = Game(self.screen, player_name)
+                                
+                                # Stop the opening music and start the map music
+                                sounds.stop_background_music()  # Correct the method name here
+                                sounds.play_map_music()  # Play map music
+
                                 game.run()
                             case 1:
                                 select_player = SelectPlayer(self.screen).display()
                                 game = Game(self.screen, select_player)
                                 print(select_player)
+
+                                # Stop the opening music and start the map music
+                                sounds.stop_background_music()  # Correct the method name here
+                                sounds.play_map_music()  # Play map music
                                 game.run()
-                                # game = Game(self.screen, "test")
-                                # game.run()
-                                # print("Reprendre la partie (à faire)")
                             case 2:
                                 pygame.quit()
                                 sys.exit()

@@ -1,7 +1,7 @@
 {
     "Billy": {
         "bag": {
-            "potions": 8,
+            "potions": 5,
             "pokeball": 8
         },
         "pokemons": {
@@ -9,24 +9,24 @@
                 "name": "Venusaur",
                 "original_name": "Bulbasaur",
                 "pet_name": "Jean-Baptiste",
-                "hp_max": 1884,
-                "hp": 243,
-                "xp": 12050,
-                "strength": 136,
-                "defense": 139,
+                "hp_max": 1891,
+                "hp": 10,
+                "xp": 12121,
+                "strength": 139,
+                "defense": 142,
                 "type": [
                     "grass",
                     "poison"
                 ],
                 "level": 23,
-                "speed": 842,
+                "speed": 846,
                 "stage": 3,
                 "ev": {
                     "hp": 2,
-                    "strength": 3,
+                    "strength": 1,
                     "defense": 3,
-                    "speed": 0,
-                    "xp": 3
+                    "speed": 3,
+                    "xp": 1
                 },
                 "state": "domesticated"
             },
@@ -439,6 +439,136 @@
                     "defense": 0,
                     "speed": 0,
                     "xp": 0
+                },
+                "state": "domesticated"
+            }
+        }
+    },
+    "f": {
+        "bag": {
+            "potions": 10,
+            "pokeball": 15
+        },
+        "pokemons": {
+            "Jean-Charles": {
+                "name": "Jynx",
+                "original_name": "Jynx",
+                "pet_name": "Jean-Charles",
+                "hp_max": 64,
+                "hp": 16,
+                "xp": 2385,
+                "strength": 60,
+                "defense": 57,
+                "type": [
+                    "ice",
+                    "psychic"
+                ],
+                "level": 13,
+                "speed": 41,
+                "stage": 2,
+                "ev": {
+                    "hp": 0,
+                    "strength": 0,
+                    "defense": 0,
+                    "speed": 0,
+                    "xp": 0
+                },
+                "state": "domesticated"
+            }
+        }
+    },
+    "julien": {
+        "bag": {
+            "potions": 10,
+            "pokeball": 14
+        },
+        "pokemons": {
+            "Jean-Luc": {
+                "name": "Clefairy",
+                "original_name": "Clefairy",
+                "pet_name": "Jean-Luc",
+                "hp_max": 24,
+                "hp": 0,
+                "xp": 1,
+                "strength": 16,
+                "defense": 8,
+                "type": [
+                    "fairy"
+                ],
+                "level": 1,
+                "speed": 5,
+                "stage": 1,
+                "ev": {
+                    "hp": 0,
+                    "strength": 0,
+                    "defense": 0,
+                    "speed": 0,
+                    "xp": 0
+                },
+                "state": "domesticated"
+            }
+        }
+    },
+    "tristan": {
+        "bag": {
+            "potions": 9,
+            "pokeball": 15
+        },
+        "pokemons": {
+            "Jean-Claude": {
+                "name": "Jolteon",
+                "original_name": "Eevee",
+                "pet_name": "Jean-Claude",
+                "hp_max": 68,
+                "hp": 0,
+                "xp": 5590,
+                "strength": 64,
+                "defense": 63,
+                "type": [
+                    "electric"
+                ],
+                "level": 17,
+                "speed": 72,
+                "stage": 2,
+                "ev": {
+                    "hp": 0,
+                    "strength": 0,
+                    "defense": 0,
+                    "speed": 0,
+                    "xp": 0
+                },
+                "state": "domesticated"
+            }
+        }
+    },
+    "kevin": {
+        "bag": {
+            "potions": 10,
+            "pokeball": 15
+        },
+        "pokemons": {
+            "Jean-Robert": {
+                "name": "Dragonite",
+                "original_name": "Dratini",
+                "pet_name": "Jean-Robert",
+                "hp_max": 156,
+                "hp": 74,
+                "xp": 41143,
+                "strength": 169,
+                "defense": 153,
+                "type": [
+                    "dragon",
+                    "flying"
+                ],
+                "level": 35,
+                "speed": 157,
+                "stage": 3,
+                "ev": {
+                    "hp": 3,
+                    "strength": 3,
+                    "defense": 3,
+                    "speed": 3,
+                    "xp": 1
                 },
                 "state": "domesticated"
             }

@@ -7,6 +7,9 @@ from .switch import Switch
 # from front_end.gameplay.battlescreen import BattleScreen
 from front_end.in_fight.in_fight import InFight
 # from Pokemon import PokemonBattle  # Import the PokemonBattle class
+from front_end.sounds import Sounds
+
+sounds = Sounds()
 
 class Map:
     def __init__(self, screen: Screen):
@@ -44,6 +47,7 @@ class Map:
             if obj.name == "collision":
                 self.collisions.append(pygame.Rect(obj.x, obj.y, obj.width, obj.height))
             elif obj.name == "collisionpokemon":
+                
                 self.battlepokemon.append(pygame.Rect(obj.x, obj.y, obj.width, obj.height))
             # Add switches and other objects to the map
             elif obj.name and obj.name.startswith("switch"):
@@ -86,9 +90,13 @@ class Map:
             # Check for collision with battle zones
             for battle_zone in self.battlepokemon:
                 if self.player.rect.colliderect(battle_zone) and not self.in_battle:
+                    sounds.stop_background_music()  # Stop map music
+                    sounds.play_combat_music()  # Play combat music
                     self.in_battle = True  # Set the flag for battle
                     self.player.is_fleeing = self.start_battle()  # Start the Pokémon battle
                     this_battle_zone = battle_zone
+                    sounds.stop_background_music()
+                    sounds.play_map_music()
                     # battle_screen = InFight(self.screen, self.player).display()
                     # battle_screen.run()
                     # is_fleeing = battle_screen.fleeing
