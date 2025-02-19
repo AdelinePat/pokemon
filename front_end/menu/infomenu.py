@@ -18,14 +18,6 @@ class InfoMenu:
         self.selected_index = 0  # Index of the currently selected option
         self.running = True  # Controls the menu loop
         self.util = UtilTool()
-        
-    def draw_text(self, text, x, y, color=(255, 255, 255)):
-        """
-        Renders text and displays it at the given (x, y) position.
-        """
-        surface = self.font.render(text, True, color)
-        rect = surface.get_rect(center=(x, y))
-        self.screen.get_display().blit(surface, rect)
 
     def display(self):
         """

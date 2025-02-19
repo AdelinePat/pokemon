@@ -4,9 +4,10 @@ import sys
 from front_end.menu.name_input import NameInput  
 from front_end.gameplay.game import Game
 from .select_player import SelectPlayer
-from __settings__ import MAIN_MENU_BACKGROUND1, LIGHT_GREEN
+from __settings__ import MAIN_MENU_BACKGROUND1, LIGHT_GREEN, REGULAR_FONT
 from front_end.sounds import Sounds
 from back_end.data_access.pokemon_pokedex_service import get_first_pokemon
+from front_end.menu.util_tool import UtilTool
 
 sounds = Sounds()
 
@@ -20,14 +21,7 @@ class Menu:
         self.options = ["Start Game", "Resume Game", "Exit"]  # Menu options
         self.selected_index = 0  # Index of the currently selected option
         self.running = True  # Controls the menu loop
-
-    def draw_text(self, text, x, y, color=(255, 255, 255)):
-        """
-        Renders text and displays it at the given (x, y) position.
-        """
-        surface = self.font.render(text, True, color)
-        rect = surface.get_rect(center=(x, y))
-        self.screen.get_display().blit(surface, rect)
+        self.util = UtilTool()
 
     def display(self):
         """
@@ -38,13 +32,19 @@ class Menu:
             self.screen.get_display().fill((0, 0, 0))
 
             self.screen.set_background_display(MAIN_MENU_BACKGROUND1)
+            
+            font_size = self.screen.height // 10
+            self.util.draw_text("Main Menu", REGULAR_FONT, font_size, self.screen,\
+                                (self.screen.width//2, self.screen.height // 10*2), LIGHT_GREEN)
 
-            self.draw_text("Main Menu", 600, 150, LIGHT_GREEN)  # Draw the title
 
             # Draw menu options
             for i, option in enumerate(self.options):
                 color = LIGHT_GREEN if i == self.selected_index else (255, 255, 255)  # Highlight selected option
-                self.draw_text(option, 600, 300 + i * 60, color)
+                # draw_text(self, text, font, font_size, screen, my_center, color=DARK_GREEN):
+                self.util.draw_text(option, REGULAR_FONT, font_size - 10, self.screen,\
+                                (self.screen.width//2, self.screen.height // 10*4 + i*150), color)
+                # self.util.draw_text(option, 600, 300 + i * 60, color)
 
             pygame.display.flip()  # Refresh the screen
 

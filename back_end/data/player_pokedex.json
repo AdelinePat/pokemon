@@ -222,24 +222,24 @@
                 "name": "Rhydon",
                 "original_name": "Rhyhorn",
                 "pet_name": "Jean-Christophe",
-                "hp_max": 146,
+                "hp_max": 185,
                 "hp": 117,
-                "xp": 10507,
-                "strength": 137,
-                "defense": 129,
+                "xp": 14058,
+                "strength": 179,
+                "defense": 162,
                 "type": [
                     "ground",
                     "rock"
                 ],
-                "level": 22,
-                "speed": 145,
+                "level": 24,
+                "speed": 182,
                 "stage": 2,
                 "ev": {
                     "hp": 0,
-                    "strength": 0,
-                    "defense": 3,
-                    "speed": 1,
-                    "xp": 3
+                    "strength": 1,
+                    "defense": 0,
+                    "speed": 3,
+                    "xp": 0
                 },
                 "state": "domesticated"
             },
@@ -247,24 +247,24 @@
                 "name": "Haunter",
                 "original_name": "Gastly",
                 "pet_name": "Jean-Eric",
-                "hp_max": 57,
+                "hp_max": 77,
                 "hp": 57,
-                "xp": 2473,
-                "strength": 61,
-                "defense": 49,
+                "xp": 3103,
+                "strength": 78,
+                "defense": 62,
                 "type": [
                     "ghost",
                     "poison"
                 ],
-                "level": 13,
-                "speed": 59,
+                "level": 14,
+                "speed": 79,
                 "stage": 2,
                 "ev": {
-                    "hp": 0,
-                    "strength": 0,
-                    "defense": 0,
-                    "speed": 0,
-                    "xp": 0
+                    "hp": 3,
+                    "strength": 2,
+                    "defense": 3,
+                    "speed": 1,
+                    "xp": 3
                 },
                 "state": "domesticated"
             },
@@ -272,24 +272,24 @@
                 "name": "Tauros",
                 "original_name": "Tauros",
                 "pet_name": "Jean-Marie",
-                "hp_max": 87,
+                "hp_max": 98,
                 "hp": 65,
-                "xp": 3466,
-                "strength": 83,
-                "defense": 71,
+                "xp": 3489,
+                "strength": 90,
+                "defense": 81,
                 "type": [
                     "fighting",
                     "water"
                 ],
-                "level": 13,
-                "speed": 63,
+                "level": 14,
+                "speed": 76,
                 "stage": 2,
                 "ev": {
                     "hp": 3,
                     "strength": 0,
-                    "defense": 1,
-                    "speed": 1,
-                    "xp": 0
+                    "defense": 4,
+                    "speed": 2,
+                    "xp": 2
                 },
                 "state": "domesticated"
             }
@@ -607,7 +607,7 @@
     },
     "zaeZQESTRDT": {
         "bag": {
-            "potions": 10,
+            "potions": 5,
             "pokeball": 15
         },
         "pokemons": {
@@ -615,20 +615,20 @@
                 "name": "Hitmonchan",
                 "original_name": "Hitmonchan",
                 "pet_name": "Jean-Marie",
-                "hp_max": 68,
-                "hp": 0,
-                "xp": 4742,
-                "strength": 57,
-                "defense": 67,
+                "hp_max": 91,
+                "hp": 65,
+                "xp": 5008,
+                "strength": 86,
+                "defense": 87,
                 "type": [
                     "fighting"
                 ],
-                "level": 16,
-                "speed": 53,
+                "level": 18,
+                "speed": 70,
                 "stage": 2,
                 "ev": {
-                    "hp": 0,
-                    "strength": 0,
+                    "hp": 1,
+                    "strength": 2,
                     "defense": 0,
                     "speed": 0,
                     "xp": 0

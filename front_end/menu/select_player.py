@@ -5,7 +5,8 @@ import sys
 # from codes.game import Game
 # from codes.select_player import SelectPlayer
 from back_end.controller import get_player_names
-from __settings__ import MAIN_MENU_BACKGROUND2, LIGHT_GREEN
+from __settings__ import MAIN_MENU_BACKGROUND2, LIGHT_GREEN, REGULAR_FONT, DARK_GREEN
+from front_end.menu.util_tool import UtilTool
 
 
 class SelectPlayer:
@@ -15,11 +16,7 @@ class SelectPlayer:
         self.options = get_player_names()
         self.selected_index = 0
         self.running = True
-
-    def draw_text(self, text, x, y, color=(255, 255, 255)):
-        surface = self.font.render(text, True, color)
-        rect = surface.get_rect(center=(x, y))
-        self.screen.get_display().blit(surface, rect)
+        self.util = UtilTool()
 
     def display(self):
         while self.running:
@@ -27,13 +24,32 @@ class SelectPlayer:
             self.screen.get_display().fill((0, 0, 0))
 
             self.screen.set_background_display(MAIN_MENU_BACKGROUND2)
+            font_size = self.screen.height // 10
+            self.util.draw_text("Select your player",REGULAR_FONT, font_size, self.screen,\
+                                 (self.screen.width//2, self.screen.height // 10*2), LIGHT_GREEN)
 
-            self.draw_text("Select your player", 600, 150, LIGHT_GREEN)
-
+            # for i, option in enumerate(self.options):
+            #     color = LIGHT_GREEN if i == self.selected_index else (255, 255, 255)
+            #     self.util.draw_text(option, REGULAR_FONT, font_size,\
+            #                         self.screen, (self.screen.width //2, self.screen.height // 10*3 + i*60), color)
             for i, option in enumerate(self.options):
-                color = LIGHT_GREEN if i == self.selected_index else (255, 255, 255)
-                self.draw_text(option, 600, 300 + i * 60, color)
+                if i == self.selected_index:
+                    color = LIGHT_GREEN
+                else:
+                    color = "white"
 
+                y = i % 5
+                if i in range(0,5):
+                    self.util.draw_text(option, REGULAR_FONT, self.screen.height//22, self.screen,\
+                                    (self.screen.width // 8*2, self.screen.height // 8 * y + self.screen.height // 8*3), color)
+                
+                elif i in range(5, 10):
+                    self.util.draw_text(option, REGULAR_FONT, self.screen.height//22, self.screen,\
+                                    (self.screen.width // 8*4, self.screen.height // 8 * y + self.screen.height // 8*3), color)
+
+                elif i in range(10, 15):
+                    self.util.draw_text(option, REGULAR_FONT, self.screen.height//22, self.screen,\
+                                        (self.screen.width // 8*6, self.screen.height // 8 * y + self.screen.height // 8*3), color)
             pygame.display.flip()
 
             for event in pygame.event.get():

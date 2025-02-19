@@ -2,13 +2,15 @@ import pygame
 import sys
 from .display_pokemon_stat import PokemonStat
 from back_end.controller import get_starter_pokemons
-from __settings__ import LIGHT_GREEN, POKEMON_CENTER, POKEMON_CENTER
+from __settings__ import LIGHT_GREEN, POKEMON_CENTER, POKEMON_CENTER, REGULAR_FONT
+from front_end.menu.util_tool import UtilTool
 
 class SelectPokemon():
     def __init__(self, player_name, screen, pokemon_list=[]):
         self.player_name = player_name
         self.screen = screen
         self.background = POKEMON_CENTER
+        self.util = UtilTool()
         self.font = pygame.font.Font(None, 50)
         if not pokemon_list:
             self.pokemons = get_starter_pokemons()

@@ -1,32 +1,35 @@
 import pygame
+from front_end.menu.util_tool import UtilTool
 from back_end.data_access.player_pokedex_service import does_player_exist
 from back_end.data_access.pokemon_pokedex_service import get_first_pokemon
 # from .select_pokemons import SelectPokemons
 from .selectpokemon import SelectPokemon
 from .intro import IntroChoice
-from __settings__ import MAIN_MENU_BACKGROUND4, LIGHT_GREEN
+from __settings__ import MAIN_MENU_BACKGROUND4, LIGHT_GREEN, REGULAR_FONT
 
 class NameInput:
     def __init__(self, screen):
         self.screen = screen
         self.font = pygame.font.Font(None, 50)
         self.player_name = ""
-
-    def draw_text(self, text, x, y, color=(255, 255, 255)):
-        surface = self.font.render(text, True, color)
-        rect = surface.get_rect(center=(x, y))
-        self.screen.get_display().blit(surface, rect)
-        
+        self.util = UtilTool()
 
     def get_name(self):
         while True:
             self.screen.update()
             self.screen.get_display().fill((0, 0, 0))
             self.screen.set_background_display(MAIN_MENU_BACKGROUND4)
+            font_size = self.screen.height // 15
+            
+            self.util.draw_text("Enter your name", REGULAR_FONT, font_size, self.screen,\
+                                (self.screen.width // 2, self.screen.height // 3), "white")
 
-            self.draw_text("Enter your name", 600, 200, LIGHT_GREEN)
-            self.draw_text(self.player_name, 600, 300, (255, 255, 255))
-            self.draw_text("(Press enter key to continue)", 600, 400)
+            self.util.draw_text(self.player_name, REGULAR_FONT, font_size, self.screen,\
+                                (self.screen.width // 2, self.screen.height // 2), LIGHT_GREEN)
+ 
+            self.util.draw_text("(Press enter key to continue)", REGULAR_FONT, font_size, self.screen,\
+                                (self.screen.width // 2, self.screen.height // 3*2), "white")
+
 
             pygame.display.flip()
 
@@ -40,8 +43,7 @@ class NameInput:
                     if event.key == pygame.K_RETURN and self.player_name:
                         if does_player_exist(self.player_name):
 
-
-                            self.draw_text(f"The player named {self.player_name} already exist !", self.screen.width//2, self.screen.height//8*7)
+                            #TODO => self.draw_text(f"The player named {self.player_name} already exist !", self.screen.width//2, self.screen.height//8*7)
                             pygame.time.wait(1000)
                             pokemon = get_first_pokemon(self.player_name)
                             return self.player_name, pokemon

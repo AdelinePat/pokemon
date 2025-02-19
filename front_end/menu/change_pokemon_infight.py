@@ -33,11 +33,6 @@ class ChangePokemonInFight():
         self.selected_index = 0
         self.running = True
 
-    # def draw_text(self, text, x, y, color=(255, 255, 255)):
-    #     surface = self.font.render(text, True, color)
-    #     rect = surface.get_rect(center=(x, y))
-    #     self.screen.get_display().blit(surface, rect)
-
     def display(self):
         battle_floor = self.util.load_image(BATTLE_FLOOR)
         battle_floor2 = pygame.transform.flip(battle_floor, True, False)
@@ -57,16 +52,13 @@ class ChangePokemonInFight():
         while self.running: 
             pokemon = pygame.transform.flip(self.util.load_image(self.pokemon.get_image()), True, False)
 
-           
-            #DISPLAY
             self.screen.update()
             if not win:
                 time_count += speed
                 x_movement = int(var_y * math.sin(time_count * 0.1))
                 y_movement = int(var_x * math.sin(time_count * 0.08))
             self.util.display_assets_and_background(self.screen, x_movement, y_movement, battle_floor, battle_floor2, pokemon_enemy, pokemon)
-            
-            # def draw_window_with_background(self, screen, width, height, color=BACKGROUND):
+
 
             self.util.draw_window_with_background(self.screen, self.screen.width//2, self.screen.height //2)
 
@@ -90,10 +82,6 @@ class ChangePokemonInFight():
 
                     self.util.draw_text(option, REGULAR_FONT, self.screen.height//22, self.screen,\
                                         (self.screen.width // 8*5, self.screen.height // 8 * y + self.screen.height // 8*3), color)
-
-                # color = LIGHT_GREEN if i == self.selected_index else color = (255, 255, 255)
-                # self.util.draw_text(option, REGULAR_FONT, self.screen.height//22, self.screen, (self.screen.width // 2 * i, self.screen.height // 10 ), color)
-                                    #  600, 300 + i * 60, color)
 
             pygame.display.flip()
 
