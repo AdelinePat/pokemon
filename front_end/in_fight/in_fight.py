@@ -135,7 +135,7 @@ class InFight():
             if win:
                 self.options[-1] = "Exit"
                 self.fleeing = False
-                if self.pokemon.get_hp() == 0:
+                if self.pokemon.get_hp() <= 0:
                     self.draw_win_bot_screen()
                 elif another_option == "Success":
                     self.draw_win_capture_screen(self.pokemon_enemy)
