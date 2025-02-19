@@ -1,7 +1,7 @@
 import pygame
 import pytmx
 import pyscroll
-from .player import Player
+# from .player import Player
 from front_end.screen import Screen
 from .switch import Switch
 # from front_end.gameplay.battlescreen import BattleScreen
@@ -121,6 +121,7 @@ class Map:
          # Start a battle when the player enters a battle zone
         print("Starting Pokémon battle! dans start_battle")
         battle_screen = InFight(self.screen, self.player).display()
+        self.player.flee_steps = 0
         return battle_screen
         
         # battle_screen.run()

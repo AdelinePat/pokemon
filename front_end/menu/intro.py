@@ -1,6 +1,6 @@
 import pygame
-import random
-import os
+# import random
+# import os
 from __settings__ import CHEN
 
 pygame.init()

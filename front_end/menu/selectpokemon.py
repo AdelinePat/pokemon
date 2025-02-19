@@ -15,12 +15,23 @@ class SelectPokemon():
             self.pokemons = pokemon_list
 
         self.options = []
+        self.options_rect = []
+        my_x = 0.5
         for pokemon in self.pokemons:
-            option = pokemon.name
+            option = self.load_image(pokemon.get_image(), (self.screen.width // 6, self.screen.width //  6))
+            # option = pygame.transform.smoothscale(pygame.image.load(pokemon.get_image()), (self.screen.width // 6, self.screen.width //  6))
+            option_rect = option.get_rect(center = (self.screen.width // 3 * my_x, self.screen.height // 5*2.5))
+            my_x += 1
             self.options.append(option)
+            self.options_rect.append(option_rect)
 
         self.selected_index = 0
         self.running = True
+
+    def load_image(self, path, scaling):
+        img = pygame.image.load(path).convert_alpha()
+        img = pygame.transform.scale(img, (scaling))
+        return img
 
     def draw_text(self, text, x, y, color=(255, 255, 255)):
         surface = self.font.render(text, True, color)
@@ -28,7 +39,7 @@ class SelectPokemon():
         self.screen.get_display().blit(surface, rect)
 
     def display(self):
-        image = pygame.image.load(POKEMON_CENTER)
+        image = pygame.transform.scale(pygame.image.load(POKEMON_CENTER), (self.screen.width, self.screen.height))
         image_rect = image.get_rect(center = (self.screen.width // 2, self.screen.height //2))
 
         while self.running:
@@ -39,8 +50,20 @@ class SelectPokemon():
             self.draw_text("Choose your first pokemon", 600, 150, LIGHT_GREEN)
 
             for i, option in enumerate(self.options):
-                color = LIGHT_GREEN if i == self.selected_index else (255, 255, 255)
-                self.draw_text(option, 600, 300 + i * 60, color)
+                if i == self.selected_index:
+                    # color = LIGHT_GREEN
+                    option = pygame.transform.smoothscale(pygame.image.load(self.pokemons[i].get_image()), (self.screen.width // 4, self.screen.width //  4))
+                    option.get_rect(center= (self.screen.width // 3 * 0.5+i, self.screen.height // 5*2.5))
+                    self.screen.display.blit(option, self.options_rect[i])
+
+                    # self.load_image(pokemon.get_image(), (self.screen.width // 6, self.screen.width //  6))
+                else:
+                    # color = (bidule)
+                    option = pygame.transform.smoothscale(pygame.image.load(self.pokemons[i].get_image()), (self.screen.width // 6, self.screen.width //  6))
+                    self.screen.display.blit(option, self.options_rect[i])
+                # color = LIGHT_GREEN if i == self.selected_index else (255, 255, 255)
+                # self.draw_text(option, 600, 300 + i * 60, color)
+                
 
             pygame.display.flip()
 
@@ -50,9 +73,10 @@ class SelectPokemon():
                     sys.exit()
                 if event.type == pygame.KEYDOWN:
 
-                    if event.key == pygame.K_DOWN:
+                    if event.key == pygame.K_DOWN or event.key == pygame.K_RIGHT:
                         self.selected_index = (self.selected_index + 1) % len(self.options)
-                    elif event.key == pygame.K_UP:
+                       
+                    elif event.key == pygame.K_UP or event.key == pygame.K_LEFT:
                         self.selected_index = (self.selected_index - 1) % len(self.options)
 
                     elif event.key == pygame.K_RETURN:

@@ -163,8 +163,8 @@ class InFight():
                 if player_turn:
                     if event.type == pygame.KEYDOWN:
 
-                        if event.key == pygame.K_ESCAPE:
-                            self.running = False
+                        # if event.key == pygame.K_ESCAPE:
+                        #     self.running = False
 
                         if event.key == pygame.K_RIGHT or event.key == pygame.K_DOWN:  # Navigate down
                             self.selected_index = (self.selected_index + 1) % len(self.options)

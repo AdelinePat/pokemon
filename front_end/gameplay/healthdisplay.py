@@ -1,5 +1,5 @@
 import pygame
-import math
+# import math
 pygame.init()
 from __settings__ import DARK_GREEN, LIGHT_GREEN
 

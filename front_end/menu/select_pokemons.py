@@ -1,6 +1,6 @@
 import pygame
 import sys
-from back_end.controller import create_player
+# from back_end.controller import create_player
 from .display_pokemon_stat import PokemonStat
 from back_end.controller import get_starter_pokemons
 from __settings__ import LIGHT_GREEN

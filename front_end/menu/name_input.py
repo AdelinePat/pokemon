@@ -1,7 +1,7 @@
 import pygame
 from back_end.data_access.player_pokedex_service import does_player_exist
 from back_end.data_access.pokemon_pokedex_service import get_first_pokemon
-from .select_pokemons import SelectPokemons
+# from .select_pokemons import SelectPokemons
 from .selectpokemon import SelectPokemon
 from .intro import IntroChoice
 from __settings__ import MAIN_MENU_BACKGROUND4, LIGHT_GREEN
