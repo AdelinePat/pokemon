@@ -1,141 +1,18 @@
 [
     {
-        "name": "Bellsprout",
-        "original_name": "Bellsprout",
-        "pet_name": "Jean-Baptiste",
-        "hp_max": 40,
-        "hp": 40,
-        "xp": 64,
-        "strength": 33,
-        "defense": 28,
-        "type": [
-            "grass",
-            "poison"
-        ],
-        "level": 4,
-        "speed": 17,
-        "stage": 1,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
-        "name": "Growlithe",
-        "original_name": "Growlithe",
+        "name": "Charmeleon",
+        "original_name": "Charmander",
         "pet_name": "Jean-Michel",
-        "hp_max": 19,
-        "hp": 19,
-        "xp": 7,
-        "strength": 10,
-        "defense": 16,
+        "hp_max": 53,
+        "hp": 53,
+        "xp": 2528,
+        "strength": 52,
+        "defense": 47,
         "type": [
             "fire"
-        ],
-        "level": 1,
-        "speed": 19,
-        "stage": 1,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
-        "name": "Goldeen",
-        "original_name": "Goldeen",
-        "pet_name": "Jean-Pierre",
-        "hp_max": 37,
-        "hp": 37,
-        "xp": 475,
-        "strength": 36,
-        "defense": 25,
-        "type": [
-            "water"
-        ],
-        "level": 7,
-        "speed": 49,
-        "stage": 1,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
-        "name": "Butterfree",
-        "original_name": "Caterpie",
-        "pet_name": "Jean-Paul",
-        "hp_max": 124,
-        "hp": 124,
-        "xp": 39196,
-        "strength": 118,
-        "defense": 115,
-        "type": [
-            "bug",
-            "flying"
-        ],
-        "level": 33,
-        "speed": 111,
-        "stage": 3,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
-        "name": "Muk",
-        "original_name": "Grimer",
-        "pet_name": "Jean-Fran\u00e7ois",
-        "hp_max": 67,
-        "hp": 67,
-        "xp": 7261,
-        "strength": 71,
-        "defense": 71,
-        "type": [
-            "poison",
-            "dark"
-        ],
-        "level": 19,
-        "speed": 82,
-        "stage": 2,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
-        "name": "Sandslash",
-        "original_name": "Sandshrew",
-        "pet_name": "Jean-Christophe",
-        "hp_max": 65,
-        "hp": 65,
-        "xp": 2312,
-        "strength": 43,
-        "defense": 59,
-        "type": [
-            "ground"
         ],
         "level": 13,
-        "speed": 59,
+        "speed": 43,
         "stage": 2,
         "ev": {
             "hp": 0,
@@ -147,118 +24,20 @@
         "state": "wild"
     },
     {
-        "name": "Tauros",
-        "original_name": "Tauros",
-        "pet_name": "Jean-Marie",
-        "hp_max": 56,
-        "hp": 56,
-        "xp": 2872,
-        "strength": 57,
-        "defense": 59,
-        "type": [
-            "fighting",
-            "fire"
-        ],
-        "level": 14,
-        "speed": 64,
-        "stage": 2,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
-        "name": "Dratini",
-        "original_name": "Dratini",
-        "pet_name": "Jean-Robert",
-        "hp_max": 48,
-        "hp": 48,
-        "xp": 353,
-        "strength": 43,
-        "defense": 24,
-        "type": [
-            "dragon"
-        ],
-        "level": 7,
-        "speed": 50,
-        "stage": 1,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
-        "name": "Meowth",
-        "original_name": "Meowth",
-        "pet_name": "Jean-Joseph",
-        "hp_max": 16,
-        "hp": 16,
-        "xp": 10,
-        "strength": 25,
-        "defense": 25,
-        "type": [
-            "steel"
-        ],
-        "level": 2,
-        "speed": 23,
-        "stage": 1,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
-        "name": "Clefable",
+        "name": "Clefairy",
         "original_name": "Clefairy",
         "pet_name": "Jean-Luc",
-        "hp_max": 72,
-        "hp": 72,
-        "xp": 6044,
-        "strength": 81,
-        "defense": 74,
+        "hp_max": 40,
+        "hp": 40,
+        "xp": 676,
+        "strength": 26,
+        "defense": 33,
         "type": [
             "fairy"
         ],
-        "level": 18,
-        "speed": 56,
-        "stage": 2,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
-        "name": "Dodrio",
-        "original_name": "Doduo",
-        "pet_name": "Jean-Louis",
-        "hp_max": 69,
-        "hp": 69,
-        "xp": 7608,
-        "strength": 85,
-        "defense": 74,
-        "type": [
-            "normal",
-            "flying"
-        ],
-        "level": 19,
-        "speed": 85,
-        "stage": 2,
+        "level": 8,
+        "speed": 43,
+        "stage": 1,
         "ev": {
             "hp": 0,
             "strength": 0,

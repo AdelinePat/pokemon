@@ -64,30 +64,36 @@ class ChangePokemonInFight():
                 x_movement = int(var_y * math.sin(time_count * 0.1))
                 y_movement = int(var_x * math.sin(time_count * 0.08))
             self.util.display_assets_and_background(self.screen, x_movement, y_movement, battle_floor, battle_floor2, pokemon_enemy, pokemon)
-            # draw_health_bar(x, y, max_hp, current_health, name, screen):
-
-            # pokemon health
-            # ,  + y_movement
-            # self.healthbar.draw_health_bar(my_pokemon_x, my_pokemon_y, self.pokemon, self.screen)
-            # self.healthbar.draw_health_bar(my_pokemon_x, my_pokemon_y, self.pokemon, self.screen)
-            # # enemy health
-            # #  + x_movement, 
-            # self.healthbar.draw_health_bar(pokemon_enemy_x, pokemon_enemy_y,
-            #                                 self.pokemon_enemy,\
-            #                                 self.screen)
             
-            self.util.draw_option_screen(self.screen)
-            # Draw menu options
-            #(self, text, font, font_size, screen, my_center, color=DARK_GREEN):
+            # def draw_window_with_background(self, screen, width, height, color=BACKGROUND):
+
+            self.util.draw_window_with_background(self.screen, self.screen.width//2, self.screen.height //2)
+
             for i, option in enumerate(self.options):
                 if i == self.selected_index:
                     color = LIGHT_GREEN
                 else:
-                    color = (255, 255, 255)
+                    color = DARK_GREEN
+
+                y = i % 3
+                if i in range(0,3):
+
+                    self.util.draw_text(option, REGULAR_FONT, self.screen.height//22, self.screen,\
+                                    (self.screen.width // 8*3, self.screen.height // 8 * y + self.screen.height // 8*3), color)
+                
+                elif i in range(3, 6):
+                    self.util.draw_text(option, REGULAR_FONT, self.screen.height//22, self.screen,\
+                                    (self.screen.width // 8*4, self.screen.height // 8 * y + self.screen.height // 8*3), color)
+
+                elif i in range(6, 9):
+
+                    self.util.draw_text(option, REGULAR_FONT, self.screen.height//22, self.screen,\
+                                        (self.screen.width // 8*5, self.screen.height // 8 * y + self.screen.height // 8*3), color)
+
                 # color = LIGHT_GREEN if i == self.selected_index else color = (255, 255, 255)
-                self.util.draw_text(option, REGULAR_FONT, self.screen.height//22, self.screen, (self.screen.width // 2 * i, self.screen.height // 10 ), color)
+                # self.util.draw_text(option, REGULAR_FONT, self.screen.height//22, self.screen, (self.screen.width // 2 * i, self.screen.height // 10 ), color)
                                     #  600, 300 + i * 60, color)
-            
+
             pygame.display.flip()
 
             for event in pygame.event.get():
@@ -109,8 +115,7 @@ class ChangePokemonInFight():
                                 # game = Game(self.screen, self.player_name, pokemon).run()
 
                     elif event.key == pygame.K_ESCAPE:
-
-                        pass
+                        return self.pokemon
 
 
     def display(self):
