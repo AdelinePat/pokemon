@@ -6,27 +6,27 @@
         },
         "pokemons": {
             "Jean-Baptiste": {
-                "name": "Ivysaur",
+                "name": "Bulbasaur",
                 "original_name": "Bulbasaur",
                 "pet_name": "Jean-Baptiste",
-                "hp_max": 2135,
+                "hp_max": 2105,
                 "hp": 1861,
-                "xp": 13681,
-                "strength": 357,
-                "defense": 319,
+                "xp": 13669,
+                "strength": 336,
+                "defense": 295,
                 "type": [
                     "grass",
                     "poison"
                 ],
-                "level": 20,
-                "speed": 1054,
-                "stage": 2,
+                "level": 18,
+                "speed": 1026,
+                "stage": 1,
                 "ev": {
-                    "hp": 1,
-                    "strength": 1,
-                    "defense": 3,
-                    "speed": 0,
-                    "xp": 1
+                    "hp": 3,
+                    "strength": 3,
+                    "defense": 0,
+                    "speed": 2,
+                    "xp": 2
                 },
                 "state": "domesticated"
             },
@@ -56,27 +56,26 @@
                 "state": "domesticated"
             },
             "Jean-Pierre": {
-                "name": "Gyarados",
-                "original_name": "Magikarp",
+                "name": "Seadra",
+                "original_name": "Horsea",
                 "pet_name": "Jean-Pierre",
-                "hp_max": 116,
-                "hp": 48,
-                "xp": 7869,
-                "strength": 108,
-                "defense": 100,
+                "hp_max": 59,
+                "hp": 59,
+                "xp": 3190,
+                "strength": 57,
+                "defense": 46,
                 "type": [
-                    "water",
-                    "flying"
+                    "water"
                 ],
-                "level": 20,
-                "speed": 96,
+                "level": 14,
+                "speed": 47,
                 "stage": 2,
                 "ev": {
-                    "hp": 1,
-                    "strength": 1,
+                    "hp": 0,
+                    "strength": 0,
                     "defense": 0,
-                    "speed": 3,
-                    "xp": 1
+                    "speed": 0,
+                    "xp": 0
                 },
                 "state": "domesticated"
             },
@@ -106,20 +105,20 @@
                 "state": "domesticated"
             },
             "Jean-Charles": {
-                "name": "Mr. Mime",
-                "original_name": "Mr. Mime",
+                "name": "Ninetales",
+                "original_name": "Vulpix",
                 "pet_name": "Jean-Charles",
-                "hp_max": 72,
-                "hp": 72,
-                "xp": 6116,
-                "strength": 62,
-                "defense": 65,
+                "hp_max": 71,
+                "hp": 71,
+                "xp": 5569,
+                "strength": 72,
+                "defense": 54,
                 "type": [
                     "ice",
-                    "psychic"
+                    "fairy"
                 ],
-                "level": 18,
-                "speed": 57,
+                "level": 17,
+                "speed": 80,
                 "stage": 2,
                 "ev": {
                     "hp": 0,

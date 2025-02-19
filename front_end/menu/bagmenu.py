@@ -63,8 +63,8 @@ class BagMenu:
         """
         battle_floor = self.load_image(BATTLE_FLOOR)
         battle_floor2 = pygame.transform.flip(battle_floor, True, False)
-        pokemon = pygame.transform.flip(self.load_image(self.pokemon.image), True, False)
-        pokemon_enemy = self.load_image(self.pokemon_enemy.image)
+        pokemon = pygame.transform.flip(self.load_image(self.pokemon.get_image()), True, False)
+        pokemon_enemy = self.load_image(self.pokemon_enemy.get_image())
         time_count = 0
         var_x = 5
         var_y = 5

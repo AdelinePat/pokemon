@@ -1,30 +1,5 @@
 [
     {
-        "name": "Parasect",
-        "original_name": "Paras",
-        "pet_name": "Jean-Paul",
-        "hp_max": 87,
-        "hp": 87,
-        "xp": 7780,
-        "strength": 83,
-        "defense": 74,
-        "type": [
-            "bug",
-            "grass"
-        ],
-        "level": 19,
-        "speed": 62,
-        "stage": 2,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
         "name": "Meowth",
         "original_name": "Meowth",
         "pet_name": "Jean-Joseph",
@@ -99,21 +74,21 @@
         "state": "wild"
     },
     {
-        "name": "Ninetales",
-        "original_name": "Vulpix",
-        "pet_name": "Jean-Charles",
-        "hp_max": 71,
-        "hp": 71,
-        "xp": 5569,
-        "strength": 72,
-        "defense": 54,
+        "name": "Bellsprout",
+        "original_name": "Bellsprout",
+        "pet_name": "Jean-Baptiste",
+        "hp_max": 29,
+        "hp": 29,
+        "xp": 6,
+        "strength": 30,
+        "defense": 10,
         "type": [
-            "ice",
-            "fairy"
+            "grass",
+            "poison"
         ],
-        "level": 17,
-        "speed": 80,
-        "stage": 2,
+        "level": 1,
+        "speed": 33,
+        "stage": 1,
         "ev": {
             "hp": 0,
             "strength": 0,
@@ -148,6 +123,31 @@
         "state": "wild"
     },
     {
+        "name": "Parasect",
+        "original_name": "Paras",
+        "pet_name": "Jean-Paul",
+        "hp_max": 87,
+        "hp": 87,
+        "xp": 7780,
+        "strength": 83,
+        "defense": 74,
+        "type": [
+            "bug",
+            "grass"
+        ],
+        "level": 19,
+        "speed": 62,
+        "stage": 2,
+        "ev": {
+            "hp": 0,
+            "strength": 0,
+            "defense": 0,
+            "speed": 0,
+            "xp": 0
+        },
+        "state": "wild"
+    },
+    {
         "name": "Pidgeot",
         "original_name": "Pidgey",
         "pet_name": "Jean-Louis",
@@ -163,31 +163,6 @@
         "level": 29,
         "speed": 113,
         "stage": 3,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
-        "name": "Bellsprout",
-        "original_name": "Bellsprout",
-        "pet_name": "Jean-Baptiste",
-        "hp_max": 29,
-        "hp": 29,
-        "xp": 6,
-        "strength": 30,
-        "defense": 10,
-        "type": [
-            "grass",
-            "poison"
-        ],
-        "level": 1,
-        "speed": 33,
-        "stage": 1,
         "ev": {
             "hp": 0,
             "strength": 0,
