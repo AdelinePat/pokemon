@@ -29,42 +29,14 @@ class BagMenu:
         rect = surface.get_rect(center=(x, y))
         self.screen.get_display().blit(surface, rect)
 
-    def load_image(self, image):
-        return pygame.image.load(image)
-    
-    def display_asset_battle(self, image, scale_x, scale_y, x, y):
-        image.set_colorkey((255, 255, 255))
-        battle_floor = pygame.transform.scale(image, (scale_x, scale_y))
-        battle_floor_rect = battle_floor.get_rect(center = (x, y))
-        self.screen.display.blit(battle_floor, battle_floor_rect)
-
-    # def display_pokemon_battle(self, image, scale_x, scale_y, x, y):
-    #     image.set_colorkey((255, 255, 255))
-    #     battle_floor = pygame.transform.scale(image, (scale_x, scale_y))
-    #     battle_floor_rect = battle_floor.get_rect(midbottom = (x, y))
-    #     self.screen.display.blit(battle_floor, battle_floor_rect)
-
-    def display_assets_and_background(self,x_movement, y_movement, battle_floor, battle_floor2, pokemon_enemy, pokemon):
-        
-        
-        self.screen.set_background_without_black(BATTLE_BACKGROUND)
-        floor1 = self.display_asset_battle(battle_floor, self.screen.width // 5, self.screen.height // 7, self.screen.width // 10 * 7.5, self.screen.height // 7 * 3.2)
-        floor = self.display_asset_battle(battle_floor2, self.screen.width // 3, self.screen.height // 5, self.screen.width // 10 * 2.5, self.screen.height // 7 * 6.6)
-
-        enemy = self.display_asset_battle(pokemon_enemy, self.screen.width //6, self.screen.width //6, self.screen.width // 10 * 7.5 + x_movement, self.screen.height // 7 * 3)
-        my_pokemon = self.display_asset_battle(pokemon, self.screen.width // 3, self.screen.width // 3, self.screen.width // 10 * 2.5, self.screen.height // 7 * 6.4 + y_movement)
-
-
-    
-
     def display(self):
         """
         Main menu loop that displays options and handles user input.
         """
-        battle_floor = self.load_image(BATTLE_FLOOR)
+        battle_floor = self.util.load_image(BATTLE_FLOOR)
         battle_floor2 = pygame.transform.flip(battle_floor, True, False)
-        pokemon = pygame.transform.flip(self.load_image(self.pokemon.get_image()), True, False)
-        pokemon_enemy = self.load_image(self.pokemon_enemy.get_image())
+        pokemon = pygame.transform.flip(self.util.load_image(self.pokemon.get_image()), True, False)
+        pokemon_enemy = self.util.load_image(self.pokemon_enemy.get_image())
         time_count = 0
         var_x = 5
         var_y = 5
@@ -77,7 +49,7 @@ class BagMenu:
                 time_count += speed
                 x_movement = int(var_y * math.sin(time_count * 0.1))
                 y_movement = int(var_x * math.sin(time_count * 0.08))
-            self.display_assets_and_background(x_movement, y_movement, battle_floor, battle_floor2, pokemon_enemy, pokemon)
+            self.util.display_assets_and_background(self.screen, x_movement, y_movement, battle_floor, battle_floor2, pokemon_enemy, pokemon)
 
             self.util.draw_option_screen(self.screen)
             # self.options = [f"{self.bag.get_potion()} Potions", f"{self.bag.get_pokeball()} Pokeball", "Back"] 

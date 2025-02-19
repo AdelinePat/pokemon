@@ -1,5 +1,5 @@
 import pygame
-from __settings__ import REGULAR_FONT, BACKGROUND, DARK_GREEN, LIGHT_GREEN
+from __settings__ import REGULAR_FONT, BACKGROUND, DARK_GREEN, LIGHT_GREEN, BATTLE_BACKGROUND, BATTLE_FLOOR
 
 class UtilTool():
     def draw_text(self, text, font, font_size, screen, my_center, color=DARK_GREEN):
@@ -14,6 +14,24 @@ class UtilTool():
         background_screen.set_alpha(155)
         pygame.draw.rect(background_screen, color, background_rect)
         screen.display.blit(background_screen, background_rect)
+
+    def load_image(self, image):
+        return pygame.image.load(image)
+    
+    def display_asset_battle(self, screen, image, scale_x, scale_y, x, y):
+        image.set_colorkey((255, 255, 255))
+        battle_floor = pygame.transform.scale(image, (scale_x, scale_y))
+        battle_floor_rect = battle_floor.get_rect(center = (x, y))
+        screen.display.blit(battle_floor, battle_floor_rect)
+
+    def display_assets_and_background(self, screen, x_movement, y_movement, battle_floor, battle_floor2, pokemon_enemy, pokemon):
+        screen.set_background_without_black(BATTLE_BACKGROUND)
+        floor1 = self.display_asset_battle(screen, battle_floor, screen.width // 5, screen.height // 7, screen.width // 10 * 7.5, screen.height // 7 * 3.2)
+        floor = self.display_asset_battle(screen, battle_floor2, screen.width // 3, screen.height // 5, screen.width // 10 * 2.5, screen.height // 7 * 6.6)
+
+        enemy = self.display_asset_battle(screen, pokemon_enemy, screen.width //6, screen.width //6, screen.width // 10 * 7.5 + x_movement, screen.height // 7 * 3)
+        my_pokemon = self.display_asset_battle(screen, pokemon, screen.width // 3, screen.width // 3, screen.width // 10 * 2.5, screen.height // 7 * 6.4 + y_movement)
+
 
     def draw_window_with_background(self, screen, width, height, color=BACKGROUND):
 

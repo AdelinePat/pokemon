@@ -16,6 +16,7 @@ from front_end.menu.infomenu import InfoMenu
 from back_end.data_access.pokemon_pokedex_service import save_pokemon_to_pokedex
 from back_end.data_access.bag_pokedex_service import save_bag_to_pokedex
 from back_end.data_access.wild_pokemons import save_wild_pokemon
+from front_end.menu.change_pokemon_infight import ChangePokemonInFight
 
 from front_end.gameplay.healthdisplay import HealthDisplay
 
@@ -28,7 +29,7 @@ class InFight():
         self.pokemon_enemy = get_random_wild_pokemon()
         # option_name = f"{self.pokemon_enemy.name} info"
         self.font = pygame.font.Font(None, 50)  # Set the font for menu text
-        self.options = ["Attack", "Bag","Info", "Flee"]  # Menu options
+        self.options = ["Attack", "Bag", "Team", "Info", "Flee"]  # Menu options
         self.bag_option = ["Potions", "Pokeball", "Back"]
         self.selected_index = 0  # Index of the currently selected option
         self.running = True  # Controls the menu loop
@@ -50,8 +51,7 @@ class InFight():
         rect = surface.get_rect(center=(x, y))
         self.screen.get_display().blit(surface, rect)
 
-    def load_image(self, image):
-        return pygame.image.load(image)
+   
     
     def display_asset_battle(self, image, scale_x, scale_y, x, y):
         image.set_colorkey((255, 255, 255))
@@ -65,24 +65,17 @@ class InFight():
     #     battle_floor_rect = battle_floor.get_rect(midbottom = (x, y))
     #     self.screen.display.blit(battle_floor, battle_floor_rect)
 
-    def display_assets_and_background(self,x_movement, y_movement, battle_floor, battle_floor2, pokemon_enemy, pokemon):
-        self.screen.set_background_without_black(BATTLE_BACKGROUND)
-        floor1 = self.display_asset_battle(battle_floor, self.screen.width // 5, self.screen.height // 7, self.screen.width // 10 * 7.5, self.screen.height // 7 * 3.2)
-        floor = self.display_asset_battle(battle_floor2, self.screen.width // 3, self.screen.height // 5, self.screen.width // 10 * 2.5, self.screen.height // 7 * 6.6)
-
-        enemy = self.display_asset_battle(pokemon_enemy, self.screen.width //6, self.screen.width //6, self.screen.width // 10 * 7.5 + x_movement, self.screen.height // 7 * 3)
-        my_pokemon = self.display_asset_battle(pokemon, self.screen.width // 3, self.screen.width // 3, self.screen.width // 10 * 2.5, self.screen.height // 7 * 6.4 + y_movement)
-
-        pass
+    
+        # pass
 
     def display(self):
         """
         Main menu loop that displays options and handles user input.
         """
-        battle_floor = self.load_image(BATTLE_FLOOR)
+        battle_floor = self.util.load_image(BATTLE_FLOOR)
         battle_floor2 = pygame.transform.flip(battle_floor, True, False)
         
-        pokemon_enemy = self.load_image(self.pokemon_enemy.image)
+        pokemon_enemy = self.util.load_image(self.pokemon_enemy.image)
         time_count = 0
         var_x = 5
         var_y = 5
@@ -110,7 +103,7 @@ class InFight():
             player_turn = True
 
         while self.running: 
-            pokemon = pygame.transform.flip(self.load_image(self.pokemon.get_image()), True, False)
+            pokemon = pygame.transform.flip(self.util.load_image(self.pokemon.get_image()), True, False)
             
             #DISPLAY
             self.screen.update()
@@ -118,7 +111,7 @@ class InFight():
                 time_count += speed
                 x_movement = int(var_y * math.sin(time_count * 0.1))
                 y_movement = int(var_x * math.sin(time_count * 0.08))
-            self.display_assets_and_background(x_movement, y_movement, battle_floor, battle_floor2, pokemon_enemy, pokemon)
+            self.util.display_assets_and_background(self.screen, x_movement, y_movement, battle_floor, battle_floor2, pokemon_enemy, pokemon)
             # draw_health_bar(x, y, max_hp, current_health, name, screen):
 
             # pokemon health
@@ -194,7 +187,7 @@ class InFight():
                                             else:
                                                 self.pokemon.update_xp(self.pokemon_enemy)
                                                 #TODO IS LEVEL UP??
-                                                pokemon = pygame.transform.flip(self.load_image(self.pokemon.image), True, False)
+                                                pokemon = pygame.transform.flip(self.util.load_image(self.pokemon.image), True, False)
                                                 win = True
                                             #TODO menu end fight , xp gained...etc
                                     else:
@@ -222,7 +215,7 @@ class InFight():
                                                     match another_option:
                                                         case "Success":
                                                             self.pokemon.update_xp(self.pokemon_enemy)
-                                                            pokemon = pygame.transform.flip(self.load_image(self.pokemon.image), True, False)
+                                                            pokemon = pygame.transform.flip(self.util.load_image(self.pokemon.image), True, False)
                                                             # save_pokemon_to_pokedex(self.player,self.pokemon)
                                                             save_pokemon_to_pokedex(self.player, self.pokemon_enemy)
                                                             # save_bag_to_pokedex(self.player, self.bag)
@@ -253,10 +246,16 @@ class InFight():
                                                 case "Back":
                                                     player_turn = True
                                 case 2:
+                                    print("TEAM")
+                                    self.pokemon = ChangePokemonInFight(self.player, self.pokemon, self.pokemon_enemy, self.screen).display_2()
+                                    # pokemon = pygame.transform.flip(self.load_image(self.pokemon.get_image()), True, False
+                                    name = self.pokemon.name
+                                    level = self.pokemon.get_level()
+                                case 3:
                                     print("Info")
                                     InfoMenu(self.screen, self.pokemon, self.pokemon_enemy).display()
                                     player_turn = True  
-                                case 3:
+                                case 4:
                                     if win:
                                         # self.pokemon.update_xp(self.pokemon_enemy)
                                         save_pokemon_to_pokedex(self.player,self.pokemon)

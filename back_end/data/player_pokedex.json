@@ -6,26 +6,26 @@
         },
         "pokemons": {
             "Jean-Baptiste": {
-                "name": "Bulbasaur",
+                "name": "Ivysaur",
                 "original_name": "Bulbasaur",
                 "pet_name": "Jean-Baptiste",
-                "hp_max": 2105,
+                "hp_max": 2161,
                 "hp": 1861,
-                "xp": 13669,
-                "strength": 336,
-                "defense": 295,
+                "xp": 15826,
+                "strength": 388,
+                "defense": 352,
                 "type": [
                     "grass",
                     "poison"
                 ],
-                "level": 18,
-                "speed": 1026,
-                "stage": 1,
+                "level": 22,
+                "speed": 1089,
+                "stage": 2,
                 "ev": {
-                    "hp": 3,
-                    "strength": 3,
-                    "defense": 0,
-                    "speed": 2,
+                    "hp": 0,
+                    "strength": 1,
+                    "defense": 4,
+                    "speed": 3,
                     "xp": 2
                 },
                 "state": "domesticated"
@@ -59,23 +59,23 @@
                 "name": "Seadra",
                 "original_name": "Horsea",
                 "pet_name": "Jean-Pierre",
-                "hp_max": 59,
+                "hp_max": 77,
                 "hp": 59,
-                "xp": 3190,
-                "strength": 57,
-                "defense": 46,
+                "xp": 4464,
+                "strength": 83,
+                "defense": 67,
                 "type": [
                     "water"
                 ],
-                "level": 14,
-                "speed": 47,
+                "level": 15,
+                "speed": 60,
                 "stage": 2,
                 "ev": {
-                    "hp": 0,
-                    "strength": 0,
+                    "hp": 1,
+                    "strength": 3,
                     "defense": 0,
-                    "speed": 0,
-                    "xp": 0
+                    "speed": 3,
+                    "xp": 1
                 },
                 "state": "domesticated"
             },
@@ -133,23 +133,23 @@
                 "name": "Jolteon",
                 "original_name": "Eevee",
                 "pet_name": "Jean-Claude",
-                "hp_max": 63,
+                "hp_max": 83,
                 "hp": 63,
-                "xp": 1832,
-                "strength": 48,
-                "defense": 55,
+                "xp": 2989,
+                "strength": 68,
+                "defense": 72,
                 "type": [
                     "electric"
                 ],
-                "level": 12,
-                "speed": 61,
+                "level": 13,
+                "speed": 74,
                 "stage": 2,
                 "ev": {
                     "hp": 0,
-                    "strength": 0,
-                    "defense": 0,
-                    "speed": 0,
-                    "xp": 0
+                    "strength": 3,
+                    "defense": 3,
+                    "speed": 2,
+                    "xp": 1
                 },
                 "state": "domesticated"
             },
