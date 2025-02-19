@@ -2,12 +2,13 @@ import pygame
 import sys
 from .display_pokemon_stat import PokemonStat
 from back_end.controller import get_starter_pokemons
-from __settings__ import LIGHT_GREEN, POKEMON_CENTER
+from __settings__ import LIGHT_GREEN, POKEMON_CENTER, POKEMON_CENTER
 
 class SelectPokemon():
     def __init__(self, player_name, screen, pokemon_list=[]):
         self.player_name = player_name
         self.screen = screen
+        self.background = POKEMON_CENTER
         self.font = pygame.font.Font(None, 50)
         if not pokemon_list:
             self.pokemons = get_starter_pokemons()
@@ -83,10 +84,10 @@ class SelectPokemon():
                     elif event.key == pygame.K_RETURN:
                         for index in range(len(self.options)):
                             if self.selected_index == index:
-                                pokemon = PokemonStat(self.player_name, self.pokemons, self.pokemons[index], self.screen).display()
+                                pokemon = PokemonStat(self.player_name, self.pokemons, self.pokemons[index], self.screen, self.background).display()
                                 return pokemon
 
                     elif event.key == pygame.K_ESCAPE:
-
-                        pass
+                        # return self.pokemons[0]
                         # return
+                        pass

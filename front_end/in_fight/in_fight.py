@@ -19,6 +19,7 @@ from back_end.data_access.wild_pokemons import save_wild_pokemon
 from front_end.menu.change_pokemon_infight import ChangePokemonInFight
 
 from front_end.gameplay.healthdisplay import HealthDisplay
+from __settings__ import BATTLE_BACKGROUND
 
 class InFight():
     def __init__(self, screen, player, pokemon):
@@ -27,6 +28,7 @@ class InFight():
         """
         self.screen = screen
         self.pokemon_enemy = get_random_wild_pokemon()
+        self.background = BATTLE_BACKGROUND
         # option_name = f"{self.pokemon_enemy.name} info"
         self.font = pygame.font.Font(None, 50)  # Set the font for menu text
         self.options = ["Attack", "Bag", "Team", "Info", "Flee"]  # Menu options
@@ -248,7 +250,7 @@ class InFight():
                                                     player_turn = True
                                 case 2:
                                     print("TEAM")
-                                    self.pokemon = ChangePokemonInFight(self.player, self.pokemon, self.pokemon_enemy, self.screen).display_2()
+                                    self.pokemon = ChangePokemonInFight(self.player, self.pokemon, self.pokemon_enemy, self.screen).display()
                                     # pokemon = pygame.transform.flip(self.load_image(self.pokemon.get_image()), True, False
                                     name = self.pokemon.name
                                     level = self.pokemon.get_level()

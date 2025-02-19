@@ -8,7 +8,7 @@ class UtilTool():
         dialog_rect = dialog.get_rect(center = my_center)
         screen.display.blit(dialog, dialog_rect)
 
-    def draw_color_filter(self, screen, color=DARK_GREEN):
+    def draw_color_filter(self, screen, color="black"):
         background_screen = pygame.Surface((screen.width, screen.height))
         background_rect = background_screen.get_rect(center = (screen.width //2, screen.height // 2))
         background_screen.set_alpha(155)
