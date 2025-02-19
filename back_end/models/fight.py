@@ -48,7 +48,10 @@ class Fight:
                     else:
                         final_damage = damage
                 else:
-                    final_damage = enemy.get_hp()
+                    if enemy.get_hp() > 0:
+                        final_damage = enemy.get_hp()
+                    else:
+                        final_damage = 0
                     pokemon.update_xp(enemy)
                     # print(f"le pokemon {enemy.name} n'a plus de PV ! Vous avez gagné {pokemon.get_xp()} XP")
             else:
@@ -87,7 +90,7 @@ class Fight:
         self.attack(self.second_pokemon, self.first_pokemon, attack_type)
 
     def run_away(self):
-        miss = random.randint(1, 7)
+        miss = random.randint(1,1) #1-7
         if self.second_pokemon.get_state() == "domesticated":
             # print("Impossible de fuire dans un combat de dresseur")
             self.fightinfo.set_fail_flee_message()
