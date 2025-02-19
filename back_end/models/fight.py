@@ -30,7 +30,8 @@ class Fight:
         coefficient, efficency = pokemon.attack_efficiency(attack_type, enemy)
         miss = random.randint(1, 8)
         
-        damage = ((pokemon.get_strength() * coefficient) - enemy.get_defense()) * coefficient
+
+        damage = ((pokemon.get_strength() * coefficient) - enemy.get_defense())
         critical_rate = pokemon.get_speed() / 2
         critical = random.randint(1, 255)
 
@@ -48,7 +49,7 @@ class Fight:
                     else:
                         final_damage = damage
                 else:
-                    if enemy.get_hp() > 0:
+                    if enemy.get_hp() - damage < 0:
                         final_damage = enemy.get_hp()
                     else:
                         final_damage = 0
@@ -66,7 +67,7 @@ class Fight:
                         final_damage = 0
 
             enemy.set_damage_hp(final_damage)
-            
+            print(f"DEGATS FINAUX : {final_damage}")            
             # print(f"{pokemon.name} a fait une attaque {attack_type}, {efficency}\
             #     \n Le pokemon {enemy.name} de type {enemy.type} en face a reçu {final_damage}, il lui reste : {enemy.get_hp()}")
         
@@ -90,7 +91,7 @@ class Fight:
         self.attack(self.second_pokemon, self.first_pokemon, attack_type)
 
     def run_away(self):
-        miss = random.randint(1,1) #1-7
+        miss = random.randint(1,7) #1-7
         if self.second_pokemon.get_state() == "domesticated":
             # print("Impossible de fuire dans un combat de dresseur")
             self.fightinfo.set_fail_flee_message()

@@ -97,6 +97,8 @@ class Map:
                     self.in_battle = True  # Set the flag for battle
                     self.player.is_fleeing = self.start_battle()  # Start the Pokémon battle
                     this_battle_zone = battle_zone
+                    if not self.player.is_fleeing:
+                        self.player.keyListener.keys = []
                     sounds.stop_background_music()
                     sounds.play_map_music()
                     # battle_screen = InFight(self.screen, self.player).display()

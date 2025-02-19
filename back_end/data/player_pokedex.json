@@ -1,31 +1,31 @@
 {
     "Billy": {
         "bag": {
-            "potions": 10,
+            "potions": 2,
             "pokeball": 10
         },
         "pokemons": {
             "Jean-Marie": {
-                "name": "Sandshrew",
+                "name": "Sandslash",
                 "original_name": "Sandshrew",
                 "pet_name": "Jean-Marie",
-                "hp_max": 36,
-                "hp": 36,
-                "xp": 58,
-                "strength": 30,
-                "defense": 25,
+                "hp_max": 310,
+                "hp": 106,
+                "xp": 4175,
+                "strength": 287,
+                "defense": 280,
                 "type": [
                     "ground"
                 ],
-                "level": 3,
-                "speed": 17,
-                "stage": 1,
+                "level": 17,
+                "speed": 303,
+                "stage": 2,
                 "ev": {
-                    "hp": 0,
-                    "strength": 0,
-                    "defense": 0,
-                    "speed": 0,
-                    "xp": 0
+                    "hp": 3,
+                    "strength": 3,
+                    "defense": 3,
+                    "speed": 3,
+                    "xp": 1
                 },
                 "state": "domesticated"
             },
@@ -33,24 +33,24 @@
                 "name": "Raichu",
                 "original_name": "Pikachu",
                 "pet_name": "Jean-Luc",
-                "hp_max": 119,
+                "hp_max": 137,
                 "hp": 79,
-                "xp": 4210,
-                "strength": 114,
-                "defense": 110,
+                "xp": 4897,
+                "strength": 129,
+                "defense": 121,
                 "type": [
                     "electric",
                     "psychic"
                 ],
                 "level": 17,
-                "speed": 104,
+                "speed": 123,
                 "stage": 2,
                 "ev": {
                     "hp": 0,
-                    "strength": 1,
-                    "defense": 3,
-                    "speed": 0,
-                    "xp": 0
+                    "strength": 2,
+                    "defense": 1,
+                    "speed": 1,
+                    "xp": 1
                 },
                 "state": "domesticated"
             },
@@ -59,7 +59,7 @@
                 "original_name": "Squirtle",
                 "pet_name": "Jean-Pierre",
                 "hp_max": 89,
-                "hp": 61,
+                "hp": 0,
                 "xp": 1322,
                 "strength": 93,
                 "defense": 64,
@@ -83,7 +83,7 @@
                 "original_name": "Rhyhorn",
                 "pet_name": "Jean-Henri",
                 "hp_max": 30,
-                "hp": 30,
+                "hp": 0,
                 "xp": 100,
                 "strength": 28,
                 "defense": 25,
@@ -107,23 +107,23 @@
                 "name": "Krabby",
                 "original_name": "Krabby",
                 "pet_name": "Jean-Thierry",
-                "hp_max": 128,
+                "hp_max": 130,
                 "hp": 111,
-                "xp": 369,
-                "strength": 122,
-                "defense": 121,
+                "xp": 432,
+                "strength": 124,
+                "defense": 123,
                 "type": [
                     "water"
                 ],
                 "level": 8,
-                "speed": 109,
+                "speed": 112,
                 "stage": 1,
                 "ev": {
-                    "hp": 1,
-                    "strength": 0,
-                    "defense": 1,
-                    "speed": 4,
-                    "xp": 3
+                    "hp": 3,
+                    "strength": 1,
+                    "defense": 3,
+                    "speed": 2,
+                    "xp": 1
                 },
                 "state": "domesticated"
             }
