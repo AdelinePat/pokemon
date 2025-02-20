@@ -9,23 +9,9 @@ class Fight:
         self.first_pokemon = pokemon1
         self.second_pokemon = pokemon2
         self.fightinfo = FightInfo()
-        # self.bag = Bag()
-
-        # self.all_pokemons = create_world_pokemons() #TODO edit this function
-        # self.first_pokemon = random.choice(self.all_pokemons)
-        # self.second_pokemon = random.choice(self.all_pokemons)
-
-        # ONE SHOT TEST
-        # self.first_pokemon = Pokemon('Clefable', 'Clefairy', 49, 60, 57, ['fairy'], 13, 46, 2)
-        # self.second_pokemon = Pokemon('Raichu', 'Pikachu', 80, 59, 75, ['electric'], 17, 57, 2)
-        # LEVEL UP  TEST
-
-        # self.second_pokemon = Pokemon('Clefable', 'Clefairy', 49, 60, 57, ['fairy'], 1, 46, 2)
-        # self.first_pokemon = Pokemon('Raichu', 'Pikachu', 80, 80, 75, ['electric'], 1, 57, 2)
-
-        # while self.first_pokemon == self.second_pokemon:
-        #     self.second_pokemon = random.choice(self.all_pokemons)
-        # self.bag = Bag()
+    
+    def set_first_pokemon(self, new_pokemon):
+        self.first_pokemon = new_pokemon
 
     def attack(self, pokemon, enemy, attack_type):
         coefficient, efficency = pokemon.attack_efficiency(attack_type, enemy)

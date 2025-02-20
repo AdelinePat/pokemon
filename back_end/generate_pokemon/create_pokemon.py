@@ -104,7 +104,7 @@ def create_low_level_world_pokemons():
             xp = random.randrange(my_pokemon.get_level()**3, (my_pokemon.get_level()+1)**3)
             my_pokemon.set_xp(xp)
             all_pokemons.append(my_pokemon)
-
+    random.shuffle(all_pokemons)
     return all_pokemons
 
 def get_type_low_level_pokemon(original_name):
