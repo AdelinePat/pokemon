@@ -1,0 +1,753 @@
+{
+    "grass": {
+        "alone": {
+            "probability": 1,
+            "names" : {
+                "Tangela" : {
+                    "Tangela" : 1
+                }
+            }
+        },
+        "poison": {
+            "probability": 9,
+            "names" : {
+                "Bulbasaur" : {
+                    "Bulbasaur" : 1,
+                    "Ivysaur" : 2,
+                    "Venusaur" : 3
+                },
+                "Oddish" : {
+                    "Oddish" : 1,
+                    "Gloom" : 2,
+                    "Vileplume" : 3
+                },
+                "Bellsprout" : {
+                    "Bellsprout" : 1,
+                    "Weepinbell" : 2,
+                    "Victreebel" : 3
+                }
+            }
+        },     
+        "psychic" : {
+            "probability": 2,
+            "names" : {
+                "Exeggcute" : {
+                    "Exeggcute" : 1,
+                    "Exeggutor" : 2
+                }
+            }
+        },
+        "dragon" : {
+            "probability": 1,
+            "names" : {
+                "Exeggcute" : {
+                    "Exeggutor": 2
+                }
+            }
+        }
+    },
+    "fire": {
+        "alone": {
+            "probability": 10,
+            "names" : {
+                "Charmander" : {
+                    "Charmander" : 1,
+                    "Charmeleon" : 2
+                },
+                "Vulpix" : {
+                    "Vulpix" : 1,
+                    "Ninetales" : 2
+                },
+                "Growlithe" : {
+                    "Growlithe" : 1,
+                    "Arcanine" : 2
+                },
+                "Ponyta" : {
+                    "Ponyta" : 1,
+                    "Rapidash" : 2
+                },
+                "Magmar" : {
+                    "Magmar" : 2
+                },
+                "Eevee" : {
+                    "Flareon" : 2
+                }
+            }
+        },
+        "flying": {
+            "probability": 2,
+            "names" : {
+                "Charmander" : {
+                    "Charizard" : 3
+                },
+                "Moltres" : {
+                    "Moltres" : 3
+                }
+            }
+        },
+        "rock": {
+            "probability": 2,
+            "names" : {
+                "Growlithe" : {
+                    "Growlithe" : 1,
+                    "Arcanine" : 2
+                }
+            }
+        },
+        "ghost": {
+            "probability": 1,
+            "names": {
+                "Cubone" : {
+                    "Marowak" : 2
+                }
+            }
+        }
+    },
+    "water" : {
+        "alone": {
+            "probability" : 18,
+            "names" : {
+                "Squirtle" : {
+                    "Squirtle" : 1,
+                    "Wartortle" : 2,
+                    "Blastoise" : 3
+                },
+                "Psyduck" : {
+                    "Psyduck" : 1,
+                    "Golduck" : 2
+                },
+                "Poliwag" : {
+                    "Poliwag" : 1,
+                    "Poliwhirl" : 2
+                },
+                "Seel" : {
+                    "Seel" : 1
+                },
+                "Shellder" : {
+                    "Shellder" : 1
+                },
+                "Krabby" : {
+                    "Krabby": 1,
+                    "Kingler" : 2  
+                },
+                "Horsea" : {
+                    "Horsea" : 1,
+                    "Seadra" : 2
+                },
+                "Goldeen" : {
+                    "Goldeen" : 1,
+                    "Seaking" : 2
+                },
+                "Staryu" : {
+                    "Staryu" : 1
+                },
+                "Magikarp" : {
+                    "Magikarp" : 1
+                },
+                "Eevee" : {
+                    "Vaporeon" : 2
+                }
+            }
+        },
+        "fighting": {
+            "probability": 1,
+            "names" : {
+                "Poliwag" : {
+                    "Poliwrath" : 3
+                }
+            }
+        },
+        "poison": {
+            "probability": 2,
+            "names" : {
+                "Tentacool" : {
+                    "Tentacool" : 1,
+                    "Tentacruel" : 2
+                }
+            }
+        },
+        "psychic" : {
+            "probability": 3,
+            "names" : {
+                "Slowpoke" : {
+                    "Slowpoke" : 1,
+                    "Slowbro" : 2
+                },
+                "Staryu" : {
+                    "Starmie" : 2
+                }
+            }
+        },
+        "ice": {
+            "probability": 3,
+            "names": {
+                "Seel" : {
+                    "Dewgong" : 2
+                },
+                "Cloyster" : {
+                    "Cloyster" : 2
+                },
+                "Lapras" : {
+                    "Lapras" : 2
+                }
+            }
+        },
+        "flying": {
+            "probability": 1,
+            "names" : {
+                "Magikarp" : {
+                    "Gyarados" : 2
+                }
+            }
+        }
+    },
+    "bug" : {
+        "alone": {
+            "probability": 2,
+            "names" : {
+                "Caterpie" : {
+                    "Caterpie" : 1,
+                    "Metapod" : 2
+                },
+                "Pinsir" : {
+                    "Pinsir" : 2
+                }
+            }
+        },
+        "flying": {
+            "probability": 2,
+            "names" : {
+                "Caterpie" : {
+                    "Butterfree" : 3
+                },
+                "Scyther" : {
+                    "Scyther" : 2
+                }
+            }
+
+        },
+        "poison" : {
+            "probability": 5,
+            "names" : {
+                "Weedle" : {
+                    "Weedle" : 1,
+                    "Kakuna" : 2,
+                    "Beedrill" : 3
+                },
+                "Venonat" : {
+                    "Venonat" : 1,
+                    "Venomoth" : 2
+                }
+            }
+        },
+        "grass": {
+            "probability": 2,
+            "names" : {
+                "Paras" : {
+                    "Paras" : 1,
+                    "Parasect" : 2
+                }
+            }
+        }
+    },
+    "normal": {
+        "alone": {
+            "probability": 12,
+            "names" : {
+                "Rattata" : {
+                    "Rattata" : 1,
+                    "Raticate" : 2
+                },
+                "Meowth" : {
+                    "Meowth" : 1,
+                    "Persian" : 2
+                },
+                "Lickitung" : {
+                    "Lickitung" : 2
+                },
+                "Chansey" : {
+                    "Chansey" : 2
+                },
+                "Kangaskhan" : {
+                    "Kangaskhan" : 2
+                },
+                "Tauros" : {
+                    "Tauros" : 2
+                },
+                "Ditto" : {
+                    "Ditto" : 1
+                },
+                "Eevee" : {
+                    "Eevee" : 1
+                },
+                "Porygon" : {
+                    "Porygon" : 2
+                },
+                "Snorlax" : {
+                    "Snorlax" : 2
+                }
+            }
+        },
+        "flying": {
+            "probability": 8,
+            "names" : {
+                "Pidgey" : {
+                    "Pidgey" : 1,
+                    "Pidgetto" : 2,
+                    "Pidgeot" : 3
+                },
+                "Spearow" : {
+                    "Spearow" : 1,
+                    "Fearow" : 2
+                },
+                "Farfetch'd" : {
+                    "Farfetch'd" : 2
+                },
+                "Doduo" : {
+                    "Doduo" : 1,
+                    "Dodrio" : 2
+                }
+            }
+        },
+        "fairy": {
+            "probability": 2,
+            "names" : {
+                "Jigglypuff" : {
+                    "Jigglypuff" : 1,
+                    "Wigglytuff" : 2
+                }
+            }
+        }
+    },
+    "poison": {
+        "alone": {
+            "probability": 10,
+            "names" : {
+                "Ekans" : {
+                    "Ekans" : 1,
+                    "Arbok" : 2
+                },
+                "Nidoran" : {
+                    "Nidoran" : 1,
+                    "Nidorina" : 2,
+                    "Nidorino" : 2
+                },
+                "Grimer" : {
+                    "Grimer" : 1,
+                    "Muk" : 2
+                },
+                "Koffing" : {
+                    "Koffing" : 1,
+                    "Weezing" : 2
+                }
+            }
+        },
+        "ground": {
+            "probability": 2,
+            "names" : {
+                "Nidoran" : {
+                    "Nidoqueen" : 3,
+                    "Nidoking" : 3
+                }
+            }
+        },
+        "fairy": {
+            "probability": 1,
+            "names" : {
+                "Koffing" : {
+                    "Weezing" : 2
+                }
+            }
+        },
+        "flying": {
+            "probability": 2,
+            "names" : {
+                "Zubat" : {
+                    "Zubat" : 1,
+                    "Golbat" : 2
+                }
+            }
+        },
+        "psychic": {
+            "probability": 1,
+            "names" : {
+                "Slowpoke" : {
+                    "Slowbro" : 2
+                }
+            }
+        },
+        "dark" : {
+            "probability" : 2,
+            "names" : {
+                "Grimer" : {
+                    "Grimer" : 1,
+                    "Muk" : 2
+                }
+            }
+        }
+    },
+    "electric" : {
+        "alone": {
+            "probability": 6,
+            "names" : {
+                "Pikachu" : {
+                    "Pikachu" : 1,
+                    "Raichu" : 2
+                },
+                "Voltorb" : {
+                    "Voltorb" : 1,
+                    "Electrode" : 2
+                },
+                "Electabuzz" : {
+                    "Electabuzz" : 2
+                },
+                "Eevee" : {
+                    "Jolteon" : 2
+                }
+            }
+        },
+        "psychic": {
+            "probability": 1,
+            "names" : {
+                "Pikachu" : {
+                    "Raichu" : 2
+                }
+            }
+        },
+        "steel": {
+            "probability": 2,
+            "names" : {
+                "Magnemite" : {
+                    "Magnemite" : 1,
+                    "Magneton" : 2
+                }
+            }
+        },
+        "grass": {
+            "probability": 2,
+            "names" : {
+                "Voltorb" : {
+                    "Voltorb" : 1,
+                    "Electrode" : 2
+                }
+            }
+        },
+        "flying": {
+            "probability": 1,
+            "names" : {
+                "Zapdos" : {
+                    "Zapdos" : 3
+                }
+            }
+        }
+    }, 
+    "ground": {
+        "alone": {
+            "probability": 6,
+            "names" : {
+                "Sandshrew" : {
+                    "Sandshrew" : 1,
+                    "Sandslash" : 2
+                },
+                "Diglett" : {
+                    "Diglett" : 1,
+                    "Dugtrio" : 2
+                },
+                "Cubone" : {
+                    "Cubone": 1,
+                    "Marowak" : 2
+                }
+            }
+        },
+        "steel": {
+            "probability": 2,
+            "names" : {
+                "Diglett" : {
+                    "Diglett" : 1,
+                    "Dugtrio" : 2
+                }
+            }
+        },
+        "rock": {
+            "probability": 2,
+            "names" : {
+                "Rhyhorn" : {
+                    "Rhyhorn" : 1,
+                    "Rhydon" : 2
+                }
+            }
+        }
+    },
+    "ice" : {
+        "alone" : {
+            "probability": 1,
+            "names" : {
+                "Vulpix" : {
+                    "Vulpix" : 1
+                }
+            }
+        },
+        "steel" : {
+            "probability": 2,
+            "names" :  {
+                "Sandshrew" : {
+                    "Sandshrew" : 1,
+                    "Sandslash" : 2
+                }
+            }
+        },
+        "fairy" : {
+            "probability": 1,
+            "names" : {
+                "Vulpix" : {
+                    "Ninetales" : 2
+                }
+            }
+        },
+        "flying" : {
+            "probability": 1,
+            "names" : {
+                "Articuno" : {
+                    "Articuno" : 3
+                }
+            }
+        },
+        "psychic" : {
+            "probability": 2,
+            "names" : {
+                "Mr. Mime" : {
+                    "Mr. Mime" : 2
+                },
+                "Jynx" : {
+                    "Jynx" : 2
+                }
+            }
+        }
+    },
+    "fairy" : {
+        "alone": {
+            "probability": 2,
+            "names" : {
+                "Clefairy" : {
+                    "Clefairy" : 1,
+                    "Clefable" : 2
+                }
+            }
+        }
+    },
+    "fighting" : {
+        "alone" : {
+            "probability": 9,
+            "names" : {
+                "Mankey" : {
+                    "Mankey" : 1,
+                    "Primeape" : 2
+                },
+                "Machop" : {
+                    "Machop" : 1,
+                    "Machoke" : 2,
+                    "Machamp" : 3
+                },
+                "Farfetch'd" : {
+                    "Farfetch'd" : 2
+                },
+                "Hitmonlee" : {
+                    "Hitmonlee" : 2
+                },
+                "Hitmonchan" : {
+                    "Hitmonchan" : 2
+                }
+                },
+                "Tauros" : {
+                    "Tauros" : 2
+                }
+            },
+        "fire" : {
+            "probability": 1,
+            "names" : {
+                "Tauros" : {
+                    "Tauros" : 2
+                }
+            }
+        },
+        "water": {
+            "probability": 1,
+            "names" : {
+                "Tauros" : {
+                    "Tauros" : 2
+                }
+            }
+        },
+        "flying": {
+            "probability": 1,
+            "names" : {
+                "Zapdos" : {
+                    "Zapdos": 3
+                }
+            }
+        }
+    },
+    "psychic": {
+        "alone": {
+            "probability": 9,
+            "names" : {
+                "Abra" : {
+                    "Abra" : 1,
+                    "Kadabra" : 2,
+                    "Alakazam" : 3
+                },
+                "Ponyta" : {
+                    "Ponyta" : 1
+                },
+                "Slowpoke" : {
+                    "Slowpoke" : 1
+                },
+                "Drowzee" : {
+                    "Drowzee" : 1,
+                    "Hypno" : 2
+                },
+                "Mew" : {
+                    "Mew": 3
+                },
+                "Mewtwo" : {
+                    "Mewtwo" : 4
+                }
+            }
+        },
+        "fairy": {
+            "probability": 2,
+            "names" : {
+                "Ponyta" : {
+                    "Rapidash" : 2
+                },
+                "Mr. Mime" : {
+                    "Mr. Mime" : 2
+                }
+
+            }
+        },
+        "flying": {
+            "probability": 1,
+            "names" : {
+                "Articuno" : {
+                    "Articuno" : 3
+                }
+            }
+        }
+    },
+    "rock" : {
+        "ground": {
+            "probability": 4,
+            "names" : {
+                "Geodude" : {
+                    "Geodude" : 1,
+                    "Graveler" : 2,
+                    "Golem" : 3
+                },
+                "Onix" : {
+                    "Onix" : 2
+                }
+            }
+        },
+        "electric": {
+            "probability": 3,
+            "names" : {
+                "Geodude" : {
+                    "Geodude" : 1,
+                    "Graveler" : 2,
+                    "Golem" : 3
+                }
+            }
+        },
+        "water": {
+            "probability": 4,
+            "names" : {
+                "Omanyte" : {
+                    "Omanyte" : 1,
+                    "Omastar" : 2
+                },
+                "Kabuto" : {
+                    "Kabuto" : 1,
+                    "Kabutops" : 2
+                }
+            }
+        },
+        "flying": {
+            "probability": 1,
+            "names" : {
+                "Aerodactyl" : {
+                    "Aerodactyl" : 2
+                }
+            }
+        }
+    },
+    "ghost" : {
+        "poison": {
+            "probability": 3,
+            "names" : {
+                "Gastly" : {
+                    "Gastly" : 1,
+                    "Haunter" : 2,
+                    "Gengar" : 3
+                }
+            }
+        }
+    },
+    "dragon" : {
+        "alone" : {
+            "probability": 2,
+            "names" : {
+                "Dratini" : {
+                    "Dratini" : 1,
+                    "Dragonair" : 2
+                }
+            }
+        },
+        "flying" : {
+            "probability": 1,
+            "names" : {
+                "Dratini" : {
+                    "Dragonite" : 3
+                }
+            }
+        }
+    },
+    "steel" : {
+        "alone" : {
+            "probability" : 1,
+            "names" : {
+                "Meowth" : {
+                    "Meowth" : 1
+                }
+            }
+        }
+    },
+    "dark" : {
+        "alone" : {
+            "probability" : 2,
+            "names" : {
+                "Meowth" : {
+                    "Meowth" : 1,
+                    "Persian" : 2
+                }
+            }
+        },
+        "normal" : {
+            "probability" : 2,
+            "names" :  {
+                "Rattata" : {
+                    "Rattata" : 1,
+                    "Raticate" : 2
+                }
+        },
+        "flying" : {
+            "probability" : 1,
+            "names" : {
+                "Moltres" : {
+                    "Moltres" : 3
+                }
+            }
+        }
+        }
+    }
+}

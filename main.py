@@ -1,12 +1,19 @@
 import pygame
-from display.models.sounds import Sounds
-from display.models.menu import Menu
+# from front_end.gameplay.game import Game
+from front_end.menu.menu import Menu
+from front_end.screen import Screen
+from front_end.sounds import Sounds
 
 pygame.init()
 sounds = Sounds()
 sounds.play_background_music(volume=0.1)
 
 if __name__ == "__main__":
-    menu = Menu()
+    screen = Screen()
+    menu = Menu(screen)
+    
     menu.display()
-
+    # game = Game()
+    # game.run()
+    
+    
