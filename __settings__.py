@@ -7,7 +7,7 @@ TYPES_PATH = './back_end/data/types_probability.json'
 WORLD_POKEMON_PATH = './back_end/data/pokemons.json'
 PLAYER_POKEDEX = './back_end/data/player_pokedex.json'
 NAME_LIST_PATH = './back_end/data/pet_names.json'
-ABSOLUTE_IMAGE_PATH = "./assets/image-pokemon/"
+ABSOLUTE_IMAGE_PATH = "./assets/pokemon_image/"
 
 
 """
@@ -46,5 +46,5 @@ LIGHT_GREEN = (122,186,99)
 """
 IMAGES
 """
-CHEN = "./assets/chen.png"
-POKEBALL = "./assets/spritesheet-pokemon/pokeball.png"
+CHEN = "./assets/backgrounds/professor_oak.png"
+POKEBALL = "./assets/backgrounds/pokeball.png"

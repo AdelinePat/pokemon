@@ -3,7 +3,7 @@ import pytmx
 import pyscroll
 from front_end.screen import Screen
 from .switch import Switch
-from front_end.in_fight.in_fight import InFight
+from front_end.gameplay.in_fight import InFight
 from front_end.sounds import Sounds
 # from front_end.menu.pause_menu import PauseMenu
 
@@ -23,7 +23,6 @@ class Map:
         self.current_map: Switch = Switch("switch", "map0", pygame.Rect(0, 0, 0, 0), 0)
         self.switch_map(self.current_map)
        
-
     def switch_map(self, switch: Switch):
         self.tmx_data = pytmx.load_pygame(f"assets/map/{switch.name}.tmx")
         map_data = pyscroll.data.TiledMapData(self.tmx_data)

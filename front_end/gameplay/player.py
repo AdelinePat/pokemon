@@ -5,7 +5,7 @@ from front_end.screen import Screen
 from .switch import Switch
 # from front_end.menu.name_input import NameInput
 from front_end.gameplay.battlescreen import BattleScreen
-from front_end.in_fight.in_fight import InFight
+from front_end.gameplay.in_fight import InFight
 from front_end.menu.pause_menu import PauseMenu
 
 
