@@ -121,7 +121,7 @@ class Fight:
             capture = random.randint(1, 255)
             bag.set_pokeball(bag.get_pokeball() - 1)
             print("On utilise une pokeball")
-            if capture <= pokemon_enemy.get_hp():
+            if capture >= pokemon_enemy.get_hp():
                 return "Success"
             else :
                 print("Le pokemon à reussi à s'échapper")

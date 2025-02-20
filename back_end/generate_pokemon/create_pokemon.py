@@ -55,7 +55,7 @@ def create_pokemon(first_type):
     hp = random.randrange(10, 31) + level*3
     strength = random.randrange(2,31) + level*3
     speed = random.randrange(2,31) + level*3
-    defense_point = random.randrange(2,21) + level*3
+    defense_point = random.randrange(2,15) + level*3
 
     my_pokemon = Pokemon(name, first_stage_name, hp, hp, strength, defense_point, final_type_list, level, speed, stage)
     

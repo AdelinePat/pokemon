@@ -1,19 +1,18 @@
 [
     {
-        "name": "Bulbasaur",
-        "original_name": "Bulbasaur",
-        "pet_name": "Jean-Baptiste",
-        "hp_max": 21,
-        "hp": 21,
-        "xp": 5,
-        "strength": 12,
-        "defense": 12,
+        "name": "Charmander",
+        "original_name": "Charmander",
+        "pet_name": "Jean-Michel",
+        "hp_max": 28,
+        "hp": 28,
+        "xp": 294,
+        "strength": 47,
+        "defense": 28,
         "type": [
-            "grass",
-            "poison"
+            "fire"
         ],
-        "level": 1,
-        "speed": 31,
+        "level": 6,
+        "speed": 26,
         "stage": 1,
         "ev": {
             "hp": 0,
@@ -25,20 +24,385 @@
         "state": "wild"
     },
     {
-        "name": "Geodude",
-        "original_name": "Geodude",
-        "pet_name": "Jean-Alicia",
+        "name": "Spearow",
+        "original_name": "Spearow",
+        "pet_name": "Jean-Christophe",
+        "hp_max": 35,
+        "hp": 35,
+        "xp": 247,
+        "strength": 40,
+        "defense": 24,
+        "type": [
+            "normal",
+            "flying"
+        ],
+        "level": 6,
+        "speed": 22,
+        "stage": 1,
+        "ev": {
+            "hp": 0,
+            "strength": 0,
+            "defense": 0,
+            "speed": 0,
+            "xp": 0
+        },
+        "state": "wild"
+    },
+    {
+        "name": "Ekans",
+        "original_name": "Ekans",
+        "pet_name": "Jean-Charles",
+        "hp_max": 41,
+        "hp": 41,
+        "xp": 135,
+        "strength": 27,
+        "defense": 32,
+        "type": [
+            "poison"
+        ],
+        "level": 5,
+        "speed": 21,
+        "stage": 1,
+        "ev": {
+            "hp": 0,
+            "strength": 0,
+            "defense": 0,
+            "speed": 0,
+            "xp": 0
+        },
+        "state": "wild"
+    },
+    {
+        "name": "Pikachu",
+        "original_name": "Pikachu",
+        "pet_name": "Jean-Luc",
+        "hp_max": 43,
+        "hp": 43,
+        "xp": 389,
+        "strength": 30,
+        "defense": 32,
+        "type": [
+            "electric"
+        ],
+        "level": 7,
+        "speed": 44,
+        "stage": 1,
+        "ev": {
+            "hp": 0,
+            "strength": 0,
+            "defense": 0,
+            "speed": 0,
+            "xp": 0
+        },
+        "state": "wild"
+    },
+    {
+        "name": "Clefairy",
+        "original_name": "Clefairy",
+        "pet_name": "Jean-Daniel",
+        "hp_max": 39,
+        "hp": 39,
+        "xp": 121,
+        "strength": 31,
+        "defense": 32,
+        "type": [
+            "fairy"
+        ],
+        "level": 4,
+        "speed": 14,
+        "stage": 1,
+        "ev": {
+            "hp": 0,
+            "strength": 0,
+            "defense": 0,
+            "speed": 0,
+            "xp": 0
+        },
+        "state": "wild"
+    },
+    {
+        "name": "Jigglypuff",
+        "original_name": "Jigglypuff",
+        "pet_name": "Jean-Robert",
+        "hp_max": 45,
+        "hp": 45,
+        "xp": 308,
+        "strength": 46,
+        "defense": 35,
+        "type": [
+            "normal",
+            "fairy"
+        ],
+        "level": 6,
+        "speed": 26,
+        "stage": 1,
+        "ev": {
+            "hp": 0,
+            "strength": 0,
+            "defense": 0,
+            "speed": 0,
+            "xp": 0
+        },
+        "state": "wild"
+    },
+    {
+        "name": "Meowth",
+        "original_name": "Meowth",
+        "pet_name": "Jean-Jolyne",
+        "hp_max": 25,
+        "hp": 25,
+        "xp": 32,
+        "strength": 29,
+        "defense": 15,
+        "type": [
+            "normal"
+        ],
+        "level": 3,
+        "speed": 32,
+        "stage": 1,
+        "ev": {
+            "hp": 0,
+            "strength": 0,
+            "defense": 0,
+            "speed": 0,
+            "xp": 0
+        },
+        "state": "wild"
+    },
+    {
+        "name": "Poliwag",
+        "original_name": "Poliwag",
+        "pet_name": "Jean-Armelle",
+        "hp_max": 31,
+        "hp": 31,
+        "xp": 113,
+        "strength": 19,
+        "defense": 27,
+        "type": [
+            "water"
+        ],
+        "level": 4,
+        "speed": 15,
+        "stage": 1,
+        "ev": {
+            "hp": 0,
+            "strength": 0,
+            "defense": 0,
+            "speed": 0,
+            "xp": 0
+        },
+        "state": "wild"
+    },
+    {
+        "name": "Abra",
+        "original_name": "Abra",
+        "pet_name": "Jean-Vladimir",
+        "hp_max": 31,
+        "hp": 31,
+        "xp": 425,
+        "strength": 23,
+        "defense": 33,
+        "type": [
+            "psychic"
+        ],
+        "level": 7,
+        "speed": 51,
+        "stage": 1,
+        "ev": {
+            "hp": 0,
+            "strength": 0,
+            "defense": 0,
+            "speed": 0,
+            "xp": 0
+        },
+        "state": "wild"
+    },
+    {
+        "name": "Machop",
+        "original_name": "Machop",
+        "pet_name": "Jean-Meriam",
+        "hp_max": 47,
+        "hp": 47,
+        "xp": 663,
+        "strength": 30,
+        "defense": 35,
+        "type": [
+            "fighting"
+        ],
+        "level": 8,
+        "speed": 48,
+        "stage": 1,
+        "ev": {
+            "hp": 0,
+            "strength": 0,
+            "defense": 0,
+            "speed": 0,
+            "xp": 0
+        },
+        "state": "wild"
+    },
+    {
+        "name": "Bellsprout",
+        "original_name": "Bellsprout",
+        "pet_name": "Jean-Alexandre",
         "hp_max": 20,
         "hp": 20,
         "xp": 17,
-        "strength": 23,
-        "defense": 24,
+        "strength": 13,
+        "defense": 12,
         "type": [
-            "rock",
-            "ground"
+            "grass",
+            "poison"
         ],
         "level": 2,
-        "speed": 25,
+        "speed": 17,
+        "stage": 1,
+        "ev": {
+            "hp": 0,
+            "strength": 0,
+            "defense": 0,
+            "speed": 0,
+            "xp": 0
+        },
+        "state": "wild"
+    },
+    {
+        "name": "Tentacool",
+        "original_name": "Tentacool",
+        "pet_name": "Jean-Morgan",
+        "hp_max": 45,
+        "hp": 45,
+        "xp": 197,
+        "strength": 25,
+        "defense": 31,
+        "type": [
+            "water",
+            "poison"
+        ],
+        "level": 5,
+        "speed": 22,
+        "stage": 1,
+        "ev": {
+            "hp": 0,
+            "strength": 0,
+            "defense": 0,
+            "speed": 0,
+            "xp": 0
+        },
+        "state": "wild"
+    },
+    {
+        "name": "Slowpoke",
+        "original_name": "Slowpoke",
+        "pet_name": "Jean-Ryan",
+        "hp_max": 23,
+        "hp": 23,
+        "xp": 55,
+        "strength": 22,
+        "defense": 28,
+        "type": [
+            "water",
+            "psychic"
+        ],
+        "level": 3,
+        "speed": 38,
+        "stage": 1,
+        "ev": {
+            "hp": 0,
+            "strength": 0,
+            "defense": 0,
+            "speed": 0,
+            "xp": 0
+        },
+        "state": "wild"
+    },
+    {
+        "name": "Krabby",
+        "original_name": "Krabby",
+        "pet_name": "Jean-Thierry",
+        "hp_max": 39,
+        "hp": 39,
+        "xp": 199,
+        "strength": 37,
+        "defense": 30,
+        "type": [
+            "water"
+        ],
+        "level": 5,
+        "speed": 29,
+        "stage": 1,
+        "ev": {
+            "hp": 0,
+            "strength": 0,
+            "defense": 0,
+            "speed": 0,
+            "xp": 0
+        },
+        "state": "wild"
+    },
+    {
+        "name": "Voltorb",
+        "original_name": "Voltorb",
+        "pet_name": "Jean-Sarah",
+        "hp_max": 37,
+        "hp": 37,
+        "xp": 908,
+        "strength": 46,
+        "defense": 44,
+        "type": [
+            "electric"
+        ],
+        "level": 9,
+        "speed": 29,
+        "stage": 1,
+        "ev": {
+            "hp": 0,
+            "strength": 0,
+            "defense": 0,
+            "speed": 0,
+            "xp": 0
+        },
+        "state": "wild"
+    },
+    {
+        "name": "Exeggcute",
+        "original_name": "Exeggcute",
+        "pet_name": "Jean-H\u00e9l\u00e8ne",
+        "hp_max": 38,
+        "hp": 38,
+        "xp": 44,
+        "strength": 26,
+        "defense": 20,
+        "type": [
+            "grass",
+            "psychic"
+        ],
+        "level": 3,
+        "speed": 14,
+        "stage": 1,
+        "ev": {
+            "hp": 0,
+            "strength": 0,
+            "defense": 0,
+            "speed": 0,
+            "xp": 0
+        },
+        "state": "wild"
+    },
+    {
+        "name": "Staryu",
+        "original_name": "Staryu",
+        "pet_name": "Jean-Jules",
+        "hp_max": 35,
+        "hp": 35,
+        "xp": 266,
+        "strength": 21,
+        "defense": 34,
+        "type": [
+            "water"
+        ],
+        "level": 6,
+        "speed": 43,
         "stage": 1,
         "ev": {
             "hp": 0,
@@ -55,14 +419,14 @@
         "pet_name": "Jean-Gustave",
         "hp_max": 45,
         "hp": 45,
-        "xp": 494,
-        "strength": 25,
-        "defense": 37,
+        "xp": 236,
+        "strength": 24,
+        "defense": 27,
         "type": [
             "normal"
         ],
-        "level": 7,
-        "speed": 31,
+        "level": 6,
+        "speed": 27,
         "stage": 1,
         "ev": {
             "hp": 0,
@@ -74,216 +438,44 @@
         "state": "wild"
     },
     {
-        "name": "Horsea",
-        "original_name": "Horsea",
-        "pet_name": "Jean-L\u00e9on",
-        "hp_max": 41,
-        "hp": 41,
-        "xp": 635,
-        "strength": 29,
-        "defense": 31,
+        "name": "Eevee",
+        "original_name": "Eevee",
+        "pet_name": "Jean-Emile",
+        "hp_max": 32,
+        "hp": 32,
+        "xp": 31,
+        "strength": 37,
+        "defense": 11,
         "type": [
+            "normal"
+        ],
+        "level": 3,
+        "speed": 23,
+        "stage": 1,
+        "ev": {
+            "hp": 0,
+            "strength": 0,
+            "defense": 0,
+            "speed": 0,
+            "xp": 0
+        },
+        "state": "wild"
+    },
+    {
+        "name": "Omanyte",
+        "original_name": "Omanyte",
+        "pet_name": "Jean-Fernand",
+        "hp_max": 43,
+        "hp": 43,
+        "xp": 377,
+        "strength": 24,
+        "defense": 39,
+        "type": [
+            "rock",
             "water"
         ],
-        "level": 8,
-        "speed": 43,
-        "stage": 1,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
-        "name": "Zubat",
-        "original_name": "Zubat",
-        "pet_name": "Jean-Joseph",
-        "hp_max": 39,
-        "hp": 39,
-        "xp": 120,
-        "strength": 38,
-        "defense": 17,
-        "type": [
-            "poison",
-            "flying"
-        ],
-        "level": 4,
-        "speed": 35,
-        "stage": 1,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
-        "name": "Exeggcute",
-        "original_name": "Exeggcute",
-        "pet_name": "Jean-H\u00e9l\u00e8ne",
-        "hp_max": 51,
-        "hp": 51,
-        "xp": 72,
-        "strength": 65,
-        "defense": 64,
-        "type": [
-            "grass",
-            "psychic"
-        ],
-        "level": 4,
-        "speed": 57,
-        "stage": 1,
-        "ev": {
-            "hp": 2,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 3
-        },
-        "state": "wild"
-    },
-    {
-        "name": "Grimer",
-        "original_name": "Grimer",
-        "pet_name": "Jean-Hubert",
-        "hp_max": 31,
-        "hp": 31,
-        "xp": 80,
-        "strength": 22,
-        "defense": 26,
-        "type": [
-            "poison"
-        ],
-        "level": 4,
-        "speed": 39,
-        "stage": 1,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
-        "name": "Oddish",
-        "original_name": "Oddish",
-        "pet_name": "Jean-Thibault",
-        "hp_max": 41,
-        "hp": 41,
-        "xp": 79,
-        "strength": 26,
-        "defense": 21,
-        "type": [
-            "grass",
-            "poison"
-        ],
-        "level": 4,
-        "speed": 38,
-        "stage": 1,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
-        "name": "Shellder",
-        "original_name": "Shellder",
-        "pet_name": "Jean-Vincent",
-        "hp_max": 111,
-        "hp": 111,
-        "xp": 1009,
-        "strength": 90,
-        "defense": 96,
-        "type": [
-            "water"
-        ],
-        "level": 11,
-        "speed": 72,
-        "stage": 1,
-        "ev": {
-            "hp": 0,
-            "strength": 3,
-            "defense": 2,
-            "speed": 1,
-            "xp": 3
-        },
-        "state": "wild"
-    },
-    {
-        "name": "Drowzee",
-        "original_name": "Drowzee",
-        "pet_name": "Jean-David",
-        "hp_max": 114,
-        "hp": 114,
-        "xp": 1185,
-        "strength": 141,
-        "defense": 125,
-        "type": [
-            "psychic"
-        ],
-        "level": 11,
-        "speed": 106,
-        "stage": 1,
-        "ev": {
-            "hp": 3,
-            "strength": 1,
-            "defense": 0,
-            "speed": 3,
-            "xp": 3
-        },
-        "state": "wild"
-    },
-    {
-        "name": "Pidgey",
-        "original_name": "Pidgey",
-        "pet_name": "Jean-Fran\u00e7ois",
-        "hp_max": 53,
-        "hp": 53,
-        "xp": 866,
-        "strength": 39,
-        "defense": 31,
-        "type": [
-            "normal",
-            "flying"
-        ],
-        "level": 9,
-        "speed": 51,
-        "stage": 1,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
-        "name": "Tentacool",
-        "original_name": "Tentacool",
-        "pet_name": "Jean-Morgan",
-        "hp_max": 39,
-        "hp": 39,
-        "xp": 447,
-        "strength": 30,
-        "defense": 35,
-        "type": [
-            "water",
-            "poison"
-        ],
         "level": 7,
-        "speed": 35,
+        "speed": 28,
         "stage": 1,
         "ev": {
             "hp": 0,
@@ -298,41 +490,17 @@
         "name": "Kabuto",
         "original_name": "Kabuto",
         "pet_name": "Jean-Auguste",
-        "hp_max": 37,
-        "hp": 37,
-        "xp": 485,
-        "strength": 48,
-        "defense": 23,
+        "hp_max": 53,
+        "hp": 53,
+        "xp": 676,
+        "strength": 54,
+        "defense": 41,
         "type": [
             "rock",
             "water"
         ],
-        "level": 7,
-        "speed": 43,
-        "stage": 1,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
-        "name": "Diglett",
-        "original_name": "Diglett",
-        "pet_name": "Jean-Eltigani",
-        "hp_max": 40,
-        "hp": 40,
-        "xp": 692,
-        "strength": 28,
-        "defense": 32,
-        "type": [
-            "ground"
-        ],
         "level": 8,
-        "speed": 31,
+        "speed": 46,
         "stage": 1,
         "ev": {
             "hp": 0,
@@ -344,212 +512,18 @@
         "state": "wild"
     },
     {
-        "name": "Charmander",
-        "original_name": "Charmander",
-        "pet_name": "Jean-Michel",
-        "hp_max": 49,
-        "hp": 49,
-        "xp": 995,
-        "strength": 30,
+        "name": "Magikarp",
+        "original_name": "Magikarp",
+        "pet_name": "Jean-Lucien",
+        "hp_max": 45,
+        "hp": 45,
+        "xp": 241,
+        "strength": 23,
         "defense": 30,
         "type": [
-            "fire"
+            "water"
         ],
-        "level": 9,
-        "speed": 53,
-        "stage": 1,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
-        "name": "Voltorb",
-        "original_name": "Voltorb",
-        "pet_name": "Jean-Sarah",
-        "hp_max": 18,
-        "hp": 18,
-        "xp": 3,
-        "strength": 22,
-        "defense": 10,
-        "type": [
-            "electric"
-        ],
-        "level": 1,
-        "speed": 14,
-        "stage": 1,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
-        "name": "Venonat",
-        "original_name": "Venonat",
-        "pet_name": "Jean-Florence",
-        "hp_max": 58,
-        "hp": 58,
-        "xp": 509,
-        "strength": 57,
-        "defense": 41,
-        "type": [
-            "bug",
-            "poison"
-        ],
-        "level": 8,
-        "speed": 41,
-        "stage": 1,
-        "ev": {
-            "hp": 0,
-            "strength": 1,
-            "defense": 2,
-            "speed": 4,
-            "xp": 2
-        },
-        "state": "wild"
-    },
-    {
-        "name": "Clefairy",
-        "original_name": "Clefairy",
-        "pet_name": "Jean-Daniel",
-        "hp_max": 42,
-        "hp": 42,
-        "xp": 500,
-        "strength": 23,
-        "defense": 28,
-        "type": [
-            "fairy"
-        ],
-        "level": 7,
-        "speed": 44,
-        "stage": 1,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
-        "name": "Meowth",
-        "original_name": "Meowth",
-        "pet_name": "Jean-Jolyne",
-        "hp_max": 103,
-        "hp": 103,
-        "xp": 707,
-        "strength": 93,
-        "defense": 77,
-        "type": [
-            "normal"
-        ],
-        "level": 9,
-        "speed": 63,
-        "stage": 1,
-        "ev": {
-            "hp": 0,
-            "strength": 3,
-            "defense": 1,
-            "speed": 2,
-            "xp": 1
-        },
-        "state": "wild"
-    },
-    {
-        "name": "Vulpix",
-        "original_name": "Vulpix",
-        "pet_name": "Jean-Eric",
-        "hp_max": 21,
-        "hp": 21,
-        "xp": 14,
-        "strength": 22,
-        "defense": 20,
-        "type": [
-            "fire"
-        ],
-        "level": 2,
-        "speed": 25,
-        "stage": 1,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
-        "name": "Growlithe",
-        "original_name": "Growlithe",
-        "pet_name": "Jean-Noa",
-        "hp_max": 37,
-        "hp": 37,
-        "xp": 947,
-        "strength": 39,
-        "defense": 46,
-        "type": [
-            "fire"
-        ],
-        "level": 9,
-        "speed": 33,
-        "stage": 1,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
-        "name": "Spearow",
-        "original_name": "Spearow",
-        "pet_name": "Jean-Christophe",
-        "hp_max": 68,
-        "hp": 68,
-        "xp": 805,
-        "strength": 65,
-        "defense": 59,
-        "type": [
-            "normal",
-            "flying"
-        ],
-        "level": 10,
-        "speed": 74,
-        "stage": 1,
-        "ev": {
-            "hp": 1,
-            "strength": 1,
-            "defense": 1,
-            "speed": 1,
-            "xp": 1
-        },
-        "state": "wild"
-    },
-    {
-        "name": "Koffing",
-        "original_name": "Koffing",
-        "pet_name": "Jean-Andr\u00e9",
-        "hp_max": 40,
-        "hp": 40,
-        "xp": 507,
-        "strength": 30,
-        "defense": 29,
-        "type": [
-            "poison"
-        ],
-        "level": 7,
+        "level": 6,
         "speed": 40,
         "stage": 1,
         "ev": {
@@ -565,139 +539,66 @@
         "name": "Seel",
         "original_name": "Seel",
         "pet_name": "Jean-Victor",
-        "hp_max": 34,
-        "hp": 34,
-        "xp": 109,
-        "strength": 36,
-        "defense": 15,
+        "hp_max": 51,
+        "hp": 51,
+        "xp": 1078,
+        "strength": 55,
+        "defense": 48,
         "type": [
             "water"
         ],
-        "level": 4,
-        "speed": 18,
+        "level": 10,
+        "speed": 63,
         "stage": 1,
         "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
-        "name": "Gastly",
-        "original_name": "Gastly",
-        "pet_name": "Jean-Roger",
-        "hp_max": 39,
-        "hp": 39,
-        "xp": 33,
-        "strength": 39,
-        "defense": 13,
-        "type": [
-            "ghost",
-            "poison"
-        ],
-        "level": 3,
-        "speed": 11,
-        "stage": 1,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
-        "name": "Ponyta",
-        "original_name": "Ponyta",
-        "pet_name": "Jean-Malha",
-        "hp_max": 57,
-        "hp": 57,
-        "xp": 1095,
-        "strength": 66,
-        "defense": 59,
-        "type": [
-            "fire"
-        ],
-        "level": 11,
-        "speed": 67,
-        "stage": 1,
-        "ev": {
-            "hp": 2,
-            "strength": 3,
+            "hp": 1,
+            "strength": 2,
             "defense": 3,
-            "speed": 0,
+            "speed": 1,
             "xp": 3
         },
         "state": "wild"
     },
     {
-        "name": "Jigglypuff",
-        "original_name": "Jigglypuff",
-        "pet_name": "Jean-Robert",
-        "hp_max": 34,
-        "hp": 34,
-        "xp": 98,
-        "strength": 28,
-        "defense": 23,
+        "name": "Rhyhorn",
+        "original_name": "Rhyhorn",
+        "pet_name": "Jean-Henri",
+        "hp_max": 51,
+        "hp": 51,
+        "xp": 1172,
+        "strength": 68,
+        "defense": 51,
         "type": [
-            "normal",
-            "fairy"
+            "ground",
+            "rock"
         ],
-        "level": 4,
-        "speed": 20,
-        "stage": 1,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
-        "name": "Omanyte",
-        "original_name": "Omanyte",
-        "pet_name": "Jean-Fernand",
-        "hp_max": 182,
-        "hp": 182,
-        "xp": 2213,
-        "strength": 163,
-        "defense": 147,
-        "type": [
-            "rock",
-            "water"
-        ],
-        "level": 14,
-        "speed": 124,
+        "level": 10,
+        "speed": 68,
         "stage": 1,
         "ev": {
             "hp": 3,
-            "strength": 2,
+            "strength": 1,
             "defense": 0,
-            "speed": 3,
-            "xp": 3
+            "speed": 2,
+            "xp": 0
         },
         "state": "wild"
     },
     {
-        "name": "Ekans",
-        "original_name": "Ekans",
-        "pet_name": "Jean-Charles",
-        "hp_max": 43,
-        "hp": 43,
-        "xp": 340,
-        "strength": 27,
-        "defense": 32,
+        "name": "Doduo",
+        "original_name": "Doduo",
+        "pet_name": "Jean-Emilie",
+        "hp_max": 39,
+        "hp": 39,
+        "xp": 70,
+        "strength": 30,
+        "defense": 14,
         "type": [
-            "poison"
+            "normal",
+            "flying"
         ],
-        "level": 6,
-        "speed": 20,
+        "level": 4,
+        "speed": 16,
         "stage": 1,
         "ev": {
             "hp": 0,
@@ -709,19 +610,117 @@
         "state": "wild"
     },
     {
-        "name": "Eevee",
-        "original_name": "Eevee",
-        "pet_name": "Jean-Emile",
-        "hp_max": 25,
-        "hp": 25,
-        "xp": 62,
-        "strength": 24,
-        "defense": 27,
+        "name": "Bulbasaur",
+        "original_name": "Bulbasaur",
+        "pet_name": "Jean-Baptiste",
+        "hp_max": 49,
+        "hp": 49,
+        "xp": 793,
+        "strength": 36,
+        "defense": 39,
         "type": [
-            "normal"
+            "grass",
+            "poison"
         ],
-        "level": 3,
-        "speed": 35,
+        "level": 9,
+        "speed": 29,
+        "stage": 1,
+        "ev": {
+            "hp": 0,
+            "strength": 0,
+            "defense": 0,
+            "speed": 0,
+            "xp": 0
+        },
+        "state": "wild"
+    },
+    {
+        "name": "Nidoran",
+        "original_name": "Nidoran",
+        "pet_name": "Jean-S\u00e9bastien",
+        "hp_max": 23,
+        "hp": 23,
+        "xp": 102,
+        "strength": 18,
+        "defense": 20,
+        "type": [
+            "poison"
+        ],
+        "level": 4,
+        "speed": 22,
+        "stage": 1,
+        "ev": {
+            "hp": 0,
+            "strength": 0,
+            "defense": 0,
+            "speed": 0,
+            "xp": 0
+        },
+        "state": "wild"
+    },
+    {
+        "name": "Dratini",
+        "original_name": "Dratini",
+        "pet_name": "Jean-Cl\u00e9ment",
+        "hp_max": 37,
+        "hp": 37,
+        "xp": 202,
+        "strength": 33,
+        "defense": 31,
+        "type": [
+            "dragon"
+        ],
+        "level": 5,
+        "speed": 36,
+        "stage": 1,
+        "ev": {
+            "hp": 0,
+            "strength": 0,
+            "defense": 0,
+            "speed": 0,
+            "xp": 0
+        },
+        "state": "wild"
+    },
+    {
+        "name": "Pidgey",
+        "original_name": "Pidgey",
+        "pet_name": "Jean-Fran\u00e7ois",
+        "hp_max": 38,
+        "hp": 38,
+        "xp": 531,
+        "strength": 29,
+        "defense": 41,
+        "type": [
+            "normal",
+            "flying"
+        ],
+        "level": 8,
+        "speed": 42,
+        "stage": 1,
+        "ev": {
+            "hp": 0,
+            "strength": 0,
+            "defense": 0,
+            "speed": 0,
+            "xp": 0
+        },
+        "state": "wild"
+    },
+    {
+        "name": "Sandshrew",
+        "original_name": "Sandshrew",
+        "pet_name": "Jean-Marie",
+        "hp_max": 32,
+        "hp": 32,
+        "xp": 129,
+        "strength": 39,
+        "defense": 31,
+        "type": [
+            "ground"
+        ],
+        "level": 5,
+        "speed": 24,
         "stage": 1,
         "ev": {
             "hp": 0,
@@ -736,16 +735,16 @@
         "name": "Rattata",
         "original_name": "Rattata",
         "pet_name": "Jean-Claude",
-        "hp_max": 38,
-        "hp": 38,
-        "xp": 95,
-        "strength": 42,
-        "defense": 24,
+        "hp_max": 48,
+        "hp": 48,
+        "xp": 293,
+        "strength": 44,
+        "defense": 34,
         "type": [
             "normal"
         ],
-        "level": 4,
-        "speed": 15,
+        "level": 6,
+        "speed": 21,
         "stage": 1,
         "ev": {
             "hp": 0,
@@ -757,19 +756,20 @@
         "state": "wild"
     },
     {
-        "name": "Cubone",
-        "original_name": "Cubone",
-        "pet_name": "Jean-Georges",
-        "hp_max": 32,
-        "hp": 32,
-        "xp": 122,
-        "strength": 34,
-        "defense": 32,
+        "name": "Gastly",
+        "original_name": "Gastly",
+        "pet_name": "Jean-Roger",
+        "hp_max": 37,
+        "hp": 37,
+        "xp": 919,
+        "strength": 42,
+        "defense": 44,
         "type": [
-            "ground"
+            "ghost",
+            "poison"
         ],
-        "level": 4,
-        "speed": 37,
+        "level": 9,
+        "speed": 48,
         "stage": 1,
         "ev": {
             "hp": 0,
@@ -781,19 +781,44 @@
         "state": "wild"
     },
     {
-        "name": "Psyduck",
-        "original_name": "Psyduck",
-        "pet_name": "Jean-Mehdi",
-        "hp_max": 39,
-        "hp": 39,
-        "xp": 53,
-        "strength": 14,
-        "defense": 25,
+        "name": "Shellder",
+        "original_name": "Shellder",
+        "pet_name": "Jean-Vincent",
+        "hp_max": 69,
+        "hp": 69,
+        "xp": 729,
+        "strength": 68,
+        "defense": 59,
         "type": [
             "water"
         ],
-        "level": 3,
-        "speed": 27,
+        "level": 8,
+        "speed": 94,
+        "stage": 1,
+        "ev": {
+            "hp": 0,
+            "strength": 0,
+            "defense": 0,
+            "speed": 0,
+            "xp": 3
+        },
+        "state": "wild"
+    },
+    {
+        "name": "Oddish",
+        "original_name": "Oddish",
+        "pet_name": "Jean-Thibault",
+        "hp_max": 43,
+        "hp": 43,
+        "xp": 422,
+        "strength": 38,
+        "defense": 30,
+        "type": [
+            "grass",
+            "poison"
+        ],
+        "level": 7,
+        "speed": 41,
         "stage": 1,
         "ev": {
             "hp": 0,
@@ -808,16 +833,16 @@
         "name": "Tangela",
         "original_name": "Tangela",
         "pet_name": "Jean-Marcel",
-        "hp_max": 35,
-        "hp": 35,
-        "xp": 379,
-        "strength": 51,
-        "defense": 36,
+        "hp_max": 29,
+        "hp": 29,
+        "xp": 7,
+        "strength": 14,
+        "defense": 12,
         "type": [
             "grass"
         ],
-        "level": 7,
-        "speed": 44,
+        "level": 1,
+        "speed": 32,
         "stage": 1,
         "ev": {
             "hp": 0,
@@ -829,118 +854,68 @@
         "state": "wild"
     },
     {
-        "name": "Weedle",
-        "original_name": "Weedle",
-        "pet_name": "Jean-Louis",
+        "name": "Grimer",
+        "original_name": "Grimer",
+        "pet_name": "Jean-Hubert",
+        "hp_max": 26,
+        "hp": 26,
+        "xp": 132,
+        "strength": 37,
+        "defense": 20,
+        "type": [
+            "poison"
+        ],
+        "level": 5,
+        "speed": 37,
+        "stage": 1,
+        "ev": {
+            "hp": 0,
+            "strength": 0,
+            "defense": 0,
+            "speed": 0,
+            "xp": 0
+        },
+        "state": "wild"
+    },
+    {
+        "name": "Squirtle",
+        "original_name": "Squirtle",
+        "pet_name": "Jean-Pierre",
+        "hp_max": 39,
+        "hp": 39,
+        "xp": 233,
+        "strength": 35,
+        "defense": 31,
+        "type": [
+            "water"
+        ],
+        "level": 6,
+        "speed": 43,
+        "stage": 1,
+        "ev": {
+            "hp": 0,
+            "strength": 1,
+            "defense": 2,
+            "speed": 3,
+            "xp": 2
+        },
+        "state": "wild"
+    },
+    {
+        "name": "Zubat",
+        "original_name": "Zubat",
+        "pet_name": "Jean-Joseph",
         "hp_max": 33,
         "hp": 33,
-        "xp": 207,
-        "strength": 28,
-        "defense": 31,
+        "xp": 22,
+        "strength": 9,
+        "defense": 12,
         "type": [
-            "bug",
-            "poison"
-        ],
-        "level": 5,
-        "speed": 19,
-        "stage": 1,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
-        "name": "Bellsprout",
-        "original_name": "Bellsprout",
-        "pet_name": "Jean-Alexandre",
-        "hp_max": 48,
-        "hp": 48,
-        "xp": 392,
-        "strength": 25,
-        "defense": 40,
-        "type": [
-            "grass",
-            "poison"
-        ],
-        "level": 7,
-        "speed": 44,
-        "stage": 1,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
-        "name": "Mankey",
-        "original_name": "Mankey",
-        "pet_name": "Jean-Vanessa",
-        "hp_max": 16,
-        "hp": 16,
-        "xp": 3,
-        "strength": 23,
-        "defense": 8,
-        "type": [
-            "fighting"
-        ],
-        "level": 1,
-        "speed": 29,
-        "stage": 1,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
-        "name": "Doduo",
-        "original_name": "Doduo",
-        "pet_name": "Jean-Emilie",
-        "hp_max": 43,
-        "hp": 43,
-        "xp": 131,
-        "strength": 30,
-        "defense": 31,
-        "type": [
-            "normal",
+            "poison",
             "flying"
         ],
-        "level": 5,
-        "speed": 37,
-        "stage": 1,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
-        "name": "Caterpie",
-        "original_name": "Caterpie",
-        "pet_name": "Jean-Paul",
-        "hp_max": 31,
-        "hp": 31,
-        "xp": 14,
-        "strength": 36,
-        "defense": 10,
-        "type": [
-            "bug"
-        ],
         "level": 2,
-        "speed": 36,
+        "speed": 8,
         "stage": 1,
         "ev": {
             "hp": 0,
@@ -952,20 +927,43 @@
         "state": "wild"
     },
     {
-        "name": "Paras",
-        "original_name": "Paras",
-        "pet_name": "Jean-Adeline",
-        "hp_max": 24,
-        "hp": 24,
-        "xp": 59,
-        "strength": 33,
-        "defense": 27,
+        "name": "Ponyta",
+        "original_name": "Ponyta",
+        "pet_name": "Jean-Malha",
+        "hp_max": 37,
+        "hp": 37,
+        "xp": 114,
+        "strength": 14,
+        "defense": 19,
         "type": [
-            "bug",
-            "grass"
+            "fire"
+        ],
+        "level": 4,
+        "speed": 34,
+        "stage": 1,
+        "ev": {
+            "hp": 0,
+            "strength": 0,
+            "defense": 0,
+            "speed": 0,
+            "xp": 0
+        },
+        "state": "wild"
+    },
+    {
+        "name": "Diglett",
+        "original_name": "Diglett",
+        "pet_name": "Jean-Eltigani",
+        "hp_max": 23,
+        "hp": 23,
+        "xp": 48,
+        "strength": 15,
+        "defense": 24,
+        "type": [
+            "ground"
         ],
         "level": 3,
-        "speed": 37,
+        "speed": 25,
         "stage": 1,
         "ev": {
             "hp": 0,
@@ -973,78 +971,6 @@
             "defense": 0,
             "speed": 0,
             "xp": 0
-        },
-        "state": "wild"
-    },
-    {
-        "name": "Poliwag",
-        "original_name": "Poliwag",
-        "pet_name": "Jean-Armelle",
-        "hp_max": 42,
-        "hp": 42,
-        "xp": 826,
-        "strength": 37,
-        "defense": 35,
-        "type": [
-            "water"
-        ],
-        "level": 9,
-        "speed": 30,
-        "stage": 1,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
-        "name": "Abra",
-        "original_name": "Abra",
-        "pet_name": "Jean-Vladimir",
-        "hp_max": 32,
-        "hp": 32,
-        "xp": 1,
-        "strength": 26,
-        "defense": 11,
-        "type": [
-            "psychic"
-        ],
-        "level": 1,
-        "speed": 7,
-        "stage": 1,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
-        "name": "Krabby",
-        "original_name": "Krabby",
-        "pet_name": "Jean-Thierry",
-        "hp_max": 130,
-        "hp": 130,
-        "xp": 407,
-        "strength": 124,
-        "defense": 123,
-        "type": [
-            "water"
-        ],
-        "level": 8,
-        "speed": 111,
-        "stage": 1,
-        "ev": {
-            "hp": 2,
-            "strength": 0,
-            "defense": 3,
-            "speed": 2,
-            "xp": 2
         },
         "state": "wild"
     }

@@ -50,14 +50,19 @@ class SelectPokemon():
             # self.screen.get_display().fill((0, 0, 0))
             self.screen.display.blit(image, image_rect)
 
-            self.draw_text("Choose your first pokemon", 600, 150, LIGHT_GREEN)
+            # self.draw_text("Choose your first pokemon", 600, 150, LIGHT_GREEN)
 
             for i, option in enumerate(self.options):
+                font_size = self.screen.height // 15
                 if i == self.selected_index:
                     # color = LIGHT_GREEN
                     option = pygame.transform.smoothscale(pygame.image.load(self.pokemons[i].get_image()), (self.screen.width // 4, self.screen.width //  4))
                     option.get_rect(center= (self.screen.width // 3 * 0.5+i, self.screen.height // 5*2.5))
                     self.screen.display.blit(option, self.options_rect[i])
+                    self.util.draw_text(self.pokemons[i].name, REGULAR_FONT, font_size, self.screen, (self.screen.width // 2, self.screen.height // 5*1.5)
+                    # def draw_text(self, text, font, font_size, screen, my_center, color=DARK_GREEN):
+                    
+                    # self.util.draw_text(option.name, REGULAR_FONT, font_size, self.screen, (self.screen.width // 3 * 0.5+i, self.screen.height // 5*1.5))
 
                     # self.load_image(pokemon.get_image(), (self.screen.width // 6, self.screen.width //  6))
                 else:
@@ -65,9 +70,14 @@ class SelectPokemon():
                     option = pygame.transform.smoothscale(pygame.image.load(self.pokemons[i].get_image()), (self.screen.width // 6, self.screen.width //  6))
                     option.get_rect(center= (self.screen.width // 3 * 0.5+i, self.screen.height // 5*2.5))
                     self.screen.display.blit(option, self.options_rect[i])
+                    # self.util.draw_text(self.pokemons[i].name, REGULAR_FONT, font_size, self.screen,\
+                                        # (self.screen.width // 3 * 0.5+i, self.screen.height // 5*1.5))
                 # color = LIGHT_GREEN if i == self.selected_index else (255, 255, 255)
                 # self.draw_text(option, 600, 300 + i * 60, color)
-                
+            
+            # for y, pokemon in enumerate(self.pokemons):
+            #     self.util.draw_text(pokemon[y].name, REGULAR_FONT, font_size, self.screen, (self.screen.width // 3 * 0.5+y, self.screen.height // 5*1.5))
+
 
             pygame.display.flip()
 
