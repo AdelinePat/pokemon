@@ -24,6 +24,14 @@ class UtilTool():
         battle_floor_rect = battle_floor.get_rect(center = (x, y))
         screen.display.blit(battle_floor, battle_floor_rect)
 
+    def display_assets_and_background_in_fight(self, screen, x_movement, y_movement, battle_floor, battle_floor2, pokemon_enemy, pokemon):
+        screen.set_background_without_black(BATTLE_BACKGROUND)
+        floor1 = self.display_asset_battle(screen, battle_floor, screen.width // 5, screen.height // 7, screen.width // 10 * 7.5, screen.height // 7 * 3.2)
+        floor = self.display_asset_battle(screen, battle_floor2, screen.width // 3, screen.height // 5, screen.width // 10 * 2, screen.height // 7 * 6.6)
+
+        enemy = self.display_asset_battle(screen, pokemon_enemy, screen.width //6, screen.width //6, screen.width // 10 * 7.5 + x_movement, screen.height // 7 * 3)
+        my_pokemon = self.display_asset_battle(screen, pokemon, screen.width // 4.5, screen.width // 4.5, screen.width // 10 * 2, screen.height // 7 * 6.3 + y_movement)
+
     def display_assets_and_background(self, screen, x_movement, y_movement, battle_floor, battle_floor2, pokemon_enemy, pokemon):
         screen.set_background_without_black(BATTLE_BACKGROUND)
         floor1 = self.display_asset_battle(screen, battle_floor, screen.width // 5, screen.height // 7, screen.width // 10 * 7.5, screen.height // 7 * 3.2)

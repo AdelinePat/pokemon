@@ -26,7 +26,7 @@ class AttackMenu:
         """
         battle_floor = self.util.load_image(BATTLE_FLOOR)
         battle_floor2 = pygame.transform.flip(battle_floor, True, False)
-        pokemon = pygame.transform.flip(self.util.load_image(self.pokemon.get_image()), True, False)
+        pokemon = self.util.load_image(self.pokemon.get_back_image())
         pokemon_enemy = self.util.load_image(self.pokemon_enemy.get_image())
         time_count = 0
         var_x = 5
@@ -40,7 +40,7 @@ class AttackMenu:
                 time_count += speed
                 x_movement = int(var_y * math.sin(time_count * 0.1))
                 y_movement = int(var_x * math.sin(time_count * 0.08))
-            self.util.display_assets_and_background(self.screen, x_movement, y_movement, battle_floor, battle_floor2, pokemon_enemy, pokemon)
+            self.util.display_assets_and_background_in_fight(self.screen, x_movement, y_movement, battle_floor, battle_floor2, pokemon_enemy, pokemon)
 
             self.util.draw_option_screen(self.screen)
 

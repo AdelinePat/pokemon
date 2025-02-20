@@ -104,7 +104,7 @@ class InFight():
             player_turn = True
 
         while self.running: 
-            pokemon = pygame.transform.flip(self.util.load_image(self.pokemon.get_image()), True, False)
+            pokemon = self.util.load_image(self.pokemon.get_back_image())
             
             #DISPLAY
             self.screen.update()
@@ -112,7 +112,7 @@ class InFight():
                 time_count += speed
                 x_movement = int(var_y * math.sin(time_count * 0.1))
                 y_movement = int(var_x * math.sin(time_count * 0.08))
-            self.util.display_assets_and_background(self.screen, x_movement, y_movement, battle_floor, battle_floor2, pokemon_enemy, pokemon)
+            self.util.display_assets_and_background_in_fight(self.screen, x_movement, y_movement, battle_floor, battle_floor2, pokemon_enemy, pokemon)
             # draw_health_bar(x, y, max_hp, current_health, name, screen):
 
             # pokemon health

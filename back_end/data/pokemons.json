@@ -24,78 +24,6 @@
         "state": "wild"
     },
     {
-        "name": "Diglett",
-        "original_name": "Diglett",
-        "pet_name": "Jean-Eltigani",
-        "hp_max": 25,
-        "hp": 25,
-        "xp": 39,
-        "strength": 16,
-        "defense": 13,
-        "type": [
-            "ground"
-        ],
-        "level": 3,
-        "speed": 28,
-        "stage": 1,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
-        "name": "Magikarp",
-        "original_name": "Magikarp",
-        "pet_name": "Jean-Lucien",
-        "hp_max": 47,
-        "hp": 47,
-        "xp": 472,
-        "strength": 44,
-        "defense": 29,
-        "type": [
-            "water"
-        ],
-        "level": 7,
-        "speed": 50,
-        "stage": 1,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
-        "name": "Machop",
-        "original_name": "Machop",
-        "pet_name": "Jean-Meriam",
-        "hp_max": 34,
-        "hp": 34,
-        "xp": 142,
-        "strength": 32,
-        "defense": 17,
-        "type": [
-            "fighting"
-        ],
-        "level": 5,
-        "speed": 22,
-        "stage": 1,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
         "name": "Magnemite",
         "original_name": "Magnemite",
         "pet_name": "Jean-Ryhad",
@@ -110,79 +38,6 @@
         ],
         "level": 2,
         "speed": 21,
-        "stage": 1,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
-        "name": "Shellder",
-        "original_name": "Shellder",
-        "pet_name": "Jean-Vincent",
-        "hp_max": 57,
-        "hp": 57,
-        "xp": 930,
-        "strength": 38,
-        "defense": 32,
-        "type": [
-            "water"
-        ],
-        "level": 9,
-        "speed": 52,
-        "stage": 1,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
-        "name": "Rattata",
-        "original_name": "Rattata",
-        "pet_name": "Jean-Claude",
-        "hp_max": 47,
-        "hp": 47,
-        "xp": 937,
-        "strength": 50,
-        "defense": 29,
-        "type": [
-            "normal"
-        ],
-        "level": 9,
-        "speed": 31,
-        "stage": 1,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
-        "name": "Bulbasaur",
-        "original_name": "Bulbasaur",
-        "pet_name": "Jean-Baptiste",
-        "hp_max": 50,
-        "hp": 50,
-        "xp": 984,
-        "strength": 41,
-        "defense": 37,
-        "type": [
-            "grass",
-            "poison"
-        ],
-        "level": 9,
-        "speed": 29,
         "stage": 1,
         "ev": {
             "hp": 0,
@@ -243,43 +98,44 @@
         "state": "wild"
     },
     {
-        "name": "Horsea",
-        "original_name": "Horsea",
-        "pet_name": "Jean-L\u00e9on",
-        "hp_max": 40,
-        "hp": 40,
-        "xp": 132,
-        "strength": 47,
-        "defense": 37,
+        "name": "Machop",
+        "original_name": "Machop",
+        "pet_name": "Jean-Meriam",
+        "hp_max": 34,
+        "hp": 34,
+        "xp": 142,
+        "strength": 32,
+        "defense": 17,
         "type": [
-            "water"
+            "fighting"
         ],
         "level": 5,
-        "speed": 65,
+        "speed": 22,
         "stage": 1,
         "ev": {
-            "hp": 3,
-            "strength": 3,
-            "defense": 1,
-            "speed": 1,
-            "xp": 2
+            "hp": 0,
+            "strength": 0,
+            "defense": 0,
+            "speed": 0,
+            "xp": 0
         },
         "state": "wild"
     },
     {
-        "name": "Drowzee",
-        "original_name": "Drowzee",
-        "pet_name": "Jean-David",
-        "hp_max": 38,
-        "hp": 38,
-        "xp": 502,
-        "strength": 38,
-        "defense": 25,
+        "name": "Weedle",
+        "original_name": "Weedle",
+        "pet_name": "Jean-Louis",
+        "hp_max": 34,
+        "hp": 34,
+        "xp": 73,
+        "strength": 27,
+        "defense": 28,
         "type": [
-            "psychic"
+            "bug",
+            "poison"
         ],
-        "level": 7,
-        "speed": 32,
+        "level": 4,
+        "speed": 35,
         "stage": 1,
         "ev": {
             "hp": 0,
@@ -315,20 +171,44 @@
         "state": "wild"
     },
     {
-        "name": "Weedle",
-        "original_name": "Weedle",
-        "pet_name": "Jean-Louis",
-        "hp_max": 34,
-        "hp": 34,
-        "xp": 73,
-        "strength": 27,
-        "defense": 28,
+        "name": "Bulbasaur",
+        "original_name": "Bulbasaur",
+        "pet_name": "Jean-Baptiste",
+        "hp_max": 50,
+        "hp": 50,
+        "xp": 984,
+        "strength": 41,
+        "defense": 37,
         "type": [
-            "bug",
+            "grass",
             "poison"
         ],
-        "level": 4,
-        "speed": 35,
+        "level": 9,
+        "speed": 29,
+        "stage": 1,
+        "ev": {
+            "hp": 0,
+            "strength": 0,
+            "defense": 0,
+            "speed": 0,
+            "xp": 0
+        },
+        "state": "wild"
+    },
+    {
+        "name": "Shellder",
+        "original_name": "Shellder",
+        "pet_name": "Jean-Vincent",
+        "hp_max": 57,
+        "hp": 57,
+        "xp": 930,
+        "strength": 38,
+        "defense": 32,
+        "type": [
+            "water"
+        ],
+        "level": 9,
+        "speed": 52,
         "stage": 1,
         "ev": {
             "hp": 0,

@@ -11,6 +11,7 @@ class Evolution():
         # self.image_path = self.set_image()
         self.__evolution_number = self.get_evolution_name_list()
         self.image = self.get_image()
+        self.back_image = self.get_back_image()
 
     def set_stage(self, new_stage):
         self.__stage = new_stage
@@ -20,6 +21,10 @@ class Evolution():
 
     def get_image(self):
         image = ABSOLUTE_IMAGE_PATH + self.name + ".png"
+        return image
+    
+    def get_back_image(self):
+        image = ABSOLUTE_IMAGE_PATH + "BackPoke/" + self.name + ".png"
         return image
 
     def get_name(self):
