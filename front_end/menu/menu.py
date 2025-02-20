@@ -8,6 +8,9 @@ from __settings__ import MAIN_MENU_BACKGROUND1, LIGHT_GREEN, REGULAR_FONT
 from front_end.sounds import Sounds
 from back_end.data_access.pokemon_pokedex_service import get_first_pokemon
 from front_end.menu.util_tool import UtilTool
+from back_end.data_access.pokemon_pokedex_service import save_pokemon_to_pokedex
+# from back_end.data_access.bag_pokedex_service import save_bag_to_pokedex
+# from back_end.data_access.wild_pokemons import save_wild_pokemon
 
 sounds = Sounds()
 
@@ -61,6 +64,7 @@ class Menu:
                             case 0:  # Start a new game
                                 name_input = NameInput(self.screen)
                                 player_name, pokemon = name_input.get_name()
+                                # save_
                                 game = Game(self.screen, player_name, pokemon)
                                 
                                 # Stop the opening music and start the map music

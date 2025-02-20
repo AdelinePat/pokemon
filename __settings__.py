@@ -47,3 +47,4 @@ LIGHT_GREEN = (122,186,99)
 IMAGES
 """
 CHEN = "./assets/chen.png"
+POKEBALL = "./assets/spritesheet-pokemon/pokeball.png"

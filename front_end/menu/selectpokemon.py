@@ -2,14 +2,15 @@ import pygame
 import sys
 from .display_pokemon_stat import PokemonStat
 from back_end.controller import get_starter_pokemons
-from __settings__ import LIGHT_GREEN, POKEMON_CENTER, POKEMON_CENTER, REGULAR_FONT
+from __settings__ import LIGHT_GREEN, POKEMON_CENTER, POKEMON_CENTER, REGULAR_FONT, POKEBALL
 from front_end.menu.util_tool import UtilTool
+from back_end.controller import create_player
 
 class SelectPokemon():
     def __init__(self, player_name, screen, pokemon_list=[]):
         self.player_name = player_name
         self.screen = screen
-        self.background = pygame.image.load(POKEMON_CENTER)
+        self.background = pygame.transform.scale(pygame.image.load(POKEMON_CENTER), (self.screen.width, self.screen.height))
         self.util = UtilTool()
         self.font = pygame.font.Font(None, 50)
         if not pokemon_list:
@@ -36,13 +37,49 @@ class SelectPokemon():
         img = pygame.transform.scale(img, (scaling))
         return img
 
+    def capturePokemon(self, pokemon, pokemon_rect, pokemons, pokemons_rect):
+        pokeball_img = pygame.transform.scale(pygame.image.load(POKEBALL), (50,60))
+        pokeball_img.set_colorkey((255,255,255))
+        pokeball_rect = pokeball_img.get_rect(center=(self.screen.width // 2, self.screen.height - 100))
+        # pokemon_rect = pygame.image.load(pokemon.get_image()).get_rect()
+        target_pos = pokemon_rect.center
+        
+        vitesse = 15
+        captured = False
+
+        while not captured:
+            self.screen.display.fill((173, 216, 230))
+            self.screen.display.blit(self.background, (0, 0))
+
+
+            for index, p in enumerate(pokemons):
+
+                # p_rect = p_img.get_rect()
+                self.screen.display.blit(p, pokemons_rect[index].topleft)
+
+            if pokeball_rect.colliderect(pokemon_rect):
+                captured = True
+
+            else:
+                dx = target_pos[0] - pokeball_rect.centerx
+                dy = target_pos[1] - pokeball_rect.centery
+                dist = max(1, (dx ** 2 + dy ** 2) ** 0.5)
+                pokeball_rect.x += int(vitesse * dx / dist)
+                pokeball_rect.y += int(vitesse * dy / dist)
+
+            self.screen.display.blit(pokeball_img, pokeball_rect.topleft)
+            pygame.display.flip()
+            pygame.time.delay(30)
+    
+
     def draw_text(self, text, x, y, color=(255, 255, 255)):
         surface = self.font.render(text, True, color)
         rect = surface.get_rect(center=(x, y))
         self.screen.get_display().blit(surface, rect)
 
     def display(self):
-        image = pygame.transform.scale(pygame.image.load(POKEMON_CENTER), (self.screen.width, self.screen.height))
+        image = self.background
+        # image = pygame.transform.scale(pygame.image.load(POKEMON_CENTER), (self.screen.width, self.screen.height))
         image_rect = image.get_rect(center = (self.screen.width // 2, self.screen.height //2))
 
         while self.running:
@@ -97,9 +134,18 @@ class SelectPokemon():
                         for index in range(len(self.options)):
                             if self.selected_index == index:
                                 pokemon_enemy = None
-                                #  player_name, pokemon_list, pokemon, pokemon_enemy, screen, background
                                 pokemon = PokemonStat(self.player_name, self.pokemons, self.pokemons[index], pokemon_enemy, self.screen, self.background).display()
-                                return pokemon
+                                # pokemon_data = { 'img': self.options[self.selected_index], 'rect': self.options_rect[self.selected_index] }
+                    
+                    if event.key == pygame.K_LSHIFT:
+                        create_player(self.player_name, self.pokemons[self.selected_index])
+                        self.capturePokemon(self.options[self.selected_index], self.options_rect[self.selected_index], self.options, self.options_rect)
+                        return self.pokemons[self.selected_index]
+
+                                #  player_name, pokemon_list, pokemon, pokemon_enemy, screen, self.background
+                                # pokemon = PokemonStat(self.player_name, self.pokemons, self.pokemons[index], pokemon_enemy, self.screen, self.background).display()
+                                # self.capturePokemon(pokemon_data, self.pokemons)
+                                # return pokemon
 
                     elif event.key == pygame.K_ESCAPE:
                         # return self.pokemons[0]
