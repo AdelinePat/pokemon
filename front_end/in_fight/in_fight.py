@@ -307,6 +307,8 @@ class InFight():
                         self.fight.bot_attack()
                         message_attack = self.fight.fightinfo.set_who_attack_message(self.pokemon_enemy)
                         message_damage = self.fight.fightinfo.get_damage_message()
+                        if self.pokemon.get_hp() == 0:
+                            win = True
                         # pygame.time.wait(1000)
                         # player_turn = True
                     else:
