@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="10" height="10" tilewidth="16" tileheight="16" infinite="0" nextlayerid="12" nextobjectid="33">
+ <tileset firstgid="1" source="./tileset/interieur1.tsx"/>
+ <tileset firstgid="4625" source="./tileset/pokemon-center.tsx"/>
+ <group id="8" name="layer">
+  <layer id="1" name="Calque de Tuiles 1" width="10" height="10">
+   <data encoding="csv">
+0,410,410,410,410,410,410,410,410,0,
+410,410,410,410,410,410,410,410,410,410,
+410,410,410,410,410,410,410,410,410,410,
+410,410,410,410,410,410,410,410,410,410,
+410,410,410,410,410,410,410,410,410,410,
+410,410,410,410,410,410,410,410,410,410,
+410,410,410,410,410,410,410,410,410,410,
+410,410,410,410,410,410,410,410,410,410,
+410,410,410,410,410,410,410,410,410,410,
+410,410,410,410,410,410,410,410,410,410
+</data>
+  </layer>
+  <layer id="2" name="mur" width="10" height="10">
+   <data encoding="csv">
+419,429,429,429,430,431,429,430,431,420,
+427,437,437,437,438,439,437,438,439,428,
+435,0,0,0,0,0,0,0,0,436,
+0,0,0,0,0,0,449,450,0,0,
+0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0
+</data>
+  </layer>
+  <layer id="3" name="deco1" width="10" height="10">
+   <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,
+0,0,0,432,0,0,0,0,0,0,
+0,0,0,440,0,0,0,0,0,0,
+445,446,447,448,0,0,457,458,0,451,
+453,454,455,456,0,0,465,466,0,459,
+0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,451,452,0,451,
+0,0,0,0,0,0,459,460,0,459,
+0,0,5245,5246,5247,0,0,0,0,0
+</data>
+  </layer>
+  <layer id="4" name="Calque de Tuiles 4" width="10" height="10">
+   <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,5281,0,0,0,0,0,
+0,0,0,0,5312,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,
+0,73,74,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0
+</data>
+  </layer>
+  <layer id="5" name="Calque de Tuiles 5" width="10" height="10">
+   <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0
+</data>
+  </layer>
+  <layer id="6" name="top" width="10" height="10">
+   <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,441,442,0,443,
+445,446,447,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,443,444,0,443,
+0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0
+</data>
+  </layer>
+ </group>
+ <group id="9" name="objet">
+  <objectgroup id="10" name="interface">
+   <object id="31" name="spawn map0 0" x="43.75" y="148.25" width="23.5" height="11.75"/>
+   <object id="32" name="spawn map0 0" x="57.25" y="111">
+    <point/>
+   </object>
+  </objectgroup>
+  <objectgroup id="11" name="collsion">
+   <object id="22" name="collision" x="9.25" y="62.5" width="35.5" height="10.25"/>
+   <object id="23" name="collision" x="51.25" y="26.75" width="9.5" height="40.25"/>
+   <object id="24" name="collision" x="68.5" y="14.25" width="6.25" height="30.5"/>
+   <object id="25" name="collision" x="83.5" y="9.5" width="9.5" height="17"/>
+   <object id="26" name="collision" x="116.5" y="12" width="23.25" height="16"/>
+   <object id="27" name="collision" x="100.75" y="33.5" width="23.25" height="44"/>
+   <object id="28" name="collision" x="148.25" y="54.25" width="8.25" height="24.5"/>
+   <object id="29" name="collision" x="147.5" y="118.5" width="8.75" height="24"/>
+   <object id="30" name="collision" x="100.5" y="117.5" width="24.25" height="24.75"/>
+  </objectgroup>
+ </group>
+</map>
