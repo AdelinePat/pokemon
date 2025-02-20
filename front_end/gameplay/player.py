@@ -21,11 +21,28 @@ class Player(Entity):
         self.is_fleeing = False  # Indicates if the player is fleeing
         self.speed = 1  # Default walking speed
         self.active_pokemon = pokemon
+        self.flee_steps = 0  # Number of steps taken while fleeing
+        self.max_flee_steps = 100  # Maximum number of fleeing steps
+        self.pause_menu = False
 
     def update(self) -> None:
         """Update player state, checking inputs and movement."""
         self.check_input()  # Calls check_input() only once per update
+        
+
+        if self.is_fleeing:
+            move_speed = 10
+            self.flee_steps += 1
+        else:
+            move_speed = self.speed
+            self.flee_steps = self.max_flee_steps
+        
         self.check_move()
+
+        if not any(self.keyListener.key_pressed(key) for key in [pygame.K_q, pygame.K_d, pygame.K_z, pygame.K_s, pygame.K_LEFT, pygame.K_RIGHT, pygame.K_UP, pygame.K_DOWN] ) :
+            self.is_fleeing = False
+            self.flee_steps = 0
+            self.speed = 1
         super().update()
 
     def check_move(self) -> None:
