@@ -10,6 +10,7 @@ class IntroChoice():
         self.player_name = player_name
         self.screen = screen
         self.chen_image = pygame.image.load(CHEN)
+        self.chen_image = pygame.transform.scale(self.chen_image, (1110, 550))
         self.dialogues = [
             f"Welcome to the Pokemon Center {self.player_name},\n I'm professor Oak.",
             "The Pokemon world is vast and fascinating, trainers and extraordinary creatures named pokemon live together.\nEach pokemon has its own unique caracteristics and are able to evolve in more powerful forms.",
