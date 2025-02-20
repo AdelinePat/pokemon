@@ -136,6 +136,7 @@ class InFight():
                 self.options[-1] = "Exit"
                 self.fleeing = False
                 if self.pokemon.get_hp() <= 0:
+                    
                     self.draw_win_bot_screen()
                 elif another_option == "Success":
                     self.draw_win_capture_screen(self.pokemon_enemy, self.pokemon, level, name)
@@ -286,7 +287,8 @@ class InFight():
                         self.fight.bot_attack()
                         message_attack = self.fight.fightinfo.set_who_attack_message(self.pokemon_enemy)
                         message_damage = self.fight.fightinfo.get_damage_message()
-                        if self.pokemon.get_hp() == 0:
+                        if self.pokemon.get_hp() == 0 or self.pokemon.get_hp() < 0:
+                            self.pokemon_enemy.update_xp(self.pokemon)
                             win = True
                     else:
                         win = True

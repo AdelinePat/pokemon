@@ -29,7 +29,7 @@ class PokemonStat():
 
             y_position = self.screen.height // 2
 
-            image = pygame.transform.smoothscale(pygame.image.load(self.pokemon.get_image()), (self.screen.height//3, self.screen.height//3) )
+            image = pygame.transform.scale(pygame.image.load(self.pokemon.get_image()), (self.screen.height//3, self.screen.height//3) )
             image_rect = image.get_rect(center = (self.screen.width //4, self.screen.height //2))
             self.screen.display.blit(image, image_rect)
             font_size = self.screen.width // 30
@@ -71,7 +71,7 @@ class PokemonStat():
                         elif self.identification == "in_pause_menu":
                             from .change_pokemon import ChangePokemon
                             # self, player_name, screen, pokemon_list=[]):
-                            return ChangePokemon(self.player_name, self.screen, self.pokemon_list)
+                            return ChangePokemon(self.player_name, self.screen, self.pokemon_list).display()
                         elif self.identification == "in_fight":
                             from .change_pokemon_infight import ChangePokemonInFight
-                            return ChangePokemonInFight(self.player_name, self.screen, self.pokemon_list)
+                            return ChangePokemonInFight(self.player_name, self.screen, self.pokemon_list).display()

@@ -32,7 +32,7 @@ class Screen:
         return self.display
     
     def set_background_display(self, background_image):
-        background = pygame.transform.smoothscale(pygame.image.load(background_image), (self.width, self.height))
+        background = pygame.transform.scale(pygame.image.load(background_image), (self.width, self.height))
         background_rect = background.get_rect()
         self.display.blit(background, background_rect)
 
