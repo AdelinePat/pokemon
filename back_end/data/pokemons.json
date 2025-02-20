@@ -366,31 +366,6 @@
         "state": "wild"
     },
     {
-        "name": "Slowpoke",
-        "original_name": "Slowpoke",
-        "pet_name": "Jean-Ryan",
-        "hp_max": 33,
-        "hp": 33,
-        "xp": 6,
-        "strength": 29,
-        "defense": 9,
-        "type": [
-            "water",
-            "psychic"
-        ],
-        "level": 1,
-        "speed": 25,
-        "stage": 1,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
         "name": "Horsea",
         "original_name": "Horsea",
         "pet_name": "Jean-L\u00e9on",
@@ -428,6 +403,31 @@
         ],
         "level": 7,
         "speed": 39,
+        "stage": 1,
+        "ev": {
+            "hp": 0,
+            "strength": 0,
+            "defense": 0,
+            "speed": 0,
+            "xp": 0
+        },
+        "state": "wild"
+    },
+    {
+        "name": "Slowpoke",
+        "original_name": "Slowpoke",
+        "pet_name": "Jean-Ryan",
+        "hp_max": 33,
+        "hp": 33,
+        "xp": 6,
+        "strength": 29,
+        "defense": 9,
+        "type": [
+            "water",
+            "psychic"
+        ],
+        "level": 1,
+        "speed": 25,
         "stage": 1,
         "ev": {
             "hp": 0,
