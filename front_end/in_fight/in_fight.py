@@ -219,6 +219,8 @@ class InFight():
                                                             self.pokemon.update_xp(self.pokemon_enemy)
                                                             pokemon = pygame.transform.flip(self.util.load_image(self.pokemon.image), True, False)
                                                             # save_pokemon_to_pokedex(self.player,self.pokemon)
+                                                            self.pokemon.set_hp(self.pokemon.get_hp_max())
+                                                            self.pokemon_enemy.set_hp(self.pokemon_enemy.get_hp_max())
                                                             save_pokemon_to_pokedex(self.player, self.pokemon_enemy)
                                                             # save_bag_to_pokedex(self.player, self.bag)
                                                             # self.options[-1] = "Exit"
@@ -262,6 +264,7 @@ class InFight():
                                         # self.pokemon.update_xp(self.pokemon_enemy)
                                         save_pokemon_to_pokedex(self.player,self.pokemon)
                                         save_bag_to_pokedex(self.player, self.bag)
+                                        self.pokemon.set_hp(self.pokemon.get_hp_max())
                                         self.pokemon_enemy.set_hp(self.pokemon_enemy.get_hp_max())
                                         save_wild_pokemon(self.pokemon_enemy)
                                         return self.fleeing
@@ -273,6 +276,7 @@ class InFight():
                                         if self.fleeing:
                                             save_pokemon_to_pokedex(self.player,self.pokemon)
                                             save_bag_to_pokedex(self.player, self.bag)
+                                            self.pokemon.set_hp(self.pokemon.get_hp_max())
                                             self.pokemon_enemy.set_hp(self.pokemon_enemy.get_hp_max())
                                             save_wild_pokemon(self.pokemon_enemy)
                                             now_time = pygame.time.get_ticks()

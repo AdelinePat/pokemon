@@ -9,6 +9,9 @@ from __settings__ import BATTLE_BACKGROUND, BATTLE_FLOOR, REGULAR_FONT, LIGHT_GR
 # from front_end.gameplay.game import Game
 from front_end.menu.util_tool import UtilTool
 
+from back_end.data_access.pokemon_pokedex_service import save_pokemon_to_pokedex
+# from back_end.data_access.bag_pokedex_service import save_bag_to_pokedex
+# from back_end.data_access.wild_pokemons import save_wild_pokemon
 
 class ChangePokemonInFight():
     def __init__(self, player_name, pokemon, pokemon_enemy, screen, pokemon_list=[]):
@@ -100,7 +103,9 @@ class ChangePokemonInFight():
                         for index in range(len(self.options)):
                             if self.selected_index == index:
                                 # (self, player_name, pokemon_list, pokemon, pokemon_enemy, screen):
+                                save_pokemon_to_pokedex(self.player_name, self.pokemon)
                                 pokemon = PokemonStat(self.player_name, self.pokemons, self.pokemons[index], self.pokemon_enemy, self.screen, self.background).display()
+                                
                                 return pokemon
                                 # game = Game(self.screen, self.player_name, pokemon).run()
 

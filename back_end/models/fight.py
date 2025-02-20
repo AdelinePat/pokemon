@@ -2,6 +2,7 @@
 from ..data_access.pokemon_pokedex_service import save_pokemon_to_pokedex
 import random
 from .fight_info import FightInfo
+import math
 
 class Fight:
     def __init__(self, pokemon1, pokemon2):
@@ -65,7 +66,8 @@ class Fight:
                     final_damage = 1
                     if enemy.get_hp() - final_damage < 0:
                         final_damage = 0
-
+                        
+            final_damage = math.ceil(final_damage)
             enemy.set_damage_hp(final_damage)
             print(f"DEGATS FINAUX : {final_damage}")            
             # print(f"{pokemon.name} a fait une attaque {attack_type}, {efficency}\

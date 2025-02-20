@@ -9,22 +9,29 @@ from .change_pokemon import ChangePokemon
 from __settings__ import MAIN_MENU_BACKGROUND1, LIGHT_GREEN, REGULAR_FONT
 from front_end.sounds import Sounds
 from front_end.menu.util_tool import UtilTool
+from back_end.data_access.pokemon_pokedex_service import get_all_pokemons_from_pokedex
+from back_end.data_access.pokemon_pokedex_service import get_first_pokemon
 
 sounds = Sounds()
 
 class PauseMenu:
-    def __init__(self, player, pokemon, screen):
+    def __init__(self, player, pokemon, screen, pokemon_list=[]):
         """
         Initialize the menu with the screen, font, options, and selected index.
         """
         self.screen = screen
         self.font = pygame.font.Font(None, 50)  # Set the font for menu text
-        self.options = ["Change pokemon", "Continue", "Exit"]  # Menu options
+        self.options = ["Change pokemon", "Change player", "Continue", "Exit"]  # Menu options
         self.selected_index = 0  # Index of the currently selected option
         self.running = True  # Controls the menu loop
         self.player = player
         self.pokemon = pokemon
         self.util = UtilTool()
+        if not pokemon_list:
+            self.pokemons = get_all_pokemons_from_pokedex(self.player)
+        else:
+            self.pokemons = pokemon_list
+
 
     # def draw_text(self, text, x, y, color=(255, 255, 255)):
     #     """
@@ -52,8 +59,8 @@ class PauseMenu:
             for i, option in enumerate(self.options):
                 color = LIGHT_GREEN if i == self.selected_index else (255, 255, 255)  # Highlight selected option
                 # self.draw_text(option, 600, 300 + i * 60, color)
-                self.util.draw_text(option, REGULAR_FONT, font_size - 10, self.screen,\
-                                (self.screen.width//2, self.screen.height // 10*4 + i*150), color)
+                self.util.draw_text(option, REGULAR_FONT, font_size - 14, self.screen,\
+                                (self.screen.width//2, self.screen.height // 10*3.5 + i*100), color)
 
             pygame.display.flip()  # Refresh the screen
 
@@ -83,6 +90,10 @@ class PauseMenu:
                                 # return self.player, self.pokemon
                                 # game.run()
                             case 1:
+                                self.player = SelectPlayer(self.screen).display()
+                                self.pokemons = get_all_pokemons_from_pokedex(self.player)
+                                self.pokemon = get_first_pokemon(self.player)
+                            case 2:
                                 # select_player = SelectPlayer(self.screen).display()
                                 # game = Game(self.screen, select_player)
                                 
@@ -93,6 +104,6 @@ class PauseMenu:
                                 sounds.play_map_music()  # Play map music
                                 # game.run()
                                 return self.player, self.pokemon
-                            case 2:
+                            case 3:
                                 pygame.quit()
                                 sys.exit()
