@@ -173,7 +173,7 @@ class Player(Entity):
         """Checks if the player enters a battle zone and starts a battle."""
         for battle_zone in battle_zones:
             if self.rect.colliderect(battle_zone):
-                print("Pokémon battle starts! dans start battle de player")
+                # print("Pokémon battle starts! dans start battle de player")
                 battle_screen = BattleScreen(self.screen, self)
                 # battle_screen = InFight(self.screen, self.player_name).display()
                 battle_screen.run()
@@ -181,8 +181,6 @@ class Player(Entity):
 
     def battle(self):
         """Starts a battle manually."""
-        print("Pokémon battle starts! dans battle de player")
-        # battle_screen = BattleScreen(self.screen, self)
-        # battle_screen.run()
+        # print("Pokémon battle starts! dans battle de player")
         battle_screen = InFight(self.screen, self.player_name).display()
         self.in_battle = False

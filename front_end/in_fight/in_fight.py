@@ -180,7 +180,6 @@ class InFight():
                                         if attack_type == "Back":
                                             player_turn = True
                                         else:
-                                            print("attaque")
                                             self.fight.player_attack(attack_type)
                                             if self.pokemon_enemy.get_hp() > 0:
                                                 message_attack = self.fight.fightinfo.set_who_attack_message(self.pokemon)
@@ -199,9 +198,6 @@ class InFight():
                                     if win:
                                         self.selected_index = 3
                                     else:
-                                        # print(f"HP max : {self.pokemon.get_hp_max()}")
-                                        # self.pokemon.set_damage_hp(self.pokemon.get_hp() - 30)
-                                        # print(f"HP actuel : {self.pokemon.get_hp() }")
                                         bag_option = BagMenu(self.screen, self.pokemon, self.pokemon_enemy, self.bag).display()
                                         if bag_option:
                                             match bag_option:
@@ -233,7 +229,6 @@ class InFight():
                                                             player_turn = False
                                                             win = True
                                                         case "Fail":
-                                                            print("échec")
                                                             now_time = pygame.time.get_ticks()
                                                             failed_capture_time = 0
                                                             while failed_capture_time - now_time < 1000:

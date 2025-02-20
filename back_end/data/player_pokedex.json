@@ -284,22 +284,22 @@
                 "name": "Shellder",
                 "original_name": "Shellder",
                 "pet_name": "Jean-Vincent",
-                "hp_max": 51,
+                "hp_max": 65,
                 "hp": 51,
-                "xp": 474,
-                "strength": 55,
-                "defense": 46,
+                "xp": 524,
+                "strength": 68,
+                "defense": 62,
                 "type": [
                     "water"
                 ],
-                "level": 7,
-                "speed": 69,
+                "level": 8,
+                "speed": 77,
                 "stage": 1,
                 "ev": {
-                    "hp": 1,
-                    "strength": 3,
-                    "defense": 2,
-                    "speed": 1,
+                    "hp": 2,
+                    "strength": 0,
+                    "defense": 0,
+                    "speed": 0,
                     "xp": 3
                 },
                 "state": "domesticated"

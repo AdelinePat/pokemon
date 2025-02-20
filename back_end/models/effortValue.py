@@ -39,57 +39,37 @@ class EffortValue():
         elif enemy.get_level() < pokemon.get_level():
             rand_range_hp, rand_range_strength, rand_range_defense,\
                 rand_range_speed, rand_range_xp = self.declare_range_ev(enemy, 12)
-        # print(f"rand hp {rand_range_hp}")
-        # print(f"rand strength {rand_range_strength}")
-        # print(f"rand defense {rand_range_defense}")
-        # print(f"rand speed {rand_range_speed}")
-        # print(f"rand xp {rand_range_xp}")
 
         self.set_ev_hp(self.get_ev_hp() + math.floor(random.randrange(rand_range_hp * 2, rand_range_hp * 4)))
         self.set_ev_strength(self.get_ev_strength() + math.floor(random.randrange(rand_range_strength * 2, rand_range_strength * 4)))
         self.set_ev_defense(self.get_ev_defense() + math.floor(random.randrange(rand_range_defense * 2, rand_range_defense * 4)))
         self.set_ev_speed(self.get_ev_speed() + math.floor(random.randrange(rand_range_speed * 2, rand_range_speed * 4)))
         self.set_ev_xp(self.get_ev_xp() + math.floor(random.randrange(rand_range_xp * 2, rand_range_xp * 4)))
-
-        # print(f"Nouvelles valeurs EV de {pokemon.name}:\
-        #       \nHP : {self.get_ev_hp()}\
-        #       \nDEFENSE : {self.get_ev_defense()}\
-        #       \nSTRENGTH : {self.get_ev_strength()}\
-        #       \nSPEED : {self.get_ev_speed()}\n")
-
-
         self.__update_stats(pokemon)
 
-    def __update_stats(self, pokemon): #TODO à mettre dans pokemon
-
-        # print(f"Valeur ajouté EV au stat de {pokemon.name}")
+    def __update_stats(self, pokemon):
         if self.get_ev_hp() > 4:
             hp = pokemon.get_hp_max() + self.get_ev_hp()//4
-            # print(f"+ {self.get_ev_hp()//4} en HP")
             self.set_ev_hp(self.get_ev_hp()%4)
             pokemon.set_hp_max(hp)     
 
         if self.get_ev_strength() > 4:
             strength = pokemon.get_strength() + self.get_ev_strength()//4
-            # print(f"+ {self.get_ev_strength()//4} en FORCE")
             self.set_ev_strength(self.get_ev_strength()%4)
             pokemon.set_strength(strength)
             
         if self.get_ev_defense() > 4:
             defense = pokemon.get_defense() + self.get_ev_defense()//4
-            # print(f"+ {self.get_ev_defense()//4} en DEFENSE")
             self.set_ev_defense(self.get_ev_defense()%4)
             pokemon.set_defense(defense)
             
         if self.get_ev_speed() > 4:
             speed = pokemon.get_speed() + self.get_ev_speed()//4
-            # print(f"+ {self.get_ev_speed()//4} en VITESSE")
             self.set_ev_speed(self.get_ev_speed()%4)
             pokemon.set_speed(speed)
             
         if self.get_ev_xp() > 4:
             xp = pokemon.get_xp() + self.get_ev_xp()//4
-            # print(f"+ {self.get_ev_xp()//4} en XP")
             self.set_ev_xp(self.get_ev_xp()%4)
             pokemon.set_xp(xp)
           

@@ -1,14 +1,11 @@
 import pygame
 import pytmx
 import pyscroll
-# from .player import Player
 from front_end.screen import Screen
 from .switch import Switch
-# from front_end.gameplay.battlescreen import BattleScreen
 from front_end.in_fight.in_fight import InFight
-# from Pokemon import PokemonBattle  # Import the PokemonBattle class
 from front_end.sounds import Sounds
-from front_end.menu.pause_menu import PauseMenu
+# from front_end.menu.pause_menu import PauseMenu
 
 sounds = Sounds()
 
@@ -101,9 +98,6 @@ class Map:
                         self.player.keyListener.keys = []
                     sounds.stop_background_music()
                     sounds.play_map_music()
-                    # battle_screen = InFight(self.screen, self.player).display()
-                    # battle_screen.run()
-                    # is_fleeing = battle_screen.fleeing
 
                 if self.player.rect.colliderect(battle_zone) and self.in_battle:
                     this_battle_zone = battle_zone
@@ -121,23 +115,11 @@ class Map:
 
     def start_battle(self):
         # # Start a battle when the player enters a battle zone
-        # print("Starting Pokémon battle!")
-        # battle_screen = BattleScreen(self.screen, self.player)
-        # battle_screen.run()
-         # Start a battle when the player enters a battle zone
-        print("Starting Pokémon battle! dans start_battle")
+        # print("Starting Pokémon battle! dans start_battle")
         battle_screen = InFight(self.screen, self.player, self.player.active_pokemon).display()
         self.player.flee_steps = 0
         return battle_screen
-        
-        # battle_screen.run()
-        # InFight(self.screen, self.player).display().run()
-        # battle_screen.run()
-        # JOSEPH??
-        # print("Starting Pokémon battle!")
-        # battle_screen = PokemonBattle()  # Create instance of PokemonBattle
-        # battle_screen.run()  # Run the battle
-
+ 
     def pose_player(self, switch: Switch):
         # Set player's spawn position based on map
         position = self.tmx_data.get_object_by_name("spawn " + self.current_map.name + " " + str(switch.port))

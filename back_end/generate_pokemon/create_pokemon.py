@@ -74,7 +74,6 @@ def create_world_pokemons():
     for type in type_list:
         a_pokemon = create_pokemon(type)
         all_pokemons.append(a_pokemon)
-        # print(a_pokemon)
     
     return all_pokemons
 
@@ -105,7 +104,7 @@ def create_low_level_world_pokemons():
             xp = random.randrange(my_pokemon.get_level()**3, (my_pokemon.get_level()+1)**3)
             my_pokemon.set_xp(xp)
             all_pokemons.append(my_pokemon)
-            # print(my_pokemon)
+
     return all_pokemons
 
 def get_type_low_level_pokemon(original_name):
@@ -127,5 +126,3 @@ def get_type_low_level_pokemon(original_name):
 
                     if final_name == original_name:
                         return first_type, second_type, 1
-                                         
-create_low_level_world_pokemons()
