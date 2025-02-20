@@ -17,7 +17,7 @@ class ChangePokemonInFight():
     def __init__(self, player_name, pokemon, pokemon_enemy, screen, pokemon_list=[]):
         self.player_name = player_name
         self.screen = screen
-        self.background = pygame.image.load(BATTLE_BACKGROUND)
+        self.background = BATTLE_BACKGROUND
         self.font = pygame.font.Font(None, 50)
         self.util = UtilTool()
         self.pokemon_enemy = pokemon_enemy
@@ -51,8 +51,10 @@ class ChangePokemonInFight():
 
         pokemon_enemy_x = int(self.screen.width // 10 * 9.5 )               
         pokemon_enemy_y = int(self.screen.height // 10)
+        self.screen.set_background_display(self.background)
 
-        while self.running: 
+        while self.running:
+           
             pokemon = pygame.transform.flip(self.util.load_image(self.pokemon.get_image()), True, False)
 
             self.screen.update()

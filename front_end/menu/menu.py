@@ -62,8 +62,8 @@ class Menu:
                     elif event.key == pygame.K_RETURN:  # Select an option
                         match self.selected_index:
                             case 0:  # Start a new game
-                                name_input = NameInput(self.screen)
-                                player_name, pokemon = name_input.get_name()
+                                # name_input = NameInput(self.screen)
+                                player_name, pokemon = NameInput(self.screen).get_name()
                                 # save_
                                 game = Game(self.screen, player_name, pokemon)
                                 

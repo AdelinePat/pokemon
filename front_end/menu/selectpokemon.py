@@ -10,7 +10,9 @@ class SelectPokemon():
     def __init__(self, player_name, screen, pokemon_list=[]):
         self.player_name = player_name
         self.screen = screen
-        self.background = pygame.transform.scale(pygame.image.load(POKEMON_CENTER), (self.screen.width, self.screen.height))
+        self.background = POKEMON_CENTER
+        self.image_background = pygame.transform.scale(pygame.image.load(self.background), (self.screen.width, self.screen.height))
+        self.image_rect = self.image_background.get_rect(center = (self.screen.width // 2, self.screen.height //2))
         self.util = UtilTool()
         self.font = pygame.font.Font(None, 50)
         if not pokemon_list:
@@ -49,7 +51,8 @@ class SelectPokemon():
 
         while not captured:
             self.screen.display.fill((173, 216, 230))
-            self.screen.display.blit(self.background, (0, 0))
+            self.screen.display.blit(self.image_background, (0, 0))
+            # self.screen.set_background_display(self.image_background)
 
 
             for index, p in enumerate(pokemons):
@@ -78,14 +81,14 @@ class SelectPokemon():
         self.screen.get_display().blit(surface, rect)
 
     def display(self):
-        image = self.background
-        # image = pygame.transform.scale(pygame.image.load(POKEMON_CENTER), (self.screen.width, self.screen.height))
-        image_rect = image.get_rect(center = (self.screen.width // 2, self.screen.height //2))
-
+        # image = self.background
+        # image = 
+        # image_rect =
         while self.running:
             self.screen.update()
             # self.screen.get_display().fill((0, 0, 0))
-            self.screen.display.blit(image, image_rect)
+            self.screen.display.blit(self.image_background, self.image_rect)
+            # self.screen.set_background_display(self.background)
 
             # self.draw_text("Choose your first pokemon", 600, 150, LIGHT_GREEN)
 
