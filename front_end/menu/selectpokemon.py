@@ -2,7 +2,7 @@ import pygame
 import sys
 from .display_pokemon_stat import PokemonStat
 from back_end.controller import get_starter_pokemons
-from __settings__ import LIGHT_GREEN, POKEMON_CENTER, POKEMON_CENTER, REGULAR_FONT, POKEBALL
+from __settings__ import POKEMON_CENTER, POKEMON_CENTER, REGULAR_FONT, POKEBALL
 from front_end.menu.util_tool import UtilTool
 from back_end.controller import create_player
 
@@ -25,7 +25,6 @@ class   SelectPokemon():
         my_x = 0.5
         for pokemon in self.pokemons:
             option = self.load_image(pokemon.get_image(), (self.screen.width // 6, self.screen.width //  6))
-            # option = pygame.transform.smoothscale(pygame.image.load(pokemon.get_image()), (self.screen.width // 6, self.screen.width //  6))
             option_rect = option.get_rect(center = (self.screen.width // 3 * my_x, self.screen.height // 5*2.5))
             my_x += 1
             self.options.append(option)
@@ -43,7 +42,6 @@ class   SelectPokemon():
         pokeball_img = pygame.transform.scale(pygame.image.load(POKEBALL), (50,60))
         pokeball_img.set_colorkey((255,255,255))
         pokeball_rect = pokeball_img.get_rect(center=(self.screen.width // 2, self.screen.height - 100))
-        # pokemon_rect = pygame.image.load(pokemon.get_image()).get_rect()
         target_pos = pokemon_rect.center
         
         vitesse = 15
@@ -52,12 +50,9 @@ class   SelectPokemon():
         while not captured:
             self.screen.display.fill((173, 216, 230))
             self.screen.display.blit(self.image_background, (0, 0))
-            # self.screen.set_background_display(self.image_background)
 
 
             for index, p in enumerate(pokemons):
-
-                # p_rect = p_img.get_rect()
                 self.screen.display.blit(p, pokemons_rect[index].topleft)
 
             if pokeball_rect.colliderect(pokemon_rect):
@@ -82,43 +77,23 @@ class   SelectPokemon():
         self.screen.get_display().blit(surface, rect)
 
     def display(self):
-        # image = self.background
-        # image = 
-        # image_rect =
         while self.running:
             self.screen.update()
-            # self.screen.get_display().fill((0, 0, 0))
             self.screen.display.blit(self.image_background, self.image_rect)
-            # self.screen.set_background_display(self.background)
-
-            # self.draw_text("Choose your first pokemon", 600, 150, LIGHT_GREEN)
-
+            
             for i, option in enumerate(self.options):
                 font_size = self.screen.height // 15
                 if i == self.selected_index:
-                    # color = LIGHT_GREEN
                     option = pygame.transform.smoothscale(pygame.image.load(self.pokemons[i].get_image()), (self.screen.width // 4, self.screen.width //  4))
                     option.get_rect(center= (self.screen.width // 3 * 0.5+i, self.screen.height // 5*2.5))
                     self.screen.display.blit(option, self.options_rect[i])
-                    self.util.draw_text(self.pokemons[i].name, REGULAR_FONT, font_size, self.screen, (self.screen.width // 2, self.screen.height // 5*1.5))
-                    # def draw_text(self, text, font, font_size, screen, my_center, color=DARK_GREEN):
-                    
-                    # self.util.draw_text(option.name, REGULAR_FONT, font_size, self.screen, (self.screen.width // 3 * 0.5+i, self.screen.height // 5*1.5))
-
-                    # self.load_image(pokemon.get_image(), (self.screen.width // 6, self.screen.width //  6))
+                    self.util.draw_text(self.pokemons[i].name, REGULAR_FONT, font_size, self.screen, (self.screen.width // 2, self.screen.height // 5*1.5), "white")
+                  
                 else:
-                    # color = (bidule)
+
                     option = pygame.transform.smoothscale(pygame.image.load(self.pokemons[i].get_image()), (self.screen.width // 6, self.screen.width //  6))
                     option.get_rect(center= (self.screen.width // 3 * 0.5+i, self.screen.height // 5*2.5))
                     self.screen.display.blit(option, self.options_rect[i])
-                    # self.util.draw_text(self.pokemons[i].name, REGULAR_FONT, font_size, self.screen,\
-                                        # (self.screen.width // 3 * 0.5+i, self.screen.height // 5*1.5))
-                # color = LIGHT_GREEN if i == self.selected_index else (255, 255, 255)
-                # self.draw_text(option, 600, 300 + i * 60, color)
-            
-            # for y, pokemon in enumerate(self.pokemons):
-            #     self.util.draw_text(pokemon[y].name, REGULAR_FONT, font_size, self.screen, (self.screen.width // 3 * 0.5+y, self.screen.height // 5*1.5))
-
 
             pygame.display.flip()
 
@@ -139,19 +114,9 @@ class   SelectPokemon():
                             if self.selected_index == index:
                                 pokemon_enemy = None
                                 pokemon = PokemonStat(self.player_name, self.pokemons, self.pokemons[index], pokemon_enemy, self.screen, self.background, "pokemon_choice").display()
-                                # pokemon_data = { 'img': self.options[self.selected_index], 'rect': self.options_rect[self.selected_index] }
+                                
                     
                     if event.key == pygame.K_LSHIFT:
                         create_player(self.player_name, self.pokemons[self.selected_index])
                         self.capturePokemon(self.options[self.selected_index], self.options_rect[self.selected_index], self.options, self.options_rect)
                         return self.pokemons[self.selected_index]
-
-                                #  player_name, pokemon_list, pokemon, pokemon_enemy, screen, self.background
-                                # pokemon = PokemonStat(self.player_name, self.pokemons, self.pokemons[index], pokemon_enemy, self.screen, self.background).display()
-                                # self.capturePokemon(pokemon_data, self.pokemons)
-                                # return pokemon
-
-                    elif event.key == pygame.K_ESCAPE:
-                        # return self.pokemons[0]
-                        # return
-                        pass

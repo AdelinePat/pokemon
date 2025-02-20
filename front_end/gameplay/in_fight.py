@@ -44,20 +44,6 @@ class InFight():
         self.fleeing = False
         self.healthbar = HealthDisplay()
 
-    # def draw_text(self, text, x, y, color=(255, 255, 255)):
-    #     """
-    #     Renders text and displays it at the given (x, y) position.
-    #     """
-    #     surface = self.font.render(text, True, color)
-    #     rect = surface.get_rect(center=(x, y))
-    #     self.screen.get_display().blit(surface, rect)
-
-    # def display_asset_battle(self, image, scale_x, scale_y, x, y):
-    #     image.set_colorkey((255, 255, 255))
-    #     battle_floor = pygame.transform.scale(image, (scale_x, scale_y))
-    #     battle_floor_rect = battle_floor.get_rect(center = (x, y))
-    #     self.screen.display.blit(battle_floor, battle_floor_rect)
-
     def display(self):
         """
         Main menu loop that displays options and handles user input.

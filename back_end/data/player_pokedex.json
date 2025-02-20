@@ -432,23 +432,23 @@
                 "name": "Shellder",
                 "original_name": "Shellder",
                 "pet_name": "Jean-Vincent",
-                "hp_max": 75,
-                "hp": 75,
-                "xp": 573,
-                "strength": 83,
-                "defense": 76,
+                "hp_max": 95,
+                "hp": 95,
+                "xp": 778,
+                "strength": 94,
+                "defense": 86,
                 "type": [
                     "water"
                 ],
-                "level": 9,
-                "speed": 93,
+                "level": 10,
+                "speed": 105,
                 "stage": 1,
                 "ev": {
-                    "hp": 0,
-                    "strength": 1,
-                    "defense": 4,
-                    "speed": 3,
-                    "xp": 3
+                    "hp": 1,
+                    "strength": 4,
+                    "defense": 0,
+                    "speed": 2,
+                    "xp": 0
                 },
                 "state": "domesticated"
             },
@@ -612,6 +612,111 @@
                 ],
                 "level": 7,
                 "speed": 40,
+                "stage": 1,
+                "ev": {
+                    "hp": 0,
+                    "strength": 0,
+                    "defense": 0,
+                    "speed": 0,
+                    "xp": 0
+                },
+                "state": "domesticated"
+            }
+        }
+    },
+    "Thomas": {
+        "bag": {
+            "potions": 10,
+            "pokeball": 12
+        },
+        "pokemons": {
+            "Jean-Florence": {
+                "name": "Arbok",
+                "original_name": "Ekans",
+                "pet_name": "Jean-Florence",
+                "hp_max": 269,
+                "hp": 269,
+                "xp": 4420,
+                "strength": 251,
+                "defense": 215,
+                "type": [
+                    "poison"
+                ],
+                "level": 17,
+                "speed": 252,
+                "stage": 2,
+                "ev": {
+                    "hp": 0,
+                    "strength": 2,
+                    "defense": 0,
+                    "speed": 1,
+                    "xp": 3
+                },
+                "state": "domesticated"
+            },
+            "Jean-Alexandre": {
+                "name": "Pikachu",
+                "original_name": "Pikachu",
+                "pet_name": "Jean-Alexandre",
+                "hp_max": 146,
+                "hp": 146,
+                "xp": 991,
+                "strength": 121,
+                "defense": 121,
+                "type": [
+                    "electric"
+                ],
+                "level": 9,
+                "speed": 126,
+                "stage": 1,
+                "ev": {
+                    "hp": 0,
+                    "strength": 1,
+                    "defense": 2,
+                    "speed": 2,
+                    "xp": 3
+                },
+                "state": "domesticated"
+            },
+            "Jean-S\u00e9bastien": {
+                "name": "Bulbasaur",
+                "original_name": "Bulbasaur",
+                "pet_name": "Jean-S\u00e9bastien",
+                "hp_max": 106,
+                "hp": 106,
+                "xp": 1162,
+                "strength": 121,
+                "defense": 95,
+                "type": [
+                    "grass",
+                    "poison"
+                ],
+                "level": 11,
+                "speed": 117,
+                "stage": 1,
+                "ev": {
+                    "hp": 0,
+                    "strength": 0,
+                    "defense": 1,
+                    "speed": 0,
+                    "xp": 1
+                },
+                "state": "domesticated"
+            },
+            "Jean-Ryan": {
+                "name": "Eevee",
+                "original_name": "Eevee",
+                "pet_name": "Jean-Ryan",
+                "hp_max": 36,
+                "hp": 36,
+                "xp": 81,
+                "strength": 39,
+                "defense": 20,
+                "type": [
+                    "normal"
+                ],
+                "level": 4,
+                "speed": 34,
                 "stage": 1,
                 "ev": {
                     "hp": 0,
