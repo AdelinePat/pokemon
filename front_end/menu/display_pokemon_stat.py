@@ -62,16 +62,19 @@ class PokemonStat():
                             # create_player(self.player_name, self.pokemon)
                             if not does_player_exist(self.player_name):
                                 create_player(self.player_name, self.pokemon)
-                            return self.pokemon
+                            return
                     elif event.key == pygame.K_ESCAPE:
                         if self.identification == "pokemon_choice":
-                            from .selectpokemon import SelectPokemon
-                            # (self, player_name, screen, pokemon_list=[]):
-                            return SelectPokemon(self.player_name, self.screen, self.pokemon_list).display()
+                            return
+                            # from .selectpokemon import SelectPokemon
+                            # # (self, player_name, screen, pokemon_list=[]):
+                            # return SelectPokemon(self.player_name, self.screen, self.pokemon_list).display()
                         elif self.identification == "in_pause_menu":
-                            from .change_pokemon import ChangePokemon
-                            # self, player_name, screen, pokemon_list=[]):
-                            return ChangePokemon(self.player_name, self.screen, self.pokemon_list).display()
+                            return
+                            # from .change_pokemon import ChangePokemon
+                            # # self, player_name, screen, pokemon_list=[]):
+                            # return ChangePokemon(self.player_name, self.screen, self.pokemon_list).display()
                         elif self.identification == "in_fight":
-                            from .change_pokemon_infight import ChangePokemonInFight
-                            return ChangePokemonInFight(self.player_name, self.screen, self.pokemon_list).display()
+                            return
+                            # from .change_pokemon_infight import ChangePokemonInFight
+                            # return ChangePokemonInFight(self.player_name, self.screen, self.pokemon_list).display()

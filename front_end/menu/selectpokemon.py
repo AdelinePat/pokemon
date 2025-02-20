@@ -6,7 +6,7 @@ from __settings__ import LIGHT_GREEN, POKEMON_CENTER, POKEMON_CENTER, REGULAR_FO
 from front_end.menu.util_tool import UtilTool
 from back_end.controller import create_player
 
-class SelectPokemon():
+class   SelectPokemon():
     def __init__(self, player_name, screen, pokemon_list=[]):
         self.player_name = player_name
         self.screen = screen
@@ -62,6 +62,7 @@ class SelectPokemon():
 
             if pokeball_rect.colliderect(pokemon_rect):
                 captured = True
+                return
 
             else:
                 dx = target_pos[0] - pokeball_rect.centerx

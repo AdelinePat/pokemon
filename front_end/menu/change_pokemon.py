@@ -64,8 +64,8 @@ class ChangePokemon():
                             if self.selected_index == index:
                                 # self, player_name, pokemon_list, pokemon, pokemon_enemy, screen, background)
                                 pokemon_enemy = None
-                                pokemon = PokemonStat(self.player_name, self.pokemons, self.pokemons[index], pokemon_enemy, self.screen, self.background, "in_pause_menu").display()
-                                return pokemon
+                                PokemonStat(self.player_name, self.pokemons, self.pokemons[index], pokemon_enemy, self.screen, self.background, "in_pause_menu").display()
+                                return self.pokemons[self.selected_index]
                                 # game = Game(self.screen, self.player_name, pokemon).run()
 
                     elif event.key == pygame.K_ESCAPE:
