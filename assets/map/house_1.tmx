@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="10" height="10" tilewidth="16" tileheight="16" infinite="0" nextlayerid="12" nextobjectid="33">
- <tileset firstgid="1" source="./tileset/interieur1.tsx"/>
- <tileset firstgid="4625" source="./tileset/pokemon-center.tsx"/>
+ <tileset firstgid="1" source="tileset/interieur1.tsx"/>
+ <tileset firstgid="4625" source="tileset/pokemon-center.tsx"/>
  <group id="8" name="layer">
   <layer id="1" name="Calque de Tuiles 1" width="10" height="10">
    <data encoding="csv">
@@ -90,7 +90,7 @@
  </group>
  <group id="9" name="objet">
   <objectgroup id="10" name="interface">
-   <object id="31" name="spawn map0 0" x="43.75" y="148.25" width="23.5" height="11.75"/>
+   <object id="31" name="switch map0 0" x="43.75" y="148.25" width="23.5" height="11.75"/>
    <object id="32" name="spawn map0 0" x="57.25" y="111">
     <point/>
    </object>
