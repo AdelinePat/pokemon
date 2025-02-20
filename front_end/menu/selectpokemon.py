@@ -59,7 +59,7 @@ class SelectPokemon():
                     option = pygame.transform.smoothscale(pygame.image.load(self.pokemons[i].get_image()), (self.screen.width // 4, self.screen.width //  4))
                     option.get_rect(center= (self.screen.width // 3 * 0.5+i, self.screen.height // 5*2.5))
                     self.screen.display.blit(option, self.options_rect[i])
-                    self.util.draw_text(self.pokemons[i].name, REGULAR_FONT, font_size, self.screen, (self.screen.width // 2, self.screen.height // 5*1.5)
+                    self.util.draw_text(self.pokemons[i].name, REGULAR_FONT, font_size, self.screen, (self.screen.width // 2, self.screen.height // 5*1.5))
                     # def draw_text(self, text, font, font_size, screen, my_center, color=DARK_GREEN):
                     
                     # self.util.draw_text(option.name, REGULAR_FONT, font_size, self.screen, (self.screen.width // 3 * 0.5+i, self.screen.height // 5*1.5))

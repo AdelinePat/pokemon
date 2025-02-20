@@ -96,7 +96,7 @@ class InFight():
 
         # pokemon_enemy_x = int(self.screen.width // 10 * 7.5 )               
         # pokemon_enemy_y = int(self.screen.height // 7 * 2)
-        pokemon_enemy_x = int(self.screen.width // 10 * 9.5 )               
+        pokemon_enemy_x = int(self.screen.width // 10 * 7.5 )               
         pokemon_enemy_y = int(self.screen.height // 10)
 
         player_turn = False
