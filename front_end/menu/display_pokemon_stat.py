@@ -1,11 +1,12 @@
 import pygame
 from back_end.controller import create_player
+from back_end.data_access.player_pokedex_service import does_player_exist
 from __settings__ import LIGHT_GREEN, REGULAR_FONT, DARK_GREEN
 # from select_pokemons import SelectPokemons
 from front_end.menu.util_tool import UtilTool
 
 class PokemonStat():
-    def __init__(self, player_name, pokemon_list, pokemon, pokemon_enemy, screen, background):
+    def __init__(self, player_name, pokemon_list, pokemon, pokemon_enemy, screen, background, identification):
         self.player_name = player_name
         self.pokemon_list = pokemon_list
         self.pokemon = pokemon
@@ -13,7 +14,8 @@ class PokemonStat():
         self.screen = screen
         self.font = pygame.font.Font(None, 50)
         self.util = UtilTool()
-        self.background = pygame.transform.scale(background, (self.screen.width, self.screen.height))
+        self.background = background
+        self.identification = identification
        
         self.selected_index = 0
         self.running = True
@@ -21,7 +23,8 @@ class PokemonStat():
     def display(self):
         while self.running:
             self.screen.update()
-            self.screen.display.blit(self.background, (0,0))
+            # self.screen.display.blit(self.background, (0,0))
+            self.screen.set_background_display(self.background)
             self.util.draw_color_filter(self.screen)
 
             y_position = self.screen.height // 2
@@ -57,9 +60,18 @@ class PokemonStat():
                     elif event.key == pygame.K_RETURN:
                                 # PokemonStat(self.pokemons[index], self.screen)
                             # create_player(self.player_name, self.pokemon)
-                            create_player(self.player_name, self.pokemon)
+                            if not does_player_exist(self.player_name):
+                                create_player(self.player_name, self.pokemon)
                             return self.pokemon
                     elif event.key == pygame.K_ESCAPE:
-                        from .selectpokemon import SelectPokemon
-                        # (self, player_name, screen, pokemon_list=[]):
-                        return SelectPokemon(self.player_name, self.screen, self.pokemon_list).display()
+                        if self.identification == "pokemon_choice":
+                            from .selectpokemon import SelectPokemon
+                            # (self, player_name, screen, pokemon_list=[]):
+                            return SelectPokemon(self.player_name, self.screen, self.pokemon_list).display()
+                        elif self.identification == "in_pause_menu":
+                            from .change_pokemon import ChangePokemon
+                            # self, player_name, screen, pokemon_list=[]):
+                            return ChangePokemon(self.player_name, self.screen, self.pokemon_list)
+                        elif self.identification == "in_fight":
+                            from .change_pokemon_infight import ChangePokemonInFight
+                            return ChangePokemonInFight(self.player_name, self.screen, self.pokemon_list)

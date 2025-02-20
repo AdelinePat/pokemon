@@ -107,23 +107,23 @@
                 "name": "Kingler",
                 "original_name": "Krabby",
                 "pet_name": "Jean-Thierry",
-                "hp_max": 340,
-                "hp": 108,
-                "xp": 4309,
-                "strength": 323,
-                "defense": 321,
+                "hp_max": 346,
+                "hp": 346,
+                "xp": 4569,
+                "strength": 328,
+                "defense": 326,
                 "type": [
                     "water"
                 ],
                 "level": 17,
-                "speed": 320,
+                "speed": 324,
                 "stage": 2,
                 "ev": {
                     "hp": 2,
-                    "strength": 1,
-                    "defense": 2,
+                    "strength": 0,
+                    "defense": 3,
                     "speed": 0,
-                    "xp": 4
+                    "xp": 1
                 },
                 "state": "domesticated"
             },
@@ -505,6 +505,39 @@
                 ],
                 "level": 7,
                 "speed": 40,
+                "stage": 1,
+                "ev": {
+                    "hp": 0,
+                    "strength": 0,
+                    "defense": 0,
+                    "speed": 0,
+                    "xp": 0
+                },
+                "state": "domesticated"
+            }
+        }
+    },
+    "OOOOOOO": {
+        "bag": {
+            "potions": 10,
+            "pokeball": 15
+        },
+        "pokemons": {
+            "Jean-Alicia": {
+                "name": "Geodude",
+                "original_name": "Geodude",
+                "pet_name": "Jean-Alicia",
+                "hp_max": 51,
+                "hp": 51,
+                "xp": 369,
+                "strength": 40,
+                "defense": 35,
+                "type": [
+                    "rock",
+                    "ground"
+                ],
+                "level": 7,
+                "speed": 51,
                 "stage": 1,
                 "ev": {
                     "hp": 0,

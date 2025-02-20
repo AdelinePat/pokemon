@@ -104,7 +104,7 @@ class ChangePokemonInFight():
                             if self.selected_index == index:
                                 # (self, player_name, pokemon_list, pokemon, pokemon_enemy, screen):
                                 save_pokemon_to_pokedex(self.player_name, self.pokemon)
-                                pokemon = PokemonStat(self.player_name, self.pokemons, self.pokemons[index], self.pokemon_enemy, self.screen, self.background).display()
+                                pokemon = PokemonStat(self.player_name, self.pokemons, self.pokemons[index], self.pokemon_enemy, self.screen, self.background, "in_fight").display()
                                 
                                 return pokemon
                                 # game = Game(self.screen, self.player_name, pokemon).run()

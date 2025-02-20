@@ -12,7 +12,7 @@ class ChangePokemon():
     def __init__(self, player_name, screen, pokemon_list=[]):
         self.player_name = player_name
         self.screen = screen
-        self.background = pygame.image.load(BATTLE_BACKGROUND)
+        self.background = BATTLE_BACKGROUND
         self.font = pygame.font.Font(None, 50)
         self.util = UtilTool()
         if not pokemon_list:
@@ -31,7 +31,9 @@ class ChangePokemon():
     def display(self):
         while self.running:
             self.screen.update()
-            self.screen.get_display().fill((0, 0, 0))
+            self.screen.set_background_display(self.background)
+            # self.screen.get_display().fill((0, 0, 0))
+
             # draw_text(self, text, font, font_size, screen, my_center, color=DARK_GREEN):
             font_size = self.screen.height // 20
             self.util.draw_text("Choose your pokemon", REGULAR_FONT, font_size, self.screen,\
@@ -62,7 +64,7 @@ class ChangePokemon():
                             if self.selected_index == index:
                                 # self, player_name, pokemon_list, pokemon, pokemon_enemy, screen, background)
                                 pokemon_enemy = None
-                                pokemon = PokemonStat(self.player_name, self.pokemons, self.pokemons[index], pokemon_enemy, self.screen, self.background).display()
+                                pokemon = PokemonStat(self.player_name, self.pokemons, self.pokemons[index], pokemon_enemy, self.screen, self.background, "in_pause_menu").display()
                                 return pokemon
                                 # game = Game(self.screen, self.player_name, pokemon).run()
 

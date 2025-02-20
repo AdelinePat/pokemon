@@ -134,7 +134,7 @@ class SelectPokemon():
                         for index in range(len(self.options)):
                             if self.selected_index == index:
                                 pokemon_enemy = None
-                                pokemon = PokemonStat(self.player_name, self.pokemons, self.pokemons[index], pokemon_enemy, self.screen, self.background).display()
+                                pokemon = PokemonStat(self.player_name, self.pokemons, self.pokemons[index], pokemon_enemy, self.screen, self.background, "pokemon_choice").display()
                                 # pokemon_data = { 'img': self.options[self.selected_index], 'rect': self.options_rect[self.selected_index] }
                     
                     if event.key == pygame.K_LSHIFT:

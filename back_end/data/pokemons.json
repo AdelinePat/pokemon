@@ -147,30 +147,6 @@
         "state": "wild"
     },
     {
-        "name": "Ekans",
-        "original_name": "Ekans",
-        "pet_name": "Jean-Charles",
-        "hp_max": 57,
-        "hp": 57,
-        "xp": 890,
-        "strength": 50,
-        "defense": 30,
-        "type": [
-            "poison"
-        ],
-        "level": 9,
-        "speed": 41,
-        "stage": 1,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
         "name": "Pikachu",
         "original_name": "Pikachu",
         "pet_name": "Jean-Luc",
@@ -609,56 +585,6 @@
         "state": "wild"
     },
     {
-        "name": "Tentacool",
-        "original_name": "Tentacool",
-        "pet_name": "Jean-Morgan",
-        "hp_max": 27,
-        "hp": 27,
-        "xp": 193,
-        "strength": 36,
-        "defense": 25,
-        "type": [
-            "water",
-            "poison"
-        ],
-        "level": 5,
-        "speed": 20,
-        "stage": 1,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
-        "name": "Geodude",
-        "original_name": "Geodude",
-        "pet_name": "Jean-Alicia",
-        "hp_max": 51,
-        "hp": 51,
-        "xp": 369,
-        "strength": 40,
-        "defense": 35,
-        "type": [
-            "rock",
-            "ground"
-        ],
-        "level": 7,
-        "speed": 51,
-        "stage": 1,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
         "name": "Ponyta",
         "original_name": "Ponyta",
         "pet_name": "Jean-Malha",
@@ -722,31 +648,6 @@
         ],
         "level": 2,
         "speed": 21,
-        "stage": 1,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
-        "name": "Doduo",
-        "original_name": "Doduo",
-        "pet_name": "Jean-Emilie",
-        "hp_max": 48,
-        "hp": 48,
-        "xp": 717,
-        "strength": 35,
-        "defense": 36,
-        "type": [
-            "normal",
-            "flying"
-        ],
-        "level": 8,
-        "speed": 29,
         "stage": 1,
         "ev": {
             "hp": 0,
@@ -1073,30 +974,6 @@
         "state": "wild"
     },
     {
-        "name": "Ditto",
-        "original_name": "Ditto",
-        "pet_name": "Jean-Gustave",
-        "hp_max": 29,
-        "hp": 29,
-        "xp": 7,
-        "strength": 17,
-        "defense": 11,
-        "type": [
-            "normal"
-        ],
-        "level": 1,
-        "speed": 15,
-        "stage": 1,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
         "name": "Eevee",
         "original_name": "Eevee",
         "pet_name": "Jean-Emile",
@@ -1110,31 +987,6 @@
         ],
         "level": 5,
         "speed": 36,
-        "stage": 1,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
-        "name": "Omanyte",
-        "original_name": "Omanyte",
-        "pet_name": "Jean-Fernand",
-        "hp_max": 50,
-        "hp": 50,
-        "xp": 892,
-        "strength": 36,
-        "defense": 34,
-        "type": [
-            "rock",
-            "water"
-        ],
-        "level": 9,
-        "speed": 32,
         "stage": 1,
         "ev": {
             "hp": 0,
@@ -1184,6 +1036,80 @@
         ],
         "level": 7,
         "speed": 36,
+        "stage": 1,
+        "ev": {
+            "hp": 0,
+            "strength": 0,
+            "defense": 0,
+            "speed": 0,
+            "xp": 0
+        },
+        "state": "wild"
+    },
+    {
+        "name": "Doduo",
+        "original_name": "Doduo",
+        "pet_name": "Jean-Emilie",
+        "hp_max": 48,
+        "hp": 48,
+        "xp": 717,
+        "strength": 35,
+        "defense": 36,
+        "type": [
+            "normal",
+            "flying"
+        ],
+        "level": 8,
+        "speed": 29,
+        "stage": 1,
+        "ev": {
+            "hp": 0,
+            "strength": 0,
+            "defense": 0,
+            "speed": 0,
+            "xp": 0
+        },
+        "state": "wild"
+    },
+    {
+        "name": "Ditto",
+        "original_name": "Ditto",
+        "pet_name": "Jean-Gustave",
+        "hp_max": 29,
+        "hp": 29,
+        "xp": 7,
+        "strength": 17,
+        "defense": 11,
+        "type": [
+            "normal"
+        ],
+        "level": 1,
+        "speed": 15,
+        "stage": 1,
+        "ev": {
+            "hp": 0,
+            "strength": 0,
+            "defense": 0,
+            "speed": 0,
+            "xp": 0
+        },
+        "state": "wild"
+    },
+    {
+        "name": "Tentacool",
+        "original_name": "Tentacool",
+        "pet_name": "Jean-Morgan",
+        "hp_max": 27,
+        "hp": 27,
+        "xp": 193,
+        "strength": 36,
+        "defense": 25,
+        "type": [
+            "water",
+            "poison"
+        ],
+        "level": 5,
+        "speed": 20,
         "stage": 1,
         "ev": {
             "hp": 0,
