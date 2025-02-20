@@ -8,6 +8,9 @@ from __settings__ import MAIN_MENU_BACKGROUND1, LIGHT_GREEN, REGULAR_FONT
 from front_end.sounds import Sounds
 from back_end.data_access.pokemon_pokedex_service import get_first_pokemon
 from front_end.menu.util_tool import UtilTool
+from back_end.data_access.pokemon_pokedex_service import save_pokemon_to_pokedex
+# from back_end.data_access.bag_pokedex_service import save_bag_to_pokedex
+# from back_end.data_access.wild_pokemons import save_wild_pokemon
 
 sounds = Sounds()
 
@@ -41,11 +44,9 @@ class Menu:
             # Draw menu options
             for i, option in enumerate(self.options):
                 color = LIGHT_GREEN if i == self.selected_index else (255, 255, 255)  # Highlight selected option
-                # draw_text(self, text, font, font_size, screen, my_center, color=DARK_GREEN):
                 self.util.draw_text(option, REGULAR_FONT, font_size - 10, self.screen,\
                                 (self.screen.width//2, self.screen.height // 10*4 + i*150), color)
-                # self.util.draw_text(option, 600, 300 + i * 60, color)
-
+        
             pygame.display.flip()  # Refresh the screen
 
             # Handle user input
@@ -63,7 +64,7 @@ class Menu:
                             case 0:  # Start a new game
                                 name_input = NameInput(self.screen)
                                 player_name, pokemon = name_input.get_name()
-                                print(player_name, pokemon)
+                                # save_
                                 game = Game(self.screen, player_name, pokemon)
                                 
                                 # Stop the opening music and start the map music
@@ -75,7 +76,6 @@ class Menu:
                                 select_player = SelectPlayer(self.screen).display()
                                 pokemon = get_first_pokemon(select_player)
                                 game = Game(self.screen, select_player, pokemon)
-                                print(select_player)
 
                                 # Stop the opening music and start the map music
                                 sounds.stop_background_music()  # Correct the method name here

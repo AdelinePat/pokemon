@@ -103,7 +103,7 @@ class Entity(pygame.sprite.Sprite):
             self.rect.y -= 1
             self.hitbox.midbottom = self.rect.midbottom
         self.position = pygame.math.Vector2(self.rect.center)
-        print(self.hitbox)  # Debugging: Print hitbox position
+        # print(self.hitbox)  # Debugging: Print hitbox position
 
     def get_all_images(self, spritesheet):
         """

@@ -113,34 +113,6 @@ class Pokemon(Evolution):
 
         return coefficient
     
-    # def attack(self, attack_type, enemy):
-    #     coefficient, efficency = self.attack_efficiency(attack_type, enemy)
-        
-    #     damage = (self.get_strength() * coefficient) - enemy.get_defense()
-    #     T = self.get_speed() / 2
-    #     critical = random.randint(1, 255)
-
-    #     if damage > 0:
-    #         if enemy.get_hp() - damage >= 0:
-    #             if critical < T:
-    #                 print("Coup critique !")
-    #                 final_damage = damage * 2
-    #             else:
-    #                 final_damage = damage
-    #         else:
-    #             final_damage = enemy.get_hp()
-    #             self.update_xp(enemy)
-    #             print(f"le pokemon {enemy.name} n'a plus de PV ! Vous avez gagné {self.get_xp()} XP")
-    #     else:
-    #         final_damage = 1
-    #         if enemy.get_hp() - final_damage < 0:
-    #             final_damage = 0
-
-    #     enemy.set_damage_hp(final_damage)
-
-    #     print(f"{self.name} a fait une attaque {attack_type}, {efficency}\
-    #           \n Le pokemon {enemy.name} de type {enemy.type} en face a reçu {final_damage}, il lui reste : {enemy.get_hp()}")
-
     def attack_efficiency(self, chose_attack_type, enemy):
         coefficient = self.get_attack_coefficient(chose_attack_type, enemy)
 
@@ -163,12 +135,12 @@ class Pokemon(Evolution):
 
     def check_evolution(self):
         is_evolving = self.evolve()
-        if is_evolving:
-            print(f"{self.get_original_name().upper()} evolve into : {self.name.upper()}")
-            self.set_hp_max(self.get_hp_max() + random.randrange(20, 35))
-            self.set_defense(self.get_defense() + random.randrange(20, 35))
-            self.set_strength(self.get_strength() + random.randrange(20, 35))
-            self.set_speed(self.get_speed() + random.randrange(20, 35))
+        # if is_evolving:
+        #     print(f"{self.get_original_name().upper()} evolve into : {self.name.upper()}")
+        #     self.set_hp_max(self.get_hp_max() + random.randrange(20, 35))
+        #     self.set_defense(self.get_defense() + random.randrange(20, 35))
+        #     self.set_strength(self.get_strength() + random.randrange(20, 35))
+        #     self.set_speed(self.get_speed() + random.randrange(20, 35))
 
     
     def get_xp_gained(self, enemy):
@@ -192,8 +164,6 @@ class Pokemon(Evolution):
         self.__ev.update_ev(enemy, self)
         self.level_up(self)
         self.evolve()
-        # self.set_ev(enemy)        
-        print(f"\nYou gained {xp_gained}, total XP : {self.get_xp()}\n")
 
     def __str__(self):
         if len(self.type) > 1:

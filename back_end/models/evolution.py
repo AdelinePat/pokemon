@@ -159,13 +159,6 @@ class Evolution():
                                 self.__stage += 1
                                 self.update_evolution_stage()
                                 return True
-            
-        # if level in range(5,10):
-        #     luck = random.randrange(100)
-        #     if luck > 0:
-        #         self.__stage += 1
-        #         self.update_evolution_stage()
-                
                 
     def set_level_up(self, pokemon, add_level):
         self._level += add_level
@@ -173,16 +166,6 @@ class Evolution():
         pokemon.set_defense(pokemon.get_defense() + random.randrange(add_level*5, add_level*15))
         pokemon.set_speed(pokemon.get_speed() + random.randrange(add_level*5, add_level*15))
         pokemon.set_hp_max(pokemon.get_hp_max() + random.randrange(add_level*5, add_level*15))
-        # self.__strength += add_level*3
-        # self.__defense += add_level*3
-        # self.__speed += add_level*3
-        # self.__hp += add_level*3
-
-        print(f"Vous avez gagné {add_level} niveau\
-              \n{self.get_strength()}\
-              \n{self.get_defense()}\
-              \n{self.get_speed()}\
-              \n{self.get_hp()}\n\n")
         
     def get_level(self):
         return self._level

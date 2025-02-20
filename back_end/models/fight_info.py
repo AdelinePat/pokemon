@@ -28,12 +28,3 @@ class FightInfo():
 
     def set_success_flee_message(self):
         self.flee_message = "You escaped successfully"
-
-
-
-    # def set_attack_message(self, efficiency, total_damage):
-    #     bidule = f"{pokemon.name} a fait une attaque {attack_type}"
-    #     truc = f"{efficiency} : {total_damage} dégâts"
-
-            # print(f"{pokemon.name} a fait une attaque {attack_type}, {efficency}\
-            #     \n Le pokemon {enemy.name} de type {enemy.type} en face a reçu {final_damage}, il lui reste : {enemy.get_hp()}")

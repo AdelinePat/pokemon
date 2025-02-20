@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="17" height="11" tilewidth="16" tileheight="16" infinite="0" nextlayerid="12" nextobjectid="51">
- <tileset firstgid="1" source="../../../../../../LA PLATEFORME/Projet_Pokemon/assets/map/tileset/interieur1.tsx"/>
- <tileset firstgid="4625" source="../../../../../../LA PLATEFORME/Projet_Pokemon/assets/map/tileset/tileset_pokemon_sdk.tsx"/>
- <tileset firstgid="8881" source="../../../../../../LA PLATEFORME/Projet_Pokemon/assets/map/tileset/indoor.tsx"/>
+ <tileset firstgid="1" source="./tileset/interieur1.tsx"/>
+ <tileset firstgid="4625" source="./tileset/tileset_pokemon_sdk.tsx"/>
+ <tileset firstgid="8881" source="./tileset/indoor.tsx"/>
  <group id="8" name="Groupe 1">
   <layer id="1" name="ground" width="17" height="11">
    <data encoding="csv">

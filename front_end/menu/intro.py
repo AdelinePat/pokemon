@@ -11,6 +11,13 @@ class IntroChoice():
         self.screen = screen
         self.chen_image = pygame.image.load(CHEN)
         self.dialogues = [
+            f"Welcome to the Pokemon Center {self.player_name},\n I'm professor Oak.",
+            "The Pokemon world is vast and fascinating, trainers and extraordinary creatures named pokemon live together.\nEach pokemon has its own unique caracteristics and are able to evolve in more powerful forms.",
+            "As a trainer, you'll have to travel the world to capture and train Pokemons.\nYour goal is to become a Pokemon League Champion after winning fight against other trainers in arena and win badges.",
+            "You'll need to be brave and smart, use your Pokemons ability in the best way.\nEach fight you win, your Pokemon will gain experience, making them stronger."
+            "To help you achieve your goal, you can choose among this three Pokemons to start your adventure.\nGood luck !"
+        ]
+        self.dialogues_fr = [
             f"Bonjour {self.player_name}, bienvenue au centre Pokémon.\nJe suis le Professeur Chen.",
             "L'univers de Pokémon est un monde riche et fascinant, où les humains, appelés Dresseurs, et des créatures fantastiques appelées Pokémon coexistent.\nChaque Pokémon possède des caractéristiques uniques et la capacité d'évoluer en formes plus puissantes.",
             "Ton rôle en tant que dresseur sera de voyager à travers différentes régions pour capturer et entraîner des Pokémon.\nTon objectif est de devenir un Maître Pokémon en remportant des badges d'arène et en affrontant d'autres Dresseurs.",

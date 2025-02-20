@@ -177,12 +177,9 @@ class HealthDisplay():
 
 #         if event.type == pygame.MOUSEBUTTONDOWN:
 #             if button_attack.collidepoint(event.pos):
-#                 print("Attaque sélectionnée !")
 #                 dracaufeu_health = max(0, dracaufeu_health - 50)  # Dracaufeu test
 #             elif button_bag.collidepoint(event.pos):
-#                 print("Sac ouvert !")
 #             elif button_run.collidepoint(event.pos):
-#                 print("Fuite tentée !")
 
 #     time_elapsed += speed
 #     mouvement_y = int(amplitude_vertical * math.sin(time_elapsed * 0.1))
