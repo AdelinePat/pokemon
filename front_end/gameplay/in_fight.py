@@ -100,7 +100,6 @@ class InFight():
             self.util.display_assets_and_background_in_fight(self.screen, x_movement, y_movement, battle_floor, battle_floor2, pokemon_enemy, pokemon)
           
             self.healthbar.draw_health_bar(my_pokemon_x, my_pokemon_y, self.pokemon, self.screen)
-            print("aled")
             self.healthbar.draw_health_bar(pokemon_enemy_x, pokemon_enemy_y,
                                             self.pokemon_enemy,\
                                             self.screen)
@@ -168,7 +167,7 @@ class InFight():
                                                 player_turn = False
                                             else:
                                                 self.pokemon.update_xp(self.pokemon_enemy)
-                                                self.save()
+                                                # self.save()
                                                 winner = "player"
                                                 pokemon = pygame.transform.flip(self.util.load_image(self.pokemon.image), True, False)
                                                 win = True
@@ -194,7 +193,7 @@ class InFight():
                                                         case "Success":
                                                             self.pokemon.update_xp(self.pokemon_enemy)
                                                             pokemon = pygame.transform.flip(self.util.load_image(self.pokemon.image), True, False)
-                                                            self.save_all_to_pokedex()
+                                                            # self.save_all_to_pokedex()
                                                             now_time = pygame.time.get_ticks()
                                                             success_time = 0
                                                             while success_time - now_time < 1000:
@@ -225,6 +224,10 @@ class InFight():
                                     player_turn = True  
                                 case 4: #exit or flee
                                     if win:
+                                        if another_option == "Success":
+                                            self.save_all_to_pokedex()
+                                        else:
+                                            self.save()
                                         return self.fleeing
                                     else:
                                         self.fleeing = self.fight.run_away()
@@ -237,6 +240,7 @@ class InFight():
                                                 failed_flee_time = pygame.time.get_ticks()
                                                 self.message_pop_up(self.fight.fightinfo.flee_message)
                                                 pygame.display.update()
+                                                
                                             return self.fleeing
                                         else:
                                             now_time = pygame.time.get_ticks()
@@ -254,12 +258,12 @@ class InFight():
                         if self.pokemon.get_hp() == 0 or self.pokemon.get_hp() < 0:
                             self.pokemon_enemy.update_xp(self.pokemon)
                             pokemon_enemy = self.util.load_image(self.pokemon_enemy.get_image())
-                            self.save()
+                            # self.save()
                             winner = "enemy"
                             win = True
                     else:
                         self.pokemon_enemy.update_xp(self.pokemon)
-                        self.save()
+                        # self.save()
                         win = True
                     player_turn = True
             

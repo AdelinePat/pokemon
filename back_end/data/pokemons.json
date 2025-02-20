@@ -1,30 +1,5 @@
 [
     {
-        "name": "Jigglypuff",
-        "original_name": "Jigglypuff",
-        "pet_name": "Jean-Louis",
-        "hp_max": 42,
-        "hp": 42,
-        "xp": 83,
-        "strength": 31,
-        "defense": 15,
-        "type": [
-            "normal",
-            "fairy"
-        ],
-        "level": 4,
-        "speed": 40,
-        "stage": 1,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
         "name": "Pidgey",
         "original_name": "Pidgey",
         "pet_name": "Jean-Fran\u00e7ois",
@@ -39,54 +14,6 @@
         ],
         "level": 1,
         "speed": 15,
-        "stage": 1,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
-        "name": "Ponyta",
-        "original_name": "Ponyta",
-        "pet_name": "Jean-Claude",
-        "hp_max": 25,
-        "hp": 25,
-        "xp": 111,
-        "strength": 27,
-        "defense": 16,
-        "type": [
-            "fire"
-        ],
-        "level": 4,
-        "speed": 27,
-        "stage": 1,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
-        "name": "Growlithe",
-        "original_name": "Growlithe",
-        "pet_name": "Jean-Charles",
-        "hp_max": 43,
-        "hp": 43,
-        "xp": 608,
-        "strength": 42,
-        "defense": 29,
-        "type": [
-            "fire"
-        ],
-        "level": 8,
-        "speed": 41,
         "stage": 1,
         "ev": {
             "hp": 0,
@@ -293,30 +220,6 @@
         "state": "wild"
     },
     {
-        "name": "Horsea",
-        "original_name": "Horsea",
-        "pet_name": "Jean-Roger",
-        "hp_max": 23,
-        "hp": 23,
-        "xp": 7,
-        "strength": 33,
-        "defense": 23,
-        "type": [
-            "water"
-        ],
-        "level": 1,
-        "speed": 12,
-        "stage": 1,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
         "name": "Seel",
         "original_name": "Seel",
         "pet_name": "Jean-H\u00e9l\u00e8ne",
@@ -354,31 +257,6 @@
         ],
         "level": 7,
         "speed": 23,
-        "stage": 1,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
-        "name": "Gastly",
-        "original_name": "Gastly",
-        "pet_name": "Jean-Lucien",
-        "hp_max": 43,
-        "hp": 43,
-        "xp": 428,
-        "strength": 23,
-        "defense": 28,
-        "type": [
-            "ghost",
-            "poison"
-        ],
-        "level": 7,
-        "speed": 36,
         "stage": 1,
         "ev": {
             "hp": 0,
@@ -1191,6 +1069,104 @@
             "defense": 4,
             "speed": 1,
             "xp": 3
+        },
+        "state": "wild"
+    },
+    {
+        "name": "Gastly",
+        "original_name": "Gastly",
+        "pet_name": "Jean-Lucien",
+        "hp_max": 43,
+        "hp": 43,
+        "xp": 428,
+        "strength": 23,
+        "defense": 28,
+        "type": [
+            "ghost",
+            "poison"
+        ],
+        "level": 7,
+        "speed": 36,
+        "stage": 1,
+        "ev": {
+            "hp": 0,
+            "strength": 0,
+            "defense": 0,
+            "speed": 0,
+            "xp": 0
+        },
+        "state": "wild"
+    },
+    {
+        "name": "Jigglypuff",
+        "original_name": "Jigglypuff",
+        "pet_name": "Jean-Louis",
+        "hp_max": 42,
+        "hp": 42,
+        "xp": 83,
+        "strength": 31,
+        "defense": 15,
+        "type": [
+            "normal",
+            "fairy"
+        ],
+        "level": 4,
+        "speed": 40,
+        "stage": 1,
+        "ev": {
+            "hp": 0,
+            "strength": 0,
+            "defense": 0,
+            "speed": 0,
+            "xp": 0
+        },
+        "state": "wild"
+    },
+    {
+        "name": "Growlithe",
+        "original_name": "Growlithe",
+        "pet_name": "Jean-Charles",
+        "hp_max": 43,
+        "hp": 43,
+        "xp": 608,
+        "strength": 42,
+        "defense": 29,
+        "type": [
+            "fire"
+        ],
+        "level": 8,
+        "speed": 41,
+        "stage": 1,
+        "ev": {
+            "hp": 0,
+            "strength": 0,
+            "defense": 0,
+            "speed": 0,
+            "xp": 0
+        },
+        "state": "wild"
+    },
+    {
+        "name": "Horsea",
+        "original_name": "Horsea",
+        "pet_name": "Jean-Roger",
+        "hp_max": 87,
+        "hp": 87,
+        "xp": 152,
+        "strength": 101,
+        "defense": 52,
+        "type": [
+            "water"
+        ],
+        "level": 6,
+        "speed": 84,
+        "stage": 1,
+        "ev": {
+            "hp": 0,
+            "strength": 2,
+            "defense": 3,
+            "speed": 0,
+            "xp": 1
         },
         "state": "wild"
     }
