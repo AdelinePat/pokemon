@@ -1,7 +1,7 @@
 import pygame
 # import math
 pygame.init()
-from __settings__ import DARK_GREEN, LIGHT_GREEN
+from __settings__ import DARK_GREEN, LIGHT_GREEN, REGULAR_FONT
 
 class HealthDisplay():
     def draw_health_bar(self, x, y, pokemon, screen):
@@ -44,6 +44,7 @@ class HealthDisplay():
                 (x + narrow_health_width, y + health_bar_height + oblique_height),
                 (x + narrow_health_width, y + health_bar_height),
                 (x, y + health_bar_height)]
+        
 
         pygame.draw.polygon(screen.display, DARK_GREEN, other_points)
         pygame.draw.polygon(screen.display, "black", other_points, 2)
@@ -52,9 +53,9 @@ class HealthDisplay():
         pygame.draw.polygon(screen.display, "black", points, 2)
 
         
-        font = pygame.font.SysFont(None, 24)
-        health_text = font.render(f"{current_health} / {max_hp}", True, "black")
-        name_text = font.render(f"{name} LV: 1", True, "black")
+        font = pygame.font.Font(REGULAR_FONT, 18)
+        health_text = font.render(f"{current_health} / {max_hp}", True, "white")
+        name_text = font.render(f"{name} LV: {pokemon.get_level()}", True, "white")
 
         screen.display.blit(name_text, (x, y - 20))
         screen.display.blit(health_text, (x, y + 25))

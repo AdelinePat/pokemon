@@ -196,22 +196,22 @@
                 "name": "Ponyta",
                 "original_name": "Ponyta",
                 "pet_name": "Jean-Malha",
-                "hp_max": 57,
-                "hp": 57,
-                "xp": 1095,
-                "strength": 66,
-                "defense": 59,
+                "hp_max": 82,
+                "hp": 60,
+                "xp": 1431,
+                "strength": 91,
+                "defense": 77,
                 "type": [
                     "fire"
                 ],
-                "level": 11,
-                "speed": 67,
+                "level": 12,
+                "speed": 83,
                 "stage": 1,
                 "ev": {
-                    "hp": 2,
-                    "strength": 3,
-                    "defense": 3,
-                    "speed": 0,
+                    "hp": 0,
+                    "strength": 1,
+                    "defense": 2,
+                    "speed": 2,
                     "xp": 3
                 },
                 "state": "domesticated"

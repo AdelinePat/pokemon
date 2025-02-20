@@ -1,54 +1,5 @@
 [
     {
-        "name": "Charmander",
-        "original_name": "Charmander",
-        "pet_name": "Jean-Michel",
-        "hp_max": 28,
-        "hp": 28,
-        "xp": 294,
-        "strength": 47,
-        "defense": 28,
-        "type": [
-            "fire"
-        ],
-        "level": 6,
-        "speed": 26,
-        "stage": 1,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
-        "name": "Spearow",
-        "original_name": "Spearow",
-        "pet_name": "Jean-Christophe",
-        "hp_max": 35,
-        "hp": 35,
-        "xp": 247,
-        "strength": 40,
-        "defense": 24,
-        "type": [
-            "normal",
-            "flying"
-        ],
-        "level": 6,
-        "speed": 22,
-        "stage": 1,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
         "name": "Ekans",
         "original_name": "Ekans",
         "pet_name": "Jean-Charles",
@@ -110,31 +61,6 @@
         ],
         "level": 4,
         "speed": 14,
-        "stage": 1,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
-        "name": "Jigglypuff",
-        "original_name": "Jigglypuff",
-        "pet_name": "Jean-Robert",
-        "hp_max": 45,
-        "hp": 45,
-        "xp": 308,
-        "strength": 46,
-        "defense": 35,
-        "type": [
-            "normal",
-            "fairy"
-        ],
-        "level": 6,
-        "speed": 26,
         "stage": 1,
         "ev": {
             "hp": 0,
@@ -536,30 +462,6 @@
         "state": "wild"
     },
     {
-        "name": "Seel",
-        "original_name": "Seel",
-        "pet_name": "Jean-Victor",
-        "hp_max": 51,
-        "hp": 51,
-        "xp": 1078,
-        "strength": 55,
-        "defense": 48,
-        "type": [
-            "water"
-        ],
-        "level": 10,
-        "speed": 63,
-        "stage": 1,
-        "ev": {
-            "hp": 1,
-            "strength": 2,
-            "defense": 3,
-            "speed": 1,
-            "xp": 3
-        },
-        "state": "wild"
-    },
-    {
         "name": "Rhyhorn",
         "original_name": "Rhyhorn",
         "pet_name": "Jean-Henri",
@@ -635,30 +537,6 @@
         "state": "wild"
     },
     {
-        "name": "Nidoran",
-        "original_name": "Nidoran",
-        "pet_name": "Jean-S\u00e9bastien",
-        "hp_max": 23,
-        "hp": 23,
-        "xp": 102,
-        "strength": 18,
-        "defense": 20,
-        "type": [
-            "poison"
-        ],
-        "level": 4,
-        "speed": 22,
-        "stage": 1,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
         "name": "Dratini",
         "original_name": "Dratini",
         "pet_name": "Jean-Cl\u00e9ment",
@@ -721,30 +599,6 @@
         ],
         "level": 5,
         "speed": 24,
-        "stage": 1,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
-        "name": "Rattata",
-        "original_name": "Rattata",
-        "pet_name": "Jean-Claude",
-        "hp_max": 48,
-        "hp": 48,
-        "xp": 293,
-        "strength": 44,
-        "defense": 34,
-        "type": [
-            "normal"
-        ],
-        "level": 6,
-        "speed": 21,
         "stage": 1,
         "ev": {
             "hp": 0,
@@ -964,6 +818,54 @@
         ],
         "level": 3,
         "speed": 25,
+        "stage": 1,
+        "ev": {
+            "hp": 0,
+            "strength": 0,
+            "defense": 0,
+            "speed": 0,
+            "xp": 0
+        },
+        "state": "wild"
+    },
+    {
+        "name": "Rattata",
+        "original_name": "Rattata",
+        "pet_name": "Jean-Claude",
+        "hp_max": 48,
+        "hp": 48,
+        "xp": 293,
+        "strength": 44,
+        "defense": 34,
+        "type": [
+            "normal"
+        ],
+        "level": 6,
+        "speed": 21,
+        "stage": 1,
+        "ev": {
+            "hp": 0,
+            "strength": 0,
+            "defense": 0,
+            "speed": 0,
+            "xp": 0
+        },
+        "state": "wild"
+    },
+    {
+        "name": "Charmander",
+        "original_name": "Charmander",
+        "pet_name": "Jean-Michel",
+        "hp_max": 28,
+        "hp": 28,
+        "xp": 294,
+        "strength": 47,
+        "defense": 28,
+        "type": [
+            "fire"
+        ],
+        "level": 6,
+        "speed": 26,
         "stage": 1,
         "ev": {
             "hp": 0,
