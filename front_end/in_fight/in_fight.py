@@ -238,34 +238,24 @@ class InFight():
                                                             player_turn = False
                                                         case "Back":
                                                             player_turn = True
-                                                    # if another_option:
-                                                    #     player_turn == True
-                                                    # else:
-                                                    #     player_turn = False
                                                 case "Back":
                                                     player_turn = True
                                 case 2:
-                                    print("TEAM")
                                     self.pokemon = ChangePokemonInFight(self.player, self.pokemon, self.pokemon_enemy, self.screen).display()
-                                    # pokemon = pygame.transform.flip(self.load_image(self.pokemon.get_image()), True, False
                                     name = self.pokemon.name
                                     level = self.pokemon.get_level()
                                 case 3:
-                                    print("Info")
                                     InfoMenu(self.screen, self.pokemon, self.pokemon_enemy).display()
                                     player_turn = True  
                                 case 4:
                                     if win:
-                                        # self.pokemon.update_xp(self.pokemon_enemy)
                                         save_pokemon_to_pokedex(self.player,self.pokemon)
                                         save_bag_to_pokedex(self.player, self.bag)
                                         self.pokemon.set_hp(self.pokemon.get_hp_max())
                                         self.pokemon_enemy.set_hp(self.pokemon_enemy.get_hp_max())
                                         save_wild_pokemon(self.pokemon_enemy)
                                         return self.fleeing
-                                        # return
                                     else:
-                                        print("fuite")
                                         self.fleeing = self.fight.run_away()
                                         player_turn = False
                                         if self.fleeing:
@@ -278,23 +268,17 @@ class InFight():
                                             failed_flee_time = 0
                                             while failed_flee_time - now_time < 1000:
                                                 failed_flee_time = pygame.time.get_ticks()
-                                                # self.failed_fleeing()
                                                 self.message_pop_up(self.fight.fightinfo.flee_message)
                                                 pygame.display.update()
                                             return self.fleeing
-                                            # return
                                         else:
                                             now_time = pygame.time.get_ticks()
                                             failed_flee_time = 0
                                             while failed_flee_time - now_time < 1000:
                                                 failed_flee_time = pygame.time.get_ticks()
-                                                # self.failed_fleeing()
                                                 self.message_pop_up(self.fight.fightinfo.flee_message)
                                                 pygame.display.update()
                                         
-                                        
-                                    # pygame.quit()
-                                # sys.exit()
                 else:
                     pygame.time.wait(1000)
                     
@@ -302,18 +286,12 @@ class InFight():
                         self.fight.bot_attack()
                         message_attack = self.fight.fightinfo.set_who_attack_message(self.pokemon_enemy)
                         message_damage = self.fight.fightinfo.get_damage_message()
-                        # pygame.time.wait(1000)
-                        # player_turn = True
                     else:
                         win = True
-                        # player_turn = True
-                        #TODO game_over screen/new menu and allows events for player
-                        # pass
                     player_turn = True
             
 
     def draw_win_player_screen(self, level, name):
-        # self.util.draw_color_filter(self.screen)
         self.util.draw_window_with_background(self.screen, self.screen.width //2.5, self.screen.height //2.5)
         font_size = self.screen.height // 22
         x  = self.screen.width //2
@@ -339,7 +317,6 @@ class InFight():
             self.util.draw_text(f"Total XP : {self.pokemon.get_xp()}", REGULAR_FONT, font_size, self.screen, (x, y + font_size*2))
 
     def draw_win_capture_screen(self, pokemon_enemy,pokemon, level, name):
-        # self.util.draw_color_filter(self.screen)
         self.util.draw_window_with_background(self.screen, self.screen.width //2.5, self.screen.height //2.5)
         font_size = self.screen.height // 22
         x  = self.screen.width //2
@@ -367,16 +344,12 @@ class InFight():
             self.util.draw_text(f"Total XP : {pokemon.get_xp()}", REGULAR_FONT, font_size, self.screen, (x, y + font_size*1.5))
 
     def draw_win_bot_screen(self):
-        # self.util.draw_color_filter(self.screen)
         self.util.draw_window_with_background(self.screen, self.screen.width //2.5, self.screen.height //2.5)
         font_size = self.screen.height // 18
         x  = self.screen.width //2
         y = self.screen.height // 2
         self.util.draw_text("You lost the fight!", REGULAR_FONT, font_size , self.screen, (x, y))
 
-    # def failed_fleeing(self):
-    #     self.util.draw_info_attack_screen(self.screen, "Votre fuite a échoué", "Le pokemon adverse va vous attaquer")
-    
     def capture_message(self, message):
         self.util.draw_info_capture_screen(self.screen, message)
     

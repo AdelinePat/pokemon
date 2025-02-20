@@ -260,20 +260,20 @@
                 "name": "Growlithe",
                 "original_name": "Growlithe",
                 "pet_name": "Jean-Noa",
-                "hp_max": 77,
-                "hp": 72,
-                "xp": 943,
-                "strength": 106,
-                "defense": 65,
+                "hp_max": 93,
+                "hp": 93,
+                "xp": 1216,
+                "strength": 123,
+                "defense": 79,
                 "type": [
                     "fire"
                 ],
-                "level": 10,
-                "speed": 107,
+                "level": 11,
+                "speed": 121,
                 "stage": 1,
                 "ev": {
                     "hp": 2,
-                    "strength": 3,
+                    "strength": 0,
                     "defense": 0,
                     "speed": 2,
                     "xp": 1

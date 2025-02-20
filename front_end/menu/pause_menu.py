@@ -1,9 +1,5 @@
 import pygame
 import sys
-
-from front_end.gameplay import game
-# from front_end.menu.name_input import NameInput  
-
 from .select_player import SelectPlayer
 from .change_pokemon import ChangePokemon
 from __settings__ import MAIN_MENU_BACKGROUND1, LIGHT_GREEN, REGULAR_FONT
@@ -32,15 +28,6 @@ class PauseMenu:
         else:
             self.pokemons = pokemon_list
 
-
-    # def draw_text(self, text, x, y, color=(255, 255, 255)):
-    #     """
-    #     Renders text and displays it at the given (x, y) position.
-    #     """
-    #     surface = self.font.render(text, True, color)
-    #     rect = surface.get_rect(center=(x, y))
-    #     self.screen.get_display().blit(surface, rect)
-
     def display(self):
         """
         Main menu loop that displays options and handles user input.
@@ -58,7 +45,6 @@ class PauseMenu:
             # Draw menu options
             for i, option in enumerate(self.options):
                 color = LIGHT_GREEN if i == self.selected_index else (255, 255, 255)  # Highlight selected option
-                # self.draw_text(option, 600, 300 + i * 60, color)
                 self.util.draw_text(option, REGULAR_FONT, font_size - 14, self.screen,\
                                 (self.screen.width//2, self.screen.height // 10*3.5 + i*100), color)
 
@@ -78,31 +64,20 @@ class PauseMenu:
                         match self.selected_index:
                             case 0:  # Start a new game
                                 self.pokemon = ChangePokemon(self.player, self.screen).display()
-                                # player_name, pokemon = name_input.get_name()
-                                # print(player_name, pokemon)
                                 import front_end.gameplay.game as gameplay
                                 game = gameplay.Game(self.screen, self.player, self.pokemon)
                                 
                                 # Stop the opening music and start the map music
                                 sounds.stop_background_music()  # Correct the method name here
                                 sounds.play_map_music()  # Play map music
-                                # return self.player, self.pokemon
-                                # return self.player, self.pokemon
-                                # game.run()
+                             
                             case 1:
                                 self.player = SelectPlayer(self.screen).display()
                                 self.pokemons = get_all_pokemons_from_pokedex(self.player)
                                 self.pokemon = get_first_pokemon(self.player)
                             case 2:
-                                # select_player = SelectPlayer(self.screen).display()
-                                # game = Game(self.screen, select_player)
-                                
-                                # print(select_player)
-
-                                # Stop the opening music and start the map music
                                 sounds.stop_background_music()  # Correct the method name here
                                 sounds.play_map_music()  # Play map music
-                                # game.run()
                                 return self.player, self.pokemon
                             case 3:
                                 pygame.quit()
