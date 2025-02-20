@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="100" height="100" tilewidth="16" tileheight="16" infinite="0" nextlayerid="9" nextobjectid="133">
- <tileset firstgid="1" source="tileset/tileset_pokemon_sdk.tsx"/>
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="100" height="100" tilewidth="16" tileheight="16" infinite="0" nextlayerid="9" nextobjectid="136">
+ <tileset firstgid="1" source="../../../../../../CODE/TESTPOKEMON/pokemonfortest/assets/map/tileset/tileset_pokemon_sdk.tsx"/>
  <group id="4" name="layer">
   <layer id="1" name="ground" width="100" height="100">
    <data encoding="csv">
@@ -323,7 +323,7 @@
     <point/>
    </object>
    <object id="10" name="switch house_1 0" x="288" y="96" width="16" height="16"/>
-   <object id="11" name="spawn house_1 0" x="291" y="117.667">
+   <object id="11" name="spawn house_1 0" x="295.75" y="121.417">
     <point/>
    </object>
    <object id="12" name="switch house_1 0" x="608" y="160" width="16" height="16"/>
@@ -335,18 +335,22 @@
     <point/>
    </object>
    <object id="42" name="switch pokecenter 0" x="176" y="240" width="16" height="16"/>
-   <object id="114" name="switch pokecenter 0" x="336.333" y="628" width="16" height="16"/>
+   <object id="114" name="switch labo_0 0" x="336.333" y="628" width="16" height="16"/>
    <object id="43" name="spawn pokecenter 0" x="184.515" y="270.758">
     <point/>
    </object>
-   <object id="115" name="spawn pokecenter 0" x="345.182" y="658.758">
+   <object id="115" name="spawn labo_0 0" x="345.182" y="658.758">
     <point/>
    </object>
    <object id="54" x="611.75" y="169">
     <point/>
    </object>
+   <object id="134" name="switch pokeshop 0" x="929.273" y="101.273" width="14.7273" height="10.7273"/>
+   <object id="135" name="spawn pokeshop 0" x="935.091" y="120.909">
+    <point/>
+   </object>
   </objectgroup>
-  <objectgroup id="7" name="collision">
+  <objectgroup id="7" name="collision" visible="0">
    <object id="17" name="collision" x="512.667" y="145" width="15.3333" height="44.6667"/>
    <object id="18" name="collision" x="672" y="144" width="16" height="48"/>
    <object id="19" x="416" y="64" width="16" height="16"/>
@@ -389,7 +393,6 @@
    <object id="111" x="342.667" y="570"/>
    <object id="112" x="313.667" y="585" width="3.33333" height="5"/>
    <object id="116" name="collision" x="917" y="56.3333" width="53.6667" height="32"/>
-   <object id="117" name="collision" x="929.667" y="100.333" width="14" height="11"/>
    <object id="119" name="collision" x="950.667" y="101.333" width="16" height="13.3333"/>
    <object id="122" name="collision" x="896" y="64" width="16" height="16">
     <ellipse/>
@@ -410,7 +413,7 @@
     <ellipse/>
    </object>
   </objectgroup>
-  <objectgroup id="8" name="battlepokemon">
+  <objectgroup id="8" name="battlepokemon" visible="0">
    <object id="50" name="collisionpokemon" x="227.5" y="321.5" width="40.5" height="41"/>
    <object id="52" name="collisionpokemon" x="182" y="323" width="38" height="36"/>
    <object id="53" name="collisionpokemon" x="275.5" y="324" width="39.5" height="36.5"/>
