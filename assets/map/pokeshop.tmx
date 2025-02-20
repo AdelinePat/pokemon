@@ -96,15 +96,15 @@
    </object>
   </objectgroup>
   <objectgroup id="11" name="collsion">
-   <object id="22" name="collision" x="4" y="60" width="43.5" height="13.5"/>
-   <object id="23" name="collision" x="47.75" y="26.75" width="14.75" height="45"/>
+   <object id="22" name="collision" x="9.5" y="61.25" width="39" height="11"/>
+   <object id="23" name="collision" x="50.25" y="34.75" width="12.25" height="31"/>
    <object id="24" name="collision" x="65.75" y="9.5" width="11.75" height="35.25"/>
-   <object id="25" name="collision" x="80" y="8.5" width="11.75" height="21"/>
-   <object id="26" name="collision" x="113.25" y="7.75" width="27.5" height="21"/>
-   <object id="27" name="collision" x="98.5" y="29.75" width="27.5" height="48.75"/>
-   <object id="28" name="collision" x="147" y="51" width="11.25" height="28.25"/>
-   <object id="29" name="collision" x="146.5" y="114.5" width="11.25" height="28.25"/>
-   <object id="30" name="collision" x="97.75" y="114.75" width="27.25" height="28.25"/>
+   <object id="25" name="collision" x="84" y="8.5" width="5.25" height="18"/>
+   <object id="26" name="collision" x="116" y="12" width="22.25" height="14.5"/>
+   <object id="27" name="collision" x="101.75" y="29.75" width="20" height="39"/>
+   <object id="28" name="collision" x="149.25" y="53.25" width="9" height="26"/>
+   <object id="29" name="collision" x="146.5" y="114.5" width="9.25" height="24.75"/>
+   <object id="30" name="collision" x="103.25" y="118" width="17.75" height="25"/>
   </objectgroup>
  </group>
 </map>
