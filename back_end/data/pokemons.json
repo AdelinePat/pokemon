@@ -1,30 +1,5 @@
 [
     {
-        "name": "Bulbasaur",
-        "original_name": "Bulbasaur",
-        "pet_name": "Jean-Baptiste",
-        "hp_max": 35,
-        "hp": 35,
-        "xp": 553,
-        "strength": 44,
-        "defense": 35,
-        "type": [
-            "grass",
-            "poison"
-        ],
-        "level": 8,
-        "speed": 36,
-        "stage": 1,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
         "name": "Charmander",
         "original_name": "Charmander",
         "pet_name": "Jean-Michel",
@@ -62,56 +37,6 @@
         ],
         "level": 4,
         "speed": 41,
-        "stage": 1,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
-        "name": "Weedle",
-        "original_name": "Weedle",
-        "pet_name": "Jean-Louis",
-        "hp_max": 31,
-        "hp": 31,
-        "xp": 105,
-        "strength": 23,
-        "defense": 18,
-        "type": [
-            "bug",
-            "poison"
-        ],
-        "level": 4,
-        "speed": 30,
-        "stage": 1,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
-        "name": "Pidgey",
-        "original_name": "Pidgey",
-        "pet_name": "Jean-Fran\u00e7ois",
-        "hp_max": 19,
-        "hp": 19,
-        "xp": 7,
-        "strength": 16,
-        "defense": 11,
-        "type": [
-            "normal",
-            "flying"
-        ],
-        "level": 1,
-        "speed": 16,
         "stage": 1,
         "ev": {
             "hp": 0,
@@ -233,30 +158,6 @@
         ],
         "level": 6,
         "speed": 33,
-        "stage": 1,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
-        "name": "Nidoran",
-        "original_name": "Nidoran",
-        "pet_name": "Jean-S\u00e9bastien",
-        "hp_max": 31,
-        "hp": 31,
-        "xp": 138,
-        "strength": 23,
-        "defense": 24,
-        "type": [
-            "poison"
-        ],
-        "level": 5,
-        "speed": 20,
         "stage": 1,
         "ev": {
             "hp": 0,
@@ -758,30 +659,6 @@
         "state": "wild"
     },
     {
-        "name": "Drowzee",
-        "original_name": "Drowzee",
-        "pet_name": "Jean-David",
-        "hp_max": 53,
-        "hp": 53,
-        "xp": 634,
-        "strength": 40,
-        "defense": 31,
-        "type": [
-            "psychic"
-        ],
-        "level": 8,
-        "speed": 54,
-        "stage": 1,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
         "name": "Krabby",
         "original_name": "Krabby",
         "pet_name": "Jean-Thierry",
@@ -795,30 +672,6 @@
         ],
         "level": 3,
         "speed": 26,
-        "stage": 1,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
-        "name": "Voltorb",
-        "original_name": "Voltorb",
-        "pet_name": "Jean-Sarah",
-        "hp_max": 38,
-        "hp": 38,
-        "xp": 571,
-        "strength": 44,
-        "defense": 34,
-        "type": [
-            "electric"
-        ],
-        "level": 8,
-        "speed": 46,
         "stage": 1,
         "ev": {
             "hp": 0,
@@ -941,30 +794,6 @@
         ],
         "level": 2,
         "speed": 21,
-        "stage": 1,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
-        "name": "Horsea",
-        "original_name": "Horsea",
-        "pet_name": "Jean-L\u00e9on",
-        "hp_max": 44,
-        "hp": 44,
-        "xp": 218,
-        "strength": 24,
-        "defense": 32,
-        "type": [
-            "water"
-        ],
-        "level": 6,
-        "speed": 33,
         "stage": 1,
         "ev": {
             "hp": 0,
@@ -1183,6 +1012,104 @@
         ],
         "level": 9,
         "speed": 44,
+        "stage": 1,
+        "ev": {
+            "hp": 0,
+            "strength": 0,
+            "defense": 0,
+            "speed": 0,
+            "xp": 0
+        },
+        "state": "wild"
+    },
+    {
+        "name": "Voltorb",
+        "original_name": "Voltorb",
+        "pet_name": "Jean-Sarah",
+        "hp_max": 38,
+        "hp": 38,
+        "xp": 571,
+        "strength": 44,
+        "defense": 34,
+        "type": [
+            "electric"
+        ],
+        "level": 8,
+        "speed": 46,
+        "stage": 1,
+        "ev": {
+            "hp": 0,
+            "strength": 0,
+            "defense": 0,
+            "speed": 0,
+            "xp": 0
+        },
+        "state": "wild"
+    },
+    {
+        "name": "Pidgey",
+        "original_name": "Pidgey",
+        "pet_name": "Jean-Fran\u00e7ois",
+        "hp_max": 19,
+        "hp": 19,
+        "xp": 7,
+        "strength": 16,
+        "defense": 11,
+        "type": [
+            "normal",
+            "flying"
+        ],
+        "level": 1,
+        "speed": 16,
+        "stage": 1,
+        "ev": {
+            "hp": 0,
+            "strength": 0,
+            "defense": 0,
+            "speed": 0,
+            "xp": 0
+        },
+        "state": "wild"
+    },
+    {
+        "name": "Weedle",
+        "original_name": "Weedle",
+        "pet_name": "Jean-Louis",
+        "hp_max": 31,
+        "hp": 31,
+        "xp": 105,
+        "strength": 23,
+        "defense": 18,
+        "type": [
+            "bug",
+            "poison"
+        ],
+        "level": 4,
+        "speed": 30,
+        "stage": 1,
+        "ev": {
+            "hp": 0,
+            "strength": 0,
+            "defense": 0,
+            "speed": 0,
+            "xp": 0
+        },
+        "state": "wild"
+    },
+    {
+        "name": "Drowzee",
+        "original_name": "Drowzee",
+        "pet_name": "Jean-David",
+        "hp_max": 53,
+        "hp": 53,
+        "xp": 634,
+        "strength": 40,
+        "defense": 31,
+        "type": [
+            "psychic"
+        ],
+        "level": 8,
+        "speed": 54,
         "stage": 1,
         "ev": {
             "hp": 0,

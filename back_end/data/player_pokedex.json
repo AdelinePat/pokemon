@@ -9,22 +9,22 @@
                 "name": "Sandslash",
                 "original_name": "Sandshrew",
                 "pet_name": "Jean-Marie",
-                "hp_max": 368,
+                "hp_max": 375,
                 "hp": 368,
-                "xp": 5379,
-                "strength": 337,
-                "defense": 321,
+                "xp": 5626,
+                "strength": 344,
+                "defense": 325,
                 "type": [
                     "ground"
                 ],
                 "level": 18,
-                "speed": 356,
+                "speed": 364,
                 "stage": 2,
                 "ev": {
-                    "hp": 2,
-                    "strength": 3,
-                    "defense": 2,
-                    "speed": 1,
+                    "hp": 1,
+                    "strength": 0,
+                    "defense": 3,
+                    "speed": 0,
                     "xp": 1
                 },
                 "state": "domesticated"
@@ -33,23 +33,23 @@
                 "name": "Raichu",
                 "original_name": "Pikachu",
                 "pet_name": "Jean-Luc",
-                "hp_max": 150,
+                "hp_max": 153,
                 "hp": 77,
-                "xp": 5102,
-                "strength": 144,
-                "defense": 135,
+                "xp": 5232,
+                "strength": 147,
+                "defense": 137,
                 "type": [
                     "electric",
                     "psychic"
                 ],
                 "level": 18,
-                "speed": 136,
+                "speed": 138,
                 "stage": 2,
                 "ev": {
                     "hp": 3,
-                    "strength": 2,
-                    "defense": 1,
-                    "speed": 1,
+                    "strength": 3,
+                    "defense": 0,
+                    "speed": 3,
                     "xp": 2
                 },
                 "state": "domesticated"
@@ -107,23 +107,23 @@
                 "name": "Kingler",
                 "original_name": "Krabby",
                 "pet_name": "Jean-Thierry",
-                "hp_max": 335,
+                "hp_max": 340,
                 "hp": 108,
-                "xp": 4173,
-                "strength": 317,
-                "defense": 318,
+                "xp": 4309,
+                "strength": 323,
+                "defense": 321,
                 "type": [
                     "water"
                 ],
                 "level": 17,
-                "speed": 314,
+                "speed": 320,
                 "stage": 2,
                 "ev": {
-                    "hp": 0,
-                    "strength": 2,
-                    "defense": 3,
+                    "hp": 2,
+                    "strength": 1,
+                    "defense": 2,
                     "speed": 0,
-                    "xp": 3
+                    "xp": 4
                 },
                 "state": "domesticated"
             }
