@@ -363,5 +363,37 @@
                 "state": "domesticated"
             }
         }
+    },
+    "Jolyne": {
+        "bag": {
+            "potions": 10,
+            "pokeball": 15
+        },
+        "pokemons": {
+            "Jean-Noa": {
+                "name": "Growlithe",
+                "original_name": "Growlithe",
+                "pet_name": "Jean-Noa",
+                "hp_max": 53,
+                "hp": 53,
+                "xp": 906,
+                "strength": 55,
+                "defense": 34,
+                "type": [
+                    "fire"
+                ],
+                "level": 9,
+                "speed": 52,
+                "stage": 1,
+                "ev": {
+                    "hp": 0,
+                    "strength": 0,
+                    "defense": 0,
+                    "speed": 0,
+                    "xp": 0
+                },
+                "state": "domesticated"
+            }
+        }
     }
 }

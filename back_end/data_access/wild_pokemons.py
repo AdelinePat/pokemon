@@ -9,8 +9,11 @@ def generate_pokemons_dict():
 
     all_pokemons = create_low_level_world_pokemons()
     pokemons_dict_list = []
-
+    
+    # index = random.randrange(len(name_list))
     for index, each_pokemon in enumerate(all_pokemons):
+        if index == len(name_list)-1:
+            index = 0
         each_pokemon.set_pet_name("Jean-" + name_list[index])
         a_pokemon = each_pokemon.pokemon_dict()
         pokemons_dict_list.append(a_pokemon)
