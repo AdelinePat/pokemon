@@ -95,7 +95,7 @@ class Fight:
 
     def use_pokeball(self, player, bag, pokemon, pokemon_enemy):
         if bag.get_pokeball() > 0:
-            capture = random.randint(1, 255)
+            capture = random.randint(1, pokemon_enemy.get_hp_max())
             bag.set_pokeball(bag.get_pokeball() - 1)
 
             if capture >= pokemon_enemy.get_hp():

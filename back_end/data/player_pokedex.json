@@ -1009,30 +1009,30 @@
     "Player6": {
         "bag": {
             "potions": 10,
-            "pokeball": 13
+            "pokeball": 12
         },
         "pokemons": {
             "Jean-Noa": {
                 "name": "Charmander",
                 "original_name": "Charmander",
                 "pet_name": "Jean-Noa",
-                "hp_max": 37,
-                "hp": 37,
-                "xp": 339,
-                "strength": 22,
-                "defense": 30,
+                "hp_max": 45,
+                "hp": 45,
+                "xp": 374,
+                "strength": 37,
+                "defense": 42,
                 "type": [
                     "fire"
                 ],
-                "level": 6,
-                "speed": 45,
+                "level": 7,
+                "speed": 51,
                 "stage": 1,
                 "ev": {
-                    "hp": 0,
-                    "strength": 0,
-                    "defense": 0,
-                    "speed": 0,
-                    "xp": 0
+                    "hp": 3,
+                    "strength": 3,
+                    "defense": 2,
+                    "speed": 3,
+                    "xp": 3
                 },
                 "state": "domesticated"
             },
@@ -1083,13 +1083,38 @@
                     "xp": 0
                 },
                 "state": "domesticated"
+            },
+            "Jean-Malha 1740141203.2582593": {
+                "name": "Venonat",
+                "original_name": "Venonat",
+                "pet_name": "Jean-Malha 1740141203.2582593",
+                "hp_max": 29,
+                "hp": 29,
+                "xp": 49,
+                "strength": 17,
+                "defense": 11,
+                "type": [
+                    "bug",
+                    "poison"
+                ],
+                "level": 3,
+                "speed": 20,
+                "stage": 1,
+                "ev": {
+                    "hp": 0,
+                    "strength": 0,
+                    "defense": 0,
+                    "speed": 0,
+                    "xp": 0
+                },
+                "state": "domesticated"
             }
         }
     },
     "Player1234": {
         "bag": {
             "potions": 10,
-            "pokeball": 12
+            "pokeball": 9
         },
         "pokemons": {
             "Jean-Sarah": {
@@ -1169,15 +1194,39 @@
                 "name": "Clefairy",
                 "original_name": "Clefairy",
                 "pet_name": "Jean-Jules 1740137586.986651",
-                "hp_max": 37,
-                "hp": 37,
-                "xp": 897,
-                "strength": 50,
-                "defense": 41,
+                "hp_max": 47,
+                "hp": 47,
+                "xp": 961,
+                "strength": 62,
+                "defense": 47,
                 "type": [
                     "fairy"
                 ],
-                "level": 9,
+                "level": 10,
+                "speed": 54,
+                "stage": 1,
+                "ev": {
+                    "hp": 3,
+                    "strength": 1,
+                    "defense": 1,
+                    "speed": 0,
+                    "xp": 0
+                },
+                "state": "domesticated"
+            },
+            "Jean-Vladimir 1740141203.258247": {
+                "name": "Psyduck",
+                "original_name": "Psyduck",
+                "pet_name": "Jean-Vladimir 1740141203.258247",
+                "hp_max": 37,
+                "hp": 37,
+                "xp": 160,
+                "strength": 28,
+                "defense": 17,
+                "type": [
+                    "water"
+                ],
+                "level": 5,
                 "speed": 39,
                 "stage": 1,
                 "ev": {
