@@ -57,24 +57,16 @@ pip install pyscroll
 ## Project Structure
 
 📂 pokemon-game
-├── 📁 assets/ # Graphics and sound resources  
-├── 📁 back_end/ # Pokémon generation and JSON file handling  
-│ ├── entity.py # Handles player and entity interactions  
-│ ├── keylistener.py # Manages keyboard inputs for player movement  
-│ └── switch.py # Logic for map transitions and switches  
-├── 📁 front_end/ # For battle system and graphical interface  
-│ ├── gameplay/  
-│ │ ├── entity.py # Player and entity movement logic  
-│ │ ├── battlescreen.py # Displays battle screen/battle logic  
-│ │ └── in_fight.py # Core combat   
-│ ├── menu/
-│ ├── sounds/
-│ └── screen.py   
-├── 📁 new_menu/ 
-├── README.md 
-├── requirements.txt 
-├── .gitignore   
-└── main.py 
+├── 📁 assets/           # Graphics and sound resources
+│   ├── 📁 back_end/     # Backend for Pokémon generation and JSON file handling
+│   ├── 📁 front_end/    # Battle system and graphical interface
+│   ├── 📁 new_menu/     # Menu and interface handling
+│
+├── README.md           # Project documentation
+├── requirements.txt    # Python dependencies
+├── .gitignore          # Files to exclude from version control
+└── main.py             # Main source code
+
 
 ## Detailed File Roled
 
