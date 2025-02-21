@@ -56,7 +56,7 @@ pip install pyscroll
 
 ## Project Structure
   
-📂 pokemon-game
+📂 pokemon-game  
 ├── 📁 assets/           # Graphics and sound resources  
 │   ├── 📁 back_end/     # Backend for Pokémon generation and JSON file handling  
 │   ├── 📁 front_end/    # Battle system and graphical interface  
