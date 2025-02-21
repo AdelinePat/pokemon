@@ -903,26 +903,26 @@
     "Player5": {
         "bag": {
             "potions": 8,
-            "pokeball": 12
+            "pokeball": 11
         },
         "pokemons": {
             "Jean-H\u00e9l\u00e8ne": {
                 "name": "Seel",
                 "original_name": "Seel",
                 "pet_name": "Jean-H\u00e9l\u00e8ne",
-                "hp_max": 91,
-                "hp": 91,
-                "xp": 580,
-                "strength": 93,
-                "defense": 73,
+                "hp_max": 110,
+                "hp": 110,
+                "xp": 756,
+                "strength": 107,
+                "defense": 84,
                 "type": [
                     "water"
                 ],
-                "level": 9,
-                "speed": 78,
+                "level": 10,
+                "speed": 95,
                 "stage": 1,
                 "ev": {
-                    "hp": 2,
+                    "hp": 0,
                     "strength": 2,
                     "defense": 3,
                     "speed": 0,
@@ -975,6 +975,111 @@
                     "strength": 1,
                     "defense": 0,
                     "speed": 3,
+                    "xp": 0
+                },
+                "state": "domesticated"
+            },
+            "Jean-Vincent 1740135623.4406197": {
+                "name": "Weedle",
+                "original_name": "Weedle",
+                "pet_name": "Jean-Vincent 1740135623.4406197",
+                "hp_max": 60,
+                "hp": 60,
+                "xp": 566,
+                "strength": 82,
+                "defense": 46,
+                "type": [
+                    "bug",
+                    "poison"
+                ],
+                "level": 9,
+                "speed": 79,
+                "stage": 1,
+                "ev": {
+                    "hp": 3,
+                    "strength": 1,
+                    "defense": 0,
+                    "speed": 0,
+                    "xp": 3
+                },
+                "state": "domesticated"
+            }
+        }
+    },
+    "Player6": {
+        "bag": {
+            "potions": 10,
+            "pokeball": 13
+        },
+        "pokemons": {
+            "Jean-Noa": {
+                "name": "Charmander",
+                "original_name": "Charmander",
+                "pet_name": "Jean-Noa",
+                "hp_max": 37,
+                "hp": 37,
+                "xp": 339,
+                "strength": 22,
+                "defense": 30,
+                "type": [
+                    "fire"
+                ],
+                "level": 6,
+                "speed": 45,
+                "stage": 1,
+                "ev": {
+                    "hp": 0,
+                    "strength": 0,
+                    "defense": 0,
+                    "speed": 0,
+                    "xp": 0
+                },
+                "state": "domesticated"
+            },
+            "Jean-Adeline 1740136627.8882575": {
+                "name": "Dratini",
+                "original_name": "Dratini",
+                "pet_name": "Jean-Adeline 1740136627.8882575",
+                "hp_max": 92,
+                "hp": 92,
+                "xp": 276,
+                "strength": 88,
+                "defense": 64,
+                "type": [
+                    "dragon"
+                ],
+                "level": 7,
+                "speed": 92,
+                "stage": 1,
+                "ev": {
+                    "hp": 0,
+                    "strength": 1,
+                    "defense": 3,
+                    "speed": 0,
+                    "xp": 4
+                },
+                "state": "domesticated"
+            },
+            "Jean-Vanessa 1740136686.2365582": {
+                "name": "Staryu",
+                "original_name": "Staryu",
+                "pet_name": "Jean-Vanessa 1740136686.2365582",
+                "hp_max": 44,
+                "hp": 44,
+                "xp": 697,
+                "strength": 35,
+                "defense": 32,
+                "type": [
+                    "water"
+                ],
+                "level": 8,
+                "speed": 34,
+                "stage": 1,
+                "ev": {
+                    "hp": 0,
+                    "strength": 0,
+                    "defense": 0,
+                    "speed": 0,
                     "xp": 0
                 },
                 "state": "domesticated"

@@ -1,4 +1,4 @@
-import pygame
+import pygame, re
 from __settings__ import REGULAR_FONT, POKE_FONT
 from .util_tool import UtilTool
 from back_end.controller import create_player, does_player_exist
@@ -33,13 +33,18 @@ class PokemonStat():
 
             self.util.draw_text(self.pokemon.name.upper(), POKE_FONT, font_size, self.screen, (self.screen.width//2, y_position -175), "white")
 
-            self.util.draw_text(f"Level : {str(self.pokemon.get_level())}", REGULAR_FONT, font_size, self.screen, (self.screen.width//2, y_position - 125), "white")
-            self.util.draw_text(f"Type : {str(", ".join(self.pokemon.type))}", REGULAR_FONT, font_size, self.screen, (self.screen.width//2, y_position -75), "white")
-            self.util.draw_text(f"HP : {str(self.pokemon.get_hp())}", REGULAR_FONT, font_size, self.screen, (self.screen.width//2, y_position -25), "white")
-            self.util.draw_text(f"Strength : {str(self.pokemon.get_strength())}", REGULAR_FONT, font_size, self.screen, (self.screen.width//2, y_position + 25), "white")
-            self.util.draw_text(f"Defense : {str(self.pokemon.get_defense())}", REGULAR_FONT, font_size, self.screen, (self.screen.width//2, y_position + 75), "white")
-            self.util.draw_text(f"Speed : {str(self.pokemon.get_speed())}", REGULAR_FONT, font_size, self.screen, (self.screen.width//2, y_position + 125), "white")
-            self.util.draw_text(f"XP : {str(self.pokemon.get_xp())}", REGULAR_FONT, font_size, self.screen, (self.screen.width//2, y_position + 175), "white")
+            pet_name_list = self.pokemon.pet_name.split()
+            pet_name = pet_name_list[0]
+
+            self.util.draw_text(f"{pet_name}", REGULAR_FONT, font_size, self.screen, (self.screen.width//2, y_position - 125), "white")
+            self.util.draw_text(f"Level : {str(self.pokemon.get_level())}", REGULAR_FONT, font_size, self.screen, (self.screen.width//2, y_position - 75), "white")
+            self.util.draw_text(f"Type : {str(", ".join(self.pokemon.type))}", REGULAR_FONT, font_size, self.screen, (self.screen.width//2, y_position -25), "white")
+            self.util.draw_text(f"HP : {str(self.pokemon.get_hp())}", REGULAR_FONT, font_size, self.screen, (self.screen.width//2, y_position +25), "white")
+            
+            self.util.draw_text(f"Strength : {str(self.pokemon.get_strength())}", REGULAR_FONT, font_size, self.screen, (self.screen.width//2, y_position + 75), "white")
+            self.util.draw_text(f"Defense : {str(self.pokemon.get_defense())}", REGULAR_FONT, font_size, self.screen, (self.screen.width//2, y_position + 125), "white")
+            self.util.draw_text(f"Speed : {str(self.pokemon.get_speed())}", REGULAR_FONT, font_size, self.screen, (self.screen.width//2, y_position + 175), "white")
+            self.util.draw_text(f"XP : {str(self.pokemon.get_xp())}", REGULAR_FONT, font_size, self.screen, (self.screen.width//2, y_position + 225), "white")
             
             pygame.display.flip()
 

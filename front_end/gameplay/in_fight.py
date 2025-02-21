@@ -1,4 +1,4 @@
-import pygame, sys, math
+import pygame, sys, math, time
 from __settings__ import BATTLE_BACKGROUND, BATTLE_FLOOR, REGULAR_FONT, DARK_GREEN, LIGHT_GREEN
 from front_end.menu.util_tool import UtilTool
 from front_end.menu.bagmenu import BagMenu
@@ -197,6 +197,8 @@ class InFight():
                                 case 4: #exit or flee
                                     if win:
                                         if another_option == "Success":
+                                            new_pet_name = self.pokemon_enemy.pet_name + " " + str(time.time())
+                                            self.pokemon_enemy.set_pet_name(new_pet_name)
                                             self.save_all_to_pokedex()
                                         else:
                                             self.save()
