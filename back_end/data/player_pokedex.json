@@ -1043,5 +1043,112 @@
                 "state": "domesticated"
             }
         }
+    },
+    "Ludo": {
+        "bag": {
+            "potions": 4,
+            "pokeball": 9
+        },
+        "pokemons": {
+            "Jean-L\u00e9on": {
+                "name": "Hypno",
+                "original_name": "Drowzee",
+                "pet_name": "Jean-L\u00e9on",
+                "hp_max": 262,
+                "hp": 262,
+                "xp": 4516,
+                "strength": 248,
+                "defense": 213,
+                "type": [
+                    "psychic"
+                ],
+                "level": 17,
+                "speed": 263,
+                "stage": 2,
+                "ev": {
+                    "hp": 1,
+                    "strength": 1,
+                    "defense": 2,
+                    "speed": 1,
+                    "xp": 2
+                },
+                "state": "domesticated"
+            },
+            "Jean-Louis 1740141203.2581918": {
+                "name": "Magnemite",
+                "original_name": "Magnemite",
+                "pet_name": "Jean-Louis 1740141203.2581918",
+                "hp_max": 77,
+                "hp": 77,
+                "xp": 974,
+                "strength": 76,
+                "defense": 54,
+                "type": [
+                    "electric",
+                    "steel"
+                ],
+                "level": 10,
+                "speed": 65,
+                "stage": 1,
+                "ev": {
+                    "hp": 0,
+                    "strength": 0,
+                    "defense": 0,
+                    "speed": 1,
+                    "xp": 3
+                },
+                "state": "domesticated"
+            },
+            "Jean-Pierre 1740141203.2581851": {
+                "name": "Oddish",
+                "original_name": "Oddish",
+                "pet_name": "Jean-Pierre 1740141203.2581851",
+                "hp_max": 109,
+                "hp": 109,
+                "xp": 999,
+                "strength": 102,
+                "defense": 81,
+                "type": [
+                    "grass",
+                    "poison"
+                ],
+                "level": 10,
+                "speed": 78,
+                "stage": 1,
+                "ev": {
+                    "hp": 2,
+                    "strength": 3,
+                    "defense": 1,
+                    "speed": 0,
+                    "xp": 3
+                },
+                "state": "domesticated"
+            },
+            "Jean-Morgan 1740141203.2582545": {
+                "name": "Ivysaur",
+                "original_name": "Bulbasaur",
+                "pet_name": "Jean-Morgan 1740141203.2582545",
+                "hp_max": 99,
+                "hp": 82,
+                "xp": 1219,
+                "strength": 95,
+                "defense": 93,
+                "type": [
+                    "grass",
+                    "poison"
+                ],
+                "level": 11,
+                "speed": 77,
+                "stage": 2,
+                "ev": {
+                    "hp": 2,
+                    "strength": 0,
+                    "defense": 0,
+                    "speed": 0,
+                    "xp": 2
+                },
+                "state": "domesticated"
+            }
+        }
     }
 }

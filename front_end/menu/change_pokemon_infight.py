@@ -16,6 +16,11 @@ class ChangePokemonInFight():
 
         if not pokemon_list:
             self.pokemons = get_all_pokemons_from_pokedex(self.player_name)
+            for pokemon in self.pokemons:
+                if pokemon.pet_name == self.pokemon.pet_name:
+                    index_to_pop = self.pokemons.index(pokemon)
+                    self.pokemons.pop(index_to_pop)
+            self.pokemons.insert(index_to_pop, self.pokemon)
         else:
             self.pokemons = pokemon_list
 
@@ -96,7 +101,9 @@ class ChangePokemonInFight():
                             if self.selected_index == index:
                                 save_pokemon_to_pokedex(self.player_name, self.pokemon)
                                 PokemonStat(self.player_name, self.pokemons, self.pokemons[index], self.pokemon_enemy, self.screen, self.background, "in_fight").display()
-                                return self.pokemons[self.selected_index]
-
+                                if self.pokemons[self.selected_index].pet_name == self.pokemon.pet_name:
+                                    return self.pokemon
+                                else:
+                                    return self.pokemons[self.selected_index]
                     elif event.key == pygame.K_ESCAPE:
                         return self.pokemon

@@ -126,7 +126,7 @@ class InFight():
                             match self.selected_index:
                                 case 0:  # Start a new game
                                     if win:
-                                        self.selected_index = 3
+                                        self.selected_index = 4
                                     elif self.pokemon.get_hp() > 0:
                                         attack_type = AttackMenu(self.screen, self.pokemon, self.pokemon_enemy).display()
                                         if attack_type == "Back":
@@ -147,7 +147,7 @@ class InFight():
                                         
                                 case 1: #bag
                                     if win:
-                                        self.selected_index = 3
+                                        self.selected_index = 4
                                     else:
                                         bag_option = BagMenu(self.screen, self.pokemon, self.pokemon_enemy, self.bag).display()
                                         if bag_option:
@@ -186,11 +186,15 @@ class InFight():
                                                 case "Back":
                                                     player_turn = True
                                 case 2: #team
-                                    self.pokemon = ChangePokemonInFight(self.player, self.pokemon, self.pokemon_enemy, self.screen).display()
-                                    self.fight.set_first_pokemon(self.pokemon)
-                                    name = self.pokemon.name
-                                    level = self.pokemon.get_level()
+                                    if win:
+                                        self.selected_index = 4
+                                    else:
+                                        self.pokemon = ChangePokemonInFight(self.player, self.pokemon, self.pokemon_enemy, self.screen).display()
+                                        self.fight.set_first_pokemon(self.pokemon)
+                                        name = self.pokemon.name
+                                        level = self.pokemon.get_level()
                                 case 3: #info
+                                    
                                     InfoMenu(self.screen, self.pokemon, self.pokemon_enemy).display()
                                     player_turn = True  
                                 case 4: #exit or flee
