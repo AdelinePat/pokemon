@@ -1,4 +1,4 @@
-import pygame, sys
+import pygame, sys, math
 from __settings__ import BATTLE_FLOOR, REGULAR_FONT, LIGHT_GREEN, DARK_GREEN
 from .util_tool import UtilTool
 

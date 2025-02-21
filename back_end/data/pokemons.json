@@ -25,30 +25,6 @@
         "state": "wild"
     },
     {
-        "name": "Seel",
-        "original_name": "Seel",
-        "pet_name": "Jean-H\u00e9l\u00e8ne",
-        "hp_max": 40,
-        "hp": 40,
-        "xp": 157,
-        "strength": 37,
-        "defense": 21,
-        "type": [
-            "water"
-        ],
-        "level": 5,
-        "speed": 21,
-        "stage": 1,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
         "name": "Magikarp",
         "original_name": "Magikarp",
         "pet_name": "Jean-Edouard",
@@ -316,31 +292,6 @@
         "state": "wild"
     },
     {
-        "name": "Weedle",
-        "original_name": "Weedle",
-        "pet_name": "Jean-Vincent",
-        "hp_max": 55,
-        "hp": 55,
-        "xp": 519,
-        "strength": 77,
-        "defense": 43,
-        "type": [
-            "bug",
-            "poison"
-        ],
-        "level": 9,
-        "speed": 75,
-        "stage": 1,
-        "ev": {
-            "hp": 2,
-            "strength": 3,
-            "defense": 1,
-            "speed": 3,
-            "xp": 3
-        },
-        "state": "wild"
-    },
-    {
         "name": "Drowzee",
         "original_name": "Drowzee",
         "pet_name": "Jean-L\u00e9on",
@@ -539,55 +490,6 @@
         "state": "wild"
     },
     {
-        "name": "Dratini",
-        "original_name": "Dratini",
-        "pet_name": "Jean-Adeline",
-        "hp_max": 30,
-        "hp": 30,
-        "xp": 23,
-        "strength": 27,
-        "defense": 24,
-        "type": [
-            "dragon"
-        ],
-        "level": 2,
-        "speed": 31,
-        "stage": 1,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
-        "name": "Doduo",
-        "original_name": "Doduo",
-        "pet_name": "Jean-Jolyne",
-        "hp_max": 22,
-        "hp": 22,
-        "xp": 116,
-        "strength": 19,
-        "defense": 31,
-        "type": [
-            "normal",
-            "flying"
-        ],
-        "level": 4,
-        "speed": 27,
-        "stage": 1,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
         "name": "Jigglypuff",
         "original_name": "Jigglypuff",
         "pet_name": "Jean-Louis",
@@ -602,30 +504,6 @@
         ],
         "level": 4,
         "speed": 40,
-        "stage": 1,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
-        "name": "Diglett",
-        "original_name": "Diglett",
-        "pet_name": "Jean-Joseph",
-        "hp_max": 45,
-        "hp": 45,
-        "xp": 149,
-        "strength": 26,
-        "defense": 29,
-        "type": [
-            "ground"
-        ],
-        "level": 5,
-        "speed": 18,
         "stage": 1,
         "ev": {
             "hp": 0,
@@ -875,6 +753,79 @@
             "defense": 0,
             "speed": 0,
             "xp": 0
+        },
+        "state": "wild"
+    },
+    {
+        "name": "Seel",
+        "original_name": "Seel",
+        "pet_name": "Jean-H\u00e9l\u00e8ne",
+        "hp_max": 55,
+        "hp": 55,
+        "xp": 203,
+        "strength": 51,
+        "defense": 29,
+        "type": [
+            "water"
+        ],
+        "level": 6,
+        "speed": 34,
+        "stage": 1,
+        "ev": {
+            "hp": 0,
+            "strength": 0,
+            "defense": 2,
+            "speed": 2,
+            "xp": 2
+        },
+        "state": "wild"
+    },
+    {
+        "name": "Dratini",
+        "original_name": "Dratini",
+        "pet_name": "Jean-Adeline",
+        "hp_max": 30,
+        "hp": 30,
+        "xp": 23,
+        "strength": 27,
+        "defense": 24,
+        "type": [
+            "dragon"
+        ],
+        "level": 2,
+        "speed": 31,
+        "stage": 1,
+        "ev": {
+            "hp": 0,
+            "strength": 0,
+            "defense": 0,
+            "speed": 0,
+            "xp": 0
+        },
+        "state": "wild"
+    },
+    {
+        "name": "Weedle",
+        "original_name": "Weedle",
+        "pet_name": "Jean-Vincent",
+        "hp_max": 55,
+        "hp": 55,
+        "xp": 519,
+        "strength": 77,
+        "defense": 43,
+        "type": [
+            "bug",
+            "poison"
+        ],
+        "level": 9,
+        "speed": 75,
+        "stage": 1,
+        "ev": {
+            "hp": 2,
+            "strength": 3,
+            "defense": 1,
+            "speed": 3,
+            "xp": 3
         },
         "state": "wild"
     }

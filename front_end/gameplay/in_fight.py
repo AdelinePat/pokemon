@@ -153,7 +153,6 @@ class InFight():
                                                 player_turn = False
                                             else:
                                                 self.pokemon.update_xp(self.pokemon_enemy)
-                                                # self.save()
                                                 winner = "player"
                                                 pokemon = pygame.transform.flip(self.util.load_image(self.pokemon.image), True, False)
                                                 win = True
@@ -179,7 +178,6 @@ class InFight():
                                                         case "Success":
                                                             self.pokemon.update_xp(self.pokemon_enemy)
                                                             pokemon = pygame.transform.flip(self.util.load_image(self.pokemon.image), True, False)
-                                                            # self.save_all_to_pokedex()
                                                             now_time = pygame.time.get_ticks()
                                                             success_time = 0
                                                             while success_time - now_time < 1000:
@@ -187,6 +185,7 @@ class InFight():
                                                                 self.capture_message("The pokemon has been captured successfully !")
                                                                 pygame.display.update()
                                                             player_turn = False
+                                                            winner = "player"
                                                             win = True
                                                         case "Fail":
                                                             now_time = pygame.time.get_ticks()
@@ -244,12 +243,11 @@ class InFight():
                         if self.pokemon.get_hp() == 0 or self.pokemon.get_hp() < 0:
                             self.pokemon_enemy.update_xp(self.pokemon)
                             pokemon_enemy = self.util.load_image(self.pokemon_enemy.get_image())
-                            # self.save()
                             winner = "enemy"
                             win = True
                     else:
                         self.pokemon_enemy.update_xp(self.pokemon)
-                        # self.save()
+                        winner = "enemy"
                         win = True
                     player_turn = True
             

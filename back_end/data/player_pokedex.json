@@ -107,22 +107,22 @@
                 "name": "Kingler",
                 "original_name": "Krabby",
                 "pet_name": "Jean-Thierry",
-                "hp_max": 365,
-                "hp": 365,
-                "xp": 4998,
-                "strength": 349,
-                "defense": 347,
+                "hp_max": 372,
+                "hp": 372,
+                "xp": 5271,
+                "strength": 361,
+                "defense": 352,
                 "type": [
                     "water"
                 ],
                 "level": 18,
-                "speed": 344,
+                "speed": 354,
                 "stage": 2,
                 "ev": {
-                    "hp": 3,
+                    "hp": 0,
                     "strength": 3,
-                    "defense": 0,
-                    "speed": 1,
+                    "defense": 3,
+                    "speed": 2,
                     "xp": 0
                 },
                 "state": "domesticated"
@@ -731,10 +731,34 @@
     },
     "Player1": {
         "bag": {
-            "potions": 10,
-            "pokeball": 15
+            "potions": 8,
+            "pokeball": 14
         },
         "pokemons": {
+            "Jean-Cl\u00e9ment": {
+                "name": "Meowth",
+                "original_name": "Meowth",
+                "pet_name": "Jean-Cl\u00e9ment",
+                "hp_max": 48,
+                "hp": 47,
+                "xp": 83,
+                "strength": 46,
+                "defense": 46,
+                "type": [
+                    "normal"
+                ],
+                "level": 4,
+                "speed": 34,
+                "stage": 1,
+                "ev": {
+                    "hp": 3,
+                    "strength": 0,
+                    "defense": 0,
+                    "speed": 0,
+                    "xp": 1
+                },
+                "state": "domesticated"
+            },
             "Jean-Robert": {
                 "name": "Vulpix",
                 "original_name": "Vulpix",
@@ -749,6 +773,31 @@
                 ],
                 "level": 5,
                 "speed": 43,
+                "stage": 1,
+                "ev": {
+                    "hp": 0,
+                    "strength": 0,
+                    "defense": 0,
+                    "speed": 0,
+                    "xp": 0
+                },
+                "state": "domesticated"
+            },
+            "Jean-Jolyne": {
+                "name": "Doduo",
+                "original_name": "Doduo",
+                "pet_name": "Jean-Jolyne",
+                "hp_max": 22,
+                "hp": 22,
+                "xp": 116,
+                "strength": 19,
+                "defense": 31,
+                "type": [
+                    "normal",
+                    "flying"
+                ],
+                "level": 4,
+                "speed": 27,
                 "stage": 1,
                 "ev": {
                     "hp": 0,
