@@ -3,8 +3,7 @@ from __settings__ import MAIN_MENU_BACKGROUND4, LIGHT_GREEN, REGULAR_FONT, POKE_
 from .util_tool import UtilTool
 from .selectpokemon import SelectPokemon
 from .intro import IntroChoice
-from back_end.data_access.player_pokedex_service import does_player_exist
-from back_end.data_access.pokemon_pokedex_service import get_first_pokemon
+from back_end.controller import does_player_exist, get_first_pokemon
 
 class NameInput:
     def __init__(self, screen):

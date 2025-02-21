@@ -2,7 +2,7 @@ import pygame, sys
 from __settings__ import LIGHT_GREEN, BATTLE_BACKGROUND, REGULAR_FONT, POKE_FONT
 from front_end.menu.util_tool import UtilTool
 from .display_pokemon_stat import PokemonStat
-from back_end.data_access.pokemon_pokedex_service import get_all_pokemons_from_pokedex
+from back_end.controller import get_all_pokemons_from_pokedex
 
 class ChangePokemon():
     def __init__(self, player_name, screen, pokemon_list=[]):

@@ -5,7 +5,7 @@ from .name_input import NameInput
 from .select_player import SelectPlayer
 from front_end.sounds import Sounds
 from front_end.gameplay.game import Game
-from back_end.data_access.pokemon_pokedex_service import get_first_pokemon
+from back_end.controller import get_first_pokemon
 
 sounds = Sounds()
 

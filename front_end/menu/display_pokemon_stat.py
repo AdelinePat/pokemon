@@ -1,8 +1,7 @@
 import pygame
 from __settings__ import REGULAR_FONT, POKE_FONT
 from .util_tool import UtilTool
-from back_end.controller import create_player
-from back_end.data_access.player_pokedex_service import does_player_exist
+from back_end.controller import create_player, does_player_exist
 
 class PokemonStat():
     def __init__(self, player_name, pokemon_list, pokemon, pokemon_enemy, screen, background, identification):
@@ -49,8 +48,8 @@ class PokemonStat():
                     pygame.quit()
                 if event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_RETURN:
-                            if not does_player_exist(self.player_name):
-                                create_player(self.player_name, self.pokemon)
-                            return
+                        if not does_player_exist(self.player_name):
+                            create_player(self.player_name, self.pokemon)
+                        return
                     elif event.key == pygame.K_ESCAPE:
                         return

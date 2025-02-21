@@ -4,7 +4,7 @@ from .util_tool import UtilTool
 from .select_player import SelectPlayer
 from .change_pokemon import ChangePokemon
 from front_end.sounds import Sounds
-from back_end.data_access.pokemon_pokedex_service import get_all_pokemons_from_pokedex, get_first_pokemon
+from back_end.controller import get_all_pokemons_from_pokedex, get_first_pokemon
 
 sounds = Sounds()
 

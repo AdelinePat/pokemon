@@ -10,7 +10,7 @@
                 "original_name": "Sandshrew",
                 "pet_name": "Jean-Marie",
                 "hp_max": 437,
-                "hp": 417,
+                "hp": 437,
                 "xp": 7399,
                 "strength": 408,
                 "defense": 376,
@@ -182,7 +182,7 @@
                 "original_name": "Psyduck",
                 "pet_name": "Jean-Meriam",
                 "hp_max": 16,
-                "hp": -16,
+                "hp": 16,
                 "xp": 1,
                 "strength": 14,
                 "defense": 16,
@@ -798,6 +798,71 @@
                 ],
                 "level": 4,
                 "speed": 27,
+                "stage": 1,
+                "ev": {
+                    "hp": 0,
+                    "strength": 0,
+                    "defense": 0,
+                    "speed": 0,
+                    "xp": 0
+                },
+                "state": "domesticated"
+            }
+        }
+    },
+    "Player3": {
+        "bag": {
+            "potions": 8,
+            "pokeball": 15
+        },
+        "pokemons": {
+            "Jean-Alicia": {
+                "name": "Slowpoke",
+                "original_name": "Slowpoke",
+                "pet_name": "Jean-Alicia",
+                "hp_max": 67,
+                "hp": 67,
+                "xp": 261,
+                "strength": 62,
+                "defense": 48,
+                "type": [
+                    "water",
+                    "psychic"
+                ],
+                "level": 7,
+                "speed": 77,
+                "stage": 1,
+                "ev": {
+                    "hp": 0,
+                    "strength": 1,
+                    "defense": 1,
+                    "speed": 3,
+                    "xp": 3
+                },
+                "state": "domesticated"
+            }
+        }
+    },
+    "Player4": {
+        "bag": {
+            "potions": 10,
+            "pokeball": 15
+        },
+        "pokemons": {
+            "Jean-L\u00e9on": {
+                "name": "Drowzee",
+                "original_name": "Drowzee",
+                "pet_name": "Jean-L\u00e9on",
+                "hp_max": 38,
+                "hp": 38,
+                "xp": 372,
+                "strength": 24,
+                "defense": 33,
+                "type": [
+                    "psychic"
+                ],
+                "level": 7,
+                "speed": 46,
                 "stage": 1,
                 "ev": {
                     "hp": 0,

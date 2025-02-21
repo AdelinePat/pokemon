@@ -2,7 +2,7 @@ import pygame, sys, math
 from __settings__ import BATTLE_BACKGROUND, BATTLE_FLOOR, REGULAR_FONT, LIGHT_GREEN, DARK_GREEN, LIGHT_GREEN
 from .util_tool import UtilTool
 from .display_pokemon_stat import PokemonStat
-from back_end.data_access.pokemon_pokedex_service import get_all_pokemons_from_pokedex, save_pokemon_to_pokedex
+from back_end.controller import get_all_pokemons_from_pokedex, save_pokemon_to_pokedex
 
 class ChangePokemonInFight():
     def __init__(self, player_name, pokemon, pokemon_enemy, screen, pokemon_list=[]):
