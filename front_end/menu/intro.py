@@ -36,8 +36,6 @@ class IntroChoice():
             pygame.draw.circle(self.screen.display, (255, 255, 255), (1000, 200), 100)
             pygame.draw.circle(self.screen.display, (255, 255, 255), (1050, 170), 110)
             pygame.draw.circle(self.screen.display, (255, 255, 255), (1100, 200), 100)
-
-            # mouse_x, mouse_y = pygame.mouse.get_pos()
             
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:

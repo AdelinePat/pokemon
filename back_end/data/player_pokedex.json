@@ -902,31 +902,80 @@
     },
     "Player5": {
         "bag": {
-            "potions": 10,
-            "pokeball": 15
+            "potions": 8,
+            "pokeball": 12
         },
         "pokemons": {
             "Jean-H\u00e9l\u00e8ne": {
                 "name": "Seel",
                 "original_name": "Seel",
                 "pet_name": "Jean-H\u00e9l\u00e8ne",
-                "hp_max": 55,
-                "hp": 55,
-                "xp": 203,
-                "strength": 51,
-                "defense": 29,
+                "hp_max": 91,
+                "hp": 91,
+                "xp": 580,
+                "strength": 93,
+                "defense": 73,
                 "type": [
                     "water"
                 ],
-                "level": 6,
-                "speed": 34,
+                "level": 9,
+                "speed": 78,
+                "stage": 1,
+                "ev": {
+                    "hp": 2,
+                    "strength": 2,
+                    "defense": 3,
+                    "speed": 0,
+                    "xp": 3
+                },
+                "state": "domesticated"
+            },
+            "Jean-Emilie": {
+                "name": "Oddish",
+                "original_name": "Oddish",
+                "pet_name": "Jean-Emilie",
+                "hp_max": 85,
+                "hp": 85,
+                "xp": 523,
+                "strength": 80,
+                "defense": 82,
+                "type": [
+                    "grass",
+                    "poison"
+                ],
+                "level": 9,
+                "speed": 81,
+                "stage": 1,
+                "ev": {
+                    "hp": 1,
+                    "strength": 0,
+                    "defense": 2,
+                    "speed": 0,
+                    "xp": 4
+                },
+                "state": "domesticated"
+            },
+            "Jean-Hubert": {
+                "name": "Voltorb",
+                "original_name": "Voltorb",
+                "pet_name": "Jean-Hubert",
+                "hp_max": 62,
+                "hp": 62,
+                "xp": 588,
+                "strength": 51,
+                "defense": 50,
+                "type": [
+                    "electric"
+                ],
+                "level": 9,
+                "speed": 61,
                 "stage": 1,
                 "ev": {
                     "hp": 0,
-                    "strength": 0,
-                    "defense": 2,
-                    "speed": 2,
-                    "xp": 2
+                    "strength": 1,
+                    "defense": 0,
+                    "speed": 3,
+                    "xp": 0
                 },
                 "state": "domesticated"
             }

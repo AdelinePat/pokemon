@@ -1,24 +1,14 @@
-import pygame
-import math
-
-import pygame
-import sys
+import pygame, sys, math
 from __settings__ import BATTLE_BACKGROUND, BATTLE_FLOOR, REGULAR_FONT, DARK_GREEN, LIGHT_GREEN
-# from back_end.data_access.pokemon_pokedex_service import get_first_pokemon
-from back_end.data_access.wild_pokemons import get_random_wild_pokemon
-from back_end.data_access.bag_pokedex_service import get_bag_from_pokedex
-from back_end.models.fight import Fight
 from front_end.menu.util_tool import UtilTool
 from front_end.menu.bagmenu import BagMenu
 from front_end.menu.attack_type_menu import AttackMenu
 from front_end.menu.infomenu import InfoMenu
-
-from back_end.data_access.pokemon_pokedex_service import save_pokemon_to_pokedex
-from back_end.data_access.bag_pokedex_service import save_bag_to_pokedex
-from back_end.data_access.wild_pokemons import save_wild_pokemon
 from front_end.menu.change_pokemon_infight import ChangePokemonInFight
-
 from front_end.gameplay.healthdisplay import HealthDisplay
+from back_end.models.fight import Fight
+from back_end.controller import save_pokemon_to_pokedex, get_random_wild_pokemon,\
+    get_bag_from_pokedex, save_bag_to_pokedex, save_wild_pokemon
 
 class InFight():
     def __init__(self, screen, player, pokemon):
@@ -181,7 +171,7 @@ class InFight():
                                                                 success_time = pygame.time.get_ticks()
                                                                 self.capture_message("The pokemon has been captured successfully !")
                                                                 pygame.display.update()
-                                                            player_turn = False
+                                                            player_turn = True
                                                             winner = "player"
                                                             win = True
                                                         case "Fail":
