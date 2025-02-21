@@ -1,9 +1,6 @@
-import pygame
-import sys
-from front_end.menu.util_tool import UtilTool
-from __settings__ import BATTLE_BACKGROUND, BATTLE_FLOOR, REGULAR_FONT, LIGHT_GREEN, DARK_GREEN
-import math
-
+import pygame, sys
+from __settings__ import BATTLE_FLOOR, REGULAR_FONT, LIGHT_GREEN, DARK_GREEN
+from .util_tool import UtilTool
 
 class BagMenu:
     def __init__(self, screen, pokemon, pokemon_enemy, bag):
@@ -43,16 +40,13 @@ class BagMenu:
             self.util.display_assets_and_background(self.screen, x_movement, y_movement, battle_floor, battle_floor2, pokemon_enemy, pokemon)
 
             self.util.draw_option_screen(self.screen)
-            # self.options = [f"{self.bag.get_potion()} Potions", f"{self.bag.get_pokeball()} Pokeball", "Back"] 
             # Draw menu options
             for i, option in enumerate(self.options):
                 color = LIGHT_GREEN if i == self.selected_index else DARK_GREEN  # Highlight selected option
-                # self.draw_text(option, self.screen.width//2 + i * 200, self.screen.height//8*7  , color)
                 self.util.draw_text(option, REGULAR_FONT, self.screen.width //30, self.screen,\
                                     (self.screen.width//2 + i * 200, self.screen.height//8*7), color)
 
             pygame.display.flip()  # Refresh the screen
-
             # Handle user input
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:  # If user closes the window

@@ -1,17 +1,8 @@
-import pygame
-import sys
-# from back_end.controller import create_player
+import pygame, sys, math
+from __settings__ import BATTLE_BACKGROUND, BATTLE_FLOOR, REGULAR_FONT, LIGHT_GREEN, DARK_GREEN, LIGHT_GREEN
+from .util_tool import UtilTool
 from .display_pokemon_stat import PokemonStat
-from back_end.data_access.pokemon_pokedex_service import get_all_pokemons_from_pokedex
-from __settings__ import LIGHT_GREEN
-import math
-from __settings__ import BATTLE_BACKGROUND, BATTLE_FLOOR, REGULAR_FONT, LIGHT_GREEN, DARK_GREEN
-# from front_end.gameplay.game import Game
-from front_end.menu.util_tool import UtilTool
-
-from back_end.data_access.pokemon_pokedex_service import save_pokemon_to_pokedex
-# from back_end.data_access.bag_pokedex_service import save_bag_to_pokedex
-# from back_end.data_access.wild_pokemons import save_wild_pokemon
+from back_end.data_access.pokemon_pokedex_service import get_all_pokemons_from_pokedex, save_pokemon_to_pokedex
 
 class ChangePokemonInFight():
     def __init__(self, player_name, pokemon, pokemon_enemy, screen, pokemon_list=[]):
@@ -64,7 +55,6 @@ class ChangePokemonInFight():
                 y_movement = int(var_x * math.sin(time_count * 0.08))
             self.util.display_assets_and_background(self.screen, x_movement, y_movement, battle_floor, battle_floor2, pokemon_enemy, pokemon)
 
-
             self.util.draw_window_with_background(self.screen, self.screen.width//2, self.screen.height //2)
 
             for i, option in enumerate(self.options):
@@ -104,12 +94,9 @@ class ChangePokemonInFight():
                     elif event.key == pygame.K_RETURN:
                         for index in range(len(self.options)):
                             if self.selected_index == index:
-                                # (self, player_name, pokemon_list, pokemon, pokemon_enemy, screen):
                                 save_pokemon_to_pokedex(self.player_name, self.pokemon)
                                 PokemonStat(self.player_name, self.pokemons, self.pokemons[index], self.pokemon_enemy, self.screen, self.background, "in_fight").display()
-                                
                                 return self.pokemons[self.selected_index]
-                                # game = Game(self.screen, self.player_name, pokemon).run()
 
                     elif event.key == pygame.K_ESCAPE:
                         return self.pokemon

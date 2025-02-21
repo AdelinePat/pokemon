@@ -1,10 +1,8 @@
-import pygame
-import sys
-from .display_pokemon_stat import PokemonStat
-from back_end.controller import get_starter_pokemons
+import pygame, sys
 from __settings__ import POKEMON_CENTER, POKEMON_CENTER, REGULAR_FONT, POKEBALL
-from front_end.menu.util_tool import UtilTool
-from back_end.controller import create_player
+from .util_tool import UtilTool
+from .display_pokemon_stat import PokemonStat
+from back_end.controller import get_starter_pokemons, create_player
 
 class   SelectPokemon():
     def __init__(self, player_name, screen, pokemon_list=[]):
@@ -115,7 +113,6 @@ class   SelectPokemon():
                                 pokemon_enemy = None
                                 pokemon = PokemonStat(self.player_name, self.pokemons, self.pokemons[index], pokemon_enemy, self.screen, self.background, "pokemon_choice").display()
                                 
-                    
                     if event.key == pygame.K_LSHIFT:
                         create_player(self.player_name, self.pokemons[self.selected_index])
                         self.capturePokemon(self.options[self.selected_index], self.options_rect[self.selected_index], self.options, self.options_rect)

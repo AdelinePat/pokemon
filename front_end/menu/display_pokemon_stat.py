@@ -1,9 +1,8 @@
 import pygame
+from __settings__ import REGULAR_FONT, POKE_FONT
+from .util_tool import UtilTool
 from back_end.controller import create_player
 from back_end.data_access.player_pokedex_service import does_player_exist
-from __settings__ import LIGHT_GREEN, REGULAR_FONT, DARK_GREEN
-# from select_pokemons import SelectPokemons
-from front_end.menu.util_tool import UtilTool
 
 class PokemonStat():
     def __init__(self, player_name, pokemon_list, pokemon, pokemon_enemy, screen, background, identification):
@@ -23,7 +22,6 @@ class PokemonStat():
     def display(self):
         while self.running:
             self.screen.update()
-            # self.screen.display.blit(self.background, (0,0))
             self.screen.set_background_display(self.background)
             self.util.draw_color_filter(self.screen)
 
@@ -34,8 +32,8 @@ class PokemonStat():
             self.screen.display.blit(image, image_rect)
             font_size = self.screen.width // 30
 
-            self.util.draw_text(self.pokemon.name.upper(), REGULAR_FONT, font_size, self.screen, (self.screen.width//2, y_position -175), "white")
-            # (self, text, font, font_size, screen, my_center, color=DARK_GREEN):
+            self.util.draw_text(self.pokemon.name.upper(), POKE_FONT, font_size, self.screen, (self.screen.width//2, y_position -175), "white")
+
             self.util.draw_text(f"Level : {str(self.pokemon.get_level())}", REGULAR_FONT, font_size, self.screen, (self.screen.width//2, y_position - 125), "white")
             self.util.draw_text(f"Type : {str(", ".join(self.pokemon.type))}", REGULAR_FONT, font_size, self.screen, (self.screen.width//2, y_position -75), "white")
             self.util.draw_text(f"HP : {str(self.pokemon.get_hp())}", REGULAR_FONT, font_size, self.screen, (self.screen.width//2, y_position -25), "white")
@@ -49,32 +47,10 @@ class PokemonStat():
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pygame.quit()
-                    # sys.exit()
                 if event.type == pygame.KEYDOWN:
-
-                    if event.key == pygame.K_DOWN:
-                        self.selected_index = (self.selected_index + 1) % len(self.options)
-                    elif event.key == pygame.K_UP:
-                        self.selected_index = (self.selected_index - 1) % len(self.options)
-
-                    elif event.key == pygame.K_RETURN:
-                                # PokemonStat(self.pokemons[index], self.screen)
-                            # create_player(self.player_name, self.pokemon)
+                    if event.key == pygame.K_RETURN:
                             if not does_player_exist(self.player_name):
                                 create_player(self.player_name, self.pokemon)
                             return
                     elif event.key == pygame.K_ESCAPE:
-                        if self.identification == "pokemon_choice":
-                            return
-                            # from .selectpokemon import SelectPokemon
-                            # # (self, player_name, screen, pokemon_list=[]):
-                            # return SelectPokemon(self.player_name, self.screen, self.pokemon_list).display()
-                        elif self.identification == "in_pause_menu":
-                            return
-                            # from .change_pokemon import ChangePokemon
-                            # # self, player_name, screen, pokemon_list=[]):
-                            # return ChangePokemon(self.player_name, self.screen, self.pokemon_list).display()
-                        elif self.identification == "in_fight":
-                            return
-                            # from .change_pokemon_infight import ChangePokemonInFight
-                            # return ChangePokemonInFight(self.player_name, self.screen, self.pokemon_list).display()
+                        return

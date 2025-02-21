@@ -1,12 +1,8 @@
-import pygame
-import sys
-# from back_end.controller import create_player
+import pygame, sys
+from __settings__ import LIGHT_GREEN, BATTLE_BACKGROUND, REGULAR_FONT, POKE_FONT
+from front_end.menu.util_tool import UtilTool
 from .display_pokemon_stat import PokemonStat
 from back_end.data_access.pokemon_pokedex_service import get_all_pokemons_from_pokedex
-from __settings__ import LIGHT_GREEN, BATTLE_BACKGROUND, REGULAR_FONT
-# from front_end.gameplay.game import Game
-from front_end.menu.util_tool import UtilTool
-
 
 class ChangePokemon():
     def __init__(self, player_name, screen, pokemon_list=[]):
@@ -32,20 +28,15 @@ class ChangePokemon():
         while self.running:
             self.screen.update()
             self.screen.set_background_display(self.background)
-            # self.screen.get_display().fill((0, 0, 0))
-
-            # draw_text(self, text, font, font_size, screen, my_center, color=DARK_GREEN):
             font_size = self.screen.height // 20
-            self.util.draw_text("Choose your pokemon", REGULAR_FONT, font_size, self.screen,\
+            self.util.draw_text("Choose your pokemon", POKE_FONT, font_size, self.screen,\
                                  (self.screen.width//2, self.screen.height // 10*2), LIGHT_GREEN)
 
-            # draw_text(self, text, font, font_size, screen, my_center, color=DARK_GREEN):
             for i, option in enumerate(self.options):
                 color = LIGHT_GREEN if i == self.selected_index else (255, 255, 255)
                 self.util.draw_text(option, REGULAR_FONT, font_size,\
                                     self.screen, (self.screen.width //2, self.screen.height // 10*3 + i*60), color)
-                # 600, 300 + i * 60, color)
-
+                
             pygame.display.flip()
 
             for event in pygame.event.get():
@@ -54,21 +45,14 @@ class ChangePokemon():
                     sys.exit()
                 if event.type == pygame.KEYDOWN:
 
-                    if event.key == pygame.K_DOWN:
+                    if event.key == pygame.K_DOWN or event.key == pygame.K_RIGHT:
                         self.selected_index = (self.selected_index + 1) % len(self.options)
-                    elif event.key == pygame.K_UP:
+                    elif event.key == pygame.K_UP or event.key == pygame.K_LEFT:
                         self.selected_index = (self.selected_index - 1) % len(self.options)
 
                     elif event.key == pygame.K_RETURN:
                         for index in range(len(self.options)):
                             if self.selected_index == index:
-                                # self, player_name, pokemon_list, pokemon, pokemon_enemy, screen, background)
                                 pokemon_enemy = None
                                 PokemonStat(self.player_name, self.pokemons, self.pokemons[index], pokemon_enemy, self.screen, self.background, "in_pause_menu").display()
                                 return self.pokemons[self.selected_index]
-                                # game = Game(self.screen, self.player_name, pokemon).run()
-
-                    elif event.key == pygame.K_ESCAPE:
-
-                        pass
-                        # return

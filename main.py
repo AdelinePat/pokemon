@@ -1,5 +1,4 @@
 import pygame
-# from front_end.gameplay.game import Game
 from front_end.menu.menu import Menu
 from front_end.screen import Screen
 from front_end.sounds import Sounds
@@ -13,7 +12,5 @@ if __name__ == "__main__":
     menu = Menu(screen)
     
     menu.display()
-    # game = Game()
-    # game.run()
     
     

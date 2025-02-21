@@ -1,9 +1,6 @@
-import pygame
-import sys
-from front_end.menu.util_tool import UtilTool
-from __settings__ import BATTLE_BACKGROUND, BATTLE_FLOOR, REGULAR_FONT, LIGHT_GREEN, DARK_GREEN
-import math
-
+import pygame, sys, math
+from .util_tool import UtilTool
+from __settings__ import BATTLE_FLOOR, REGULAR_FONT, LIGHT_GREEN, DARK_GREEN
 
 class InfoMenu:
     def __init__(self, screen, pokemon, pokemon_enemy):
@@ -49,12 +46,10 @@ class InfoMenu:
             elif what_to_display == 1:
                 what_to_display = 1
                 self.draw_info_screen(self.pokemon_enemy)
-
-            # self.options = [f"{self.bag.get_potion()} Potions", f"{self.bag.get_pokeball()} Pokeball", "Back"] 
+ 
             # Draw menu options
             for i, option in enumerate(self.options):
                 color = LIGHT_GREEN if i == self.selected_index else DARK_GREEN  # Highlight selected option
-                # self.draw_text(option, self.screen.width//2 + i * 200, self.screen.height//8*7  , color)
                 self.util.draw_text(option, REGULAR_FONT, self.screen.width //30, self.screen,\
                                     (self.screen.width//2 + i * 200, self.screen.height//8*7), color)
 
@@ -82,9 +77,7 @@ class InfoMenu:
                             case 2:
                                 return
 
-
     def draw_info_screen(self, actual_pokemon):
-        # self.util.draw_color_filter(self.screen)
         self.util.draw_window_with_background(self.screen, self.screen.width //2.5, self.screen.height //2.5)
         font_size = self.screen.height // 20
         x  = self.screen.width //2
@@ -100,13 +93,3 @@ class InfoMenu:
                               REGULAR_FONT, font_size , self.screen, (x, y + font_size))
         self.util.draw_text(f"Type : {str(", ".join(actual_pokemon.type))}",\
                               REGULAR_FONT, font_size , self.screen, (x, y + font_size*2))
-        
-
-
-        # \
-        #                     \nLevel : {str(actual_pokemon.get_level())}\
-        #                     \nStrength : {str(self.pokemon.get_strength())}\
-        #                     \nDefense : {str(self.pokemon.get_defense())}\
-        #                     \nType : {str(", ".join(self.pokemon.type))}"
-        # self.util.draw_text(f"You gained {self.pokemon.get_xp_gained(self.pokemon_enemy)} XP", REGULAR_FONT, font_size, self.screen, (x, y))
-        # self.util.draw_text(f"Total XP : {self.pokemon.get_xp()}", REGULAR_FONT, font_size, self.screen, (x, y + font_size*2))

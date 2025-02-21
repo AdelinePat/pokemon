@@ -1,16 +1,11 @@
-import pygame
-import sys
-
-from front_end.menu.name_input import NameInput  
-from front_end.gameplay.game import Game
+import pygame, sys
+from __settings__ import MAIN_MENU_BACKGROUND1, LIGHT_GREEN, REGULAR_FONT,POKE_FONT
+from .util_tool import UtilTool
+from .name_input import NameInput
 from .select_player import SelectPlayer
-from __settings__ import MAIN_MENU_BACKGROUND1, LIGHT_GREEN, REGULAR_FONT
 from front_end.sounds import Sounds
+from front_end.gameplay.game import Game
 from back_end.data_access.pokemon_pokedex_service import get_first_pokemon
-from front_end.menu.util_tool import UtilTool
-from back_end.data_access.pokemon_pokedex_service import save_pokemon_to_pokedex
-# from back_end.data_access.bag_pokedex_service import save_bag_to_pokedex
-# from back_end.data_access.wild_pokemons import save_wild_pokemon
 
 sounds = Sounds()
 
@@ -37,9 +32,8 @@ class Menu:
             self.screen.set_background_display(MAIN_MENU_BACKGROUND1)
             
             font_size = self.screen.height // 10
-            self.util.draw_text("Main Menu", REGULAR_FONT, font_size, self.screen,\
+            self.util.draw_text("Main Menu", POKE_FONT, font_size, self.screen,\
                                 (self.screen.width//2, self.screen.height // 10*2), LIGHT_GREEN)
-
 
             # Draw menu options
             for i, option in enumerate(self.options):
@@ -55,9 +49,9 @@ class Menu:
                     pygame.quit()
                     sys.exit()
                 if event.type == pygame.KEYDOWN:
-                    if event.key == pygame.K_DOWN:  # Navigate down
+                    if event.key == pygame.K_DOWN or event.key == pygame.K_RIGHT:  # Navigate down
                         self.selected_index = (self.selected_index + 1) % len(self.options)
-                    elif event.key == pygame.K_UP:  # Navigate up
+                    elif event.key == pygame.K_UP or event.key == pygame.K_LEFT:  # Navigate up
                         self.selected_index = (self.selected_index - 1) % len(self.options)
                     elif event.key == pygame.K_RETURN:  # Select an option
                         match self.selected_index:

@@ -1,6 +1,4 @@
 import pygame
-# import random
-# import os
 from __settings__ import CHEN
 
 pygame.init()
@@ -54,11 +52,6 @@ class IntroChoice():
                 return
 
             dialogue_index = self.professor_chen_talk(self.screen.display, self.dialogues, self.chen_image, dialogue_index)
-
-            # if not show_intro:
-            #     self.screen.display.blit(background, (0, 0))
-            #     for pokemon in data:
-            #         draw_pokemon_with_hover(pokemon, mouse_x, mouse_y, self.screen.display)
 
             pygame.display.flip()
 

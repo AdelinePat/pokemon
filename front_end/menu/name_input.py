@@ -1,10 +1,10 @@
 import pygame
-from front_end.menu.util_tool import UtilTool
-from back_end.data_access.player_pokedex_service import does_player_exist
-from back_end.data_access.pokemon_pokedex_service import get_first_pokemon
+from __settings__ import MAIN_MENU_BACKGROUND4, LIGHT_GREEN, REGULAR_FONT, POKE_FONT
+from .util_tool import UtilTool
 from .selectpokemon import SelectPokemon
 from .intro import IntroChoice
-from __settings__ import MAIN_MENU_BACKGROUND4, LIGHT_GREEN, REGULAR_FONT
+from back_end.data_access.player_pokedex_service import does_player_exist
+from back_end.data_access.pokemon_pokedex_service import get_first_pokemon
 
 class NameInput:
     def __init__(self, screen):
@@ -20,7 +20,7 @@ class NameInput:
             self.screen.set_background_display(MAIN_MENU_BACKGROUND4)
             font_size = self.screen.height // 15
             
-            self.util.draw_text("Enter your name", REGULAR_FONT, font_size, self.screen,\
+            self.util.draw_text("Enter your name", POKE_FONT, font_size, self.screen,\
                                 (self.screen.width // 2, self.screen.height // 3), "white")
 
             self.util.draw_text(self.player_name, REGULAR_FONT, font_size, self.screen,\
@@ -28,7 +28,6 @@ class NameInput:
  
             self.util.draw_text("(Press enter key to continue)", REGULAR_FONT, font_size, self.screen,\
                                 (self.screen.width // 2, self.screen.height // 3*2), "white")
-
 
             pygame.display.flip()
 
@@ -40,8 +39,6 @@ class NameInput:
                         pass
                     if event.key == pygame.K_RETURN and self.player_name:
                         if does_player_exist(self.player_name):
-
-                            #TODO => self.draw_text(f"The player named {self.player_name} already exist !", self.screen.width//2, self.screen.height//8*7)
                             pygame.time.wait(1000)
                             pokemon = get_first_pokemon(self.player_name)
                             return self.player_name, pokemon

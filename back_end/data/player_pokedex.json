@@ -107,23 +107,23 @@
                 "name": "Kingler",
                 "original_name": "Krabby",
                 "pet_name": "Jean-Thierry",
-                "hp_max": 353,
-                "hp": 352,
-                "xp": 4823,
-                "strength": 336,
-                "defense": 332,
+                "hp_max": 365,
+                "hp": 365,
+                "xp": 4998,
+                "strength": 349,
+                "defense": 347,
                 "type": [
                     "water"
                 ],
-                "level": 17,
-                "speed": 330,
+                "level": 18,
+                "speed": 344,
                 "stage": 2,
                 "ev": {
-                    "hp": 1,
-                    "strength": 1,
-                    "defense": 3,
-                    "speed": 3,
-                    "xp": 3
+                    "hp": 3,
+                    "strength": 3,
+                    "defense": 0,
+                    "speed": 1,
+                    "xp": 0
                 },
                 "state": "domesticated"
             },
@@ -717,6 +717,38 @@
                 ],
                 "level": 4,
                 "speed": 34,
+                "stage": 1,
+                "ev": {
+                    "hp": 0,
+                    "strength": 0,
+                    "defense": 0,
+                    "speed": 0,
+                    "xp": 0
+                },
+                "state": "domesticated"
+            }
+        }
+    },
+    "Player1": {
+        "bag": {
+            "potions": 10,
+            "pokeball": 15
+        },
+        "pokemons": {
+            "Jean-Robert": {
+                "name": "Vulpix",
+                "original_name": "Vulpix",
+                "pet_name": "Jean-Robert",
+                "hp_max": 26,
+                "hp": 26,
+                "xp": 206,
+                "strength": 35,
+                "defense": 25,
+                "type": [
+                    "fire"
+                ],
+                "level": 5,
+                "speed": 43,
                 "stage": 1,
                 "ev": {
                     "hp": 0,

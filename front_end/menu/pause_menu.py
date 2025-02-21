@@ -1,12 +1,10 @@
-import pygame
-import sys
+import pygame, sys
+from __settings__ import MAIN_MENU_BACKGROUND1, LIGHT_GREEN, REGULAR_FONT, POKE_FONT
+from .util_tool import UtilTool
 from .select_player import SelectPlayer
 from .change_pokemon import ChangePokemon
-from __settings__ import MAIN_MENU_BACKGROUND1, LIGHT_GREEN, REGULAR_FONT
 from front_end.sounds import Sounds
-from front_end.menu.util_tool import UtilTool
-from back_end.data_access.pokemon_pokedex_service import get_all_pokemons_from_pokedex
-from back_end.data_access.pokemon_pokedex_service import get_first_pokemon
+from back_end.data_access.pokemon_pokedex_service import get_all_pokemons_from_pokedex, get_first_pokemon
 
 sounds = Sounds()
 
@@ -39,7 +37,7 @@ class PauseMenu:
             self.screen.set_background_display(MAIN_MENU_BACKGROUND1)
             
             font_size = self.screen.height // 10
-            self.util.draw_text("Pause Menu", REGULAR_FONT, font_size, self.screen,\
+            self.util.draw_text("Pause Menu", POKE_FONT, font_size, self.screen,\
                                 (self.screen.width//2, self.screen.height // 10*2), LIGHT_GREEN)  # Draw the title
 
             # Draw menu options
@@ -56,9 +54,9 @@ class PauseMenu:
                     pygame.quit()
                     sys.exit()
                 if event.type == pygame.KEYDOWN:
-                    if event.key == pygame.K_DOWN:  # Navigate down
+                    if event.key == pygame.K_DOWN or event.key == pygame.K_RIGHT:  # Navigate down
                         self.selected_index = (self.selected_index + 1) % len(self.options)
-                    elif event.key == pygame.K_UP:  # Navigate up
+                    elif event.key == pygame.K_UP or event.key == pygame.K_LEFT:  # Navigate up
                         self.selected_index = (self.selected_index - 1) % len(self.options)
                     elif event.key == pygame.K_RETURN:  # Select an option
                         match self.selected_index:

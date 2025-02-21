@@ -1,29 +1,5 @@
 [
     {
-        "name": "Charmander",
-        "original_name": "Charmander",
-        "pet_name": "Jean-Noa",
-        "hp_max": 37,
-        "hp": 37,
-        "xp": 339,
-        "strength": 22,
-        "defense": 30,
-        "type": [
-            "fire"
-        ],
-        "level": 6,
-        "speed": 45,
-        "stage": 1,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
         "name": "Venonat",
         "original_name": "Venonat",
         "pet_name": "Jean-Armelle",
@@ -146,30 +122,6 @@
         "state": "wild"
     },
     {
-        "name": "Vulpix",
-        "original_name": "Vulpix",
-        "pet_name": "Jean-Robert",
-        "hp_max": 26,
-        "hp": 26,
-        "xp": 206,
-        "strength": 35,
-        "defense": 25,
-        "type": [
-            "fire"
-        ],
-        "level": 5,
-        "speed": 43,
-        "stage": 1,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
         "name": "Psyduck",
         "original_name": "Psyduck",
         "pet_name": "Jean-Meriam",
@@ -214,54 +166,6 @@
             "defense": 0,
             "speed": 0,
             "xp": 0
-        },
-        "state": "wild"
-    },
-    {
-        "name": "Machop",
-        "original_name": "Machop",
-        "pet_name": "Jean-Luc",
-        "hp_max": 45,
-        "hp": 45,
-        "xp": 912,
-        "strength": 38,
-        "defense": 42,
-        "type": [
-            "fighting"
-        ],
-        "level": 9,
-        "speed": 44,
-        "stage": 1,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
-        "name": "Tangela",
-        "original_name": "Tangela",
-        "pet_name": "Jean-Jules",
-        "hp_max": 61,
-        "hp": 61,
-        "xp": 1123,
-        "strength": 52,
-        "defense": 65,
-        "type": [
-            "grass"
-        ],
-        "level": 10,
-        "speed": 70,
-        "stage": 1,
-        "ev": {
-            "hp": 3,
-            "strength": 0,
-            "defense": 3,
-            "speed": 3,
-            "xp": 2
         },
         "state": "wild"
     },
@@ -353,30 +257,6 @@
         ],
         "level": 5,
         "speed": 31,
-        "stage": 1,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
-        "name": "Ditto",
-        "original_name": "Ditto",
-        "pet_name": "Jean-Paul",
-        "hp_max": 40,
-        "hp": 40,
-        "xp": 215,
-        "strength": 20,
-        "defense": 18,
-        "type": [
-            "normal"
-        ],
-        "level": 5,
-        "speed": 33,
         "stage": 1,
         "ev": {
             "hp": 0,
@@ -574,30 +454,6 @@
         ],
         "level": 9,
         "speed": 42,
-        "stage": 1,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
-        "name": "Krabby",
-        "original_name": "Krabby",
-        "pet_name": "Jean-Fernand",
-        "hp_max": 28,
-        "hp": 28,
-        "xp": 11,
-        "strength": 33,
-        "defense": 9,
-        "type": [
-            "water"
-        ],
-        "level": 2,
-        "speed": 15,
         "stage": 1,
         "ev": {
             "hp": 0,
@@ -947,6 +803,78 @@
             "defense": 0,
             "speed": 0,
             "xp": 3
+        },
+        "state": "wild"
+    },
+    {
+        "name": "Tangela",
+        "original_name": "Tangela",
+        "pet_name": "Jean-Jules",
+        "hp_max": 61,
+        "hp": 61,
+        "xp": 1123,
+        "strength": 52,
+        "defense": 65,
+        "type": [
+            "grass"
+        ],
+        "level": 10,
+        "speed": 70,
+        "stage": 1,
+        "ev": {
+            "hp": 3,
+            "strength": 0,
+            "defense": 3,
+            "speed": 3,
+            "xp": 2
+        },
+        "state": "wild"
+    },
+    {
+        "name": "Machop",
+        "original_name": "Machop",
+        "pet_name": "Jean-Luc",
+        "hp_max": 58,
+        "hp": 58,
+        "xp": 984,
+        "strength": 51,
+        "defense": 52,
+        "type": [
+            "fighting"
+        ],
+        "level": 10,
+        "speed": 57,
+        "stage": 1,
+        "ev": {
+            "hp": 3,
+            "strength": 3,
+            "defense": 1,
+            "speed": 3,
+            "xp": 2
+        },
+        "state": "wild"
+    },
+    {
+        "name": "Charmander",
+        "original_name": "Charmander",
+        "pet_name": "Jean-Noa",
+        "hp_max": 37,
+        "hp": 37,
+        "xp": 339,
+        "strength": 22,
+        "defense": 30,
+        "type": [
+            "fire"
+        ],
+        "level": 6,
+        "speed": 45,
+        "stage": 1,
+        "ev": {
+            "hp": 0,
+            "strength": 0,
+            "defense": 0,
+            "speed": 0,
+            "xp": 0
         },
         "state": "wild"
     }
