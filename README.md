@@ -66,15 +66,15 @@ pip install pyscroll
 │ ├── gameplay/  
 │ │ ├── entity.py # Player and entity movement logic  
 │ │ ├── battlescreen.py # Displays battle screen/battle logic  
-│ │ └── in_fight.py # Core combat interaction with Pokémon  
-│ ├── menu/ # Handles menu navigation/user interface  
-│ ├── sounds/ # Sound effects and music management 
-│ └── screen.py # Manages screen rendering and visual updates  
-├── 📁 new_menu/ # Custom menu handling
-├── README.md # Project documentation
-├── requirements.txt # Python dependencies
-├── .gitignore # Files to exclude from version control  
-└── main.py # Main source code, starts the game
+│ │ └── in_fight.py # Core combat   
+│ ├── menu/
+│ ├── sounds/
+│ └── screen.py   
+├── 📁 new_menu/ 
+├── README.md 
+├── requirements.txt 
+├── .gitignore   
+└── main.py 
 
 ## Detailed File Roled
 
