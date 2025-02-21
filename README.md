@@ -68,14 +68,14 @@ Make sure you have Python installed (version 3.x recommended) before running the
 ```
 📂 pokemon-game
 ├── 📁 assets/           # Graphics and sound resources
- |      📁 back_end/         # Backend for Pokémon generation and JSON file handling
+|      📁 back_end/         # Backend for Pokémon generation and JSON file handling
 ├── 📁 front_end/        # For battle system and graphical interface
 ├── 📁 new_menu/
- |
+|
 ├── README.md           # Project documentation
 ├── requirements.txt    # Python dependencies
- |   .gitignore          # Files to exclude from version control
- |__ main.py             # Main source code
+|   .gitignore          # Files to exclude from version control
+|__ main.py             # Main source code
 ```
 
 # Contributing
