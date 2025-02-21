@@ -102,11 +102,11 @@ class InFight():
                 self.options[-1] = "Exit"
                 self.fleeing = False
                 if winner == "enemy":
-                    self.draw_win_bot_screen()
+                    self.util.draw_win_bot_screen(self.screen)
                 elif another_option == "Success":
-                    self.draw_win_capture_screen(self.pokemon_enemy, self.pokemon, level, name)
+                    self.util.draw_win_capture_screen(self.pokemon_enemy, self.pokemon, level, name, self.screen)
                 else:
-                    self.draw_win_player_screen(level, name)
+                    self.util.draw_win_player_screen(self.pokemon, self.pokemon_enemy, level, name, self.screen)
 
             if message_attack and message_damage and not win:
                 now_time = pygame.time.get_ticks()
@@ -128,9 +128,6 @@ class InFight():
                     
                 if player_turn:
                     if event.type == pygame.KEYDOWN:
-
-                        # if event.key == pygame.K_ESCAPE:
-                        #     self.running = False
 
                         if event.key == pygame.K_RIGHT or event.key == pygame.K_DOWN:  # Navigate down
                             self.selected_index = (self.selected_index + 1) % len(self.options)
@@ -250,67 +247,7 @@ class InFight():
                         winner = "enemy"
                         win = True
                     player_turn = True
-            
-
-    def draw_win_player_screen(self, level, name):
-        self.util.draw_window_with_background(self.screen, self.screen.width //2.5, self.screen.height //2.5)
-        font_size = self.screen.height // 22
-        x  = self.screen.width //2
-        y = self.screen.height // 2
-
-        if self.pokemon.name != name:
-            self.util.draw_text("You won the fight!", REGULAR_FONT, font_size , self.screen, (x, y - font_size*2))
-            self.util.draw_text(f"Your pokemon evolved", REGULAR_FONT, font_size , self.screen, (x, y - font_size))
-            self.util.draw_text(f"from {name} to {self.pokemon.name}",REGULAR_FONT, font_size , self.screen, (x, y))
-            self.util.draw_text(f"You gained {self.pokemon.get_xp_gained(self.pokemon_enemy)} XP", REGULAR_FONT, font_size, self.screen, (x, y + font_size))
-            self.util.draw_text(f"Total XP : {self.pokemon.get_xp()}", REGULAR_FONT, font_size, self.screen, (x, y + font_size*2))
-        
-        elif self.pokemon.get_level() != level:
-            self.util.draw_text("You won the fight!", REGULAR_FONT, font_size , self.screen, (x, y - font_size*1.5))
-            self.util.draw_text(f"You leveled up : {level} > {self.pokemon.get_level()}", REGULAR_FONT, font_size , self.screen, (x, y - font_size*0.5))
-            self.util.draw_text(f"You gained {self.pokemon.get_xp_gained(self.pokemon_enemy)} XP", REGULAR_FONT, font_size, self.screen, (x, y + font_size*0.5))
-            self.util.draw_text(f"Total XP : {self.pokemon.get_xp()}", REGULAR_FONT, font_size, self.screen, (x, y + font_size*1.5))
-
-        else:
-            font_size = self.screen.height // 18
-            self.util.draw_text("You won the fight!", REGULAR_FONT, font_size , self.screen, (x, y - font_size*2))
-            self.util.draw_text(f"You gained {self.pokemon.get_xp_gained(self.pokemon_enemy)} XP", REGULAR_FONT, font_size, self.screen, (x, y))
-            self.util.draw_text(f"Total XP : {self.pokemon.get_xp()}", REGULAR_FONT, font_size, self.screen, (x, y + font_size*2))
-
-    def draw_win_capture_screen(self, pokemon_enemy,pokemon, level, name):
-        self.util.draw_window_with_background(self.screen, self.screen.width //2.5, self.screen.height //2.5)
-        font_size = self.screen.height // 22
-        x  = self.screen.width //2
-        y = self.screen.height // 2
-
-        if pokemon.name != name:
-            self.util.draw_text(f"Successfully captured", REGULAR_FONT, font_size , self.screen, (x, y - font_size*2.5))
-            self.util.draw_text(f"{pokemon_enemy.name}", REGULAR_FONT, font_size , self.screen, (x, y - font_size * 1.5))
-            self.util.draw_text(f"Your pokemon evolved", REGULAR_FONT, font_size , self.screen, (x, y - font_size* 0.5))
-            self.util.draw_text(f"from {name} to {pokemon.name}",REGULAR_FONT, font_size , self.screen, (x, y + font_size * 0.5))
-            self.util.draw_text(f"You gained {pokemon.get_xp_gained(pokemon_enemy)} XP", REGULAR_FONT, font_size, self.screen, (x, y + font_size*1.5))
-            self.util.draw_text(f"Total XP : {pokemon.get_xp()}", REGULAR_FONT, font_size, self.screen, (x, y + font_size*2.5))
-        
-        elif pokemon.get_level() != level:
-            self.util.draw_text(f"Successfully captured", REGULAR_FONT, font_size , self.screen, (x, y - font_size*2))
-            self.util.draw_text(f"{pokemon_enemy.name}", REGULAR_FONT, font_size , self.screen, (x, y - font_size))
-            self.util.draw_text(f"You leveled up : {level} > {pokemon.get_level()}", REGULAR_FONT, font_size , self.screen, (x, y))
-            self.util.draw_text(f"You gained {pokemon.get_xp_gained(pokemon_enemy)} XP", REGULAR_FONT, font_size, self.screen, (x, y + font_size))
-            self.util.draw_text(f"Total XP : {pokemon.get_xp()}", REGULAR_FONT, font_size, self.screen, (x, y + font_size*2))
-        else:
-            font_size = self.screen.height // 18
-            self.util.draw_text(f"Successfully captured", REGULAR_FONT, font_size , self.screen, (x, y - font_size*1.5))
-            self.util.draw_text(f"{pokemon_enemy.name}", REGULAR_FONT, font_size , self.screen, (x, y - font_size * 0.5))
-            self.util.draw_text(f"You gained {pokemon.get_xp_gained(pokemon_enemy)} XP", REGULAR_FONT, font_size, self.screen, (x, y + font_size*0.5))
-            self.util.draw_text(f"Total XP : {pokemon.get_xp()}", REGULAR_FONT, font_size, self.screen, (x, y + font_size*1.5))
-
-    def draw_win_bot_screen(self):
-        self.util.draw_window_with_background(self.screen, self.screen.width //2.5, self.screen.height //2.5)
-        font_size = self.screen.height // 18
-        x  = self.screen.width //2
-        y = self.screen.height // 2
-        self.util.draw_text("You lost the fight!", REGULAR_FONT, font_size , self.screen, (x, y))
-
+         
     def capture_message(self, message):
         self.util.draw_info_capture_screen(self.screen, message)
     

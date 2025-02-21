@@ -92,3 +92,63 @@ class UtilTool():
         
         self.draw_text(message1,\
                               REGULAR_FONT, font_size , screen, (x, y))
+        
+
+    def draw_win_player_screen(self, pokemon, pokemon_enemy, level, name, screen):
+        self.draw_window_with_background(screen, screen.width //2.5, screen.height //2.5)
+        font_size = screen.height // 22
+        x  = screen.width //2
+        y = screen.height // 2
+
+        if pokemon.name != name:
+            self.draw_text("You won the fight!", REGULAR_FONT, font_size , screen, (x, y - font_size*2))
+            self.draw_text(f"Your pokemon evolved", REGULAR_FONT, font_size , screen, (x, y - font_size))
+            self.draw_text(f"from {name} to {pokemon.name}",REGULAR_FONT, font_size , screen, (x, y))
+            self.draw_text(f"You gained {pokemon.get_xp_gained(pokemon_enemy)} XP", REGULAR_FONT, font_size, screen, (x, y + font_size))
+            self.draw_text(f"Total XP : {pokemon.get_xp()}", REGULAR_FONT, font_size, screen, (x, y + font_size*2))
+        
+        elif pokemon.get_level() != level:
+            self.draw_text("You won the fight!", REGULAR_FONT, font_size , screen, (x, y - font_size*1.5))
+            self.draw_text(f"You leveled up : {level} > {pokemon.get_level()}", REGULAR_FONT, font_size , screen, (x, y - font_size*0.5))
+            self.draw_text(f"You gained {pokemon.get_xp_gained(pokemon_enemy)} XP", REGULAR_FONT, font_size, screen, (x, y + font_size*0.5))
+            self.draw_text(f"Total XP : {pokemon.get_xp()}", REGULAR_FONT, font_size, screen, (x, y + font_size*1.5))
+
+        else:
+            font_size = screen.height // 18
+            self.draw_text("You won the fight!", REGULAR_FONT, font_size , screen, (x, y - font_size*2))
+            self.draw_text(f"You gained {pokemon.get_xp_gained(pokemon_enemy)} XP", REGULAR_FONT, font_size, screen, (x, y))
+            self.draw_text(f"Total XP : {pokemon.get_xp()}", REGULAR_FONT, font_size, screen, (x, y + font_size*2))
+
+    def draw_win_capture_screen(self, pokemon_enemy, pokemon, level, name, screen):
+        self.draw_window_with_background(screen, screen.width //2.5, screen.height //2.5)
+        font_size = screen.height // 22
+        x  = screen.width //2
+        y = screen.height // 2
+
+        if pokemon.name != name:
+            self.draw_text(f"Successfully captured", REGULAR_FONT, font_size , screen, (x, y - font_size*2.5))
+            self.draw_text(f"{pokemon_enemy.name}", REGULAR_FONT, font_size , screen, (x, y - font_size * 1.5))
+            self.draw_text(f"Your pokemon evolved", REGULAR_FONT, font_size , screen, (x, y - font_size* 0.5))
+            self.draw_text(f"from {name} to {pokemon.name}",REGULAR_FONT, font_size , screen, (x, y + font_size * 0.5))
+            self.draw_text(f"You gained {pokemon.get_xp_gained(pokemon_enemy)} XP", REGULAR_FONT, font_size, screen, (x, y + font_size*1.5))
+            self.draw_text(f"Total XP : {pokemon.get_xp()}", REGULAR_FONT, font_size, screen, (x, y + font_size*2.5))
+        
+        elif pokemon.get_level() != level:
+            self.draw_text(f"Successfully captured", REGULAR_FONT, font_size , screen, (x, y - font_size*2))
+            self.draw_text(f"{pokemon_enemy.name}", REGULAR_FONT, font_size , screen, (x, y - font_size))
+            self.draw_text(f"You leveled up : {level} > {pokemon.get_level()}", REGULAR_FONT, font_size , screen, (x, y))
+            self.draw_text(f"You gained {pokemon.get_xp_gained(pokemon_enemy)} XP", REGULAR_FONT, font_size, screen, (x, y + font_size))
+            self.draw_text(f"Total XP : {pokemon.get_xp()}", REGULAR_FONT, font_size, screen, (x, y + font_size*2))
+        else:
+            font_size = screen.height // 18
+            self.draw_text(f"Successfully captured", REGULAR_FONT, font_size , screen, (x, y - font_size*1.5))
+            self.draw_text(f"{pokemon_enemy.name}", REGULAR_FONT, font_size , screen, (x, y - font_size * 0.5))
+            self.draw_text(f"You gained {pokemon.get_xp_gained(pokemon_enemy)} XP", REGULAR_FONT, font_size, screen, (x, y + font_size*0.5))
+            self.draw_text(f"Total XP : {pokemon.get_xp()}", REGULAR_FONT, font_size, screen, (x, y + font_size*1.5))
+
+    def draw_win_bot_screen(self, screen):
+        self.draw_window_with_background(screen, screen.width //2.5, screen.height //2.5)
+        font_size = screen.height // 18
+        x  = screen.width //2
+        y = screen.height // 2
+        self.draw_text("You lost the fight!", REGULAR_FONT, font_size , screen, (x, y))
