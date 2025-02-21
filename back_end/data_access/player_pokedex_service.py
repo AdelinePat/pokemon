@@ -1,9 +1,9 @@
 import json, os
 from __settings__ import PLAYER_POKEDEX
 from .wild_pokemons import get_random_wild_pokemon
-from ..models.bag import Bag
 from .pokemon_pokedex_service import save_pokemon_to_pokedex
 from .bag_pokedex_service import save_bag_to_pokedex
+from ..models.bag import Bag
 
 # back to front
 def get_player_names():
@@ -24,9 +24,6 @@ def does_player_exist(player):
 
 # front to back
 def create_player(player, pokemon):
-    # if not os.path.exists(PLAYER_POKEDEX):
-    #     with open(PLAYER_POKEDEX, "w", encoding="UTF-8") as file:
-    #         json.dump({}, file)
 
     with open(PLAYER_POKEDEX, "r", encoding="UTF-8") as file:
         players_dictionary = json.load(file)
@@ -45,7 +42,6 @@ def create_player(player, pokemon):
     
     save_pokemon_to_pokedex(player, pokemon)
     save_bag_to_pokedex(player, player_bag)
-    # return player_pokemons
 
 def get_starter_pokemon():
     pokemon = get_random_wild_pokemon()

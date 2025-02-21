@@ -1,7 +1,7 @@
 import json, os, random
-from ..generate_pokemon.create_pokemon import create_world_pokemons, create_low_level_world_pokemons
-from .util import instanciate_pokemon
 from __settings__ import WORLD_POKEMON_PATH, NAME_LIST_PATH
+from ..generate_pokemon.create_pokemon import create_low_level_world_pokemons
+from .util import instanciate_pokemon
 
 def generate_pokemons_dict():
     with open(NAME_LIST_PATH, 'r', encoding="UTF-8") as file:

@@ -1,8 +1,6 @@
-# from .bag import Bag
-from ..data_access.pokemon_pokedex_service import save_pokemon_to_pokedex
-import random
+import random, math
 from .fight_info import FightInfo
-import math
+from ..data_access.pokemon_pokedex_service import save_pokemon_to_pokedex
 
 class Fight:
     def __init__(self, pokemon1, pokemon2):

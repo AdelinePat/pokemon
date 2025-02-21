@@ -1,5 +1,5 @@
 
-import json, os
+import json
 from __settings__ import PLAYER_POKEDEX
 from .util import instanciate_pokemon
 
@@ -9,8 +9,6 @@ def save_pokemon_to_pokedex(player, pokemon):
 
     pokemon.set_state('domesticated')
     player_pokedex[player]["pokemons"].update({pokemon.pet_name : pokemon.pokemon_dict()})
-
-    # pokemons_list.append(pokemon_dictionary)
 
     with open(PLAYER_POKEDEX, "w", encoding="UTF-8") as file:
         json.dump(player_pokedex, file, indent=4)

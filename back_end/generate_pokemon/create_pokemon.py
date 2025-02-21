@@ -1,6 +1,6 @@
 import random, json
-from back_end.models.pokemon import Pokemon
 from __settings__ import TYPES_PATH, EVOLUTION_STAGE_PATH
+from back_end.models.pokemon import Pokemon
 
 def get_first_type_dict(first_type):
      with open(TYPES_PATH, 'r') as file:

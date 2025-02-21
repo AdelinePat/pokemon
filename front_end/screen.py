@@ -1,5 +1,4 @@
 import pygame
-from __settings__ import DARK_GREEN
 
 class Screen:
     def __init__(self, width=1200, height=720):
@@ -9,16 +8,15 @@ class Screen:
         pygame.display.set_caption("Pokémon")
         self.clock = pygame.time.Clock()
         self.framerate = 144
-        self.deltatime = 0 #raffrachissement fenetre
-        # Ajouter le logo
+        self.deltatime = 0 # refresh screen window
         self.caption = pygame.display.set_caption("Pokémon")
         self.screen = pygame.display.set_icon(pygame.image.load("assets/logo/pokeball.jpg"))
 
     def update(self):
         pygame.display.flip()
         pygame.display.update()
-        self.clock.tick(self.framerate) #raffraichissement de l'écran
-        self.display.fill((0, 0, 0)) #efface l'écran
+        self.clock.tick(self.framerate) #r refresh screen
+        self.display.fill((0, 0, 0)) # erase screen content
         self.deltatime = self.clock.get_time()
 
     def get_deltatime(self):

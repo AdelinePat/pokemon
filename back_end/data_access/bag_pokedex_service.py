@@ -1,4 +1,4 @@
-import json, os
+import json
 from .util import instanciate_bag
 from __settings__ import PLAYER_POKEDEX
 
