@@ -37,7 +37,7 @@ class   SelectPokemon():
         return img
 
     def capturePokemon(self, pokemon, pokemon_rect, pokemons, pokemons_rect):
-        pokeball_img = pygame.transform.scale(pygame.image.load(POKEBALL), (50,60))
+        pokeball_img = pygame.transform.scale(pygame.image.load(POKEBALL), (60,60))
         pokeball_img.set_colorkey((255,255,255))
         pokeball_rect = pokeball_img.get_rect(center=(self.screen.width // 2, self.screen.height - 100))
         target_pos = pokemon_rect.center
