@@ -1,44 +1,18 @@
 [
     {
-        "name": "Geodude",
-        "original_name": "Geodude",
-        "pet_name": "Jean-Marcel",
-        "hp_max": 64,
-        "hp": 64,
-        "xp": 508,
-        "strength": 67,
-        "defense": 46,
+        "name": "Rattata",
+        "original_name": "Rattata",
+        "pet_name": "Jean-Baptiste",
+        "hp_max": 49,
+        "hp": 49,
+        "xp": 924,
+        "strength": 29,
+        "defense": 29,
         "type": [
-            "rock",
-            "ground"
-        ],
-        "level": 8,
-        "speed": 73,
-        "stage": 1,
-        "ev": {
-            "hp": 1,
-            "strength": 0,
-            "defense": 1,
-            "speed": 2,
-            "xp": 3
-        },
-        "state": "wild"
-    },
-    {
-        "name": "Omanyte",
-        "original_name": "Omanyte",
-        "pet_name": "Jean-Victor",
-        "hp_max": 38,
-        "hp": 38,
-        "xp": 756,
-        "strength": 55,
-        "defense": 45,
-        "type": [
-            "rock",
-            "water"
+            "normal"
         ],
         "level": 9,
-        "speed": 42,
+        "speed": 32,
         "stage": 1,
         "ev": {
             "hp": 0,
@@ -74,74 +48,27 @@
         "state": "wild"
     },
     {
-        "name": "Machop",
-        "original_name": "Machop",
-        "pet_name": "Jean-Luc",
-        "hp_max": 58,
-        "hp": 58,
-        "xp": 984,
-        "strength": 51,
-        "defense": 52,
+        "name": "Geodude",
+        "original_name": "Geodude",
+        "pet_name": "Jean-Marcel",
+        "hp_max": 64,
+        "hp": 64,
+        "xp": 508,
+        "strength": 67,
+        "defense": 46,
         "type": [
-            "fighting"
+            "rock",
+            "ground"
         ],
-        "level": 10,
-        "speed": 57,
+        "level": 8,
+        "speed": 73,
         "stage": 1,
         "ev": {
-            "hp": 3,
-            "strength": 3,
-            "defense": 1,
-            "speed": 3,
-            "xp": 2
-        },
-        "state": "wild"
-    },
-    {
-        "name": "Wartortle",
-        "original_name": "Squirtle",
-        "pet_name": "Jean-Sarah",
-        "hp_max": 100,
-        "hp": 100,
-        "xp": 1378,
-        "strength": 112,
-        "defense": 77,
-        "type": [
-            "water"
-        ],
-        "level": 12,
-        "speed": 86,
-        "stage": 2,
-        "ev": {
-            "hp": 2,
-            "strength": 1,
-            "defense": 3,
-            "speed": 1,
-            "xp": 2
-        },
-        "state": "wild"
-    },
-    {
-        "name": "Rattata",
-        "original_name": "Rattata",
-        "pet_name": "Jean-Baptiste",
-        "hp_max": 49,
-        "hp": 49,
-        "xp": 924,
-        "strength": 29,
-        "defense": 29,
-        "type": [
-            "normal"
-        ],
-        "level": 9,
-        "speed": 32,
-        "stage": 1,
-        "ev": {
-            "hp": 0,
+            "hp": 1,
             "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
+            "defense": 1,
+            "speed": 2,
+            "xp": 3
         },
         "state": "wild"
     },
@@ -159,30 +86,6 @@
         ],
         "level": 1,
         "speed": 21,
-        "stage": 1,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
-        "name": "Meowth",
-        "original_name": "Meowth",
-        "pet_name": "Jean-Cl\u00e9ment",
-        "hp_max": 29,
-        "hp": 29,
-        "xp": 3,
-        "strength": 25,
-        "defense": 12,
-        "type": [
-            "normal"
-        ],
-        "level": 1,
-        "speed": 16,
         "stage": 1,
         "ev": {
             "hp": 0,

@@ -1,4 +1,4 @@
-import json, os, random
+import json, os, random, time
 from __settings__ import WORLD_POKEMON_PATH, NAME_LIST_PATH
 from ..generate_pokemon.create_pokemon import create_low_level_world_pokemons
 from .util import instanciate_pokemon
@@ -14,7 +14,8 @@ def generate_pokemons_dict():
     for index, each_pokemon in enumerate(all_pokemons):
         if index == len(name_list)-1:
             index = 0
-        each_pokemon.set_pet_name("Jean-" + name_list[index])
+
+        each_pokemon.set_pet_name("Jean-" + name_list[index] + " " + str(time.time()))
         a_pokemon = each_pokemon.pokemon_dict()
         pokemons_dict_list.append(a_pokemon)
     
@@ -45,7 +46,7 @@ def get_random_wild_pokemon():
     with open(WORLD_POKEMON_PATH, "r") as file:
         pokemons = json.load(file)
 
-    if not pokemons or len(pokemons) < 4 :
+    if not pokemons or len(pokemons) <= 4 :
         other_pokemons = generate_pokemons_dict()
         pokemons = pokemons + other_pokemons
         # with open(WORLD_POKEMON_PATH, "w", encoding="UTF-8") as file:

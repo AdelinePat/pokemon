@@ -1,4 +1,4 @@
-import pygame, re
+import pygame
 from __settings__ import REGULAR_FONT, POKE_FONT
 from .util_tool import UtilTool
 from back_end.controller import create_player, does_player_exist

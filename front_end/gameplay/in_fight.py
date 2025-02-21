@@ -26,8 +26,7 @@ class InFight():
         self.selected_index = 0  # Index of the currently selected option
         self.running = True  # Controls the menu loop
         self.player = player.player_name
-        self.pokemon = pokemon
-        
+        self.pokemon = pokemon     
         self.bag = get_bag_from_pokedex(self.player)
         self.fight = Fight(self.pokemon, self.pokemon_enemy)
         self.util = UtilTool()
@@ -197,8 +196,9 @@ class InFight():
                                 case 4: #exit or flee
                                     if win:
                                         if another_option == "Success":
-                                            new_pet_name = self.pokemon_enemy.pet_name + " " + str(time.time())
-                                            self.pokemon_enemy.set_pet_name(new_pet_name)
+                                            if len(self.pokemon_enemy.pet_name.split()) == 1:
+                                                new_pet_name = self.pokemon_enemy.pet_name + " " + str(time.time())
+                                                self.pokemon_enemy.set_pet_name(new_pet_name)
                                             self.save_all_to_pokedex()
                                         else:
                                             self.save()

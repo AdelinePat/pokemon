@@ -1085,5 +1085,110 @@
                 "state": "domesticated"
             }
         }
+    },
+    "Player1234": {
+        "bag": {
+            "potions": 10,
+            "pokeball": 12
+        },
+        "pokemons": {
+            "Jean-Sarah": {
+                "name": "Wartortle",
+                "original_name": "Squirtle",
+                "pet_name": "Jean-Sarah",
+                "hp_max": 129,
+                "hp": 129,
+                "xp": 2097,
+                "strength": 139,
+                "defense": 99,
+                "type": [
+                    "water"
+                ],
+                "level": 13,
+                "speed": 115,
+                "stage": 2,
+                "ev": {
+                    "hp": 1,
+                    "strength": 3,
+                    "defense": 2,
+                    "speed": 1,
+                    "xp": 0
+                },
+                "state": "domesticated"
+            },
+            "Jean-Victor 1740137390.9473047": {
+                "name": "Omanyte",
+                "original_name": "Omanyte",
+                "pet_name": "Jean-Victor 1740137390.9473047",
+                "hp_max": 38,
+                "hp": 38,
+                "xp": 756,
+                "strength": 55,
+                "defense": 45,
+                "type": [
+                    "rock",
+                    "water"
+                ],
+                "level": 9,
+                "speed": 42,
+                "stage": 1,
+                "ev": {
+                    "hp": 0,
+                    "strength": 0,
+                    "defense": 0,
+                    "speed": 0,
+                    "xp": 0
+                },
+                "state": "domesticated"
+            },
+            "Jean-Ryan 1740137586.9861991": {
+                "name": "Squirtle",
+                "original_name": "Squirtle",
+                "pet_name": "Jean-Ryan 1740137586.9861991",
+                "hp_max": 45,
+                "hp": 45,
+                "xp": 953,
+                "strength": 35,
+                "defense": 29,
+                "type": [
+                    "water"
+                ],
+                "level": 9,
+                "speed": 42,
+                "stage": 1,
+                "ev": {
+                    "hp": 0,
+                    "strength": 0,
+                    "defense": 0,
+                    "speed": 0,
+                    "xp": 0
+                },
+                "state": "domesticated"
+            },
+            "Jean-Jules 1740137586.986651": {
+                "name": "Clefairy",
+                "original_name": "Clefairy",
+                "pet_name": "Jean-Jules 1740137586.986651",
+                "hp_max": 37,
+                "hp": 37,
+                "xp": 897,
+                "strength": 50,
+                "defense": 41,
+                "type": [
+                    "fairy"
+                ],
+                "level": 9,
+                "speed": 39,
+                "stage": 1,
+                "ev": {
+                    "hp": 0,
+                    "strength": 0,
+                    "defense": 0,
+                    "speed": 0,
+                    "xp": 0
+                },
+                "state": "domesticated"
+            }
+        }
     }
 }
