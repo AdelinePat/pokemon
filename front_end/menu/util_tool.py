@@ -8,6 +8,18 @@ class UtilTool():
         dialog_rect = dialog.get_rect(center = my_center)
         screen.display.blit(dialog, dialog_rect)
 
+    def draw_text_from_top_left(self, text, font, font_size, screen, my_position, color=DARK_GREEN):
+        font_load = pygame.font.Font(font, font_size)
+        dialog = font_load.render(text, True, color)
+        dialog_rect = dialog.get_rect(topleft = my_position)
+        screen.display.blit(dialog, dialog_rect)
+
+    def draw_text_from_bottom_right(self, text, font, font_size, screen, my_position, color=DARK_GREEN):
+        font_load = pygame.font.Font(font, font_size)
+        dialog = font_load.render(text, True, color)
+        dialog_rect = dialog.get_rect(bottomright = my_position)
+        screen.display.blit(dialog, dialog_rect)
+
     def draw_color_filter(self, screen, color="black"):
         background_screen = pygame.Surface((screen.width, screen.height))
         background_rect = background_screen.get_rect(center = (screen.width //2, screen.height // 2))
@@ -51,6 +63,22 @@ class UtilTool():
 
         my_border_rect = pygame.rect.Rect(0,0, width, height)
         my_border_rect.center = (screen.width//2, screen.height//2)
+ 
+        final_background_rect = pygame.draw.rect(window_surface, BACKGROUND, my_window_rect, border_radius=10)
+        final_rect = pygame.draw.rect(window_surface, DARK_GREEN, my_border_rect, 3, border_radius=10)
+        
+        screen.display.blit(window_surface, window_rect)
+
+    def draw_small_window_with_background(self, screen, width, height, center, color=BACKGROUND):
+        window_surface = pygame.Surface((screen.width, screen.height), pygame.SRCALPHA)
+        window_surface.set_alpha(180)
+        window_rect = window_surface.get_rect(center = (screen.width //2, screen.height // 2))
+        
+        my_window_rect = pygame.rect.Rect(0,0, width, height)
+        my_window_rect.center = center
+
+        my_border_rect = pygame.rect.Rect(0,0, width, height)
+        my_border_rect.center = center
  
         final_background_rect = pygame.draw.rect(window_surface, BACKGROUND, my_window_rect, border_radius=10)
         final_rect = pygame.draw.rect(window_surface, DARK_GREEN, my_border_rect, 3, border_radius=10)

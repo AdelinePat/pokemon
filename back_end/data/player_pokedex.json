@@ -132,7 +132,7 @@
                 "original_name": "Weedle",
                 "pet_name": "Jean-Louis",
                 "hp_max": 31,
-                "hp": 6,
+                "hp": 31,
                 "xp": 105,
                 "strength": 23,
                 "defense": 18,
@@ -998,23 +998,23 @@
                 "name": "Caterpie",
                 "original_name": "Caterpie",
                 "pet_name": "Jean-Victor 1740141203.2584493",
-                "hp_max": 104,
-                "hp": 104,
-                "xp": 653,
-                "strength": 89,
-                "defense": 95,
+                "hp_max": 117,
+                "hp": 116,
+                "xp": 727,
+                "strength": 104,
+                "defense": 108,
                 "type": [
                     "bug"
                 ],
-                "level": 8,
-                "speed": 91,
+                "level": 9,
+                "speed": 106,
                 "stage": 1,
                 "ev": {
-                    "hp": 3,
-                    "strength": 1,
-                    "defense": 0,
-                    "speed": 0,
-                    "xp": 1
+                    "hp": 2,
+                    "strength": 0,
+                    "defense": 2,
+                    "speed": 1,
+                    "xp": 3
                 },
                 "state": "domesticated"
             },
@@ -1022,23 +1022,23 @@
                 "name": "Eevee",
                 "original_name": "Eevee",
                 "pet_name": "Jean-Baptiste 1740141203.2581463",
-                "hp_max": 46,
-                "hp": 46,
-                "xp": 799,
-                "strength": 31,
-                "defense": 41,
+                "hp_max": 58,
+                "hp": 58,
+                "xp": 822,
+                "strength": 38,
+                "defense": 48,
                 "type": [
                     "normal"
                 ],
-                "level": 9,
-                "speed": 55,
+                "level": 10,
+                "speed": 60,
                 "stage": 1,
                 "ev": {
                     "hp": 0,
-                    "strength": 0,
-                    "defense": 0,
-                    "speed": 0,
-                    "xp": 0
+                    "strength": 3,
+                    "defense": 1,
+                    "speed": 4,
+                    "xp": 3
                 },
                 "state": "domesticated"
             }
@@ -1046,7 +1046,7 @@
     },
     "Ludo": {
         "bag": {
-            "potions": 4,
+            "potions": 2,
             "pokeball": 9
         },
         "pokemons": {
@@ -1054,23 +1054,23 @@
                 "name": "Hypno",
                 "original_name": "Drowzee",
                 "pet_name": "Jean-L\u00e9on",
-                "hp_max": 262,
-                "hp": 262,
-                "xp": 4516,
-                "strength": 248,
-                "defense": 213,
+                "hp_max": 294,
+                "hp": 293,
+                "xp": 5101,
+                "strength": 281,
+                "defense": 242,
                 "type": [
                     "psychic"
                 ],
-                "level": 17,
-                "speed": 263,
+                "level": 18,
+                "speed": 295,
                 "stage": 2,
                 "ev": {
-                    "hp": 1,
+                    "hp": 2,
                     "strength": 1,
                     "defense": 2,
-                    "speed": 1,
-                    "xp": 2
+                    "speed": 0,
+                    "xp": 4
                 },
                 "state": "domesticated"
             },
@@ -1078,49 +1078,49 @@
                 "name": "Magnemite",
                 "original_name": "Magnemite",
                 "pet_name": "Jean-Louis 1740141203.2581918",
-                "hp_max": 77,
-                "hp": 77,
-                "xp": 974,
-                "strength": 76,
-                "defense": 54,
+                "hp_max": 110,
+                "hp": 110,
+                "xp": 1365,
+                "strength": 110,
+                "defense": 79,
                 "type": [
                     "electric",
                     "steel"
                 ],
-                "level": 10,
-                "speed": 65,
+                "level": 12,
+                "speed": 97,
                 "stage": 1,
                 "ev": {
-                    "hp": 0,
-                    "strength": 0,
+                    "hp": 2,
+                    "strength": 3,
                     "defense": 0,
-                    "speed": 1,
+                    "speed": 3,
                     "xp": 3
                 },
                 "state": "domesticated"
             },
             "Jean-Pierre 1740141203.2581851": {
-                "name": "Oddish",
+                "name": "Gloom",
                 "original_name": "Oddish",
                 "pet_name": "Jean-Pierre 1740141203.2581851",
-                "hp_max": 109,
-                "hp": 109,
-                "xp": 999,
-                "strength": 102,
-                "defense": 81,
+                "hp_max": 143,
+                "hp": 143,
+                "xp": 1331,
+                "strength": 126,
+                "defense": 112,
                 "type": [
                     "grass",
                     "poison"
                 ],
-                "level": 10,
-                "speed": 78,
-                "stage": 1,
+                "level": 12,
+                "speed": 99,
+                "stage": 2,
                 "ev": {
-                    "hp": 2,
+                    "hp": 3,
                     "strength": 3,
-                    "defense": 1,
-                    "speed": 0,
-                    "xp": 3
+                    "defense": 2,
+                    "speed": 3,
+                    "xp": 1
                 },
                 "state": "domesticated"
             },
@@ -1128,24 +1128,24 @@
                 "name": "Ivysaur",
                 "original_name": "Bulbasaur",
                 "pet_name": "Jean-Morgan 1740141203.2582545",
-                "hp_max": 99,
-                "hp": 82,
-                "xp": 1219,
-                "strength": 95,
-                "defense": 93,
+                "hp_max": 116,
+                "hp": 116,
+                "xp": 1518,
+                "strength": 108,
+                "defense": 106,
                 "type": [
                     "grass",
                     "poison"
                 ],
-                "level": 11,
-                "speed": 77,
+                "level": 12,
+                "speed": 92,
                 "stage": 2,
                 "ev": {
-                    "hp": 2,
-                    "strength": 0,
-                    "defense": 0,
-                    "speed": 0,
-                    "xp": 2
+                    "hp": 0,
+                    "strength": 3,
+                    "defense": 1,
+                    "speed": 2,
+                    "xp": 0
                 },
                 "state": "domesticated"
             }

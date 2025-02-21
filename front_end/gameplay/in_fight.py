@@ -74,10 +74,13 @@ class InFight():
                 y_movement = int(var_x * math.sin(time_count * 0.08))
             self.util.display_assets_and_background_in_fight(self.screen, x_movement, y_movement, battle_floor, battle_floor2, pokemon_enemy, pokemon)
           
-            self.healthbar.draw_health_bar(my_pokemon_x, my_pokemon_y, self.pokemon, self.screen)
+            self.healthbar.draw_health_bar(my_pokemon_x, my_pokemon_y, self.pokemon,\
+                                           self.screen, (self.screen.width // 16 * 2.5, self.screen.height // 20 * 2))
+
             self.healthbar.draw_health_bar(pokemon_enemy_x, pokemon_enemy_y,
                                             self.pokemon_enemy,\
-                                            self.screen)
+                                            self.screen,\
+                                            (self.screen.width // 16 * 13.5, self.screen.height // 20 * 2), "enemy")
             
             self.util.draw_option_screen(self.screen)
 
