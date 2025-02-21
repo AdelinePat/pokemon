@@ -55,18 +55,18 @@ pip install pyscroll
 3. Participate in battles to improve your skills.
 
 ## Project Structure
-
+  
 📂 pokemon-game
-├── 📁 assets/           # Graphics and sound resources
-│   ├── 📁 back_end/     # Backend for Pokémon generation and JSON file handling
-│   ├── 📁 front_end/    # Battle system and graphical interface
-│   ├── 📁 new_menu/     # Menu and interface handling
-│
-├── README.md           # Project documentation
-├── requirements.txt    # Python dependencies
-├── .gitignore          # Files to exclude from version control
-└── main.py             # Main source code
-
+├── 📁 assets/           # Graphics and sound resources  
+│   ├── 📁 back_end/     # Backend for Pokémon generation and JSON file handling  
+│   ├── 📁 front_end/    # Battle system and graphical interface  
+│   ├── 📁 new_menu/     # Menu and interface handling  
+│  
+├── README.md           # Project documentation  
+├── requirements.txt    # Python dependencies  
+├── .gitignore          # Files to exclude from version control  
+└── main.py             # Main source code  
+  
 
 ## Detailed File Roled
 
