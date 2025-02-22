@@ -142,6 +142,7 @@ class InFight():
                                                 player_turn = False
                                             else:
                                                 self.pokemon.update_xp(self.pokemon_enemy)
+                                                player_turn = True
                                                 winner = "player"
                                                 pokemon = pygame.transform.flip(self.util.load_image(self.pokemon.image), True, False)
                                                 win = True

@@ -991,30 +991,30 @@
     "Morgan": {
         "bag": {
             "potions": 10,
-            "pokeball": 14
+            "pokeball": 13
         },
         "pokemons": {
             "Jean-Victor 1740141203.2584493": {
-                "name": "Caterpie",
+                "name": "Metapod",
                 "original_name": "Caterpie",
                 "pet_name": "Jean-Victor 1740141203.2584493",
-                "hp_max": 117,
-                "hp": 116,
-                "xp": 727,
-                "strength": 104,
-                "defense": 108,
+                "hp_max": 148,
+                "hp": 148,
+                "xp": 1039,
+                "strength": 131,
+                "defense": 131,
                 "type": [
                     "bug"
                 ],
-                "level": 9,
-                "speed": 106,
-                "stage": 1,
+                "level": 11,
+                "speed": 130,
+                "stage": 2,
                 "ev": {
-                    "hp": 2,
-                    "strength": 0,
-                    "defense": 2,
-                    "speed": 1,
-                    "xp": 3
+                    "hp": 1,
+                    "strength": 2,
+                    "defense": 1,
+                    "speed": 3,
+                    "xp": 0
                 },
                 "state": "domesticated"
             },
@@ -1022,23 +1022,47 @@
                 "name": "Eevee",
                 "original_name": "Eevee",
                 "pet_name": "Jean-Baptiste 1740141203.2581463",
-                "hp_max": 58,
-                "hp": 58,
-                "xp": 822,
-                "strength": 38,
-                "defense": 48,
+                "hp_max": 84,
+                "hp": 84,
+                "xp": 1084,
+                "strength": 56,
+                "defense": 70,
                 "type": [
                     "normal"
                 ],
-                "level": 10,
-                "speed": 60,
+                "level": 11,
+                "speed": 82,
+                "stage": 1,
+                "ev": {
+                    "hp": 3,
+                    "strength": 3,
+                    "defense": 1,
+                    "speed": 0,
+                    "xp": 0
+                },
+                "state": "domesticated"
+            },
+            "Jean-Gustave 1740141203.2584264": {
+                "name": "Ponyta",
+                "original_name": "Ponyta",
+                "pet_name": "Jean-Gustave 1740141203.2584264",
+                "hp_max": 35,
+                "hp": 35,
+                "xp": 88,
+                "strength": 34,
+                "defense": 14,
+                "type": [
+                    "fire"
+                ],
+                "level": 4,
+                "speed": 38,
                 "stage": 1,
                 "ev": {
                     "hp": 0,
-                    "strength": 3,
-                    "defense": 1,
-                    "speed": 4,
-                    "xp": 3
+                    "strength": 0,
+                    "defense": 0,
+                    "speed": 0,
+                    "xp": 0
                 },
                 "state": "domesticated"
             }
@@ -1128,24 +1152,24 @@
                 "name": "Ivysaur",
                 "original_name": "Bulbasaur",
                 "pet_name": "Jean-Morgan 1740141203.2582545",
-                "hp_max": 116,
-                "hp": 116,
-                "xp": 1518,
-                "strength": 108,
-                "defense": 106,
+                "hp_max": 137,
+                "hp": 137,
+                "xp": 1828,
+                "strength": 126,
+                "defense": 115,
                 "type": [
                     "grass",
                     "poison"
                 ],
-                "level": 12,
-                "speed": 92,
+                "level": 13,
+                "speed": 105,
                 "stage": 2,
                 "ev": {
-                    "hp": 0,
+                    "hp": 2,
                     "strength": 3,
-                    "defense": 1,
-                    "speed": 2,
-                    "xp": 0
+                    "defense": 0,
+                    "speed": 3,
+                    "xp": 1
                 },
                 "state": "domesticated"
             }
