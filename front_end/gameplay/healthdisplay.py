@@ -1,5 +1,5 @@
 import pygame
-from __settings__ import DARK_GREEN, LIGHT_GREEN, REGULAR_FONT
+from __settings__ import DARK_GREEN, LIGHT_GREEN, REGULAR_FONT, LIGHT_RED
 from front_end.menu.util_tool import UtilTool
 
 class HealthDisplay():
@@ -29,7 +29,7 @@ class HealthDisplay():
         
         health_bar_background = pygame.rect.Rect(0,0, healthbar_width, 18)
         health_bar_background.midleft = (my_center[0] -healthbar_width // 2, my_center[1]+3)
-        final_health_bar_background = pygame.draw.rect(window_surface, "red",\
+        final_health_bar_background = pygame.draw.rect(window_surface, LIGHT_RED,\
                                                        health_bar_background, border_radius=10)       
         
         health_bar_actual = pygame.rect.Rect(0,0, hp_ratio, 18)
