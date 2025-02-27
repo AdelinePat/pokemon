@@ -52,6 +52,8 @@ class InFight():
         level = self.pokemon.get_level()
         name = self.pokemon.name
         winner = ""
+        pokemon_hp_max = self.pokemon.get_hp_max()
+        pokemon_enemy_hp_max= self.pokemon_enemy.get_hp_max()
       
         my_pokemon_x = int(self.screen.width // 10 * 0.5)
         my_pokemon_y = int(self.screen.height // 10 )
@@ -74,11 +76,11 @@ class InFight():
                 y_movement = int(var_x * math.sin(time_count * 0.08))
             self.util.display_assets_and_background_in_fight(self.screen, x_movement, y_movement, battle_floor, battle_floor2, pokemon_enemy, pokemon)
           
-            self.healthbar.draw_health_bar(my_pokemon_x, my_pokemon_y, self.pokemon,\
+            self.healthbar.draw_health_bar(my_pokemon_x, my_pokemon_y, self.pokemon, pokemon_hp_max,\
                                            self.screen, (self.screen.width // 16 * 2.5, self.screen.height // 20 * 2))
 
-            self.healthbar.draw_health_bar(pokemon_enemy_x, pokemon_enemy_y,
-                                            self.pokemon_enemy,\
+            self.healthbar.draw_health_bar(pokemon_enemy_x, pokemon_enemy_y,\
+                                            self.pokemon_enemy, pokemon_enemy_hp_max,\
                                             self.screen,\
                                             (self.screen.width // 16 * 13.5, self.screen.height // 20 * 2), "enemy")
             
@@ -195,6 +197,7 @@ class InFight():
                                     else:
                                         self.pokemon = ChangePokemonInFight(self.player, self.pokemon, self.pokemon_enemy, self.screen).display()
                                         self.fight.set_first_pokemon(self.pokemon)
+                                        pokemon_hp_max = self.pokemon.get_hp_max()
                                         name = self.pokemon.name
                                         level = self.pokemon.get_level()
                                 case 3: #info
@@ -231,7 +234,7 @@ class InFight():
                                                 failed_flee_time = pygame.time.get_ticks()
                                                 self.message_pop_up(self.fight.fightinfo.flee_message)
                                                 pygame.display.update()       
-                else:
+                elif not player_turn and not win:
                     pygame.time.wait(800)
                     if self.pokemon.get_hp() > 0 :
                         self.fight.bot_attack()

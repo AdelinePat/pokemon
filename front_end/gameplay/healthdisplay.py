@@ -6,11 +6,15 @@ class HealthDisplay():
     def __init__(self):
         self.util = UtilTool()
 
-    def draw_health_bar(self, x, y, pokemon, screen, my_center, who_is_displayed="player"):
+    def draw_health_bar(self, x, y, pokemon, hp_max, screen, my_center, who_is_displayed="player"):
         width = screen.width // 4
         height = screen.height // 10
         healthbar_width = width - 20
-        hp_ratio = healthbar_width * (pokemon.get_hp() / pokemon.get_hp_max())
+        if hp_max == pokemon.get_hp_max():
+            hp_ratio = healthbar_width * (pokemon.get_hp() / pokemon.get_hp_max())
+        else:
+            actual_hp = pokemon.get_hp() + (pokemon.get_hp_max() - hp_max)
+            hp_ratio = healthbar_width * (actual_hp / pokemon.get_hp_max())
         if pokemon.get_hp() <= 0:
             hp_ratio = 0
 
@@ -22,6 +26,10 @@ class HealthDisplay():
         self.util.draw_text_from_top_left(f"{pokemon.name} : {pet_name}", REGULAR_FONT,\
                             font_size, screen,\
                             ((my_center[0] - screen.width // 8.5), (my_center[1] - screen.height // 25)))
+        
+        self.util.draw_text_from_top_left(f"lvl : {pokemon.get_level()}", REGULAR_FONT,\
+                            font_size, screen,\
+                            ((my_center[0] - screen.width // 8.5), (my_center[1] + screen.height // 50)))
         
         window_surface = pygame.Surface((screen.width, screen.height), pygame.SRCALPHA)
         window_rect = window_surface.get_rect(center = (screen.width //2, screen.height // 2))
@@ -45,6 +53,11 @@ class HealthDisplay():
 
         screen.display.blit(window_surface, window_rect)
 
-        self.util.draw_text_from_bottom_right(f"{pokemon.get_hp()} / {pokemon.get_hp_max()}", REGULAR_FONT,\
-                            font_size, screen,\
-                            ((my_center[0] + screen.width // 8.75), (my_center[1] + screen.height // 21)))
+        if hp_max == pokemon.get_hp_max():
+            self.util.draw_text_from_bottom_right(f"{pokemon.get_hp()} / {pokemon.get_hp_max()}", REGULAR_FONT,\
+                                font_size, screen,\
+                                ((my_center[0] + screen.width // 8.75), (my_center[1] + screen.height // 21)))
+        else:
+            self.util.draw_text_from_bottom_right(f"{actual_hp} / {pokemon.get_hp_max()}", REGULAR_FONT,\
+                                font_size, screen,\
+                                ((my_center[0] + screen.width // 8.75), (my_center[1] + screen.height // 21)))

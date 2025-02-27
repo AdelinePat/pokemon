@@ -40,8 +40,10 @@ class Fight:
             else:
                 if critical < critical_rate:
                     efficency = "Critical hit !!"
-
                     final_damage = 20
+                    if enemy.get_hp() - final_damage < 0:
+                        final_damage = enemy.get_hp()
+           
                 else:
                     final_damage = 1
                     if enemy.get_hp() - final_damage < 0:
