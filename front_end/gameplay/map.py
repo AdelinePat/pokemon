@@ -116,6 +116,7 @@ class Map:
         # # Start a battle when the player enters a battle zone
         # print("Starting Pokémon battle! dans start_battle")
         battle_screen = InFight(self.screen, self.player, self.player.active_pokemon).display()
+        self.player.keyListener.clear()#clear the keylistener
         self.player.flee_steps = 0
         return battle_screen
  
