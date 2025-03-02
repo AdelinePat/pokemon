@@ -292,30 +292,6 @@
         "state": "wild"
     },
     {
-        "name": "Rattata",
-        "original_name": "Rattata",
-        "pet_name": "Jean-Baptiste",
-        "hp_max": 49,
-        "hp": 49,
-        "xp": 924,
-        "strength": 29,
-        "defense": 29,
-        "type": [
-            "normal"
-        ],
-        "level": 9,
-        "speed": 32,
-        "stage": 1,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
         "name": "Venonat",
         "original_name": "Venonat",
         "pet_name": "Jean-S\u00e9bastien 1740524070.677534",
@@ -330,30 +306,6 @@
         ],
         "level": 3,
         "speed": 23,
-        "stage": 1,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
-        "name": "Rattata",
-        "original_name": "Rattata",
-        "pet_name": "Jean-Georges 1740524070.6775858",
-        "hp_max": 19,
-        "hp": 19,
-        "xp": 31,
-        "strength": 12,
-        "defense": 28,
-        "type": [
-            "normal"
-        ],
-        "level": 3,
-        "speed": 39,
         "stage": 1,
         "ev": {
             "hp": 0,
@@ -1073,30 +1025,6 @@
         "state": "wild"
     },
     {
-        "name": "Tangela",
-        "original_name": "Tangela",
-        "pet_name": "Jean-Claude 1740524070.6775248",
-        "hp_max": 59,
-        "hp": 59,
-        "xp": 118,
-        "strength": 60,
-        "defense": 52,
-        "type": [
-            "grass"
-        ],
-        "level": 5,
-        "speed": 50,
-        "stage": 1,
-        "ev": {
-            "hp": 0,
-            "strength": 3,
-            "defense": 4,
-            "speed": 1,
-            "xp": 1
-        },
-        "state": "wild"
-    },
-    {
         "name": "Seel",
         "original_name": "Seel",
         "pet_name": "Jean-Jules 1740524070.6775963",
@@ -1189,6 +1117,78 @@
             "defense": 0,
             "speed": 0,
             "xp": 0
+        },
+        "state": "wild"
+    },
+    {
+        "name": "Rattata",
+        "original_name": "Rattata",
+        "pet_name": "Jean-Georges 1740524070.6775858",
+        "hp_max": 19,
+        "hp": 19,
+        "xp": 31,
+        "strength": 12,
+        "defense": 28,
+        "type": [
+            "normal"
+        ],
+        "level": 3,
+        "speed": 39,
+        "stage": 1,
+        "ev": {
+            "hp": 0,
+            "strength": 0,
+            "defense": 0,
+            "speed": 0,
+            "xp": 0
+        },
+        "state": "wild"
+    },
+    {
+        "name": "Rattata",
+        "original_name": "Rattata",
+        "pet_name": "Jean-Baptiste",
+        "hp_max": 49,
+        "hp": 49,
+        "xp": 924,
+        "strength": 29,
+        "defense": 29,
+        "type": [
+            "normal"
+        ],
+        "level": 9,
+        "speed": 32,
+        "stage": 1,
+        "ev": {
+            "hp": 0,
+            "strength": 0,
+            "defense": 0,
+            "speed": 0,
+            "xp": 0
+        },
+        "state": "wild"
+    },
+    {
+        "name": "Tangela",
+        "original_name": "Tangela",
+        "pet_name": "Jean-Claude 1740524070.6775248",
+        "hp_max": 59,
+        "hp": 59,
+        "xp": 118,
+        "strength": 60,
+        "defense": 52,
+        "type": [
+            "grass"
+        ],
+        "level": 5,
+        "speed": 50,
+        "stage": 1,
+        "ev": {
+            "hp": 0,
+            "strength": 3,
+            "defense": 4,
+            "speed": 1,
+            "xp": 1
         },
         "state": "wild"
     }

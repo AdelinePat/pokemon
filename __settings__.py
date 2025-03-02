@@ -22,7 +22,7 @@ POKE_FONT = "./assets/fonts/Pokemon_Solid.ttf"
 """
 BACKGROUNDS
 """
-MAIN_MENU_BACKGROUND1 = "./assets/backgrounds/main_menu_background_2.jpg"
+MAIN_MENU_BACKGROUND1 = "./assets/backgrounds/mainImageHome.png"
 MAIN_MENU_BACKGROUND2 = "./assets/backgrounds/main_menu_background_2.jpg"
 MAIN_MENU_BACKGROUND3 = "./assets/backgrounds/main_menu_background_3.jpg"
 MAIN_MENU_BACKGROUND4 = "./assets/backgrounds/main_menu_background_4.jpg"

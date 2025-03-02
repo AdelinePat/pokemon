@@ -1637,23 +1637,23 @@
                 "name": "Ekans",
                 "original_name": "Ekans",
                 "pet_name": "Jean-H\u00e9l\u00e8ne 1740524070.677584",
-                "hp_max": 164,
-                "hp": 164,
-                "xp": 2125,
-                "strength": 175,
-                "defense": 148,
+                "hp_max": 187,
+                "hp": 187,
+                "xp": 2611,
+                "strength": 192,
+                "defense": 171,
                 "type": [
                     "poison"
                 ],
-                "level": 13,
-                "speed": 140,
+                "level": 14,
+                "speed": 172,
                 "stage": 1,
                 "ev": {
-                    "hp": 3,
+                    "hp": 2,
                     "strength": 2,
-                    "defense": 2,
-                    "speed": 2,
-                    "xp": 0
+                    "defense": 1,
+                    "speed": 1,
+                    "xp": 1
                 },
                 "state": "domesticated"
             },
