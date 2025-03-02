@@ -29,6 +29,13 @@ MAIN_MENU_BACKGROUND4 = "./assets/backgrounds/main_menu_background_4.jpg"
 
 BATTLE_BACKGROUND = "./assets/backgrounds/battle_background.jpg"
 BATTLE_FLOOR = "./assets/backgrounds/battle_floor.png"
+BATTLE_FLOOR_NIGHT =  "assets/backgrounds/background_nightcombat.jpg"
+BATTLE_FOREST = "assets/backgrounds/battle_forest.jpg"
+BATTLE_MOUNTAIN = "assets/backgrounds/battle_mountain.jpg"
+BATTLE_SUNRISE = "assets/backgrounds/battle_sunrise.png"
+
+
+
 GAME_OVER_BACKGROUND = "./assets/backgrounds/game_over_background.png"
 MENU_BACKGROUND = "./assets/backgrounds/menu_background.png"
 

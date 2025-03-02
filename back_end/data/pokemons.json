@@ -683,30 +683,6 @@
         "state": "wild"
     },
     {
-        "name": "Vulpix",
-        "original_name": "Vulpix",
-        "pet_name": "Jean-Sarah 1740524070.677582",
-        "hp_max": 40,
-        "hp": 40,
-        "xp": 875,
-        "strength": 57,
-        "defense": 37,
-        "type": [
-            "fire"
-        ],
-        "level": 9,
-        "speed": 40,
-        "stage": 1,
-        "ev": {
-            "hp": 0,
-            "strength": 0,
-            "defense": 0,
-            "speed": 0,
-            "xp": 0
-        },
-        "state": "wild"
-    },
-    {
         "name": "Slowpoke",
         "original_name": "Slowpoke",
         "pet_name": "Jean-Edouard 1740524070.6775947",
@@ -1189,6 +1165,30 @@
             "defense": 4,
             "speed": 1,
             "xp": 1
+        },
+        "state": "wild"
+    },
+    {
+        "name": "Vulpix",
+        "original_name": "Vulpix",
+        "pet_name": "Jean-Sarah 1740524070.677582",
+        "hp_max": 40,
+        "hp": 40,
+        "xp": 875,
+        "strength": 57,
+        "defense": 37,
+        "type": [
+            "fire"
+        ],
+        "level": 9,
+        "speed": 40,
+        "stage": 1,
+        "ev": {
+            "hp": 0,
+            "strength": 0,
+            "defense": 0,
+            "speed": 0,
+            "xp": 0
         },
         "state": "wild"
     }
