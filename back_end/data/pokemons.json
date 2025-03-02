@@ -1071,5 +1071,125 @@
             "xp": 0
         },
         "state": "wild"
+    },
+    {
+        "name": "Tangela",
+        "original_name": "Tangela",
+        "pet_name": "Jean-Claude 1740524070.6775248",
+        "hp_max": 59,
+        "hp": 59,
+        "xp": 118,
+        "strength": 60,
+        "defense": 52,
+        "type": [
+            "grass"
+        ],
+        "level": 5,
+        "speed": 50,
+        "stage": 1,
+        "ev": {
+            "hp": 0,
+            "strength": 3,
+            "defense": 4,
+            "speed": 1,
+            "xp": 1
+        },
+        "state": "wild"
+    },
+    {
+        "name": "Seel",
+        "original_name": "Seel",
+        "pet_name": "Jean-Jules 1740524070.6775963",
+        "hp_max": 50,
+        "hp": 50,
+        "xp": 604,
+        "strength": 41,
+        "defense": 28,
+        "type": [
+            "water"
+        ],
+        "level": 8,
+        "speed": 47,
+        "stage": 1,
+        "ev": {
+            "hp": 0,
+            "strength": 0,
+            "defense": 0,
+            "speed": 0,
+            "xp": 0
+        },
+        "state": "wild"
+    },
+    {
+        "name": "Psyduck",
+        "original_name": "Psyduck",
+        "pet_name": "Jean-Morgan 1740524070.677564",
+        "hp_max": 49,
+        "hp": 49,
+        "xp": 549,
+        "strength": 51,
+        "defense": 50,
+        "type": [
+            "water"
+        ],
+        "level": 8,
+        "speed": 48,
+        "stage": 1,
+        "ev": {
+            "hp": 2,
+            "strength": 0,
+            "defense": 1,
+            "speed": 2,
+            "xp": 1
+        },
+        "state": "wild"
+    },
+    {
+        "name": "Machop",
+        "original_name": "Machop",
+        "pet_name": "Jean-Joseph 1740524070.677541",
+        "hp_max": 34,
+        "hp": 34,
+        "xp": 166,
+        "strength": 21,
+        "defense": 29,
+        "type": [
+            "fighting"
+        ],
+        "level": 5,
+        "speed": 37,
+        "stage": 1,
+        "ev": {
+            "hp": 0,
+            "strength": 0,
+            "defense": 0,
+            "speed": 0,
+            "xp": 0
+        },
+        "state": "wild"
+    },
+    {
+        "name": "Shellder",
+        "original_name": "Shellder",
+        "pet_name": "Jean-Louis 1740524070.6775208",
+        "hp_max": 23,
+        "hp": 23,
+        "xp": 1,
+        "strength": 10,
+        "defense": 18,
+        "type": [
+            "water"
+        ],
+        "level": 1,
+        "speed": 16,
+        "stage": 1,
+        "ev": {
+            "hp": 0,
+            "strength": 0,
+            "defense": 0,
+            "speed": 0,
+            "xp": 0
+        },
+        "state": "wild"
     }
 ]

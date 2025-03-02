@@ -63,7 +63,7 @@ class Menu:
                                 
                                 # Stop the opening music and start the map music
                                 sounds.stop_background_music()  # Correct the method name here
-                                sounds.play_map_music()  # Play map music
+                                sounds.play_background_music()  # Play map music
 
                                 game.run()
                             case 1:

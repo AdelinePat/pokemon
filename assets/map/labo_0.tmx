@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="17" height="11" tilewidth="16" tileheight="16" infinite="0" nextlayerid="12" nextobjectid="51">
- <tileset firstgid="1" source="./tileset/interieur1.tsx"/>
- <tileset firstgid="4625" source="./tileset/tileset_pokemon_sdk.tsx"/>
- <tileset firstgid="8881" source="./tileset/indoor.tsx"/>
+ <tileset firstgid="1" source="tileset/interieur1.tsx"/>
+ <tileset firstgid="4625" source="tileset/tileset_pokemon_sdk.tsx"/>
+ <tileset firstgid="8881" source="tileset/indoor.tsx"/>
  <group id="8" name="Groupe 1">
   <layer id="1" name="ground" width="17" height="11">
    <data encoding="csv">
@@ -97,8 +97,8 @@
  </group>
  <group id="9" name="object">
   <objectgroup id="10" name="interface">
-   <object id="30" name="switch map0 0" x="131.22" y="159.707" width="23.9044" height="16.3944"/>
-   <object id="31" name="spawn map0 0" x="143.158" y="132.619">
+   <object id="30" name="switch map_0 0" x="131.22" y="159.707" width="23.9044" height="16.3944"/>
+   <object id="31" name="spawn map_0 0" x="143.158" y="132.619">
     <point/>
    </object>
   </objectgroup>
