@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="15" height="15" tilewidth="16" tileheight="16" infinite="0" nextlayerid="15" nextobjectid="50">
- <tileset firstgid="1" source="./tileset/tileset4g.tsx"/>
- <tileset firstgid="21001" source="./tileset/interieur1.tsx"/>
- <tileset firstgid="25625" source="./tileset/indoor.tsx"/>
+ <tileset firstgid="1" source="tileset/tileset4g.tsx"/>
+ <tileset firstgid="21001" source="tileset/interieur1.tsx"/>
+ <tileset firstgid="25625" source="tileset/indoor.tsx"/>
  <group id="10" name="layer">
   <layer id="1" name="Calque de Tuiles 1" width="15" height="15">
    <data encoding="csv">
@@ -159,12 +159,12 @@
  </group>
  <group id="11" name="object">
   <objectgroup id="12" name="interface">
-   <object id="45" name="switch map0 0" x="80" y="144" width="31" height="16"/>
-   <object id="48" name="switch map0 1" x="15.3333" y="143" width="16.3333" height="16"/>
-   <object id="46" name="spawn map0 0" x="89" y="109.333">
+   <object id="45" name="switch map_0 0" x="80" y="144" width="31" height="16"/>
+   <object id="48" name="switch map_0 1" x="15.3333" y="143" width="16.3333" height="16"/>
+   <object id="46" name="spawn map_0 0" x="89" y="109.333">
     <point/>
    </object>
-   <object id="49" name="spawn map0 1" x="26.6667" y="129">
+   <object id="49" name="spawn map_0 1" x="26.6667" y="129">
     <point/>
    </object>
   </objectgroup>

@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="15" height="15" tilewidth="16" tileheight="16" infinite="0" nextlayerid="15" nextobjectid="50">
- <tileset firstgid="1" source="./tileset/tileset4g.tsx"/>
- <tileset firstgid="21001" source="./tileset/interieur1.tsx"/>
- <tileset firstgid="25625" source="./tileset/indoor.tsx"/>
+ <tileset firstgid="1" source="tileset/tileset4g.tsx"/>
+ <tileset firstgid="21001" source="tileset/interieur1.tsx"/>
+ <tileset firstgid="25625" source="tileset/indoor.tsx"/>
+ <tileset firstgid="30417" source="tileset/interieur1.tsx"/>
+ <tileset firstgid="35041" source="tileset/interieur1.tsx"/>
  <group id="10" name="layer">
   <layer id="1" name="Calque de Tuiles 1" width="15" height="15">
    <data encoding="csv">
@@ -15,7 +17,7 @@
 21019,21019,21019,21019,21019,21019,21019,21019,21019,21019,21019,21019,21019,21019,21019,
 21019,21019,21019,21019,21019,21019,21019,21019,21019,21019,21019,21019,21019,21019,21019,
 21019,21019,21019,21019,21019,21019,21019,21019,21019,21019,21019,21019,21019,21019,21019,
-21019,22442,21019,21019,21019,21019,21019,21019,21019,21019,21019,21019,21019,21019,21019,
+21019,30433,21019,21019,21019,21019,21019,21019,21019,21019,21019,21019,21019,21019,21019,
 0,0,0,0,0,0,0,21019,21019,21019,21017,21018,21018,21019,21019,
 0,0,0,0,0,0,0,21019,21019,21019,21025,21026,21026,21019,21019,
 0,0,0,0,0,0,0,21019,21019,21019,21019,21019,21019,21019,21019,
@@ -129,7 +131,7 @@
 0,0,0,0,0,0,0,0,0,0,0,0,21839,21840,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 24243,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,35058,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -159,33 +161,13 @@
  </group>
  <group id="11" name="object">
   <objectgroup id="12" name="interface">
-   <object id="45" name="switch map0 0" x="80" y="144" width="31" height="16"/>
-   <object id="48" name="switch map0 1" x="15.3333" y="143" width="16.3333" height="16"/>
-   <object id="46" name="spawn map0 0" x="89" y="109.333">
-    <point/>
-   </object>
-   <object id="49" name="spawn map0 1" x="26.6667" y="129">
+   <object id="48" name="switch map_0 0" x="81.3333" y="143" width="30.3333" height="16"/>
+   <object id="49" name="spawn map_0 0" x="83" y="118.667">
     <point/>
    </object>
   </objectgroup>
   <objectgroup id="14" name="collision">
    <object id="28" name="collision" x="13" y="3.66667" width="190.333" height="29.6667"/>
-   <object id="29" name="collision" x="21" y="100.333" width="6.33333" height="6.33333"/>
-   <object id="31" name="collision" x="36.3333" y="100.333" width="6.33333" height="6.33333"/>
-   <object id="32" name="collision" x="52.3333" y="100.333" width="6.33333" height="6.33333"/>
-   <object id="33" name="collision" x="132.333" y="68.6667" width="6.33333" height="6.33333"/>
-   <object id="34" name="collision" x="166" y="69" width="6.33333" height="6.33333"/>
-   <object id="35" name="collision" x="116.667" y="99.6667" width="6.33333" height="6.33333"/>
-   <object id="36" name="collision" x="115" y="117.333" width="6.33333" height="6.33333"/>
-   <object id="37" name="collision" x="146.667" y="132.333" width="6.33333" height="6.33333"/>
-   <object id="38" name="collision" x="166" y="133.667" width="6.33333" height="6.33333"/>
-   <object id="39" name="collision" x="183.667" y="101" width="7.33333" height="8.66667"/>
-   <object id="40" name="collision" x="201.667" y="102.667" width="7.33333" height="30"/>
-   <object id="41" name="collision" x="163.333" y="220.333" width="7.33333" height="16"/>
-   <object id="30" name="collision" x="18.6667" y="82.3333" width="37.3333" height="17"/>
-   <object id="44" name="collision" x="115" y="228" width="9.66667" height="5.33333">
-    <ellipse/>
-   </object>
   </objectgroup>
  </group>
 </map>

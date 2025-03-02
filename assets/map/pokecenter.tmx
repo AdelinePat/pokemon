@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="16" height="20" tilewidth="16" tileheight="16" infinite="0" nextlayerid="15" nextobjectid="63">
- <tileset firstgid="1" source="./tileset/pokemon-center.tsx"/>
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="16" height="20" tilewidth="16" tileheight="16" infinite="0" nextlayerid="15" nextobjectid="66">
+ <tileset firstgid="1" source="tileset/pokemon-center.tsx"/>
  <group id="11" name="layer">
   <layer id="1" name="Calque de Tuiles 1" width="16" height="20">
    <data encoding="csv">
@@ -172,41 +172,47 @@
   </layer>
  </group>
  <group id="12" name="oject">
-  <objectgroup id="14" name="collision">
-   <object id="41" name="collision" x="64.3996" y="22.8368" width="191.6" height="57.1632"/>
-   <object id="42" x="64.8564" y="119.665" height="0.456735"/>
-   <object id="43" name="collision" x="58.1986" y="115.173" width="196.431" height="89.6155"/>
-   <object id="45" name="collision" x="163.668" y="208" width="92.3318" height="16"/>
-   <object id="47" name="collision" x="163.211" y="275.654" width="56.678" height="28.3461"/>
-   <object id="48" name="collision" x="71.7074" y="298.248">
-    <ellipse/>
-   </object>
-   <object id="49" name="collision" x="247.55" y="297.791">
-    <ellipse/>
-   </object>
-   <object id="50" name="collision" x="7.7645" y="250.291">
-    <ellipse/>
-   </object>
-   <object id="51" name="collision" x="7.7645" y="54.8082">
-    <ellipse/>
-   </object>
-   <object id="52" name="collision" x="23.7502" y="40.6494">
-    <ellipse/>
-   </object>
-   <object id="54" name="collision" x="32.8849" y="12.3318" width="27.9179" height="35.6682"/>
-   <object id="55" name="collision" x="195.58" y="113.013" width="58.5787" height="29.0241"/>
-   <object id="58" name="collision" x="55" y="122.667" width="2.66667" height="113.667"/>
-   <object id="59" x="0" y="64" height="96"/>
-   <object id="61" name="collision" x="0" y="64" height="104.667"/>
-   <object id="62" name="collision" x="256" y="80" height="189.333"/>
-  </objectgroup>
   <objectgroup id="13" name="interface">
-   <object id="38" name="switch map0 0" x="107" y="308.25" width="24.75" height="13"/>
-   <object id="39" name="spawn map0 0" x="114.5" y="282.25">
+   <object id="38" name="switch map_0 0" x="107" y="308.25" width="24.75" height="13"/>
+   <object id="39" name="spawn map_0 0" x="114.5" y="282.25">
     <point/>
    </object>
-   <object id="40" x="83.5" y="251">
-    <point/>
+  </objectgroup>
+  <objectgroup id="14" name="collision">
+   <object id="41" name="collision" x="67" y="25" width="9.5" height="48.5"/>
+   <object id="42" name="collision" x="82" y="61" width="28" height="13.5"/>
+   <object id="43" name="collision" x="131.5" y="60.5" width="28" height="13.5"/>
+   <object id="44" name="collision" x="164.5" y="61.5" width="89" height="13.5"/>
+   <object id="45" name="collision" x="64.5" y="112.5" width="89" height="89.5"/>
+   <object id="46" name="collision" x="213.5" y="113.5" width="23" height="24"/>
+   <object id="48" name="collision" x="193" y="119" width="7.5" height="7"/>
+   <object id="49" name="collision" x="194" y="134.5" width="7.5" height="7"/>
+   <object id="50" name="collision" x="194" y="134.5" width="7.5" height="7"/>
+   <object id="52" name="collision" x="245" y="118.5" width="7.5" height="7"/>
+   <object id="53" name="collision" x="243.5" y="133" width="9" height="7"/>
+   <object id="54" name="collision" x="160.5" y="164.5" width="96" height="7"/>
+   <object id="55" name="collision" x="163" y="178.5" width="96" height="35"/>
+   <object id="56" name="collision" x="180" y="271" width="25" height="22.5"/>
+   <object id="57" name="collision" x="0" y="240" width="16" height="16">
+    <ellipse/>
+   </object>
+   <object id="58" name="collision" x="0" y="240" width="16" height="16">
+    <ellipse/>
+   </object>
+   <object id="60" name="collision" x="18.5" y="30" width="16" height="16">
+    <ellipse/>
+   </object>
+   <object id="61" name="collision" x="-0.5" y="45.5" width="16" height="16">
+    <ellipse/>
+   </object>
+   <object id="62" name="collision" x="241" y="298" width="16" height="16">
+    <ellipse/>
+   </object>
+   <object id="65" name="collision" x="66" y="294" width="16" height="16">
+    <ellipse/>
+   </object>
+   <object id="63" name="collision" x="241" y="298" width="16" height="16">
+    <ellipse/>
    </object>
   </objectgroup>
  </group>

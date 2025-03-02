@@ -20,8 +20,12 @@ class Map:
         self.collisions = None
         self.battlepokemon = None
         self.in_battle = False  # Track if battle is in progress
-        self.current_map: Switch = Switch("switch", "map0", pygame.Rect(0, 0, 0, 0), 0)
+        self.current_map: Switch = Switch("switch", "map_0", pygame.Rect(0, 0, 0, 0), 0)
         self.switch_map(self.current_map)
+        self.map_world = "map_0"
+
+
+
        
     def switch_map(self, switch: Switch):
         self.tmx_data = pytmx.load_pygame(f"assets/map/{switch.name}.tmx")
@@ -41,6 +45,7 @@ class Map:
         
         # Loop through all objects to set up the map
         for obj in self.tmx_data.objects:
+            print(obj.name)
             if obj.name == "collision":
                 self.collisions.append(pygame.Rect(obj.x, obj.y, obj.width, obj.height))
             elif obj.name == "collisionpokemon":
@@ -66,8 +71,28 @@ class Map:
             self.player.start_battle(self.battlepokemon)
             self.group.add(self.player)
 
+
         # Update the current map after switching
         self.current_map = switch
+
+                # Gestion du changement de musique
+        # Arrêter la musique actuelle
+        sounds.stop_map_music()
+
+        # Déterminer la musique à jouer en fonction du nom de la map
+        if switch.name.startswith("house_"):
+            sounds.play_maison_music()
+        elif switch.name.startswith("pokeshop"):
+            sounds.play_pokeshop_music()
+        elif  switch.name.startswith("pokecenter"):
+            sounds.play_pokecenter_music()
+        elif  switch.name.startswith("labo_"):
+            sounds.play_labo_music()
+        elif switch.name.startswith("inter_"):
+            sounds.play_labo_music()
+        else:
+            sounds.play_map_music()  # Par défaut, jouer la musique de la map
+
 
     def add_player(self, player) -> None:
         self.group.add(player)
@@ -78,25 +103,37 @@ class Map:
         self.player.start_battle(self.battlepokemon)
 
     def update(self) -> None:
-       
         if self.player:
             if self.player.change_map and self.player.step >= 8:
-                self.switch_map(self.player.change_map)
-                self.player.change_map = None
+                # Si le joueur quitte une maison (ou entre dans 
+
+               
+                # if self.player.change_map == self.map_world:  # 
+
+                    # Effectue le changement de carte
+                    self.switch_map(self.player.change_map)
+                
+
+                    self.player.change_map = None  # Réinitialise le changement de carte
+
+
+
+
+
 
             this_battle_zone = (0,0,0,0)
             # Check for collision with battle zones
             for battle_zone in self.battlepokemon:
                 if self.player.rect.colliderect(battle_zone) and not self.in_battle:
-                    sounds.stop_background_music()  # Stop map music
+                    sounds.stop_map_music()  # Stop map music
                     sounds.play_combat_music()  # Play combat music
                     self.in_battle = True  # Set the flag for battle
                     self.player.is_fleeing = self.start_battle()  # Start the Pokémon battle
                     this_battle_zone = battle_zone
                     if not self.player.is_fleeing:
                         self.player.keyListener.keys = []
-                    sounds.stop_background_music()
-                    sounds.play_map_music()
+                   
+                    
 
                 if self.player.rect.colliderect(battle_zone) and self.in_battle:
                     this_battle_zone = battle_zone
@@ -104,6 +141,7 @@ class Map:
             
             if not self.player.rect.colliderect(this_battle_zone) and self.in_battle:
                 self.in_battle = False
+                sounds.play_map_music()
 
            
 
